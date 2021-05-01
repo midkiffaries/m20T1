@@ -10,7 +10,7 @@
             <div class="entry-catagory">Filed under <?php the_category(' '); ?></div>
             <h2 class="entry-title"><?php the_title(); ?></h2>
             <div class="entry-date"><a href="<?php echo get_month_link('', '', ''); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date($BlogPostTimeStamp, '',''); ?></time></a> <span class="entry-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author"><?php the_author(); ?></a></span></div>
-            <!--div class="entry-comments"><?php //comments_number('no comments', 'one comment', '% comments'); ?></div-->
+            <!--div class="entry-comments"><?php comments_number('no comments', 'one comment', '% comments'); ?></div-->
         </header>
         <div class="entry-content">
             <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
@@ -30,12 +30,12 @@
 
 <!--div>
     <div>
-<?php //comments_template(); ?>
+<?php comments_template(); ?>
     </div>
 </div-->
 
 <?php endwhile; else: ?>
-<article>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <p>Sorry, no posts matched your criteria.</p>
     </div>

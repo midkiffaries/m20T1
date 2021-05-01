@@ -7,7 +7,7 @@ global $wp_query;
 $curauth = $wp_query->get_queried_object();
 ?>
 
-<div class="wp-archive-header type-post">
+<section class="wp-archive-header type-post">
     <div>
         <h2><?php if (have_posts()) : ?>
 <?php $post = $posts[0]; ?>
@@ -20,18 +20,18 @@ $curauth = $wp_query->get_queried_object();
 <?php /* paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives
 <?php } ?></h2>
     </div>
-</div>
+</section>
 
 <?php if (is_author()) : ?>
 
-<div class="wp-author-bio type-post" rel="author" role="contentinfo" aria-label="Authors Info">
+<section class="wp-author-bio type-post" rel="author" role="contentinfo" aria-label="Authors Info">
     <div>
         <div class="alignleft"><?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?></div>
         <h3>About <?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h3>
         <p class="wp-author-bio-meta"><?php echo number_format_i18n( get_the_author_posts() ); ?> posts</p>
         <p class="wp-author-bio-about"><?php echo $curauth->description; ?><br>Site: <a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a></p>
     </div>
-</div>
+</section>
 
 <?php endif; ?>
 
@@ -56,7 +56,7 @@ $curauth = $wp_query->get_queried_object();
     </div>
 </section>
 
-<div>
+<article <?php post_class(); ?>>
     <div>
 <?php else :
 if ( is_category() ) { // If this is a category archive
@@ -73,6 +73,6 @@ get_search_form();
 endif;
 ?>
     </div>
-</div>
+</article>
 
 <?php get_footer(); ?>

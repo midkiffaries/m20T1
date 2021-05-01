@@ -4,7 +4,7 @@
 
 <article class="404-page type-page">
     <div>
-        <img src="<?php bloginfo('template_url'); ?>/assets/images/other/construction.svg" alt="Construction Cone" class="alignright">
+        <img src="<?php bloginfo('template_url'); ?>/assets/images/other/404.svg" alt="404 Construction Cone" class="alignright">
         <p><code><?php echo SITE_ADDRESS . $_SERVER['REQUEST_URI']; ?></code></p>
         <h3>Oh, Nooooos... that page doesn’t seem to exist.</h3>
         <p>Either the page you are looking for has been removed or renamed... or there’s something wrong with this site.</p>

@@ -3,7 +3,7 @@
 <?php breadcrumb_trail(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-<article <?php post_class(); ?>>
+<article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <h2><?php the_title(); ?></h2>
         <a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Tap to view full size"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0 ); ?></a>

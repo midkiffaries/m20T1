@@ -19,7 +19,7 @@ while (have_posts()) : the_post();
 ?>
 
 <!-- <?php echo $post->post_name; ?> page section -->
-<article id="<?php echo $post->post_name; ?>" name="<?php echo $post->post_name; ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" name="<?php echo $post->post_name; ?>">
     <div class="section-title">
         <h2 id="H2-<?php echo $post->post_name; ?>"><?php the_title(); ?></h2>
     </div>

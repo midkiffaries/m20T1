@@ -43,11 +43,11 @@ endwhile; endif;
 </section>
 
 <?php else : ?>
-<article class="search-page">
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div>
         <h2>Your search query came up empty 🙁 </h2>
         <p>If it will make you feel better, this probably happens to Google too.</p>
-        <p><em>Wanna, take another shot?</em></p>
+        <p><i>Wanna, take another shot?</i></p>
 
 <?php my_search_form('Main'); ?>
     </div>

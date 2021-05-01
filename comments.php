@@ -10,14 +10,14 @@ if ( post_password_required() ) {
 <?php if (have_comments()) : ?>
 
 <section class="comment-list" role="comments">
-        <h2>Feedback <span><?php comments_number('No Comments', 'One Comment', '% Comments');?></span></h2>
-        <div class="wp-post-nav"><?php previous_comments_link() . " " . next_comments_link(); ?></div>
+    <h2>Feedback <span><?php comments_number('No Comments', 'One Comment', '% Comments');?></span></h2>
+    <div class="wp-post-nav"><?php previous_comments_link() . " " . next_comments_link(); ?></div>
 
-                <ol>
+        <ol>
 <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=my_comment_style'); ?>
-                </ol>
+        </ol>
 
-        <div class="wp-post-nav"><?php previous_comments_link('&#xe802; Older Entries', 0) . next_comments_link('Newer Entries &#xe803;', 0); ?></div>
+    <div class="wp-post-nav"><?php previous_comments_link('&#xe802; Older Entries', 0) . next_comments_link('Newer Entries &#xe803;', 0); ?></div>
 </section>
 
 <?php
@@ -32,7 +32,7 @@ if (comments_open()) : // If comments are open, but there are no comments.
 else : // comments are closed
 ?>
 <div>
-        <p class="comments-closed">Comments are closed for this topic</p>
+    <p class="comments-closed">Comments are closed for this topic</p>
 </div>
 <?php endif; ?>
 <?php endif; ?>
@@ -40,36 +40,32 @@ else : // comments are closed
 <?php if (comments_open()) : ?>
 
 <section class="comment-form">
-        <h2><?php comment_form_title( 'Post a Comment', 'Post a reply to %s' ); ?></h2>
+    <h2><?php comment_form_title( 'Post a Comment', 'Post a reply to %s' ); ?></h2>
 
 <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
 <?php else : ?>
 
-        <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentForm" name="commentForm" autocomplete="on">
+    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentForm" name="commentForm" autocomplete="on">
 
 <?php if (is_user_logged_in()) : ?>
 
-        <p>You are logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account" class="icon-logout">Log out</a></p>
-
-        <input type="hidden" name="author" id="author" value="<?php echo $user_identity; ?>"><input type="hidden" name="email" id="email" value="xyz@xyz.com">   
+		<p>You are logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account" class="icon-logout">Log out</a></p>
+		<input type="hidden" name="author" id="author" value="<?php echo $user_identity; ?>"><input type="hidden" name="email" id="email" value="xyz@xyz.com">   
 
 <?php else : ?>
 
-        <p><label for="author">Name</label><input type="text" name="author" id="author" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" tabindex="6" placeholder="your name <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
-
-        <p><label for="email">Email</label><input type="email" name="email" id="email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="7" placeholder="name@example.com <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
-
-        <p><label for="url">Website</label><input type="url" name="url" id="url" maxlength="50" value="http://<?php echo esc_attr($comment_author_url); ?>" tabindex="8" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
+		<p><label for="author">Name</label><input type="text" name="author" id="author" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" tabindex="6" placeholder="your name <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
+		<p><label for="email">Email</label><input type="email" name="email" id="email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="7" placeholder="name@example.com <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
+		<p><label for="url">Website</label><input type="url" name="url" id="url" maxlength="50" value="http://<?php echo esc_attr($comment_author_url); ?>" tabindex="8" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
 
 <?php endif; ?>
-        <p><label for="comment">Comment</label><textarea id="comment" name="comment" tabindex="9" placeholder="comment <?php if ($req) echo "(required)"; ?>" required></textarea></p>
-        
-        <p><input type="button" id="submit-comment" tabindex="10" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
+		<p><label for="comment">Comment</label><textarea id="comment" name="comment" tabindex="9" placeholder="comment <?php if ($req) echo "(required)"; ?>" required></textarea></p>
+		<p><input type="button" id="submit-comment" tabindex="10" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
 
 <?php do_action('comment_form', $post->ID); ?>
 
-        </form>
+    </form>
 </section>
 <?php endif; ?>
 <?php endif; ?>

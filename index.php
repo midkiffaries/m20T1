@@ -32,11 +32,12 @@
 
 <?php else : ?>
 
-<article>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <h2>Not Found</h2>
         <p>Sorry, but you are looking for something that isn't here for some reason.</p>
-<?php get_search_form(); ?>
+<?php my_search_form('Main'); ?>
+
     </div>
 </article>
 

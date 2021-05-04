@@ -22,7 +22,7 @@ include 'config.php';
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo SITE_ADDRESS; ?>/feed/">
 <link rel="canonical" href="<?php echo SITE_ADDRESS . $_SERVER['REQUEST_URI']; ?>">
-<link rel="dns-prefetch" href="//marchtwenty.com">
+<link rel="dns-prefetch" href="<?php echo SITE_ADDRESS; ?>">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <!-- Stylesheets -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
@@ -55,7 +55,7 @@ include 'config.php';
 <meta property="twitter:url" content="<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <meta property="twitter:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
-<meta property="twitter:image" content="<?php echo SITE_ADDRESS; ?>/icons/m20-share.jpg">
+<meta property="twitter:image" content="<?php echo SITE_ADDRESS; ?>/icons/social-share.jpg">
 <!-- Global site tag gtag.js - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>

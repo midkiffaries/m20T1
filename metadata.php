@@ -1,5 +1,6 @@
 <?php 
 // Head meta data 
+include 'config.php';
 ?>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,7 +12,7 @@
 <meta name="description" content="<?php if (is_single()) {
         single_post_title('', true); echo " - "; echo wp_strip_all_tags(get_the_excerpt(), true);
     } else {
-        bloginfo('description'); echo " - "; echo TAGLINE_MORE;
+        bloginfo('description'); echo " - "; echo $config->Tagline;
     } ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="generator" content="WordPress <?php echo get_bloginfo('version'); ?>">
@@ -30,12 +31,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_ADDRESS; ?>/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_ADDRESS; ?>/icons/favicon-16x16.png">
 <!-- Apple -->
-<meta name="apple-mobile-web-app-title" content="<?php echo SHORT_SITE_TITLE; ?>">
+<meta name="apple-mobile-web-app-title" content="<?php echo $config->ShortTitle; ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo SITE_ADDRESS; ?>/icons/apple-touch-icon.png">
-<link rel="mask-icon" href="<?php echo SITE_ADDRESS; ?>/icons/safari-pinned-tab.svg" color="<?php echo SITE_COLOR; ?>">
+<link rel="mask-icon" href="<?php echo SITE_ADDRESS; ?>/icons/safari-pinned-tab.svg" color="<?php echo $config->BaseColor; ?>">
 <!-- Google -->
-<meta name="application-name" content="<?php echo SHORT_SITE_TITLE; ?>">
+<meta name="application-name" content="<?php echo $config->ShortTitle; ?>">
 <link rel="manifest" href="<?php echo SITE_ADDRESS; ?>/manifest.json">
 <link rel="icon" type="image/png" href="<?php echo SITE_ADDRESS; ?>/icons/android-chrome-512x512.png" sizes="512x512">
 <meta name="theme-color" content="#ffffff">
@@ -47,13 +48,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
 <meta property="og:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="og:description" content="<?php bloginfo('description'); ?> <?php echo TAGLINE_MORE; ?>">
+<meta property="og:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
 <meta property="og:image" content="<?php echo SITE_ADDRESS; ?>/icons/m20-share.jpg">
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="twitter:description" content="<?php bloginfo('description'); ?> <?php echo TAGLINE_MORE; ?>">
+<meta property="twitter:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
 <meta property="twitter:image" content="<?php echo SITE_ADDRESS; ?>/icons/m20-share.jpg">
 <!-- Global site tag gtag.js - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>

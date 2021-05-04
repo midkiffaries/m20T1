@@ -6,8 +6,11 @@ Send an email to a specified recipient
 
 error_reporting(0);
 
+// Includes
+include 'config.php';
+
 // Reciepent of the email
-$Recipient = "ted.balmer@gmail.com";
+$Recipient = $config->Email;
 
 // Clean user input
 $Name = cleanUserInput($_GET['name']);

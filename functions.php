@@ -10,15 +10,15 @@ error_reporting(E_ALL);
 // Site Setup
 /////////////////////////////
 
-// Define constants
-define('SHORT_SITE_TITLE', "MarchTwenty");  // Short title
+// Includes
+include 'config.php';
+
+// Define URLS
 define('CURRENT_ADDRESS', $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); // Full uri
 define('SITE_ADDRESS', "https://" . $_SERVER['HTTP_HOST']);  // Live Server
-define('SITE_COLOR', "#40a5ff");  // Base site color
-define('TAGLINE_MORE', "With books, art, movies, photos, teddy bears, and more!");  // Extended tag line text
 
 // Default time stamp for blog posts
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set($config->Timezone);
 $BlogPostTimeStamp = 'F jS, Y';
 $ShortTimeStamp = 'y-m-j';
 

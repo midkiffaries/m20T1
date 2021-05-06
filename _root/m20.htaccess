@@ -1,6 +1,3 @@
-# ENABLE PHP 7.0
-#AddType application/x-httpd-php70 .php
-
 # Prevent viewing of htaccess
 <Files .htaccess>
 order allow,deny

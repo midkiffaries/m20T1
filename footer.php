@@ -11,7 +11,6 @@
         
     <p class="copyright" rel="license">Copyright &copy; <abbr title="<?php echo date('Y'); ?>" aria-label="<?php echo date('Y'); ?>"><?php echo numberToRoman(date('Y')); ?></abbr> <?php bloginfo('name'); ?></p>
     <p rel="author">Site designed and developed by Ted Balmer</p>
-    <!--p class="recycle"><span class="icon-recycle">&#9842;</span> Please recycle this document</p-->
 </footer>
 
 <?php wp_footer(); ?>

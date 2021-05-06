@@ -13,11 +13,14 @@
     <div class="hlayer2"></div> <!-- grain -->
     <div class="hlayer3 bg-parallax" data-rate="20"></div> <!-- rays -->
     <div class="hlayer4"></div> <!-- clouds -->
-<?php else : // Basic Page ?>
+
+<?php else : // All Other Pages ?>
 <header class="page-header basic-header">
     <div class="hlayer2"></div> <!-- grain -->
     <div class="hlayer3"></div> <!-- rays -->
+
 <?php endif; ?>
+
     <div class="header-logo">
         <h1><a href="<?php echo SITE_ADDRESS; ?>/" rel="bookmark">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-full.svg" alt="<?php bloginfo('name'); ?>"></a></h1>

@@ -2,13 +2,17 @@
 
 <?php breadcrumb_trail(); ?>
 
-<article class="404-page type-page">
+<article class="404-page page type-page status-publish" id="404-page">
     <div>
-        <img src="<?php bloginfo('template_url'); ?>/assets/images/other/404.svg" alt="404 Construction Cone" class="alignright">
-        <p><code><?php echo SITE_ADDRESS . $_SERVER['REQUEST_URI']; ?></code></p>
-        <h3>Oh, Nooooos... that page doesn’t seem to exist.</h3>
-        <p>Either the page you are looking for has been removed or renamed... or there’s something wrong with this site.</p>
-        <p>You could try and do a search for what it is you are looking for:</p>
+        <h2>404 Page Not Found</h2>
+        <div class="wp-block-image">
+            <figure class="alignright is-resized">
+                <img loading="lazy" src="<?php bloginfo('template_url'); ?>/assets/images/other/404.svg" alt="404 Construction Cone" class="wp-404-image" />
+                <figcaption>Oh, look a construction cone!</figcaption>
+            </figure>
+        </div>
+        <p>It looks like this page is ghosting you... 👻</p>
+        <p>Alteratively you could do a search of this site:</p>
 <?php my_search_form('404'); ?>
         
     </div>

@@ -149,7 +149,7 @@ html {
 /************************ 
 Wordpress Specific Styles 
 *************************/
-
+/*
 img.wp-smiley, img.emoji {
 	display: inline !important;
 	border: none !important;
@@ -161,8 +161,9 @@ img.wp-smiley, img.emoji {
 	background: none !important;
 	padding: 0 !important;
 }
-
+*/
 /* Breadcrumbs Plugin Style */
+/*
 .breadcrumbs .trail-items li {
 	display: inline-block;
 }
@@ -179,7 +180,7 @@ img.wp-smiley, img.emoji {
 .breadcrumbs .trail-browse {
 	display: none;
 }
-
+*/
 
 
 /* Lazy YouTube embedded videos */

@@ -464,7 +464,7 @@ function closeModals(c) {
             padding: 0.55em;
         }
         .accordion > button:hover {
-            background-color: var(--light-gold);
+            background-color: #eee;
         }
         .accordion > button::before {
             content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/%3E%3C/svg%3E");

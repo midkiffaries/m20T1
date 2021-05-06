@@ -54,8 +54,4 @@
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
-<?php // WordPress ?>
-<!--meta name="generator" content="WordPress <?php echo get_bloginfo('version'); ?>">
-<link rel="dns-prefetch" href="//s.w.org">
-<link rel="stylesheet" id="wp-block-library-css" href="http://localhost:8888/WP-marchtwenty/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"-->
 <?php wp_head(); ?>

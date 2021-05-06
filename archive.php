@@ -24,12 +24,12 @@ $curauth = $wp_query->get_queried_object();
 
 <?php if (is_author()) : ?>
 
-<section class="wp-author-bio type-post" rel="author" role="contentinfo" aria-label="Authors Info">
+<section class="wp-author-bio type-post" rel="author" role="contentinfo" aria-label="Authors Information">
     <div>
-        <div class="alignleft"><?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?></div>
+        <div class="wp-block-image"><figure class="alignleft"><?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?></figure></div>
         <h3>About <?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h3>
         <p class="wp-author-bio-meta"><?php echo number_format_i18n( get_the_author_posts() ); ?> posts</p>
-        <p class="wp-author-bio-about"><?php echo $curauth->description; ?><br>Site: <a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a></p>
+        <p class="wp-author-bio-about"><?php echo $curauth->description; ?><br>Website: <a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a></p>
     </div>
 </section>
 
@@ -48,6 +48,7 @@ $curauth = $wp_query->get_queried_object();
         </div>
     </div>
 </article>
+
 <?php endwhile; ?>
 
 <section class="blog-pagination">
@@ -59,6 +60,7 @@ $curauth = $wp_query->get_queried_object();
 <article <?php post_class(); ?>>
     <div>
 <?php else :
+
 if ( is_category() ) { // If this is a category archive
 	printf("There are no posts under the <b>%s</b> category.", single_cat_title('',false));
 } else if ( is_date() ) { // If this is a date archive
@@ -69,7 +71,9 @@ if ( is_category() ) { // If this is a category archive
 } else {
 	echo("No posts found.");
 }
-get_search_form();
+
+get_search_form('archive');
+
 endif;
 ?>
     </div>

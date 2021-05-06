@@ -2,7 +2,7 @@
     </div>
 </main>
 
-<!-- Footer -->
+<!-- Page Footer -->
 <footer class="page-footer">
 
 <?php menu_nav_list('primary', 'footer'); ?>

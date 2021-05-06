@@ -135,9 +135,25 @@ html {
 	content: "\e90f";
 }
 
+.menu-email-button {
+	padding: 1em;
+	background-position: 50% 50%;
+	background-size: 1.8em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='512'%3E%3Cpath d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/%3E%3C/svg%3E");
+}
+
+.menu-search-button {
+	padding: 1em;
+	background-position: 50% 50%;
+	background-size: 1.5em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+}
+
 
 /* Search Submit button */
-.button-search {
+.search-block [type="submit"] {
 	padding: auto 1em;
 	width: 2.1em;
 	background-position: 50% 50%;
@@ -149,21 +165,45 @@ html {
 /************************ 
 Wordpress Specific Styles 
 *************************/
-/*
-img.wp-smiley, img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-*/
+
 /* Breadcrumbs Plugin Style */
-/*
+
+.breadcrumbs .trail-browse,
+.breadcrumbs .trail-items,
+.breadcrumbs .trail-items li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	text-indent: 0;
+}
+
+.breadcrumbs .trail-browse {
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+.breadcrumbs .trail-items {
+	list-style: none;
+}
+
+.trail-items li:first-of-type::before {
+	font-family: 'icomoon' !important;
+	content: "\e904";
+}
+
+.trail-items li::after {
+	content: "\002F";
+	padding: 0 0.5em;
+}
+
+.trail-items li:last-of-type::after {
+	display: none;
+}
+
 .breadcrumbs .trail-items li {
 	display: inline-block;
 }
@@ -180,7 +220,6 @@ img.wp-smiley, img.emoji {
 .breadcrumbs .trail-browse {
 	display: none;
 }
-*/
 
 
 /* Lazy YouTube embedded videos */

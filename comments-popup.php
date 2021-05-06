@@ -10,7 +10,6 @@
 <meta name="generator" content="WordPress <?php echo get_bloginfo('version'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
-
 <?php wp_head(); ?> 
 </head>
 

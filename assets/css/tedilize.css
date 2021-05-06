@@ -57,9 +57,15 @@ main {
 	display: block;
 }
 
+header,
+main,
+footer {
+	clear: both;
+}
+
 header::after,
 main::after,
-hr::after {
+footer::after {
 	content: "";
 	clear: both;
 	display: table;

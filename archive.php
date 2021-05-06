@@ -16,7 +16,7 @@ $curauth = $wp_query->get_queried_object();
 <?php /* daily archive */ } elseif (is_day()) { ?>Posts from <?php the_time('F jS, Y'); ?>
 <?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <?php the_time('F, Y'); ?>
 <?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <?php the_time('Y'); ?>
-<?php /* author archive */ } elseif (is_author()) { ?>Posts made by <?php echo $curauth->first_name; ?>
+<?php /* author archive */ } elseif (is_author()) { ?>Posts made by <?php echo $curauth->nickname; ?>
 <?php /* paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives
 <?php } ?></h2>
     </div>

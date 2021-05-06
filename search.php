@@ -16,7 +16,7 @@ endwhile; endif;
 <article <?php post_class(); ?>>
     <div>
         <h3>Your search netted <?php echo $search_count; ?> result(s)</h3>
-<?php my_search_form('Main'); ?>
+<?php my_search_form('main'); ?>
         <hr>
     </div>
 </article>
@@ -49,7 +49,7 @@ endwhile; endif;
         <p>If it will make you feel better, this probably happens to Google too.</p>
         <p><i>Wanna, take another shot?</i></p>
 
-<?php my_search_form('Main'); ?>
+<?php my_search_form('main'); ?>
     </div>
 </article>
 <?php endif; ?>

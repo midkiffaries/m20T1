@@ -7,4 +7,4 @@ Disallow: /wp-includes/
 Disallow: /wp-content/plugins/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: https://www.marchtwenty.com/sitemap.xml
+Sitemap: /sitemap.xml

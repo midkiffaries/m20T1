@@ -1,4 +1,4 @@
-<aside id="sidebar-secondary" class="sidebar">
+<aside id="sidebar-singlepost" class="page-sidebar sidebar-singlepost">
     <?php if ( is_active_sidebar( 'secondary' ) ) : ?>
         <?php dynamic_sidebar( 'secondary' ); ?>
     <?php else : ?>

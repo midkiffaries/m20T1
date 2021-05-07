@@ -29,7 +29,7 @@
     <div class="header-navigation">
         <button class="menu-button" id="btnMenu" aria-label="Open Menu"></button>
         <div class="header-menu" role="navigation" aria-label="Primary">
-<?php menu_nav_list('primary', 'header'); ?>
+<?php menu_nav_list('Primary Nav', 'header'); ?>
 
             <button class="menu-email-button" aria-label="Email me"></button>
             <button class="menu-search-button" aria-label="Search this site"></button>

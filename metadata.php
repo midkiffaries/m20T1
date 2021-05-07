@@ -17,7 +17,7 @@
 <meta name="googlebot" content="index,follow">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo SITE_ADDRESS; ?>/feed/">
-<link rel="canonical" href="<?php echo SITE_ADDRESS . $_SERVER['REQUEST_URI']; ?>">
+<link rel="canonical" href="<?php the_permalink(); ?>">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <?php // Stylesheets ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
@@ -41,13 +41,13 @@
 <meta name="msapplication-TileImage" content="<?php echo SITE_ADDRESS; ?>/icons/mstile-310x310.png">
 <?php // Facebook ?>
 <meta property="og:type" content="website">
-<meta property="og:url" content="<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+<meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <meta property="og:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
 <meta property="og:image" content="<?php echo SITE_ADDRESS; ?>/icons/m20-share.jpg">
 <?php // Twitter ?>
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+<meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <meta property="twitter:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
 <meta property="twitter:image" content="<?php echo SITE_ADDRESS; ?>/icons/social-share.jpg">

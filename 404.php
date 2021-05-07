@@ -4,7 +4,7 @@
 
 <article class="404-page page type-page status-publish" id="404-page">
     <div>
-        <h2>404 Page Not Found</h2>
+        <h2><span>404</span> Page Not Found</h2>
         <div class="wp-block-image">
             <figure class="alignright is-resized">
                 <img loading="lazy" src="<?php bloginfo('template_url'); ?>/assets/images/other/404.svg" alt="404 Construction Cone" class="wp-404-image" />

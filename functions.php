@@ -116,7 +116,7 @@ function blog_post_share() {
 ?>
 <ul>
     <li class="tw-share-button" role="link" ><a href="https://twitter.com/intent/tweet?text=<?php the_permalink(); ?>" class="icon-twitter twitter-share-button" title="Twitter" target="_blank">Tweet</a></li>
-    <li class="fb-share-button" data-href="https://www.marchtwenty.com/" data-layout="button" data-size="large" role="link"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>;src=sdkpreparse" class="icon-facebook fb-xfbml-parse-ignore" title="Facebook" target="_blank">Share</a></li>
+    <li class="fb-share-button" data-href="<?php the_permalink(); ?>" data-layout="button" data-size="large" role="link"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>;src=sdkpreparse" class="icon-facebook fb-xfbml-parse-ignore" title="Facebook" target="_blank">Share</a></li>
 </ul>
 <?php
 }
@@ -174,6 +174,7 @@ function menu_nav_list($menu, $id) {
     wp_nav_menu($menuStyle);
 }
 
+// Sidebar widget settings
 add_action( 'widgets_init', 'my_register_sidebars' );
 function my_register_sidebars() {
     /* Register the 'primary' sidebar. */
@@ -192,7 +193,7 @@ function my_register_sidebars() {
     register_sidebar(
         array(
             'id'            => 'secondary',
-            'name'          => __( 'Secondary Sidebar' ),
+            'name'          => __( 'Single Post Sidebar' ),
             'description'   => __( 'The single blog post sidebar.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',

@@ -174,133 +174,111 @@ function ConfirmModal(text, action) {
 }
 
 // Load an external JS document and display it in a modal window
-function HtmlModal(JsVar, c) {
-    let aDialog = {
-        style: document.createElement("style"),
-        dialog: document.createElement("dialog"),
-		header: document.createElement("div"),
-        inner: document.createElement("div"),
-        html: document.createElement("div"),
-        button: document.createElement("button")
-    };
+function openDialog(c, content) {
+	const style = document.createElement('style'),
+        dialog = document.createElement('dialog'),
+        headerDiv = document.createElement('header'),
+		innerDiv = document.createElement('div');
 
-    // Append style
-    aDialog.style.textContent = (`
-    .dialog-html {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background-color: rgba(240,240,240,0.9);
-        border: none;
-        opacity: 0;
-        transition: opacity 0.15s ease-in-out 0s;
-        -webkit-backdrop-filter: grayscale(40%) blur(1px);
-        backdrop-filter: grayscale(40%) blur(1px);
-    }
-    .dialog-top {
-        max-width: 70vw;
-        max-height: calc(85vh - 15vh);
-        padding: 1.1em;
-        margin: 0 auto 0 auto;
-    }
-    .dialog-body {
-        max-width: 70vw;
-        min-height: 16em;
-        max-height: calc(85vh - 5vh);
-        margin: 1vh auto 0 auto;
-        padding: 1em;
-        background-color: #fcfcfc;
-        box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
-        transform: scale(0.8);
-        transition: transform 0.15s ease-in-out 0s;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        overscroll-behavior-y: contain;
-    }
-    #HTML_Frame {
-        margin-top: -2em;
-    }
-    .dialog-html-close {
-        position: absolute;
-        width: 1.3em;
-        height: 1.3em;
-        padding: 1.4em;
-        right: 0;
-        top: 0;
-        border: none;
-        -webkit-text-stroke: 1px #000;
-        filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
-        background: no-repeat center center / 1.4em;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/%3E%3C/svg%3E");
-    }
-    .dialog-html-close:hover {
+	// Dialog frame
+	dialog.setAttribute('class', `dialog-html ${c}`);
+	dialog.setAttribute('role', 'dialog');
+	dialog.setAttribute('open', 'open');
+
+	// Dialog close button
+	headerDiv.setAttribute('class', 'dialog-header');
+	headerDiv.innerHTML = `<button class="dialog-close-button" onclick="closeModals('${c}')" aria-label="Close this modal"></button>`;
+
+	// Dialog body
+	innerDiv.setAttribute('class', 'dialog-content');
+	innerDiv.innerHTML = dialogContent;
+
+	// Dialog style
+	style.textContent = (`
+	.disable-scroll {	
+		overflow: hidden;
+		height: auto;
+	}
+	.dialog-html {
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		background-color: rgba(240,240,240,0.8);
+		border: none;
+		opacity: 0;
+		transition: opacity 0.15s ease-in-out 0s;
+	}
+	.dialog-header {
+		max-width: 70vw;
+		max-height: calc(85vh - 15vh);
+		padding: 1.1em;
+		margin: 0 auto 0 auto;
+	}
+	.dialog-content {
+		max-width: 70vw;
+		min-height: 16em;
+		max-height: calc(85vh - 15vh);
+		margin: 1vh auto 0 auto;
+		padding: 1em;
+		background-color: #fdfdfd;
+		box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
+		transform: scale(0.8);
+		transition: transform 0.15s ease-in-out 0s;
+		overflow: scroll;
+	}
+	.dialog-close-button {
+		position: absolute;
+		width: 1.3em;
+		height: 1.3em;
+		padding: 1.4em;
+		right: 0.5em;
+		top: 0.5em;
+		border: none;
+		filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+		background: transparent no-repeat center center / 1.4em;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/%3E%3C/svg%3E");
+	}
+    .dialog-close-button:hover {
         background-color: transparent;
         filter: invert() drop-shadow(0 0 10px rgba(0,0,0,0.3));
     }
-    .dialog-html-close:focus:hover {
+    .dialog-close-button:focus:hover {
         filter: none;
     }
-    .dialog-html-close:active {
+    .dialog-close-button:active {
         opacity: 0.5;
     }
-    .dialog-open {
-        opacity: 1;
-    }
-    .dialog-open div {
-        transform: scale(1);
-    }	
-    .dialog-close {
+	.dialog-open {
+		opacity: 1;
+	}
+	.dialog-open > div {
+		transform: scale(1);
+	}
+	.dialog-close {
         transition: opacity 0.15s ease-out 0s;
         opacity: 0;
-    }
-    .disable-scroll {
-        /* overflow: hidden; */
-    }
+	}
     @media (max-width: 812px) {
-        .dialog-body {
+        .dialog-content {
             max-width: 99%;
             margin: 1vh auto;
             max-height: 85vh
         }
-        .dialog-top {
+        .dialog-header {
             max-width: 99%;
             margin: 0 auto;
         }
     }
-    `);
-    aDialog.dialog.appendChild(aDialog.style);
+	`);
 
-    // Disable page scrolling
-    document.body.classList.add("disable-scroll");
+    // Append Elements
+	dialog.appendChild(headerDiv);
+	dialog.appendChild(innerDiv);
+	dialog.appendChild(style);
+	document.body.appendChild(dialog);
 
-    // Dialog attributes
-    aDialog.dialog.setAttribute("open", "open");        
-    aDialog.dialog.setAttribute("class", "dialog-html " + c);
-
-    // Dialog Top
-	aDialog.dialog.appendChild(aDialog.header);
-    aDialog.header.setAttribute("class", "dialog-top");
-
-    // Close button
-    aDialog.header.appendChild(aDialog.button);
-    aDialog.button.setAttribute("onclick", "closeModals('dialog-html')");
-    aDialog.button.setAttribute("class", "dialog-html-close");
-    aDialog.button.setAttribute("aria-label", "Close dialog box");
-	
-	// Inner Element
-	aDialog.dialog.appendChild(aDialog.inner);
-    aDialog.inner.setAttribute("class", "dialog-body");
-    aDialog.inner.appendChild(aDialog.html);
-    aDialog.html.setAttribute("id", "HTML_Frame");
-	
-    // Append to page body
-    document.body.appendChild(aDialog.dialog);
-    document.getElementById("HTML_Frame").innerHTML = JsVar(c);
-
-    // Display Dialog
-    setTimeout(() => { 
-        aDialog.dialog.classList.toggle("dialog-open");
-    }, 150);
+	// Display dialog with transition
+	setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
 }
 
 // Modal images with a nested <figure> <a> <img> tag inside
@@ -309,49 +287,130 @@ function HtmlModal(JsVar, c) {
     for (let i = 0; i < l; i++) {
         if (fig[i].firstElementChild.tagName == "a" || fig[i].firstElementChild.tagName == "A") {
             fig[i].firstElementChild.addEventListener("click", function(e) {
-                e.preventDefault();                
-                let dialog = document.createElement("dialog"),
-                    img = document.createElement("img"),
-                    p = document.createElement("p"),
-                    buttonCl = document.createElement("button"),
-                    aDl = document.createElement("a"),
-                    imghref = this.href,
-                    imgname = imghref.substring(imghref.lastIndexOf('/') + 1).replace(/_/g," ").replace(/-/g," ").split('.')[0],
-                    imgalt = this.firstElementChild.alt,
-                    imgdescrip = this.firstElementChild.getAttribute("data-description");
-                
-                // Dialog box
-                dialog.setAttribute("open", "open");
-                dialog.setAttribute("class", "dialog-image");
-                
-                // Image attriubutes
-                dialog.appendChild(img);
-                img.setAttribute("src", imghref);
-                img.setAttribute("alt", imgalt);
+                e.preventDefault();
+				const style = document.createElement('style'),
+					dialog = document.createElement('dialog'),
+					headerDiv = document.createElement('header'),
+					innerDiv = document.createElement('div'),
+					imgAlt = this.firstElementChild.alt,
+                    //imgDescrip = this.firstElementChild.getAttribute("data-description"),
+					imgName = this.href.substring(this.href.lastIndexOf('/') + 1).replace(/_/g," ").replace(/-/g," ").split('.')[0];
 
-                // Title and Description
-                dialog.appendChild(p);
-                p.innerHTML = `<b> ${imgname}</b><br>${imgalt}<br>${imgdescrip}`;
+				// Dialog box attributes
+                dialog.setAttribute('class', 'dialog-image');	
+				dialog.setAttribute('role', 'dialog');
+				dialog.setAttribute('open', 'open');
 
-                // Close Button
-                dialog.appendChild(buttonCl);
-                buttonCl.setAttribute("onclick", "closeModals('dialog-image')");
-                buttonCl.setAttribute("class", "dialog-img-close");
-                buttonCl.setAttribute("aria-label", "Close Image");
-
-                // Image Download Link
-                dialog.appendChild(aDl);
-                aDl.appendChild(document.createTextNode("Download this Image"));
-                aDl.setAttribute("href", imghref);
-                aDl.setAttribute("class", "dialog-img-download");  
-
+				// Dialog close button
+				headerDiv.setAttribute('class', 'dialog-header');
+				headerDiv.innerHTML = `<button class="dialog-close-button" onclick="closeModals('dialog-image')" aria-label="Close this modal"></button>`;
+	
+				// Dialog body
+				innerDiv.setAttribute('class', 'dialog-content');
+				innerDiv.innerHTML = (`
+				<p class="dialog-body-image"><img src="${this.href}" alt="${imgName}"></p>
+				<h4 class="dialog-body-header">${imgName}</h4>
+				<p class="dialog-body-info">${imgAlt}</p>
+				<p class="dialog-body-download"><a href="${this.href}">Download this image</a></p>
+				`);
+				
+				// Dialog style
+				style.textContent = (`
+				.disable-scroll {	
+					overflow: hidden;
+					height: auto;
+				}
+				.dialog-image {
+					width: 100vw;
+					height: 100vh;
+					background-color: rgba(50,50,50,0.94);
+					border: none;
+					opacity: 0;
+                    overflow-y: scroll;
+					transition: opacity 0.15s ease-in-out 0s;
+                    -webkit-backdrop-filter: blur(4px) grayscale(50%);
+                    backdrop-filter: blur(4px) grayscale(50%);
+				}
+				.dialog-header {
+					max-width: 70vw;
+					max-height: calc(85vh - 15vh);
+					padding: 1.1em;
+					margin: 0 auto 0 auto;
+				}
+				.dialog-content {
+					max-width: 70vw;
+					min-height: 16em;
+					max-height: calc(85vh - 15vh);
+					margin: 1vh auto 0 auto;
+					padding: 0;
+					background-color: transparent;
+					transform: scale(0.8);
+					transition: transform 0.15s ease-in-out 0s;
+				}
+                .dialog-content img {
+                    min-height: 10em;
+                    background: #111 url(../images/other/img-loader.svg) 50% 50% no-repeat;
+                    box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
+                }
+                .dialog-content p,
+                .dialog-content h4  {
+                    color: #fff;
+                    text-align: center;
+                    margin: 8px 0;
+                }
+				.dialog-close-button {
+					position: absolute;
+					width: 1.3em;
+					height: 1.3em;
+					padding: 1.4em;
+					right: 1em;
+					top: 1em;
+					border: none;
+					filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+					background: transparent no-repeat center center / 1.4em;
+					background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/%3E%3C/svg%3E");
+				}
+				.dialog-close-button:hover {
+					background-color: transparent;
+					filter: invert() drop-shadow(0 0 10px rgba(0,0,0,0.3));
+				}
+				.dialog-close-button:focus:hover {
+					filter: none;
+				}
+				.dialog-close-button:active {
+					opacity: 0.5;
+				}
+				.dialog-open {
+					opacity: 1;
+				}
+				.dialog-open > div {
+					transform: scale(1);
+				}
+				.dialog-close {
+					transition: opacity 0.15s ease-out 0s;
+					opacity: 0;
+				}
+				@media (max-width: 812px) {
+					.dialog-content {
+						max-width: 99%;
+						margin: 1vh auto;
+						max-height: 85vh
+					}
+					.dialog-header {
+						max-width: 99%;
+						margin: 0 auto;
+					}
+				}
+				`);
+				
                 // Display Dialog
-                document.body.appendChild(dialog);
-                
-                // Display Dialog
-                setTimeout(() => { 
-                    dialog.classList.add("dialog-open") 
-                }, 140);
+				dialog.appendChild(headerDiv);
+				dialog.appendChild(innerDiv);
+				dialog.appendChild(style);
+				document.body.appendChild(dialog);
+				
+                // Display Dialog with transition
+                setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
             },false);
         }
     }

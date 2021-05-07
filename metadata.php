@@ -5,9 +5,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
 <meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<base href="<?php echo SITE_ADDRESS; ?>/">
 <meta name="description" content="<?php if (is_single()) {
-        single_post_title('', true); echo " - "; echo wp_strip_all_tags(get_the_excerpt(), true);
+        echo wp_strip_all_tags(get_the_excerpt(), true);
     } else {
         bloginfo('description'); echo " - "; echo $config->Tagline;
     } ?>">
@@ -19,6 +18,7 @@
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo SITE_ADDRESS; ?>/feed/">
 <link rel="canonical" href="<?php the_permalink(); ?>">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<base href="<?php echo SITE_ADDRESS; ?>/">
 <?php // Stylesheets ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap">
@@ -34,22 +34,29 @@
 <meta name="application-name" content="<?php echo $config->ShortTitle; ?>">
 <link rel="manifest" href="<?php echo SITE_ADDRESS; ?>/manifest.json">
 <link rel="icon" type="image/png" href="<?php echo SITE_ADDRESS; ?>/icons/android-chrome-512x512.png" sizes="512x512">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="<?php echo $config->BaseColor; ?>">
 <?php // Microsoft ?>
 <meta name="msapplication-config" content="<?php echo SITE_ADDRESS; ?>/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#296aa3">
 <meta name="msapplication-TileImage" content="<?php echo SITE_ADDRESS; ?>/icons/mstile-310x310.png">
 <?php // Facebook ?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="og:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
+<meta property="og:description" content="<?php if (is_single()) {
+        echo wp_strip_all_tags(get_the_excerpt(), true);
+    } else {
+        bloginfo('description'); echo " - "; echo $config->Tagline;
+    } ?>">
 <meta property="og:image" content="<?php echo SITE_ADDRESS; ?>/icons/m20-share.jpg">
 <?php // Twitter ?>
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="twitter:description" content="<?php bloginfo('description'); ?> <?php echo $config->Tagline; ?>">
+<meta property="twitter:description" content="<?php if (is_single()) {
+        echo wp_strip_all_tags(get_the_excerpt(), true);
+    } else {
+        bloginfo('description'); echo " | "; echo $config->Tagline;
+    } ?>">
 <meta property="twitter:image" content="<?php echo SITE_ADDRESS; ?>/icons/social-share.jpg">
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>

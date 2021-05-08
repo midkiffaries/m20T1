@@ -174,7 +174,7 @@ function ConfirmModal(text, action) {
 }
 
 // Load an external JS document and display it in a modal window
-function openDialog(c, content) {
+function openDialog(c, v) {
 	const style = document.createElement('style'),
         dialog = document.createElement('dialog'),
         headerDiv = document.createElement('header'),
@@ -191,7 +191,7 @@ function openDialog(c, content) {
 
 	// Dialog body
 	innerDiv.setAttribute('class', 'dialog-content');
-	innerDiv.innerHTML = dialogContent;
+	innerDiv.innerHTML = v;
 
 	// Dialog style
 	style.textContent = (`
@@ -213,6 +213,7 @@ function openDialog(c, content) {
 		max-height: calc(85vh - 15vh);
 		padding: 1.1em;
 		margin: 0 auto 0 auto;
+        position: relative;
 	}
 	.dialog-content {
 		max-width: 70vw;
@@ -231,8 +232,8 @@ function openDialog(c, content) {
 		width: 1.3em;
 		height: 1.3em;
 		padding: 1.4em;
-		right: 0.5em;
-		top: 0.5em;
+		right: 0;
+		top: 0;
 		border: none;
 		filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
 		background: transparent no-repeat center center / 1.4em;

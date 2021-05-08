@@ -21,7 +21,7 @@
 <base href="<?php echo SITE_ADDRESS; ?>/">
 <?php // Stylesheets ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap">
+<!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap"-->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_ADDRESS; ?>/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_ADDRESS; ?>/icons/favicon-16x16.png">

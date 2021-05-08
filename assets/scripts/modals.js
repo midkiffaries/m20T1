@@ -6,7 +6,7 @@
 const SearchModal = () => (`
 <h3>Search</h3>
 <section class="search-block search-modal">
-    <form method="get" role="search" action="/">
+    <form method="get" role="search" action="${HrefURL}">
         <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" autofocus required><input type="submit" value="&nbsp;" aria-label="Submit Search">
     </form>
 </section>
@@ -52,9 +52,9 @@ const Email = {
 }
 
 // Change the element class onfocus
-Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
+//Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+//Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+//Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
 
 // Check field
 const checkField = (v) => {

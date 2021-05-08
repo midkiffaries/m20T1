@@ -10,32 +10,29 @@ Text Domain: marchtwenty
 Tags: m20, template
 ************************/
 
-/************************ 
-External Fonts
-************************/
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap');
-/*
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-	text-rendering: auto;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-*/
 /* Variables */
 :root {
 	/* color-scheme: light dark; */
-	--base-color: #000;
-
+	--base-color: #333;
+	--base-color-pale: #666;
+	--base-color-dark: #000;
 }
+
+/************************ 
+Load External Fonts
+************************/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap');
 
 html {
     font-family: 'Montserrat', sans-serif;
+	text-rendering: auto;
+	font-weight: 400;
 }
+
+/************************ 
+Icon Fonts
+************************/
 
 @font-face {
 	font-family: 'icomoon';
@@ -46,7 +43,6 @@ html {
 	font-display: block;
 }
 
-/* Icons Font */
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon' !important;
 	font-style: normal;
@@ -135,6 +131,10 @@ html {
 	content: "\e90f";
 }
 
+/************************ 
+Basic site styling
+************************/
+
 .menu-email-button {
 	padding: 1em;
 	background-position: 50% 50%;
@@ -162,120 +162,30 @@ html {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
 }
 
+
 /************************ 
-Wordpress Specific Styles 
+Special Functions
 *************************/
 
-/* Breadcrumbs Plugin Style */
-
-.breadcrumbs .trail-browse,
-.breadcrumbs .trail-items,
-.breadcrumbs .trail-items li {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	background: transparent;
-	text-indent: 0;
-}
-
-.breadcrumbs .trail-browse {
-	font-size: inherit;
-	font-style: inherit;
-	font-weight: inherit;
-	color: inherit;
-}
-
-.breadcrumbs .trail-items {
-	list-style: none;
-}
-
-.trail-items li:first-of-type::before {
-	font-family: 'icomoon' !important;
-	content: "\e904";
-}
-
-.trail-items li::after {
-	content: "\002F";
-	padding: 0 0.5em;
-}
-
-.trail-items li:last-of-type::after {
-	display: none;
-}
-
-.breadcrumbs .trail-items li {
-	display: inline-block;
-}
-
-.breadcrumbs .trail-items li::after {
-	content: "\002F";
-	padding: 0 0.4em;
-}
-
-.breadcrumbs .trail-items li:last-of-type::after {
-	content: " ";
-}
-
-.breadcrumbs .trail-browse {
-	display: none;
-}
-
-
-/* Lazy YouTube embedded videos */
-.youtube {
+/* Parallax effect */
+.bg-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
-	position: relative;
-	padding-top: 56.25%;
-	overflow: hidden;
-	cursor: pointer;
+    height: 100%;
+    will-change: auto;
 }
-
-.youtube img {
-	width: 100%;
-    top: -17%;
-    cursor: pointer;
+    
+.div-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    will-change: auto;
 }
-
-.youtube button {
-	width: 6em;
-	height: 4em;
-	background: rgba(50,50,50,0.4);
-	box-shadow: 0 0 0.9em rgba(0,0,0,0.9);
-	z-index: 1;
-	opacity: 0.8;
-	border-radius: 0.8em;
-}
-
-.youtube:hover button {
-	opacity: 1;   
-	background: rgba(255,30,30,0.7);
-    transition: background 0.5s;
-}
-
-.youtube button::before {
-	content: "";
-	border-style: solid;
-	border-width: 15px 0 15px 26px;
-	border-color: transparent transparent transparent #fff;
-}
-
-.youtube img, .youtube iframe, .youtube button, .youtube button::before {
-	position: absolute;
-}
-
-.youtube button, .youtube button::before {
-	top: 50%;
-	left: 50%;
-	transform: translate3d(-50%, -50%, 0);
-}
-
-.youtube iframe {
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-}  
 
 
 /* Dark Mode */
@@ -355,3 +265,68 @@ body.dark-mode .light-switch {
 body.dark-mode .light-switch:hover {
 	box-shadow: 0 0 5px #fff;
 }
+
+
+/************************ 
+Wordpress Plugin Style
+*************************/
+
+/* Breadcrumbs Plugin Style */
+.breadcrumbs .trail-browse,
+.breadcrumbs .trail-items,
+.breadcrumbs .trail-items li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	text-indent: 0;
+}
+
+.breadcrumbs .trail-browse {
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+.breadcrumbs .trail-items {
+	list-style: none;
+}
+
+.trail-items li:first-of-type::before {
+	font-family: 'icomoon' !important;
+	content: "\e904";
+}
+
+.trail-items li::after {
+	content: "\002F";
+	padding: 0 0.5em;
+}
+
+.trail-items li:last-of-type::after {
+	display: none;
+}
+
+.breadcrumbs .trail-items li {
+	display: inline-block;
+}
+
+.breadcrumbs .trail-items li::after {
+	content: "\002F";
+	padding: 0 0.4em;
+}
+
+.breadcrumbs .trail-items li:last-of-type::after {
+	content: " ";
+}
+
+.breadcrumbs .trail-browse {
+	display: none;
+}
+
+/************************ 
+Main site styling
+************************/
+
+

@@ -236,7 +236,7 @@ function openDialog(c, v) {
 		top: 0;
 		border: none;
 		filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
-		background: transparent no-repeat center center / 1.4em;
+		background: transparent no-repeat center center / 1.5em;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/%3E%3C/svg%3E");
 	}
     .dialog-close-button:hover {
@@ -329,14 +329,14 @@ function openDialog(c, v) {
 					opacity: 0;
                     overflow-y: scroll;
 					transition: opacity 0.15s ease-in-out 0s;
-                    -webkit-backdrop-filter: blur(4px) grayscale(50%);
-                    backdrop-filter: blur(4px) grayscale(50%);
+                    -webkit-backdrop-filter: blur(3px) grayscale(50%);
+                    backdrop-filter: blur(3px) grayscale(50%);
 				}
 				.dialog-header {
 					max-width: 70vw;
 					max-height: calc(85vh - 15vh);
 					padding: 1.1em;
-					margin: 0 auto 0 auto;
+					margin: 0 auto;
 				}
 				.dialog-content {
 					max-width: 70vw;
@@ -365,15 +365,14 @@ function openDialog(c, v) {
 					height: 1.3em;
 					padding: 1.4em;
 					right: 1em;
-					top: 1em;
+					top: 0;
 					border: none;
-					filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
-					background: transparent no-repeat center center / 1.4em;
-					background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/%3E%3C/svg%3E");
+					background: transparent no-repeat center center / 1.6em;
+					background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z' fill='white'/%3E%3C/svg%3E");
 				}
 				.dialog-close-button:hover {
-					background-color: transparent;
-					filter: invert() drop-shadow(0 0 10px rgba(0,0,0,0.3));
+					opacity: 0.9;
+					filter: drop-shadow(0 0 5px rgba(220,220,220,0.8));
 				}
 				.dialog-close-button:focus:hover {
 					filter: none;
@@ -399,7 +398,6 @@ function openDialog(c, v) {
 					}
 					.dialog-header {
 						max-width: 99%;
-						margin: 0 auto;
 					}
 				}
 				`);
@@ -466,35 +464,6 @@ function closeModals(c) {
 		// Store last used state
         localStorage.setItem("theme", theme);
 	}	
-}());
-
-// Improve the behavior of input types
-(function(){
-    const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
-	
-    for (let i = 0; i < l; i++) {
-        let inputAttrib = inputNum[i].getAttribute("type");
-        
-        // Custom charset for input[type="number"] and input[type="tel"]        
-        if (inputAttrib === "number")
-            // Accept only numbers and relative chars
-            inputNum[i].onkeypress = () => event.charCode >= 40 && event.charCode <= 57;
-        
-        // Change the value of the output[for] element based on the range element
-        if (inputAttrib === "range") {
-            inputNum[i].oninput = function() {
-                let out = this.nextElementSibling;
-                if (out.getElementsByTagName("output") && out.getAttribute("for") == this.getAttribute("id"))
-                    out.value = this.value;
-            }
-        }
-        
-        // Enforce a "maxlength" on all input elements
-        inputNum[i].onkeyup = function() {
-            if (this.value.length > this.maxLength && this.maxLength > 0) 
-                this.value = this.value.slice(0,this.maxLength);
-        }
-    }
 }());
 
 // Accordion Style Element, use class="accordion"
@@ -573,5 +542,127 @@ function closeModals(c) {
             this.innerHTML = "";
             this.appendChild(iframe);
         });
+    }
+    // Append stylesheet if "youtube" exists
+    if (l) {
+        let st = document.createElement("style");
+        st.textContent = (`
+        .youtube {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+        }
+        .youtube img {
+            width: 100%;
+            top: -17%;
+            cursor: pointer;
+        }
+        .youtube button {
+            width: 6em;
+            height: 4em;
+            background: rgba(50,50,50,0.4);
+            box-shadow: 0 0 0.9em rgba(0,0,0,0.9);
+            z-index: 1;
+            opacity: 0.8;
+            border-radius: 0.8em;
+        }
+        .youtube:hover button {
+            opacity: 1;   
+            background: rgba(255,30,30,0.7);
+            transition: background 0.5s;
+        }
+        .youtube button::before {
+            content: "";
+            border-style: solid;
+            border-width: 15px 0 15px 26px;
+            border-color: transparent transparent transparent #fff;
+        }
+        .youtube img, .youtube iframe, .youtube button, .youtube button::before {
+            position: absolute;
+        }
+        .youtube button, .youtube button::before {
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        .youtube iframe {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        `);
+        document.body.appendChild(st);
+    }
+}());
+
+// Parallaxing backgrounds, use class="bg-parallax" and data-rate="10"
+(function(){
+    var par = document.getElementsByClassName("bg-parallax"), 
+        l = par.length,
+        posy = 0, 
+        pr = 10;
+    
+    document.addEventListener("scroll", function() {
+        for (let i = 0; i < l; i++) {
+            pr = par[i].getAttribute("data-rate");
+            posy =- (window.pageYOffset / pr);
+            par[i].style.backgroundPosition = `50% ${posy}px`;
+        }
+    }, true);
+}());
+
+// Parallaxing elements, use class="div-parallax" and data-rate="10"
+(function(){
+    var par = document.getElementsByClassName("div-parallax"), 
+        l = par.length,
+        posy = 0, 
+        pr = 10;
+    
+    document.addEventListener("scroll", function() {
+        for (let i = 0; i < l; i++) {
+            pr = par[i].getAttribute("data-rate");
+            posy =- (window.pageYOffset / pr);
+            par[i].style.top = `${posy}px`;
+        }
+    }, true);
+}());
+
+// Improve the behavior of input types
+(function(){
+    const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
+	
+    for (let i = 0; i < l; i++) {
+        var inputAttrib = inputNum[i].getAttribute("type");
+        
+        // Custom charset for input[type="number"] and input[type="tel"]        
+        if (inputAttrib === "number" || inputAttrib === "tel") {
+            // Accept only numbers and relative chars
+            inputNum[i].onkeypress = () => event.charCode >= 40 && event.charCode <= 57;
+        }
+		
+        // Custom charset for input[type="email"] and input[type="url"]
+        if (inputAttrib === "email" || inputAttrib === "url") {
+            // Accept everything but spaces
+            inputNum[i].onkeypress = () => event.charCode >= 33 && event.charCode <= 122;
+        }
+        
+        // Change the value of the output[for] element based on the range element
+        if (inputAttrib === "range") {
+            inputNum[i].oninput = function() {
+                var out = this.nextElementSibling;
+                if (out.getElementsByTagName("output") && out.getAttribute("for") == this.getAttribute("id")) {
+                    out.value = this.value;          
+                }
+            }
+        }
+        
+        // Enforce a "maxlength" on all input elements
+        inputNum[i].onkeyup = function() {
+            if (this.value.length > this.maxLength && this.maxLength > 0) {
+                this.value = this.value.slice(0,this.maxLength);
+            }
+        }
     }
 }());

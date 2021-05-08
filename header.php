@@ -16,8 +16,8 @@
 
 <?php else : // All Other Pages ?>
 <header class="page-header basic-header">
-    <div class="hlayer2"></div> <!-- grain -->
-    <div class="hlayer3"></div> <!-- rays -->
+    <div class="hlayer2"></div>
+    <div class="hlayer3"></div>
 
 <?php endif; ?>
 

@@ -7,17 +7,22 @@ if ( post_password_required() ) {
 	<p>This post is password protected. Enter the password to view comments.</p>
 <?php return; } ?>
 
-<?php if (have_comments()) : ?>
+<?php if (have_comments()) : // If have comments ?>
 
 <section class="comment-list" role="comments">
-    <h2>Feedback <span><?php comments_number('No Comments', 'One Comment', '% Comments');?></span></h2>
-    <div class="wp-post-nav"><?php previous_comments_link() . " " . next_comments_link(); ?></div>
-
+    <div>
+        <h2>Feedback <span><?php comments_number('No Comments', 'One Comment', '% Comments');?></span></h2>
+        <div class="wp-post-nav"><?php previous_comments_link() . " " . next_comments_link(); ?></div>
         <ol>
 <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=my_comment_style'); ?>
         </ol>
+    </div>
+</section>
 
-    <div class="wp-post-nav"><?php previous_comments_link('&#xe802; Older Entries', 0) . next_comments_link('Newer Entries &#xe803;', 0); ?></div>
+<section class="blog-pagination">
+    <div>
+        <div class="wp-post-nav"><?php previous_comments_link('Older Comments %link', 0) . next_comments_link('Newer Comments &#x276F;', 0); ?></div>
+    </div>
 </section>
 
 <?php
@@ -31,13 +36,15 @@ if (comments_open()) : // If comments are open, but there are no comments.
 <?php
 else : // comments are closed
 ?>
-<div>
-    <p class="comments-closed">Comments are closed for this topic</p>
-</div>
+<section class="comments-closed">
+    <div>
+        <p>Comments are closed for this topic.</p>
+    </div>
+</section>
 <?php endif; ?>
 <?php endif; ?>
 
-<?php if (comments_open()) : ?>
+<?php if (comments_open()) : // Comment entry form ?>
 
 <section class="comment-form">
     <h2><?php comment_form_title( 'Post a Comment', 'Post a reply to %s' ); ?></h2>
@@ -46,7 +53,7 @@ else : // comments are closed
 <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
 <?php else : ?>
 
-    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentForm" name="commentForm" autocomplete="on">
+    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="CommentForm" name="commentform" autocomplete="on">
 
 <?php if (is_user_logged_in()) : ?>
 

@@ -6,18 +6,13 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<!-- Page Header -->    
 <?php if ( is_front_page() ) : // Front Page ?>
 <header class="page-header hero-header">
-    <div class="hlayer1 bg-parallax" data-rate="12"></div> <!-- foreground -->
-    <div class="hlayer2"></div> <!-- grain -->
-    <div class="hlayer3 bg-parallax" data-rate="20"></div> <!-- rays -->
-    <div class="hlayer4"></div> <!-- clouds -->
+    <div class="hero-layer-1 bg-parallax" data-rate="12"></div>
 
 <?php else : // All Other Pages ?>
 <header class="page-header basic-header">
-    <div class="hlayer2"></div>
-    <div class="hlayer3"></div>
+    <div class="hero-layer-1"></div>
 
 <?php endif; ?>
 
@@ -40,4 +35,3 @@
 
 <main class="page-main">
     <div class="page-content">
-<!-- Begin page content -->

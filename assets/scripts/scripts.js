@@ -324,7 +324,7 @@ function openDialog(c, v) {
 				.dialog-image {
 					width: 100vw;
 					height: 100vh;
-					background-color: rgba(50,50,50,0.94);
+					background-color: rgba(30,30,30,0.94);
 					border: none;
 					opacity: 0;
                     overflow-y: scroll;
@@ -353,8 +353,11 @@ function openDialog(c, v) {
                     background: #111 url(../images/other/img-loader.svg) 50% 50% no-repeat;
                     box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
                 }
-                .dialog-content p,
-                .dialog-content h4  {
+                .dialog-content h4 {
+                    text-transform: uppercase;
+                }
+                .dialog-content h4,
+                .dialog-content p  {
                     color: #fff;
                     text-align: center;
                     margin: 8px 0;
@@ -599,7 +602,7 @@ function closeModals(c) {
 
 // Parallaxing backgrounds, use class="bg-parallax" and data-rate="10"
 (function(){
-    var par = document.getElementsByClassName("bg-parallax"), 
+    let par = document.getElementsByClassName("bg-parallax"), 
         l = par.length,
         posy = 0, 
         pr = 10;
@@ -615,7 +618,7 @@ function closeModals(c) {
 
 // Parallaxing elements, use class="div-parallax" and data-rate="10"
 (function(){
-    var par = document.getElementsByClassName("div-parallax"), 
+    let par = document.getElementsByClassName("div-parallax"), 
         l = par.length,
         posy = 0, 
         pr = 10;
@@ -634,7 +637,7 @@ function closeModals(c) {
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
 	
     for (let i = 0; i < l; i++) {
-        var inputAttrib = inputNum[i].getAttribute("type");
+        let inputAttrib = inputNum[i].getAttribute("type");
         
         // Custom charset for input[type="number"] and input[type="tel"]        
         if (inputAttrib === "number" || inputAttrib === "tel") {
@@ -651,7 +654,7 @@ function closeModals(c) {
         // Change the value of the output[for] element based on the range element
         if (inputAttrib === "range") {
             inputNum[i].oninput = function() {
-                var out = this.nextElementSibling;
+                let out = this.nextElementSibling;
                 if (out.getElementsByTagName("output") && out.getAttribute("for") == this.getAttribute("id")) {
                     out.value = this.value;          
                 }

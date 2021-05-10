@@ -3,7 +3,7 @@
 **************************/
 
 // Search modal content
-const SearchModal = () => (`
+const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
     <form method="get" role="search" action="${HrefURL}">
@@ -18,7 +18,7 @@ const SearchModal = () => (`
 `);
 
 // Contact modal content
-const ContactModal = () => (`
+const ContactModal = (`
 <h3>Contact</h3>
 <section class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
@@ -64,7 +64,7 @@ const checkField = (v) => {
 		v.classList.remove("message-error");	
 	}
 }
-	
+
 // Sanitize user input
 const sanitizeInput = (v) => {
 	if (v) {

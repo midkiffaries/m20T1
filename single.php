@@ -28,11 +28,11 @@
     </div>
 </section>
 
-<!--div>
+<section class="post-comments">
     <div>
 <?php comments_template(); ?>
     </div>
-</div-->
+</section>
 
 <?php endwhile; else: ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">

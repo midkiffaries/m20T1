@@ -26,8 +26,8 @@
         <div class="header-menu" role="navigation" aria-label="Primary">
 <?php menu_nav_list('Primary Nav', 'header'); ?>
 
-            <button class="menu-email-button" aria-label="Email me" onclick="openDialog('email', ContactModal())"></button>
-            <button class="menu-search-button" aria-label="Search this site" onclick="openDialog('search', SearchModal())"></button>
+            <button class="menu-email-button" aria-label="Email me" onclick="openDialog('email', ContactModal)"></button>
+            <button class="menu-search-button" aria-label="Search this site" onclick="openDialog('search', SearchModal)"></button>
             <button class="light-switch" aria-label="Dark mode switch"></button>
         </div>
     </div>

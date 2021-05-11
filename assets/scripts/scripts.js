@@ -28,10 +28,10 @@ document.addEventListener("keyup", (e) => {
 
 // Display Alert Modal Box -- text: displayed text | bgColor: background-color
 function AlertModal(text, bgColor) {
-    let dialog, st = document.createElement("style");
+    const dialog = document.createElement("dialog"), 
+        st = document.createElement("style");
 
     // Main dialog box
-    dialog = document.createElement("dialog");
     dialog.setAttribute("open", "open");
     dialog.setAttribute("class", "dialog-alert");
     dialog.setAttribute("role", "alertdialog");
@@ -65,9 +65,7 @@ function AlertModal(text, bgColor) {
     document.body.appendChild(dialog);
 
     // Display dialog
-    setTimeout(() => { 
-        dialog.classList.toggle("dialog-open") 
-    }, 100);
+    setTimeout(() => { dialog.classList.toggle("dialog-open") }, 100);
     setTimeout(() => { 
         dialog.classList.toggle("dialog-open"); 
         closeModals('dialog-alert') 
@@ -76,17 +74,38 @@ function AlertModal(text, bgColor) {
 
 // Display Confirmation Modal Box -- text: displayed text | action: Yes button's action/function
 function ConfirmModal(text, action) {
-    let aDialog = {
-        style: document.createElement("style"),
-        dialog: document.createElement("dialog"),
-        div: document.createElement("div"),
-        p: document.createElement("p"),
-        buttonYes: document.createElement("button"),
-        buttonNo: document.createElement("button")
-    };
+    const style = document.createElement("style"),
+        dialog = document.createElement("dialog"),
+        div = document.createElement("div"),
+        p = document.createElement("p"),
+        buttonYes = document.createElement("button"),
+        buttonNo = document.createElement("button");
 
+    // Dialog attributes
+    dialog.setAttribute("open", "open");        
+    dialog.setAttribute("class", "dialog-confirm");
+    dialog.setAttribute("role", "alertdialog");
+    dialog.appendChild(div);
+
+    // Text
+    div.appendChild(p);
+    p.appendChild(document.createTextNode(text));
+
+    // Button Yes
+    div.appendChild(buttonYes);
+    buttonYes.appendChild(document.createTextNode("Yes"));
+    buttonYes.setAttribute("onclick", "closeModals('dialog-confirm');" + action);
+    buttonYes.setAttribute("type", "button");
+    buttonYes.setAttribute("autofocus", "autofocus");
+
+    // Button No
+    div.appendChild(buttonNo);
+    buttonNo.appendChild(document.createTextNode("No"));
+    buttonNo.setAttribute("onclick", "closeModals('dialog-confirm')");
+    buttonNo.setAttribute("type", "button");
+    
     // Append style
-    aDialog.style.textContent = (`
+    style.textContent = (`
     .dialog-confirm {
         border: none;
         width: 100vw;
@@ -115,7 +134,7 @@ function ConfirmModal(text, action) {
     }
     .dialog-confirm p::before {
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M20.9 14.8q1.5-1.5 1.5-3.6 0-2.6-1.9-4.5T16 4.8q-2.6 0-4.5 1.9t-1.9 4.5h3.2q0-1.3 1-2.3 1-1 2.2-1 1.3 0 2.3 1 1 1 1 2.3 0 1.3-1 2.2l-2 2q-1.9 2.1-1.9 4.6v.8h3.2q0-2.5 1.9-4.5zm-3.3 12.4V24h-3.2v3.2zM16 0q6.6 0 11.3 4.7Q32 9.4 32 16q0 6.6-4.7 11.3Q22.6 32 16 32q-6.6 0-11.3-4.7Q0 22.6 0 16 0 9.4 4.7 4.7 9.4 0 16 0z'/%3E%3C/svg%3E");
-        padding: 0.1em 0.4em 1em 0.1em;
+        padding: 0 0.6em 1em 0;
         display: block;
         float: left;
     }
@@ -139,42 +158,17 @@ function ConfirmModal(text, action) {
         }
     }
     `);
-    aDialog.dialog.appendChild(aDialog.style);    
-
-    // Dialog attributes
-    aDialog.dialog.setAttribute("open", "open");        
-    aDialog.dialog.setAttribute("class", "dialog-confirm");
-    aDialog.dialog.setAttribute("role", "alertdialog");
-    aDialog.dialog.appendChild(aDialog.div);
-
-    // Text
-    aDialog.div.appendChild(aDialog.p);
-    aDialog.p.appendChild(document.createTextNode(text));
-
-    // Button Yes
-    aDialog.div.appendChild(aDialog.buttonYes);
-    aDialog.buttonYes.appendChild(document.createTextNode("Yes"));
-    aDialog.buttonYes.setAttribute("onclick", "closeModals('dialog-confirm');" + action);
-    aDialog.buttonYes.setAttribute("type", "button");
-    aDialog.buttonYes.setAttribute("autofocus", "autofocus");
-
-    // Button No
-    aDialog.div.appendChild(aDialog.buttonNo);
-    aDialog.buttonNo.appendChild(document.createTextNode("No"));
-    aDialog.buttonNo.setAttribute("onclick", "closeModals('dialog-confirm')");
-    aDialog.buttonNo.setAttribute("type", "button");
+    dialog.appendChild(style); 
     
     // Append to page body
-    document.body.appendChild(aDialog.dialog);
+    document.body.appendChild(dialog);
 
-    // Display Dialog
-    setTimeout(() => { 
-        aDialog.dialog.classList.toggle("dialog-open") 
-    }, 150);
+    // Display dialog with transition
+	setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
 }
 
 // Load an external JS document and display it in a modal window
-function openDialog(c, v) {
+function HtmlModal(c, v) {
 	const style = document.createElement('style'),
         dialog = document.createElement('dialog'),
         headerDiv = document.createElement('header'),

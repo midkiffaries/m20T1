@@ -6,7 +6,7 @@
 const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
-    <form method="get" role="search" action="${HrefURL}">
+    <form id="SearchForm" method="get" role="search" action="${HrefURL}">
         <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" aria-label="Submit Search">
     </form>
 </section>

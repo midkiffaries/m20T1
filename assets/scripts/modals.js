@@ -7,12 +7,20 @@ const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
     <form method="get" role="search" action="${HrefURL}">
-        <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" autofocus required><input type="submit" value="&nbsp;" aria-label="Submit Search">
+        <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" aria-label="Submit Search">
     </form>
 </section>
 <style>
 .dialog-content h3 {
     margin: 0;
+}
+.dialog-content [type="search"] {
+	width: calc(100% - 2em);
+	font-size: 1.4em;
+}
+.dialog-content [type="submit"] {
+	width: 2em;
+	font-size: 1.4em;
 }
 </style>
 `);
@@ -31,6 +39,21 @@ const ContactModal = (`
 <style>
 .dialog-content h3 {
     margin: 0;
+}
+.dialog-content label {
+	display: block;
+}
+.dialog-content [type="text"],
+.dialog-content [type="email"],
+.dialog-content textarea {
+	width: 100%;
+}
+.dialog-content textarea {
+	height: 10em;
+	max-height: 20em;
+}
+.dialog-content [type="submit"] {
+	font-size: 1.2em;
 }
 </style>
 `);

@@ -197,13 +197,17 @@ Special Functions
 .dark-mode ::selection { 
 	color: #000;
 	background-color: #ddd;
-}    
+}
 
 body.dark-mode,
-.dark-mode dialog {
+.dark-mode dialog > div {
 	color: #eee;
 	background-color: #161616;
 	font-weight: 350;
+}
+
+.dark-mode dialog {
+	background-color: rgba(30,30,30,0.9);
 }
 
 .dark-mode img {

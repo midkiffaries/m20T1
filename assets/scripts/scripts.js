@@ -350,7 +350,7 @@ function openDialog(c, v) {
 				}
                 .dialog-content img {
                     min-height: 10em;
-                    background: #111 url(../images/other/img-loader.svg) 50% 50% no-repeat;
+                    background-color: #222;
                     box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
                 }
                 .dialog-content h4 {
@@ -404,7 +404,6 @@ function openDialog(c, v) {
 					}
 				}
 				`);
-				
                 // Display Dialog
 				dialog.appendChild(headerDiv);
 				dialog.appendChild(innerDiv);
@@ -630,6 +629,62 @@ function closeModals(c) {
             par[i].style.top = `${posy}px`;
         }
     }, true);
+}());
+
+// Hamburger button and menu animation
+(function(){
+    let id = document.getElementById("btnMenu");
+    id.innerHTML = '';
+    id.appendChild(document.createElement("span"));
+    id.appendChild(document.createElement("span"));
+    id.onclick = function () {
+        // Button Animation        
+        this.classList.toggle("active");
+        // Button Action
+        document.getElementById(this.getAttribute("data-menu-id")).classList.toggle("menu-show");
+    };
+    let st = document.createElement("style");
+    st.textContent = (`
+    #btnMenu {
+        width: 2.6em;
+        height: 2.6em;
+        padding: 0.2em;
+        overflow: hidden;
+        border: 0;
+        background: none;
+    }
+    #btnMenu span {
+        display: block;
+        height: 4px;
+        width: 2.2em;
+        background: #000;
+        margin: 0.5em 0;
+        border-radius: 0.8em;
+        will-change: auto;
+    }
+    #btnMenu:hover span, #btnMenu:focus span {
+        margin: 0.7em 0 0.4em 0;
+        transition: margin 0.2s ease-in-out;
+    }
+    #btnMenu:hover span:first-of-type, #btnMenu:focus span:first-of-type {
+        margin-top: 0.3em; 
+    }
+    #btnMenu:hover span:last-of-type, #btnMenu:focus span:last-of-type {
+        margin-bottom: 0.3em; 
+    }
+    #btnMenu.active span {
+        transition: transform 0.25s ease-in-out;
+        width: 2.5em;
+        margin: -3px;
+    }
+    #btnMenu.active span:first-of-type {
+        transform: rotate(45deg);
+    }
+    #btnMenu.active span:last-of-type {
+        transform: rotate(-45deg);
+    }
+    `);
+    document.body.appendChild(st);
 }());
 
 // Improve the behavior of input types

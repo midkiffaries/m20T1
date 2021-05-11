@@ -337,7 +337,7 @@ figure {
 figure img,
 figure video,
 figure iframe {
-	width: 100%;
+	width: auto;
 }
 
 figcaption {

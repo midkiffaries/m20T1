@@ -105,7 +105,7 @@ function my_search_form($id) {
 ?>
 <section class="search-block search-<?php echo $id; ?>">
     <form method="get" role="search" action="<?php echo SITE_ADDRESS; ?>/">
-        <input type="search" name="s" id="Search-<?php echo $id; ?>" value="<?php echo get_search_query(); ?>" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" required><input type="submit" value="&nbsp;" aria-label="Submit Search">
+        <input type="search" name="s" id="Search-<?php echo $id; ?>" value="<?php echo get_search_query(); ?>" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" required><input type="submit" value="&nbsp;" aria-label="Submit Search">
     </form>
 </section>
 <?php

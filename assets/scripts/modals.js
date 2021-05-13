@@ -80,7 +80,7 @@ const Email = {
 //Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
 
 // Check field
-const checkField = (v) => {
+const checkField = v => {
 	if (!v.value) {
 		v.classList.add("message-error");
 	} else {
@@ -89,7 +89,7 @@ const checkField = (v) => {
 }
 
 // Sanitize user input
-const sanitizeInput = (v) => {
+const sanitizeInput = v => {
 	if (v) {
         return v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim();
 	} else {
@@ -98,7 +98,7 @@ const sanitizeInput = (v) => {
 }
 
 // Validate user inputed email address
-const validateEmail = (v) => {
+const validateEmail = v => {
     const mailhash = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (v.match(mailhash)) {
         return true;

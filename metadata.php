@@ -16,7 +16,6 @@
 <meta name="googlebot" content="index,follow">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo SITE_ADDRESS; ?>/feed/">
-<link rel="canonical" href="<?php the_permalink(); ?>">
 <base href="<?php echo SITE_ADDRESS; ?>/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <?php // Stylesheets ?>
@@ -62,3 +61,4 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
 <?php wp_head(); ?>
+<!--link rel="canonical" href="<?php the_permalink(); ?>"-->

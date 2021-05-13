@@ -291,6 +291,9 @@ function HtmlModal(c, v) {
                     //imgDescrip = this.firstElementChild.getAttribute("data-description"),
 					imgName = this.href.substring(this.href.lastIndexOf('/') + 1).replace(/_/g," ").replace(/-/g," ").split('.')[0];
 
+                // Change URI on image click
+                //history.pushState({},'',`${PathName}?viewImage`);
+
 				// Dialog box attributes
                 dialog.setAttribute('class', 'dialog-image');	
 				dialog.setAttribute('role', 'dialog');
@@ -344,8 +347,9 @@ function HtmlModal(c, v) {
 				}
                 .dialog-content img {
                     min-height: 10em;
-                    background-color: #222;
-                    box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
+                    box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+                    background: no-repeat center center / 5em;
+                    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 128 128'%3E%3Cg%3E%3Cpath fill='white' d='M64 10a54 54 0 00-54 54H0a64 64 0 01128 0h-10a54 54 0 00-54-54z'/%3E%3CanimateTransform attributeName='transform' dur='2s' from='0 64 64' repeatCount='indefinite' to='360 64 64' type='rotate'/%3E%3C/g%3E%3C/svg%3E");
                 }
                 .dialog-content h4 {
                     text-transform: uppercase;
@@ -478,6 +482,9 @@ function closeModals(c) {
     if (l) {
         let st = document.createElement("style");
         st.textContent = (`
+        .accordion {
+            background: transparent;
+        }
         .accordion > button {
             width: 100%;
             text-align: left;
@@ -487,6 +494,7 @@ function closeModals(c) {
             font-size: 1.2em;
             line-height: 1em;
             padding: 0.55em;
+            color: #333;
         }
         .accordion > button:hover {
             background-color: #eee;

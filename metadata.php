@@ -61,4 +61,3 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
 <?php wp_head(); ?>
-<!--link rel="canonical" href="<?php the_permalink(); ?>"-->

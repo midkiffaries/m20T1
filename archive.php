@@ -16,7 +16,7 @@ $curauth = $wp_query->get_queried_object();
 <?php /* daily archive */ } elseif (is_day()) { ?>Posts from <?php the_time('F jS, Y'); ?>
 <?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <?php the_time('F, Y'); ?>
 <?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <?php the_time('Y'); ?>
-<?php /* author archive */ } elseif (is_author()) { ?>Posts made by <?php echo $curauth->nickname; ?>
+<?php /* author archive */ } elseif (is_author()) { ?>Posts made by <?php printf($curauth->nickname); ?>
 <?php /* paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives
 <?php } ?></h2>
     </div>
@@ -40,11 +40,13 @@ $curauth = $wp_query->get_queried_object();
     <div>    
         <header class="entry-header">
             <div class="entry-catagory">Filed under <?php the_category(' '); ?></div>
-            <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-            <div class="entry-date"><a href="<?php echo get_month_link('', '', ''); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date($BlogPostTimeStamp, '',''); ?></time></a> <span class="entry-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author"><?php the_author(); ?></a></span></div>
+            <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+            <div class="entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a></div>
+            <div class="entry-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author"><?php the_author(); ?></a></div>
         </header>
         <div class="entry-content">
             <?php the_excerpt(); ?>
+            <p class="entry-last-updated"><?php printf( __( 'Last modified: <time>%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
         </div>
     </div>
 </article>

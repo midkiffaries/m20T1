@@ -16,6 +16,7 @@ Tags: m20, template
 	--base-color: #333;
 	--base-color-pale: #666;
 	--base-color-dark: #000;
+	--highlight-color: rgba(0,134,255,0.8);
 }
 
 /************************ 
@@ -375,4 +376,11 @@ Wordpress Plugin Style
 Main site styling
 ************************/
 
-
+::-moz-selection {
+    background-color: var(--highlight-color);
+    text-shadow: none;
+}
+::selection {
+    background-color: var(--highlight-color);
+    text-shadow: none;
+}

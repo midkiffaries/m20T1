@@ -40,7 +40,7 @@ endwhile; endif;
 
 <section class="blog-pagination">
     <div>
-<?php blog_list_nav(); ?>
+        <?php blog_list_nav(); ?>
     </div>
 </section>
 

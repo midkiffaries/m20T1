@@ -34,4 +34,6 @@ $args = array(
 </article>
 <?php endif; ?>
 
+<?php get_sidebar('footer'); ?>
+
 <?php get_footer(); ?>

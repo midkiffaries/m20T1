@@ -27,7 +27,10 @@
 
 <section class="blog-pagination">
     <div>
-        <div class="wp-post-nav"><?php previous_post_link('&#x276E; %link') . next_post_link('%link &#x276F;'); ?></div>
+        <div class="wp-post-nav">
+            <?php previous_post_link('&#x276E; %link'); ?> 
+            <?php next_post_link('%link &#x276F;'); ?>
+        </div>
     </div>
 </section>
 

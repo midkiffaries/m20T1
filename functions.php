@@ -195,6 +195,18 @@ function my_register_sidebars() {
             'after_title'   => '</h4>',
         )
     );
+    /* Repeat register_sidebar() code for additional sidebars. */
+    register_sidebar(
+        array(
+            'id'            => 'footer',
+            'name'          => __( 'Footer Sidebar' ),
+            'description'   => __( 'The page footer sidebar.' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h4 class="widget-title">',
+            'after_title'   => '</h4>',
+        )
+    );
 }
 
 ?>

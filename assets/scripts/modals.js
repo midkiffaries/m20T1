@@ -31,9 +31,9 @@ const ContactModal = (`
 <section class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
 		<fieldset id="contact_fieldset">
-			<p><label for="UserName">Name</label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required onfocus="checkInput()"><span class="contact_error"></span></p>
-			<p><label for="UserEmail">Email</label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required><span class="contact_error"></span></p>
-			<p><label for="UserMessage">Message</label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea><span class="contact_error"></span></p>
+			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required onfocus="checkInput()"></p>
+			<p><label for="contact_email">Email <span class="contact_error"></span></label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required></p>
+			<p><label for="contact_message">Message <span class="contact_error"></span></label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea></p>
 			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"></p>
 		</fieldset>
     </form>
@@ -75,7 +75,7 @@ const ContactModal = (`
 `);
 
 // Setup the form field variables
-/*
+
 const Email = {
 	nameID: document.getElementById("contact_name"),
 	name: () => {
@@ -90,7 +90,7 @@ const Email = {
 		return sanitizeInput(Email.messageID.value)
 	}
 }
-*/
+
 // Change the element class onfocus
 //Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
 //Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	

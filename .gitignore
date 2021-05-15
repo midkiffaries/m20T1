@@ -16,5 +16,6 @@ wp-content/plugins/hello.php
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
-_root/
-*.DS_Store
+/_root/
+/*.DS_Store
+/config.php

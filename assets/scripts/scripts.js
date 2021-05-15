@@ -288,7 +288,6 @@ function HtmlModal(c, v) {
 					headerDiv = document.createElement('header'),
 					innerDiv = document.createElement('div'),
 					imgAlt = this.firstElementChild.alt,
-                    //imgDescrip = this.firstElementChild.getAttribute("data-description"),
 					imgName = this.href.substring(this.href.lastIndexOf('/') + 1).replace(/_/g," ").replace(/-/g," ").split('.')[0];
 
                 // Change URI on image click
@@ -346,8 +345,9 @@ function HtmlModal(c, v) {
 					transition: transform 0.15s ease-in-out 0s;
 				}
                 .dialog-content img {
+                    border: 1px solid #eee;
                     min-height: 10em;
-                    box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+                    box-shadow: 0 1px 6px 1px rgba(0,0,0,0.3);
                     background: no-repeat center center / 5em;
                     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 128 128'%3E%3Cg%3E%3Cpath fill='white' d='M64 10a54 54 0 00-54 54H0a64 64 0 01128 0h-10a54 54 0 00-54-54z'/%3E%3CanimateTransform attributeName='transform' dur='2s' from='0 64 64' repeatCount='indefinite' to='360 64 64' type='rotate'/%3E%3C/g%3E%3C/svg%3E");
                 }

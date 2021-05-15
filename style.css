@@ -346,11 +346,6 @@ Wordpress Plugin Style
 	content: "\e904";
 }
 
-.trail-items li::after {
-	content: "\002F";
-	padding: 0 0.5em;
-}
-
 .trail-items li:last-of-type::after {
 	display: none;
 }
@@ -362,10 +357,6 @@ Wordpress Plugin Style
 .breadcrumbs .trail-items li::after {
 	content: "\002F";
 	padding: 0 0.4em;
-}
-
-.breadcrumbs .trail-items li:last-of-type::after {
-	content: " ";
 }
 
 .breadcrumbs .trail-browse {

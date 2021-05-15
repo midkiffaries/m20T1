@@ -30,15 +30,23 @@ const ContactModal = (`
 <h3>Contact</h3>
 <section class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
-        <p><label for="UserName">Name</label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required><span class="contact_error"></span></p>
-        <p><label for="UserEmail">Email</label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required><span class="contact_error"></span></p>
-        <p><label for="UserMessage">Message</label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea><span class="contact_error"></span></p>
-        <p><input type="submit" value="Send Email" onclick="phpSendEmail()"></p>
+		<fieldset id="contact_fieldset">
+			<p><label for="UserName">Name</label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required><span class="contact_error"></span></p>
+			<p><label for="UserEmail">Email</label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required><span class="contact_error"></span></p>
+			<p><label for="UserMessage">Message</label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea><span class="contact_error"></span></p>
+			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"></p>
+		</fieldset>
     </form>
+	<div class="contact_server"><p id="ServerMessage" class="contact_msg"></p></div>
 </section>
 <style>
 .dialog-content h3 {
     margin: 0;
+}
+.dialog-content fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
 }
 .dialog-content label {
 	display: block;
@@ -54,6 +62,14 @@ const ContactModal = (`
 }
 .dialog-content [type="submit"] {
 	font-size: 1.2em;
+}
+.dialog-content .contact_error::after {
+	opacity: 0;
+	display: inline-block;
+	margin-left: 0.3rem;
+	vertical-align: middle;
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M13.2 13.2V6h-2.4v7.2zm0 4.8v-2.4h-2.4V18zM12 0q5 0 8.5 3.5T24 12q0 5-3.5 8.5T12 24q-5 0-8.5-3.5T0 12q0-5 3.5-8.5T12 0z' fill='red'/%3E%3C/svg%3E");
+	transition: opacity 0.3s ease-in-out 0s;
 }
 </style>
 `);
@@ -75,9 +91,9 @@ const Email = {
 }
 
 // Change the element class onfocus
-//Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-//Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-//Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
+Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
 
 // Check field
 const checkField = v => {

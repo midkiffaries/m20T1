@@ -31,7 +31,7 @@ const ContactModal = (`
 <section class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
 		<fieldset id="contact_fieldset">
-			<p><label for="UserName">Name</label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required><span class="contact_error"></span></p>
+			<p><label for="UserName">Name</label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required onfocus="checkInput()"><span class="contact_error"></span></p>
 			<p><label for="UserEmail">Email</label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required><span class="contact_error"></span></p>
 			<p><label for="UserMessage">Message</label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea><span class="contact_error"></span></p>
 			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"></p>
@@ -75,6 +75,7 @@ const ContactModal = (`
 `);
 
 // Setup the form field variables
+/*
 const Email = {
 	nameID: document.getElementById("contact_name"),
 	name: () => {
@@ -89,11 +90,11 @@ const Email = {
 		return sanitizeInput(Email.messageID.value)
 	}
 }
-
+*/
 // Change the element class onfocus
-Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
+//Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+//Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+//Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
 
 // Check field
 const checkField = v => {
@@ -163,4 +164,18 @@ function phpSendEmail() {
 	xmlhttp.open("get", "mailman.php?" + v, true);
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send(null);
+}
+
+// Improve the behavior of certain input types
+function checkInput() {
+    const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
+
+	for (let i = 0; i < l; i++) {
+        let inputAttrib = inputNum[i].getAttribute("type");
+        // Custom charset for input[type="email"] and input[type="url"]
+        if (inputAttrib === "email" || inputAttrib === "url") {
+            // Accept everything but spaces
+            inputNum[i].onkeypress = () => event.charCode >= 33 && event.charCode <= 122;
+        }
+    }
 }

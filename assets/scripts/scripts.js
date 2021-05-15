@@ -689,7 +689,8 @@ function closeModals(c) {
     document.body.appendChild(st);
 }());
 
-// Improve the behavior of input types
+// Improve the behavior of certain input types
+/*
 (function(){
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
 	
@@ -726,3 +727,4 @@ function closeModals(c) {
         }
     }
 }());
+*/

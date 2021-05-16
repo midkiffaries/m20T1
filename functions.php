@@ -53,9 +53,6 @@ function detectIE() {
 // WordPress Functions
 /////////////////////////////
 
-// Wordpress Filters
-//automatic_feed_links();
-
 // Add a More link to excerpts
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 

@@ -7,10 +7,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <title><?php echo get_option('blogname'); ?> - Comments on <?php the_title(); ?></title>
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
-<meta name="generator" content="WordPress <?php echo get_bloginfo('version'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
-<?php wp_head(); ?> 
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -103,6 +103,8 @@ document.onkeypress = function esc(e) {
 	if (e.keyCode == 27) { self.close(); }
 }
 </script>
+<script src="<?php bloginfo('template_url'); ?>/assets/scripts/scripts.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/assets/scripts/modals.js"></script>
 
 </body>
 </html>

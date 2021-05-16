@@ -34,10 +34,9 @@ const ContactModal = (`
 			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required onfocus="checkInput()"></p>
 			<p><label for="contact_email">Email <span class="contact_error"></span></label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required></p>
 			<p><label for="contact_message">Message <span class="contact_error"></span></label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea></p>
-			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"></p>
+			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"> <span class="contact_server"><span id="ServerMessage" class="contact_msg"></span></span></p>
 		</fieldset>
     </form>
-	<div class="contact_server"><p id="ServerMessage" class="contact_msg"></p></div>
 </section>
 <style>
 .dialog-content h3 {

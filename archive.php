@@ -7,7 +7,7 @@ global $wp_query;
 $curauth = $wp_query->get_queried_object();
 ?>
 
-<section class="wp-archive-header type-post">
+<section class="wp-archive-header type-page">
     <div>
         <h2><?php if (have_posts()) : ?>
 <?php $post = $posts[0]; ?>

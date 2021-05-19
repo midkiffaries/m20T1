@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
 <?php include 'metadata.php'; ?>
-</head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
@@ -16,9 +12,9 @@
 
 <?php endif; ?>
 
-    <div class="header-logo">
-        <h1><a href="<?php echo SITE_ADDRESS . $_SERVER['REQUEST_URI']; ?>" rel="bookmark">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Website Logo" class="logo-image"> <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>" class="logo-text">
+    <div class="header-content">
+        <h1 class="header-logo"><a href="/" rel="bookmark">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo" class="logo-image"> <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>" class="logo-text">
         </a></h1>
         <p class="header-slogan"><?php bloginfo('description'); ?></p>
     </div>

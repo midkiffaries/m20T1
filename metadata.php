@@ -1,4 +1,7 @@
 <?php include 'config.php'; ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
@@ -61,3 +64,4 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
 <?php wp_head(); ?>
+</head>

@@ -1,4 +1,4 @@
-<aside id="sidebar-primary" class="page-sidebar sidebar-primary">
+<aside id="sidebar-primary" class="page-sidebar sidebar-primary" role="sidebar">
     <?php if ( is_active_sidebar( 'primary' ) ) : ?>
         <?php dynamic_sidebar( 'primary' ); ?>
     <?php else : ?>

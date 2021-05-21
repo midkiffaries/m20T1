@@ -5,7 +5,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<title><?php echo get_option('blogname'); ?> - Comments on <?php the_title(); ?></title>
+<title><?php printf(get_option('blogname')); ?> - Comments on <?php the_title(); ?></title>
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">

@@ -24,12 +24,12 @@ $curauth = $wp_query->get_queried_object();
 
 <?php if (is_author()) : ?>
 
-<section class="wp-author-bio type-post" rel="author" role="contentinfo" aria-label="Authors Information">
+<section class="wp-author-bio" rel="author" role="contentinfo" aria-label="Authors Information">
     <div>
         <div class="wp-block-image"><figure class="alignleft" aria-label="Authors Avatar"><?php printf(get_avatar(get_the_author_meta( 'ID' ), 64)); ?></figure></div>
-        <h3>About <?php printf($curauth->first_name); ?> <?php printf($curauth->last_name); ?></h3>
-        <p class="wp-author-bio-meta"><?php printf(number_format_i18n(get_the_author_posts())); ?> posts</p>
-        <p class="wp-author-bio-about"><?php printf($curauth->description); ?><br>Website: <a href="<?php printf($curauth->user_url); ?>" target="_blank"><?php printf($curauth->user_url); ?></a></p>
+        <h3><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>
+        <p class="wp-author-bio-meta"><b><?php printf("%s posts", number_format_i18n(get_the_author_posts())); ?></b></p>
+        <p class="wp-author-bio-about"><?php printf($curauth->description); ?><br><a href="<?php printf($curauth->user_url); ?>" target="_blank" class="icon-link"><?php printf($curauth->user_url); ?></a></p>
     </div>
 </section>
 

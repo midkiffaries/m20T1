@@ -26,10 +26,15 @@ $curauth = $wp_query->get_queried_object();
 
 <section class="wp-author-bio" rel="author" role="contentinfo" aria-label="Authors Information">
     <div>
-        <div class="wp-block-image"><figure class="alignleft" aria-label="Authors Avatar"><?php printf(get_avatar(get_the_author_meta( 'ID' ), 64)); ?></figure></div>
+        <div class="wp-block-image">
+            <figure class="alignleft" aria-label="Authors Avatar">
+                <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
+            </figure>
+        </div>
         <h3><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>
         <p class="wp-author-bio-meta"><b><?php printf("%s posts", number_format_i18n(get_the_author_posts())); ?></b></p>
-        <p class="wp-author-bio-about"><?php printf($curauth->description); ?><br><a href="<?php printf($curauth->user_url); ?>" target="_blank" class="icon-link"><?php printf($curauth->user_url); ?></a></p>
+        <p class="wp-author-bio-about"><?php printf($curauth->description); ?><br>
+        <a href="<?php printf($curauth->user_url); ?>" target="_blank" class="icon-link"><?php printf($curauth->user_url); ?></a></p>
     </div>
 </section>
 

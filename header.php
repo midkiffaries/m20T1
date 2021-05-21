@@ -2,14 +2,11 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
+<header class="page-header">
 <?php if ( is_front_page() ) : // Front Page ?>
-<header class="page-header hero-header">
-    <div class="layer-1 bg-parallax" data-rate="12"></div>
-
+    <div class="header-hero bg-parallax" data-rate="12"></div>
 <?php else : // All Other Pages ?>
-<header class="page-header basic-header">
-    <div class="basic-header-content"></div>
-
+    <div class="header-basic"></div>
 <?php endif; ?>
 
     <div class="header-content">

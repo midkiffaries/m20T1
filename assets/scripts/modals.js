@@ -31,8 +31,8 @@ const ContactModal = (`
 <section class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
 		<fieldset id="contact_fieldset">
-			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Bob Smith" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required onfocus="checkInput()"></p>
-			<p><label for="contact_email">Email <span class="contact_error"></span></label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onkeypress="emailCheck(this.id)" required></p>
+			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Your Name" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" onfocus="checkInput()" autofocus required></p>
+			<p><label for="contact_email">Email <span class="contact_error"></span></label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></p>
 			<p><label for="contact_message">Message <span class="contact_error"></span></label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea></p>
 			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"> <span class="contact_server"><span id="ServerMessage" class="contact_msg"></span></span></p>
 		</fieldset>
@@ -73,28 +73,6 @@ const ContactModal = (`
 </style>
 `);
 
-// Setup the form field variables
-
-const Email = {
-	nameID: document.getElementById("contact_name"),
-	name: () => {
-		return sanitizeInput(Email.nameID.value)
-	},
-	emailID: document.getElementById("contact_email"),
-	email: () => {
-		return sanitizeInput(Email.emailID.value)
-	},
-	messageID: document.getElementById("contact_message"),
-	message: () => {
-		return sanitizeInput(Email.messageID.value)
-	}
-}
-
-// Change the element class onfocus
-//Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-//Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-//Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
-
 // Check field
 const checkField = v => {
 	if (!v.value) {
@@ -127,6 +105,27 @@ const validateEmail = v => {
 function phpSendEmail() {
     var xmlhttp = new XMLHttpRequest(), v;
 
+	// Setup the form field variables
+	const Email = {
+		nameID: document.getElementById("contact_name"),
+		name: () => {
+			return sanitizeInput(Email.nameID.value)
+		},
+		emailID: document.getElementById("contact_email"),
+		email: () => {
+			return sanitizeInput(Email.emailID.value)
+		},
+		messageID: document.getElementById("contact_message"),
+		message: () => {
+			return sanitizeInput(Email.messageID.value)
+		}
+	}
+
+	// Change the element class onfocus
+	Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+	Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
+	Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
+
 	// Check if fields are filled in
 	checkField(Email.nameID);
 	checkField(Email.emailID);
@@ -145,11 +144,13 @@ function phpSendEmail() {
 				if (this.responseText == 1) { 
 					// Successful
 					errorMsg = "Your message has been sent. I will try and get back to you as soon as possible.";
+					console.log("Email successfully sent.");
 					document.getElementById("ServerMessage").classList.remove('contact_msg');
 					document.getElementById("contact_fieldset").disabled = true;
 				} else { 
 					// Error: Server
 					errorMsg = "Server error. There seems to be a problem sending this message.";
+					console.log("Email failed to send.");
 				}
 				// Display Server Message
 				document.getElementById("ServerMessage").textContent = errorMsg;
@@ -157,11 +158,11 @@ function phpSendEmail() {
         }
 	} else {
 		// Error: Not all fields filled in
-		document.getElementById("ServerMessage").textContent = "Oooopps, you need to fill in all the fields to send this message.";
+		document.getElementById("ServerMessage").textContent = "You need to fill in all the fields to send this message.";
 	}
 	
-	xmlhttp.open("get", "mailman.php?" + v, true);
-	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.open("get", `${PathName}mailman.php?${v}`, true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send(null);
 }
 
@@ -176,5 +177,5 @@ function checkInput() {
             // Accept everything but spaces
             inputNum[i].onkeypress = () => event.charCode >= 33 && event.charCode <= 122;
         }
-    }
+    }	
 }

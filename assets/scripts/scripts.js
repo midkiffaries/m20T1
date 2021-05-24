@@ -9,6 +9,7 @@ const HostName = window.location.host,
     OriginURL = `${window.location.protocol}//${HostName}/`,        
     PathName = window.location.pathname,
     HrefURL = `${PathName}${window.location.search}`,
+    themeURL = `${OriginURL}/WP-marchtwenty/wp-content/themes/m20T1/`,
     Locale = "en-US";
 
 // Get today's date
@@ -690,7 +691,6 @@ function closeModals(c) {
 }());
 
 // Improve the behavior of certain input types
-/*
 (function(){
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
 	
@@ -727,4 +727,3 @@ function closeModals(c) {
         }
     }
 }());
-*/

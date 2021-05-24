@@ -7,7 +7,7 @@ const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
     <form id="SearchForm" method="get" role="search" action="${OriginURL}">
-        <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" aria-label="Submit Search">
+        <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square" aria-label="Submit Search">
     </form>
 </section>
 <style>
@@ -34,8 +34,9 @@ const ContactModal = (`
 			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Your Name" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" onfocus="checkInput()" autofocus required></p>
 			<p><label for="contact_email">Email <span class="contact_error"></span></label> <input type="email" name="email" id="contact_email" placeholder="name@email.com" maxlength="100" inputmode="email" autocomplete="email" autocapitalize="none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></p>
 			<p><label for="contact_message">Message <span class="contact_error"></span></label> <textarea name="message" id="contact_message" placeholder="This is what I have to say..." required></textarea></p>
-			<p><input type="submit" value="Send Email" onclick="phpSendEmail()"> <span class="contact_server"><span id="ServerMessage" class="contact_msg"></span></span></p>
+			<p><input type="submit" value="Send Email" onclick="phpSendEmail()" class="button-basic"></p>
 		</fieldset>
+		<p id="MessageInfo" class="contact_server"><b id="ServerMessage"></b></p>
     </form>
 </section>
 <style>
@@ -69,6 +70,22 @@ const ContactModal = (`
 	vertical-align: middle;
     content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M13.2 13.2V6h-2.4v7.2zm0 4.8v-2.4h-2.4V18zM12 0q5 0 8.5 3.5T24 12q0 5-3.5 8.5T12 24q-5 0-8.5-3.5T0 12q0-5 3.5-8.5T12 0z' fill='red'/%3E%3C/svg%3E");
 	transition: opacity 0.3s ease-in-out 0s;
+}
+.dialog-content .contact_server {
+	position: absolute;
+	padding: 0;
+	transform: translate(9em,-4em);
+	width: calc(100% - 8em);
+	color: #d00;
+}
+.dialog-content .contact_success {
+	transform: translate(1em,-18em);
+	width: calc(92%);
+	color: #090;
+	text-align: center;
+	border: 2px solid #090;
+	background: #fff;
+	font-size: 1.2em;
 }
 </style>
 `);
@@ -143,25 +160,25 @@ function phpSendEmail() {
             if (this.readyState === 4 && this.status === 200) {
 				if (this.responseText == 1) { 
 					// Successful
-					errorMsg = "Your message has been sent. I will try and get back to you as soon as possible.";
 					console.log("Email successfully sent.");
-					document.getElementById("ServerMessage").classList.remove('contact_msg');
+					errorMsg = "Your message has been sent! <br />I will try and get back to you as soon as possible.";
+					document.getElementById("MessageInfo").classList.add('contact_success');
 					document.getElementById("contact_fieldset").disabled = true;
 				} else { 
 					// Error: Server
-					errorMsg = "Server error. There seems to be a problem sending this message.";
 					console.log("Email failed to send.");
+					errorMsg = "Server error. There seems to be a problem sending this message.";
 				}
 				// Display Server Message
-				document.getElementById("ServerMessage").textContent = errorMsg;
+				document.getElementById("ServerMessage").innerHTML = errorMsg;
             }
         }
 	} else {
 		// Error: Not all fields filled in
 		document.getElementById("ServerMessage").textContent = "You need to fill in all the fields to send this message.";
 	}
-	
-	xmlhttp.open("get", `${PathName}mailman.php?${v}`, true);
+
+	xmlhttp.open("get", `${themeURL}mailman.php?${v}`, true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send(null);
 }

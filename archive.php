@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<?php breadcrumb_trail(); ?>
+<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
+<?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
 <?php
 global $wp_query;
@@ -24,14 +25,14 @@ $curauth = $wp_query->get_queried_object();
 
 <?php if (is_author()) : ?>
 
-<section class="wp-author-bio" rel="author" role="contentinfo" aria-label="Authors Information">
+<section class="wp-author-bio" rel="author" role="contentinfo">
     <div>
         <div class="wp-block-image">
             <figure class="alignleft" aria-label="Authors Avatar">
                 <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
             </figure>
         </div>
-        <h3><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>
+        <h3 itemprop="author"><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>
         <p class="wp-author-bio-meta"><b><?php printf("%s posts", number_format_i18n(get_the_author_posts())); ?></b></p>
         <p class="wp-author-bio-about"><?php printf($curauth->description); ?><br>
         <a href="<?php printf($curauth->user_url); ?>" target="_blank" class="icon-link"><?php printf($curauth->user_url); ?></a></p>
@@ -45,9 +46,9 @@ $curauth = $wp_query->get_queried_object();
     <div>    
         <header class="entry-header">
             <div class="entry-catagory">Filed under <?php the_category(' '); ?></div>
-            <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-            <div class="entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></div>
-            <div class="entry-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author"><?php the_author(); ?></a></div>
+            <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+            <div class="entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time itemprop="dateModified">%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></div>
+            <div class="entry-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
         </header>
         <div class="entry-content">
             <?php the_excerpt(); ?>

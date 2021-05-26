@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<?php breadcrumb_trail(); ?>
+<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
+<?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
 <?php
 // Get the number of time this keyword comes up in search queries
@@ -26,7 +27,7 @@ endwhile; endif;
     <div>
         <header class="entry-header">
             <div class="entry-type"><?php echo get_post_type(); ?></div>
-            <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+            <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             <div class="entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></div>
             <div class="entry-author">by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>" itemprop="author"><?php the_author(); ?></a></div>
         </header>
@@ -46,7 +47,7 @@ endwhile; endif;
 <?php else : ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div>
-        <h2>Your search query came up empty 🙁 </h2>
+        <h2 class="page-title">Your search query came up empty 🙁 </h2>
         <p>If it will make you feel better, this probably happens to Google too.</p>
         <p><i>Wanna, take another shot?</i></p>
 

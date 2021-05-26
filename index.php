@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 
-<?php breadcrumb_trail(); ?>
+<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
+<?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
 <section class="blog-page-title">
-    <h2>Ramblings...</h2>
+    <h2 class="page-title" itemprop="title">Ramblings...</h2>
 </section>
 
 <?php if (have_posts()) : ?>
@@ -39,7 +40,7 @@
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
-        <h2>Not Found</h2>
+        <h2 class="entry-title">Not Found</h2>
         <p>Sorry, but you are looking for something that isn't here for some reason.</p>
 <?php my_search_form('Main'); ?>
 

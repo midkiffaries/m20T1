@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<?php breadcrumb_trail(); ?>
+<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
+<?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
 <article class="404-page page type-page status-publish" id="404-page">
     <div>

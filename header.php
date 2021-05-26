@@ -1,5 +1,6 @@
 <?php include 'metadata.php'; ?>
 
+
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 <header class="page-header">
@@ -10,10 +11,10 @@
 <?php endif; ?>
 
     <div class="header-content">
-        <h1 class="header-logo"><a href="/" rel="bookmark">
+        <h1 class="header-logo" itemprop="title"><a href="/" rel="bookmark">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo" class="logo-image"> <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>" class="logo-text">
         </a></h1>
-        <p class="header-slogan"><?php bloginfo('description'); ?></p>
+        <p class="header-slogan" itemprop="subtitle"><?php bloginfo('description'); ?></p>
     </div>
     <div class="header-navigation">
         <button class="menu-button" id="btnMenu" aria-label="Open Menu"></button>

@@ -5,9 +5,9 @@
 
 <header class="page-header">
 <?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-hero bg-parallax" data-rate="12"></div>
+    <div class="header-homepage hero-head bg-parallax" data-rate="12"></div>
 <?php else : // All Other Pages ?>
-    <div class="header-basic"></div>
+    <div class="header-page basic-head"></div>
 <?php endif; ?>
 
     <div class="header-content">

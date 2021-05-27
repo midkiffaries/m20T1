@@ -12,6 +12,9 @@
 
 <?php endwhile; endif; ?>
 
+    </div>
+</main>
+
 <?php get_sidebar('footer'); ?>
 
 <?php  get_footer(); ?>

@@ -1,13 +1,9 @@
-<!-- End page content -->
-    </div>
-</main>
 
-<!-- Page Footer -->
 <footer class="page-footer">
-<?php menu_nav_list('Primary Nav', 'footer'); ?>
+    <?php menu_nav_list('Primary Nav', 'footer'); ?>
     
-<?php menu_nav_list('Social Links', 'footer'); ?>
-        
+    <?php menu_nav_list('Social Links', 'footer'); ?>
+    
     <p class="copyright" rel="license">Copyright &copy; <abbr title="<?php echo date('Y'); ?>" aria-label="<?php echo date('Y'); ?>"><?php echo numberToRoman(date('Y')); ?></abbr> <?php bloginfo('name'); ?></p>
     <p class="footnote" rel="author">Site designed and developed by <a href="https://www.marchtwenty.com/" class="icon-bear">Ted Balmer</a>.</p>
 </footer>

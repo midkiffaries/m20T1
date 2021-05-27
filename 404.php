@@ -14,9 +14,11 @@
         </div>
         <p>It looks like this page is ghosting you... 👻</p>
         <p>Alteratively you could do a search of this site:</p>
-<?php my_search_form('404'); ?>
-        
+        <?php my_search_form('404'); ?>
     </div>
 </article>
+
+    </div>
+</main>
 
 <?php get_footer(); ?>

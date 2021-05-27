@@ -42,12 +42,17 @@
 </section>
 
 <?php endwhile; else: ?>
+
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <p>Sorry, no posts matched your criteria.</p>
     </div>
 </article>
+
 <?php endif; ?>
+
+    </div>
+</main>
 
 <?php get_sidebar('secondary'); ?>
 

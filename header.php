@@ -11,9 +11,11 @@
 <?php endif; ?>
 
     <div class="header-content">
-        <h1 class="header-logo" itemprop="title"><a href="/" rel="bookmark">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo" class="logo-image"> <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>" class="logo-text">
-        </a></h1>
+        <h1 class="header-logo" itemprop="title">
+            <a href="/" rel="bookmark">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo" class="logo-image"> <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>" class="logo-text">
+            </a>
+        </h1>
         <p class="header-slogan" itemprop="subtitle"><?php bloginfo('description'); ?></p>
     </div>
     <div class="header-navigation">

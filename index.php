@@ -49,6 +49,9 @@
 
 <?php endif; ?>
 
+    </div>
+</main>
+
 <?php get_sidebar('primary'); ?>
 
 <?php get_footer(); ?>

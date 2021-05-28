@@ -384,9 +384,14 @@ Basic Wordpress Styling
 	margin: 4px 0 -5px;
 }
 
-.page-main {
+.page-main.width-side {
 	width: calc(100vw - 16em);
 	float: left;
+}
+
+.page-main.width-full {
+	width: 100%;
+	float: none;
 }
 
 .sidebar-primary,

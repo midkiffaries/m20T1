@@ -20,8 +20,10 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php printf(SITE_ADDRESS); ?>/feed/">
 <base href="<?php printf(SITE_ADDRESS); ?>/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <?php // Stylesheets ?>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://www.youtube.com">
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">

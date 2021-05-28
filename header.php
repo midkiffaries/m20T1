@@ -29,6 +29,3 @@
         </div>
     </div>
 </header>
-
-<main class="page-main">
-    <div class="page-content">

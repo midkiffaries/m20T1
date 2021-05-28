@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<main class="page-main width-side">
+    <div class="page-content">
+
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
 <?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
@@ -11,7 +14,7 @@
             <div class="entry-catagory">Filed under <?php the_category(' '); ?></div>
             <h2 class="entry-title" itemprop="title"><?php the_title(); ?></h2>
             <div class="entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a></div>
-            <div class="entry-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
+            <div class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
             <div class="entry-comments"><?php comments_number('no comments', 'one comment', '% comments'); ?></div>
         </header>
         <div class="entry-content">

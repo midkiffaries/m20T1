@@ -13,10 +13,12 @@ Tags: m20, template
 /* Variables */
 :root {
 	/* color-scheme: light dark; */
-	--base-color: #333;
-	--base-color-pale: #666;
-	--base-color-dark: #000;
+	--base-color: #666;
+	--base-color-pale: #999;
+	--base-color-dark: #333;
 	--highlight-color: rgba(0,134,255,0.8);
+
+	--sidebar-width: 18em;
 }
 
 /************************ 
@@ -368,8 +370,9 @@ Wordpress Plugin Style
 Basic Wordpress Styling
 ************************/
 
+/* Author Bio Box */
 .wp-author-bio {
-    background-color: #ccc;
+    background-color: var(--base-color-pale);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='white' fill-opacity='0.15'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
     box-shadow: 0 1px 8px 2px rgba(0, 0, 0, 0.2) inset;
 	padding: 1px 1.4em;
@@ -384,8 +387,22 @@ Basic Wordpress Styling
 	margin: 4px 0 -5px;
 }
 
+/* Page Header */
+.page-header {
+
+}
+
+.header-logo a {
+	text-decoration: none;
+}
+
+.header-logo img {
+	vertical-align: 0;
+}
+
+/* Page Layout */
 .page-main.width-side {
-	width: calc(100vw - 16em);
+	width: calc(100vw - var(--sidebar-width));
 	float: left;
 }
 
@@ -396,8 +413,18 @@ Basic Wordpress Styling
 
 .sidebar-primary,
 .sidebar-post {
-	width: 16em;
+	width: var(--sidebar-width);
 	float: right;
+}
+
+/* Page Footer */
+.page-footer {
+
+}
+
+.homepage-last-updated,
+.page-last-updated {
+	font-size: 0.8em;
 }
 
 /************************ 

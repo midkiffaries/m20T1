@@ -9,7 +9,7 @@
     <div>
 <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
         
-        <p class="home-page-last-updated"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
+        <p class="homepage-last-updated"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </article>
 

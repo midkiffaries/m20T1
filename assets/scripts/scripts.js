@@ -362,12 +362,12 @@ function HtmlModal(c, v) {
                     margin: 8px 0;
                 }
 				.dialog-close-button {
-					position: absolute;
+					position: fixed;
 					width: 1.3em;
 					height: 1.3em;
 					padding: 1.4em;
 					right: 1em;
-					top: 0;
+					top: 0.5em;
 					border: none;
 					background: transparent no-repeat center center / 1.6em;
 					background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z' fill='white'/%3E%3C/svg%3E");
@@ -689,6 +689,81 @@ function closeModals(c) {
     `);
     document.body.appendChild(st);
 }());
+
+// Checks the postiion of the window focus
+document.addEventListener("scroll", function () {
+    const el = document.getElementById("ScrollToTop");
+	
+    if (window.pageYOffset > 500) el.classList.add("scActive");
+    else el.classList.remove("scActive");
+},true);
+
+// Creates floating scroll to top button
+(function(){
+    const st = document.createElement("div"), 
+		style = document.createElement('style');
+    st.setAttribute("id", "ScrollToTop");
+    st.setAttribute("class", "scroll-to-top-float");
+    st.setAttribute("role", "button");
+    st.setAttribute("onclick", "smoothScroll(0,100)");
+    document.body.appendChild(st);
+	
+	// Scroll to top button style
+	style.textContent = (`
+	.scroll-to-top-float {
+		position: fixed;
+		visibility: hidden;
+		opacity: 0;
+		right: 1em;
+		bottom: 1em;
+		width: 40px;
+		height: 40px;
+		border-radius: 0.2em;
+		font-size: 2em;
+		cursor: pointer;
+		transition: all 0.25s ease-in-out 0s;
+		will-change: transform;
+		background: no-repeat center center / 1em;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/%3E%3C/svg%3E");
+		background-color: rgba(0,0,0,0.3);
+	}
+	.scroll-to-top-float:hover {
+		background-color: rgba(0,0,0,0.5); 
+		transform: scale(1.1);
+	}
+	.scroll-to-top-float:active {
+		background-color: rgba(0,0,0,0.7);
+	}
+	.scroll-to-top-float.scActive {
+		visibility: visible;
+		opacity: 1;
+	}
+	@media only print {
+		.scroll-to-top-float {display: none;}
+	}
+	`);
+	document.body.appendChild(style);
+}());
+
+// Smooth scrolling to the Top of the page
+function smoothScroll(loc, duration) {
+    let el, 
+        diff, 
+        perTick;
+    
+    // Check if the client is Safari
+    if (document.body.scrollTop > 0) el = document.body; // yes
+    else el = document.documentElement; // no
+    
+    // Travel back to the top
+	if (duration < 0) return;
+	diff = loc - el.scrollTop;
+    perTick = diff / duration * 2;
+    setTimeout(() => {
+        el.scrollTop += perTick;
+        smoothScroll(loc, duration - 2);
+    }, 10);
+}
 
 // Improve the behavior of certain input types
 (function(){

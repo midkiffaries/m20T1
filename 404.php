@@ -6,7 +6,7 @@
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
 <?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
-<article class="404-page page type-page status-publish" id="404-page">
+<article class="404-page page type-page status-publish" id="page-404" name="page-404">
     <div class="wp-block-image">
         <div class="aligncenter is-resized">
             <img loading="lazy" src="<?php bloginfo('template_url'); ?>/assets/images/other/404.svg" alt="404" class="wp-404-image">

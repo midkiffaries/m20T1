@@ -4,7 +4,9 @@ $ThemeSettings = '{
     "ShortTitle":   "Short Website Name",
     "Email":        "contact@email.com",
     "BaseColor":    "#ffffff",
-    "Tagline":      "Extended tag line..."
+    "Tagline":      "Extended tag line...",
+    "Instagram":    "accountName",
+    "Twitter":      "accountName"
 }';
 
 $config = json_decode($ThemeSettings);

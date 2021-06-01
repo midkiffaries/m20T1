@@ -75,19 +75,25 @@ if (function_exists('register_sidebar')) {
 }
 
 // Blog post individual user comment styling
+
 function my_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>
-	<li <?php comment_class(); ?> id="comment-li-<?php comment_ID() ?>">
-	<div id="comment-<?php comment_ID(); ?>">
-			<div class="comment-author">
-                <?php echo get_avatar($comment, $size='48', $default='<path_to_url>'); ?><?php printf(__('%s'), get_comment_author_link()) ?> <a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" class="comment-meta"><span class="comment-date"><?php printf(__('%1$s'), get_comment_date('F j, Y')) ?></span></a> <span class="comment-reply" title="Reply to this comment"><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></span> <span class="comment-edit"><?php edit_comment_link(__(' '),'  ','') ?></span>
-			</div>
+	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+        <div class="comment-content">
+			<header class="comment-header">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <span class="comment-author"><?php printf(__('%s'), get_comment_author()); ?></span>
+                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>"><time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y')); ?></time></a></span>
+                <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), ' ', ' ' ); ?></span> 
+			</header>
 <?php if ($comment->comment_approved == '0') : ?>
-        <div class="comment-moderation"><?php _e('Your comment is awaiting moderation.') ?></div>
+        <div class="comment-moderation"><?php _e('Your comment is awaiting moderation.'); ?></div>
 <?php endif; ?>
-<?php comment_text() ?>
-	</div>
+<?php comment_text(); ?>
+            <p class="comment-edit"><?php edit_comment_link( __( 'Edit Comment', 'textdomain' ), ' ', ' ' ); ?></p>
+        </div>
+    </li>
 <?php
 }
 
@@ -115,7 +121,7 @@ function blog_post_share() {
 // Blog posts navigation
 function blog_list_nav() {
 ?>
-<div class="wp-post-nav"><?php next_posts_link('&#x276E; Older Entries', 0) . previous_posts_link('Newer Entries &#x276F;', 0); ?></div>
+<nav class="wp-post-nav"><?php next_posts_link('&#x276E; Older Entries', 0) . previous_posts_link('Newer Entries &#x276F;', 0); ?></nav>
 <?php
 }
 

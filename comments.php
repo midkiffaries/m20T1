@@ -19,7 +19,7 @@ if ( post_password_required() ) {
     </div>
 </section>
 
-<section class="blog-pagination">
+<section class="comment-pagination">
     <div>
         <div class="wp-post-nav">
             <?php previous_comments_link('&#x276E; Older Comments', 0); ?> 
@@ -65,13 +65,13 @@ else : // comments are closed
 
 <?php else : ?>
 
-		<p><label for="author">Name</label><input type="text" name="author" id="author" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" tabindex="6" placeholder="your name <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
-		<p><label for="email">Email</label><input type="email" name="email" id="email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="7" placeholder="name@example.com <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
-		<p><label for="url">Website</label><input type="url" name="url" id="url" maxlength="50" value="http://<?php echo esc_attr($comment_author_url); ?>" tabindex="8" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
+		<p><label for="author">Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="your name <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
+		<p><label for="email">Email</label><input type="email" name="email" id="email" class="comment-email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="name@example.com <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
+		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="http://<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
 
 <?php endif; ?>
-		<p><label for="comment">Comment</label><textarea id="comment" name="comment" tabindex="9" placeholder="comment <?php if ($req) echo "(required)"; ?>" required></textarea></p>
-		<p><input type="button" id="submit-comment" tabindex="10" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
+		<p><label for="comment">Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="comment <?php if ($req) echo "(required)"; ?>" required></textarea></p>
+		<p><input type="submit" id="submit-comment" class="comment-submit" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
 
 <?php do_action('comment_form', $post->ID); ?>
 

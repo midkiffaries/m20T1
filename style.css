@@ -18,7 +18,7 @@ Tags: m20, template
 	--base-color-dark: #333;
 	--highlight-color: rgba(0,134,255,0.8);
 
-	--sidebar-width: 18em;
+	--sidebar-width: 15em;
 }
 
 /************************ 
@@ -156,76 +156,10 @@ Icon Fonts
 	content: "\ea92";
 }
 
-/************************ 
-Basic site styling
-************************/
-
-.menu-email-button {
-	padding: 1em;
-	background-position: 50% 50%;
-	background-size: 1.8em;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='512'%3E%3Cpath d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/%3E%3C/svg%3E");
-}
-
-.menu-search-button {
-	padding: 1em;
-	background-position: 50% 50%;
-	background-size: 1.5em;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
-}
-
-
-/* Search Submit button */
-.search-block [type="submit"] {
-	padding: auto 1em;
-	width: 2.1em;
-	background-position: 50% 50%;
-	background-size: 1.3em;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
-}
-
-/* Figures */
-figure > a {
-	cursor: zoom-in;
-}
-
-figure > a::after {
-	opacity: 0.6;
-	pointer-events: none;
-	position: absolute;
-	transform: translate(-1.5em,0.5em);
-	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cpath d='M15.6 15.6a1.5 1.5 0 01-2.2 0l-2.6-2.7a7 7 0 112.1-2.1l2.7 2.6a1.5 1.5 0 010 2.2zM7 2a5 5 0 100 10A5 5 0 007 2zm1 8H6V8H4V6h2V4h2v2h2v2H8z' fill='white'/%3E%3C/svg%3E");
-	filter: drop-shadow(0 0 1px #111);
-}
-
 
 /************************ 
 Special Functions
 *************************/
-
-/* Parallax effect */
-.bg-parallax {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    will-change: auto;
-}
-    
-.div-parallax {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 200%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    will-change: auto;
-}
-
 
 /* Dark Mode */
 .dark-mode ::-moz-selection {
@@ -330,6 +264,8 @@ Wordpress Plugin Style
 	border: 0;
 	background: transparent;
 	text-indent: 0;
+	color: #666;
+	font-size: 0.9em;
 }
 
 .breadcrumbs .trail-browse {
@@ -346,6 +282,7 @@ Wordpress Plugin Style
 .trail-items li:first-of-type::before {
 	font-family: 'icomoon' !important;
 	content: "\e904";
+	padding-right: 2px;
 }
 
 .trail-items li:last-of-type::after {
@@ -369,6 +306,83 @@ Wordpress Plugin Style
 /************************ 
 Basic Wordpress Styling
 ************************/
+
+/* Comment Form */
+.comment-name,
+.comment-email,
+.comment-url,
+.comment-textarea {
+	width: 100%;
+}
+
+.comment-textarea {
+	height: 10em;
+}
+
+.comment-submit {
+	padding: 0.5em 2em;
+}
+
+/* Button Icons */
+.menu-email-button {
+	padding: 1em;
+	background-position: 50% 50%;
+	background-size: 1.8em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='512'%3E%3Cpath d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/%3E%3C/svg%3E");
+}
+
+.menu-search-button {
+	padding: 1em;
+	background-position: 50% 50%;
+	background-size: 1.5em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+}
+
+/* Search Submit button */
+.search-block [type="submit"] {
+	padding: auto 1em;
+	width: 2.1em;
+	background-position: 50% 50%;
+	background-size: 1.3em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+}
+
+/* Figures */
+figure > a {
+	cursor: zoom-in;
+}
+
+figure > a::after {
+	opacity: 0.6;
+	pointer-events: none;
+	position: absolute;
+	transform: translate(-1.5em,0.5em);
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cpath d='M15.6 15.6a1.5 1.5 0 01-2.2 0l-2.6-2.7a7 7 0 112.1-2.1l2.7 2.6a1.5 1.5 0 010 2.2zM7 2a5 5 0 100 10A5 5 0 007 2zm1 8H6V8H4V6h2V4h2v2h2v2H8z' fill='white'/%3E%3C/svg%3E");
+	filter: drop-shadow(0 0 1px #111);
+}
+
+/* Parallax effect */
+.bg-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    will-change: auto;
+}
+    
+.div-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    will-change: auto;
+}
 
 /* Author Bio Box */
 .wp-author-bio {
@@ -401,12 +415,17 @@ Basic Wordpress Styling
 }
 
 /* Page Layout */
-.page-main.width-side {
-	width: calc(100vw - var(--sidebar-width));
+.page-main {
+	width: 1250px;
+	margin: 0 auto;
+}
+
+.page-content.width-side {
+	width: calc(100% - var(--sidebar-width));
 	float: left;
 }
 
-.page-main.width-full {
+.page-content.width-full {
 	width: 100%;
 	float: none;
 }
@@ -415,6 +434,17 @@ Basic Wordpress Styling
 .sidebar-post {
 	width: var(--sidebar-width);
 	float: right;
+}
+
+@media (max-width: 1249px) {
+	.page-main {
+		width: 100%;
+		margin: 0;
+	}
+	.page-content {
+		float: none !important;
+		width: 100% !important;
+	}
 }
 
 /* Page Footer */

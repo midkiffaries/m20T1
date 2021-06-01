@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main class="page-main width-full">
-    <div class="page-content">
+<main class="page-main">
+    <div class="page-content width-full">
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -16,8 +16,9 @@
 <?php endwhile; endif; ?>
 
     </div>
-</main>
 
-<?php get_sidebar('footer'); ?>
+    <?php get_sidebar('footer'); ?>
+
+</main>
 
 <?php  get_footer(); ?>

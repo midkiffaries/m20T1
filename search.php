@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main class="page-main width-side">
-    <div class="page-content">
+<main class="page-main">
+    <div class="page-content width-side">
 
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
 <?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
@@ -60,8 +60,9 @@ endwhile; endif;
 <?php endif; ?>
 
     </div>
-</main>
 
-<?php get_sidebar('primary'); ?>
+    <?php get_sidebar('primary'); ?>
+
+</main>
 
 <?php get_footer(); ?>

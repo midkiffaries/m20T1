@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<main class="page-main width-side">
-    <div class="page-content">
+<main class="page-main">
+    <div class="page-content width-side">
 
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
 <?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 
 <section class="blog-page-title">
-    <h2 class="page-title" itemprop="title">Ramblings...</h2>
+    <h2 class="page-title" itemprop="title">The Blog</h2>
 </section>
 
 <?php if (have_posts()) : ?>
@@ -53,8 +53,9 @@
 <?php endif; ?>
 
     </div>
-</main>
 
-<?php get_sidebar('primary'); ?>
+    <?php get_sidebar('primary'); ?>
+
+</main>
 
 <?php get_footer(); ?>

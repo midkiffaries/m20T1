@@ -69,7 +69,7 @@ $curauth = $wp_query->get_queried_object();
 
 <article <?php post_class(); ?>>
     <div>
-        <p>
+        <h3>
 <?php else :
 
 if ( is_category() ) { // If this is a category archive
@@ -87,7 +87,7 @@ get_search_form('archive');
 
 endif;
 ?>
-        </p>
+        </h3>
     </div>
 </article>
 

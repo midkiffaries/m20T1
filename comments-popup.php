@@ -69,7 +69,7 @@ if ( post_password_required($post) ) {  // and it doesn't match the cookie
     <p><input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" placeholder="website"></p>
 <?php endif; ?>
 
-	<p><textarea name="comment" id="comment" cols="70" rows="4" tabindex="4" placeholder="comment"><?php if ($req) echo "(required)"; ?></textarea></p>
+	<p><textarea name="comment" id="comment" tabindex="4" placeholder="comment"><?php if ($req) echo "(required)"; ?></textarea></p>
 
 	<p>
 		<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>">

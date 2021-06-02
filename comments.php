@@ -11,7 +11,7 @@ if ( post_password_required() ) {
 
 <section class="comment-list" role="comments">
     <div>
-        <h2>Feedback <span><?php comments_number('No Comments', 'One Comment', '% Comments');?></span></h2>
+        <h3>Comments <small><?php comments_number('No Comments', 'One Comment', '% Comments');?></small></h3>
         <div class="wp-post-nav"><?php previous_comments_link() . " " . next_comments_link(); ?></div>
         <ol>
 <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=my_comment_style'); ?>
@@ -50,7 +50,7 @@ else : // comments are closed
 <?php if (comments_open()) : // Comment entry form ?>
 
 <section class="comment-form">
-    <h2><?php comment_form_title( 'Post a Comment', 'Post a reply to %s' ); ?></h2>
+    <h3><?php comment_form_title( 'Write a Comment', 'Post a reply to %s' ); ?></h3>
 
 <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
@@ -67,7 +67,7 @@ else : // comments are closed
 
 		<p><label for="author">Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="your name <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
 		<p><label for="email">Email</label><input type="email" name="email" id="email" class="comment-email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="name@example.com <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
-		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="http://<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
+		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
 
 <?php endif; ?>
 		<p><label for="comment">Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="comment <?php if ($req) echo "(required)"; ?>" required></textarea></p>

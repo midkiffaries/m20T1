@@ -13,7 +13,8 @@
     <div class="header-content">
         <h1 class="header-logo" itemprop="title">
             <a href="/" rel="bookmark">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo" class="logo-image"> <img src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>" class="logo-text">
+                <img class="logo-image" src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo">
+                <img class="logo-text" src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>">
             </a>
         </h1>
         <p class="header-slogan" itemprop="subtitle"><?php bloginfo('description'); ?></p>

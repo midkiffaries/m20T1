@@ -307,22 +307,6 @@ Wordpress Plugin Style
 Basic Wordpress Styling
 ************************/
 
-/* Comment Form */
-.comment-name,
-.comment-email,
-.comment-url,
-.comment-textarea {
-	width: 100%;
-}
-
-.comment-textarea {
-	height: 10em;
-}
-
-.comment-submit {
-	padding: 0.5em 2em;
-}
-
 /* Button Icons */
 .menu-email-button {
 	padding: 1em;
@@ -401,6 +385,16 @@ figure > a::after {
 	margin: 4px 0 -5px;
 }
 
+.entry-title {
+	margin: 0;
+}
+
+/* Search Page */
+.entry-type {
+	text-transform: uppercase;
+}
+
+
 /* Page Header */
 .page-header {
 
@@ -410,12 +404,33 @@ figure > a::after {
 	text-decoration: none;
 }
 
+.header-logo a:hover {
+	opacity: 0.8;
+}
+
 .header-logo img {
 	vertical-align: 0;
 }
 
-/* Page Layout */
-.page-main {
+/* Page Footer */
+.page-footer {
+	background: rgba(0,0,0,0.15);
+}
+
+.footer-notice {
+	text-align: center;
+	font-size: 0.9em;
+	background-color: rgba(0,0,0,0.05);
+	padding: 0.7em;
+}
+
+.footer-notice p {
+	margin: 0;
+}
+
+/* Main Page and Footer Layout */
+.page-main,
+.footer-content {
 	width: 1250px;
 	margin: 0 auto;
 }
@@ -437,14 +452,16 @@ figure > a::after {
 }
 
 @media (max-width: 1249px) {
-	.page-main {
+	.page-main,
+	.footer-content {
 		width: 100%;
 		margin: 0;
 	}
 }
 
 @media (max-width: 849px) {
-	.page-main {
+	.page-main,
+	.footer-content {
 		width: 100%;
 		margin: 0;
 	}
@@ -454,11 +471,29 @@ figure > a::after {
 	}
 }
 
-/* Page Footer */
-.page-footer {
-
+/* 404 Page */
+.page-404 {
+	font-size: 1.5em;
+	text-align: center;
 }
 
+/* Comment Form */
+.comment-name,
+.comment-email,
+.comment-url,
+.comment-textarea {
+	width: 100%;
+}
+
+.comment-textarea {
+	height: 10em;
+}
+
+.comment-submit {
+	padding: 0.5em 2em;
+}
+
+/* Page last updated line */
 .homepage-last-updated,
 .page-last-updated {
 	font-size: 0.8em;

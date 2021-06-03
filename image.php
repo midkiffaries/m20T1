@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main">
+<main class="page-main page-image">
     <div class="page-content width-full">
 
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>

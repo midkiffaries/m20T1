@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main">
+<main class="page-main page-blogpost">
     <div class="page-content width-side">
 
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
@@ -11,7 +11,7 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <header class="single-entry-header">
-            <div class="single-entry-catagory">Filed under <?php the_category(' '); ?></div>
+            <div class="single-entry-catagory"><?php the_category(' '); ?></div>
             <h2 class="single-entry-title" itemprop="title"><?php the_title(); ?></h2>
             <div class="single-entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a></div>
             <div class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>

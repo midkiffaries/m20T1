@@ -4,12 +4,6 @@
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 <header class="page-header">
-<?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-homepage hero-head bg-parallax" data-rate="12"></div>
-<?php else : // All Other Pages ?>
-    <div class="header-page basic-head"></div>
-<?php endif; ?>
-
     <div class="header-content">
         <h1 class="header-logo" itemprop="title">
             <a href="/" rel="bookmark">
@@ -17,8 +11,8 @@
                 <img class="logo-text" src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-text.svg" alt="<?php bloginfo('name'); ?>">
             </a>
         </h1>
-        <p class="header-slogan" itemprop="subtitle"><?php bloginfo('description'); ?></p>
     </div>
+
     <div class="header-navigation">
         <button class="menu-button" id="btnMenu" aria-label="Open Menu"></button>
         <div class="header-menu" role="navigation" aria-label="Primary">
@@ -29,4 +23,13 @@
             <button class="light-switch" aria-label="Dark mode switch"></button>
         </div>
     </div>
+
+<?php if ( is_front_page() ) : // Front Page ?>
+    <div class="header-homepage hero-head bg-parallax" data-rate="12">
+        <p class="header-slogan" itemprop="subtitle"><?php bloginfo('description'); ?></p>
+    </div>
+<?php else : // All Other Pages ?>
+    <div class="header-page basic-head"></div>
+<?php endif; ?>
+
 </header>

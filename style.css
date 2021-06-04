@@ -368,6 +368,46 @@ figure > a::after {
     will-change: auto;
 }
 
+/* Hamburger menu pull down */
+.menubar {
+	padding: 0.6em;
+	width: auto;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}    
+
+.pull-menu-left {
+	will-change: auto;
+	background-color: #eee;
+	position: absolute;
+	left: -200em;
+	padding: 1em;
+	height: 100vh;
+	width: 50vw;
+}
+
+.pull-menu-left.menu-show {
+	left: 0;
+	transition: left 0.3s ease-in-out;
+}
+
+.pull-menu-top {
+	will-change: auto;
+	background-color: rgba(255,255,255,0.95);
+	position: absolute;
+	left: 0;
+	top: -140em;
+	padding: 1em;
+	height: 100vh;
+	width: 100%;
+}
+
+.pull-menu-top.menu-show {
+	top: 5em;
+	transition: top 0.3s ease-in-out;
+}
+
 /* Author Bio Box */
 .wp-author-bio {
     background-color: var(--base-color-pale);
@@ -394,10 +434,17 @@ figure > a::after {
 	text-transform: uppercase;
 }
 
-
 /* Page Header */
 .page-header {
 
+}
+
+.header-title {
+	text-align: center;
+}
+
+.header-logo {
+	margin: 0;
 }
 
 .header-logo a {
@@ -410,6 +457,10 @@ figure > a::after {
 
 .header-logo img {
 	vertical-align: 0;
+}
+
+.header-content {
+	margin-top: -3.5em;
 }
 
 /* Page Footer */
@@ -429,6 +480,10 @@ figure > a::after {
 }
 
 /* Main Page and Footer Layout */
+.page-main {
+	min-height: 25em;
+}
+
 .page-main,
 .footer-content {
 	width: 1250px;

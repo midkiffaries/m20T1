@@ -50,7 +50,8 @@ endwhile; endif;
 <?php else : ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div>
-        <h2 class="page-title">Your search query came up empty 🙁 </h2>
+        <h2 class="page-title">Not Found</h2>
+        <p>Your search query came up empty.</p>
         <p>If it will make you feel better, this probably happens to Google too.</p>
         <p><i>Wanna, take another shot?</i></p>
 

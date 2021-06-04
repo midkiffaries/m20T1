@@ -4,7 +4,7 @@
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 <header class="page-header">
-    <div class="header-content">
+    <div class="header-title">
         <h1 class="header-logo" itemprop="title">
             <a href="/" rel="bookmark">
                 <img class="logo-image" src="<?php bloginfo('template_url'); ?>/assets/images/logo/logo-img.svg" alt="Logo">
@@ -13,11 +13,14 @@
         </h1>
     </div>
 
-    <div class="header-navigation">
-        <button class="menu-button" id="btnMenu" aria-label="Open Menu"></button>
-        <div class="header-menu" role="navigation" aria-label="Primary">
-<?php menu_nav_list('Primary Nav', 'header'); ?>
-
+    <div class="header-content">
+        <div class="header-navigation">
+            <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
+            <div class="pull-menu-top" id="MainMenu" role="navigation">
+                <?php menu_nav_list('Primary Nav', 'header'); ?>
+            </div>
+        </div>
+        <div class="header-menu">
             <button class="menu-email-button" aria-label="Email me" onclick="HtmlModal('email', ContactModal)"></button>
             <button class="menu-search-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
             <button class="light-switch" aria-label="Dark mode switch"></button>

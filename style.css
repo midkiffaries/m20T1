@@ -161,6 +161,26 @@ Icon Fonts
 Special Functions
 *************************/
 
+/* Parallax effect */
+.bg-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    will-change: auto;
+}
+    
+.div-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    will-change: auto;
+}
+
 /* Dark Mode */
 .dark-mode ::-moz-selection {
 	color: #000;
@@ -226,7 +246,6 @@ body.dark-mode,
 }
 
 /* The Light Switch */
-
 .light-switch {
 	background: #fff no-repeat 50% 50% / 2em;
 	padding: 1em;
@@ -249,6 +268,101 @@ body.dark-mode .light-switch:hover {
 	box-shadow: 0 0 5px #fff;
 }
 
+/* Hamburger menu pull down */
+.menubar {
+	padding: 0.6em;
+	width: auto;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}    
+
+.pull-menu-left {
+	will-change: auto;
+	background-color: #eee;
+	position: absolute;
+	left: -200em;
+	padding: 1em;
+	height: 100vh;
+	width: 50vw;
+}
+
+.pull-menu-left.menu-show {
+	left: 0;
+	transition: left 0.3s ease-in-out;
+}
+
+.pull-menu-top {
+	will-change: auto;
+	background-color: rgba(255,255,255,0.95);
+	position: absolute;
+	left: 0;
+	top: -140em;
+	padding: 1em;
+	height: 100vh;
+	width: 100%;
+}
+
+.pull-menu-top.menu-show {
+	top: 5em;
+	transition: top 0.3s ease-in-out;
+}
+
+/* Comments Block */
+.comments-title small {
+	font-weight: lighter;
+	margin-left: 10px;
+	font-size: 0.7em;
+}
+
+.wp-post-comments {
+	list-style: none;
+	padding: 0;
+}
+
+.wp-post-comments .comment {
+	background-color: rgba(0,0,0,0.08);
+	border-top: 2px solid #bbb;
+	padding: 8px;
+	border-radius: 0 0.5em 0.5em;
+}
+
+.wp-post-comments p {
+	margin: 3px 2px;
+}
+
+.comment-author {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.comment-metadata a {
+	text-decoration: none;
+	color: #999;
+	font-weight: bold;
+	font-size: 1.25em;
+	padding: auto 2px;
+}
+
+.comment-metadata a:hover {
+	color: #000;
+}
+
+/* Comment Form */
+.comment-name,
+.comment-email,
+.comment-url,
+.comment-textarea {
+	width: 100%;
+}
+
+.comment-textarea {
+	height: 10em;
+}
+
+.comment-submit {
+	padding: 0.5em 2em;
+}
 
 /************************ 
 Wordpress Plugin Style
@@ -307,6 +421,20 @@ Wordpress Plugin Style
 Basic Wordpress Styling
 ************************/
 
+/* Figures */
+figure > a {
+	cursor: zoom-in;
+}
+
+figure > a::after {
+	opacity: 0.6;
+	pointer-events: none;
+	position: absolute;
+	transform: translate(-1.5em,0.5em);
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cpath d='M15.6 15.6a1.5 1.5 0 01-2.2 0l-2.6-2.7a7 7 0 112.1-2.1l2.7 2.6a1.5 1.5 0 010 2.2zM7 2a5 5 0 100 10A5 5 0 007 2zm1 8H6V8H4V6h2V4h2v2h2v2H8z' fill='white'/%3E%3C/svg%3E");
+	filter: drop-shadow(0 0 1px #111);
+}
+
 /* Button Icons */
 .menu-email-button {
 	padding: 1em;
@@ -334,81 +462,7 @@ Basic Wordpress Styling
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
 }
 
-/* Figures */
-figure > a {
-	cursor: zoom-in;
-}
-
-figure > a::after {
-	opacity: 0.6;
-	pointer-events: none;
-	position: absolute;
-	transform: translate(-1.5em,0.5em);
-	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17'%3E%3Cpath d='M15.6 15.6a1.5 1.5 0 01-2.2 0l-2.6-2.7a7 7 0 112.1-2.1l2.7 2.6a1.5 1.5 0 010 2.2zM7 2a5 5 0 100 10A5 5 0 007 2zm1 8H6V8H4V6h2V4h2v2h2v2H8z' fill='white'/%3E%3C/svg%3E");
-	filter: drop-shadow(0 0 1px #111);
-}
-
-/* Parallax effect */
-.bg-parallax {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    will-change: auto;
-}
-    
-.div-parallax {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 200%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    will-change: auto;
-}
-
-/* Hamburger menu pull down */
-.menubar {
-	padding: 0.6em;
-	width: auto;
-	position: fixed;
-	top: 0;
-	z-index: 100;
-}    
-
-.pull-menu-left {
-	will-change: auto;
-	background-color: #eee;
-	position: absolute;
-	left: -200em;
-	padding: 1em;
-	height: 100vh;
-	width: 50vw;
-}
-
-.pull-menu-left.menu-show {
-	left: 0;
-	transition: left 0.3s ease-in-out;
-}
-
-.pull-menu-top {
-	will-change: auto;
-	background-color: rgba(255,255,255,0.95);
-	position: absolute;
-	left: 0;
-	top: -140em;
-	padding: 1em;
-	height: 100vh;
-	width: 100%;
-}
-
-.pull-menu-top.menu-show {
-	top: 5em;
-	transition: top 0.3s ease-in-out;
-}
-
-/* Author Bio Box */
+/* Archive author info box */
 .wp-author-bio {
     background-color: var(--base-color-pale);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='white' fill-opacity='0.15'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
@@ -434,13 +488,23 @@ figure > a::after {
 	text-transform: uppercase;
 }
 
-/* Page Header */
-.page-header {
-
+/* 404 Page */
+.page-404 {
+	font-size: 1.5em;
+	text-align: center;
 }
 
-.header-title {
-	text-align: center;
+
+/************************ 
+Main site styling
+************************/
+
+/* 
+Page Header 
+*/
+.page-header {
+	background-color: #eef;
+	min-height: 10em;
 }
 
 .header-logo {
@@ -451,19 +515,18 @@ figure > a::after {
 	text-decoration: none;
 }
 
-.header-logo a:hover {
-	opacity: 0.8;
-}
-
 .header-logo img {
 	vertical-align: 0;
 }
 
 .header-content {
 	margin-top: -3.5em;
+	text-align: right;
 }
 
-/* Page Footer */
+/* 
+Page Footer 
+*/
 .page-footer {
 	background: rgba(0,0,0,0.15);
 }
@@ -479,7 +542,9 @@ figure > a::after {
 	margin: 0;
 }
 
-/* Main Page and Footer Layout */
+/* 
+Main page body/footer layout 
+*/
 .page-main {
 	min-height: 25em;
 }
@@ -526,28 +591,6 @@ figure > a::after {
 	}
 }
 
-/* 404 Page */
-.page-404 {
-	font-size: 1.5em;
-	text-align: center;
-}
-
-/* Comment Form */
-.comment-name,
-.comment-email,
-.comment-url,
-.comment-textarea {
-	width: 100%;
-}
-
-.comment-textarea {
-	height: 10em;
-}
-
-.comment-submit {
-	padding: 0.5em 2em;
-}
-
 /* Page last updated line */
 .homepage-last-updated,
 .page-last-updated {
@@ -555,9 +598,10 @@ figure > a::after {
 }
 
 /************************ 
-Main site styling
+Custom Styling
 ************************/
 
+/* Global */
 ::-moz-selection {
     background-color: var(--highlight-color);
     text-shadow: none;
@@ -565,4 +609,9 @@ Main site styling
 ::selection {
     background-color: var(--highlight-color);
     text-shadow: none;
+}
+
+/* Single Blog Post */
+.single-entry-header {
+	text-align: center;
 }

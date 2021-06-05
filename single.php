@@ -11,11 +11,11 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <header class="single-entry-header">
-            <div class="single-entry-catagory"><?php the_category(' '); ?></div>
             <h2 class="single-entry-title" itemprop="title"><?php the_title(); ?></h2>
+            <div class="single-entry-catagory"><?php the_category(' '); ?></div>
             <div class="single-entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a></div>
             <div class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
-            <div class="single-entry-comments"><?php comments_number('no comments', 'one comment', '% comments'); ?></div>
+            <div class="single-entry-comments"><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></div>
         </header>
         <div class="single-entry-content">
             <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
@@ -38,11 +38,7 @@
     </div>
 </section>
 
-<section class="post-comments">
-    <div>
 <?php comments_template(); ?>
-    </div>
-</section>
 
 <?php endwhile; else: ?>
 

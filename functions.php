@@ -82,9 +82,9 @@ function my_comment_style($comment, $args, $depth) {
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div class="comment-content">
 			<header class="comment-header">
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <?php //echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
                 <span class="comment-author"><?php printf(__('%s'), get_comment_author()); ?></span>
-                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>"><time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y')); ?></time></a></span>
+                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y')); ?></time></span>
                 <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), ' ', ' ' ); ?></span> 
 			</header>
 <?php if ($comment->comment_approved == '0') : ?>

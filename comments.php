@@ -9,11 +9,10 @@ if ( post_password_required() ) {
 
 <?php if (have_comments()) : // If have comments ?>
 
-<section class="comment-list" role="comments">
+<section class="comment-list" role="comments" id="Comments">
     <div>
-        <h3>Comments <small><?php comments_number('No Comments', 'One Comment', '% Comments');?></small></h3>
-        <div class="wp-post-nav"><?php previous_comments_link() . " " . next_comments_link(); ?></div>
-        <ol>
+        <h3 class="comments-title">Comments <small><?php comments_number('No Comments', 'One Comment', '% Comments');?></small></h3>
+        <ol class="wp-post-comments">
 <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=my_comment_style'); ?>
         </ol>
     </div>
@@ -70,7 +69,7 @@ else : // comments are closed
 		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
 
 <?php endif; ?>
-		<p><label for="comment">Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="comment <?php if ($req) echo "(required)"; ?>" required></textarea></p>
+		<p><label for="comment">Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="Your comment..." required></textarea></p>
 		<p><input type="submit" id="submit-comment" class="comment-submit" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
 
 <?php do_action('comment_form', $post->ID); ?>

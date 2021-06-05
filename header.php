@@ -12,10 +12,9 @@
             </a>
         </h1>
     </div>
-
+    <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
     <div class="header-content">
         <div class="header-navigation">
-            <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
             <div class="pull-menu-top" id="MainMenu" role="navigation">
                 <?php menu_nav_list('Primary Nav', 'header'); ?>
             </div>

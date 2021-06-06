@@ -38,16 +38,6 @@ function numberToRoman($variable) {
 	return $result;
 }
 
-// Swap out SVG for PNG images if the user agent is Internet Explorer (>=11)
-/*
-function detectIE() {
-    if (strpos($_SERVER['HTTP_USER_AGENT'],'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'],'Trident')) { // IE >= 11
-        return 'png';
-    } else { // All other browsers
-        return 'svg';
-    }
-}
-*/
 
 /////////////////////////////
 // WordPress Functions

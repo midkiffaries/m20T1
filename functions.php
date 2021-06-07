@@ -73,8 +73,8 @@ function my_comment_style($comment, $args, $depth) {
         <div class="comment-content">
 			<header class="comment-header">
                 <?php //echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
-                <span class="comment-author"><?php printf(__('%s'), get_comment_author()); ?></span>
-                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y')); ?></time></span>
+                <span class="comment-author" rel="author"><?php printf(__('%s'), get_comment_author()); ?></span>
+                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y')); ?></time></span>
                 <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), ' ', ' ' ); ?></span> 
 			</header>
 <?php if ($comment->comment_approved == '0') : ?>
@@ -101,9 +101,9 @@ function my_search_form($id) {
 // List social sharing links for each blog post
 function blog_post_share() {
 ?>
-<ul>
-    <li class="tw-share-button" role="link" ><a href="https://twitter.com/intent/tweet?text=<?php the_permalink(); ?>" class="icon-twitter twitter-share-button" title="Twitter" target="_blank">Tweet</a></li>
-    <li class="fb-share-button" data-href="<?php the_permalink(); ?>" data-layout="button" data-size="large" role="link"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>;src=sdkpreparse" class="icon-facebook fb-xfbml-parse-ignore" title="Facebook" target="_blank">Share</a></li>
+<ul class="social-share">
+    <li class="twitter-share" role="link" ><a href="https://twitter.com/intent/tweet?text=<?php the_permalink(); ?>" class="icon-twitter twitter-share-button" title="Twitter" target="_blank">Tweet</a></li>
+    <li class="facebook-share" data-href="<?php the_permalink(); ?>" data-layout="button" data-size="large" role="link"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>;src=sdkpreparse" class="icon-facebook fb-xfbml-parse-ignore" title="Facebook" target="_blank">Share</a></li>
 </ul>
 <?php
 }

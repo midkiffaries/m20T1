@@ -19,12 +19,12 @@
         <div class="single-entry-content">
             <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
 
-            <p class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Post Updated On: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
         </div>     
         <footer class="single-entry-footer">
+            <div class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Post Updated On: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></div>
             <div class="single-entry-catagory"><?php the_category(' '); ?></div>
-            <div class="single-entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
-            <div class="single-entry-share"><?php blog_post_share(); ?></div>
+            <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
+            <div class="entry-share"><?php blog_post_share(); ?></div>
         </footer>
     </div>
 </article>

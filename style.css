@@ -379,10 +379,18 @@ figure > a::after {
 	filter: drop-shadow(0 0 1px #111);
 }
 
+figure > a:hover {
+	opacity: 0.9;
+}
+
 /* Figure and galleries */
 .wp-block-image figure > a::after {
 	position: absolute;
 	transform: translate(-1.5em,0.5em);
+}
+
+.wp-block-image figure img:not([src$=".png"]) {
+	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
 .wp-block-image figcaption {
@@ -394,6 +402,10 @@ figure > a::after {
 	position: absolute;
 	top: 0.5em;
 	right: 0.5em;
+}
+
+.wp-block-gallery figure img {
+	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
 .blocks-gallery-item__caption {
@@ -463,19 +475,13 @@ figure > a::after {
 }
 
 /* Comments Block */
-.comments-title small {
-	font-weight: lighter;
-	margin-left: 10px;
-	font-size: 0.7em;
-}
-
 .wp-post-comments {
 	list-style: none;
 	padding: 0;
 }
 
 .wp-post-comments .comment {
-	background-color: rgba(0,0,0,0.08);
+	background-color: rgba(0,0,0,0.05);
 	border-top: 2px solid #bbb;
 	padding: 8px;
 	border-radius: 0 0.5em 0.5em;
@@ -639,6 +645,7 @@ Custom Styling
 /* Single Blog Post */
 .single-entry-header {
 	text-align: center;
+	margin: 1.5em auto;
 }
 
 .single-entry-title {
@@ -692,6 +699,16 @@ Custom Styling
 .social-share li a {
 	text-decoration: none;
 	color: #fff;
+	padding: 6px 8px;
+	border-radius: 5px;
+}
+
+.social-share li a:hover {
+	filter: brightness(1.2);
+}
+
+.social-share li a:active {
+	filter: brightness(0.8);
 }
 
 .social-share li a::before {
@@ -702,12 +719,8 @@ Custom Styling
 
 .twitter-share {
 	background-color: var(--twitter-color);
-	border-radius: 5px;
-	padding: 3px 8px;
 }
 
 .facebook-share {
 	background-color: var(--facebook-color);
-	border-radius: 5px;
-	padding: 3px 8px;
 }

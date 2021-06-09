@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-simple">
+<main class="page-main page-simple page-<?php preg_replace('/\s+/', '-', the_title()); ?>">
     <div class="page-content width-full">
 
 <?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>

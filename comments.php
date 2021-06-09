@@ -22,10 +22,10 @@ if ( post_password_required() ) {
 
 <section class="comment-pagination">
     <div>
-        <div class="wp-post-nav">
+        <nav class="wp-post-nav">
             <?php previous_comments_link('&#x276E; Older Comments', 0); ?> 
             <?php next_comments_link('Newer Comments &#x276F;', 0); ?>
-        </div>
+        </nav>
     </div>
 </section>
 

@@ -26,6 +26,11 @@ function cleanUserInput($input) {
     return htmlspecialchars(strip_tags($input));
 }
 
+// Convert a string title into a slug
+function titleSlug($title) {
+    return cleanUserInput(preg_replace('/\s+/', '-', $title));
+}
+
 // Converts a number into roman numerals
 function numberToRoman($variable) {
 	$n = intval($variable);
@@ -48,7 +53,7 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 // Custom excerpt more
 function new_excerpt_more() {
-	return '... <br><a href="' . get_permalink( get_the_ID() ) . '" class="wp-read-more">Continue Reading</a>';
+	return '... <a href="' . get_permalink( get_the_ID() ) . '" class="wp-read-more">Continue Reading</a>';
 }
 
 // Setup sidebar widgets
@@ -105,13 +110,6 @@ function blog_post_share() {
     <li role="link"><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="icon-twitter twitter-share" title="Twitter" target="_blank">Tweet</a></li>
     <li role="link"><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="icon-facebook facebook-share" title="Facebook" target="_blank">Share</a></li>
 </ul>
-<?php
-}
-
-// Blog posts navigation
-function blog_list_nav() {
-?>
-<nav class="wp-post-nav"><?php next_posts_link('&#x276E; Older Entries', 0) . previous_posts_link('Newer Entries &#x276F;', 0); ?></nav>
 <?php
 }
 

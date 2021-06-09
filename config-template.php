@@ -6,7 +6,8 @@ $ThemeSettings = '{
     "BaseColor":    "#ffffff",
     "Tagline":      "Extended tag line...",
     "Instagram":    "accountName",
-    "Twitter":      "accountName"
+    "Twitter":      "accountName",
+    "GoogleFonts":  "<link rel=\"stylesheet\" href=\" \">"
 }';
 
 $config = json_decode($ThemeSettings);

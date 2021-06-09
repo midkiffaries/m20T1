@@ -37,7 +37,10 @@
 
 <section class="blog-pagination">
     <div>
-        <?php blog_list_nav(); ?>
+        <nav class="wp-post-nav">
+            <?php next_posts_link('&#x276E; Older Entries', 0); ?>
+            <?php previous_posts_link('Newer Entries &#x276F;', 0); ?>
+        </nav>
     </div>
 </section>
 

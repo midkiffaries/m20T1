@@ -13,14 +13,18 @@ Tags: m20, template
 /* Variables */
 :root {
 	/* color-scheme: light dark; */
-	--base-color: #666;
-	--base-color-pale: #999;
-	--base-color-dark: #333;
+	--base-color: rgba(60,60,60,0.6);;
+	--base-color-pale: rgba(90,90,90,0.5);
+	--base-color-dark: rgba(30,30,30,0.8);
 	--highlight-color: rgba(0,134,255,0.8);
 
 	--sidebar-width: 15em;
 	--twitter-color: #1da1f2;
 	--facebook-color: #3b5998;
+}
+
+:focus {
+	border-color: var(--highlight-color);
 }
 
 /************************ 
@@ -468,6 +472,10 @@ figure > a:hover {
 	text-transform: uppercase;
 }
 
+.search-main [type='search'] {
+	width: calc(100% - 5em);
+}
+
 /* 404 Page */
 .page-404 {
 	font-size: 1.5em;
@@ -553,18 +561,34 @@ Main site layout
 
 /* Page Footer */
 .page-footer {
+	margin-top: 2em;
 	background: rgba(0,0,0,0.15);
+}
+
+.footer-content {
+	padding: 0.8em;
+	text-align: center;
+}
+
+.links-footer ul li {
+	display: inline-block;
+	margin: auto 3px;
 }
 
 .footer-notice {
 	text-align: center;
 	font-size: 0.9em;
 	background-color: rgba(0,0,0,0.05);
-	padding: 0.7em;
+	padding: 1em;
 }
 
 .footer-notice p {
 	margin: 0;
+}
+
+.footer-notice .icon-bear::before {
+	padding-right: 2px;
+	vertical-align: -2px;
 }
 
 /* Main page body/footer layout */
@@ -625,6 +649,19 @@ Main site layout
 /* Pagination links */
 .blog-pagination {
 	text-align: center;
+	margin: 1.1em;
+}
+
+.blog-pagination a {
+	text-decoration: none;
+	font-size: 1.1em;
+	margin: auto 0.5em;
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+
+.blog-pagination a:hover {
+	background: var(--base-color-pale);
 }
 
 /************************ 

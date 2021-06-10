@@ -23,9 +23,21 @@ Tags: m20, template
 	--facebook-color: #3b5998;
 }
 
+/* Global */
+::-moz-selection {
+    background-color: var(--highlight-color);
+    text-shadow: none;
+}
+
+::selection {
+    background-color: var(--highlight-color);
+    text-shadow: none;
+}
+
 :focus {
 	border-color: var(--highlight-color);
 }
+
 
 /************************ 
 Load External Fonts
@@ -143,21 +155,21 @@ Icon Fonts
 	content: "\e90f";
 }
 
-.page-footer a[href^="https://www.facebook.com/"]:before {
+.footer-social ul a[href^="https://www.facebook.com/"]:before {
 	font-family: 'icomoon' !important;
 	content: "\e90b";
 }
 
-.page-footer a[href^="https://twitter.com/"]:before {
+.footer-social ul a[href^="https://twitter.com/"]:before {
 	font-family: 'icomoon' !important;
 	content: "\e906";
 }
 
-.page-footer a[href^="https://www.linkedin.com/"]:before {
+.footer-social ul a[href^="https://www.linkedin.com/"]:before {
 	font-family: 'icomoon' !important;
 	content: "\e905";
 }
-.page-footer a[href^="https://instagram.com/"]:before {
+.footer-social ul a[href^="https://instagram.com/"]:before {
 	font-family: 'icomoon' !important;
 	content: "\ea92";
 }
@@ -187,7 +199,7 @@ Special Functions
     will-change: auto;
 }
 
-/* Dark Mode */
+/* Dark Mode and button */
 .dark-mode ::-moz-selection {
 	color: #000;
 	background-color: #ddd;
@@ -274,44 +286,42 @@ body.dark-mode .light-switch:hover {
 	box-shadow: 0 0 5px #fff;
 }
 
-/* Hamburger menu pull down */
-.menubar {
-	padding: 0.6em;
-	width: auto;
-	position: fixed;
-	top: 0;
-	z-index: 100;
-}    
-
-.pull-menu-left {
-	will-change: auto;
-	background-color: #eee;
-	position: absolute;
-	left: -200em;
-	padding: 1em;
-	height: 100vh;
-	width: 50vw;
-}
-
-.pull-menu-left.menu-show {
-	left: 0;
-	transition: left 0.3s ease-in-out;
-}
-
-.pull-menu-top {
-	will-change: auto;
-	background-color: rgba(255,255,255,0.95);
-	position: absolute;
-	left: 0;
-	top: -140em;
-	padding: 1em;
-	height: 100vh;
-	width: 100%;
-}
-
-.pull-menu-top.menu-show {
-	top: 5em;
-	transition: top 0.3s ease-in-out;
+/* Hamburger menu pull down on narrow screens */
+@media (max-width: 849px) {
+	.menubar {
+		padding: 0.6em;
+		width: auto;
+		position: fixed;
+		top: 0;
+		z-index: 100;
+	}
+	.pull-menu-left {
+		will-change: auto;
+		background-color: rgba(255,255,255,0.95);
+		position: fixed;
+		left: -200em;
+		padding: 1em;
+		width: 100vw;
+		height: 100vh;
+	}
+	.pull-menu-left.menu-show {
+		left: 0;
+		transition: left 0.3s ease-in-out;
+	}
+	.pull-menu-top {
+		will-change: auto;
+		background-color: rgba(255,255,255,0.95);
+		position: absolute;
+		left: 0;
+		top: -140em;
+		padding: 1em;
+		height: 100vh;
+		width: 100%;
+	}
+	.pull-menu-top.menu-show {
+		top: 3em;
+		transition: top 0.3s ease-in-out;
+	}
 }
 
 
@@ -555,9 +565,40 @@ Main site layout
 }
 
 .header-content {
-	margin-top: -3.5em;
-	text-align: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
+
+.header-menu {
+	display: inline-block;
+}
+
+.header-navigation {
+	display: inline-block;
+}
+
+.header-navigation ul li {
+	display: inline-block;
+}
+
+.page-header .menu-button {
+	display: none;
+}
+
+@media (max-width: 849px) {
+	.page-header .menu-button {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 200;
+	}
+	.header-content {
+		position: relative;
+	}
+}
+
 
 /* Page Footer */
 .page-footer {
@@ -570,7 +611,13 @@ Main site layout
 	text-align: center;
 }
 
-.links-footer ul li {
+.footer-navigation ul li,
+.footer-social ul li {
+	display: inline-block;
+	margin: auto 3px;
+}
+
+.footer-social ul li {
 	display: inline-block;
 	margin: auto 3px;
 }
@@ -605,11 +652,13 @@ Main site layout
 .page-content.width-side {
 	width: calc(100% - var(--sidebar-width));
 	float: left;
+	padding: 0.5em;
 }
 
 .page-content.width-full {
 	width: 100%;
 	float: none;
+	padding: 0.5em;
 }
 
 .sidebar-primary,
@@ -649,7 +698,7 @@ Main site layout
 /* Pagination links */
 .blog-pagination {
 	text-align: center;
-	margin: 1.1em;
+	padding: 1.5em 0 0 0;
 }
 
 .blog-pagination a {
@@ -667,17 +716,6 @@ Main site layout
 /************************ 
 Custom Styling
 ************************/
-
-/* Global */
-::-moz-selection {
-    background-color: var(--highlight-color);
-    text-shadow: none;
-}
-
-::selection {
-    background-color: var(--highlight-color);
-    text-shadow: none;
-}
 
 /* Single Blog Post */
 .single-entry-header {

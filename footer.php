@@ -1,9 +1,9 @@
 
 <footer class="page-footer">
     <div class="footer-content">
-        <?php menu_nav_list('Primary Nav', 'footer'); ?>
+        <?php menu_nav_list('Primary Nav', 'footer-navigation'); ?>
     
-        <?php menu_nav_list('Social Links', 'footer'); ?>
+        <?php menu_nav_list('Social Links', 'footer-social'); ?>
     </div>
     <div class="footer-notice">
         <p class="copyright" rel="license">Copyright &copy; <abbr title="<?php echo date('Y'); ?>" aria-label="<?php echo date('Y'); ?>"><?php echo numberToRoman(date('Y')); ?></abbr> <?php bloginfo('name'); ?></p>

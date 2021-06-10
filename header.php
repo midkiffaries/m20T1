@@ -14,15 +14,15 @@
     </div>
     <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
     <div class="header-content">
-        <div class="header-navigation">
-            <div class="pull-menu-top" id="MainMenu" role="navigation">
+        <div id="MainMenu" class="pull-menu-left menubar">
+            <div class="header-navigation" role="navigation">
                 <?php menu_nav_list('Primary Nav', 'header'); ?>
             </div>
-        </div>
-        <div class="header-menu">
-            <button class="menu-email square-button" aria-label="Email me" onclick="HtmlModal('email', ContactModal)"></button>
-            <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
-            <button class="light-switch" aria-label="Dark mode switch"></button>
+            <div class="header-menu">
+                <button class="menu-email square-button" aria-label="Email me" onclick="HtmlModal('email', ContactModal)"></button>
+                <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
+                <button class="light-switch" aria-label="Dark mode switch"></button>
+            </div>
         </div>
     </div>
 

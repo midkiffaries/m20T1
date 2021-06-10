@@ -113,38 +113,16 @@ function blog_post_share() {
 <?php
 }
 
-// Settings to generate a Tag cloud
-function tag_cloud() {
-    $tagArgs = array(
-        'smallest'                  => 1, 
-        'largest'                   => 1,
-        'unit'                      => 'em', 
-        'number'                    => 20,  
-        'format'                    => 'flat',
-        'separator'                 => "\n",
-        'orderby'                   => 'name', 
-        'order'                     => 'ASC',
-        'exclude'                   => null, 
-        'include'                   => null, 
-        'topic_count_text_callback' => default_topic_count_text,
-        'link'                      => 'view', 
-        'taxonomy'                  => 'post_tag', 
-        'echo'                      => true,
-        'child_of'                  => null,
-    );
-    wp_tag_cloud($tagArgs);
-}
-
 // Display the list of menu/navigation links
 function menu_nav_list($menu, $id) {
     $menuStyle = array(
         //'theme_location'  => '',
         'menu'            => $menu,
         'container'       => 'nav',
-        'container_class' => 'links-' . $id,
-        //'container_id'    => '',
-        'menu_class'      => 'menu',
-        //'menu_id'         => '',
+        'container_class' => $id,
+        'container_id'    => $id,
+        'menu_class'      => $id,
+        'menu_id'         => $id,
         'echo'            => true,
         'fallback_cb'     => 'wp_page_menu',
         'before'          => '',

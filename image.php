@@ -12,18 +12,20 @@
         <h2 class="image-title" itemprop="title"><?php the_title(); ?></h2>
         <a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Tap to view full size"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0 ); ?></a>
         <p class="image-description" role="contentinfo"><?php the_content(); ?></p>
-        <p class="image-date" itemprop="datePublished">Uploaded on <time><?php the_date(); ?></time></p>
-        <p class="image-author" itemprop="author" rel="author">Uploaded by <?php the_author(); ?></p>
+        <p class="image-info">
+            <span class="image-date" itemprop="datePublished">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
+            <span class="image-author" itemprop="author" rel="author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+        </p>
     </div>
 </article>
 <?php endwhile; ?>  
 
-<section class="image-pagination">
+<section class="blog-pagination">
     <div>
-        <ul class="wp-image-nav">
-            <li><span>Previous Image</span> <?php previous_image_link('thumbnail'); ?></li>
-            <li><?php next_image_link('thumbnail'); ?> <span>Next Image</span></li>
-        </ul>
+        <nav class="wp-post-nav">
+            <?php previous_image_link(array(48, 48), '&#x276E; Previous Image'); ?>
+            <?php next_image_link(array(48, 48), 'Next Image &#x276F;'); ?>
+        </nav>
     </div>
 </section>
 

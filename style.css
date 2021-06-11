@@ -13,7 +13,7 @@ Tags: m20, template
 /* Variables */
 :root {
 	/* color-scheme: light dark; */
-	--base-color: rgba(60,60,60,0.6);;
+	--base-color: rgba(60,60,60,0.6);
 	--base-color-pale: rgba(90,90,90,0.5);
 	--base-color-dark: rgba(30,30,30,0.8);
 	--highlight-color: rgba(0,134,255,0.8);
@@ -36,6 +36,12 @@ Tags: m20, template
 
 :focus {
 	border-color: var(--highlight-color);
+}
+
+input,
+textarea,
+[contenteditable] {
+	caret-color: var(--highlight-color);
 }
 
 
@@ -492,6 +498,22 @@ figure > a:hover {
 	text-align: center;
 }
 
+/* Image Page */
+.page-image .attachment {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.page-image .image-info {
+	opacity: 0.7;
+}
+
+.page-image .attachment img {
+	background-color: rgba(0,0,0,0.14);
+	border: 1px solid #fff;
+	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
+}
+
 /* Comments Block */
 .wp-post-comments {
 	list-style: none;
@@ -566,8 +588,8 @@ Main site layout
 
 .header-content {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 1em;
+	right: 1em;
 }
 
 .header-menu {
@@ -710,7 +732,7 @@ Main site layout
 }
 
 .blog-pagination a:hover {
-	background: var(--base-color-pale);
+	background-color: var(--base-color-pale);
 }
 
 /************************ 

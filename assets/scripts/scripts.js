@@ -176,13 +176,13 @@ function HtmlModal(c, v) {
 		innerDiv = document.createElement('div');
 
 	// Dialog frame
-	dialog.setAttribute('class', `dialog-html ${c}`);
+	dialog.setAttribute('class', `dialog-html dialog-${c}`);
 	dialog.setAttribute('role', 'dialog');
 	dialog.setAttribute('open', 'open');
 
 	// Dialog close button
 	headerDiv.setAttribute('class', 'dialog-header');
-	headerDiv.innerHTML = `<button class="dialog-close-button" onclick="closeModals('${c}')" aria-label="Close this modal"></button>`;
+	headerDiv.innerHTML = `<button class="dialog-close-button" onclick="closeModals('dialog-${c}')" aria-label="Close this modal"></button>`;
 
 	// Dialog body
 	innerDiv.setAttribute('class', 'dialog-content');
@@ -190,7 +190,7 @@ function HtmlModal(c, v) {
 
 	// Dialog style
 	style.textContent = (`
-	.disable-scroll {	
+	.disable-scroll {
 		overflow: hidden;
 		height: auto;
 	}
@@ -198,10 +198,12 @@ function HtmlModal(c, v) {
 		width: 100vw;
 		height: 100vh;
 		overflow: hidden;
-		background-color: rgba(240,240,240,0.8);
+		background-color: rgba(240,240,240,0.85);
 		border: none;
 		opacity: 0;
 		transition: opacity 0.15s ease-in-out 0s;
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
 	}
 	.dialog-header {
 		max-width: 70vw;
@@ -212,7 +214,7 @@ function HtmlModal(c, v) {
 	}
 	.dialog-content {
 		max-width: 70vw;
-		min-height: 16em;
+		min-height: 9em;
 		max-height: calc(85vh - 15vh);
 		margin: 1vh auto 0 auto;
 		padding: 1em;

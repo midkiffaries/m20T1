@@ -411,7 +411,7 @@ figure > a:hover {
 }
 
 .wp-block-image figure img:not([src$=".png"]) {
-	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
+	box-shadow: 0 8px 8px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
 .wp-block-image figcaption {
@@ -426,7 +426,7 @@ figure > a:hover {
 }
 
 .wp-block-gallery figure img {
-	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
+	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
 .blocks-gallery-item__caption {
@@ -444,7 +444,7 @@ figure > a:hover {
 	padding: 1em;
 	margin: 0 1px;
 	border: 0;
-	background-color: transparent;
+	background-color: transparent !important;
 	background-position: 50% 50%;
 	background-size: 1.8em;
 	background-repeat: no-repeat;
@@ -469,7 +469,12 @@ figure > a:hover {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
 }
 
-/* Archive author info box */
+/* Archive Page */
+.archive-header .page-title span {
+	font-size: 0.7em;
+	color: #777;
+}
+
 .wp-author-bio {
     background-color: var(--base-color-pale);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='white' fill-opacity='0.15'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
@@ -484,10 +489,6 @@ figure > a:hover {
 
 .wp-author-bio h3 {
 	margin: 4px 0 -5px;
-}
-
-.entry-title {
-	margin: 0;
 }
 
 /* Search Page */
@@ -586,12 +587,12 @@ Main site layout
 /* Page Header */
 .page-header {
 	background-color: #eef;
-	min-height: 10em;
+	min-height: 6em;
 }
 
 .header-logo {
 	margin: 0;
-	padding: 0.2em 0 0 1em;
+	padding: 0.2em 0 0 0.5em;
 }
 
 .header-logo a {
@@ -786,6 +787,12 @@ Main site layout
 Custom Styling
 ************************/
 
+/* Blog Post */
+.page-content .post {
+	margin: 0.5em auto !important;
+	padding: 0.7em 0.2em;
+}
+
 /* Single Blog Post */
 .single-entry-header {
 	text-align: center;
@@ -796,10 +803,26 @@ Custom Styling
 	margin: 0;
 }
 
+/* Blog Post Attributes */
+.page-blog .post {
+	border-top: 1px solid #ccc;
+	background: linear-gradient(0deg, rgba(255,255,255,0) 92%, rgba(0,0,0,0.04) 97%, rgba(0,0,0,0.1) 100%);
+	padding: 0.7em;
+}
+
 .entry-catagory a {
 	text-transform: uppercase;
-	padding: 2px;
+	padding: 1px 2px;
 	text-decoration: none;
+}
+
+.entry-title {
+	margin: 0.1em 0 0.3em;
+}
+
+.entry-last-updated {
+	opacity: 0.8;
+	font-size: 0.9em;
 }
 
 .entry-tags {
@@ -819,7 +842,7 @@ Custom Styling
 
 .entry-tags ul li a {
 	color: #555;
-	background-color: #ddd;
+	background-color: rgba(0,0,0,0.2);
 	padding: 3px 5px;
 	text-decoration: none;
 	border-radius: 1px 6px 6px 1px;

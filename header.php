@@ -27,11 +27,10 @@
     </div>
 
 <?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-homepage hero-head bg-parallax" data-rate="12">
+    <div class="header-homepage bg-parallax" data-rate="12">
         <p class="header-slogan" itemprop="subtitle"><?php bloginfo('description'); ?></p>
     </div>
 <?php else : // All Other Pages ?>
-    <div class="header-page basic-head"></div>
+    <div class="header-short bg-parallax" data-rate="12"></div>
 <?php endif; ?>
-
 </header>

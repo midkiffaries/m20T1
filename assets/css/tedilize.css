@@ -3,11 +3,6 @@
 Tedilize 2.0 - Normalization and Base Styling 
 *********************************************/
 
-:root {
-	-moz-tab-size: 4;
-	tab-size: 4;
-}
-
 *,
 *::before,
 *::after {
@@ -28,6 +23,9 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
 	touch-action: manipulation;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	tab-size: 4;
 	font-family:
 		system-ui,
 		-apple-system,
@@ -50,7 +48,6 @@ body {
 	font-size: 1rem;
 	margin: 0;
 	min-height: 100%;
-	line-height: 1.5;
 }
 
 main {
@@ -378,15 +375,11 @@ a:not([href]),
 	text-decoration: none;
 }
 
-/* Details Element */
+/* Details/Summary Element */
 
 summary {
 	cursor: pointer;
 	display: list-item;
-}
-
-details {
-	display: block;
 }
 
 /* Dialog Element */

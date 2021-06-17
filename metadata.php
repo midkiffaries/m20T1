@@ -1,8 +1,8 @@
 <?php include 'config.php'; ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo('charset'); ?>">
+<meta charset="<?php bloginfo('charset'); ?>" >
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -62,8 +62,8 @@
     } else {
         printf("%s - %s", bloginfo('description'), $config->Tagline);
     } ?>">
+<?php wp_head(); ?>
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
-<?php wp_head(); ?>
 </head>

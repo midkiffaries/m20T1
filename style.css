@@ -82,101 +82,103 @@ Icon Fonts
 	line-height: 1;
 }
 
-.icon-unsplash:before {
+.icon-unsplash::before {
 	content: "\e900";
 }
-.icon-google-photos:before {
+.icon-google-photos::before {
 	content: "\e901";
 }
-.icon-bear:before {
+.icon-bear::before {
 	content: "\e902";
 }
-.icon-email:before {
+.icon-email::before {
 	content: "\e903";
 }
-.icon-home:before {
+.icon-home::before {
 	content: "\e904";
 }
-.icon-phone:before {
+.icon-phone::before {
 	content: "\e942";
 }
-.icon-comment:before {
+.icon-comment::before {
 	content: "\e96b";
 }
-.icon-thingiverse:before {
+.icon-thingiverse::before {
 	content: "\e9a2";
 }
-.icon-instagram:before {
+.icon-instagram::before {
 	content: "\ea92";
 }
-.icon-youtube:before {
+.icon-youtube::before {
 	content: "\ea9d";
 }
-.icon-vimeo:before {
+.icon-vimeo::before {
 	content: "\eaa1";
 }
-.icon-deviantart:before {
+.icon-deviantart::before {
 	content: "\eaaa";
 }
-.icon-steam:before {
+.icon-steam::before {
 	content: "\eaad";
 }
-.icon-github:before {
+.icon-github::before {
 	content: "\eab0";
 }
-.icon-codepen:before {
+.icon-codepen::before {
 	content: "\eae8";
 }
-.icon-linkedin:before {
+.icon-linkedin::before {
 	content: "\e905";
 }
-.icon-twitter:before {
+.icon-twitter::before {
 	content: "\e906";
 }
-.icon-file:before {
+.icon-file::before {
 	content: "\e907";
 }
-.icon-link:after {
+.icon-link::after {
 	content: "\e908";
 }
-.icon-date:before {
+.icon-date::before {
 	content: "\e909";
 }
-.icon-map:before {
+.icon-map::before {
 	content: "\e90a";
 }
-.icon-facebook:before {
+.icon-facebook::before {
 	content: "\e90b";
 }
-.icon-arrow-up:before {
+.icon-arrow-up::before {
 	content: "\e90c";
 }
-.icon-arrow-left:before {
+.icon-arrow-left::before {
 	content: "\e90d";
 }
-.icon-arrow-right:before {
+.icon-arrow-right::before {
 	content: "\e90e";
 }
-.icon-arrow-down:before {
+.icon-arrow-down::before {
 	content: "\e90f";
 }
 
-.footer-social ul a[href^="https://www.facebook.com/"]:before {
+.footer-social ul a::before {
 	font-family: 'icomoon' !important;
+	padding: 2px;
+}
+
+.footer-social ul a[href*="facebook.com"]::before {
 	content: "\e90b";
 }
 
-.footer-social ul a[href^="https://twitter.com/"]:before {
-	font-family: 'icomoon' !important;
+.footer-social ul a[href*="twitter.com"]::before {
 	content: "\e906";
 }
 
-.footer-social ul a[href^="https://www.linkedin.com/"]:before {
-	font-family: 'icomoon' !important;
+.footer-social ul a[href*="linkedin.com"]::before {
 	content: "\e905";
 }
-.footer-social ul a[href^="https://instagram.com/"]:before {
-	font-family: 'icomoon' !important;
+
+.footer-social ul a[href*="instagram.com"]::before {
 	content: "\ea92";
 }
 
@@ -579,22 +581,15 @@ Main site layout
 ************************/
 
 /* Page Header */
-.page-header {
-	
-}
-
-.page-header .header-hero {
-
-}
-
-.page-header .header-short {
-	height: 9em;
-	background: #eee;
+.header-menubar {
+	position: absolute;
+	width: 100%;
+	top: 0;
 }
 
 .header-logo {
 	margin: 0;
-	padding: 0.2em 0 0 0.5em;
+	padding: 0.3em 0 0 0.5em;
 }
 
 .header-logo a {
@@ -602,11 +597,11 @@ Main site layout
 }
 
 .header-logo img {
-	vertical-align: 0;
+	vertical-align: middle;
 }
 
-.header-slogan {
-	text-align: center;
+.header-logo .logo-image {
+	margin-top: -8px;
 }
 
 .header-content {
@@ -646,7 +641,23 @@ Main site layout
 	margin: 0.8em 0.8em;
 }
 
+.header-short {
+	height: 10em;
+	background: #eee;
+}
+
+.header-homepage {
+	height: 4em;
+}
+
 @media (max-width: 849px) {
+	.header-menubar {
+		position: fixed;
+		background-color: rgba(255,255,255,0.98);
+		border-bottom: 1px solid #eee;
+		z-index: 1000;
+		height: 4.6em;
+	}
 	.page-header .menu-button {
 		display: block;
 		position: absolute;
@@ -656,6 +667,9 @@ Main site layout
 	}
 	.header-logo {
 		padding: 0.3em;
+	}
+	.header-logo img {
+		height: 1em;
 	}
 	.header-content {
 		position: relative;
@@ -693,6 +707,13 @@ Main site layout
 .footer-social ul li {
 	display: inline-block;
 	margin: auto 3px;
+}
+
+.footer-slogan {
+	text-align: center;
+	font-size: 0.9em;
+	font-style: italic;
+	opacity: 0.8;
 }
 
 .footer-notice {
@@ -809,7 +830,7 @@ Custom Styling
 /* Blog Post Attributes */
 .page-blog .post {
 	border-top: 1px solid #ccc;
-	background: linear-gradient(0deg, rgba(255,255,255,0) 92%, rgba(0,0,0,0.04) 97%, rgba(0,0,0,0.1) 100%);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 95%, rgba(0,0,0,0.04) 98%, rgba(0,0,0,0.1) 100%);
 	padding: 0.7em;
 }
 

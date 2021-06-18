@@ -690,7 +690,7 @@ Main site layout
 /* Page Footer */
 .page-footer {
 	margin-top: 2em;
-	background: rgba(0,0,0,0.15);
+	background-color: rgba(0,0,0,0.15);
 }
 
 .footer-content {

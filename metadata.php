@@ -1,7 +1,4 @@
 <?php include 'config.php'; ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
-<head>
 <meta charset="<?php bloginfo('charset'); ?>" >
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
@@ -39,14 +36,11 @@
 <link rel="manifest" href="<?php printf("%s/manifest.json", SITE_ADDRESS); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", SITE_ADDRESS); ?>" sizes="512x512">
 <meta name="theme-color" content="<?php printf($config->BaseColor); ?>">
-<?php // Microsoft ?>
-<meta name="msapplication-config" content="<?php printf("%s/browserconfig.xml", SITE_ADDRESS); ?>">
-<meta name="msapplication-TileImage" content="<?php printf("%s/icons/mstile-310x310.png", SITE_ADDRESS); ?>">
 <?php // Facebook ?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="og:image" content="<?php printf("%s/icons/m20-share.jpg", SITE_ADDRESS); ?>">
+<meta property="og:image" content="<?php printf("%s/icons/social-share.jpg", SITE_ADDRESS); ?>">
 <meta property="og:description" content="<?php if (is_single()) {
         echo wp_strip_all_tags(get_the_excerpt(), true);
     } else {
@@ -66,4 +60,3 @@
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
-</head>

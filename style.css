@@ -34,8 +34,13 @@ Tags: m20, template
     text-shadow: none;
 }
 
-:focus {
-	border-color: var(--highlight-color);
+[type="search"]:focus,
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+textarea:focus {
+	outline: none;
+	box-shadow: 0 0 3px 1px var(--highlight-color);
 }
 
 input,
@@ -572,9 +577,6 @@ figure > a:active img {
 	border-radius: 8px;
 }
 
-.dialog-search .dialog-content [type="search"] {
-	outline: none;
-}
 
 /************************ 
 Main site layout
@@ -824,17 +826,24 @@ Custom Styling
 }
 
 .single-entry-title {
-	margin: 0;
+	margin: 6px 2px;
 }
+
+.single-entry-category a {
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 3px 5px;
+	font-weight: bold;
+]}
 
 /* Blog Post Attributes */
 .page-blog .post {
-	border-top: 1px solid #ccc;
-	background: linear-gradient(0deg, rgba(255,255,255,0) 95%, rgba(0,0,0,0.04) 98%, rgba(0,0,0,0.1) 100%);
+	border-top: 2px solid #ccc;
+	background: linear-gradient(0deg, rgba(255,255,255,0) 96%, rgba(0,0,0,0.03) 99%, rgba(0,0,0,0.09) 100%);
 	padding: 0.7em;
 }
 
-.entry-catagory a {
+.entry-category a {
 	text-transform: uppercase;
 	padding: 1px 2px;
 	text-decoration: none;

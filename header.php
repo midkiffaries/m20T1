@@ -1,5 +1,9 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
+<head>
 <?php include 'metadata.php'; ?>
 
+</head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <?php wp_body_open(); ?>

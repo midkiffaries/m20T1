@@ -11,6 +11,7 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div>
         <header class="single-entry-header">
+            <div class="single-entry-category"><?php the_category(' '); ?></div>
             <div class="single-entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a></div>
             <h2 class="single-entry-title" itemprop="title"><?php the_title(); ?></h2>
             <div class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
@@ -22,7 +23,6 @@
         </div>     
         <footer class="single-entry-footer">
             <div class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Post Updated On: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></div>
-            <div class="single-entry-catagory"><?php the_category(' '); ?></div>
             <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
             <div class="entry-share"><?php blog_post_share(); ?></div>
         </footer>

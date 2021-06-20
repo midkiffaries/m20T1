@@ -530,10 +530,12 @@ figure > a:active img {
 }
 
 .wp-post-comments .comment {
-	background-color: rgba(0,0,0,0.05);
+	background-color: rgba(0,0,0,0.04);
 	border-top: 2px solid #bbb;
-	padding: 8px;
-	border-radius: 0 0.5em 0.5em;
+	border-left: 2px solid #bbb;
+	padding: 0.5em 0.8em;
+	border-radius: 2px 0.6em 0.6em;
+	margin-bottom: 0.4em;
 }
 
 .wp-post-comments p {
@@ -545,12 +547,16 @@ figure > a:active img {
 	font-weight: bold;
 }
 
+.comment-metadata {
+	color: #666;
+}
+
 .comment-metadata a {
 	text-decoration: none;
 	color: #999;
 	font-weight: bold;
 	font-size: 1.25em;
-	padding: auto 2px;
+	padding: 0 4px;
 }
 
 .comment-metadata a:hover {
@@ -708,7 +714,7 @@ Main site layout
 
 .footer-social ul li {
 	display: inline-block;
-	margin: auto 3px;
+	margin: 0 3px;
 }
 
 .footer-slogan {
@@ -800,7 +806,7 @@ Main site layout
 .blog-pagination a {
 	text-decoration: none;
 	font-size: 1.1em;
-	margin: auto 0.5em;
+	margin: 0 0.5em;
 	padding: 2px 4px;
 	border-radius: 4px;
 }
@@ -816,7 +822,7 @@ Custom Styling
 /* Blog Post */
 .page-content .post {
 	margin: 0.5em auto !important;
-	padding: 0.7em 0.2em;
+	padding: 0 0.2em;
 }
 
 /* Single Blog Post */
@@ -832,8 +838,12 @@ Custom Styling
 .single-entry-category a {
 	text-decoration: none;
 	text-transform: uppercase;
-	padding: 3px 5px;
+	padding: 3px 4px;
 	font-weight: bold;
+}
+
+.single-entry-date {
+	margin: 5px 0;
 }
 
 /* Blog Post Attributes */

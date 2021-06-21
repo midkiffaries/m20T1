@@ -67,12 +67,12 @@ else : // comments are closed
 
 <?php else : ?>
 
-		<p><label for="author">Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="your name <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
-		<p><label for="email">Email</label><input type="email" name="email" id="email" class="comment-email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="name@example.com <?php if ($req) echo "(required)"; ?>" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
+		<p><label for="author">Name <?php if ($req) echo "<span class='required' title='Required'>★</span>"; ?></label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="your name" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
+		<p><label for="email">Email <?php if ($req) echo "<span class='required' title='Required'>★</span>"; ?></label><input type="email" name="email" id="email" class="comment-email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="name@example.com" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
 		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com/" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
 
 <?php endif; ?>
-		<p><label for="comment">Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="Your comment..." required></textarea></p>
+		<p><label for="comment">Comment <?php if ($req) echo "<span class='required' title='Required'>★</span>"; ?></label><textarea name="comment" id="comment" class="comment-textarea" placeholder="Your comment..." required></textarea></p>
 		<p><input type="submit" id="submit-comment" class="comment-submit" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
 
 <?php do_action('comment_form', $post->ID); ?>

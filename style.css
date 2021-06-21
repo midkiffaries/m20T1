@@ -19,6 +19,7 @@ Tags: m20, template
 	--highlight-color: rgba(0,134,255,0.8);
 
 	--sidebar-width: 15em;
+	--page-width: 1250px; 
 	--twitter-color: #1da1f2;
 	--facebook-color: #3b5998;
 }
@@ -53,9 +54,6 @@ textarea,
 /************************ 
 Load External Fonts
 ************************/
-/*
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
-*/
 body {
 	font-family: 'Montserrat', sans-serif;
 	text-rendering: auto;
@@ -564,6 +562,12 @@ figure > a:active img {
 }
 
 /* Comment Form */
+.required {
+	font-size: 0.8em;
+	vertical-align: 2px;
+	color: goldenrod;
+}
+
 .comment-name,
 .comment-email,
 .comment-url,
@@ -747,7 +751,7 @@ Main site layout
 
 .page-main,
 .footer-content {
-	width: 1250px;
+	width: var(--page-width);
 	margin: 0 auto;
 }
 

@@ -17,13 +17,13 @@ endwhile; endif;
 
 <?php if (have_posts() && get_search_query()) : ?>
 
-<article <?php post_class(); ?>>
+<section class="search-banner">
     <div>
-        <h2>Your search netted <?php printf($search_count); ?> result(s)</h2>
+        <h2 class="page-title" itemprop="title">Your search netted <?php printf($search_count); ?> result(s)</h2>
 <?php my_search_form('main'); ?>
         <hr>
     </div>
-</article>
+</section>
 
 <?php while (have_posts()) : the_post(); ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -45,7 +45,7 @@ endwhile; endif;
 
 <section class="blog-pagination">
     <div>
-        <nav class="wp-post-nav">
+        <nav class="blog-post-nav">
             <?php next_posts_link('&#x276E; Older Entries', 0); ?>
             <?php previous_posts_link('Newer Entries &#x276F;', 0); ?>
         </nav>
@@ -55,10 +55,10 @@ endwhile; endif;
 <?php else : ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div>
-        <h2 class="page-title">Not Found</h2>
-        <p>Your search query <em><?php echo $_GET['s']; ?></em> came up empty.</p>
+        <h2 class="page-title" itemprop="title">Query Not Found</h2>
+        <p>The search query of “<strong><?php echo $_GET['s']; ?></strong>” came up empty.</p>
         <p>If it will make you feel better, this probably happens to Google too.</p>
-        <p><i>Wanna, take another shot?</i></p>
+        <p><b>Care to take another shot?</b></p>
 
 <?php my_search_form('main'); ?>
     </div>

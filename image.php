@@ -22,7 +22,7 @@
 
 <section class="blog-pagination">
     <div>
-        <nav class="wp-post-nav">
+        <nav class="image-nav">
             <?php previous_image_link(array(48, 48), '&#x276E; Previous Image'); ?>
             <?php next_image_link(array(48, 48), 'Next Image &#x276F;'); ?>
         </nav>

@@ -17,12 +17,15 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php printf(SITE_ADDRESS); ?>/feed/">
 <base href="<?php printf(SITE_ADDRESS); ?>/">
+<?php // Google Fonts ?>
+<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+<?php printf($config->GoogleFonts); ?>
 <?php // Stylesheets ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
-<?php printf($config->GoogleFonts); ?>
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", SITE_ADDRESS); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", SITE_ADDRESS); ?>">

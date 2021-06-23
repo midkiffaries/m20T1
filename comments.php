@@ -42,7 +42,7 @@ else : // comments are closed
 ?>
 <section class="comments-closed">
     <div>
-        <p>Comments are closed for this topic.</p>
+        <h3>Comments are closed for this topic.</h3>
     </div>
 </section>
 <?php endif; ?>
@@ -51,7 +51,7 @@ else : // comments are closed
 <?php if (comments_open()) : // Comment entry form ?>
 
 <section class="comment-form">
-    <h3><?php comment_form_title( 'Write a Comment', 'Post a reply to %s' ); ?></h3>
+    <h3 class="comment-form-title"><?php comment_form_title( 'Leave a Reply', 'Post a reply to %s' ); ?></h3>
 
 <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>" class="login-link">logged in</a> to post a comment.</p>

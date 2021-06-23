@@ -356,6 +356,7 @@ function HtmlModal(c, v) {
                 }
                 .dialog-content h4 {
                     text-transform: uppercase;
+                    letter-spacing: 0.08em;
                 }
                 .dialog-content h4,
                 .dialog-content p  {

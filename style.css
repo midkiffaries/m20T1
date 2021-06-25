@@ -20,6 +20,7 @@ Tags: m20, template
 
 	--sidebar-width: 15em;
 	--page-width: 1250px; 
+	
 	--twitter-color: #1da1f2;
 	--facebook-color: #3b5998;
 }
@@ -174,7 +175,7 @@ Icon Fonts
 	font-family: 'icomoon' !important;
 	padding: 2px;
 	font-size: 1.4em;
-	vertical-align: middle;
+	vertical-align: -4px;
 }
 
 .footer-social ul a[href*="facebook.com"]::before {
@@ -898,10 +899,14 @@ Custom Styling
 }
 
 /* Blog Post Attributes */
+.blog-page .post:nth-of-type(even) {
+	background-color: rgba(0,0,0,0.04);
+}
+
 .page-blog .post {
-	border-top: 2px solid #ccc;
-	background: linear-gradient(0deg, rgba(255,255,255,0) 96%, rgba(0,0,0,0.03) 99%, rgba(0,0,0,0.09) 100%);
+	border-bottom: 2px solid #ddd;
 	padding: 0.7em;
+	margin: 0;
 }
 
 .entry-category a {

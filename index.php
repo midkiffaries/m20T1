@@ -11,29 +11,31 @@
 </section>
 
 <?php if (have_posts()) : ?>
+<article class="blog-page" itemscope itemtype="http://schema.org/NewsArticle">
 <?php while (have_posts()) : the_post(); ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/NewsArticle">
-    <div>
-        <header class="entry-header">
-            <div class="entry-category"><?php the_category(' '); ?></div>
-            <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-            <div class="entry-info">
-                <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
-            </div>
-        </header>
-        <div class="entry-content">
-            <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-        </div>     
-        <footer class="entry-footer">
-            <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
-            <div class="entry-share"><?php blog_post_share(); ?></div>
-        </footer>
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <div>
+            <header class="entry-header">
+                <div class="entry-category"><?php the_category(' '); ?></div>
+                <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                <div class="entry-info">
+                    <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                </div>
+            </header>
+            <div class="entry-content">
+                <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
+            </div>     
+            <footer class="entry-footer">
+                <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
+                <div class="entry-share"><?php blog_post_share(); ?></div>
+            </footer>
+        </div>
     </div>
-</article>
 
 <?php endwhile; ?>
+</article>
 
 <section class="blog-pagination">
     <div>

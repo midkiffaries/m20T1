@@ -23,6 +23,8 @@ Tags: m20, template
 	
 	--twitter-color: #1da1f2;
 	--facebook-color: #3b5998;
+
+	--bg-light: rgba(0,0,0,0.02);
 }
 
 /* Global */
@@ -492,7 +494,7 @@ figure > a:active img {
 }
 
 .page-archive .post:nth-of-type(even) {
-    background-color: rgba(0,0,0,0.04);
+    background-color: var(--bg-light);
 }
 
 .author-bio {
@@ -520,7 +522,7 @@ figure > a:active img {
 }
 
 .page-search .hentry:nth-of-type(even) {
-	background-color: rgba(0,0,0,0.04);
+	background-color: var(--bg-light);
 }
 
 .search-main [type='search'] {
@@ -639,6 +641,14 @@ figure > a:active img {
 Main site layout
 ************************/
 
+/* clearfix */
+/*
+.post::after {
+	clear: both;
+	display: table;
+	content: "";
+}
+*/
 /* Page Header */
 .header-menubar {
 	position: absolute;
@@ -900,13 +910,14 @@ Custom Styling
 
 /* Blog Post Attributes */
 .blog-page .post:nth-of-type(even) {
-	background-color: rgba(0,0,0,0.04);
+	background-color: var(--bg-light);
 }
 
 .page-blog .post {
 	border-bottom: 2px solid #ddd;
 	padding: 0.7em;
 	margin: 0;
+	clear: both;
 }
 
 .entry-category a {

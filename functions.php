@@ -51,9 +51,15 @@ function numberToRoman($variable) {
 // Add a More link to excerpts
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
-// Custom excerpt more
 function new_excerpt_more() {
 	return '... <a href="' . get_permalink( get_the_ID() ) . '" class="entry-read-more">Continue Reading</a>';
+}
+
+// Set the excerpt length
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 90;
 }
 
 // Setup sidebar widgets

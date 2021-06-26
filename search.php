@@ -39,6 +39,7 @@ endwhile; endif;
         <div class="entry-content">
             <?php the_excerpt(); ?>
         </div>
+        <footer></footer>
     </div>
 </article>
 <?php endwhile; ?>

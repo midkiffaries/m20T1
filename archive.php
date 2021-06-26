@@ -44,8 +44,10 @@ $curauth = $wp_query->get_queried_object();
 
 <?php endif; ?>
 
+<article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
+
 <?php while (have_posts()) : the_post(); ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div>    
         <header class="entry-header">
             <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
@@ -55,12 +57,15 @@ $curauth = $wp_query->get_queried_object();
             </div>
         </header>
         <div class="entry-content">
-            <?php the_excerpt(); ?>
+            <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
         </div>
+        <footer></footer>
     </div>
-</article>
+</div>
 
 <?php endwhile; ?>
+
+</article>
 
 <section class="blog-pagination">
     <div>

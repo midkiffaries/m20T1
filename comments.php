@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 <?php if (have_comments()) : // If have comments ?>
 
 <section class="comment-list" role="comments" id="Comments">
-    <div>
+    <div class="comment-container">
         <h3 class="comments-title"><?php comments_number('No Comments', 'One Comment', '% Comments');?></h3>
         <ol class="list-comments">
 <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=my_comment_style'); ?>
@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 </section>
 
 <section class="comment-pagination">
-    <div>
+    <div class="pagination-container">
         <nav class="comments-nav">
             <?php previous_comments_link('&#x276E; Older Comments', 0); ?> 
             <?php next_comments_link('Newer Comments &#x276F;', 0); ?>

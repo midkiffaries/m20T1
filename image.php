@@ -8,9 +8,9 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
-    <div>
+    <div class="post-container">
         <h2 class="image-title" itemprop="title"><?php the_title(); ?></h2>
-        <a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Tap to view full size"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0 ); ?></a>
+        <div class="image-link"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Tap to view full size"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0 ); ?></a></div>
         <p class="image-description" role="contentinfo"><?php the_content(); ?></p>
         <p class="image-info">
             <span class="image-date" itemprop="datePublished">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
@@ -21,7 +21,7 @@
 <?php endwhile; ?>  
 
 <section class="blog-pagination">
-    <div>
+    <div class="pagination-container">
         <nav class="image-nav">
             <?php previous_image_link(array(48, 48), '&#x276E; Previous Image'); ?>
             <?php next_image_link(array(48, 48), 'Next Image &#x276F;'); ?>

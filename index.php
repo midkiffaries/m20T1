@@ -11,11 +11,13 @@
 </section>
 
 <?php if (have_posts()) : ?>
+
 <article class="blog-page" itemscope itemtype="http://schema.org/NewsArticle">
+
 <?php while (have_posts()) : the_post(); ?>
 
-    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-        <div>
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article">
+        <div class="post-container">
             <header class="entry-header">
                 <div class="entry-category"><?php the_category(' '); ?></div>
                 <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
@@ -35,10 +37,11 @@
     </div>
 
 <?php endwhile; ?>
+
 </article>
 
 <section class="blog-pagination">
-    <div>
+    <div class="pagination-container">
         <nav class="blog-post-nav">
             <?php next_posts_link('&#x276E; Older Entries', 0); ?>
             <?php previous_posts_link('Newer Entries &#x276F;', 0); ?>

@@ -17,9 +17,9 @@ $curauth = $wp_query->get_queried_object();
 <?php $post = $posts[0]; ?>
 <?php /* category archive */ if (is_category()) { ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
 <?php /* tag archive */ } elseif( is_tag() ) { ?>Posts tagged as <strong><?php single_tag_title(); ?></strong> <span><?php echo strip_tags(tag_description()); ?></span>
-<?php /* daily archive */ } elseif (is_day()) { ?>Posts from <?php the_time('F jS, Y'); ?>
-<?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <?php the_time('F, Y'); ?>
-<?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <?php the_time('Y'); ?>
+<?php /* daily archive */ } elseif (is_day()) { ?>Posts from <b><?php the_time('F j, Y'); ?></b>
+<?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <b><?php the_time('F Y'); ?></b>
+<?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <b><?php the_time('Y'); ?></b>
 <?php /* author archive */ } elseif (is_author()) { ?>Posts made by <?php printf($curauth->nickname); ?>
 <?php /* paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives
 <?php } ?></h2>
@@ -47,28 +47,28 @@ $curauth = $wp_query->get_queried_object();
 <article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
 
 <?php while (have_posts()) : the_post(); ?>
-<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-    <div>    
-        <header class="entry-header">
-            <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-            <div class="entry-info">
-                <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article">
+        <div class="post-container">    
+            <header class="entry-header">
+                <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                <div class="entry-info">
+                    <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="entry-date">on <a href="<?php echo get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                </div>
+            </header>
+            <div class="entry-content">
+                <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
-        </header>
-        <div class="entry-content">
-            <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
+            <footer></footer>
         </div>
-        <footer></footer>
     </div>
-</div>
 
 <?php endwhile; ?>
 
 </article>
 
 <section class="blog-pagination">
-    <div>
+    <div class="pagination-container">
         <nav class="blog-post-nav">
             <?php next_posts_link('&#x276E; Older Entries', 0); ?>
             <?php previous_posts_link('Newer Entries &#x276F;', 0); ?>

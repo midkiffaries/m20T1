@@ -13,10 +13,10 @@ Tags: m20, template
 /* Variables */
 :root {
 	/* color-scheme: light dark; */
-	--base-color: rgba(60,60,60,0.6);
-	--base-color-pale: rgba(90,90,90,0.5);
-	--base-color-dark: rgba(30,30,30,0.8);
-	--highlight-color: rgba(0,134,255,0.8);
+	--base-color: #000;
+	--base-color-pale: #40A5FF;
+	--base-color-dark: #205380;
+	--highlight-color: rgba(55, 161, 255, 0.7);
 
 	--sidebar-width: 15em;
 	--page-width: 1250px; 
@@ -51,6 +51,21 @@ input,
 textarea,
 [contenteditable] {
 	caret-color: var(--highlight-color);
+}
+
+/* Basic link styling */
+main a[href] {
+	color: var(--base-color);
+	transition: color 0.25s;
+}
+
+main a:hover {
+	color: var(--base-color-pale);
+	text-decoration-color: var(--base-color-dark);
+}
+
+main a:active {
+	color: var(--base-color-dark);
 }
 
 
@@ -801,6 +816,11 @@ Main site layout
 	vertical-align: -2px;
 }
 
+/* Sidebar */
+.page-sidebar {
+	padding: 0.8em;
+}
+
 /* Main page body/footer layout */
 .page-main {
 	min-height: 30em;
@@ -870,10 +890,6 @@ Main site layout
 	margin: 0 0.5em;
 	padding: 2px 4px;
 	border-radius: 4px;
-}
-
-.blog-pagination a:hover {
-	background-color: var(--base-color-pale);
 }
 
 /************************ 

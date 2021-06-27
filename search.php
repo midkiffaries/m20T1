@@ -25,27 +25,31 @@ endwhile; endif;
     </div>
 </section>
 
+<article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
+
 <?php while (have_posts()) : the_post(); ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-    <div>
-        <header class="entry-header">
-            <div class="entry-type"><?php echo get_post_type(); ?></div>
-            <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-            <div class="entry-info">
-                <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article">
+        <div class="post-container">
+            <header class="entry-header">
+                <div class="entry-type"><?php echo get_post_type(); ?></div>
+                <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                <div class="entry-info">
+                    <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                </div>
+            </header>
+            <div class="entry-content">
+                <?php the_excerpt(); ?>
             </div>
-        </header>
-        <div class="entry-content">
-            <?php the_excerpt(); ?>
+            <footer></footer>
         </div>
-        <footer></footer>
     </div>
-</article>
 <?php endwhile; ?>
 
+</article>
+
 <section class="blog-pagination">
-    <div>
+    <div class="pagination-container">
         <nav class="blog-post-nav">
             <?php next_posts_link('&#x276E; Older Entries', 0); ?>
             <?php previous_posts_link('Newer Entries &#x276F;', 0); ?>

@@ -21,6 +21,7 @@ const SearchModal = (`
 .dialog-content [type="submit"] {
 	width: 2em;
 	font-size: 1.4em;
+	border-color: transparent;
 }
 </style>
 `);
@@ -62,6 +63,9 @@ const ContactModal = (`
 }
 .dialog-content [type="submit"] {
 	font-size: 1.2em;
+	padding: 0.5em 1em;
+	border-color: transparent;
+	color: #fff;
 }
 .dialog-content .contact_error::after {
 	opacity: 0;

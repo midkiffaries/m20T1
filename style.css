@@ -17,12 +17,10 @@ Tags: m20, template
 	--base-color-pale: #40A5FF;
 	--base-color-dark: #205380;
 	--highlight-color: rgba(55, 161, 255, 0.7);
+	--button-color: #40A5FF;
 
 	--sidebar-width: 15em;
-	--page-width: 1250px; 
-	
-	--twitter-color: #1da1f2;
-	--facebook-color: #3b5998;
+	--page-width: 1250px;
 
 	--bg-light: rgba(0,0,0,0.02);
 }
@@ -45,6 +43,7 @@ Tags: m20, template
 textarea:focus {
 	outline: none;
 	box-shadow: 0 0 3px 1px var(--highlight-color);
+	border-color: var(--base-color-dark);
 }
 
 input,
@@ -55,7 +54,7 @@ textarea,
 
 /* Basic link styling */
 main a[href] {
-	color: var(--base-color);
+	color: var(--base-color-dark);
 	transition: color 0.25s;
 }
 
@@ -65,7 +64,22 @@ main a:hover {
 }
 
 main a:active {
-	color: var(--base-color-dark);
+	color: #000;
+}
+
+button,
+[type="submit"] {
+	background-color: var(--button-color);
+}
+
+button:hover,
+[type="submit"]:hover {
+	filter: brightness(1.1);
+}
+
+button:active,
+[type="submit"]:active {
+	filter: brightness(0.8);
 }
 
 
@@ -635,7 +649,6 @@ figure > a:active img {
 
 .comment-submit {
 	padding: 0.5em 2em;
-	background-color: var(--base-color-dark);
 	color: #fff;
 	border-color: transparent;
 	font-size: 1.1em;
@@ -1009,14 +1022,6 @@ Custom Styling
 	padding-right: 3px;
 	vertical-align: -2px;
 	font-size: 1.2em;
-}
-
-.twitter-share {
-	background-color: var(--twitter-color);
-}
-
-.facebook-share {
-	background-color: var(--facebook-color);
 }
 
 

@@ -313,8 +313,7 @@ iframe {
 	image-rendering: auto;
 }
 
-img[src$='.gif'],
-img[src$='.svg'] {
+img[src$='.gif'] {
 	image-rendering: crisp-edges;
 	image-rendering: pixelated;
 }
@@ -871,7 +870,7 @@ Responsive elements
 	}
 
 	main [href^='http']::after {
-		content: " <" attr(href) "> ";
+		content: " [" attr(href) "] ";
 		font-size: 70%;
 	}
 }

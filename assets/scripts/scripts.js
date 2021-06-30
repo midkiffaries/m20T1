@@ -574,11 +574,11 @@ function closeModals(c) {
             z-index: 1;
             opacity: 0.8;
             border-radius: 0.8em;
+            transition: background 0.5s;
         }
         .youtube:hover button {
             opacity: 1;   
             background: rgba(255,30,30,0.7);
-            transition: background 0.5s;
         }
         .youtube button::before {
             content: "";
@@ -667,10 +667,10 @@ function closeModals(c) {
         margin: 0.5em 0;
         border-radius: 0.8em;
         will-change: auto;
+        transition: margin 0.2s ease-in-out;
     }
     #btnMenu:hover span, #btnMenu:focus span {
         margin: 0.7em 0 0.4em 0;
-        transition: margin 0.2s ease-in-out;
     }
     #btnMenu:hover span:first-of-type, #btnMenu:focus span:first-of-type {
         margin-top: 0.3em; 

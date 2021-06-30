@@ -25,6 +25,7 @@
 <?php printf($config->GoogleFonts); ?>
 <?php // Stylesheets ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/layout.css">
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", SITE_ADDRESS); ?>">

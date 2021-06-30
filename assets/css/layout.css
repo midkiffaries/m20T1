@@ -33,7 +33,7 @@ Icon Fonts
 	text-transform: none;
 	line-height: 1;
 }
-/*
+
 .icon-unsplash::before {
 	content: "\e900";
 }
@@ -112,7 +112,6 @@ Icon Fonts
 .icon-arrow-down::before {
 	content: "\e90f";
 }
-*/
 
 /************************ 
 Special Functions
@@ -594,7 +593,7 @@ figure > a:active img {
 }
 
 /* Menus */
-.page-header .current_page_item {
+.current-menu-item {
 	font-weight: bold;
 }
 

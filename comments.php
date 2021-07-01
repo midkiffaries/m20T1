@@ -1,12 +1,14 @@
-<hr>
-
 <?php
 // Do not delete these lines
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 	die ('Please do not load this page directly.');
 if ( post_password_required() ) {
 ?>
-	<p>This post is password protected. Enter the password to view comments.</p>
+<section class="comments-closed">
+    <div>
+        <p>This post is password protected. Enter the password to view comments.</p>
+    </div>
+</section>
 <?php return; } ?>
 
 <?php if (have_comments()) : // If have comments ?>

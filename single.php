@@ -38,6 +38,8 @@
     </div>
 </section>
 
+<?php get_sidebar('footer'); ?>
+
 <?php comments_template(); ?>
 
 <?php endwhile; else: ?>
@@ -51,8 +53,6 @@
 <?php endif; ?>
 
     </div>
-
-    <?php get_sidebar('footer'); ?>
 
 </main>
 

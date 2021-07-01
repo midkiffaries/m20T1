@@ -258,7 +258,10 @@ Wordpress Plugin Style
 *************************/
 
 /* Breadcrumbs Plugin Style */
-.breadcrumbs .trail-browse,
+.breadcrumbs .trail-browse {
+	display: none;
+}
+
 .breadcrumbs .trail-items,
 .breadcrumbs .trail-items li {
 	display: inline-block;
@@ -271,29 +274,18 @@ Wordpress Plugin Style
 	font-size: 0.9em;
 }
 
-.breadcrumbs .trail-browse {
-	font-size: inherit;
-	font-style: inherit;
-	font-weight: inherit;
-	color: inherit;
-}
-
 .breadcrumbs .trail-items {
 	list-style: none;
 }
 
-.trail-items li:first-of-type::before {
+.breadcrumbs .trail-items li:first-of-type::before {
 	font-family: 'icomoon' !important;
 	content: "\e904";
-	padding-right: 2px;
+	padding-right: 3px;
 }
 
-.trail-items li:last-of-type::after {
+.breadcrumbs .trail-items li:last-of-type::after {
 	display: none;
-}
-
-.breadcrumbs .trail-items li {
-	display: inline-block;
 }
 
 .breadcrumbs .trail-items li::after {
@@ -301,8 +293,9 @@ Wordpress Plugin Style
 	padding: 0 0.4em;
 }
 
-.breadcrumbs .trail-browse {
-	display: none;
+.breadcrumbs .trail-items li a:hover {
+	text-decoration: none;
+	color: #000;
 }
 
 
@@ -416,7 +409,6 @@ Main site layout
 	}
 }
 
-
 /* Page Footer */
 .page-footer {
 	margin-top: 2em;
@@ -426,6 +418,8 @@ Main site layout
 .footer-content {
 	padding: 0.8em;
 	text-align: center;
+	width: var(--page-width);
+	margin: 0 auto;
 }
 
 .footer-navigation ul li,
@@ -462,18 +456,26 @@ Main site layout
 	vertical-align: -2px;
 }
 
-/* Sidebar */
-.page-sidebar {
-	padding: 0.8em;
+@media (max-width: 1249px) {
+	.footer-content {
+		width: 100%;
+		margin: 0;
+	}
 }
 
-/* Main page body/footer layout */
+@media (max-width: 849px) {
+	.footer-content {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+/* Page main content */
 .page-main {
 	min-height: 30em;
 }
 
-.page-main,
-.footer-content {
+.page-main {
 	width: var(--page-width);
 	margin: 0 auto;
 }
@@ -490,58 +492,42 @@ Main site layout
 	padding: 0.5em;
 }
 
-.sidebar-primary,
-.sidebar-post {
-	width: var(--sidebar-width);
-	float: right;
-}
-
 @media (max-width: 1249px) {
-	.page-main,
-	.footer-content {
+	.page-main {
 		width: 100%;
 		margin: 0;
 	}
 }
 
 @media (max-width: 849px) {
-	.page-main,
-	.footer-content {
-		width: 100%;
-		margin: 0;
-	}
-	.page-content {
+	.page-content.width-side {
 		float: none !important;
 		width: 100% !important;
+		padding: 0 0.25em;
 	}
 }
 
-/* Page last updated line */
-.homepage-last-updated,
-.page-last-updated,
-.single-entry-last-updated {
-	font-size: 0.8em;
-	clear: both;
+/* Page Sidebars */
+.page-sidebar {
+	padding: 0.8em;
 }
 
-/* Pagination links */
-.blog-pagination {
-	text-align: center;
-	padding: 1.5em 0 0 0;
-}
-
-.blog-pagination a {
-	text-decoration: none;
-	font-size: 1.1em;
-	margin: 0 0.5em;
-	padding: 2px 4px;
-	border-radius: 4px;
+.sidebar-primary,
+.sidebar-post {
+	width: var(--sidebar-width);
+	float: right;
 }
 
 /************************ 
 Basic Wordpress Styling
 ************************/
 
+/* Menu Items */
+.current-menu-item {
+	font-weight: bold;
+}
+
+/* Figure Tag */
 figure > a img {
 	cursor: zoom-in;
     transition: filter 0.5s ease;
@@ -560,6 +546,10 @@ figure > a:hover img {
 
 figure > a:active img {
 	filter: brightness(0.95);
+}
+
+figcaption:not(.blocks-gallery-item__caption) {
+	opacity: 0.6;
 }
 
 /* Figure and galleries */
@@ -589,12 +579,8 @@ figure > a:active img {
 
 .blocks-gallery-item__caption {
 	font-size: 0.95em !important;
-	pointer-events: none;
-}
-
-/* Menus */
-.current-menu-item {
 	font-weight: bold;
+	pointer-events: none;
 }
 
 /* Button Icons */
@@ -615,16 +601,6 @@ figure > a:active img {
 .menu-search {
 	background-size: 1.5em;
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
-}
-
-/* Search Submit button */
-.search-block [type="submit"] {
-	padding: auto 1em;
-	width: 3em;
-	background-position: 50% 50%;
-	background-size: 1.3em;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
 }
 
 /* Archive Page */
@@ -694,7 +670,7 @@ figure > a:active img {
 	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
-/* Comments Block */
+/* Comment Block */
 .list-comments {
 	list-style: none;
 	padding: 0;
@@ -763,14 +739,45 @@ figure > a:active img {
 	font-size: 1.1em;
 }
 
-.required {
+.comment-form .required {
 	font-size: 0.8em;
 	vertical-align: 2px;
 	color: goldenrod;
 }
 
+/* Search Dialog */
 .dialog-search .dialog-content {
 	border-radius: 8px;
 }
 
+/* Search Submit button */
+.search-block [type="submit"] {
+	padding: auto 1em;
+	width: 3em;
+	background-position: 50% 50%;
+	background-size: 1.3em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+}
 
+/* Page last updated line */
+.homepage-last-updated,
+.page-last-updated,
+.single-entry-last-updated {
+	font-size: 0.8em;
+	clear: both;
+}
+
+/* Page Pagination links */
+.blog-pagination {
+	text-align: center;
+	padding: 1.5em 0 0 0;
+}
+
+.blog-pagination a {
+	text-decoration: none;
+	font-size: 1.1em;
+	margin: 0 0.5em;
+	padding: 2px 4px;
+	border-radius: 4px;
+}

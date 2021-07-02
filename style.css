@@ -143,12 +143,6 @@ button:active,
 Page Styling
 ************************/
 
-/* Blog Post */
-.page-content .post {
-	margin: 0.5em auto;
-	padding: 0 0.2em;
-}
-
 /* Single Blog Post */
 .single-entry-header {
 	text-align: center;
@@ -172,17 +166,6 @@ Page Styling
 }
 
 /* Blog Post Attributes */
-/*
-.blog-page .post:nth-of-type(even) {
-	background-color: var(--bg-light);
-}
-*/
-.page-blog .post {
-	/* border-bottom: 2px solid #ddd; */
-	padding: 0.7em;
-	margin: 0;
-	clear: both;
-}
 
 .entry-category a {
 	letter-spacing: 0.08em;
@@ -223,6 +206,7 @@ Page Styling
 	border-radius: 1px 6px 6px 1px;
 }
 
+/* Post social sharing buttons */
 .entry-share {
 	float: right;
 }

@@ -7,6 +7,11 @@ Base WordPress Page Styling
     /* color-scheme: light dark; */
     --sidebar-width: 15em;
 	--page-width: 1250px;
+
+	--color: red;
+
+	--icon-search: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+	--icon-mail: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='512'%3E%3Cpath d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/%3E%3C/svg%3E");
 }
 
 /************************ 
@@ -519,7 +524,7 @@ Main site layout
 }
 
 /************************ 
-Basic Wordpress Styling
+Wordpress Styling
 ************************/
 
 /* Menu Items */
@@ -583,24 +588,16 @@ figcaption:not(.blocks-gallery-item__caption) {
 	pointer-events: none;
 }
 
-/* Button Icons */
-.square-button {
-	padding: 1em;
-	margin: 0 1px;
-	border: 0;
-	background-color: transparent !important;
-	background-position: 50% 50%;
-	background-size: 1.8em;
-	background-repeat: no-repeat;
-}
+/************************ 
+Page Specific Styling
+************************/
 
-.menu-email {
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='512'%3E%3Cpath d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/%3E%3C/svg%3E");
-}
-
-.menu-search {
-	background-size: 1.5em;
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+/* Blog Page */
+.page-content .post,
+.blog-page-title {
+	padding: 0 0.6em;
+	margin: 0.5em auto 3em;
+	clear: both;
 }
 
 /* Archive Page */
@@ -757,7 +754,7 @@ figcaption:not(.blocks-gallery-item__caption) {
 	background-position: 50% 50%;
 	background-size: 1.3em;
 	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
+	background-image: var(--icon-search);
 }
 
 /* Page last updated line */
@@ -780,4 +777,29 @@ figcaption:not(.blocks-gallery-item__caption) {
 	margin: 0 0.5em;
 	padding: 2px 4px;
 	border-radius: 4px;
+}
+
+
+/************************ 
+Special styling
+************************/
+
+/* Button Icons */
+.square-button {
+	padding: 1em;
+	margin: 0 1px;
+	border: 0;
+	background-color: transparent !important;
+	background-position: 50% 50%;
+	background-size: 1.8em;
+	background-repeat: no-repeat;
+}
+
+.menu-email {
+	background-image: var(--icon-mail);
+}
+
+.menu-search {
+	background-size: 1.5em;
+	background-image: var(--icon-search);
 }

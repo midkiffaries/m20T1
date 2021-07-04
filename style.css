@@ -85,6 +85,25 @@ select:focus {
 	border-color: var(--base-color-dark);
 }
 
+/* Buttons */
+button,
+[type="submit"] {
+	background-color: var(--button-color);
+	border-width: 2px;
+	border-color: transparent;
+	transition: filter 0.5s;
+}
+
+button:hover,
+[type="submit"]:hover {
+	filter: brightness(1.2);
+}
+
+button:active,
+[type="submit"]:active {
+	filter: brightness(0.8);
+}
+
 /* Entry Header links */
 .entry-header a[href],
 .single-entry-header a[href] {
@@ -119,23 +138,6 @@ select:focus {
 .entry-content a[href]:active,
 .single-entry-content a[href]:active {
 	color: var(--base-color-dark);
-}
-
-/* Buttons */
-button,
-[type="submit"] {
-	background-color: var(--button-color);
-	transition: filter 0.5s;
-}
-
-button:hover,
-[type="submit"]:hover {
-	filter: brightness(1.2);
-}
-
-button:active,
-[type="submit"]:active {
-	filter: brightness(0.8);
 }
 
 
@@ -204,6 +206,11 @@ Page Styling
 	padding: 3px 5px;
 	text-decoration: none;
 	border-radius: 1px 6px 6px 1px;
+}
+
+/* Enlarge <p> font-size in short posts */
+.entry-largefont p {
+	font-size: 1.3rem;
 }
 
 /* Post social sharing buttons */

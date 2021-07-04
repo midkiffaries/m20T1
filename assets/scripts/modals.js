@@ -78,7 +78,7 @@ const ContactModal = (`
 .dialog-content .contact_server {
 	position: absolute;
 	padding: 0;
-	transform: translate(9em,-4em);
+	transform: translate(10em,-4em);
 	width: calc(100% - 8em);
 	color: #d00;
 }

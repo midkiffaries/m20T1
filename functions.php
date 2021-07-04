@@ -48,19 +48,17 @@ function numberToRoman($variable) {
 // WordPress Functions
 /////////////////////////////
 
-// Add a More link to excerpts
-add_filter( 'excerpt_more', 'new_excerpt_more' );
-
+// Add a 'Continue Reading' link to excerpts
 function new_excerpt_more() {
-	return '... <a href="' . get_permalink( get_the_ID() ) . '" class="entry-read-more">Continue Reading</a>';
+	return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
 }
+add_filter('excerpt_more', 'new_excerpt_more');
 
 // Set the excerpt length
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
-function wpdocs_custom_excerpt_length( $length ) {
-    return 90;
+function my_custom_excerpt_length( $length ) {
+    return 120; // Word length
 }
+add_filter('excerpt_length', 'my_custom_excerpt_length');
 
 // Setup sidebar widgets
 if (function_exists('register_sidebar')) {

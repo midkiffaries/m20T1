@@ -26,9 +26,12 @@
                     <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                 </div>
             </header>
-            <div class="entry-content">
-                <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-            </div>     
+            <?php 
+            $largerFont = ''; // Enlarge font in entry is short
+            if (strlen(wp_strip_all_tags($post->post_content)) < 430) $largerFont = 'entry-largefont'; ?>
+            <div class="entry-content <?php echo $largerFont; ?>">
+                <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
+            </div>
             <footer class="entry-footer">
                 <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
                 <div class="entry-share"><?php blog_post_share(); ?></div>

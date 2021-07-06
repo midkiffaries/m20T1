@@ -27,7 +27,7 @@
                 <div class="header-menu">
                     <button class="menu-email square-button" aria-label="Email me" onclick="HtmlModal('email', ContactModal)"></button>
                     <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
-                    <button class="light-switch" aria-label="Dark mode switch"></button>
+                    <button class="light-switch square-button" aria-label="Dark mode switch"></button>
                 </div>
             </div>
         </div>

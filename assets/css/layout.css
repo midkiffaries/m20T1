@@ -567,6 +567,11 @@ Page Specific Styling
 	clear: both;
 }
 
+/* Single blog page */
+.single-entry-content {
+	min-height: 8em;
+}
+
 /* Archive Page */
 .archive-header .page-title span {
 	font-size: 0.7em;

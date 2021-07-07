@@ -51,8 +51,8 @@ endwhile; endif;
 <section class="blog-pagination">
     <div class="pagination-container">
         <nav class="blog-post-nav">
-            <?php next_posts_link('&#x276E; Older Entries', 0); ?>
-            <?php previous_posts_link('Newer Entries &#x276F;', 0); ?>
+            <?php previous_posts_link('&#x276E; Newer Entries', 0); ?>
+            <?php next_posts_link('Older Entries &#x276F;', 0); ?>
         </nav>
     </div>
 </section>

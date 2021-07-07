@@ -12,7 +12,7 @@
     <div class="post-container">
         <header class="single-entry-header">
             <div class="single-entry-category"><?php the_category(' '); ?></div>
-            <div class="single-entry-date"><a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></a></div>
+            <div class="single-entry-date"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>
             <h2 class="single-entry-title" itemprop="title"><?php the_title(); ?></h2>
             <div class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
             <!--div class="single-entry-comments"><a href="#Comments"><?php //comments_number('No comments', 'One comment', '% comments'); ?></a></div-->
@@ -34,8 +34,8 @@
 <section class="blog-pagination">
     <div class="pagination-container">
         <nav class="single-blog-post-nav">
-            <?php previous_post_link('&#x276E;%link', '%title'); ?>
-            <?php next_post_link('%link&#x276F;', '%title'); ?>
+            <?php next_post_link('&#x276E;%link', '%title'); ?>
+            <?php previous_post_link('%link&#x276F;', '%title'); ?>
         </nav>
     </div>
 </section>

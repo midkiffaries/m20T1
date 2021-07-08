@@ -140,6 +140,13 @@ button:active,
 	color: var(--base-color-dark);
 }
 
+/* links to external sites */
+main p [href^="http:"], 
+main p [href^="https:"], 
+main p [target="_blank"] {
+	text-decoration-thickness: 2px;
+}
+
 
 /************************ 
 Page Styling

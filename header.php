@@ -8,7 +8,7 @@
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <?php wp_body_open(); ?>
 
-<header class="page-header" role="banner">
+<header class="page-header" role="banner" id="top">
     <div class="header-menubar">
         <div class="header-title">
             <h1 class="header-logo" itemprop="title">
@@ -25,7 +25,7 @@
                     <?php menu_nav_list('Primary Nav', 'header'); ?>
                 </div>
                 <div class="header-menu">
-                    <button class="menu-email square-button" aria-label="Email me" onclick="HtmlModal('email', ContactModal)"></button>
+                    <button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', ContactModal)"></button>
                     <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
                     <button class="light-switch square-button" aria-label="Dark mode switch"></button>
                 </div>
@@ -34,9 +34,9 @@
     </div>
 
 <?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-homepage bg-parallax" data-rate="12"></div>
+    <div class="header-hero bg-parallax" data-rate="12"></div>
 <?php else : // All Other Pages ?>
-    <div class="header-short bg-parallax" data-rate="12"></div>
+    <div class="header-simple bg-parallax" data-rate="12"></div>
 <?php endif; ?>
 
 </header>

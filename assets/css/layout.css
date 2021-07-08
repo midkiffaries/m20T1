@@ -147,7 +147,6 @@ body.dark-mode,
 .dark-mode dialog > div {
 	color: #eee;
 	background-color: #161616;
-	font-weight: 300;
 }
 
 .dark-mode dialog {
@@ -179,21 +178,20 @@ body.dark-mode,
 .dark-mode [type='range'] {
 	background: transparent;
 }
-
+/*
 .dark-mode button,
-.dark-mode [role='button'],
 .dark-mode [type='button'],
 .dark-mode [type='reset'],
-.dark-mode [type='submit'],
-.dark-mode input::-webkit-file-upload-button {
-	background-color: #555;
+.dark-mode [type='submit'] {
 	color: #fff;
 }
-
+*/
 /* Specific dark-mode items */
 .dark-mode .logo-text,
 .dark-mode .accordion > button,
-.dark-mode .menu-button {
+.dark-mode .square-button,
+.dark-mode .menu-button,
+.dark-mode .dialog-close {
 	filter: invert();
 }
 
@@ -336,13 +334,13 @@ Main site layout
 	margin: 0.8em 0.8em;
 }
 
-.header-short {
-	height: 10em;
-	background: #eee;
+.header-simple {
+	height: 14em;
+	background-color: rgb(176, 210, 255);
 }
 
-.header-homepage {
-	height: 4em;
+.header-hero {
+	height: 2em;
 }
 
 @media (max-width: 849px) {
@@ -442,7 +440,7 @@ Main site layout
 	}
 }
 
-/* Page main content */
+/* Page main body content */
 .page-main {
 	min-height: 30em;
 }

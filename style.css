@@ -179,6 +179,14 @@ Page Styling
 	font-size: 1.1rem;
 }
 
+.entry-overflow {
+	background: linear-gradient(0deg, var(--page-background) 0%, rgba(255,255,255,0.1) 100%);
+}
+
+.dark-mode .entry-overflow {
+	background: linear-gradient(0deg, #161616 0%, rgba(10,10,10,0.1) 100%);
+}
+
 /* Blog Post Attributes */
 .entry-category a {
 	letter-spacing: 0.08em;

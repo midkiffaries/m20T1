@@ -34,7 +34,7 @@
     </div>
 
 <?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-hero bg-parallax" data-rate="12"></div>
+    <div class="header-hero"></div>
 <?php else : // All Other Pages ?>
     <div class="header-simple bg-parallax" data-rate="12"></div>
 <?php endif; ?>

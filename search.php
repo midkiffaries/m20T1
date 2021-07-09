@@ -38,7 +38,7 @@ endwhile; endif;
                     <span class="entry-date">on <a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                 </div>
             </header>
-            <div class="entry-content">
+            <div class="entry-content entry-defaultfont">
                 <?php the_excerpt(); ?>
             </div>
             <footer></footer>

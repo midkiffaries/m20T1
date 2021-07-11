@@ -3,7 +3,7 @@
 $ThemeSettings = '{
     "ShortTitle":   "Short Website Name",
     "Email":        "contact@email.com",
-    "BaseColor":    "#ffffff",
+    "BaseColor":    "#0000ff",
     "Tagline":      "Extended tag line...",
     "Instagram":    "accountName",
     "Twitter":      "accountName",

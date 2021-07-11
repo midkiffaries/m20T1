@@ -122,7 +122,7 @@ button:active,
 	color: var(--base-color-dark);
 }
 
-/* Blog post links */
+/* Body content links */
 .entry-content a[href],
 .single-entry-content a[href] {
 	color: var(--base-color);
@@ -140,7 +140,7 @@ button:active,
 	color: var(--base-color-dark);
 }
 
-/* links to external sites */
+/* Alt for links to external sites */
 main p [href^="http:"], 
 main p [href^="https:"], 
 main p [target="_blank"] {

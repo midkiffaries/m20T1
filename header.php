@@ -34,9 +34,18 @@
     </div>
 
 <?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-hero"></div>
-<?php else : // All Other Pages ?>
-    <div class="header-simple bg-parallax" data-rate="12"></div>
+    <div class="header-homepage">
+    </div>
+
+<?php elseif ( is_page() ) : // Single Page ?>
+    <div class="header-single-page">
+        <?php the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
+    </div>
+
+<?php else : // Blog Pages ?>
+    <div class="header-blog bg-parallax" data-rate="12">
+    </div>
+
 <?php endif; ?>
 
 </header>

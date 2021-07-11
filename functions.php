@@ -72,21 +72,7 @@ function my_custom_excerpt_length( $length ) {
 }
 add_filter('excerpt_length', 'my_custom_excerpt_length');
 
-// Setup sidebar widgets
-if (function_exists('register_sidebar')) {
-	register_sidebar(array(
-		'name' => sprintf(__('Sidebar %d'), $i ),
-		'id' => 'sidebar-$i',
-		'description' => '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
 // Blog post individual user comment styling
-
 function my_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>
@@ -156,31 +142,31 @@ function menu_nav_list($menu, $id) {
 // Sidebar widget settings
 add_action( 'widgets_init', 'my_register_sidebars' );
 function my_register_sidebars() {
-    /* Register the 'primary' sidebar. */
+    // Primary sidebar on the right
     register_sidebar(
         array(
             'id'            => 'primary',
             'name'          => __( 'Primary Sidebar' ),
-            'description'   => __( 'The full blog sidebar.' ),
+            'description'   => __( 'The full blog view sidebar.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h4 class="widget-title">',
             'after_title'   => '</h4>',
         )
     );
-    /* Repeat register_sidebar() code for additional sidebars. */
+    // Secondary sidebar on the right
     register_sidebar(
         array(
             'id'            => 'secondary',
-            'name'          => __( 'Single Post Sidebar' ),
-            'description'   => __( 'The single blog post sidebar.' ),
+            'name'          => __( 'Secondary Sidebar' ),
+            'description'   => __( 'Other sidebar.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h4 class="widget-title">',
             'after_title'   => '</h4>',
         )
     );
-    /* Repeat register_sidebar() code for additional sidebars. */
+    // Sidebar at the bottom of the page
     register_sidebar(
         array(
             'id'            => 'footer',
@@ -188,8 +174,8 @@ function my_register_sidebars() {
             'description'   => __( 'The page footer sidebar.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
-            'before_title'  => '<h4 class="widget-title">',
-            'after_title'   => '</h4>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
         )
     );
 }

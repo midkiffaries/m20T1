@@ -130,14 +130,10 @@ Special Functions
     height: 100%;
     will-change: auto;
 }
-    
-.div-parallax {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 200%;
-    top: 0;
-    left: 0;
+
+.element-parallax {
+	top: -10px;
+	left: 0;
     position: absolute;
     will-change: auto;
 }
@@ -274,7 +270,30 @@ Main site layout
 ************************/
 
 /* Page Header */
+.header-homepage {
+	height: 2em;
+}
+
+.header-single-page {
+	height: 14em;
+	background-color: rgb(168, 175, 184);
+	overflow: hidden;
+	position: relative;
+}
+
+.header-single-page img {
+	width: 100%;
+}
+
+.header-blog {
+	height: 14em;
+	background-color: rgb(176, 210, 255);
+	overflow: hidden;
+}
+
+/* Header nav and logo */
 .header-menubar {
+	z-index: 100;
 	position: absolute;
 	width: 100%;
 	top: 0;
@@ -334,15 +353,6 @@ Main site layout
 	margin: 0.8em 0.8em;
 }
 
-.header-simple {
-	height: 14em;
-	background-color: rgb(176, 210, 255);
-}
-
-.header-hero {
-	height: 2em;
-}
-
 @media (max-width: 849px) {
 	.header-menubar {
 		position: fixed;
@@ -378,6 +388,7 @@ Main site layout
 		font-size: 1.5em;
 	}
 }
+
 
 /* Page Footer */
 .page-footer {
@@ -439,6 +450,7 @@ Main site layout
 		margin: 0;
 	}
 }
+
 
 /* Page main body content */
 .page-main {

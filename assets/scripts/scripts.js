@@ -634,18 +634,18 @@ function closeModals(c) {
     }, true);
 }());
 
-// Parallaxing elements, use class="div-parallax" and data-rate="10"
+// Parallaxing elements, use class="element-parallax" and data-rate="12"
 (function(){
-    let par = document.getElementsByClassName("div-parallax"), 
+    let par = document.getElementsByClassName("element-parallax"), 
         l = par.length,
         posy = 0, 
-        pr = 10;
+        pr = 12;
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
             pr = par[i].getAttribute("data-rate");
             posy =- (window.pageYOffset / pr);
-            par[i].style.top = `${posy}px`;
+            par[i].style.transform = `translateY(${posy}px)`;
         }
     }, true);
 }());

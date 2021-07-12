@@ -109,8 +109,8 @@ function my_search_form($id) {
 function blog_post_share() {
 ?>
 <ul class="social-share">
-    <li role="link"><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="icon-twitter twitter-share" title="Twitter" target="_blank">Tweet</a></li>
-    <li role="link"><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="icon-facebook facebook-share" title="Facebook" target="_blank">Share</a></li>
+    <li role="link"><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="icon-twitter twitter-share" aria-label="Twitter" target="_blank">Tweet</a></li>
+    <li role="link"><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="icon-facebook facebook-share" aria-label="Facebook" target="_blank">Share</a></li>
 </ul>
 <?php
 }

@@ -23,6 +23,7 @@ Tags: m20, template
 
 	--button-color: #40A5FF;
 	--bg-light: rgba(0,0,0,0.02);
+	--bg-header: url('http://localhost:8888/WP-marchtwenty/wp-content/uploads/2021/07/base-header.jpg');
 }
 
 
@@ -151,6 +152,13 @@ main p [target="_blank"] {
 /************************ 
 Page Styling
 ************************/
+
+/*  */
+.header-blog, 
+.header-single-page {
+	background-image: url(assets/images/grain-light.png), var(--bg-header);
+	background-size: auto, cover;
+}
 
 /* Single Blog Post */
 .single-entry-header {

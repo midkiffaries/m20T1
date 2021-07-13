@@ -18,12 +18,12 @@ Tags: m20, template
 
 	--header-link-color: #000;
 	--body-link-color: #40A5FF;
+	--page-background: #fdfdfd;
 
 	--highlight-color: rgba(55, 161, 255, 0.7);
 
 	--button-color: #40A5FF;
 	--bg-light: rgba(0,0,0,0.02);
-	--bg-header: url('http://localhost:8888/WP-marchtwenty/wp-content/uploads/2021/07/base-header.jpg');
 }
 
 
@@ -153,11 +153,11 @@ main p [target="_blank"] {
 Page Styling
 ************************/
 
-/*  */
+/* Page Header Image */
 .header-blog, 
 .header-single-page {
-	background-image: url(assets/images/grain-light.png), var(--bg-header);
-	background-size: auto, cover;
+	background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg);
+	background-size: 1em, cover;
 }
 
 /* Single Blog Post */

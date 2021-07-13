@@ -788,12 +788,13 @@ function smoothScroll(loc, duration) {
     for (let i = 0; i < l; i++) {
         let inputAttrib = inputNum[i].getAttribute("type");
         
-        // Custom charset for input[type="number"] and input[type="tel"]        
+        // Custom charset for input[type="number"] and input[type="tel"]    
+        /*    
         if (inputAttrib === "number" || inputAttrib === "tel") {
             // Accept only numbers and relative chars
             inputNum[i].onkeypress = () => event.charCode >= 40 && event.charCode <= 57;
         }
-		
+		*/
         // Custom charset for input[type="email"] and input[type="url"]
         if (inputAttrib === "email" || inputAttrib === "url") {
             // Accept everything but spaces
@@ -801,6 +802,7 @@ function smoothScroll(loc, duration) {
         }
         
         // Change the value of the output[for] element based on the range element
+        /*
         if (inputAttrib === "range") {
             inputNum[i].oninput = function() {
                 let out = this.nextElementSibling;
@@ -809,12 +811,14 @@ function smoothScroll(loc, duration) {
                 }
             }
         }
-        
+        */
         // Enforce a "maxlength" on all input elements
+        /*
         inputNum[i].onkeyup = function() {
             if (this.value.length > this.maxLength && this.maxLength > 0) {
                 this.value = this.value.slice(0,this.maxLength);
             }
         }
+        */
     }
 }());

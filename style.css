@@ -141,11 +141,18 @@ button:active,
 	color: var(--base-color-dark);
 }
 
-/* Alt for links to external sites */
-main p [href^="http:"], 
-main p [href^="https:"], 
-main p [target="_blank"] {
-	text-decoration-thickness: 2px;
+/* Sidebar links */
+.page-sidebar a[href] {
+	text-decoration: none;
+}
+
+.page-sidebar a[href]:hover {
+	text-decoration: underline;
+	color: var(--base-color-dark);
+}
+
+.page-sidebar a[href]:active {
+	color: var(--base-color-pale)
 }
 
 
@@ -156,6 +163,7 @@ Page Styling
 /* Page Header Image */
 .header-blog, 
 .header-single-page {
+	background-color: var(--base-color-pale);
 	background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg);
 	background-size: 1em, cover;
 }
@@ -229,10 +237,14 @@ Page Styling
 
 .entry-tags ul li a {
 	color: #555;
-	background-color: rgba(0,0,0,0.2);
 	padding: 3px 5px;
-	text-decoration: none;
-	border-radius: 1px 6px 6px 1px;
+	-webkit-text-decoration: underline dashed #999;
+	text-decoration: underline dashed #999;
+}
+
+.entry-tags ul li a:hover {
+	-webkit-text-decoration: underline solid;
+	text-decoration: underline solid;
 }
 
 /* Enlarge <p> font-size in short posts */

@@ -39,6 +39,7 @@ endwhile; endif;
                 </div>
             </header>
             <div class="entry-content entry-defaultfont">
+                <div class="wp-block-image"><figure class="alignright is-resized"><?php the_post_thumbnail( 'thumbnail' ); ?></figure></div>
                 <?php the_excerpt(); ?>
             </div>
             <footer></footer>

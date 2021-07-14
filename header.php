@@ -35,15 +35,18 @@
 
 <?php if ( is_front_page() ) : // Front Page ?>
     <div class="header-homepage">
+        <?php // Front-page header ?>
     </div>
 
 <?php elseif ( is_page() ) : // Single Page ?>
     <div class="header-single-page">
+        <?php // Page header ?>
         <?php the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
     </div>
 
 <?php else : // Blog Pages ?>
     <div class="header-blog bg-parallax" data-rate="12">
+        <?php // Blog pages header ?>
     </div>
 
 <?php endif; ?>

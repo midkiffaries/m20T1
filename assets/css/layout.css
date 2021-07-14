@@ -536,6 +536,7 @@ figcaption:not(.blocks-gallery-item__caption) {
 
 .wp-block-image figure img:not([src$=".png"]) {
 	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
+	border-radius: 0.3em;
 }
 
 .wp-block-image figcaption {

@@ -1,15 +1,27 @@
 <?php include 'config.php'; ?>
+<?php
+// Get page description excerpt
+if (is_single()) { // If single blog post
+    $description = substr(html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true)), 0, -400) . '...';
+} else { // Else all other pages
+    $description = get_bloginfo('description') . " " . $config->Tagline;
+}
+
+// Get page Featured image
+if (get_the_post_thumbnail()) { // Use page's featured image
+    $featuredImage = get_the_post_thumbnail_url();
+} else { // Use default image
+    $featuredImage = SITE_ADDRESS . '/icons/social-share.jpg';
+}
+// printf("%s/icons/social-share.jpg", SITE_ADDRESS);
+?>
 <meta charset="<?php bloginfo('charset'); ?>" >
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
 <meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta name="description" content="<?php if (is_single()) {
-        echo wp_strip_all_tags(get_the_excerpt(), true);
-    } else {
-        printf("%s - %s", bloginfo('description'), $config->Tagline);
-    } ?>">
+<meta name="description" content="<?php echo $description; ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="rating" content="General">
 <meta name="robots" content="index,follow">
@@ -21,7 +33,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
-
 <?php printf($config->GoogleFonts); ?>
 <?php // Stylesheets ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
@@ -44,22 +55,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="og:image" content="<?php printf("%s/icons/social-share.jpg", SITE_ADDRESS); ?>">
-<meta property="og:description" content="<?php if (is_single()) {
-        echo wp_strip_all_tags(get_the_excerpt(), true);
-    } else {
-        printf("%s - %s", bloginfo('description'), $config->Tagline);
-    } ?>">
+<meta property="og:image" content="<?php echo $featuredImage; ?>">
+<meta property="og:description" content="<?php echo $description; ?>">
 <?php // Twitter ?>
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta property="twitter:image" content="<?php printf("%s/icons/social-share.jpg", SITE_ADDRESS); ?>">
-<meta property="twitter:description" content="<?php if (is_single()) {
-        echo wp_strip_all_tags(get_the_excerpt(), true);
-    } else {
-        printf("%s - %s", bloginfo('description'), $config->Tagline);
-    } ?>">
+<meta property="twitter:image" content="<?php echo $featuredImage; ?>">
+<meta property="twitter:description" content="<?php echo $description; ?>">
 <?php wp_head(); ?>
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>

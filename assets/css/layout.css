@@ -723,10 +723,12 @@ Page Specific Styling
 	font-size: 1.1em;
 }
 
-.comment-form .required {
+.required::after {
+	content: "★";
 	font-size: 0.8em;
-	vertical-align: 2px;
 	color: goldenrod;
+	vertical-align: 2px;
+	margin-left: 3px;
 }
 
 /* Search Dialog */

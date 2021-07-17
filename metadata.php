@@ -1,19 +1,19 @@
 <?php include 'config.php'; ?>
 <?php
 // Get page description excerpt
-if (is_single()) { // If single blog post
-    $description = substr(html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true)), 0, -400) . '...';
+if (is_single() || is_page()) { // If single blog post
+    $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true));
+    $description = substr($excerpt, 0, 250) . "...";
 } else { // Else all other pages
     $description = get_bloginfo('description') . " " . $config->Tagline;
 }
 
 // Get page Featured image
 if (get_the_post_thumbnail()) { // Use page's featured image
-    $featuredImage = get_the_post_thumbnail_url();
+    $featuredImage = get_the_post_thumbnail_url($post->ID, 'large');
 } else { // Use default image
     $featuredImage = SITE_ADDRESS . '/icons/social-share.jpg';
 }
-// printf("%s/icons/social-share.jpg", SITE_ADDRESS);
 ?>
 <meta charset="<?php bloginfo('charset'); ?>" >
 <meta http-equiv="x-ua-compatible" content="ie=edge">

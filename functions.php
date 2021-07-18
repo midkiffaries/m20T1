@@ -11,11 +11,8 @@ error_reporting(E_ALL);
 /////////////////////////////
 
 // Includes
-include 'config.php';
-
-// Define URLS
-define('CURRENT_ADDRESS', $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); // Full uri
-define('SITE_ADDRESS', "https://" . $_SERVER['HTTP_HOST']);  // Live Server
+include 'config.php'; // Extra configuration
+include 'assets/scripts/breadcrumbs.php'; // Breadcrumb trail plugin
 
 /////////////////////////////
 // Global Functions
@@ -60,17 +57,18 @@ the_post_thumbnail( 'full' ); // Original image resolution (unmodified)
 the_post_thumbnail( array( 100, 100 ) ); // Other resolutions (height, width)
 */
 
-// Add a 'Continue Reading' link to excerpts
-function new_excerpt_more() {
-	return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
 // Set the excerpt length
-function my_custom_excerpt_length( $length ) {
+function custom_excerpt_length( $length ) {
     return 120; // Word length
 }
-add_filter('excerpt_length', 'my_custom_excerpt_length');
+add_filter('excerpt_length', 'custom_excerpt_length');
+
+// Add a 'Continue Reading' link to excerpts
+function custom_excerpt_more() {
+	return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
 
 // Blog post individual user comment styling
 function my_comment_style($comment, $args, $depth) {

@@ -12,7 +12,7 @@
     <div class="header-menubar">
         <div class="header-title">
             <h1 class="header-logo" itemprop="title">
-                <a href="/" rel="bookmark">
+                <a href="<?php echo home_url(); ?>" rel="bookmark">
                     <img class="logo-image" src="<?php bloginfo('template_url'); ?>/assets/logos/logo-img.svg" alt="Logo">
                     <img class="logo-text" src="<?php bloginfo('template_url'); ?>/assets/logos/logo-text.svg" alt="<?php bloginfo('name'); ?>">
                 </a>

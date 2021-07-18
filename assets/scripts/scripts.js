@@ -9,7 +9,7 @@ const HostName = window.location.host,
     OriginURL = `${window.location.protocol}//${HostName}/`,        
     PathName = window.location.pathname,
     HrefURL = `${PathName}${window.location.search}`,
-    themeURL = `${OriginURL}/WP-marchtwenty/wp-content/themes/m20T1/`,
+    themeURL = `${OriginURL}WP-marchtwenty/wp-content/themes/m20T1/`,
     Locale = "en-US";
 
 // Get today's date

@@ -3,8 +3,9 @@
 <main class="page-main page-image">
     <div class="page-content width-full">
 
-<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
-<?php if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
+<?php //include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
+<?php //if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
+<?php breadcrumb_trail(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">

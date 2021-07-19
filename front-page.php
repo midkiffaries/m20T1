@@ -3,6 +3,8 @@
 <main class="page-frontpage page-home">
     <div class="page-content width-full">
 
+<?php //breadcrumb_trail(); ?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>">

@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 
 // Includes
 include 'config.php'; // Extra configuration
-include 'assets/scripts/breadcrumbs.php'; // Breadcrumb trail plugin
+include 'assets/plugins/breadcrumbs.php'; // Breadcrumb trail plugin
 
 /////////////////////////////
 // Global Functions
@@ -116,7 +116,6 @@ function blog_post_share() {
 // Display the list of menu/navigation links
 function menu_nav_list($menu, $id) {
     $menuStyle = array(
-        //'theme_location'  => '',
         'menu'            => $menu,
         'container'       => 'nav',
         'container_class' => $id,
@@ -137,10 +136,17 @@ function menu_nav_list($menu, $id) {
     wp_nav_menu($menuStyle);
 }
 
-// Sidebar widget settings
-add_action( 'widgets_init', 'my_register_sidebars' );
-function my_register_sidebars() {
-    // Primary sidebar on the right
+// Register the menus/navigation
+function register_menu() {
+    register_nav_menu( 'primary', __( 'Primary Navigation', 'theme-slug' ) );
+    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'theme-slug' ) );
+    register_nav_menu( 'social', __( 'Social Links', 'theme-slug' ) );
+}
+add_action( 'after_setup_theme', 'register_menu' );
+
+// Register the sidebar widgets 
+function custom_sidebars() {
+    // Primary Sidebar on the right side of the page
     register_sidebar(
         array(
             'id'            => 'primary',
@@ -152,7 +158,7 @@ function my_register_sidebars() {
             'after_title'   => '</h4>',
         )
     );
-    // Secondary sidebar on the right
+    // Secondary Sidebar on the right side of the page
     register_sidebar(
         array(
             'id'            => 'secondary',
@@ -164,7 +170,7 @@ function my_register_sidebars() {
             'after_title'   => '</h4>',
         )
     );
-    // Sidebar at the bottom of the page
+    // Footer Sidebar - bottom of the page
     register_sidebar(
         array(
             'id'            => 'footer',
@@ -177,5 +183,6 @@ function my_register_sidebars() {
         )
     );
 }
+add_action( 'widgets_init', 'custom_sidebars' );
 
 ?>

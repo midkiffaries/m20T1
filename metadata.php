@@ -12,7 +12,7 @@ if (is_single() || is_page()) { // If single blog post
 if (get_the_post_thumbnail()) { // Use page's featured image
     $featuredImage = get_the_post_thumbnail_url($post->ID, 'large');
 } else { // Use default image
-    $featuredImage = home_url() . '/icons/social-share.jpg';
+    $featuredImage = get_template_directory_uri() . "/assets/images/social-share.jpg";
 }
 ?>
 <meta charset="<?php bloginfo('charset'); ?>" >
@@ -35,9 +35,9 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
 <?php printf($config->GoogleFonts); ?>
 <?php // Stylesheets ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/tedilize.css">
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/layout.css">
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/tedilize.css"; ?>">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
@@ -50,6 +50,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta name="application-name" content="<?php printf($config->ShortTitle); ?>">
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
+<link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
 <meta name="theme-color" content="<?php printf($config->BaseColor); ?>">
 <?php // Facebook ?>
 <meta property="og:type" content="website">

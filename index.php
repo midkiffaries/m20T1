@@ -3,8 +3,6 @@
 <main class="page-main page-blog">
     <div class="page-content width-side">
 
-<?php //include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
-<?php //if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 <?php breadcrumb_trail(); ?>
 
 <section class="blog-page-title">

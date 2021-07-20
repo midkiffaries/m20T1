@@ -116,6 +116,7 @@ Icon Fonts
 	content: "\e90f";
 }
 
+
 /************************ 
 Special Functions
 *************************/
@@ -263,6 +264,11 @@ Wordpress Plugin Style
 /************************ 
 Main site layout
 ************************/
+
+/* Drop caps */
+.has-drop-cap:not(:focus):first-letter {
+	font-weight: 600;
+}
 
 /* Page Header */
 .header-homepage {

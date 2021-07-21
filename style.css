@@ -1,13 +1,19 @@
+@charset "UTF-8";
+
 /************************
 Theme Name: m20T1
-Theme URI: https://www.marchtwenty.com/
+Theme URI: https://github.com/midkiffaries/m20T1
 Author: Ted Balmer
 Author URI: https://www.marchtwenty.com/
 Description: Theodore's personal WordPress theme.
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 5.6
 Version: 1.0 BETA
 License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: marchtwenty
-Tags: m20, template, theme
+Tags: one-column, accessibility-ready, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, threaded-comments, translation-ready
 ************************/
 
 /* Variables */

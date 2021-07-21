@@ -6,19 +6,19 @@
 const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
-    <form id="SearchForm" method="get" role="search" action="${OriginURL}">
-        <input type="search" name="s" id="Search-Modal" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square" aria-label="Submit Search">
+    <form method="get" class="search-form" role="search" action="${OriginURL}">
+        <input type="search" name="s" class="search-input" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
     </form>
 </section>
 <style>
 .dialog-content h3 {
     margin: 0;
 }
-.dialog-content [type="search"] {
+.dialog-content .search-input {
 	width: calc(100% - 2em);
 	font-size: 1.4em;
 }
-.dialog-content [type="submit"] {
+.dialog-content .search-submit {
 	width: 2em;
 	font-size: 1.4em;
 	border-color: transparent;

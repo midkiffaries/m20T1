@@ -339,14 +339,13 @@ Interactive elements
 	outline: none;
 }
 
-[href] {
+a {
 	color: inherit;
-	background-color: transparent;
 	-webkit-tap-highlight-color: rgba(220,220,220,0.4);
 }
 
-[href]::before,
-[href]::after {
+a::before,
+a::after {
 	display: inline-block;
 	text-decoration: none;
 }

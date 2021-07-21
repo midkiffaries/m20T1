@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /********************************************
 Base WordPress Page Styling 
 *********************************************/
@@ -629,7 +631,7 @@ Page Specific Styling
 	padding: 0.7em !important;
 }
 
-.search-main [type='search'] {
+.page-search .search-input {
 	width: calc(100% - 5em);
 }
 
@@ -743,7 +745,7 @@ Page Specific Styling
 }
 
 /* Search Submit button */
-.search-block [type="submit"] {
+.search-submit {
 	padding: auto 1em;
 	width: 3em;
 	background-position: 50% 50%;

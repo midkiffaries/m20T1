@@ -92,17 +92,6 @@ function my_comment_style($comment, $args, $depth) {
 <?php
 }
 
-// Search Form
-function my_search_form($id) {
-?>
-<section class="search-block search-<?php echo $id; ?>">
-    <form method="get" role="search" action="<?php echo SITE_ADDRESS; ?>/">
-        <input type="search" name="s" id="Search-<?php echo $id; ?>" value="<?php echo get_search_query(); ?>" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="96" pattern="[^'\x22]+" aria-label="Search" required><input type="submit" value="&nbsp;" aria-label="Submit Search">
-    </form>
-</section>
-<?php
-}
-
 // List social sharing links for each blog post
 function blog_post_share() {
 ?>

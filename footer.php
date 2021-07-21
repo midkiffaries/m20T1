@@ -1,5 +1,5 @@
 
-<footer class="page-footer">
+<footer class="page-footer" role="contentinfo">
     <div class="footer-content">
         <?php menu_nav_list('Primary Nav', 'footer-navigation'); ?>
     

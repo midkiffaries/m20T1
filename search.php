@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-search">
+<main class="page-main page-search" role="main">
     <div class="page-content width-side">
 
 <?php breadcrumb_trail(); ?>
@@ -19,7 +19,7 @@ endwhile; endif;
 <section class="search-banner">
     <div>
         <h2 class="page-title" itemprop="title">Your search netted <?php printf($search_count); ?> result(s)</h2>
-<?php my_search_form('main'); ?>
+        <?php get_search_form(); ?>
         <hr>
     </div>
 </section>
@@ -65,7 +65,7 @@ endwhile; endif;
         <p>If it will make you feel better, this probably happens to Google too.</p>
         <p><b>Care to take another shot?</b></p>
 
-<?php my_search_form('main'); ?>
+        <?php get_search_form(); ?>
     </div>
 </article>
 <?php endif; ?>

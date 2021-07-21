@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-frontpage page-home">
+<main class="page-frontpage page-home" role="main">
     <div class="page-content width-full">
 
 <?php //breadcrumb_trail(); ?>

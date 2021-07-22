@@ -17,7 +17,7 @@ if ( post_password_required() ) {
     <div class="comment-container">
         <h3 class="comments-title"><?php comments_number('No Comments', 'One Comment', '% Comments');?></h3>
         <ol class="list-comments">
-<?php wp_list_comments('type=comment&reply_text=&login_text=&callback=my_comment_style'); ?>
+<?php wp_list_comments('type=comment&reply_text=&login_text=&callback=custom_comment_style'); ?>
         </ol>
     </div>
 </section>

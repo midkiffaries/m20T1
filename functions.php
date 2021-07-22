@@ -70,8 +70,8 @@ function custom_excerpt_more() {
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 
-// Blog post individual user comment styling
-function my_comment_style($comment, $args, $depth) {
+// Blog post user comment styling for each comment
+function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">

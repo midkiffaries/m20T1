@@ -15,14 +15,8 @@ if (get_the_post_thumbnail()) { // Use page's featured image
     $featuredImage = get_template_directory_uri() . "/assets/images/social-share.jpg";
 }
 ?>
-<meta charset="<?php bloginfo('charset'); ?>" >
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
-<meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta name="description" content="<?php echo $description; ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
+<meta name="description" content="<?php echo $description; ?>">
 <meta name="rating" content="General">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
@@ -64,7 +58,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <meta property="twitter:image" content="<?php echo $featuredImage; ?>">
 <meta property="twitter:description" content="<?php echo $description; ?>">
-<?php wp_head(); ?>
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>

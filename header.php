@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
 <head>
+<meta charset="<?php bloginfo('charset'); ?>" >
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
+<meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <?php include 'metadata.php'; ?>
-
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

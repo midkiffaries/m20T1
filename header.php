@@ -7,6 +7,13 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
 <meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
+<meta name="author" content="Ted Balmer | MarchTwenty.com">
+<meta name="rating" content="General">
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php bloginfo('rss2_url'); ?>">
+<base href="<?php echo home_url(); ?>/" id="SiteURI">
 <?php include 'metadata.php'; ?>
 <?php wp_head(); ?>
 </head>

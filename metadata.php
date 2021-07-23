@@ -15,14 +15,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
     $featuredImage = get_template_directory_uri() . "/assets/images/social-share.jpg";
 }
 ?>
-<meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="description" content="<?php echo $description; ?>">
-<meta name="rating" content="General">
-<meta name="robots" content="index,follow">
-<meta name="googlebot" content="index,follow">
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php bloginfo('rss2_url'); ?>">
-<base href="<?php echo home_url(); ?>/">
 <?php // Google Fonts ?>
 <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

@@ -5,15 +5,10 @@
 "use strict";
 
 // Declare Global Variables and settings
-const HostName = window.location.host,
-    OriginURL = `${window.location.protocol}//${HostName}/`,        
-    PathName = window.location.pathname,
-    HrefURL = `${PathName}${window.location.search}`,
-    themeURL = `${OriginURL}WP-marchtwenty/wp-content/themes/m20T1/`,
-    Locale = "en-US";
-
-// Get today's date
-const TodaysDate = new Date();
+const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('href')),
+    themeUri = `${siteUri}wp-content/themes/m20T1/`,
+    TodaysDate = new Date(),
+    Locale = 'en-US';
 
 // Keyup Events
 document.addEventListener("keyup", (e) => {

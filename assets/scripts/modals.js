@@ -6,7 +6,7 @@
 const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
-    <form method="get" class="search-form" role="search" action="${OriginURL}">
+    <form method="get" class="search-form" role="search" action="${siteUri}">
         <input type="search" name="s" class="search-input" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
     </form>
 </section>
@@ -182,7 +182,7 @@ function phpSendEmail() {
 		document.getElementById("ServerMessage").textContent = "You need to fill in all the fields to send this message.";
 	}
 
-	xmlhttp.open("get", `${themeURL}mailman.php?${v}`, true);
+	xmlhttp.open("get", `${themeUri}mailman.php?${v}`, true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send(null);
 }

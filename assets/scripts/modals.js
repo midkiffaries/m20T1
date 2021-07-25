@@ -7,7 +7,7 @@ const SearchModal = (`
 <h3>Search</h3>
 <section class="search-block search-modal">
     <form method="get" class="search-form" role="search" action="${siteUri}">
-        <input type="search" name="s" class="search-input" value="" placeholder="Search..." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
+        <input type="search" name="s" class="search-input" value="" placeholder="Search blog posts, pages, etc." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
     </form>
 </section>
 <style>

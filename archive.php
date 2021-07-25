@@ -110,7 +110,7 @@ get_search_form('archive');
 
     </div>
 
-    <?php get_sidebar('primary'); ?>
+    <?php get_sidebar('secondary'); ?>
 
 </main>
 

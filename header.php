@@ -14,7 +14,7 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php bloginfo('rss2_url'); ?>">
 <base href="<?php echo home_url(); ?>/" id="SiteURI">
-<?php include 'metadata.php'; ?>
+<?php metadata(); ?>
 <?php wp_head(); ?>
 </head>
 

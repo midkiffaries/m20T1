@@ -45,6 +45,11 @@ function numberToRoman($variable) {
 // WordPress Functions
 /////////////////////////////
 
+// Include metadata on header.php
+function metadata() {
+    include 'metadata.php';
+}
+
 // Add featured image to posts and pages
 add_theme_support( 'post-thumbnails' );
 /*

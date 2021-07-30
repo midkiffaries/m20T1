@@ -173,7 +173,12 @@ Page Styling
 	background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg);
 	background-size: 1em, cover;
 }
-
+/*
+.header-blog[style], 
+.header-single-page[style] {
+	background-size: 1em cover;
+}
+*/
 /* Single Blog Post */
 .single-entry-header {
 	text-align: center;

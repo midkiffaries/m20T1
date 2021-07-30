@@ -412,7 +412,6 @@ input:not(:focus):invalid {
 	pointer-events: none;
 }
 
-[readonly],
 button > *,
 [role='button'] > * {
 	pointer-events: none;

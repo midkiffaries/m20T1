@@ -26,8 +26,8 @@
         <div class="header-title">
             <h1 class="header-logo" itemprop="title">
                 <a href="<?php echo home_url(); ?>" rel="bookmark">
-                    <img class="logo-image" src="<?php bloginfo('template_url'); ?>/assets/logos/logo-img.svg" alt="Logo">
-                    <img class="logo-text" src="<?php bloginfo('template_url'); ?>/assets/logos/logo-text.svg" alt="<?php bloginfo('name'); ?>">
+                    <img class="logo-image" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-img.svg" alt="Logo">
+                    <img class="logo-text" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-text.svg" alt="<?php bloginfo('name'); ?>">
                 </a>
             </h1>
         </div>
@@ -46,21 +46,17 @@
         </div>
     </div>
 
-<?php if ( is_front_page() ) : // Front Page ?>
-    <div class="header-homepage">
-        <?php // Front-page header ?>
+<?php if ( is_front_page() ) : // Front-page header ?>
+    <div class="header-homepage"></div>
+
+<?php elseif ( is_page() ) : // Basic Page header ?>
+<?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
+    <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featureImage; ?>>
+        <?php //the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
     </div>
 
-<?php elseif ( is_page() ) : // Single Page ?>
-    <div class="header-single-page">
-        <?php // Page header ?>
-        <?php the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
-    </div>
-
-<?php else : // Blog Pages ?>
-    <div class="header-blog bg-parallax" data-rate="12">
-        <?php // Blog pages header ?>
-    </div>
+<?php else : // Blog Pages and Posts header ?>
+    <div class="header-blog bg-parallax" data-rate="12"></div>
 
 <?php endif; ?>
 

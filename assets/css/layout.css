@@ -280,7 +280,8 @@ Main site layout
 .header-single-page,
 .header-blog {
 	height: 14em;
-	background-color: rgba(90,90,90,0.2);
+	background: #bce0ff url(../images/header-blank.svg) no-repeat 50% 0;
+	background-size: cover;
 	overflow: hidden;
 	position: relative;
 }

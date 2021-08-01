@@ -95,6 +95,7 @@ select:focus {
 /* Buttons */
 button,
 [type="submit"] {
+	color: #fff;
 	background-color: var(--button-color);
 	border-width: 2px;
 	border-color: transparent;
@@ -179,136 +180,6 @@ Page Styling
 	background-size: 1em cover;
 }
 */
-/* Single Blog Post */
-.single-entry-header {
-	text-align: center;
-	margin: 1.5em auto;
-}
-
-.single-entry-title {
-	margin: 6px 2px;
-}
-
-.single-entry-category a {
-	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	padding: 3px 4px;
-	font-weight: bold;
-}
-
-.single-entry-date {
-	margin: 5px 0;
-}
-
-.entry-content,
-.single-entry-content {
-	font-size: 1.1rem;
-}
-
-.entry-overflow {
-	background: linear-gradient(0deg, var(--page-background) 0%, rgba(255,255,255,0.1) 100%);
-}
-
-.dark-mode .entry-overflow {
-	background: linear-gradient(0deg, #161616 0%, rgba(10,10,10,0.1) 100%);
-}
-
-/* Blog Post Attributes */
-.entry-category a {
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	padding: 1px 2px;
-	text-decoration: none;
-}
-
-.entry-title {
-	margin: 0.1em 0 0.3em;
-}
-
-.entry-last-updated {
-	opacity: 0.8;
-	font-size: 0.9em;
-}
-
-.entry-tags {
-	float: left;
-}
-
-.entry-tags ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.entry-tags ul li {
-	display: inline-block;
-	margin: auto 2px;
-}
-
-.entry-tags ul li a {
-	color: #555;
-	padding: 3px 5px;
-	-webkit-text-decoration: underline dashed #999;
-	text-decoration: underline dashed #999;
-}
-
-.entry-tags ul li a:hover {
-	-webkit-text-decoration: underline solid;
-	text-decoration: underline solid;
-}
-
-/* Enlarge <p> font-size in short posts */
-.entry-largefont p {
-	font-size: 120%;
-}
-
-/* Post social sharing buttons */
-.entry-share {
-	float: right;
-}
-
-.entry-share ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.entry-share ul li {
-	display: inline-block;
-	margin: auto 1px;
-}
-
-.social-share li a {
-	text-decoration: none;
-	color: #fff;
-	padding: 6px 8px;
-	border-radius: 5px;
-	transition: filter 0.3s;
-}
-
-.social-share li a:hover {
-	filter: brightness(1.2);
-}
-
-.social-share li a:active {
-	filter: brightness(0.8);
-}
-
-.social-share .facebook-share {
-    background-color: #3b5998;
-}
-
-.social-share .twitter-share {
-    background-color: #1da1f2;
-}
-
-.social-share li a::before {
-	padding-right: 3px;
-	vertical-align: -2px;
-	font-size: 1.2em;
-}
-
 
 /* Footer Social Links */
 .footer-social ul a {

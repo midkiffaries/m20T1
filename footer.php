@@ -1,9 +1,11 @@
 
 <footer class="page-footer" role="contentinfo">
     <div class="footer-content">
-        <?php menu_nav_list('Primary Nav', 'footer-navigation'); ?>
+        <?php menu_nav_list('Primary Navigation', 'footer-navigation'); ?>
+
+        <?php menu_nav_list('Secondary Navigation', 'footer-navigation'); ?>
     
-        <?php menu_nav_list('Social Links', 'footer-social'); ?>
+        <?php menu_nav_list('Social Media Links', 'footer-social'); ?>
     </div>
 
     <div class="footer-slogan"><?php bloginfo('description'); ?></div>

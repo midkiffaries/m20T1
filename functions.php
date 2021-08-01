@@ -132,9 +132,9 @@ function menu_nav_list($menu, $id) {
 
 // Register the menus/navigation
 function register_menu() {
-    register_nav_menu( 'primary', __( 'Primary Navigation', 'theme-slug' ) );
-    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'theme-slug' ) );
-    register_nav_menu( 'social', __( 'Social Links', 'theme-slug' ) );
+    register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
+    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
+    register_nav_menu( 'social', __( 'Social Media Links', 'm20T1' ) );
 }
 add_action( 'after_setup_theme', 'register_menu' );
 

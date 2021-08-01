@@ -14,6 +14,9 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php bloginfo('rss2_url'); ?>">
 <base href="<?php echo home_url(); ?>/" id="SiteURI">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/tedilize.css"; ?>">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 <?php metadata(); ?>
 <?php wp_head(); ?>
 </head>
@@ -35,8 +38,11 @@
         <div class="header-content">
             <div id="MainMenu" class="pull-menu-left menubar">
                 <div class="header-navigation" role="navigation">
-                    <?php menu_nav_list('Primary Nav', 'header'); ?>
+                    <?php menu_nav_list('Primary Navigation', 'header-navigation'); ?>
                 </div>
+                <!--div class="header-secondary-navigation" role="navigation">
+                    <?php menu_nav_list('Secondary Navigation', 'header-navigation'); ?>
+                </div-->
                 <div class="header-menu">
                     <button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', ContactModal)"></button>
                     <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>

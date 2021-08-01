@@ -21,10 +21,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
 <?php printf($config->GoogleFonts); ?>
-<?php // Stylesheets ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/tedilize.css"; ?>">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">

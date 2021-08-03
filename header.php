@@ -40,9 +40,9 @@
                 <div class="header-navigation" role="navigation">
                     <?php menu_nav_list('Primary Navigation', 'header-navigation'); ?>
                 </div>
-                <!--div class="header-secondary-navigation" role="navigation">
+                <div class="header-secondary-navigation" role="navigation">
                     <?php menu_nav_list('Secondary Navigation', 'header-navigation'); ?>
-                </div-->
+                </div>
                 <div class="header-menu">
                     <button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', ContactModal)"></button>
                     <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>

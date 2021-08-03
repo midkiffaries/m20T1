@@ -214,6 +214,9 @@ body.dark-mode,
 	.dark-mode .pull-menu-left {
 		background-color: rgba(0,0,0,0.95);
 	}
+	.dark-mode .header-menubar {
+		background-color: rgba(0,0,0,0.9);
+	}
 }
 
 
@@ -352,6 +355,10 @@ Main site layout
 	margin: 0.8em 0.8em;
 }
 
+.header-secondary-navigation {
+	display: none;
+}
+
 @media (max-width: 849px) {
 	.header-single-page,
 	.header-blog {
@@ -380,14 +387,22 @@ Main site layout
 	.header-content {
 		position: relative;
 	}
+	.header-menu button {
+		margin: 0.2em;
+		padding: 2em;
+		background-size: 2.2em;
+	}
 	.header-menu,
-	.header-navigation {
+	.header-navigation,
+	.header-secondary-navigation {
 		display: block;
 	}
-	.header-navigation ul li {
+	.header-navigation ul li,
+	.header-secondary-navigation ul li {
 		display: block;
 	}
-	.header-navigation ul li a {
+	.header-navigation ul li a,
+	.header-secondary-navigation ul li a {
 		font-size: 1.5em;
 	}
 }

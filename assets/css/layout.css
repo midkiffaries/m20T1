@@ -20,11 +20,11 @@ Icon Fonts
 
 @font-face {
 	font-family: 'icomoon';
-	src: url('../fonts/icomoon.woff2?rf7p3i') format('woff2'),
-		url('../fonts/icomoon.woff?rf7p3i') format('woff');
+	src: url('../fonts/icomoon.woff2?ubh0hq') format('woff2'),
+		url('../fonts/icomoon.woff?ubh0hq') format('woff');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
+	font-display: block;
 }
 
 [class^="icon-"]::before, 
@@ -39,8 +39,23 @@ Icon Fonts
 	line-height: 1;
 }
 
+.icon-thingiverse::before {
+	content: "\e910";
+}
+.icon-spring::before {
+	content: "\e909";
+}
 .icon-unsplash::before {
 	content: "\e900";
+}
+.icon-linkedin::before {
+	content: "\e905";
+}
+.icon-twitter::before {
+	content: "\e906";
+}
+.icon-file::before {
+	content: "\e907";
 }
 .icon-google-photos::before {
 	content: "\e901";
@@ -60,44 +75,17 @@ Icon Fonts
 .icon-comment::before {
 	content: "\e96b";
 }
-.icon-thingiverse::before {
-	content: "\e9a2";
-}
 .icon-instagram::before {
 	content: "\ea92";
 }
 .icon-youtube::before {
 	content: "\ea9d";
 }
-.icon-vimeo::before {
-	content: "\eaa1";
-}
-.icon-deviantart::before {
-	content: "\eaaa";
-}
 .icon-steam::before {
 	content: "\eaad";
 }
-.icon-github::before {
-	content: "\eab0";
-}
-.icon-codepen::before {
-	content: "\eae8";
-}
-.icon-linkedin::before {
-	content: "\e905";
-}
-.icon-twitter::before {
-	content: "\e906";
-}
-.icon-file::before {
-	content: "\e907";
-}
-.icon-link::after {
+.icon-link::before {
 	content: "\e908";
-}
-.icon-date::before {
-	content: "\e909";
 }
 .icon-map::before {
 	content: "\e90a";

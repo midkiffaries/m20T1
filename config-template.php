@@ -17,8 +17,8 @@ $config = json_decode($ThemeSettings);
 
 /*
 WordPress plugins used in this theme:
-Breadcrumb Trail - https://wordpress.org/plugins/breadcrumb-trail/
 XML Sitemaps - https://wordpress.org/plugins/google-sitemap-generator/
+SVG Support - https://wordpress.org/plugins/svg-support/
 */
 
 ?>

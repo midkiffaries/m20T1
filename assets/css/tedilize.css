@@ -85,6 +85,11 @@ address {
 	line-height: inherit;
 }
 
+p {
+	orphans: 3;
+	widows: 3;
+}
+
 /* clearfix */
 header::after,
 main::after,
@@ -155,6 +160,8 @@ h6 {
 	line-height: 1.2;
 	margin-bottom: 0.5rem;
 	font-weight: 400;
+	page-break-after: avoid;
+	page-break-inside: avoid;
 }
 
 h1 {
@@ -219,6 +226,7 @@ List elements
 ul,
 ol {
 	padding-left: 2rem;
+	page-break-before: avoid;
 }
 
 dt {
@@ -321,6 +329,8 @@ figcaption {
 }
 
 svg:not(:root) {
+	height: auto;
+	max-width: 100%;
 	overflow: hidden;
 	vertical-align: middle;
 }
@@ -510,6 +520,7 @@ output {
 }
 
 fieldset {
+	width: auto;
 	padding: 0 0.5em 0.5em;
 	border: 1px solid currentColor;
 }
@@ -771,10 +782,6 @@ Responsive elements
 		float: none !important;
 		position: relative;
 	}
-
-	fieldset {
-		width: auto;
-	}
 }
 
 /* Printing */
@@ -784,33 +791,15 @@ Responsive elements
 	*,
 	*::before,
 	*::after {
-		background-color: #fff;
-		color: #000;
+		color: #111;
 		text-shadow: none;
 	}
 
-	p,
-	h2,
-	h3,
-	h4 {
-		orphans: 3;
-		widows: 3;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		page-break-after: avoid;
-		page-break-inside: avoid;
-	}
-
-	ul, 
-	ol, 
-	dl { 
-		page-break-before: avoid;
+	hr,
+	mark,
+	[href] {
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
 	}
 
 	table,
@@ -835,14 +824,9 @@ Responsive elements
 		display: table-header-group;
 	}
 
-	hr:not([size='0']) {
-		border-bottom: 2px solid #666;
-	}
-
 	pre {
 		overflow-x: auto;
 		white-space: pre-wrap !important;
-		word-wrap: break-word;
 	}
 
 	abbr[title]::after {
@@ -850,12 +834,11 @@ Responsive elements
 	}
 
 	[href] {
-		background: transparent;
 		text-decoration: underline;
 	}
 
 	main [href^='http']::after {
-		content: " [" attr(href) "] ";
-		font-size: 70%;
+		content: " [" attr(href) "]";
+		font-size: 65%;
 	}
 }

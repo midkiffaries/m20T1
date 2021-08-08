@@ -6,7 +6,7 @@
 <?php breadcrumb_trail(); ?>
 
 <section class="blog-page-title">
-    <h2 class="page-title" itemprop="title">Blog</h2>
+    <h2 class="page-title" itemprop="title">The Blog</h2>
 </section>
 
 <?php if (have_posts()) : ?>

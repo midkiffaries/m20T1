@@ -28,7 +28,7 @@ const SearchModal = (`
 
 // Contact modal content
 const ContactModal = (`
-<h3>Contact</h3>
+<h3>Send me a message</h3>
 <section class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
 		<fieldset id="contact_fieldset">

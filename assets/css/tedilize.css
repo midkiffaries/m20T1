@@ -796,8 +796,7 @@ Responsive elements
 	}
 
 	hr,
-	mark,
-	[href] {
+	mark {
 		-webkit-print-color-adjust: exact;
 		color-adjust: exact;
 	}

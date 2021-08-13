@@ -17,10 +17,10 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 ?>
 <meta name="description" content="<?php echo $description; ?>">
 <?php // Google Fonts ?>
-<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
-<?php printf($config->GoogleFonts); ?>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">

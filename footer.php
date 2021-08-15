@@ -1,11 +1,11 @@
 
 <footer class="page-footer" role="contentinfo">
-    <div class="footer-content">
-        <?php menu_nav_list('Primary Navigation', 'footer-navigation'); ?>
-
-        <?php menu_nav_list('Secondary Navigation', 'footer-navigation'); ?>
-    
-        <?php menu_nav_list('Social Media Links', 'footer-social'); ?>
+    <div id="footer-widgets" class="footer-content">
+        <?php if (is_active_sidebar( 'footer' )) : ?>
+            <?php dynamic_sidebar( 'footer' ); ?>
+        <?php else : ?>
+            <!-- Time to add some widgets! -->
+        <?php endif; ?>
     </div>
 
     <div class="footer-slogan"><?php bloginfo('description'); ?></div>

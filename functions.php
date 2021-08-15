@@ -164,16 +164,28 @@ function custom_sidebars() {
             'after_title'   => '</h4>',
         )
     );
-    // Footer Sidebar - bottom of the page
+    // Front page Sidebar - bottom of the page
+    register_sidebar(
+        array(
+            'id'            => 'frontpage',
+            'name'          => __( 'Front Page Sidebar' ),
+            'description'   => __( 'The front page sidebar.' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+    // Page Footer Sidebar - bottom of the page
     register_sidebar(
         array(
             'id'            => 'footer',
             'name'          => __( 'Footer Sidebar' ),
             'description'   => __( 'The page footer sidebar.' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
+            'before_widget' => '<nav id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</nav>',
+            'before_title'  => '<h4 class="widget-title">',
+            'after_title'   => '</h4>',
         )
     );
 }

@@ -40,11 +40,12 @@
     </div>
 </section>
 
-<div id="singlepost-widgets" class="page-sidebar singlepost-widgets">
+<section id="singlepost-widgets" class="page-sidebar singlepost-widgets">
     <?php if (is_active_sidebar( 'singlepost' )) : ?>
     <?php dynamic_sidebar( 'singlepost' ); ?>
     <?php endif; ?>
-</div>
+</section>
+
 <?php comments_template(); ?>
 
 <?php endwhile; else: ?>

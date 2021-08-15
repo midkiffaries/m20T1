@@ -22,9 +22,7 @@
 
     <div id="frontpage-widgets" class="page-sidebar frontpage-widgets">
         <?php if (is_active_sidebar( 'frontpage' )) : ?>
-            <?php dynamic_sidebar( 'frontpage' ); ?>
-        <?php else : ?>
-            <!-- Time to add some widgets! -->
+        <?php dynamic_sidebar( 'frontpage' ); ?>
         <?php endif; ?>
     </div>
 

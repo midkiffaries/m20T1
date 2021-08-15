@@ -2,9 +2,7 @@
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-content">
         <?php if (is_active_sidebar( 'footer' )) : ?>
-            <?php dynamic_sidebar( 'footer' ); ?>
-        <?php else : ?>
-            <!-- Time to add some widgets! -->
+        <?php dynamic_sidebar( 'footer' ); ?>
         <?php endif; ?>
     </div>
 

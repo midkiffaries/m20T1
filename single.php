@@ -40,8 +40,11 @@
     </div>
 </section>
 
-<?php get_sidebar('footer'); ?>
-
+<div id="singlepost-widgets" class="page-sidebar singlepost-widgets">
+    <?php if (is_active_sidebar( 'singlepost' )) : ?>
+    <?php dynamic_sidebar( 'singlepost' ); ?>
+    <?php endif; ?>
+</div>
 <?php comments_template(); ?>
 
 <?php endwhile; else: ?>

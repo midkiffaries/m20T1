@@ -176,8 +176,11 @@ Page Styling
 .header-single-page {
 	background-color: var(--base-color-pale);
 	background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg);
+	background-repeat: repeat, no-repeat;
 	background-size: 1em, cover;
 }
+
+
 /*
 .header-blog[style], 
 .header-single-page[style] {
@@ -185,38 +188,6 @@ Page Styling
 }
 */
 
-/* Footer Social Links */
-/*
-.footer-social ul a {
-	font-size: 1.1em;
-	text-decoration: none;
-}
-
-.footer-social ul a::before {
-	font-family: 'icomoon' !important;
-	padding: 2px;
-	font-size: 1.4em;
-	vertical-align: -4px;
-}
-
-.footer-social ul a[href*="facebook.com"]::before {
-	content: "\e90b";
-	font-size: 1.5em;
-}
-
-.footer-social ul a[href*="twitter.com"]::before {
-	content: "\e906";
-}
-
-.footer-social ul a[href*="linkedin.com"]::before {
-	content: "\e905";
-}
-
-.footer-social ul a[href*="instagram.com"]::before {
-	content: "\ea92";
-	font-size: 1.3em;
-}
-*/
 /*
 svg {
 	filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));

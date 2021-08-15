@@ -409,15 +409,9 @@ Main site layout
 	margin: 0 auto;
 }
 
-.footer-navigation ul li,
-.footer-social ul li {
+.footer-content ul li {
 	display: inline-block;
 	margin: auto 3px;
-}
-
-.footer-social ul li {
-	display: inline-block;
-	margin: 0 3px;
 }
 
 .footer-slogan {
@@ -449,14 +443,6 @@ Main site layout
 		margin: 0;
 	}
 }
-
-@media (max-width: 849px) {
-	.footer-content {
-		width: 100%;
-		margin: 0;
-	}
-}
-
 
 /* Page main body content */
 .page-main {

@@ -1,6 +1,6 @@
 
 <footer class="page-footer" role="contentinfo">
-    <div id="footer-widgets" class="footer-content">
+    <div id="footer-widgets" class="footer-widgets">
         <?php if (is_active_sidebar( 'footer' )) : ?>
         <?php dynamic_sidebar( 'footer' ); ?>
         <?php endif; ?>

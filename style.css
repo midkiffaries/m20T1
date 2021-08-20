@@ -180,13 +180,28 @@ Page Styling
 	background-size: 1em, cover;
 }
 
-
 /*
 .header-blog[style], 
 .header-single-page[style] {
 	background-size: 1em cover;
 }
 */
+
+/* Page Footer */
+.footer-widgets ul {
+	text-align: center;
+	justify-content: center;
+	margin: 0.5em 0.5em 0;
+}
+
+.footer-widgets ul li {
+	display: inline-block;
+	margin: auto 3px;
+}
+
+.footer-widgets .wp-block-social-links svg {
+	fill: #000 !important;
+}
 
 /*
 svg {

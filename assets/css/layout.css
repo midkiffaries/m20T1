@@ -402,16 +402,10 @@ Main site layout
 	background-color: rgba(0,0,0,0.15);
 }
 
-.footer-content {
-	padding: 0.8em;
-	text-align: center;
+.footer-widgets {
 	width: var(--page-width);
+	padding: 0.9em;
 	margin: 0 auto;
-}
-
-.footer-content ul li {
-	display: inline-block;
-	margin: auto 3px;
 }
 
 .footer-slogan {
@@ -419,6 +413,7 @@ Main site layout
 	font-size: 0.9em;
 	font-style: italic;
 	opacity: 0.8;
+	margin: 0.5em
 }
 
 .footer-notice {
@@ -438,7 +433,7 @@ Main site layout
 }
 
 @media (max-width: 1249px) {
-	.footer-content {
+	.footer-widgets {
 		width: 100%;
 		margin: 0;
 	}
@@ -500,6 +495,7 @@ Main site layout
 
 .single-entry-title {
 	margin: 6px 2px;
+	font-size: 2.7em;
 }
 
 .single-entry-category a {

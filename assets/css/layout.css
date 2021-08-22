@@ -515,14 +515,6 @@ Main site layout
 	font-size: 1.1rem;
 }
 
-.entry-overflow {
-	background: linear-gradient(0deg, var(--page-background) 0%, rgba(255,255,255,0.1) 100%);
-}
-
-.dark-mode .entry-overflow {
-	background: linear-gradient(0deg, #161616 0%, rgba(10,10,10,0.1) 100%);
-}
-
 /* Blog Post Attributes */
 .entry-category a {
 	letter-spacing: 0.08em;
@@ -628,6 +620,12 @@ Wordpress Styling
 	font-weight: bold;
 }
 
+/* Seperator */
+hr.wp-block-separator.is-style-default {
+	width: 7em;
+	margin: auto;
+}
+
 /* Figure Tag */
 figure > a img {
 	cursor: zoom-in;
@@ -689,7 +687,7 @@ figcaption:not(.blocks-gallery-item__caption) {
 Page Specific Styling
 ************************/
 
-/* Blog Page */
+/* The Blog Page */
 .page-content .post,
 .blog-page-title {
 	padding: 0 0.6em;
@@ -698,15 +696,25 @@ Page Specific Styling
 }
 
 .entry-content {
-	max-height: 31em; 
+	max-height: 38em; 
 	overflow: hidden;
 }
 
 .entry-overflow {
 	pointer-events: none;
 	height: 2.2em;
-	transform: translateY(-2.2em);
+	/* transform: translateY(-2.2em); */
 }
+
+/*
+.entry-overflow {
+	background: linear-gradient(0deg, var(--page-background) 0%, rgba(255,255,255,0.1) 100%);
+}
+
+.dark-mode .entry-overflow {
+	background: linear-gradient(0deg, #161616 0%, rgba(10,10,10,0.1) 100%);
+}
+*/
 
 .entry-footer {
 	margin-top: -1.5em;

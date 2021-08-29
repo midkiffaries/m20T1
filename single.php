@@ -34,8 +34,8 @@
 <section class="blog-pagination">
     <div class="pagination-container">
         <nav class="single-blog-post-nav">
-            <?php next_post_link('&#x276E;%link', '%title'); ?>
-            <?php previous_post_link('%link&#x276F;', '%title'); ?>
+            <div class="left"><?php next_post_link('%link', '<span>Next</span>%title'); ?></div>
+            <div class="right"><?php previous_post_link('%link', '<span>Previous</span>%title'); ?></div>
         </nav>
     </div>
 </section>

@@ -406,6 +406,7 @@ Main site layout
 	width: var(--page-width);
 	padding: 0.9em;
 	margin: 0 auto;
+	clear: both;
 }
 
 .footer-slogan {
@@ -502,8 +503,10 @@ Main site layout
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	padding: 3px 4px;
+	padding: 3px 8px;
 	font-weight: bold;
+	background: rgba(50,50,50,0.2);
+	border-radius: 0.2em;
 }
 
 .single-entry-date {
@@ -609,6 +612,11 @@ Main site layout
 	padding-right: 3px;
 	vertical-align: -2px;
 	font-size: 1.2em;
+}
+
+/* Single post widgets */
+.singlepost-widgets {
+	clear: both;
 }
 
 /************************ 
@@ -899,9 +907,26 @@ Page Specific Styling
 .blog-pagination a {
 	text-decoration: none;
 	font-size: 1.1em;
-	margin: 0 0.5em;
 	padding: 2px 4px;
 	border-radius: 4px;
+}
+
+.single-blog-post-nav div span {
+	font-size: 85%;
+	display: block;
+	margin: 0;
+}
+
+.single-blog-post-nav .left {
+	float: left;
+	text-align: left;
+	margin: 0 0.8em;
+}
+
+.single-blog-post-nav .right {
+	float: right;
+	text-align: right;
+	margin: 0 0.8em;
 }
 
 

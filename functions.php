@@ -45,13 +45,9 @@ function numberToRoman($variable) {
 // WordPress Functions
 /////////////////////////////
 
-// Include metadata on header.php
-function metadata() {
-    include 'metadata.php';
-}
 
 // Add featured image to posts and pages
-add_theme_support( 'post-thumbnails' );
+//add_theme_support( 'post-thumbnails' );
 /*
 the_post_thumbnail(); // Without parameter ->; Thumbnail
 the_post_thumbnail( 'thumbnail' ); // Thumbnail (default 150px x 150px max)
@@ -130,13 +126,6 @@ function menu_nav_list($menu, $id) {
     wp_nav_menu($menuStyle);
 }
 
-// Register the menus/navigation
-function register_menu() {
-    register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
-    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
-}
-add_action( 'after_setup_theme', 'register_menu' );
-
 // Register the sidebar widgets 
 function custom_sidebars() {
     // Primary Sidebar on the right side of the page
@@ -201,5 +190,25 @@ function custom_sidebars() {
     );
 }
 add_action( 'widgets_init', 'custom_sidebars' );
+
+// Register the theme and menus/navigation 
+function theme_setup() {
+    // Add featured image to posts and pages
+    add_theme_support( 'post-thumbnails' );
+
+    // Theme Support
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
+    
+    // HTML5 Support
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+    add_theme_support( 'post-formats', array('aside','image','gallery','video','audio','link','quote','status') );
+    
+    // Widgets
+    register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
+    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
+}
+add_action( 'after_setup_theme', 'theme_setup' );
 
 ?>

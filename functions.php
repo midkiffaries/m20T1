@@ -45,6 +45,9 @@ function numberToRoman($variable) {
 // WordPress Functions
 /////////////////////////////
 
+function header_extended() {
+    include 'header-extended.php';
+}
 
 // Add featured image to posts and pages
 //add_theme_support( 'post-thumbnails' );

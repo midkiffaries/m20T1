@@ -39,11 +39,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 <meta name="description" content="<?php echo $description; ?>">
-<?php // Google Fonts ?>
-<link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
@@ -72,9 +67,8 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta property="twitter:description" content="<?php echo $description; ?>">
 <?php wp_head(); ?>
 
-<?php // Global site tag gtag.js - Google Analytics ?>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136801430-1");</script>
+<?php header_extended(); ?>
+
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

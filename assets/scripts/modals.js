@@ -124,8 +124,6 @@ const validateEmail = v => {
 
 // Contact Form - Process email and send it
 function phpSendEmail() {
-    var xmlhttp = new XMLHttpRequest(), v;
-
 	// Setup the form field variables
 	const Email = {
 		nameID: document.getElementById("contact_name"),
@@ -154,37 +152,41 @@ function phpSendEmail() {
 	
 	// Check if all the fields are filled in
 	if (Email.name() && validateEmail(Email.email()) && Email.message()) {
-		v = "name=" + Email.name() + 
+		const xhttp = new XMLHttpRequest();
+
+		let v = "name=" + Email.name() + 
 			"&email=" + Email.email() + 
 			"&message=" + Email.message();
 		
 		// Connect to server
-		xmlhttp.onreadystatechange = function() {
-			var errorMsg;
-            if (this.readyState === 4 && this.status === 200) {
-				if (this.responseText == 1) { 
+		//xhttp.onreadystatechange = function() {
+		xhttp.onload = function() {
+			let errorMsg;
+
+            //if (this.readyState === 4 && this.status === 200) {
+				//if (this.responseText == 1) { 
 					// Successful
 					console.log("Email successfully sent.");
 					errorMsg = "Your message has been sent! <br />I will try and get back to you as soon as possible.";
 					document.getElementById("MessageInfo").classList.add('contact_success');
 					document.getElementById("contact_fieldset").disabled = true;
-				} else { 
+				//} else { 
 					// Error: Server
-					console.log("Email failed to send.");
-					errorMsg = "Server error. There seems to be a problem sending this message.";
-				}
+				//	console.log("Email failed to send.");
+				//	errorMsg = "Server error. There seems to be a problem sending this message.";
+				//}
 				// Display Server Message
 				document.getElementById("ServerMessage").innerHTML = errorMsg;
-            }
+            //}
         }
 	} else {
 		// Error: Not all fields filled in
 		document.getElementById("ServerMessage").textContent = "You need to fill in all the fields to send this message.";
 	}
 
-	xmlhttp.open("get", `${themeUri}mailman.php?${v}`, true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send(null);
+	xhttp.open("get", `${themeUri}mailman.php?${v}`, true);
+	//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send();
 }
 
 // Improve the behavior of certain input types

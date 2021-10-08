@@ -4,14 +4,13 @@
 Send an email to a specified recipient
 ******************************************/
 
-error_reporting(0);
-
 // Includes
-include 'config.php';
+//include 'config.php';
 include 'functions.php';
 
 // Reciepent of the email
-$Recipient = $config->Email;
+//$Recipient = $config->Email;
+$Recipient = bloginfo('admin_email');
 
 // Clean user input
 $Name = cleanUserInput($_GET['name']);

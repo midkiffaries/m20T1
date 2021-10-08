@@ -79,7 +79,7 @@ function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-        <div class="comment-content">
+        <div class="comment-content" role="comment">
 			<header class="comment-header">
                 <?php //echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
                 <span class="comment-author" rel="author"><?php printf(__('%s'), get_comment_author()); ?></span>

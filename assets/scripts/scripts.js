@@ -278,7 +278,7 @@ function HtmlModal(c, v) {
 (function(){
     let fig = document.getElementsByTagName("figure"), l = fig.length;
     for (let i = 0; i < l; i++) {
-        if (fig[i].firstElementChild.tagName == "a" || fig[i].firstElementChild.tagName == "A") {
+        if (fig[i].firstElementChild && fig[i].firstElementChild.tagName == "A") {
             fig[i].firstElementChild.addEventListener("click", function(e) {
                 e.preventDefault();
 				const style = document.createElement('style'),

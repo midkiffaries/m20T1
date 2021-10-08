@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-privacy-policy page-<?php preg_replace('/\s+/', '-', the_title()); ?>">
+<main class="page-main page-privacy-policy page-privacy-policy">
     <div class="page-content width-full" role="main">
 
 <?php breadcrumb_trail(); ?>
@@ -10,9 +10,9 @@
 <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="post-container">
         <h2 class="page-title"><?php the_title(); ?></h2>
+        <p class="policy-last-updated"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
 <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
         
-        <p class="page-last-updated"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </article>
 

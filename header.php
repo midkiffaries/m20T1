@@ -26,8 +26,8 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<title><?php bloginfo('name'); wp_title('|', true, 'left'); echo $title_slogan; ?></title>
-<meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
+<title><?php bloginfo('name'); wp_title('-', true, 'left'); echo $title_slogan; ?></title>
+<meta name="title" content="<?php bloginfo('name'); wp_title('-', true, 'left'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="rating" content="General">
 <meta name="robots" content="index,follow">
@@ -65,13 +65,15 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <meta property="twitter:image" content="<?php echo $featuredImage; ?>">
 <meta property="twitter:description" content="<?php echo $description; ?>">
-<?php wp_head(); ?>
 
-<?php header_extended(); ?>
+<?php header_extended(); // User created meta data ?>
+
+<?php wp_head(); // WordPress generated meta data ?>
 
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+
 <?php wp_body_open(); ?>
 
 <header class="page-header" role="banner" id="top">

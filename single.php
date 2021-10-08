@@ -24,7 +24,7 @@
             <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
         </div>
         <footer class="single-entry-footer">
-            <div class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Post Updated On: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></div>
+            <div class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></div>
             <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
             <div class="entry-share"><?php blog_post_share(); ?></div>
         </footer>

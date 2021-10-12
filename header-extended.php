@@ -1,5 +1,3 @@
-<?php // Custom Header Metatags ?>
-
 <?php // Google Fonts ?>
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,10 +6,8 @@
 <?php // Global site tag gtag.js - Google Analytics ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136801430-1"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-136801430-1');
+window.dataLayer = window.dataLayer || [];
+function gtag() {dataLayer.push(arguments)}
+gtag('js', new Date());
+gtag('config', 'UA-136801430-1');
 </script>

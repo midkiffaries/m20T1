@@ -20,3 +20,4 @@ wp-content/plugins/hello.php
 _root/
 *.DS_Store
 config.php
+header-extended.php

@@ -1,7 +1,7 @@
 <?php
 // m20 Theme Config
 $ThemeSettings = '{
-    "ShortTitle":   "Short Website Name",
+    "ShortTitle":   "Website",
     "Email":        "contact@email.com",
     "BaseColor":    "#0000ff",
     "Tagline":      "Extended tag line...",

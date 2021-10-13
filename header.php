@@ -1,16 +1,10 @@
 <?php
-// Insert slogan in front_page title 
-if (is_front_page()) { // Front Page
-    $title_slogan = " | " . get_bloginfo('description');
-} else { // All other pages
-    $title_slogan = "";
-}
 // Get page description excerpt or site slogan
 if (is_single() || is_page()) { // If single blog post
     $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true));
     $description = substr($excerpt, 0, 250) . "...";
 } else { // Else all other pages
-    $description = get_bloginfo('description') . " " . $config->Tagline;
+    $description = get_bloginfo('description');
 }
 // Get page Featured image
 if (get_the_post_thumbnail()) { // Use page's featured image
@@ -26,7 +20,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<!--title><?php bloginfo('name'); wp_title('-', true, 'left'); echo $title_slogan; ?></title-->
+<!--title><?php //bloginfo('name'); wp_title('-', true, 'left'); ?></title-->
 <meta name="title" content="<?php bloginfo('name'); wp_title('-', true, 'left'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="rating" content="General">
@@ -43,12 +37,12 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
 <?php // Apple ?>
-<meta name="apple-mobile-web-app-title" content="<?php printf($config->ShortTitle); ?>">
+<meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
 <link rel="mask-icon" href="<?php printf("%s/icons/safari-pinned-tab.svg", home_url()); ?>" color="<?php printf($config->BaseColor); ?>">
 <?php // Google ?>
-<meta name="application-name" content="<?php printf($config->ShortTitle); ?>">
+<meta name="application-name" content="<?php bloginfo('name'); ?>">
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">

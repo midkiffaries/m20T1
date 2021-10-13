@@ -1,10 +1,7 @@
 <?php
 // m20 Theme Config
 $ThemeSettings = '{
-    "ShortTitle":   "Website",
-    "Email":        "contact@email.com",
     "BaseColor":    "#0000ff",
-    "Tagline":      "Extended tag line...",
     "Instagram":    "accountName",
     "Twitter":      "accountName"
 }';

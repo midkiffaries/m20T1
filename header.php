@@ -40,13 +40,13 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-<link rel="mask-icon" href="<?php printf("%s/icons/safari-pinned-tab.svg", home_url()); ?>" color="<?php printf($config->BaseColor); ?>">
+<link rel="mask-icon" href="<?php printf("%s/icons/safari-pinned-tab.svg", home_url()); ?>" color="#40a5ff">
 <?php // Google ?>
 <meta name="application-name" content="<?php bloginfo('name'); ?>">
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
-<meta name="theme-color" content="<?php printf($config->BaseColor); ?>">
+<meta name="theme-color" content="#40a5ff">
 <?php // Facebook ?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">

@@ -5,11 +5,9 @@ Send an email to a specified recipient
 ******************************************/
 
 // Includes
-//include 'config.php';
 include 'functions.php';
 
 // Reciepent of the email
-//$Recipient = $config->Email;
 $Recipient = bloginfo('admin_email');
 
 // Clean user input

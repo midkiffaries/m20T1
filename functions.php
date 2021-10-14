@@ -11,7 +11,6 @@ error_reporting(E_ALL);
 /////////////////////////////
 
 // Includes
-include 'config.php'; // Extra configuration
 include 'assets/plugins/breadcrumbs.php'; // Breadcrumb trail plugin
 
 /////////////////////////////

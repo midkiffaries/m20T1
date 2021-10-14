@@ -7,6 +7,12 @@
 
 <section class="blog-page-title">
     <h2 class="page-title" itemprop="title">The Blog</h2>
+<?php
+// Get blog page content
+$page_for_posts_id = get_option( 'page_for_posts' );
+$page_for_posts_obj = get_post( $page_for_posts_id );
+echo apply_filters( 'the_content', $page_for_posts_obj->post_content );
+?>
 </section>
 
 <?php if (have_posts()) : ?>

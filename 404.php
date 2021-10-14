@@ -3,8 +3,6 @@
 <main class="page-main" role="main">
     <div class="page-content width-full">
 
-<?php //include_once(ABSPATH . 'wp-admin/includes/plugin.php'); ?>
-<?php //if (is_plugin_active('breadcrumb-trail/breadcrumb-trail.php')) breadcrumb_trail(); ?>
 <?php breadcrumb_trail(); ?>
 
 <article class="page-404 page type-page not-found status-publish" id="page-404" name="page-404">

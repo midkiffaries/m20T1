@@ -11,6 +11,12 @@ const SearchModal = (`
     </form>
 </section>
 <style>
+.dialog-search .dialog-content {
+	border-radius: 1px;
+	background: none;
+	box-shadow: none;
+	padding: 0;
+}
 .dialog-content h3 {
     margin: 0;
 }
@@ -78,9 +84,14 @@ const ContactModal = (`
 .dialog-content .contact_server {
 	position: absolute;
 	padding: 0;
-	transform: translate(10em,-4em);
-	width: calc(100% - 8em);
+	transform: translate(10em, -4em);
+	width: calc(100% - 11em);
 	color: #d00;
+}
+@media (max-width: 812px) {
+	.dialog-content .contact_server {
+		transform: translate(10em, -5em);
+	}
 }
 .dialog-content .contact_success {
 	transform: translate(1em,-18em);

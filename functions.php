@@ -99,8 +99,8 @@ function custom_comment_style($comment, $args, $depth) {
 function blog_post_share() {
 ?>
 <ul class="social-share">
-    <li role="link"><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="icon-twitter twitter-share" aria-label="Twitter" target="_blank">Tweet</a></li>
-    <li role="link"><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="icon-facebook facebook-share" aria-label="Facebook" target="_blank">Share</a></li>
+    <li><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="icon-twitter twitter-share" aria-label="Twitter" target="_blank">Tweet</a></li>
+    <li><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="icon-facebook facebook-share" aria-label="Facebook" target="_blank">Share</a></li>
 </ul>
 <?php
 }
@@ -147,7 +147,7 @@ function custom_sidebars() {
         array(
             'id'            => 'secondary',
             'name'          => __( 'Secondary Sidebar' ),
-            'description'   => __( 'Other sidebar.' ),
+            'description'   => __( 'Alternate sidebar.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h4 class="widget-title">',
@@ -159,7 +159,7 @@ function custom_sidebars() {
         array(
             'id'            => 'frontpage',
             'name'          => __( 'Front Page Widgets' ),
-            'description'   => __( 'The front page sidebar and widgets.' ),
+            'description'   => __( 'The front page bottom widgets.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h3 class="widget-title">',
@@ -171,7 +171,7 @@ function custom_sidebars() {
         array(
             'id'            => 'singlepost',
             'name'          => __( 'Single Post Sidebar' ),
-            'description'   => __( 'Single post sidebar.' ),
+            'description'   => __( 'Widgets below a single blog post.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h3 class="widget-title">',
@@ -183,7 +183,7 @@ function custom_sidebars() {
         array(
             'id'            => 'footer',
             'name'          => __( 'Footer Widgets' ),
-            'description'   => __( 'The page footer sidebar and widgets.' ),
+            'description'   => __( 'The page footer widgets.' ),
             'before_widget' => '<nav id="%1$s" class="widget %2$s">',
             'after_widget'  => '</nav>',
             'before_title'  => '<h4 class="widget-title">',

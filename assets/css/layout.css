@@ -765,8 +765,13 @@ Page Specific Styling
 }
 
 /* Search Page */
+.entry-type {
+	background: rgba(100,100,100,0.2);
+	padding: 3px 8px;
+	border-radius: 3px;
+}
+
 .page-search .hentry {
-	border-bottom: 1px solid lightgray;
 	margin: 0 !important;
 	padding: 0.7em !important;
 }
@@ -876,11 +881,6 @@ Page Specific Styling
 	color: goldenrod;
 	vertical-align: 2px;
 	margin-left: 3px;
-}
-
-/* Search Dialog */
-.dialog-search .dialog-content {
-	border-radius: 8px;
 }
 
 /* Search Submit button */

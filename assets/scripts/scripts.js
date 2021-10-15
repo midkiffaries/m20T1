@@ -217,7 +217,7 @@ function HtmlModal(c, v) {
 		box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
 		transform: scale(0.8);
 		transition: transform 0.15s ease-in-out 0s;
-		overflow: scroll;
+		overflow: hidden;
 	}
 	.dialog-close-button {
 		position: absolute;

@@ -20,11 +20,11 @@
 
     </div>
 
-    <!--div id="singlepage-widgets" class="page-sidebar singlepage-widgets">
+    <!--aside id="singlepage-widgets" class="page-sidebar singlepage-widgets">
         <?php //if (is_active_sidebar( 'frontpage' )) : ?>
         <?php //dynamic_sidebar( 'frontpage' ); ?>
         <?php //endif; ?>
-    </div-->
+    </aside-->
 
 </main>
 

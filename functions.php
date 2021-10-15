@@ -135,7 +135,7 @@ function custom_sidebars() {
         array(
             'id'            => 'primary',
             'name'          => __( 'Primary Sidebar' ),
-            'description'   => __( 'The full blog view sidebar.' ),
+            'description'   => __( 'Sidebar widgets on the full blog page.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h4 class="widget-title">',
@@ -147,7 +147,7 @@ function custom_sidebars() {
         array(
             'id'            => 'secondary',
             'name'          => __( 'Secondary Sidebar' ),
-            'description'   => __( 'Alternate sidebar.' ),
+            'description'   => __( 'Archives page sidebar widgets.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h4 class="widget-title">',
@@ -159,7 +159,7 @@ function custom_sidebars() {
         array(
             'id'            => 'frontpage',
             'name'          => __( 'Front Page Widgets' ),
-            'description'   => __( 'The front page bottom widgets.' ),
+            'description'   => __( 'Widgets on the bottom of the front page.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h3 class="widget-title">',

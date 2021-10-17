@@ -176,7 +176,6 @@ Page Styling
 .header-single-page {
 	background-color: var(--base-color-pale);
 	background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg);
-	background-repeat: repeat, no-repeat;
 	background-size: 1em, cover;
 }
 

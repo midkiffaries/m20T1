@@ -46,7 +46,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
-<meta name="theme-color" content="#40a5ff">
+<meta name="theme-color" content="#eeeeee">
 <?php // Facebook ?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
@@ -74,7 +74,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
             <h1 class="header-logo" itemprop="title">
                 <a href="<?php echo home_url(); ?>" rel="bookmark">
                     <img class="logo-image" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-img.svg" alt="Logo">
-                    <img class="logo-text" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-text.svg" alt="<?php bloginfo('name'); ?>">
+                    <img class="logo-text" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-text.svg" alt="<?php bloginfo('name'); ?>" aria-label="<?php bloginfo('name'); ?>">
                 </a>
             </h1>
         </div>

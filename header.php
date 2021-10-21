@@ -96,7 +96,10 @@ if (get_the_post_thumbnail()) { // Use page's featured image
         </div>
     </div>
 
-<?php if ( is_front_page() ) : // Front-page header ?>
+<?php if ( is_front_page()) : // Front-page header ?>
+    <div class="header-homepage"></div>
+
+<?php elseif ( is_attachment() ) : // Attachment page header ?>
     <div class="header-homepage"></div>
 
 <?php elseif ( is_page() ) : // Basic Page header ?>

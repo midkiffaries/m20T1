@@ -10,10 +10,10 @@
     <div class="post-container">
         <h2 class="image-title" itemprop="title"><?php the_title(); ?></h2>
         <figure class="wp-block-image">
-            <?php echo wp_get_attachment_image(get_the_ID(), 'large', 0 ); ?>
-            <figcaption class="image-description"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>
+            <?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?>
+            <figcaption class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>
         </figure>
-        <p><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">Link to the original image</a></p>
+        <p><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" class="icon-download">Download the original image</a></p>
         <p class="image-info">
             <span class="image-date">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
             <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>

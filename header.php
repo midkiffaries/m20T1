@@ -23,7 +23,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <!--title><?php //bloginfo('name'); wp_title('-', true, 'left'); ?></title-->
 <meta name="title" content="<?php bloginfo('name'); wp_title('-', true, 'left'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
-<meta name="rating" content="General">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -45,7 +44,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
-<meta name="theme-color" content="#eeeeee">
 <?php // Facebook ?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
@@ -59,7 +57,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta property="twitter:image" content="<?php echo $featuredImage; ?>">
 <meta property="twitter:description" content="<?php echo $description; ?>">
 <?php wp_head(); // WordPress generated meta data ?>
-<?php header_extended(); // User created meta data ?>
 
 </head>
 

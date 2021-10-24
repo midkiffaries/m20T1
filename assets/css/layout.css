@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /********************************************
 Base WordPress Page Styling 
 *********************************************/
@@ -510,7 +509,7 @@ Main site layout
 	letter-spacing: 0.08em;
 	padding: 3px 8px;
 	font-weight: bold;
-	background: rgba(50,50,50,0.2);
+	background: rgba(120,120,120,0.4);
 	border-radius: 0.2em;
 }
 
@@ -701,6 +700,24 @@ Page Specific Styling
 ************************/
 
 /* The Blog Page */
+.post.sticky::before {
+	content: "Featured Post";
+	text-align: center;
+	width: 100%;
+	display: block;
+	font-weight: bold;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	opacity: 0.5;
+}
+
+.post.sticky {
+	background: rgba(120,120,120,0.2);
+	box-shadow: 0 0 3px 0 currentColor;
+	padding: 0.8em 0.6em !important;
+	border-radius: 0.4em;
+}
+
 .page-content .post,
 .blog-page-title {
 	padding: 0 0.6em;
@@ -767,12 +784,6 @@ Page Specific Styling
 }
 
 /* Search Page */
-.entry-type {
-	background: rgba(100,100,100,0.2);
-	padding: 3px 8px;
-	border-radius: 3px;
-}
-
 .page-search .hentry {
 	margin: 0 !important;
 	padding: 0.7em !important;
@@ -783,6 +794,9 @@ Page Specific Styling
 }
 
 .page-search .entry-type {
+	background: rgba(100,100,100,0.2);
+	padding: 3px 8px;
+	border-radius: 3px;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
 }

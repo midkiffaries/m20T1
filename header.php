@@ -40,7 +40,6 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-<link rel="mask-icon" href="<?php printf("%s/icons/safari-pinned-tab.svg", home_url()); ?>" color="#40a5ff">
 <?php // Google ?>
 <meta name="application-name" content="<?php bloginfo('name'); ?>">
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
@@ -50,13 +49,13 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <?php // Facebook ?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
-<meta property="og:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
+<meta property="og:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
 <meta property="og:image" content="<?php echo $featuredImage; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">
 <?php // Twitter ?>
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
-<meta property="twitter:title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
+<meta property="twitter:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
 <meta property="twitter:image" content="<?php echo $featuredImage; ?>">
 <meta property="twitter:description" content="<?php echo $description; ?>">
 <?php wp_head(); // WordPress generated meta data ?>

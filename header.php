@@ -10,7 +10,7 @@ if (is_single() || is_page()) { // If single blog post
 if (get_the_post_thumbnail()) { // Use page's featured image
     $featuredImage = get_the_post_thumbnail_url($post->ID, 'large');
 } else { // Use default image
-    $featuredImage = get_template_directory_uri() . "/assets/images/social-share.jpg";
+    $featuredImage = home_url() . "/icons/social-share.jpg";
 }
 ?>
 <!DOCTYPE html>

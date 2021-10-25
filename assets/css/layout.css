@@ -175,6 +175,7 @@ body.dark-mode,
 .dark-mode .logo-text,
 .dark-mode .square-button,
 .dark-mode .menu-button,
+.dark-mode .dialog-close-button,
 .dark-mode .dialog-close {
 	filter: invert();
 }

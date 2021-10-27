@@ -2,7 +2,7 @@
 // Get page description excerpt or site slogan
 if (is_single() || is_page()) { // If single blog post
     $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true));
-    $description = substr($excerpt, 0, 250) . "...";
+    $description = substr($excerpt, 0, 165) . '...';
 } else { // Else all other pages
     $description = get_bloginfo('description');
 }
@@ -20,7 +20,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<!--title><?php //bloginfo('name'); wp_title('-', true, 'left'); ?></title-->
+<!--title><?php //bloginfo('name'); wp_title('–', true, 'left'); ?></title-->
 <meta name="title" content="<?php bloginfo('name'); wp_title('-', true, 'left'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="robots" content="index,follow">
@@ -45,6 +45,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
 <?php // Facebook ?>
+<meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">

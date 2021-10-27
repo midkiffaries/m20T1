@@ -19,13 +19,6 @@
 <?php endwhile; endif; ?>
 
     </div>
-
-    <!--aside id="singlepage-widgets" class="page-sidebar singlepage-widgets">
-        <?php //if (is_active_sidebar( 'frontpage' )) : ?>
-        <?php //dynamic_sidebar( 'frontpage' ); ?>
-        <?php //endif; ?>
-    </aside-->
-
 </main>
 
 <?php  get_footer(); ?>

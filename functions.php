@@ -138,8 +138,8 @@ function custom_sidebars() {
             'description'   => __( 'Sidebar widgets on the full blog page.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
-            'before_title'  => '<h4 class="widget-title">',
-            'after_title'   => '</h4>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
         )
     );
     // Secondary Sidebar on the right side of the page
@@ -150,8 +150,8 @@ function custom_sidebars() {
             'description'   => __( 'Archives page sidebar widgets.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
-            'before_title'  => '<h4 class="widget-title">',
-            'after_title'   => '</h4>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
         )
     );
     // Front page Widgets - bottom of the content
@@ -186,8 +186,8 @@ function custom_sidebars() {
             'description'   => __( 'The page footer widgets.' ),
             'before_widget' => '<nav id="%1$s" class="widget %2$s">',
             'after_widget'  => '</nav>',
-            'before_title'  => '<h4 class="widget-title">',
-            'after_title'   => '</h4>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
         )
     );
 }

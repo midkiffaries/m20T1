@@ -1,10 +1,15 @@
 <?php
-// Get page description excerpt or site slogan
-if (is_single() || is_page()) { // If single blog post
-    $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true));
-    $description = substr($excerpt, 0, 165) . '...';
-} else { // Else all other pages
-    $description = get_bloginfo('description');
+// Check if post has an excerpt
+if (has_excerpt($post->ID)) {
+    $description = get_the_excerpt($post->ID);
+} else {
+    // Get page description excerpt or site slogan
+    if (is_single() || is_page()) { // If single blog post
+        $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true));
+        $description = substr($excerpt, 0, 165) . '...';
+    } else { // Else all other pages
+        $description = get_bloginfo('description');
+    }
 }
 // Get page Featured image
 if (get_the_post_thumbnail()) { // Use page's featured image
@@ -20,7 +25,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<!--title><?php //bloginfo('name'); wp_title('–', true, 'left'); ?></title-->
+<!--title><?php bloginfo('name'); wp_title('–', true, 'left'); ?></title-->
 <meta name="title" content="<?php bloginfo('name'); wp_title('-', true, 'left'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="robots" content="index,follow">

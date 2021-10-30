@@ -77,8 +77,7 @@ $curauth = $wp_query->get_queried_object();
 <section class="blog-pagination">
     <div class="pagination-container">
         <nav class="blog-post-nav">
-            <?php previous_posts_link('&#x276E; Newer Entries', 0); ?>
-            <?php next_posts_link('Older Entries &#x276F;', 0); ?>
+            <?php blogPostPagination('Posts'); ?>
         </nav>
     </div>
 </section>

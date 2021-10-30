@@ -53,8 +53,7 @@ echo apply_filters( 'the_content', $page_for_posts_obj->post_content );
 <section class="blog-pagination">
     <div class="pagination-container">
         <nav class="blog-post-nav">
-            <?php previous_posts_link('&#x276E; Newer Entries', 0); ?>
-            <?php next_posts_link('Older Entries &#x276F;', 0); ?>
+            <?php blogPostPagination('Posts'); ?>
         </nav>
     </div>
 </section>

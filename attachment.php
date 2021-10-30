@@ -25,8 +25,8 @@
 <section class="blog-pagination">
     <div class="pagination-container">
         <nav class="image-nav">
-            <?php next_image_link(array(48, 48), '&#x276E; Next Image'); ?>
-            <?php previous_image_link(array(48, 48), 'Previous Image &#x276F;'); ?>
+            <?php next_image_link(array(48, 48), '&#x276E; Next Image', 0); ?>
+            <?php previous_image_link(array(48, 48), 'Previous Image &#x276F;', 0); ?>
         </nav>
     </div>
 </section>

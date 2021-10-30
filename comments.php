@@ -25,14 +25,14 @@ if ( post_password_required() ) {
 <section class="comment-pagination">
     <div class="pagination-container">
         <nav class="comments-nav">
-            <?php previous_comments_link('&#x276E; Older Comments', 0); ?> 
-            <?php next_comments_link('Newer Comments &#x276F;', 0); ?>
+            <?php previous_comments_link('&#x276E; Previous '.get_option('comments_per_page').' Comments', 0); ?> 
+            <?php next_comments_link('Next '.get_option('comments_per_page').' Comments &#x276F;', 0); ?>
         </nav>
     </div>
 </section>
 
 <?php
-else : // this is displayed if there are no comments so far
+else : // This is displayed if there are no comments so far
 ?>
 
 <?php 
@@ -40,11 +40,11 @@ if (comments_open()) : // If comments are open, but there are no comments.
 ?>
 
 <?php
-else : // comments are closed
+else : // Comments are closed
 ?>
 <section class="comments-closed">
     <div>
-        <h3>Comments are closed for this topic.</h3>
+        <p>🚫 <i>Comments are closed for this article.</i></p>
     </div>
 </section>
 <?php endif; ?>

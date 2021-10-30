@@ -44,8 +44,10 @@ function numberToRoman($variable) {
 // WordPress Functions
 /////////////////////////////
 
-function header_extended() {
-    include 'header-extended.php';
+// Pagination on the index/archive/search pages
+function blogPostPagination($type) {
+    previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0);
+    next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0);
 }
 
 // Add featured image to posts and pages

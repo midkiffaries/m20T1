@@ -735,8 +735,8 @@ Responsive elements
 /* Work around for Phones with a 'notch' */
 @supports(padding:max(0px)) {
 	body {
-        padding-left: min(0vmin, env(safe-area-inset-left));
-        padding-right: min(0vmin, env(safe-area-inset-right));
+    	padding-left: min(0vmin, env(safe-area-inset-left));
+    	padding-right: min(0vmin, env(safe-area-inset-right));
 	}
 }
 

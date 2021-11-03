@@ -4,6 +4,8 @@ Version 1.0 BETA (In-Development)
 This is simply a WordPress theme that I created from scratch, that I use on my own website
 The intention is for this theme no be minimally reliant on plugins, and to rely on automation and the user to make any desired modifications to the style and code.
 
+<img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="350">
+
 ## Features
 - Compatible with WordPress 5.8+
 - Built in dark mode switch

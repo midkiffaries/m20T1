@@ -31,23 +31,20 @@ if ( post_password_required() ) {
     </div>
 </section>
 
-<?php
-else : // This is displayed if there are no comments so far
-?>
+<?php else : // This is displayed if there are no comments so far ?>
 
-<?php 
-if (comments_open()) : // If comments are open, but there are no comments. 
-?>
+<?php if (comments_open()) : // If comments are open, but there are no comments. ?>
 
-<?php
-else : // Comments are closed
-?>
+<?php else : // Comments are closed ?>
+
 <section class="comments-closed">
     <div>
         <p>🚫 <i>Comments are closed for this article.</i></p>
     </div>
 </section>
+
 <?php endif; ?>
+
 <?php endif; ?>
 
 <?php if (comments_open()) : // Comment entry form ?>

@@ -1,23 +1,3 @@
-<?php
-// Check if post has an excerpt
-if (has_excerpt($post->ID)) {
-    $description = get_the_excerpt($post->ID);
-} else {
-    // Get page description excerpt or site slogan
-    if (is_single() || is_page()) { // If single blog post
-        $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt(), true));
-        $description = substr($excerpt, 0, 165) . '...';
-    } else { // Else all other pages
-        $description = get_bloginfo('description');
-    }
-}
-// Get page Featured image
-if (get_the_post_thumbnail()) { // Use page's featured image
-    $featuredImage = get_the_post_thumbnail_url($post->ID, 'large');
-} else { // Use default image
-    $featuredImage = home_url() . "/icons/social-share.jpg";
-}
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
 <head>
@@ -36,7 +16,7 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/tedilize.css"; ?>">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-<meta name="description" content="<?php echo $description; ?>">
+<meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
@@ -54,14 +34,14 @@ if (get_the_post_thumbnail()) { // Use page's featured image
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
-<meta property="og:image" content="<?php echo $featuredImage; ?>">
-<meta property="og:description" content="<?php echo $description; ?>">
+<meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
+<meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <?php // Twitter ?>
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
-<meta property="twitter:image" content="<?php echo $featuredImage; ?>">
-<meta property="twitter:description" content="<?php echo $description; ?>">
+<meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
+<meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <?php wp_head(); // WordPress generated meta data ?>
 
 </head>

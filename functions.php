@@ -44,6 +44,36 @@ function numberToRoman($variable) {
 // WordPress Functions
 /////////////////////////////
 
+// Get the page/post excerpt
+function SEO_Excerpt($id) {
+    // Character Length
+    $length = 170;
+    // Check if post has a user defined excerpt
+    if (has_excerpt($id)) {
+        $description = substr(get_the_excerpt($id), 0, $length);
+    } else {
+        // Get page description from content excerpt
+        if (is_single() || is_page()) { // If single blog post
+            $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt($id), true));
+            $description = substr($excerpt, 0, $length);
+        } else { // All other pages use site slogan
+            $description = get_bloginfo('description');
+        }
+    }
+    return $description;
+}
+
+// Get the page/post featured image
+function SEO_Image($id) {
+    // Get page featured image
+    if (get_the_post_thumbnail()) { // Use page's featured image
+        $featuredImage = get_the_post_thumbnail_url($id, 'large');
+    } else { // Use default image
+        $featuredImage = home_url() . "/icons/social-share.jpg";
+    }
+    return $featuredImage;
+}
+
 // Pagination on the index/archive/search pages
 function blogPostPagination($type) {
     previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0);

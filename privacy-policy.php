@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main class="page-main page-privacy-policy page-privacy-policy">
-    <div class="page-content width-full" role="main">
+<main class="page-main page-simple page-privacy-policy" role="main">
+    <div class="page-content width-full">
 
 <?php breadcrumb_trail(); ?>
 

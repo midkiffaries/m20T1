@@ -43,10 +43,10 @@ $curauth = $wp_query->get_queried_object();
 
 <?php endif; ?>
 
-<article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
+<article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
 <?php while (have_posts()) : the_post(); ?>
-    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article">
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <div class="post-container">    
             <header class="entry-header">
                 <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>

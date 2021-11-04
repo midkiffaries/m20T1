@@ -17,11 +17,11 @@ echo apply_filters( 'the_content', $page_for_posts_obj->post_content );
 
 <?php if (have_posts()) : ?>
 
-<article class="blog-page" itemscope itemtype="http://schema.org/NewsArticle">
+<article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article">
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <div class="post-container">
             <header class="entry-header">
                 <div class="entry-category"><?php the_category(' '); ?></div>

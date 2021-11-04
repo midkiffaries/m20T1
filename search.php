@@ -24,10 +24,10 @@ endwhile; endif;
     </div>
 </section>
 
-<article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
+<article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
 <?php while (have_posts()) : the_post(); ?>
-    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article">
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <div class="post-container">
             <header class="entry-header">
                 <div class="entry-type"><b><?php echo get_post_type(); ?></b> - <small><?php the_permalink(); ?></small></div>

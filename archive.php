@@ -37,7 +37,7 @@ $curauth = $wp_query->get_queried_object();
         <h3 class="author-bio-name" itemprop="author"><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>
         <p class="author-bio-meta"><b><?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
         <p class="author-bio-about"><?php printf($curauth->description); ?><br>
-        <a href="<?php printf($curauth->user_url); ?>" rel="author"><?php printf($curauth->user_url); ?></a></p>
+        <i>Read More:</i> 🌎 <a href="<?php printf($curauth->user_url); ?>" rel="author"><?php printf($curauth->user_url); ?></a></p>
     </div>
 </section>
 

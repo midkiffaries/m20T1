@@ -939,11 +939,18 @@ Page Specific Styling
 	padding: 1.5em 0 0 0;
 }
 
-.blog-pagination a {
+.blog-pagination nav a {
 	text-decoration: none;
 	font-size: 1.1em;
 	padding: 2px 4px;
-	border-radius: 4px;
+}
+
+.blog-pagination .blog-post-nav a {
+	margin: auto 12px;
+}
+
+.blog-pagination nav a:hover {
+	text-decoration: underline;
 }
 
 .single-blog-post-nav div span {

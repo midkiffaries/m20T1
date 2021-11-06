@@ -51,8 +51,10 @@
 <?php endwhile; else: ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
-    <div>
+    <div class="post-container">
+        <h2 class="single-entry-title" itemprop="title">Not Found</h2>
         <p>Sorry, no posts matched your criteria.</p>
+        <?php get_search_form('post'); ?>
     </div>
 </article>
 

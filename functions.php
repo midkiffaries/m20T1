@@ -127,7 +127,7 @@ function custom_comment_style($comment, $args, $depth) {
 <?php
 }
 
-// List social sharing links for each blog post
+// List social sharing links on each blog post
 function blog_post_share() {
 ?>
 <ul class="social-share">

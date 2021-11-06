@@ -60,8 +60,8 @@ echo apply_filters( 'the_content', $page_for_posts_obj->post_content );
 
 <?php else : ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/NewsArticle">
-    <div>
+<article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <h2 class="entry-title">Not Found</h2>
         <p>Sorry, but you are looking for something that isn't here for some reason.</p>
 <?php my_search_form('Main'); ?>

@@ -294,21 +294,25 @@ Main site layout
 	top: 0;
 }
 
-.header-logo {
+.header-h1 {
 	margin: 0;
 	padding: 0.3em 0 0 0.5em;
 }
 
-.header-logo a {
+.header-h1 a {
 	text-decoration: none;
 }
 
-.header-logo img {
+.header-h1 img {
 	vertical-align: middle;
 }
 
-.header-logo .logo-image {
+.header-h1 .logo-image {
 	margin-top: -8px;
+}
+
+.header-h1 a span {
+	display: none;
 }
 
 .header-content {
@@ -371,10 +375,10 @@ Main site layout
 		right: 0;
 		z-index: 200;
 	}
-	.header-logo {
+	.header-h1 {
 		padding: 0.3em;
 	}
-	.header-logo img {
+	.header-h1 img {
 		height: 1em;
 	}
 	.header-content {

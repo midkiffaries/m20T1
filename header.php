@@ -53,10 +53,11 @@
 <header class="page-header" role="banner" id="top">
     <div class="header-menubar">
         <div class="header-title">
-            <h1 class="header-logo" itemprop="title">
+            <h1 class="header-h1" itemprop="title">
                 <a href="<?php echo home_url(); ?>" rel="bookmark">
-                    <img class="logo-image" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-img.svg" alt="Logo">
-                    <img class="logo-text" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-text.svg" alt="<?php bloginfo('name'); ?>" aria-label="<?php bloginfo('name'); ?>">
+                    <img class="logo-image" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-img.svg" alt="">
+                    <img class="logo-text" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-text.svg" alt="">
+                    <span aria-hidden="false"><?php bloginfo('name'); ?></span>
                 </a>
             </h1>
         </div>

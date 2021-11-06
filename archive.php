@@ -27,7 +27,7 @@ $curauth = $wp_query->get_queried_object();
 
 <?php if (is_author()) : ?>
 
-<section class="author-bio" role="contentinfo">
+<section class="author-bio" role="complementary">
     <div>
         <div class="wp-block-image">
             <figure class="alignleft" aria-label="Authors Avatar">
@@ -84,24 +84,23 @@ $curauth = $wp_query->get_queried_object();
 
 <?php else : ?>
 
-<article <?php post_class(); ?>>
-    <div>
-        <h3>
+<article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <div <?php post_class(); ?>>
+        <h3 class="entry-title">
 <?php 
 if ( is_category() ) { // If this is a category archive
 	printf("There are no posts under the <b>%s</b> category.", single_cat_title('',false));
 } else if ( is_date() ) { // If this is a date archive
 	printf("There are no posts with this date.");
 } else if ( is_author() ) { // If this is a category archive
-	$userdata = get_userdatabylogin(get_query_var('author_name'));
-	printf("There are no posts by <b>%s</b>.", $userdata->display_name);
+	printf("There are no posts by <b>%s</b>.", $curauth->nickname);
 } else {
 	printf("No posts found.");
 }
-
-get_search_form('archive');
 ?>
         </h3>
+        <p>Would you like to try a search for what you are looking for?</p>
+        <?php get_search_form('archive'); ?>
     </div>
 </article>
 

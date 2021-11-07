@@ -40,6 +40,18 @@
     </div>
 </section>
 
+<section class="single-author-bio clearfix" role="complementary">
+    <div>
+        <h3 class="author-bio-name" itemprop="author">About the Author</h3>
+        <div class="wp-block-image">
+            <figure class="alignleft" aria-label="Authors Avatar">
+                <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
+            </figure>
+        </div>
+        <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?></a></p>
+    </div>
+</section>
+
 <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets">
     <?php if (is_active_sidebar( 'singlepost' )) : ?>
     <?php dynamic_sidebar( 'singlepost' ); ?>

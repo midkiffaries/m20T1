@@ -261,6 +261,12 @@ Wordpress Plugin Style
 Main site layout
 ************************/
 
+.clearfix {
+	content: "";
+	clear: both;
+	display: table;
+}
+
 /* Drop caps */
 .has-drop-cap:not(:focus):first-letter {
 	font-weight: 600;
@@ -791,6 +797,14 @@ Page Specific Styling
 	font-size: 1.1em;
 }
 
+.single-author-bio {
+	margin: 1em 1em 0;
+}
+
+.single-author-bio p {
+	font-size: 1em;
+}
+
 /* Search Page */
 .page-search .hentry {
 	margin: 0 !important;
@@ -940,7 +954,7 @@ Page Specific Styling
 /* Page Pagination links */
 .blog-pagination {
 	text-align: center;
-	padding: 1.5em 0 0 0;
+	padding: 0.5em 0 1em 0;
 }
 
 .blog-pagination nav a {

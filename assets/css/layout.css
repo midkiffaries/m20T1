@@ -277,6 +277,10 @@ Main site layout
 	height: 2em;
 }
 
+.header-attachment {
+	height: 3.5em;
+}
+
 .header-single-page,
 .header-blog {
 	height: 14em;
@@ -795,10 +799,6 @@ Page Specific Styling
 
 .author-bio-about {
 	font-size: 1.1em;
-}
-
-.single-author-bio {
-	margin: 1em 1em 0;
 }
 
 .single-author-bio p {

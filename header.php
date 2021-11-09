@@ -83,7 +83,7 @@
     <div class="header-homepage"></div>
 
 <?php elseif ( is_attachment() ) : // Attachment page header ?>
-    <div class="header-homepage"></div>
+    <div class="header-attachment"></div>
 
 <?php elseif ( is_page() ) : // Basic Page header ?>
 <?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>

@@ -5,7 +5,7 @@ Send an email to a specified recipient
 ******************************************/
 
 // Includes
-include 'functions.php';
+include '../../functions.php';
 
 // Reciepent of the email
 $Recipient = bloginfo('admin_email');

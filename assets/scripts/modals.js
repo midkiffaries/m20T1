@@ -195,7 +195,7 @@ function phpSendEmail() {
 		document.getElementById("ServerMessage").textContent = "You need to fill in all the fields to send this message.";
 	}
 
-	xhttp.open("get", `${themeUri}mailman.php?${v}`, true);
+	xhttp.open("get", `${themeUri}assets/plugins/mailman.php?${v}`, true);
 	//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send();
 }

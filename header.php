@@ -17,26 +17,21 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<?php // Favicon ?>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
-<?php // Apple ?>
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-<?php // Google ?>
 <meta name="application-name" content="<?php bloginfo('name'); ?>">
 <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
 <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
-<?php // Facebook ?>
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
 <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<?php // Twitter ?>
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">

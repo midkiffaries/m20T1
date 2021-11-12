@@ -76,16 +76,6 @@ ExpiresDefault "access 2 days"
 </IfModule>
 # END EXPIRES
 
-# BEGIN SUB-DOMAINS
-#RewriteCond %{HTTP_HOST} ^mistletoe\.marcthtwenty\.com
-#RewriteRule ^(.*)$ /mistletoe/$1 [L]
-# END SUB-DOMAINS
-
-# BEGIN REDIRECT
-Redirect mistletoe.marchtwenty.com/ /
-Redirect /mistletoe/ /
-# END REDIRECT
-
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

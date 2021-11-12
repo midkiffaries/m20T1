@@ -80,6 +80,16 @@ function blogPostPagination($type) {
     next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0);
 }
 
+// Get the number of times this keyword comes up in search queries
+function SearchCount($query) {
+    $search_count = 0;
+    $search = new WP_Query("s=$query & showposts=-1");
+    if($search->have_posts()) : while($search->have_posts()) : $search->the_post();	
+        $search_count++;
+    endwhile; endif;
+    return $search_count;
+}
+
 // Add featured image to posts and pages
 //add_theme_support( 'post-thumbnails' );
 /*

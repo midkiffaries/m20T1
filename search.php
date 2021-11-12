@@ -5,20 +5,11 @@
 
 <?php breadcrumb_trail(); ?>
 
-<?php
-// Get the number of time this keyword comes up in search queries
-$search_count = 0;
-$search = new WP_Query("s=$s & showposts=-1");
-if($search->have_posts()) : while($search->have_posts()) : $search->the_post();	
-    $search_count++;
-endwhile; endif;
-?>
-
 <?php if (have_posts() && get_search_query()) : ?>
 
 <section class="search-banner">
     <div>
-        <h2 class="page-title" itemprop="title">Your search netted <?php printf($search_count); ?> result(s)</h2>
+        <h2 class="page-title" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
         <?php get_search_form(); ?>
         <hr>
     </div>

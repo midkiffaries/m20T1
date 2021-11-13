@@ -12,7 +12,7 @@ $curauth = $wp_query->get_queried_object();
 
 <section class="archive-header">
     <div>
-        <h2 class="page-title"><?php if (have_posts()) : ?>
+        <h2 class="page-title" id="archive-page" itemprop="title"><?php if (have_posts()) : ?>
 <?php $post = $posts[0]; ?>
 <?php /* category archive */ if (is_category()) { ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
 <?php /* tag archive */ } elseif( is_tag() ) { ?>Posts tagged as <strong><?php single_tag_title(); ?></strong> <span><?php echo strip_tags(tag_description()); ?></span>

@@ -478,67 +478,6 @@ function closeModals(c) {
 	}	
 }());
 
-// Accordion Style Element, use class="accordion"
-(function(){
-    const acc = document.getElementsByClassName("accordion"), l = acc.length;
-    for (let i = 0; i < l; i++) {
-        acc[i].firstChild.nextSibling.onclick = function() {
-            this.classList.toggle("active");
-            let panel = this.nextSibling.nextSibling;
-            if (panel.style.maxHeight) panel.style.maxHeight = null;
-            else panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    }
-
-    // Append stylesheet if "accordion" exists
-    if (l) {
-        let st = document.createElement("style");
-        st.textContent = (`
-        .accordion {
-            background: transparent;
-        }
-        .accordion > button {
-            width: 100%;
-            text-align: left;
-            background: transparent;
-            border: 0;
-            border-top: 1px solid #eee;
-            font-size: 1.2em;
-            line-height: 1em;
-            padding: 0.55em;
-            color: #333;
-        }
-        .accordion > button:hover {
-            background-color: #eee;
-        }
-        .accordion > button::before {
-            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/%3E%3C/svg%3E");
-            margin: 0 0.5em 0 0;
-            display: inline-block;
-            transition: transform 0.4s ease-in-out 0s;
-            transform-origin: 50% 50%;
-            will-change: transform;
-        }
-        .accordion > button.active::before {
-            -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-        }
-        .accordion > section {
-            padding: 0 1em;
-            max-height: 0;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            transition: max-height 0.2s ease-out;
-            border-bottom: 1px solid #eee;
-            will-change: auto;
-            overscroll-behavior-y: contain;
-            box-shadow: inset 0px -3px 10px #999;
-        }
-        `);
-        document.body.appendChild(st);
-    } 	
-}());
-
 // YouTube embedded iframe Lazy Loader
 (function(){
     let youtube = document.getElementsByClassName("youtube"), l = youtube.length;

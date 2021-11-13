@@ -8,7 +8,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="post-container">
-        <h2 class="image-title" itemprop="title"><?php the_title(); ?></h2>
+        <h2 class="image-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h2>
         <figure class="wp-block-image">
             <?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?>
             <figcaption class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>

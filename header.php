@@ -29,12 +29,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php the_permalink(); ?>">
-<meta property="og:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
+<meta property="og:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
-<meta property="twitter:title" content="<?php wp_title('|', true, 'right'); bloginfo('name'); ?>">
+<meta property="twitter:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <?php wp_head(); // WordPress generated meta data ?>

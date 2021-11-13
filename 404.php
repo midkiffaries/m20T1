@@ -22,7 +22,7 @@
                 </style>
             </div>
         </div>
-        <h2 class="page-title">Page Not Found</h2>
+        <h2 class="page-title" id="error-page" itemprop="title">Page Not Found</h2>
         <div class="content-404">
             <p>Whoops... Well that page is gone.</p>
             <p>But real talk, the page must have been removed, renamed or didn't exist in the first place. 🤔</p>

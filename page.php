@@ -9,7 +9,7 @@
 
 <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="post-container">
-        <h2 class="page-title"><?php the_title(); ?></h2>
+        <h2 class="page-title" id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h2>
 <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
         
         <p class="page-last-updated"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>

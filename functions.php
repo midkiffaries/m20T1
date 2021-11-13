@@ -50,12 +50,12 @@ function SEO_Excerpt($id) {
     $length = 170;
     // Check if post has a user defined excerpt
     if (has_excerpt($id)) {
-        $description = substr(get_the_excerpt($id), 0, $length);
+        $description = trim(substr(get_the_excerpt($id), 0, $length));
     } else {
         // Get page description from content excerpt
         if (is_single() || is_page()) { // If single blog post
             $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt($id), true));
-            $description = substr($excerpt, 0, $length);
+            $description = trim(substr($excerpt, 0, $length)) . "...";
         } else { // All other pages use site slogan
             $description = get_bloginfo('description');
         }
@@ -90,6 +90,14 @@ function SearchCount($query) {
     return $search_count;
 }
 
+// Swaps some special characters with words
+function CharSwap($string) {
+    $string = preg_replace('/\%/', 'percent', $string); 
+    $string = preg_replace('/\&/', 'and', $string); 
+    return $string;
+}
+
+
 // Add featured image to posts and pages
 //add_theme_support( 'post-thumbnails' );
 /*
@@ -103,7 +111,7 @@ the_post_thumbnail( array( 100, 100 ) ); // Other resolutions (height, width)
 */
 
 // Set the excerpt length
-function custom_excerpt_length( $length ) {
+function custom_excerpt_length($length) {
     return 120; // Word length
 }
 add_filter('excerpt_length', 'custom_excerpt_length');

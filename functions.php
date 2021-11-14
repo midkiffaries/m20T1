@@ -49,7 +49,7 @@ function SEO_Excerpt($id) {
     // Character Length
     $length = 170;
     // Check if post has a user defined excerpt
-    if (has_excerpt($id)) {
+    if (has_excerpt($id) && !is_attachment()) {
         $description = trim(substr(get_the_excerpt($id), 0, $length));
     } else {
         // Get page description from content excerpt
@@ -58,6 +58,11 @@ function SEO_Excerpt($id) {
             $description = trim(substr($excerpt, 0, $length)) . "...";
         } else { // All other pages use site slogan
             $description = get_bloginfo('description');
+        }
+        // Check for attachment page
+        if (is_attachment()) {
+            $excerpt = html_entity_decode(wp_strip_all_tags(get_the_content($id), true));
+            $description = trim(substr($excerpt, 0, $length));
         }
     }
     return $description;

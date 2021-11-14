@@ -3,8 +3,6 @@
 <main class="page-main page-image" role="main">
     <div class="page-content width-full">
 
-<?php breadcrumb_trail(); ?>
-
 <?php while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
     <div class="post-container">

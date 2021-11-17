@@ -39,6 +39,13 @@ function numberToRoman($variable) {
 	return $result;
 }
 
+// Swaps some special characters with words
+function CharSwap($string) {
+    $string = preg_replace('/\%/', 'percent', $string); 
+    $string = preg_replace('/\&/', 'and', $string); 
+    return $string;
+}
+
 
 /////////////////////////////
 // WordPress Functions
@@ -95,13 +102,21 @@ function SearchCount($query) {
     return $search_count;
 }
 
-// Swaps some special characters with words
-function CharSwap($string) {
-    $string = preg_replace('/\%/', 'percent', $string); 
-    $string = preg_replace('/\&/', 'and', $string); 
-    return $string;
+// Get WordPress page content for select special pages
+function GetPageContent($id) {
+    $page_for_posts_id = get_option( $id );
+    $page_for_posts_obj = get_post( $page_for_posts_id );
+    return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
+// Enlarge blog post text for short blog posts
+function ResizeFontClass($content) {
+    if (strlen(wp_strip_all_tags($content)) < 430) {
+        return 'entry-largefont'; // Larger font size
+    } else {
+        return 'entry-defaultfont'; // Default font size
+    }
+}
 
 // Add featured image to posts and pages
 //add_theme_support( 'post-thumbnails' );

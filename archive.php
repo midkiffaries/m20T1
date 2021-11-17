@@ -55,11 +55,7 @@ $curauth = $wp_query->get_queried_object();
                     <span class="entry-date">on <a href="<?php echo get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                 </div>
             </header>
-            <?php // Enlarge font in entry is short
-            $largerFont = 'entry-defaultfont'; 
-            if (strlen(wp_strip_all_tags($post->post_content)) < 430) $largerFont = 'entry-largefont'; 
-            ?>
-            <div class="entry-content <?php echo $largerFont; ?>">
+            <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
                 <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
             </div>
             <div class="entry-overflow"></div>

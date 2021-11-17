@@ -7,12 +7,7 @@
 
 <section class="blog-page-title">
     <h2 class="page-title" itemprop="title">The Blog</h2>
-<?php
-// Get blog page content
-$page_for_posts_id = get_option( 'page_for_posts' );
-$page_for_posts_obj = get_post( $page_for_posts_id );
-echo apply_filters( 'the_content', $page_for_posts_obj->post_content );
-?>
+<?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
 </section>
 
 <?php if (have_posts()) : ?>
@@ -31,11 +26,7 @@ echo apply_filters( 'the_content', $page_for_posts_obj->post_content );
                     <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                 </div>
             </header>
-            <?php // Enlarge font in entry is short
-            $largerFont = 'entry-defaultfont'; 
-            if (strlen(wp_strip_all_tags($post->post_content)) < 430) $largerFont = 'entry-largefont'; 
-            ?>
-            <div class="entry-content <?php echo $largerFont; ?>">
+            <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
                 <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
             </div>
             <div class="entry-overflow"></div>

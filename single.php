@@ -16,11 +16,7 @@
             <div class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
             <!--div class="single-entry-comments"><a href="#Comments"><?php //comments_number('No comments', 'One comment', '% comments'); ?></a></div-->
         </header>
-        <?php // Enlarge font in entry is short
-        $largerFont = 'entry-defaultfont'; 
-        if (strlen(wp_strip_all_tags($post->post_content)) < 430) $largerFont = 'entry-largefont'; 
-        ?>
-        <div class="single-entry-content <?php echo $largerFont; ?>">
+        <div class="single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">
             <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
         </div>
         <footer class="single-entry-footer">

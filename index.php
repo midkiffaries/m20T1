@@ -7,7 +7,9 @@
 
 <section class="blog-page-title">
     <h2 class="page-title" itemprop="title">The Blog</h2>
-<?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
+    <div class="blog-page-text">
+        <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
+    </div>
 </section>
 
 <?php if (have_posts()) : ?>

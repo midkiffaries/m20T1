@@ -11,7 +11,7 @@ The intention is for this theme no be minimally reliant on 3rd party plugins, an
 - Built in dark mode switch
 - Built in contact email modal
 - Sidebar support for blog pages and in the site footer
-- Unique homepage and a privacy policy pages
+- Unique homepage, 404, attachment and a privacy policy pages
 - Featured image support
 - Built with SEO and social media in mind
 - Built in Breadcrumbs

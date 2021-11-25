@@ -10,9 +10,9 @@ The intention is for this theme no be minimally reliant on plugins, and to rely 
 - Compatible with WordPress 5.8+
 - Built in dark mode switch
 - Built in contact email modal
-- Sidebar support, including in the footer
+- Sidebar support for blog pages and in the site footer
 - Featured image support
-- Basic SEO support
+- Built with SEO and social media support
 - Built in Breadcrumbs
 
 ## Disclaimer

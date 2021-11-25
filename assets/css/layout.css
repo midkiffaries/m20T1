@@ -272,15 +272,17 @@ Main site layout
 	font-weight: 600;
 }
 
-/* Page Header */
+/* No header image on homepage */
 .header-homepage {
 	height: 2em;
 }
 
-.header-attachment {
+/* No header image attachment and 404 pages */
+.header-noimage {
 	height: 3.5em;
 }
 
+/* Standard header image on all other pages */
 .header-single-page,
 .header-blog {
 	height: 14em;

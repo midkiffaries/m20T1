@@ -74,13 +74,13 @@
         </div>
     </div>
 
-<?php if ( is_front_page()) : // Front-page header ?>
+<?php if ( is_front_page()) : // Homepage header ?>
     <div class="header-homepage"></div>
 
-<?php elseif ( is_attachment() ) : // Attachment page header ?>
-    <div class="header-attachment"></div>
+<?php elseif ( is_attachment() || is_404() ) : // Attachment and 404 page headers ?>
+    <div class="header-noimage"></div>
 
-<?php elseif ( is_page() ) : // Basic Page header ?>
+<?php elseif ( is_page() ) : // Basic page and post header ?>
 <?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
     <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featureImage; ?>>
         <?php //the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>

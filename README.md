@@ -2,7 +2,7 @@
 Version 1.0 BETA (In-Development)
 
 This is simply a WordPress theme that I created from scratch, that I use on my own website.
-The intention is for this theme no be minimally reliant on 3rd party plugins, and to rely on the built in WordPress automation and features. This theme is built to be easy to work with from a coding stand point.
+The intention is for this theme no be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding stand point.
 
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right">

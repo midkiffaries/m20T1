@@ -13,7 +13,7 @@ The intention is for this theme no be minimally reliant on 3rd party plugins, an
 - Sidebar support for blog pages and in the site footer
 - Unique homepage and a privacy policy pages
 - Featured image support
-- Built with SEO and social media support
+- Built with SEO and social media in mind
 - Built in Breadcrumbs
 
 ## Disclaimer

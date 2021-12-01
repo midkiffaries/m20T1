@@ -7,11 +7,11 @@
 error_reporting(E_ALL);
 
 /////////////////////////////
-// Site Setup
+// Includes
 /////////////////////////////
 
-// Includes
-include 'assets/plugins/breadcrumbs.php'; // Breadcrumb trail plugin
+// Breadcrumb trail plugin
+include 'assets/plugins/breadcrumbs.php';
 
 /////////////////////////////
 // Global Functions
@@ -199,69 +199,59 @@ function menu_nav_list($menu, $id) {
 }
 
 // Register the sidebar widgets 
-function custom_sidebars() {
+function m20T1_widgets_init() {
     // Primary Sidebar on the right side of the page
-    register_sidebar(
-        array(
-            'id'            => 'primary',
-            'name'          => __( 'Primary Sidebar' ),
-            'description'   => __( 'Sidebar widgets on the full blog page.' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )
-    );
+    register_sidebar(array(
+        'id'            => 'primary',
+        'name'          => __( 'Primary Sidebar', 'm20T1' ),
+        'description'   => __( 'Sidebar widgets on the full blog page.' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
     // Secondary Sidebar on the right side of the page
-    register_sidebar(
-        array(
-            'id'            => 'secondary',
-            'name'          => __( 'Secondary Sidebar' ),
-            'description'   => __( 'Archives page sidebar widgets.' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )
-    );
+    register_sidebar(array(
+        'id'            => 'secondary',
+        'name'          => __( 'Secondary Sidebar', 'm20T1' ),
+        'description'   => __( 'Archives page sidebar widgets.' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
     // Front page Widgets - bottom of the content
-    register_sidebar(
-        array(
-            'id'            => 'frontpage',
-            'name'          => __( 'Front Page Widgets' ),
-            'description'   => __( 'Widgets on the bottom of the front page.' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )
-    );
+    register_sidebar(array(
+        'id'            => 'frontpage',
+        'name'          => __( 'Front Page Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets on the bottom of the front page.' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
     // Single Post Widgets - bottom of the content
-    register_sidebar(
-        array(
-            'id'            => 'singlepost',
-            'name'          => __( 'Single Post Sidebar' ),
-            'description'   => __( 'Widgets below a single blog post.' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )
-    );
+    register_sidebar(array(
+        'id'            => 'singlepost',
+        'name'          => __( 'Single Post Sidebar', 'm20T1' ),
+        'description'   => __( 'Widgets below a single blog post.' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
     // Page Footer Widgets - bottom of the page
-    register_sidebar(
-        array(
-            'id'            => 'footer',
-            'name'          => __( 'Footer Widgets' ),
-            'description'   => __( 'The page footer widgets.' ),
-            'before_widget' => '<nav id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</nav>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        )
-    );
+    register_sidebar(array(
+        'id'            => 'footer',
+        'name'          => __( 'Footer Widgets', 'm20T1' ),
+        'description'   => __( 'The page footer widgets.' ),
+        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</nav>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
 }
-add_action( 'widgets_init', 'custom_sidebars' );
+add_action( 'widgets_init', 'm20T1_widgets_init' );
 
 // Register the theme and menus/navigation 
 function theme_setup() {
@@ -275,7 +265,7 @@ function theme_setup() {
     
     // HTML5 Support
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-    add_theme_support( 'post-formats', array('aside','image','gallery','video','audio','link','quote','status') );
+    add_theme_support( 'post-formats', array('aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status') );
     
     // Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );

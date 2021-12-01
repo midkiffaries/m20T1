@@ -103,8 +103,10 @@ if ( is_category() ) { // If this is a category archive
 <?php endif; ?>
 
     </div>
-
-    <?php get_sidebar('secondary'); ?>
+    
+    <aside id="sidebar-archive" class="page-sidebar sidebar-archive" role="sidebar">
+        <?php dynamic_sidebar( 'secondary' ); ?>
+    </aside>
 
 </main>
 

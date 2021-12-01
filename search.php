@@ -61,7 +61,9 @@
 
     </div>
 
-    <?php get_sidebar('primary'); ?>
+    <aside id="sidebar-search" class="page-sidebar sidebar-search" role="sidebar">
+        <?php dynamic_sidebar( 'primary' ); ?>
+    </aside>
 
 </main>
 

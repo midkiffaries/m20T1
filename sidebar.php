@@ -1,5 +1,3 @@
-<aside id="sidebar-post" class="page-sidebar sidebar-post" role="sidebar">
-    <?php if (is_active_sidebar( 'secondary' )) : ?>
-        <?php dynamic_sidebar( 'secondary' ); ?>
-    <?php endif; ?>
+<aside id="page-sidebar" class="page-sidebar" role="sidebar">
+    <?php dynamic_sidebar( 'secondary' ); ?>
 </aside>

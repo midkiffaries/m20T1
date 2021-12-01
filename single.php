@@ -46,9 +46,7 @@
         </div>
         <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?> &#x276F;</a></p>
     </section>
-    <?php if (is_active_sidebar( 'singlepost' )) : ?>
     <?php dynamic_sidebar( 'singlepost' ); ?>
-    <?php endif; ?>
 </aside>
 
 <?php comments_template(); ?>

@@ -18,6 +18,10 @@
 
 <?php endwhile; endif; ?>
 
+<aside id="page-widgets" class="page-sidebar page-widgets">
+    <?php dynamic_sidebar( 'singlepost' ); ?>
+</aside>
+
     </div>
 </main>
 

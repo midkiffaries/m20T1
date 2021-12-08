@@ -250,6 +250,16 @@ function m20T1_widgets_init() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ));
+    // Page Header Widgets - bottom of the page
+    register_sidebar(array(
+        'id'            => 'header',
+        'name'          => __( 'Header Widgets', 'm20T1' ),
+        'description'   => __( 'The page header widgets.' ),
+        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</nav>',
+        'before_title'  => '<p class="widget-title">',
+        'after_title'   => '</p>',
+    ));
 }
 add_action( 'widgets_init', 'm20T1_widgets_init' );
 

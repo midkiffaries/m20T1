@@ -70,6 +70,9 @@
                     <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
                     <button class="light-switch square-button" aria-label="Dark mode switch"></button>
                 </div>
+                <div id="header-widgets" class="header-widgets">
+                    <?php dynamic_sidebar( 'header' ); ?>
+                </div>
             </div>
         </div>
     </div>

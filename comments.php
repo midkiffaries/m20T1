@@ -1,12 +1,12 @@
-<?php
-// Do not delete these lines
+<?php // Check to make sure comments.php is not being loaded externally
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 	die ('Please do not load this page directly.');
-if ( post_password_required() ) {
 ?>
+
+<?php if ( post_password_required() ) { // If comments are password protected ?>
 <section class="comments-closed">
     <div>
-        <p>This post is password protected. Enter the password to view comments.</p>
+        <p>🛑 <i>This article is password protected.</i></p>
     </div>
 </section>
 <?php return; } ?>
@@ -33,7 +33,7 @@ if ( post_password_required() ) {
 
 <?php else : // This is displayed if there are no comments so far ?>
 
-<?php if (comments_open()) : // If comments are open, but there are no comments. ?>
+<?php if (comments_open()) : // If comments are open, but there are no comments ?>
 
 <?php else : // Comments are closed ?>
 
@@ -52,13 +52,13 @@ if ( post_password_required() ) {
 <section class="comment-form">
     <h3 class="comment-form-title" id="comment-form"><?php comment_form_title( 'Leave a Reply', 'Post a reply to %s' ); ?></h3>
 
-<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
+<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : // If user is not logged in ?>
 <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>" class="login-link">logged in</a> to post a comment.</p>
 <?php else : ?>
 
     <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="CommentForm" name="commentform" autocomplete="on">
 
-<?php if (is_user_logged_in()) : ?>
+<?php if (is_user_logged_in()) : // If user is logged in ?>
 
 		<p>You are logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo wp_logout_url(get_permalink()); ?>" class="logout-link">Log out</a></p>
 		<input type="hidden" name="author" id="author" value="<?php echo $user_identity; ?>">

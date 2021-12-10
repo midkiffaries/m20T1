@@ -12,7 +12,6 @@
         <h2 class="page-title" id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h2>
 <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
         
-        <p class="page-last-updated"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </article>
 
@@ -22,6 +21,7 @@
     <?php dynamic_sidebar( 'singlepost' ); ?>
 </aside>
 
+        <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </main>
 

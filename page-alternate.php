@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" role="main">
+<main class="page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" role="main">
     <div class="page-content width-full">
 
 <?php breadcrumb_trail(); ?>
@@ -12,7 +12,7 @@
         <h2 class="page-title" id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h2>
 <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
         
-        <p class="page-last-updated"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
+        <p class="page-last-updated hidden"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </article>
 

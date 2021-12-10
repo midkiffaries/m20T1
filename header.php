@@ -65,13 +65,11 @@
                 <div class="header-secondary-navigation" role="navigation">
                     <?php menu_nav_list('Secondary Navigation', 'header-navigation'); ?>
                 </div>
-                <div class="header-menu">
-                    <button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', ContactModal)"></button>
-                    <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
-                    <button class="light-switch square-button" aria-label="Dark mode switch"></button>
-                </div>
-                <div id="header-widgets" class="header-widgets">
+                <div class="header-widgets">
                     <?php dynamic_sidebar( 'header' ); ?>
+                    <!--button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', ContactModal)"></!--button>
+                    <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
+                    <button-- class="light-switch square-button" aria-label="Dark mode switch"></button-->
                 </div>
             </div>
         </div>

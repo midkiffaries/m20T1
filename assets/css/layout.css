@@ -267,6 +267,10 @@ Main site layout
 	display: table;
 }
 
+.hidden {
+	display: none;
+}
+
 /* Drop caps */
 .has-drop-cap:not(:focus):first-letter {
 	font-weight: 600;
@@ -333,7 +337,7 @@ Main site layout
 	right: 1em;
 }
 
-.header-menu {
+.header-widgets {
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -396,12 +400,12 @@ Main site layout
 	.header-content {
 		position: relative;
 	}
-	.header-menu button {
+	.header-widgets button {
 		margin: 0.2em;
 		padding: 2em;
 		background-size: 2.2em;
 	}
-	.header-menu,
+	.header-widgets,
 	.header-navigation,
 	.header-secondary-navigation {
 		display: block;
@@ -499,14 +503,15 @@ Main site layout
 }
 
 /* Page Sidebars */
-.page-sidebar {
-	padding: 0.8em;
-}
-
-.sidebar-primary,
-.sidebar-post {
+.sidebar-blog,
+.sidebar-archive,
+.sidebar-search {
 	width: var(--sidebar-width);
 	float: right;
+}
+
+.page-sidebar {
+	padding: 0.8em;
 }
 
 /* Single Blog Post */

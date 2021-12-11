@@ -10,11 +10,12 @@ The intention is for this theme no be minimally reliant on 3rd party plugins, an
 - Compatible with WordPress 5.8+
 - Built in dark mode switch
 - Built in contact email modal
-- Sidebar support for blog pages and in the site footer
+- Built in basic image viewer, via <code>figure</code> > <code>a</code> > <code>img</code>
+- Sidebars with widgets for blog pages
+- Widget support in the site header and footer
 - Unique homepage, 404, attachment and a privacy policy pages
 - Featured image support
 - Built with SEO and social media in mind
-- Support for modern browsers
 - Built in Breadcrumbs
 
 ## Disclaimer

@@ -11,7 +11,7 @@ The intention is for this theme no be minimally reliant on 3rd party plugins, an
 - Built in dark mode switch
 - Built in contact email modal
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
-- Custom modals for Alerts, Confirmation and custom HTML
+- Custom modals for alerts, confirmation and custom HTML
 - Sidebars with widgets for blog pages
 - Widget support in the site header and footer
 - Unique homepage, 404, attachment and a privacy policy pages

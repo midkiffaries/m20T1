@@ -14,7 +14,7 @@
             <div class="single-entry-date"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>
             <h2 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h2>
             <div class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></div>
-            <!--div class="single-entry-comments"><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></div-->
+            <div class="single-entry-comments hidden"><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></div>
         </header>
         <div class="single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">
             <?php the_content('<p>Continue Reading &raquo;</p>'); ?>

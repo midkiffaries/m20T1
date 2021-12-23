@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-error" role="main">
+<main class="page-main page-error" id="main-content" role="main">
     <div class="page-content width-full">
 
 <?php breadcrumb_trail(); ?>

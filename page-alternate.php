@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" role="main">
+<main class="page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" id="main-content" role="main">
     <div class="page-content width-full">
 
 <?php breadcrumb_trail(); ?>

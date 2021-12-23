@@ -276,6 +276,24 @@ Main site layout
 	font-weight: 600;
 }
 
+/* Skip main content link */
+.nav-skip {
+	font-weight: bold;
+	padding: 0.5rem;
+	border-radius: 0 0 0.2rem 0.2rem;
+	background: #333;
+	color: #fff;
+	position: absolute;
+	left: 1rem;
+	z-index: 200;
+	transform: translateY(-120%);
+	transition: transform 0.3s ease-in;
+}
+
+.nav-skip:focus {
+	transform: translateY(0);
+}
+
 /* No header image on homepage */
 .header-homepage {
 	height: 2em;

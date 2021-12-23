@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-image" role="main">
+<main class="page-main page-image" id="main-content" role="main">
     <div class="page-content width-full">
 
 <?php while ( have_posts() ) : the_post(); ?>

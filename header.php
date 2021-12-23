@@ -46,6 +46,7 @@
 <?php wp_body_open(); ?>
 
 <header class="page-header" role="banner" id="top">
+    <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
             <h1 class="header-h1" itemprop="title">
@@ -67,9 +68,6 @@
                 </div>
                 <div class="header-widgets">
                     <?php dynamic_sidebar( 'header' ); ?>
-                    <!--button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', ContactModal)"></!--button>
-                    <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', SearchModal)"></button>
-                    <button-- class="light-switch square-button" aria-label="Dark mode switch"></button-->
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-main page-archive" role="main">
+<main class="page-main page-archive" id="main-content" role="main">
     <div class="page-content width-side">
 
 <?php breadcrumb_trail(); ?>

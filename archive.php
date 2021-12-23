@@ -5,10 +5,8 @@
 
 <?php breadcrumb_trail(); ?>
 
-<?php
-global $wp_query;
-$curauth = $wp_query->get_queried_object();
-?>
+<?php //global $wp_query; ?>
+<?php $curauth = $wp_query->get_queried_object(); ?>
 
 <section class="archive-header">
     <div>
@@ -19,7 +17,7 @@ $curauth = $wp_query->get_queried_object();
 <?php /* daily archive */ } elseif (is_day()) { ?>Posts from <b><?php the_time('F j, Y'); ?></b>
 <?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <b><?php the_time('F Y'); ?></b>
 <?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <b><?php the_time('Y'); ?></b>
-<?php /* author archive */ } elseif (is_author()) { ?>Posts written by <?php printf($curauth->nickname); ?>
+<?php /* author archive */ } elseif (is_author()) { ?>Posts written by <b><?php printf($curauth->nickname); ?></b>
 <?php /* paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives
 <?php } ?></h2>
     </div>

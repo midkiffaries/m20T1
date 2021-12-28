@@ -30,5 +30,41 @@
 				}
 			]
 		}
-	}
+	},
+    "styles": {
+		"elements": {
+			"link": {
+				"border": {},
+				"color": {},
+				"spacing": {},
+				"typography": {}
+			},
+			"h1": {},
+			"h2": {},
+			"h3": {},
+			"h4": {},
+			"h5": {},
+			"h6": {}
+		},
+		"blocks": {
+            "core/group": {
+                "border": {},
+                "color": {},
+                "spacing": {},
+                "typography": {},
+                "elements": {
+                    "link": {},
+                    "h1": {},
+                    "h2": {},
+                    "h3": {},
+                    "h4": {},
+                    "h5": {},
+                    "h6": {}
+                }
+            },
+            "etc": {}
+        }
+	},
+    "customTemplates": {},
+    "templateParts": {}
 }

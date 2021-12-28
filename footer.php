@@ -12,8 +12,8 @@
     </div>
 </footer>
 
-<script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/scripts.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/modals.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/scripts/scripts.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/scripts/modals.js"></script>
 
 <?php wp_footer(); ?>
 

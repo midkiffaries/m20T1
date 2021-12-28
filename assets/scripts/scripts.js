@@ -24,7 +24,9 @@ document.addEventListener("keyup", (e) => {
 
 // Modal images with a nested <figure> <a> <img> tag inside
 (function(){
-    let fig = document.getElementsByTagName("figure"), l = fig.length;
+    let fig = document.getElementsByTagName("figure"), 
+        l = fig.length;
+
     for (let i = 0; i < l; i++) {
         if (fig[i].firstElementChild && fig[i].firstElementChild.tagName == "A") {
             fig[i].firstElementChild.addEventListener("click", function(e) {
@@ -35,9 +37,6 @@ document.addEventListener("keyup", (e) => {
 					innerDiv = document.createElement('div'),
 					imgAlt = this.firstElementChild.alt,
 					imgName = this.href.substring(this.href.lastIndexOf('/') + 1).replace(/_/g," ").replace(/-/g," ").split('.')[0];
-
-                // Change URI on image click
-                //history.pushState({},'',`${PathName}?viewImage`);
 
 				// Dialog box attributes
                 dialog.setAttribute('class', 'dialog-image');	
@@ -226,9 +225,12 @@ function closeModals(c) {
 	}	
 }());
 
-// YouTube embedded iframe Lazy Loader
+// Embedded YouTube video iframe auto lazy loading
 (function(){
-    let youtube = document.getElementsByClassName("youtube"), l = youtube.length;
+    let st = document.createElement("style"), 
+        youtube = document.getElementsByClassName("youtube"), 
+        l = youtube.length;
+
     for (let i = 0; i < l; i++) {
         let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`;
         let image = new Image();
@@ -246,9 +248,9 @@ function closeModals(c) {
             this.appendChild(iframe);
         });
     }
+
     // Append stylesheet if "youtube" exists
     if (l) {
-        let st = document.createElement("style");
         st.textContent = (`
         .youtube {
             width: 100%;
@@ -334,17 +336,22 @@ function closeModals(c) {
 
 // Hamburger button and menu animation
 (function(){
-    let id = document.getElementById("btnMenu");
+    const id = document.getElementById("btnMenu"),
+        st = document.createElement("style");
+
     id.innerHTML = '';
     id.appendChild(document.createElement("span"));
     id.appendChild(document.createElement("span"));
+
+    // Button Logic
     id.onclick = function () {
         // Button Animation        
         this.classList.toggle("active");
         // Button Action
         document.getElementById(this.getAttribute("data-menu-id")).classList.toggle("menu-show");
     };
-    let st = document.createElement("style");
+
+    // Button styling
     st.textContent = (`
     #btnMenu {
         width: 2.6em;
@@ -388,7 +395,7 @@ function closeModals(c) {
     document.body.appendChild(st);
 }());
 
-// Checks the postiion of the window focus
+// Checks the position of the window focus
 document.addEventListener("scroll", function () {
     const el = document.getElementById("ScrollToTop");
 	
@@ -398,16 +405,17 @@ document.addEventListener("scroll", function () {
 
 // Creates floating scroll to top button
 (function(){
-    const st = document.createElement("div"), 
-		style = document.createElement('style');
-    st.setAttribute("id", "ScrollToTop");
-    st.setAttribute("class", "scroll-to-top-float");
-    st.setAttribute("role", "button");
-    st.setAttribute("onclick", "smoothScroll(0,100)");
-    document.body.appendChild(st);
+    const sc = document.createElement("div"), 
+        st = document.createElement('style');
+
+    sc.setAttribute("id", "ScrollToTop");
+    sc.setAttribute("class", "scroll-to-top-float");
+    sc.setAttribute("role", "button");
+    sc.setAttribute("onclick", "smoothScroll(0,100)");
+    document.body.appendChild(sc);
 	
-	// Scroll to top button style
-	style.textContent = (`
+	// Button styling
+	st.textContent = (`
 	.scroll-to-top-float {
 		position: fixed;
 		visibility: hidden;
@@ -440,7 +448,7 @@ document.addEventListener("scroll", function () {
 		.scroll-to-top-float {display: none;}
 	}
 	`);
-	document.body.appendChild(style);
+	document.body.appendChild(st);
 }());
 
 // Smooth scrolling to the Top of the page
@@ -450,8 +458,8 @@ function smoothScroll(loc, duration) {
         perTick;
     
     // Check if the client is Safari
-    if (document.body.scrollTop > 0) el = document.body; // yes
-    else el = document.documentElement; // no
+    if (document.body.scrollTop > 0) el = document.body; // Yes Safari
+    else el = document.documentElement; // No Safari
     
     // Travel back to the top
 	if (duration < 0) return;

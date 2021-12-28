@@ -265,10 +265,11 @@ add_action( 'widgets_init', 'm20T1_widgets_init' );
 
 // Register the theme and menus/navigation 
 function theme_setup() {
-    // Add featured image to posts and pages
+    // Additional Theme Support
     add_theme_support( 'post-thumbnails' );
-
-    // Theme Support
+    add_theme_support( 'custom-line-height' );
+    add_theme_support( 'custom-spacing' );
+    add_theme_support( 'featured-content' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'customize-selective-refresh-widgets' );
@@ -277,7 +278,7 @@ function theme_setup() {
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
     add_theme_support( 'post-formats', array('aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status') );
     
-    // Widgets
+    // Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
 }

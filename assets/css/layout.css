@@ -335,6 +335,7 @@ Main site layout
 .header-logo {
 	margin: 0.7em 0.4em;
 	padding: 0.3em 0 0 0.5em;
+	white-space: nowrap;
 }
 
 .header-logo a {

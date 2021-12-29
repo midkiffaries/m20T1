@@ -37,7 +37,7 @@
 <meta property="twitter:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<?php wp_head(); // WordPress generated meta data ?>
+<?php wp_head(); // WordPress generated meta data and scripts ?>
 
 </head>
 
@@ -49,7 +49,7 @@
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
-            <h1 class="header-text" itemprop="title">
+            <h1 class="header-text" itemprop="title" aria-hidden="false">
                 <a href="<?php echo home_url(); ?>" rel="bookmark"><?php bloginfo('name'); ?></a>
             </h1>
             <div class="header-logo">

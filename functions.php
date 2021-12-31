@@ -175,6 +175,18 @@ function blog_post_share() {
 <?php
 }
 
+// Display page title and excerpt from child pages of current page
+$child_page_args = array(
+    'sort_order'     => 'ASC',
+    'sort_column'    => 'menu_order, post_title',
+    'post_type'      => 'page',
+    'post_status'    => 'publish',
+    'posts_per_page' => -1,
+    'post_parent'    => $post->ID,
+    'child_of'       => $post->ID,
+);
+$page_children = get_pages($child_page_args);
+
 // Display the list of menu/navigation links
 function menu_nav_list($menu, $id) {
     $menuStyle = array(

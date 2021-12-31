@@ -18,6 +18,13 @@
 
 <?php endwhile; endif; ?>
 
+<?php foreach ($page_children as $child) { // Display child pages ?>
+    <h3><?php echo $child->post_title; ?></h3>
+    <p><?php echo $child->post_excerpt; ?></p>
+    <p><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>
+    <p><a href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">Read More</a></p>
+<?php } ?>
+
     </div>
 </main>
 

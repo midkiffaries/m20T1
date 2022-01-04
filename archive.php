@@ -9,7 +9,7 @@
 <?php $curauth = $wp_query->get_queried_object(); ?>
 
 <section class="archive-header">
-    <div>
+    <div class="archive-header-container">
         <h2 class="page-title" id="archive-page" itemprop="title"><?php if (have_posts()) : ?>
 <?php $post = $posts[0]; ?>
 <?php /* category archive */ if (is_category()) { ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
@@ -26,7 +26,7 @@
 <?php if (is_author()) : ?>
 
 <section class="author-bio" role="complementary">
-    <div>
+    <div class="author-container">
         <div class="wp-block-image">
             <figure class="alignleft" aria-label="Authors Avatar">
                 <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>

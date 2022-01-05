@@ -3,14 +3,14 @@
 <main class="page-main page-blog" id="main-content" role="main">
     <div class="page-content width-side">
 
-<?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); ?>
 
-<section class="blog-page-title">
-    <h2 class="page-title" itemprop="title">The Blog</h2>
-    <div class="blog-page-text">
-        <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
-    </div>
-</section>
+    <section class="blog-page-title">
+        <h2 class="page-title" itemprop="title">The Blog</h2>
+        <div class="blog-page-text">
+            <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
+        </div>
+    </section>
 
 <?php if (have_posts()) : ?>
 
@@ -39,30 +39,30 @@
         </div>
     </div>
 
-<?php endwhile; ?>
+    <?php endwhile; ?>
 
-</article>
+    </article>
 
-<section class="blog-pagination">
-    <div class="pagination-container">
-        <nav class="blog-post-nav">
-            <?php blogPostPagination('Posts'); ?>
-        </nav>
-    </div>
-</section>
+    <section class="blog-pagination">
+        <div class="pagination-container">
+            <nav class="blog-post-nav">
+                <?php blogPostPagination('Posts'); ?>
+            </nav>
+        </div>
+    </section>
 
-<?php else : ?>
+    <?php else : ?>
 
-<article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
-    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-        <h2 class="entry-title">Not Found</h2>
-        <p>Sorry, but you are looking for something that isn't here for some reason.</p>
-<?php my_search_form('Main'); ?>
+    <article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+            <h2 class="entry-title">Not Found</h2>
+            <p>Sorry, but you are looking for something that isn't here for some reason.</p>
+        <?php my_search_form('Main'); ?>
 
-    </div>
-</article>
+        </div>
+    </article>
 
-<?php endif; ?>
+    <?php endif; ?>
 
     </div>
 

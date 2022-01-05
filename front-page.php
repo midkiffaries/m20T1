@@ -3,17 +3,17 @@
 <main class="page-frontpage page-home" id="main-content" role="main">
     <div class="page-content width-full">
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
 
-<article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
-    <div>
-        <h2 class="page-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h2>
-<?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
-        
-    </div>
-</article>
+        <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+            <div>
+                <h2 class="page-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h2>
+                <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
+                
+            </div>
+        </article>
 
-<?php endwhile; endif; ?>
+    <?php endwhile; endif; ?>
 
     </div>
 

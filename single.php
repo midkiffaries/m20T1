@@ -36,7 +36,7 @@
         </div>
     </section>
 
-    <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets">
+    <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets clearfix">
         <section class="widget widget_block single-author-bio" role="complementary">
             <h3 class="author-bio-name" itemprop="author">About the Author</h3>
             <div class="wp-block-image">

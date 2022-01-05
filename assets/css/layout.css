@@ -497,7 +497,7 @@ Main site layout
 .page-content.width-full {
 	width: 100%;
 	float: none;
-	padding: 0.5em;
+	padding: 0.8rem;
 }
 
 @media (max-width: 1249px) {
@@ -515,7 +515,7 @@ Main site layout
 	}
 }
 
-/* Page Sidebars */
+/* Sidebars and widgets */
 .sidebar-blog,
 .sidebar-archive,
 .sidebar-search {
@@ -653,13 +653,9 @@ Main site layout
 	font-size: 1.2em;
 }
 
-/* Single post widgets */
-.singlepost-widgets {
-	clear: both;
-}
 
 /************************ 
-Wordpress Styling
+WordPress Generated Styling
 ************************/
 
 /* Menu Items */
@@ -730,6 +726,12 @@ figcaption:not(.blocks-gallery-item__caption) {
 	pointer-events: none;
 }
 
+@media (max-width: 850px) {
+	.wp-block-image figure {
+		width: 50%;
+	}
+}
+
 /************************ 
 Page Specific Styling
 ************************/
@@ -755,7 +757,6 @@ Page Specific Styling
 
 .page-content .post,
 .blog-page-title {
-	padding: 0 0.6em;
 	margin: 0.5em auto 3em;
 	clear: both;
 }
@@ -801,20 +802,28 @@ Page Specific Styling
 	padding: 0.7em;
 }
 
+/* Archive Page - Author Bio section */
 .author-bio {
 	background: linear-gradient(342deg, rgba(158,158,158,0.9) 0%, rgba(236,235,235,0.1) 100%);
     box-shadow: 0 1px 8px 2px rgba(0, 0, 0, 0.2) inset;
 	padding: 1px 1.4em;
 	overflow-y: hidden;
-	border-radius: 10px;
+	border-radius: 0.5rem;
 }
 
-.author-bio figure img {
+.author-avatar {
+	float: left;
+	margin-right: 0.5rem;
+}
+
+.author-avatar figure img {
 	border: 1px solid #fff;
+	border-radius: 0.5em;
+	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
 .author-bio-name {
-	margin: 4px 0 -5px;
+	margin: 0.5em 0 -0.2em;
 }
 
 .author-bio-about {
@@ -850,13 +859,23 @@ Page Specific Styling
 	text-transform: uppercase;
 }
 
+/* Search Submit button */
+.search-submit {
+	padding: auto 1em;
+	width: 3em;
+	background-position: 50% 50%;
+	background-size: 1.3em;
+	background-repeat: no-repeat;
+	background-image: var(--icon-search);
+}
+
 /* 404 Error Page */
 .page-404 {
 	font-size: 1.5em;
 	text-align: center;
 }
 
-/* Attachment/Image Page */
+/* Attachment and Image Page */
 .page-image .attachment {
 	text-align: center;
 	font-size: 1.2em;
@@ -877,7 +896,7 @@ Page Specific Styling
 	margin: 14px;
 }
 
-/* Comment Block */
+/* Comment Section */
 .list-comments {
 	list-style: none;
 	padding: 0;
@@ -956,16 +975,6 @@ Page Specific Styling
 .comments-closed p {
 	font-size: 1.4rem;
 	text-align: center;
-}
-
-/* Search Submit button */
-.search-submit {
-	padding: auto 1em;
-	width: 3em;
-	background-position: 50% 50%;
-	background-size: 1.3em;
-	background-repeat: no-repeat;
-	background-image: var(--icon-search);
 }
 
 /* Page last updated line */

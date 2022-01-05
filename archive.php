@@ -26,7 +26,7 @@
 
     <section class="author-bio" role="complementary">
         <div class="author-container">
-            <div class="wp-block-image">
+            <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
                     <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
                 </figure>

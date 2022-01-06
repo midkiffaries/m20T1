@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="page-frontpage page-home" id="main-content" role="main">
-    <div class="page-content width-full">
+    <div class="page-content width-max">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
 

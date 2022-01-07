@@ -11,7 +11,7 @@
             <div class="post-container">
                 <h2 class="page-title" id="<?php echo $post->post_name; ?>"><?php the_title(); ?></h2>
                 <p class="policy-last-updated"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
-                <div class="page-content">
+                <div class="the-content">
                     <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
                 
                 </div>

@@ -6,8 +6,8 @@ Author: Ted Balmer
 Author URI: https://www.marchtwenty.com/
 Description: Theodore's personal WordPress theme.
 Requires at least: 5.0
-Tested up to: 5.8.1
-Requires PHP: 5.6
+Tested up to: 5.8.3
+Requires PHP: 5.6+
 Version: 1.0.0 BETA
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -210,8 +210,21 @@ svg {
 }
 */
 
+/************************ 
+WordPress Plugins 
+************************/
 
-/* Accordion Wordpress Plugin */
+/* Secondary Title Plugin (page subtitle) */
+nav .page-subtitle {
+	display: none;
+}
+
+.page-title .page-subtitle {
+	font-size: 1rem;
+	display: block;
+}
+
+/* Accordion Plugin */
 .c-accordion__item {
 	border-top: 1px solid currentColor;
 	border-bottom: 1px solid currentColor;

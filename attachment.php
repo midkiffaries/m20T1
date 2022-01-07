@@ -12,7 +12,7 @@
                     <?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?>
                     <figcaption class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>
                 </figure>
-                <div class="page-content">
+                <div class="the-content">
                     <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">

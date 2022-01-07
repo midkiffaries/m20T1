@@ -5,8 +5,8 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<!--title><?php bloginfo('name'); wp_title('–', true, 'left'); ?></title-->
-<meta name="title" content="<?php bloginfo('name'); wp_title('-', true, 'left'); ?>">
+<title><?php wp_title('|', true, 'right'); bloginfo('name');  ?></title>
+<meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">

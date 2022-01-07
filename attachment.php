@@ -12,7 +12,9 @@
                     <?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?>
                     <figcaption class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>
                 </figure>
-                <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
+                <div class="page-content">
+                    <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
+                </div>
                 <p class="image-info">
                     <span class="image-date">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>

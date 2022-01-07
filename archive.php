@@ -93,7 +93,7 @@
             }
             ?>
             </h3>
-            <p>Would you like to try a search for what you are looking for?</p>
+            <p>Would you like to try a search to find what you are looking for?</p>
             <?php get_search_form('archive'); ?>
         </div>
     </article>

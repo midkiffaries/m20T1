@@ -15,7 +15,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 
 <section class="comment-list" role="comments" id="Comments">
     <div class="comment-container">
-        <h3 class="comments-title"><?php comments_number('No Comments', 'One Comment', '% Comments');?></h3>
+        <h3 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments');?></h3>
         <ol class="list-comments">
 <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=custom_comment_style'); ?>
         </ol>
@@ -37,7 +37,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 
 <?php else : // Comments are closed ?>
 
-<section class="comments-closed">
+<section class="comments-closed" role="comments" id="Comments">
     <div>
         <p>🚫 <i>Comments are closed for this article.</i></p>
     </div>

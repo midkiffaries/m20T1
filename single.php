@@ -46,12 +46,15 @@
             </div>
             <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?> &#x276F;</a></p>
         </section>
-        <section class="widget widget_block">
+        
+        <section class="widget widget_block widget-comments">
+            <?php comments_template(); ?>
+        </section>
+
+        <section class="widget widget_block widget-singlepost">
             <?php dynamic_sidebar( 'singlepost' ); ?>
         </section>
     </aside>
-
-    <?php comments_template(); ?>
 
     <?php endwhile; else: ?>
 

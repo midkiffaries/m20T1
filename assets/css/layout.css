@@ -391,6 +391,7 @@ Main site layout
 	display: none;
 }
 
+/* Header on mobile devices */
 @media (max-width: 849px) {
 	.header-single-page,
 	.header-blog {
@@ -470,6 +471,7 @@ Main site layout
 	vertical-align: -2px;
 }
 
+/* Footer on mobile devices */
 @media (max-width: 1249px) {
 	.footer-widgets {
 		width: 100%;
@@ -503,6 +505,7 @@ Main site layout
 	padding: 0;
 }
 
+/* Page content on narrow screens */
 @media (max-width: 1249px) {
 	.page-main {
 		width: 100%;
@@ -510,11 +513,12 @@ Main site layout
 	}
 }
 
+/* Page content on mobile devices */
 @media (max-width: 849px) {
 	.page-content.width-side {
 		float: none !important;
 		width: 100% !important;
-		padding: 0 0.25em;
+		padding: 0 0.8em;
 	}
 }
 
@@ -729,6 +733,7 @@ figcaption:not(.blocks-gallery-item__caption) {
 	pointer-events: none;
 }
 
+/* WP image blocks on mobile devices */
 @media (max-width: 600px) {
 	.wp-block-image figure {
 		width: 50%;

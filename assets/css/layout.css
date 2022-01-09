@@ -273,6 +273,7 @@ Main site layout
 
 /* Drop caps */
 .has-drop-cap:not(:focus):first-letter {
+	font-family: serif;
 	font-weight: 600;
 }
 

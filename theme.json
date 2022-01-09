@@ -1,46 +1,84 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
+	"version": 1,
 	"settings": {
+		"layout": {
+			"contentSize": "1020px",
+			"wideSize": "1200px"
+		},
 		"color": {
+			"custom": true,
+			"customGradient": true,
+			"link": true,
+			"gradients": [],
 			"palette": [
 				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"name": "Light Gray",
+					"slug": "lightgray",
+					"color": "#cccccc"
+				},
+				{
+					"name": "Dark Gray",
+					"slug": "darkgray",
+					"color": "#666666"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				},
+				{
+					"name": "Base Color",
 					"slug": "base",
-					"color": "#bada55",
-					"name": "BaseColor"
+					"color": "#bada55"
 				}
 			]
 		},
 		"typography": {
+			"customFontSize": true,
+            "lineHeight": true,
+			"dropCap": true,
 			"fontSizes": [
 				{
-					"slug": "default",
-					"size": "1.25rem",
-					"name": "Default"
-				},
-				{
+					"name": "Small",
 					"slug": "small",
-					"size": "1.0rem",
-					"name": "Small"
+					"size": "1.0rem"
 				},
 				{
+					"name": "Normal",
 					"slug": "normal",
-					"size": "1.25rem",
-					"name": "Normal"
+					"size": "1.25rem"
 				},
 				{
+					"name": "Medium",
 					"slug": "medium",
-					"size": "1.5rem",
-					"name": "Medium"
+					"size": "1.5rem"
 				},
                 {
+					"name": "Large",
 					"slug": "large",
-					"size": "1.8rem",
-					"name": "Large"
+					"size": "1.8rem"
+				},
+				{
+					"name": "Huge",
+					"slug": "huge",
+					"size": "2.2rem"
 				}
 			]
 		},
+		"border": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        },
 		"spacing": {
+			"blockGap": true,
 			"padding": true,
 			"margin": true,
 			"units": [ "px", "em", "rem", "vh", "vw" ]
@@ -62,22 +100,35 @@
 			"h6": {}
 		},
 		"blocks": {
-            "core/group": {
+			"core/code": {
+                "border": {},
+                "color": {
+					"text": "#111111",
+					"background": "#eeeeee"
+				},
+                "typography": {},
+				"spacing": {
+					"padding": {
+						"top": "2em",
+						"bottom": "2em",
+						"left": "2em",
+						"right": "2em"
+					}
+				}
+			},
+			"core/button": {
                 "border": {},
                 "color": {},
-                "spacing": {},
                 "typography": {},
-                "elements": {
-                    "link": {},
-                    "h1": {},
-                    "h2": {},
-                    "h3": {},
-                    "h4": {},
-                    "h5": {},
-                    "h6": {}
-                }
-            },
-            "etc": {}
+				"spacing": {
+					"padding": {
+						"top": "0.5em",
+						"bottom": "0.5em",
+						"left": "0.8em",
+						"right": "0.8em"
+					}
+				}
+			}
         }
 	},
     "customTemplates": {},

@@ -39,20 +39,20 @@
     <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets clearfix">
         <section class="widget widget_block single-author-bio" role="complementary">
             <h3 class="author-bio-name" itemprop="author">About the Author</h3>
-            <div class="wp-block-image">
+            <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
                     <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
                 </figure>
             </div>
             <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?> &#x276F;</a></p>
         </section>
-        
-        <section class="widget widget_block widget-comments">
-            <?php comments_template(); ?>
-        </section>
 
         <section class="widget widget_block widget-singlepost">
             <?php dynamic_sidebar( 'singlepost' ); ?>
+        </section>
+
+        <section class="widget widget_block widget-comments">
+            <?php comments_template(); ?>
         </section>
     </aside>
 

@@ -805,7 +805,11 @@ Page Specific Styling
 
 .author-avatar {
 	float: left;
-	margin-right: 0.5rem;
+	margin-right: 0.6rem;
+}
+
+.single-author-bio .author-avatar {
+	margin-top: 0.5rem;
 }
 
 .author-avatar figure img {

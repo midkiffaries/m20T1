@@ -746,23 +746,6 @@ Page Specific Styling
 ************************/
 
 /* The Blog Page */
-.post.sticky::before {
-	content: "Featured Post";
-	text-align: center;
-	width: 100%;
-	display: block;
-	font-weight: bold;
-	font-size: 1.25rem;
-	text-transform: uppercase;
-	opacity: 0.5;
-}
-
-.post.sticky {
-	background: rgba(120,120,120,0.2);
-	box-shadow: 0 0 3px 0 currentColor;
-	padding: 0.8em 0.6em !important;
-	border-radius: 0.4em;
-}
 
 .page-content .post,
 .blog-page-title {

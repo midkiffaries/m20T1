@@ -4,7 +4,7 @@
 	"settings": {
 		"layout": {
 			"contentSize": "1020px",
-			"wideSize": "1200px"
+			"wideSize": "1250px"
 		},
 		"color": {
 			"custom": true,
@@ -13,14 +13,9 @@
 			"gradients": [],
 			"palette": [
 				{
-					"name": "White",
-					"slug": "white",
-					"color": "#ffffff"
-				},
-				{
-					"name": "Light Gray",
-					"slug": "lightgray",
-					"color": "#cccccc"
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
 				},
 				{
 					"name": "Dark Gray",
@@ -28,14 +23,34 @@
 					"color": "#666666"
 				},
 				{
-					"name": "Black",
-					"slug": "black",
-					"color": "#000000"
+					"name": "Light Gray",
+					"slug": "lightgray",
+					"color": "#cccccc"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"name": "Green",
+					"slug": "green",
+					"color": "#bada55"
+				},
+				{
+					"name": "Base Color Dark",
+					"slug": "baseDark",
+					"color": "#205380"
 				},
 				{
 					"name": "Base Color",
 					"slug": "base",
-					"color": "#bada55"
+					"color": "#40A5FF"
+				},
+				{
+					"name": "Base Color Pale",
+					"slug": "basePale",
+					"color": "#8CC9FF"
 				}
 			]
 		},
@@ -43,6 +58,17 @@
 			"customFontSize": true,
             "lineHeight": true,
 			"dropCap": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"fontStyle": true,
+			"textDecoration": true,
+			"fontFamilies": [
+				{
+					"fontFamily": "sans-serif",
+					"name": "sans-serif",
+					"slug": "sans"
+				}
+			],
 			"fontSizes": [
 				{
 					"name": "Small",
@@ -130,7 +156,5 @@
 				}
 			}
         }
-	},
-    "customTemplates": {},
-    "templateParts": {}
+	}
 }

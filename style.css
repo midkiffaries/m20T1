@@ -181,6 +181,14 @@ Page Styling
 	background-size: 1em, cover;
 }
 
+/* Sticky posts */
+.post.sticky {
+	background: rgba(120,120,120,0.2);
+	box-shadow: 0 0 3px 0 currentColor;
+	padding: 0.8em 0.6em !important;
+	border-radius: 0.4em;
+}
+
 /*
 .header-blog[style], 
 .header-single-page[style] {

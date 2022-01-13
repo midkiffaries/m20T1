@@ -7,9 +7,9 @@
 
     <?php if (have_posts() && get_search_query()) : ?>
 
-    <section class="search-banner">
+    <section class="search-banner" id="search-page">
         <div>
-            <h2 class="page-title" id="search-page" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
+            <h2 class="page-title" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
             <?php get_search_form(); ?>
             <hr>
         </div>

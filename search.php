@@ -7,15 +7,14 @@
 
     <?php if (have_posts() && get_search_query()) : ?>
 
-    <section class="search-banner" id="search-page">
+    <section class="search-page-form" id="search-page">
         <div>
             <h2 class="page-title" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
             <?php get_search_form(); ?>
-            <hr>
         </div>
     </section>
 
-    <article class="search-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="search-results" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); ?>
 

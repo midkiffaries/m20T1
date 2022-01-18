@@ -24,11 +24,11 @@
 
     <?php if (is_author()) : ?>
 
-    <section class="author-bio" role="complementary">
+    <section class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" role="complementary">
         <div class="author-container">
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
-                    <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
+                    <?php printf(get_avatar(get_the_author_meta('ID'), 128)); ?>
                 </figure>
             </div>
             <h3 class="author-bio-name" itemprop="author"><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>

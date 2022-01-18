@@ -150,16 +150,16 @@ function custom_comment_style($comment, $args, $depth) {
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div class="comment-content" role="comment">
 			<header class="comment-header">
-                <?php //echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <?php //echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
                 <span class="comment-author" rel="author"><?php printf(__('%s'), get_comment_author()); ?></span>
-                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y - h:ma')); ?></time></span>
+                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time></span>
                 <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), ' ', ' ' ); ?></span> 
 			</header>
-<?php if ($comment->comment_approved == '0') : ?>
-        <div class="comment-moderation"><?php _e('Your comment is awaiting moderation.'); ?></div>
-<?php endif; ?>
-<?php comment_text(); ?>
-            <p class="comment-edit"><?php edit_comment_link( __( 'Edit Comment', 'textdomain' ), ' ', ' ' ); ?></p>
+            <?php if ($comment->comment_approved == '0') : ?>
+            <div class="comment-moderation"><?php _e('Your comment is awaiting moderation.'); ?></div>
+            <?php endif; ?>
+            <div class="comment-text"><?php comment_text(); ?></div>
+            <div class="comment-edit"><?php edit_comment_link( __( 'Edit Comment', 'textdomain' ), ' ', ' ' ); ?></div>
         </div>
     </li>
 <?php

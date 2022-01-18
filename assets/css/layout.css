@@ -831,38 +831,47 @@ Page Specific Styling
 }
 
 /* Search Page */
-.page-search .hentry {
+.search-page-form {
+	margin: 0 1em 1.4em;
+}
+
+.search-page-form input {
+	font-size: 1.4em;
+}
+
+/* Search Submit button */
+.search-page-form .search-submit {
+	padding: auto 1.2em;
+	width: 3em;
+	background-position: 50% 50%;
+	background-size: 1.3em;
+	background-repeat: no-repeat;
+	background-image: var(--icon-search);
+}
+
+/* Search result card */
+.search-results .hentry {
 	margin: 0 !important;
 	padding: 0.7em !important;
 }
 
-.page-search .search-input {
+.search-results .search-input {
 	width: calc(100% - 5em);
 }
 
-.page-search .entry-type {
+.search-results .entry-type {
 	background: rgba(100,100,100,0.2);
 	padding: 3px 8px;
 	border-radius: 3px;
 	letter-spacing: 0.08em;
 }
 
-.page-search .entry-type {
+.search-results .entry-type {
 	opacity: 0.9;
 }
 
-.page-search .entry-type b {
+.search-results .entry-type b {
 	text-transform: uppercase;
-}
-
-/* Search Submit button */
-.search-submit {
-	padding: auto 1em;
-	width: 3em;
-	background-position: 50% 50%;
-	background-size: 1.3em;
-	background-repeat: no-repeat;
-	background-image: var(--icon-search);
 }
 
 /* 404 Error Page */

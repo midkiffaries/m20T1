@@ -2,7 +2,7 @@
 Version 1.0 BETA (In-Development)
 
 This is simply a WordPress theme that I created from scratch, that I use on my own website.
-The intention is for this theme no be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding stand point.
+The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right">
@@ -14,8 +14,8 @@ The intention is for this theme no be minimally reliant on 3rd party plugins, an
 - Custom modals for alerts, confirmation and custom HTML
 - Sidebars with widgets for blog pages
 - Widget support in the site header and footer
-- Unique homepage, 404, attachment and a privacy policy pages
-- Featured image support for the hero image
+- Unique homepage, 404, attachment (image) and a privacy policy pages
+- Featured image support for use as the page header background
 - Built with SEO and social media in mind
 - Built in Breadcrumbs
 

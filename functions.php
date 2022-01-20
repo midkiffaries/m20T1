@@ -46,11 +46,6 @@ function CharSwap($string) {
     return $string;
 }
 
-
-/////////////////////////////
-// WordPress Functions
-/////////////////////////////
-
 // Get the page/post excerpt
 function SEO_Excerpt($id) {
     // Character Length
@@ -118,6 +113,11 @@ function ResizeFontClass($content) {
     }
 }
 
+
+/////////////////////////////
+// WordPress Functions
+/////////////////////////////
+
 // Add featured image to posts and pages
 //add_theme_support( 'post-thumbnails' );
 /*
@@ -130,6 +130,23 @@ the_post_thumbnail( 'full' ); // Original image resolution (unmodified)
 the_post_thumbnail( array( 100, 100 ) ); // Other resolutions (height, width)
 */
 
+// Add stylesheets to the HEAD metadata
+function custom_register_styles() {
+    $version = wp_get_theme()->get('Version');
+    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
+    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), $version, 'all' );
+    wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), $version, 'all' );
+}
+add_action('wp_enqueue_scripts', 'custom_register_styles');
+
+// Add scripts to the bottom of the HTML
+function custom_register_scripts() {
+    $version = wp_get_theme()->get('Version');
+    wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
+    wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
+}
+add_action('wp_enqueue_scripts', 'custom_register_scripts');
+
 // Set the excerpt length
 function custom_excerpt_length($length) {
     return 120; // Word length
@@ -141,7 +158,6 @@ function custom_excerpt_more() {
 	return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
-
 
 // Blog post user comment styling for each comment
 function custom_comment_style($comment, $args, $depth) {

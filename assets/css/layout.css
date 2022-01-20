@@ -840,7 +840,7 @@ Page Specific Styling
 }
 
 /* Search Submit button */
-.search-page-form .search-submit {
+.search-submit {
 	padding: auto 1.2em;
 	width: 3em;
 	background-position: 50% 50%;

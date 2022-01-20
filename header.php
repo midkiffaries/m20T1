@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo('charset'); ?>" >
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<title><?php wp_title('|', true, 'right'); bloginfo('name');  ?></title>
-<meta name="title" content="<?php bloginfo('name'); wp_title('|', true, 'left'); ?>">
-<meta name="author" content="Ted Balmer | MarchTwenty.com">
-<meta name="robots" content="index,follow">
-<meta name="googlebot" content="index,follow">
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php bloginfo('rss2_url'); ?>">
-<base href="<?php echo home_url(); ?>/" id="SiteURI">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/tedilize.css"; ?>">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/assets/css/layout.css"; ?>">
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-<meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
-<link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
-<meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
-<meta name="format-detection" content="telephone=no">
-<link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-<meta name="application-name" content="<?php bloginfo('name'); ?>">
-<link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
-<link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
-<link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="website">
-<meta property="og:url" content="<?php the_permalink(); ?>">
-<meta property="og:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
-<meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?php the_permalink(); ?>">
-<meta property="twitter:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
-<meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<?php wp_head(); // WordPress generated meta data and scripts ?>
+    <meta charset="<?php bloginfo('charset'); ?>" >
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <?php wp_head(); // WordPress generated meta data and scripts ?>
 
+    <meta name="author" content="Ted Balmer | MarchTwenty.com">
+    <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <base href="<?php echo home_url(); ?>/" id="SiteURI">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
+    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
+    <meta name="application-name" content="<?php bloginfo('name'); ?>">
+    <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
+    <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
+    <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php the_permalink(); ?>">
+    <meta property="og:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+    <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
+    <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<?php the_permalink(); ?>">
+    <meta property="twitter:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+    <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
+    <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

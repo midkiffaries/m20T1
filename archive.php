@@ -12,7 +12,7 @@
             <h2 class="page-title" itemprop="title"><?php if (have_posts()) : ?>
     <?php $post = $posts[0]; ?>
     <?php /* category archive */ if (is_category()) { ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
-    <?php /* tag archive */ } elseif( is_tag() ) { ?>Posts tagged as <strong><?php single_tag_title(); ?></strong> <span><?php echo strip_tags(tag_description()); ?></span>
+    <?php /* tag archive */ } elseif( is_tag() ) { ?>Posts tagged <strong><?php single_tag_title(); ?></strong> <span><?php echo strip_tags(tag_description()); ?></span>
     <?php /* daily archive */ } elseif (is_day()) { ?>Posts from <b><?php the_time('F j, Y'); ?></b>
     <?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <b><?php the_time('F Y'); ?></b>
     <?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <b><?php the_time('Y'); ?></b>

@@ -878,6 +878,7 @@ Page Specific Styling
 .page-404 {
 	font-size: 1.5em;
 	text-align: center;
+	min-height: 24em;
 }
 
 /* Attachment and Image Page */

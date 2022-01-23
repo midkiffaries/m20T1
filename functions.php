@@ -34,11 +34,6 @@ function numberToRoman($variable) {
 	return $result;
 }
 
-// Convert a string title into a slug for use in class names
-function titleSlug($title) {
-    return cleanUserInput(preg_replace('/\s+/', '-', $title));
-}
-
 // Swaps certain special characters with words for SEO purposes
 function SEO_CharSwap($string) {
     $string = preg_replace('/\%/', 'percent', $string); 

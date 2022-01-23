@@ -307,6 +307,7 @@ Main site layout
 
 /* Standard header image on all other pages */
 .header-single-page,
+.header-single-post,
 .header-blog {
 	height: 14em;
 	background-color: #ddd;
@@ -315,10 +316,6 @@ Main site layout
 	background-size: cover;
 	overflow: hidden;
 	position: relative;
-}
-
-.header-single-page img {
-	width: 100%;
 }
 
 /* Header nav and logo */
@@ -395,6 +392,7 @@ Main site layout
 /* Header on mobile devices */
 @media (max-width: 849px) {
 	.header-single-page,
+	.header-single-post,
 	.header-blog {
 		height: 11em;
 	}
@@ -631,7 +629,7 @@ Main site layout
 	margin: auto 1px;
 }
 
-.social-share li a {
+.post-social-share li a {
 	text-decoration: none;
 	color: #fff;
 	padding: 6px 8px;
@@ -639,23 +637,23 @@ Main site layout
 	transition: filter 0.3s;
 }
 
-.social-share li a:hover {
+.post-social-share li a:hover {
 	filter: brightness(1.2);
 }
 
-.social-share li a:active {
+.post-social-share li a:active {
 	filter: brightness(0.8);
 }
 
-.social-share .facebook-share {
+.post-social-share .facebook-share {
     background-color: #3b5998;
 }
 
-.social-share .twitter-share {
+.post-social-share .twitter-share {
     background-color: #1da1f2;
 }
 
-.social-share li a::before {
+.post-social-share li a::before {
 	padding-right: 3px;
 	vertical-align: -2px;
 	font-size: 1.2em;

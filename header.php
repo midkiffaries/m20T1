@@ -4,33 +4,12 @@
     <meta charset="<?php bloginfo('charset'); ?>" >
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); // WordPress generated meta data and scripts ?>
-
-    <meta name="author" content="Ted Balmer | MarchTwenty.com">
-    <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <base href="<?php echo home_url(); ?>/" id="SiteURI">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
-    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-    <meta name="application-name" content="<?php bloginfo('name'); ?>">
-    <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
-    <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
-    <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php the_permalink(); ?>">
-    <meta property="og:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-    <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
-    <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?php the_permalink(); ?>">
-    <meta property="twitter:title" content="<?php CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-    <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
-    <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+    <meta name="author" content="Ted Balmer | MarchTwenty.com">
+    <?php m20T1_metadata(); // Include additional meta data ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -67,19 +46,23 @@
         </div>
     </div>
 
-<?php if ( is_front_page()) : // Homepage header ?>
+<?php // Header backgound ?>
+<?php if ( is_front_page()) : // Front-page header (None) ?>
     <div class="header-homepage"></div>
 
-<?php elseif ( is_attachment() || is_404() ) : // Attachment and 404 page headers ?>
+<?php elseif ( is_attachment() || is_404() ) : // Attachment and 404 page headers (None) ?>
     <div class="header-noimage"></div>
 
-<?php elseif ( is_page() ) : // Basic Page and privacy-policy header ?>
-<?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
-    <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featureImage; ?>>
-        <?php //the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
-    </div>
+<?php elseif ( is_page() ) : // Basic Page and privacy-policy header (Use Featured Image) ?>
+    <?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
+    <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featureImage; ?>></div>
+    <?php //the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
 
-<?php else : // Blog Pages, Posts and Archives header ?>
+<?php elseif ( is_single() ) : // Single blog post (Use Featured Image) ?>
+    <?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
+    <div class="header-single-post bg-parallax" data-rate="12"<?php echo $featureImage; ?>></div>
+
+<?php else : // Blog Page, Posts and Archives header (Use default) ?>
     <div class="header-blog bg-parallax" data-rate="12"></div>
 
 <?php endif; ?>

@@ -47,7 +47,7 @@
     <section class="blog-pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
-                <?php blogPostPagination('Posts'); ?>
+                <?php blog_post_pagination('Posts'); ?>
             </nav>
         </div>
     </section>

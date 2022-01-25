@@ -21,3 +21,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across.
+
+## About Me
+Follow these links to learn more about me:
+<a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a>

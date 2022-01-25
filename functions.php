@@ -3,7 +3,7 @@
 // PHP WordPress Functions
 /////////////////////////////
 
-//error_reporting(0);
+error_reporting(0);
 //error_reporting(E_ALL);
 
 /////////////////////////////
@@ -347,9 +347,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
 
-
-// FOR wp-config.php after $table_prefix
-// Put a limit on storing post/page revisions
-//define('WP_POST_REVISIONS', 10);
+// Insert into 'wp-config.php' after $table_prefix
+//define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions
 
 ?>

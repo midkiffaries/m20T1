@@ -4,7 +4,7 @@
 /////////////////////////////
 
 //error_reporting(0);
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 
 /////////////////////////////
 // Includes
@@ -146,41 +146,6 @@ function m20T1_metadata() {
 <?php
 }
 
-// Pagination on the index/archive/search pages
-function blog_post_pagination($type) {
-    previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0);
-    next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0);
-}
-
-// Add stylesheets to the HEAD metadata
-function custom_register_styles() {
-    $version = wp_get_theme()->get('Version');
-    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
-    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), $version, 'all' );
-    wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), $version, 'all' );
-}
-add_action('wp_enqueue_scripts', 'custom_register_styles');
-
-// Add scripts to the bottom of the HTML
-function custom_register_scripts() {
-    $version = wp_get_theme()->get('Version');
-    wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
-    wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
-}
-add_action('wp_enqueue_scripts', 'custom_register_scripts');
-
-// Set the excerpt length
-function custom_excerpt_length($length) {
-    return 120; // Word length
-}
-add_filter('excerpt_length', 'custom_excerpt_length');
-
-// Add a 'Continue Reading' link to excerpts
-function custom_excerpt_more() {
-	return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
-}
-add_filter('excerpt_more', 'custom_excerpt_more');
-
 // Blog post user comment styling for each comment
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
@@ -203,6 +168,12 @@ function custom_comment_style($comment, $args, $depth) {
 <?php
 }
 
+// Pagination on the index/archive/search pages
+function blog_post_pagination($type) {
+    previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0);
+    next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0);
+}
+
 // List social sharing links on each blog post
 function blog_post_share() {
 ?>
@@ -214,7 +185,7 @@ function blog_post_share() {
 }
 
 // Display page title and excerpt from child pages of current page
-$child_page_args = array(
+$page_children = get_pages(array(
     'sort_order'     => 'ASC',
     'sort_column'    => 'menu_order, post_title',
     'post_type'      => 'page',
@@ -222,8 +193,7 @@ $child_page_args = array(
     'posts_per_page' => -1,
     'post_parent'    => $post->ID,
     'child_of'       => $post->ID,
-);
-$page_children = get_pages($child_page_args);
+));
 
 // Display the list of menu/navigation links
 function menu_nav_list($menu, $id) {
@@ -249,7 +219,7 @@ function menu_nav_list($menu, $id) {
 }
 
 // Register the sidebar widgets 
-function m20T1_widgets_init() {
+add_action( 'widgets_init', function(){
     // Primary Sidebar on the right side of the page
     register_sidebar(array(
         'id'            => 'primary',
@@ -310,11 +280,10 @@ function m20T1_widgets_init() {
         'before_title'  => '<p class="widget-title">',
         'after_title'   => '</p>',
     ));
-}
-add_action( 'widgets_init', 'm20T1_widgets_init' );
+});
 
 // Register the theme and menus/navigation 
-function theme_setup() {
+add_action( 'after_setup_theme', function() {
     // Additional Theme Support
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
@@ -331,7 +300,56 @@ function theme_setup() {
     // Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
-}
-add_action( 'after_setup_theme', 'theme_setup' );
+});
+
+// Add elements to WordPress
+add_action('wp_enqueue_scripts', function(){
+    $version = wp_get_theme()->get('Version');
+    
+    // Add Javascript to the bottom of the page body
+    wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
+    wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
+    
+    // Add stylesheets to the HEAD metadata
+    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
+    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), $version, 'all' );
+    wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), $version, 'all' );
+
+    // Remove comments
+    wp_dequeue_script( 'comment-reply' );
+
+    // Remove WordPress block library
+    //wp_dequeue_style( 'wp-block-library' );
+    //wp_dequeue_style( 'wp-block-library-theme' );
+    //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+});
+
+// Set the excerpt length
+add_filter('excerpt_length', function(){
+    return 120; // Word length
+});
+
+// Add a 'Continue Reading' link to excerpts
+add_filter('excerpt_more', function(){
+    return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
+});
+
+// Remove embed function
+add_action( 'wp_footer', function(){
+    wp_dequeue_script( 'wp-embed' );
+});
+
+// Remove WordPress emojis
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// Remove RSS feed links
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+
+
+// FOR wp-config.php after $table_prefix
+// Put a limit on storing post/page revisions
+//define('WP_POST_REVISIONS', 10);
 
 ?>

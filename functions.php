@@ -3,8 +3,8 @@
 // PHP WordPress Functions
 /////////////////////////////
 
-error_reporting(0);
-//error_reporting(E_ALL);
+//error_reporting(0);
+error_reporting(E_ALL);
 
 /////////////////////////////
 // Includes
@@ -185,15 +185,26 @@ function blog_post_share() {
 }
 
 // Display page title and excerpt from child pages of current page
-$page_children = get_pages(array(
-    'sort_order'     => 'ASC',
-    'sort_column'    => 'menu_order, post_title',
-    'post_type'      => 'page',
-    'post_status'    => 'publish',
-    'posts_per_page' => -1,
-    'post_parent'    => $post->ID,
-    'child_of'       => $post->ID,
-));
+function get_child_pages($id) {
+    $page_children = get_pages(array(
+        'sort_order'     => 'ASC',
+        'sort_column'    => 'menu_order, post_title',
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'exclude'        => 0,
+        'child_of'       => $id,
+    ));
+
+    foreach ($page_children as $child) { // Display all the child pages to this one ?>
+        <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
+            <h3 class="child-card__title"><?php echo $child->post_title; ?></h3>
+            <p class="child-card__image"><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>
+            <p class="child-card__text"><?php echo $child->post_excerpt; ?></p>
+            <p class="child-card__link"><a href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">Read More</a></p>
+        </div>
+    <?php }
+}
 
 // Display the list of menu/navigation links
 function menu_nav_list($menu, $id) {

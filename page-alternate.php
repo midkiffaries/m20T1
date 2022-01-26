@@ -20,14 +20,9 @@
 
     <?php endwhile; endif; ?>
 
-    <?php foreach ($page_children as $child) { // Display all the child pages to this one ?>
-        <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
-            <h3 class="child-card__title"><?php echo $child->post_title; ?></h3>
-            <p class="child-card__image"><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>
-            <p class="child-card__text"><?php echo $child->post_excerpt; ?></p>
-            <p class="child-card__link"><a href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">Read More</a></p>
+        <div id="page-child-pages" class="page-child-pages">
+            <?php get_child_pages(get_the_ID()); ?>
         </div>
-    <?php } ?>
 
     </div>
 </main>

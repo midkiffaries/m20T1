@@ -23,6 +23,10 @@
             <?php dynamic_sidebar( 'singlepost' ); ?>
         </aside>
 
+        <div id="page-child-pages" class="page-child-pages">
+            <?php get_child_pages(get_the_ID()); ?>
+        </div>
+
         <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </main>

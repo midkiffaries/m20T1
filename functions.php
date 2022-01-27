@@ -185,7 +185,7 @@ function blog_post_share() {
 }
 
 // Display page title and excerpt from child pages of current page
-function get_child_pages($id) {
+function get_child_pages($id, $thumbnail) {
     $page_children = get_pages(array(
         'sort_order'     => 'ASC',
         'sort_column'    => 'menu_order, post_title',
@@ -198,10 +198,13 @@ function get_child_pages($id) {
 
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
-            <h3 class="child-card__title"><?php echo $child->post_title; ?></h3>
-            <p class="child-card__image"><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>
-            <p class="child-card__text"><?php echo $child->post_excerpt; ?></p>
-            <p class="child-card__link"><a href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">Read More</a></p>
+            <a class="child-card__link" href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">
+                <p class="child-card__title"><?php echo $child->post_title; ?></p>
+                <?php if ($thumbnail) : ?>
+                <p class="child-card__image"><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>
+                <?php endif; ?>
+                <p class="child-card__text"><?php echo $child->post_excerpt; ?></p>
+            </a>
         </div>
     <?php }
 }

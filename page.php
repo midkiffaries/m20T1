@@ -21,11 +21,9 @@
 
         <aside id="page-widgets" class="page-sidebar page-widgets">
             <?php dynamic_sidebar( 'singlepost' ); ?>
-        </aside>
 
-        <div id="page-child-pages" class="page-child-pages">
-            <?php get_child_pages(get_the_ID()); ?>
-        </div>
+            <?php get_child_pages(get_the_ID(), false); // Display the children of this page ?>
+        </aside>
 
         <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>

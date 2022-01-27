@@ -20,9 +20,11 @@
 
     <?php endwhile; endif; ?>
 
-        <div id="page-child-pages" class="page-child-pages">
-            <?php get_child_pages(get_the_ID()); ?>
-        </div>
+        <aside id="page-widgets" class="page-sidebar page-widgets">
+            <?php //dynamic_sidebar( 'other' ); ?>
+
+            <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>
+        </aside>
 
     </div>
 </main>

@@ -1,18 +1,17 @@
-@charset "UTF-8";
 /************************
 Theme Name: m20T1
 Theme URI: https://github.com/midkiffaries/m20T1
 Author: Ted Balmer
-Author URI: https://www.marchtwenty.com/
+Author URI: https://marchtwenty.com/
 Description: Theodore's personal WordPress theme.
 Requires at least: 5.8
 Tested up to: 5.9
-Requires PHP: 7.0+
+Requires PHP: 7.0
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: marchtwenty
-Tags: one-column, accessibility-ready, custom-menu, editor-style, featured-images, footer-widgets, block-patterns, threaded-comments, translation-ready
+Text Domain: m20t1
+Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, block-patterns, sticky-post, threaded-comments, accessibility-ready
 ************************/
 
 /* Variables */
@@ -33,12 +32,9 @@ Tags: one-column, accessibility-ready, custom-menu, editor-style, featured-image
 
 
 /************************ 
-Load External Fonts
+Set Up Fonts
 ************************/
-/*
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
-*/
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	text-rendering: auto;
@@ -52,7 +48,7 @@ body {
 }
 
 /************************ 
-Global Styling
+Global Element Styling
 ************************/
 
 /* Selection */

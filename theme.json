@@ -3,8 +3,8 @@
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
-			"contentSize": "1020px",
-			"wideSize": "1250px"
+			"contentSize": "800px",
+			"wideSize": "1050px"
 		},
 		"color": {
 			"custom": true,
@@ -55,9 +55,9 @@
 			]
 		},
 		"typography": {
+			"dropCap": true,
 			"customFontSize": true,
             "lineHeight": true,
-			"dropCap": true,
 			"fontWeight": true,
 			"letterSpacing": true,
 			"fontStyle": true,
@@ -69,7 +69,7 @@
 					"slug": "system-font"
 				},
 				{
-					"fontFamily": "\"Montserrat\", serif",
+					"fontFamily": "\"Montserrat\",sans-serif",
 					"name": "Montserrat",
 					"slug": "montserrat"
 				}
@@ -93,64 +93,37 @@
 				}
 			]
 		},
-		"border": {
-            "color": true,
-            "radius": true,
-            "style": true,
-            "width": true
-        },
 		"spacing": {
 			"blockGap": true,
-			"padding": true,
-			"margin": true,
-			"units": [ "px", "em", "rem", "vh", "vw" ]
-		}
-	},
-    "styles": {
-		"elements": {
-			"link": {
-				"border": {},
-				"color": {},
-				"spacing": {},
-				"typography": {}
-			},
-			"h1": {},
-			"h2": {},
-			"h3": {},
-			"h4": {},
-			"h5": {},
-			"h6": {}
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
 		},
-		"blocks": {
-			"core/code": {
-                "border": {},
-                "color": {
-					"text": "#111111",
-					"background": "#eeeeee"
-				},
-                "typography": {},
-				"spacing": {
-					"padding": {
-						"top": "2em",
-						"bottom": "2em",
-						"left": "2em",
-						"right": "2em"
-					}
-				}
+		"custom": {
+			"spacing": {
+				"small": "max(1.25rem, 5vw)",
+				"medium": "clamp(2rem, 8vw, calc(4 * var(--wp--style--block-gap)))",
+				"large": "clamp(4rem, 10vw, 8rem)",
+				"outer": "var(--wp--custom--spacing--small, 1.25rem)"
 			},
-			"core/button": {
-                "border": {},
-                "color": {},
-                "typography": {},
-				"spacing": {
-					"padding": {
-						"top": "0.5em",
-						"bottom": "0.5em",
-						"left": "0.8em",
-						"right": "0.8em"
-					}
+			"typography": {
+				"font-size": {
+					"huge": "clamp(2.25rem, 4vw, 2.75rem)",
+					"gigantic": "clamp(2.75rem, 6vw, 3.25rem)",
+					"colossal": "clamp(3.25rem, 8vw, 6.25rem)"
+				},
+				"line-height": {
+					"tiny": 1.15,
+					"small": 1.2,
+					"medium": 1.4,
+					"normal": 1.6
 				}
 			}
-        }
+		}
 	}
 }

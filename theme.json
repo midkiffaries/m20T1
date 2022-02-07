@@ -13,26 +13,6 @@
 			"gradients": [],
 			"palette": [
 				{
-					"name": "Black",
-					"slug": "black",
-					"color": "#000000"
-				},
-				{
-					"name": "Dark Gray",
-					"slug": "darkgray",
-					"color": "#666666"
-				},
-				{
-					"name": "Light Gray",
-					"slug": "lightgray",
-					"color": "#cccccc"
-				},
-				{
-					"name": "White",
-					"slug": "white",
-					"color": "#ffffff"
-				},
-				{
 					"name": "Green",
 					"slug": "green",
 					"color": "#bada55"

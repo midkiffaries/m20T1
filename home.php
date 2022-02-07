@@ -6,8 +6,7 @@
     <?php breadcrumb_trail(); ?>
 
     <section class="blog-page-title">
-        <h2 class="page-title hidden" itemprop="title">The Blog</h2>
-        <div class="blog-page-text">
+        <div class="blog-page-text hidden">
             <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
         </div>
     </section>
@@ -22,7 +21,7 @@
             <div class="post-container">
                 <header class="entry-header">
                     <div class="entry-category"><?php the_category(' '); ?></div>
-                    <h3 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                    <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-info">
                         <span class="entry-author hidden">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated hidden"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>

@@ -173,7 +173,7 @@ Page Styling
 .header-blog, 
 .header-single-page {
 	background-color: var(--base-color-pale);
-	background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg);
+	/* background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg); */
 	background-size: 1em, cover;
 }
 

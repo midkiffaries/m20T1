@@ -22,6 +22,18 @@ function cleanUserInput($input) {
     return htmlspecialchars(strip_tags($input));
 }
 
+function count_cat_post($category) {
+    if (is_string($category)) {
+        $catID = get_cat_ID($category);
+    } elseif (is_numeric($category)) {
+        $catID = $category;
+    } else {
+        return 0;
+    }
+    $cat = get_category($catID);
+    return $cat->count;
+}
+
 // Converts a number in to roman numerals for fun
 function numberToRoman($variable) {
 	$n = intval($variable);

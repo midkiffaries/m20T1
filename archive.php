@@ -12,11 +12,11 @@
             <h2 class="page-title" itemprop="title"><?php if (have_posts()) : ?>
     <?php $post = $posts[0]; ?>
     <?php /* category archive */ if (is_category()) { ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
-    <?php /* tag archive */ } elseif( is_tag() ) { ?>Posts tagged <strong><?php single_tag_title(); ?></strong> <span><?php echo strip_tags(tag_description()); ?></span>
+    <?php /* tag archive */ } elseif( is_tag() ) { ?>Posts tagged <b><?php single_tag_title(); ?></b> <span><?php echo strip_tags(tag_description()); ?></span>
     <?php /* daily archive */ } elseif (is_day()) { ?>Posts from <b><?php the_time('F j, Y'); ?></b>
     <?php /* monthly archive */ } elseif (is_month()) { ?>Posts from <b><?php the_time('F Y'); ?></b>
     <?php /* yearly archive */ } elseif (is_year()) { ?>Posts from <b><?php the_time('Y'); ?></b>
-    <?php /* author archive */ } elseif (is_author()) { ?>Posts written by <b><?php printf($curauth->nickname); ?></b>
+    <?php /* author archive */ } elseif (is_author()) { ?>Posts by <b><?php printf($curauth->display_name); ?></b>
     <?php /* paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives
     <?php } ?></h2>
         </div>
@@ -31,10 +31,9 @@
                     <?php printf(get_avatar(get_the_author_meta('ID'), 128)); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name" itemprop="author"><?php printf("About %s %s", $curauth->first_name, $curauth->last_name); ?></h3>
-            <p class="author-bio-meta"><b><?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
             <p class="author-bio-about"><?php printf($curauth->description); ?><br>
-            <i>More:</i> 🌎 <a href="<?php printf($curauth->user_url); ?>" rel="author"><?php printf($curauth->user_url); ?></a></p>
+            🌎 <a href="<?php printf($curauth->user_url); ?>" rel="author"><?php printf($curauth->user_url); ?></a></p>
+            <p class="author-bio-meta"><b><?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
         </div>
     </section>
 
@@ -50,7 +49,7 @@
                     <h3 class="entry-title" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
                     <div class="entry-info">
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-date">on <a href="<?php echo get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')); ?>"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></a> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                        <span class="entry-date">on <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                     </div>
                 </header>
                 <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">

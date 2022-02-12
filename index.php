@@ -17,8 +17,7 @@
             </div>
         </article>
 
-    <?php endwhile; ?>
-    <?php else : ?>
+    <?php endwhile; else : ?>
 
         <article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">

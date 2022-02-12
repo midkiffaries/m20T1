@@ -1,5 +1,6 @@
 {
 	"version": 2,
+	"customTemplates": [ ],
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
@@ -10,27 +11,38 @@
 			"custom": true,
 			"customGradient": true,
 			"link": true,
-			"gradients": [],
+			"gradients": [
+				{
+					"slug": "vertical-secondary-to-tertiary",
+					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--tertiary) 100%)",
+					"name": "Vertical secondary to tertiary"
+				}
+			],
 			"palette": [
 				{
-					"name": "Green",
-					"slug": "green",
-					"color": "#bada55"
-				},
-				{
-					"name": "Base Color Dark",
-					"slug": "baseDark",
-					"color": "#205380"
-				},
-				{
-					"name": "Base Color",
-					"slug": "base",
+					"name": "Primary",
+					"slug": "primary",
 					"color": "#40A5FF"
 				},
 				{
-					"name": "Base Color Pale",
-					"slug": "basePale",
+					"name": "Primary (Dark)",
+					"slug": "primaryDark",
+					"color": "#205380"
+				},
+				{
+					"name": "Primary (Pale)",
+					"slug": "primaryPale",
 					"color": "#8CC9FF"
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"color": "#bada55"
+				},
+				{
+					"name": "Tertiary",
+					"slug": "tertiary",
+					"color": "#ff9a40"
 				}
 			]
 		},
@@ -44,14 +56,9 @@
 			"textDecoration": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
-					"name": "System Font",
-					"slug": "system-font"
-				},
-				{
-					"fontFamily": "\"Montserrat\",sans-serif",
-					"name": "Montserrat",
-					"slug": "montserrat"
+					"fontFamily": "\"Source Serif Pro\", serif",
+					"name": "Source Serif Pro",
+					"slug": "source-serif-pro"
 				}
 			],
 			"fontSizes": [
@@ -71,17 +78,6 @@
 					"size": "clamp(1.75rem, 3vw, 2.25rem)",
 					"slug": "x-large"
 				}
-			]
-		},
-		"spacing": {
-			"blockGap": true,
-			"units": [
-				"%",
-				"px",
-				"em",
-				"rem",
-				"vh",
-				"vw"
 			]
 		},
 		"custom": {
@@ -104,6 +100,9 @@
 					"normal": 1.6
 				}
 			}
+		},
+		"spacing": {
+			"blockGap": true
 		}
 	}
 }

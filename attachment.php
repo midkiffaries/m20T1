@@ -13,7 +13,7 @@
                     <figcaption class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>
                 </figure>
                 <div class="the-content">
-                    <?php the_content("<p>Read the rest of this post &raquo;</p>"); ?>
+                    <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">
                     <span class="image-date">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>

@@ -17,7 +17,7 @@
                 <div class="single-entry-comments hidden"><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></div>
             </header>
             <div class="single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">
-                <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
+                <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <footer class="single-entry-footer">
                 <div class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></div>

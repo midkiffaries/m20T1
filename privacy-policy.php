@@ -12,7 +12,7 @@
                 <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
                 <p class="policy-last-updated"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
                 <div class="the-content">
-                    <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
+                    <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
                 
                 </div>
             </div>

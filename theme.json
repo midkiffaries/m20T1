@@ -56,9 +56,9 @@
 			"textDecoration": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "\"Source Serif Pro\", serif",
-					"name": "Source Serif Pro",
-					"slug": "source-serif-pro"
+					"fontFamily": "\"Georgia\", serif",
+					"name": "Georgia",
+					"slug": "georgia"
 				}
 			],
 			"fontSizes": [

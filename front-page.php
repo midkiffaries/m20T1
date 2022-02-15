@@ -9,7 +9,7 @@
             <div>
                 <!--h2 class="page-title hidden" itemprop="title"><?php the_title(); ?></h2-->
                 <div class="the-content">
-                    <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
+                    <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
                 
                 </div>
             </div>

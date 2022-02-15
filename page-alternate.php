@@ -11,7 +11,7 @@
             <div class="post-container">
                 <!--h2 class="page-title" itemprop="title"><?php the_title(); ?></h2-->
                 <div class="the-content">
-                    <?php the_content("<p>Read the rest of this section &raquo;</p>"); ?>
+                    <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 
                 </div>
                 <p class="page-last-updated hidden"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>

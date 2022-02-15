@@ -29,7 +29,7 @@
                     </div>
                 </header>
                 <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
-                    <?php the_content('<p>Continue Reading &raquo;</p>'); //if (!is_sticky())  ?>
+                    <?php the_content("<p>Continue Reading &raquo;</p>"); //if (!is_sticky())  ?>
                 </div>
                 <div class="entry-overflow"></div>
                 <footer class="entry-footer">

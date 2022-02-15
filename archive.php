@@ -53,7 +53,7 @@
                     </div>
                 </header>
                 <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
-                    <?php the_content('<p>Continue Reading &raquo;</p>'); ?>
+                    <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <div class="entry-overflow"></div>
                 <footer class="entry-footer">

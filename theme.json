@@ -59,6 +59,11 @@
 					"fontFamily": "\"Georgia\", serif",
 					"name": "Georgia",
 					"slug": "georgia"
+				},
+				{
+					"fontFamily": "\"Caveat Brush\", cursive",
+					"name": "Caveat Brush",
+					"slug": "caveat"
 				}
 			],
 			"fontSizes": [

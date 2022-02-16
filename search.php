@@ -55,7 +55,7 @@
     <article class="search-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <h2 class="page-title" itemprop="title">Query Not Found</h2>
-            <p>The search query of “<strong><?php echo cleanUserInput(get_search_query()); ?></strong>” came up empty.</p>
+            <p>The search query of “<strong><?php echo esc_attr(get_search_query()); ?></strong>” came up empty.</p>
             <p>If it will make you feel better, this probably happens to Google too.</p>
             <p><b>Care to take another shot?</b></p>
             <?php get_search_form(); ?>

@@ -17,23 +17,6 @@ include 'assets/plugins/breadcrumbs.php';
 // Generic Functions
 /////////////////////////////
 
-// Sanitize user input for security
-function cleanUserInput($input) {
-    return htmlspecialchars(strip_tags($input));
-}
-
-function count_cat_post($category) {
-    if (is_string($category)) {
-        $catID = get_cat_ID($category);
-    } elseif (is_numeric($category)) {
-        $catID = $category;
-    } else {
-        return 0;
-    }
-    $cat = get_category($catID);
-    return $cat->count;
-}
-
 // Converts a number in to roman numerals for fun
 function numberToRoman($variable) {
 	$n = intval($variable);
@@ -119,19 +102,7 @@ function GetPageContent($id) {
 // WordPress Functions
 /////////////////////////////
 
-// Add featured image to posts and pages
-//add_theme_support( 'post-thumbnails' );
-/*
-the_post_thumbnail(); // Without parameter ->; Thumbnail
-the_post_thumbnail( 'thumbnail' ); // Thumbnail (default 150px x 150px max)
-the_post_thumbnail( 'medium' ); // Medium resolution (default 300px x 300px max)
-the_post_thumbnail( 'medium_large' ); // Medium-large resolution (default 768px x no height limit max)
-the_post_thumbnail( 'large' ); // Large resolution (default 1024px x 1024px max)
-the_post_thumbnail( 'full' ); // Original image resolution (unmodified)
-the_post_thumbnail( array( 100, 100 ) ); // Other resolutions (height, width)
-*/
-
-// Additional meta data for the header
+// Additional <head> meta data
 function m20T1_metadata() {
 ?>
     <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
@@ -309,7 +280,7 @@ add_action( 'widgets_init', function(){
 });
 
 // Register the theme and menus/navigation 
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', function(){
     // Additional Theme Support
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
@@ -327,6 +298,9 @@ add_action( 'after_setup_theme', function() {
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
 });
+
+// Set featured image size
+the_post_thumbnail( 'medium' );
 
 // Add elements to WordPress
 add_action('wp_enqueue_scripts', function(){

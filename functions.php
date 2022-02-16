@@ -17,7 +17,7 @@ include 'assets/plugins/breadcrumbs.php';
 // Generic Functions
 /////////////////////////////
 
-// Converts a number in to roman numerals for fun
+// Converts a number in to roman numerals... for fun
 function numberToRoman($variable) {
 	$n = intval($variable);
 	$lookup = array('M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1);
@@ -97,11 +97,6 @@ function GetPageContent($id) {
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
-
-/////////////////////////////
-// WordPress Functions
-/////////////////////////////
-
 // Additional <head> meta data
 function m20T1_metadata() {
 ?>
@@ -128,6 +123,11 @@ function m20T1_metadata() {
     <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <?php
 }
+
+
+/////////////////////////////
+// WordPress Functions
+/////////////////////////////
 
 // Blog post user comment styling for each comment
 function custom_comment_style($comment, $args, $depth) {

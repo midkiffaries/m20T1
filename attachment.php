@@ -3,7 +3,7 @@
 <main class="page-main page-image" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( have_posts() ) : the_post(); // Display selected media ?>
 
         <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
@@ -28,8 +28,8 @@
         <section class="blog-pagination">
             <div class="pagination-container">
                 <nav class="image-nav">
-                    <?php next_image_link(array(48, 48), '&#x276E; Next Image', 0); ?>
-                    <?php previous_image_link(array(48, 48), 'Previous Image &#x276F;', 0); ?>
+                    <?php next_image_link(array(48, 48), '&#x276E; Next Image', 0); // Left ?>
+                    <?php previous_image_link(array(48, 48), 'Previous Image &#x276F;', 0); // Right ?>
                 </nav>
             </div>
         </section>

@@ -3,7 +3,7 @@
 <main class="page-main page-archive" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
     <?php $curauth = $wp_query->get_queried_object(); ?>
 
@@ -22,7 +22,7 @@
         </div>
     </section>
 
-    <?php if (is_author()) : ?>
+    <?php if (is_author()) : // Author Page ?>
 
     <section class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" role="complementary">
         <div class="author-container">
@@ -41,7 +41,7 @@
 
     <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
-    <?php while (have_posts()) : the_post(); ?>
+    <?php while (have_posts()) : the_post(); // Display blog posts ?>
     
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">    
@@ -70,12 +70,12 @@
     <section class="blog-pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
-                <?php blog_post_pagination('Posts'); ?>
+                <?php blog_post_pagination('Posts'); // Post navigation links ?>
             </nav>
         </div>
     </section>
 
-    <?php else : ?>
+    <?php else : // If no results ?>
 
     <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
@@ -93,7 +93,7 @@
             ?>
             </h3>
             <p>Would you like to try a search to find what you are looking for?</p>
-            <?php get_search_form('archive'); ?>
+            <?php get_search_form('archive'); // Search Form ?>
         </div>
     </article>
 
@@ -102,7 +102,7 @@
     </div>
     
     <aside id="sidebar-archive" class="page-sidebar sidebar-archive" role="sidebar">
-        <?php dynamic_sidebar( 'secondary' ); ?>
+        <?php dynamic_sidebar( 'secondary' ); // Secondary Sidebar ?>
     </aside>
 
 </main>

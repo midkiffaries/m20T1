@@ -3,9 +3,9 @@
 <main class="page-main page-simple page-privacy-policy" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); // Get the post ?>
 
         <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">

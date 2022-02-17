@@ -3,9 +3,9 @@
 <main class="page-main page-index" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); // Display page ?>
 
         <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
@@ -17,13 +17,13 @@
             </div>
         </article>
 
-    <?php endwhile; else : ?>
+    <?php endwhile; else : // If no page exists ?>
 
         <article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                 <h2 class="entry-title">Not Found</h2>
                 <p>Sorry, but you are looking for something that isn't here for some reason.</p>
-                <?php my_search_form('Main'); ?>
+                <?php my_search_form('Main'); // Search Form ?>
 
             </div>
         </article>
@@ -31,7 +31,7 @@
     <?php endif; ?>
 
         <aside id="page-widgets" class="page-sidebar page-widgets">
-            <?php dynamic_sidebar( 'singlepost' ); ?>
+            <?php dynamic_sidebar( 'singlepost' ); // Single post sidebar ?>
 
             <?php get_child_pages(get_the_ID(), false); // Display the children of this page ?>
         </aside>

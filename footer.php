@@ -1,7 +1,7 @@
 
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-widgets">
-        <?php dynamic_sidebar( 'footer' ); ?>
+        <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
     </div>
 
     <div class="footer-slogan"><?php bloginfo('description'); ?></div>

@@ -3,7 +3,7 @@
 <main class="page-main page-blog-posts" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
     <section class="blog-page-title">
         <div class="blog-page-text hidden">
@@ -11,7 +11,7 @@
         </div>
     </section>
 
-    <?php if (have_posts()) : ?>
+    <?php if (have_posts()) : // If posts exist ?>
 
     <article class="blog-roll" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
@@ -46,18 +46,18 @@
     <section class="blog-pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
-                <?php blog_post_pagination('Posts'); ?>
+                <?php blog_post_pagination('Posts'); // Blog posts navigation ?>
             </nav>
         </div>
     </section>
 
-    <?php else : ?>
+    <?php else : // No page exists ?>
 
     <article class="blog-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <h2 class="entry-title">Not Found</h2>
             <p>Sorry, but you are looking for something that isn't here for some reason.</p>
-            <?php my_search_form('Main'); ?>
+            <?php my_search_form('Main'); // Search Form ?>
 
         </div>
     </article>

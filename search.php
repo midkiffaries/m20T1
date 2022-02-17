@@ -3,20 +3,20 @@
 <main class="page-main page-search" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
-    <?php if (have_posts() && get_search_query()) : ?>
+    <?php if (have_posts() && get_search_query()) : // Search results ?>
 
     <section class="search-page-form" id="search-page">
         <div>
             <h2 class="page-title" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
-            <?php get_search_form(); ?>
+            <?php get_search_form('search'); // Search form ?>
         </div>
     </section>
 
     <article class="search-results" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
-    <?php while (have_posts()) : the_post(); ?>
+    <?php while (have_posts()) : the_post(); // List posts ?>
 
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
@@ -45,12 +45,12 @@
     <section class="blog-pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
-                <?php blog_post_pagination('Results'); ?>
+                <?php blog_post_pagination('Results'); // Search results navigation ?>
             </nav>
         </div>
     </section>
 
-    <?php else : ?>
+    <?php else : // If no posts exist ?>
 
     <article class="search-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -58,7 +58,7 @@
             <p>The search query of “<strong><?php echo esc_attr(get_search_query()); ?></strong>” came up empty.</p>
             <p>If it will make you feel better, this probably happens to Google too.</p>
             <p><b>Care to take another shot?</b></p>
-            <?php get_search_form(); ?>
+            <?php get_search_form('search'); // Search Form ?>
         </div>
     </article>
 
@@ -67,7 +67,7 @@
     </div>
 
     <aside id="sidebar-search" class="page-sidebar sidebar-search" role="sidebar">
-        <?php dynamic_sidebar( 'primary' ); ?>
+        <?php dynamic_sidebar( 'primary' ); // Primary sidebar ?>
     </aside>
 
 </main>

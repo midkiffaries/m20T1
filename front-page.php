@@ -20,7 +20,7 @@
     </div>
 
     <aside id="frontpage-widgets" class="page-sidebar frontpage-widgets">
-        <?php dynamic_sidebar( 'frontpage' ); ?>
+        <?php dynamic_sidebar( 'frontpage' ); // Frontpage Sidebar ?>
 
         <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>
     </aside>

@@ -17,7 +17,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
     <div class="comment-container">
         <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments');?></h2>
         <ol class="list-comments">
-            <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=custom_comment_style'); ?>
+            <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=custom_comment_style'); // List all the comments ?>
         </ol>
     </div>
 </section>
@@ -25,8 +25,8 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 <section class="comment-pagination">
     <div class="pagination-container">
         <nav class="comments-nav">
-            <?php previous_comments_link('&#x276E; Previous '.get_option('comments_per_page').' Comments', 0); ?> 
-            <?php next_comments_link('Next '.get_option('comments_per_page').' Comments &#x276F;', 0); ?>
+            <?php next_comments_link('&#x276E; Next '.get_option('comments_per_page').' Comments', 0); // Left ?>
+            <?php previous_comments_link('Previous '.get_option('comments_per_page').' Comments &#x276F;', 0); // Right ?> 
         </nav>
     </div>
 </section>

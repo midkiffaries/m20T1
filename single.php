@@ -3,9 +3,9 @@
 <main class="page-main page-blogpost" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); // Single post ?>
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="post-container">
@@ -30,8 +30,8 @@
     <section class="blog-pagination">
         <div class="pagination-container">
             <nav class="single-blog-post-nav">
-                <div class="left"><?php next_post_link('%link', '<span>Next</span>%title'); ?></div>
-                <div class="right"><?php previous_post_link('%link', '<span>Previous</span>%title'); ?></div>
+                <div class="left"><?php next_post_link('%link', '<span>Next</span>%title'); // Left ?></div>
+                <div class="right"><?php previous_post_link('%link', '<span>Previous</span>%title'); // Right ?></div>
             </nav>
         </div>
     </section>
@@ -48,21 +48,21 @@
         </section>
 
         <section class="widget widget_block widget-singlepost">
-            <?php dynamic_sidebar( 'singlepost' ); ?>
+            <?php dynamic_sidebar( 'singlepost' ); // Single Blog Post Sidebar ?>
         </section>
 
         <section class="widget widget_block widget-comments">
-            <?php comments_template(); ?>
+            <?php comments_template(); // Display Comments ?>
         </section>
     </aside>
 
-    <?php endwhile; else: ?>
+    <?php endwhile; else : // If post doesn't exist ?>
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="post-container">
             <h2 class="single-entry-title" itemprop="title">Not Found</h2>
             <p>Sorry, no posts matched your criteria.</p>
-            <?php get_search_form('post'); ?>
+            <?php get_search_form('post'); // Search Form ?>
         </div>
     </article>
 

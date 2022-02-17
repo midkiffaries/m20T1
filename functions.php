@@ -4,7 +4,7 @@
 /////////////////////////////
 
 //error_reporting(0);
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 
 /////////////////////////////
 // Includes
@@ -28,6 +28,36 @@ function numberToRoman($variable) {
 	}
 	return $result;
 }
+
+// Get the number of times this keyword comes up in search queries
+function SearchCount($query) {
+    $count = 0;
+    $search = new WP_Query("s=$query & showposts=-1");
+    if($search->have_posts()) : while($search->have_posts()) : $search->the_post();	
+        $count++;
+    endwhile; endif;
+    return $count;
+}
+
+// Enlarge blog post text for short blog posts
+function ResizeFontClass($content) {
+    if (strlen(wp_strip_all_tags($content)) < 430) {
+        return 'entry-largefont'; // Larger font size
+    } else {
+        return 'entry-defaultfont'; // Default font size
+    }
+}
+
+// Get WordPress page content for select special pages (ie: index.php)
+function GetPageContent($id) {
+    $page_for_posts_id = get_option( $id );
+    $page_for_posts_obj = get_post( $page_for_posts_id );
+    return apply_filters( 'the_content', $page_for_posts_obj->post_content );
+}
+
+/////////////////////////////
+// SEO Related Functions
+/////////////////////////////
 
 // Swaps certain special characters with words for SEO purposes
 function SEO_CharSwap($string) {
@@ -69,32 +99,6 @@ function SEO_Image($id) {
         $featuredImage = home_url() . "/icons/social-share.jpg";
     }
     return $featuredImage;
-}
-
-// Get the number of times this keyword comes up in search queries
-function SearchCount($query) {
-    $count = 0;
-    $search = new WP_Query("s=$query & showposts=-1");
-    if($search->have_posts()) : while($search->have_posts()) : $search->the_post();	
-        $count++;
-    endwhile; endif;
-    return $count;
-}
-
-// Enlarge blog post text for short blog posts
-function ResizeFontClass($content) {
-    if (strlen(wp_strip_all_tags($content)) < 430) {
-        return 'entry-largefont'; // Larger font size
-    } else {
-        return 'entry-defaultfont'; // Default font size
-    }
-}
-
-// Get WordPress page content for select special pages (ie: index.php)
-function GetPageContent($id) {
-    $page_for_posts_id = get_option( $id );
-    $page_for_posts_obj = get_post( $page_for_posts_id );
-    return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
 // Additional <head> meta data
@@ -153,8 +157,8 @@ function custom_comment_style($comment, $args, $depth) {
 
 // Pagination on the index/archive/search pages
 function blog_post_pagination($type) {
-    previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0);
-    next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0);
+    previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0); // Right
+    next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0); // Left
 }
 
 // List social sharing links on each blog post

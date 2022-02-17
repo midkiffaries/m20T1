@@ -3,7 +3,7 @@
 <main class="page-main page-error" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php breadcrumb_trail(); ?>
+    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
     <article class="page-404 page type-page not-found status-publish" id="page-404" name="page-404" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="page-404-container">
@@ -24,7 +24,7 @@
             <div class="content-404">
                 <p>Whoops... Well that page is gone.</p>
                 <p>But real talk, the page must have been removed, renamed or didn't exist in the first place. 🤔</p>
-                <?php get_search_form(); ?>
+                <?php get_search_form(); // Search Form ?>
                 
             </div>
         </div>

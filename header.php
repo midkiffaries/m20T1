@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" <?php language_attributes(); ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" >
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -34,19 +34,20 @@
         <div class="header-content">
             <div id="MainMenu" class="pull-menu-left menubar">
                 <div class="header-navigation" role="navigation">
-                    <?php menu_nav_list('Primary Navigation', 'header-navigation'); ?>
+                    <?php menu_nav_list('Primary Navigation', 'header-navigation'); // Main Navigation ?>
                 </div>
                 <div class="header-secondary-navigation" role="navigation">
-                    <?php menu_nav_list('Secondary Navigation', 'header-navigation'); ?>
+                    <?php menu_nav_list('Secondary Navigation', 'header-navigation'); // Secondary Navigation ?>
                 </div>
                 <div class="header-widgets">
-                    <?php dynamic_sidebar( 'header' ); ?>
+                    <?php dynamic_sidebar( 'header' ); // Header Widgets ?>
                 </div>
             </div>
         </div>
     </div>
 
-<?php // Header backgound ?>
+<?php if (get_the_post_thumbnail()) $featuredImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; // Set Header background image ?>
+
 <?php if ( is_front_page()) : // Front-page header (None) ?>
     <div class="header-homepage">
         <h2 class="page-title hidden" itemprop="title"><?php the_title(); ?></h2>
@@ -56,17 +57,14 @@
     <div class="header-noimage"></div>
 
 <?php elseif ( is_page() ) : // Basic Page and privacy-policy header (Use Featured Image) ?>
-    <?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
-    <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featureImage; ?>>
-        <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
+    <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featuredImage; ?>>
+        <!--h2 class="page-title" itemprop="title"><?php the_title(); ?></h2-->
     </div>
-    <?php //the_post_thumbnail( 'full', ['class' => 'image-hero element-parallax', 'data-rate' => '12'] ); ?>
 
 <?php elseif ( is_single() ) : // Single blog post (Use Featured Image) ?>
-    <?php if (get_the_post_thumbnail()) $featureImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; ?>
-    <div class="header-single-post bg-parallax" data-rate="12"<?php echo $featureImage; ?>></div>
+    <div class="header-single-post bg-parallax" data-rate="12"<?php echo $featuredImage; ?>></div>
 
-<?php else : // Blog Page, Posts and Archives header (Use default) ?>
+<?php else : // Blog Page, Posts and Archives header (Use default Image) ?>
     <div class="header-blog bg-parallax" data-rate="12"></div>
 
 <?php endif; ?>

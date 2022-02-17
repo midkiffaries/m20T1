@@ -52,7 +52,7 @@
         </section>
 
         <section class="widget widget_block widget-comments">
-            <?php comments_template(); // Display Comments ?>
+            <?php comments_template(); // Display this posts comments ?>
         </section>
     </aside>
 

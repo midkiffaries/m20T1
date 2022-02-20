@@ -56,7 +56,7 @@ function GetPageContent($id) {
 }
 
 /////////////////////////////
-// SEO Related Functions
+// SEO & Header Functions
 /////////////////////////////
 
 // Swaps certain special characters with words for SEO purposes
@@ -140,7 +140,11 @@ function custom_comment_style($comment, $args, $depth) {
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div class="comment-content" role="comment">
 			<header class="comment-header">
-                <?php //echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+                <span class="comment-avatar hidden">
+                    <figure class="alignleft" aria-label="Authors Avatar">
+                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+                    </figure>
+                </span>
                 <span class="comment-author" rel="author"><?php printf(__('%s'), get_comment_author()); ?></span>
                 <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get the link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time></span>
                 <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), ' ', ' ' ); ?></span> 
@@ -198,30 +202,27 @@ function get_child_pages($id, $thumbnail) {
 
 // Display the list of menu/navigation links
 function menu_nav_list($menu, $id) {
-    $menuStyle = array(
+    wp_nav_menu( array(
         'menu'            => $menu,
         'container'       => 'nav',
-        'container_class' => $id,
+        'container_class' => 'nav-'.$id,
         'container_id'    => $id,
-        'menu_class'      => $id,
-        'menu_id'         => $id,
         'echo'            => true,
         'fallback_cb'     => 'wp_page_menu',
         'before'          => '',
         'after'           => '',
         'link_before'     => '',
         'link_after'      => '',
-        'items_wrap'      => '<ul id="%1$s-' . $id . '">%3$s</ul>',
+        'items_wrap'      => '<ul>%3$s</ul>',
         'item_spacing'    => 'preserve',
         'depth'           => 0,
         'walker'          => ''
-    );
-    wp_nav_menu($menuStyle);
+    ) );
 }
 
 // Register the sidebar widgets 
 add_action( 'widgets_init', function(){
-    // Primary Sidebar on the right side of the page
+    // Primary Sidebar - right side of the content
     register_sidebar(array(
         'id'            => 'primary',
         'name'          => __( 'Primary Sidebar', 'm20T1' ),
@@ -231,7 +232,7 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Secondary Sidebar on the right side of the page
+    // Secondary Sidebar - right side of the content
     register_sidebar(array(
         'id'            => 'secondary',
         'name'          => __( 'Secondary Sidebar', 'm20T1' ),
@@ -261,17 +262,17 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Page Footer Widgets - bottom of the page
+    // Page Footer Widgets
     register_sidebar(array(
         'id'            => 'footer',
         'name'          => __( 'Footer Widgets', 'm20T1' ),
         'description'   => __( 'The page footer widgets.' ),
         'before_widget' => '<nav id="%1$s" class="widget %2$s">',
         'after_widget'  => '</nav>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
+        'before_title'  => '<p class="widget-title">',
+        'after_title'   => '</p>',
     ));
-    // Page Header Widgets - bottom of the page
+    // Page Header Widgets
     register_sidebar(array(
         'id'            => 'header',
         'name'          => __( 'Header Widgets', 'm20T1' ),
@@ -350,6 +351,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 // Remove RSS feed links
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
+
 
 // Insert into 'wp-config.php' after $table_prefix
 //define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions

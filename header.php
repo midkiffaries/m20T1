@@ -34,10 +34,10 @@
         <div class="header-content">
             <div id="MainMenu" class="pull-menu-left menubar">
                 <div class="header-navigation" role="navigation">
-                    <?php menu_nav_list('Primary Navigation', 'header-navigation'); // Main Navigation ?>
+                    <?php menu_nav_list('Primary Navigation', 'primary-navigation'); // Main Navigation ?>
                 </div>
                 <div class="header-secondary-navigation" role="navigation">
-                    <?php menu_nav_list('Secondary Navigation', 'header-navigation'); // Secondary Navigation ?>
+                    <?php menu_nav_list('Secondary Navigation', 'secondary-navigation'); // Secondary Navigation ?>
                 </div>
                 <div class="header-widgets">
                     <?php dynamic_sidebar( 'header' ); // Header Widgets ?>
@@ -64,7 +64,7 @@
 <?php elseif ( is_single() ) : // Single blog post (Use Featured Image) ?>
     <div class="header-single-post bg-parallax" data-rate="12"<?php echo $featuredImage; ?>></div>
 
-<?php else : // Blog Page, Posts and Archives header (Use default Image) ?>
+<?php else : // Blog Page, search page and archives header (Use default Image) ?>
     <div class="header-blog bg-parallax" data-rate="12"></div>
 
 <?php endif; ?>

@@ -14,7 +14,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 - Custom modals for alerts, confirmation and custom HTML
 - Sidebars with widgets for blog pages
 - Widget support in the site header and footer
-- Unique homepage, 404, attachment (image) and a privacy policy pages
+- Unique front-page, 404, attachment (image) and a privacy policy pages
 - Featured image support for use as the page header background
 - Built with SEO and social media in mind
 - Built in Breadcrumbs

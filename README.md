@@ -25,5 +25,3 @@ This WordPress theme is just a pet project of mine, and I am happy to share the 
 ## About Me
 Follow these links to learn more about me:
 <a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a>
-
-[![changelog][changelog-image]][changelog-url] [![license][license-image]][license-url]

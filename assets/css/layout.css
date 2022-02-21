@@ -535,32 +535,49 @@ Main site layout
 
 /* Single Blog Post */
 .single-entry-header {
-	text-align: center;
 	margin: 1.5em auto;
 }
 
 .single-entry-title {
-	margin: 6px 2px;
+	margin: 6px 2px 10px;
 	font-size: 2.7em;
+	font-weight: 500;
 }
 
 .single-entry-category a {
-	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	padding: 3px 8px;
+	padding: 3px;
 	font-weight: bold;
-	background: rgba(120,120,120,0.4);
-	border-radius: 0.2em;
+}
+
+.single-entry-avatar img {
+	border-radius: 0.5em
+}
+
+.single-entry-metadata {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 0.5em;
+	font-size: 1.1rem;
 }
 
 .single-entry-date {
-	margin: 5px 0;
+	margin-left: 0.8em;
+}
+
+.single-entry-date::before {
+	content: "✎";
+	margin-right: 0.2em;
+}
+
+.single-entry-last-updated {
+	margin-left: 0.6em;
+	font-style: italic;
 }
 
 .entry-content,
 .single-entry-content {
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
 
 /* Blog Post Attributes */
@@ -574,6 +591,14 @@ Main site layout
 .entry-title {
 	margin: 0.1em 0 0.3em;
 	font-size: 2.1em;
+}
+
+.entry-date {
+	margin-left: 0.8em;
+}
+
+.entry-comments {
+	margin-left: 0.8em;
 }
 
 .entry-last-updated {
@@ -989,8 +1014,7 @@ Page Specific Styling
 
 /* Page last updated line */
 .homepage-last-updated,
-.page-last-updated,
-.single-entry-last-updated {
+.page-last-updated {
 	font-size: 0.8em;
 	clear: both;
 }

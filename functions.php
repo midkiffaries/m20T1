@@ -304,9 +304,6 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
 });
 
-// Set featured image size
-the_post_thumbnail( 'medium' );
-
 // Add elements to WordPress
 add_action('wp_enqueue_scripts', function(){
     $version = wp_get_theme()->get('Version');
@@ -329,9 +326,12 @@ add_action('wp_enqueue_scripts', function(){
     //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
 });
 
+// Set featured image size
+the_post_thumbnail( 'medium' );
+
 // Set the excerpt length
 add_filter('excerpt_length', function(){
-    return 120; // Word length
+    return 90; // Word length
 });
 
 // Add a 'Continue Reading' link to excerpts

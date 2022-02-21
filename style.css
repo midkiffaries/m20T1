@@ -150,6 +150,10 @@ button:active,
 	color: var(--base-color-dark);
 }
 
+.single-entry-category a {
+	color: var(--base-color) !important;
+}
+
 /* Sidebar links */
 .page-sidebar a[href] {
 	text-decoration: none;

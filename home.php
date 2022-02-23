@@ -28,7 +28,7 @@
                     </div>
                 </header>
                 <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
-                    <?php the_excerpt("<p>Continue Reading &raquo;</p>"); //if (!is_sticky())  ?>
+                    <?php echo shorten_the_content($post->post_content); ?>
                 </div>
                 <div class="entry-overflow"></div>
                 <footer class="entry-footer hidden">

@@ -32,7 +32,7 @@
                     <div class="wp-block-image">
                         <figure class="alignright is-resized"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
                     </div>
-                    <?php the_excerpt(); ?>
+                    <?php echo shorten_the_content($post->post_content); ?>
                 </div>
                 <footer></footer>
             </div>

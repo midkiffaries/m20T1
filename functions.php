@@ -128,6 +128,12 @@ function m20T1_metadata() {
 <?php
 }
 
+// Shorten the_content in place of using the_excerpt
+function shorten_the_content($post) {
+    $length = 350; // Number of characters
+    $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
+    return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">[...]</span>';
+}
 
 /////////////////////////////
 // WordPress Functions
@@ -336,7 +342,8 @@ add_filter('excerpt_length', function(){
 
 // Add a 'Continue Reading' link to excerpts
 add_filter('excerpt_more', function(){
-    return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
+    //return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
+    return ' <span class="entry-read-more">[...]</span>';
 });
 
 // Remove embed function

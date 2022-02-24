@@ -233,8 +233,8 @@ add_action( 'widgets_init', function(){
         'id'            => 'primary',
         'name'          => __( 'Primary Sidebar', 'm20T1' ),
         'description'   => __( 'Sidebar widgets on the full blog page.' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
@@ -243,8 +243,8 @@ add_action( 'widgets_init', function(){
         'id'            => 'secondary',
         'name'          => __( 'Secondary Sidebar', 'm20T1' ),
         'description'   => __( 'Archives page sidebar widgets.' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
@@ -253,8 +253,8 @@ add_action( 'widgets_init', function(){
         'id'            => 'frontpage',
         'name'          => __( 'Front Page Widgets', 'm20T1' ),
         'description'   => __( 'Widgets on the bottom of the front page.' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
@@ -263,8 +263,8 @@ add_action( 'widgets_init', function(){
         'id'            => 'singlepost',
         'name'          => __( 'Single Post Sidebar', 'm20T1' ),
         'description'   => __( 'Widgets below a single blog post.' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));

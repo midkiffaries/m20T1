@@ -15,7 +15,7 @@
                 <div class="single-entry-metadata">
                     <span class="single-entry-avatar"><?php printf(get_avatar(get_the_author_meta('ID'), 32)); ?></span>
                     <span class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                    <span class="single-entry-date"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
+                    <span class="single-entry-date icon-written"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span>
                     <span class="single-entry-comments hidden"><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></span>
                 </div>
@@ -30,7 +30,7 @@
         </div>
     </article>
 
-    <section class="blog-pagination">
+    <section class="blog-pagination" aria-label="Blog Pagination">
         <div class="pagination-container">
             <nav class="single-blog-post-nav">
                 <div class="left"><?php next_post_link('%link', '<span>Next</span>%title'); // Left ?></div>
@@ -40,7 +40,7 @@
     </section>
 
     <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets clearfix">
-        <section class="widget widget_block single-author-bio" role="complementary">
+        <section class="widget widget_block single-author-bio" aria-label="Article Author">
             <h3 class="author-bio-name" itemprop="author">About the Author</h3>
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
@@ -50,11 +50,11 @@
             <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?> &#x276F;</a></p>
         </section>
 
-        <section class="widget widget_block widget-singlepost">
+        <section class="widget widget_block widget-singlepost" aria-label="Page Widgets">
             <?php dynamic_sidebar( 'singlepost' ); // Single Blog Post Sidebar ?>
         </section>
 
-        <section class="widget widget_block widget-comments">
+        <section class="widget widget_block widget-comments" aria-label="Article Comments">
             <?php comments_template(); // Display this posts comments ?>
         </section>
     </aside>

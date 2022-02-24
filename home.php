@@ -5,7 +5,7 @@
 
     <?php breadcrumb_trail(); // Show breadcrumb trail ?>
 
-    <section class="blog-page-title">
+    <section class="blog-page-title" aria-label="Blog Info">
         <div class="blog-page-text hidden">
             <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
         </div>
@@ -20,10 +20,11 @@
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">
+                    <?php if(is_sticky( get_the_ID() )) echo '<div class="entry-sticky">Featured Article</div>'; ?>
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated hidden"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                        <span class="entry-date icon-written"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated hidden"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                         <span class="entry-comments"><a href="<?php the_permalink(); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
@@ -42,7 +43,7 @@
 
     </article>
 
-    <section class="blog-pagination">
+    <section class="blog-pagination" aria-label="Blog Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?php blog_post_pagination('Posts'); // Blog posts navigation ?>

@@ -25,7 +25,7 @@
                     <h3 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
                     <div class="entry-info">
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-date">on <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated: <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                        <span class="entry-date icon-written"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     </div>
                 </header>
                 <div class="entry-content entry-defaultfont">
@@ -42,7 +42,7 @@
 
     </article>
 
-    <section class="blog-pagination">
+    <section class="blog-pagination" aria-label="Search Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?php blog_post_pagination('Results'); // Search results navigation ?>

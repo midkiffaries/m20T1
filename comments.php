@@ -11,7 +11,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 </section>
 <?php return; endif; ?>
 
-<?php if (have_comments()) : // If have comments ?>
+<?php if (have_comments()) : // If post has comments ?>
 
 <section class="comment-list">
     <div class="comment-container">
@@ -22,7 +22,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
     </div>
 </section>
 
-<section class="comment-pagination">
+<section class="comment-pagination" aria-label="Comment Pagination">
     <div class="pagination-container">
         <nav class="comments-nav">
             <?php next_comments_link('&#x276E; Next '.get_option('comments_per_page').' Comments', 0); // Left ?>
@@ -62,12 +62,10 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 		<p>You are logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo wp_logout_url(get_permalink()); ?>" class="logout-link">Log out</a></p>
 		<input type="hidden" name="author" id="author" value="<?php echo $user_identity; ?>">
         <input type="hidden" name="email" id="email" value="<?php printf("%s@%s", $user_identity, $_SERVER['HTTP_HOST']); ?>">   
-
     <?php else : // If user is not logged in ?>
 		<p><label for="author" <?php if ($req) echo "class='required'"; ?>>Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="your name" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
 		<p><label for="email" <?php if ($req) echo "class='required'"; ?>>Email</label><input type="email" name="email" id="email" class="comment-email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="name@example.com" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
 		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
-
     <?php endif; ?>
 		<p><label for="comment" <?php if ($req) echo "class='required'"; ?>>Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="Your comment..." required></textarea></p>
 		<p><input type="submit" id="submit-comment" class="comment-submit" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>

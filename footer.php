@@ -4,7 +4,7 @@
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
     </div>
 
-    <div class="footer-slogan"><?php bloginfo('description'); ?></div>
+    <div class="footer-slogan"><?php bloginfo('description'); // Blog Slogan ?></div>
 
     <div class="footer-notice">
         <p class="copyright">Copyright &copy; <abbr title="<?php echo date('Y'); ?>" aria-label="<?php echo date('Y'); ?>"><?php echo numberToRoman(date('Y')); ?></abbr> <?php bloginfo('name'); ?>. All rights reserved. <a href="<?php echo home_url(); ?>/privacy-policy/" rel="license">Privacy Policy</a></p>

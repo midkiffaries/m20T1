@@ -14,7 +14,7 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<?php wp_body_open(); ?>
+<?php wp_body_open(); // Wordpress body includes ?>
 
 <header class="page-header" role="banner" id="top">
     <a href="#main-content" class="nav-skip">Skip to main content</a>

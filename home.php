@@ -29,6 +29,9 @@
                     </div>
                 </header>
                 <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
+                    <div class="wp-block-image">
+                        <figure class="alignright is-resized"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
+                    </div>
                     <?php echo shorten_the_content($post->post_content); ?>
                 </div>
                 <div class="entry-overflow"></div>

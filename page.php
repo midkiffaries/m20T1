@@ -12,7 +12,6 @@
                 <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
                 <div class="the-content">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-                
                 </div>
             </div>
         </article>

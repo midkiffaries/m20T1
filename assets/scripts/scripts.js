@@ -270,7 +270,7 @@ function closeModals(c) {
         let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`;
         let image = new Image();
         image.src = source;
-        image.alt = "Play YouTube video.";
+        image.alt = "Play this YouTube video";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
         youtube[i].addEventListener("click", function() {
             let iframe = document.createElement("iframe");
@@ -324,7 +324,7 @@ function closeModals(c) {
         .youtube button, .youtube button::before {
             top: 50%;
             left: 50%;
-            transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%,-50%,0);
         }
         .youtube iframe {
             width: 100%;
@@ -433,7 +433,6 @@ function closeModals(c) {
 // Checks the position of the window focus
 document.addEventListener("scroll", function () {
     const el = document.getElementById("ScrollToTop");
-	
     if (window.pageYOffset > 500) el.classList.add("scActive");
     else el.classList.remove("scActive");
 },true);

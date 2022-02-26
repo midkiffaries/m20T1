@@ -376,34 +376,27 @@ function closeModals(c) {
 
 // Check field
 const checkField = v => {
-	if (!v.value) {
-		v.classList.add("message-error");
-	} else {
-		v.classList.remove("message-error");	
-	}
+	if (!v.value) v.classList.add("message-error");
+	else v.classList.remove("message-error");
 }
 
 // Sanitize user input
 const sanitizeInput = v => {
-	if (v) {
-        return v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim();
-	} else {
-		return null;
-	}
+	if (v) return v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim();
+	else return null;
 }
 
 // Validate user inputed email address
 const validateEmail = v => {
     const mailhash = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (v.match(mailhash)) {
-        return true;
-    } else {
-        return false;
-    }
+    if (v.match(mailhash)) return true;
+    else return false;
 }
 
 // Contact Form - Process email and send it
 function phpSendEmail() {
+    const xhttp = new XMLHttpRequest();
+
 	// Setup the form field variables
 	const Email = {
 		nameID: document.getElementById("contact_name"),
@@ -429,44 +422,24 @@ function phpSendEmail() {
 	checkField(Email.nameID);
 	checkField(Email.emailID);
 	checkField(Email.messageID);
-	
-	// Check if all the fields are filled in
-	if (Email.name() && validateEmail(Email.email()) && Email.message()) {
-		const xhttp = new XMLHttpRequest();
 
-		let v = "name=" + Email.name() + 
+    xhttp.onload = function() {
+        if (Email.name() && validateEmail(Email.email()) && Email.message()) {
+            let v = "name=" + Email.name() + 
 			"&email=" + Email.email() + 
 			"&message=" + Email.message();
-		
-		// Connect to server
-		//xhttp.onreadystatechange = function() {
-		xhttp.onload = function() {
-			let errorMsg;
 
-            //if (this.readyState === 4 && this.status === 200) {
-				//if (this.responseText == 1) { 
-					// Successful
-					console.log("Email successfully sent.");
-					errorMsg = "Your message has been sent! <br />I will try and get back to you as soon as possible.";
-					document.getElementById("MessageInfo").classList.add('contact_success');
-					document.getElementById("contact_fieldset").disabled = true;
-				//} else { 
-					// Error: Server
-				//	console.log("Email failed to send.");
-				//	errorMsg = "Server error. There seems to be a problem sending this message.";
-				//}
-				// Display Server Message
-				document.getElementById("ServerMessage").innerHTML = errorMsg;
-            //}
+            //document.getElementById("demo").innerHTML = this.responseText;
+            console.log("Email successfully sent.");
+            document.getElementById("ServerMessage").innerHTML = "Your message has been sent! <br />I will try and get back to you as soon as possible.";
+            document.getElementById("MessageInfo").classList.add('contact_success');
+            document.getElementById("contact_fieldset").disabled = true;
+        } else {
+            document.getElementById("ServerMessage").innerHTML = "You need to fill in all the fields to send this message.";
         }
-	} else {
-		// Error: Not all fields filled in
-		document.getElementById("ServerMessage").textContent = "You need to fill in all the fields to send this message.";
-	}
-
-	xhttp.open("get", `${themeUri}assets/plugins/mailman.php?${v}`, true);
-	//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send();
+    }
+    xhttp.open("GET", `${themeUri}assets/plugins/mailman.php?${v}`, true);
+    xhttp.send();
 }
 
 // Improve the behavior of certain input types

@@ -69,7 +69,7 @@
 
     </div>
 
-    <aside id="sidebar-blog" class="page-sidebar sidebar-blog" role="sidebar">
+    <aside id="sidebar-blog" class="page-sidebar sidebar-blog">
         <?php dynamic_sidebar( 'primary' ); ?>
     </aside>
 

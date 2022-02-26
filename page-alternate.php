@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" id="main-content" role="main">
+<main class="page-main page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" id="main-content" role="main">
     <div class="page-content width-max">
 
     <?php breadcrumb_trail(); // Show breadcrumb trail ?>
@@ -12,9 +12,7 @@
                 <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
                 <div class="the-content">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-                
                 </div>
-                <p class="page-last-updated hidden"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
             </div>
         </article>
 
@@ -26,6 +24,7 @@
             <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>
         </aside>
 
+        <p class="page-last-updated hidden"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </main>
 

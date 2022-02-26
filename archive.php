@@ -104,7 +104,7 @@
 
     </div>
     
-    <aside id="sidebar-archive" class="page-sidebar sidebar-archive" role="sidebar">
+    <aside id="sidebar-archive" class="page-sidebar sidebar-archive">
         <?php dynamic_sidebar( 'secondary' ); // Secondary Sidebar ?>
     </aside>
 

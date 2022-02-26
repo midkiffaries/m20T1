@@ -69,7 +69,7 @@ function SEO_CharSwap($string) {
 // Get the excerpt from either the content or the user defined excerpt  
 function SEO_Excerpt($id) {
     // Set the total character length
-    $length = 170;
+    $length = 165;
     // Check if post has a user defined excerpt
     if (has_excerpt($id) && !is_attachment()) {
         $description = trim(substr(get_the_excerpt($id), 0, $length));
@@ -77,7 +77,7 @@ function SEO_Excerpt($id) {
         // Get page description from content excerpt
         if (is_single() || is_page()) { // If single blog post
             $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt($id), true));
-            $description = trim(substr($excerpt, 0, $length)) . "...";
+            $description = trim(substr($excerpt, 0, $length)) . "[...]";
         } else { // All other pages use site slogan
             $description = get_bloginfo('description');
         }

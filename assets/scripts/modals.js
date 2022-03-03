@@ -456,12 +456,14 @@ function checkInput() {
     }	
 }
 
+
+
 // Ajax function
 function loadHtmlModal(f, id) {
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
         document.getElementById(id).innerHTML = this.responseText;
     }
-    xmlhttp.open("GET", `${f}?${v}`, true);
-    xmlhttp.send();
+    xhttp.open("GET", `${f}`, true);
+    xhttp.send();
 }

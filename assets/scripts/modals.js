@@ -5,11 +5,11 @@
 // Search modal content
 const SearchModal = (`
 <h3>Search</h3>
-<section class="search-block search-modal">
+<div class="search-block search-modal">
     <form method="get" class="search-form" role="search" action="${siteUri}">
-        <input type="search" name="s" class="search-input" value="" placeholder="Search blog posts, pages, etc." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
+        <input type="search" class="search-input" name="s" value="" placeholder="Search blog posts, pages, etc." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search Input" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
     </form>
-</section>
+</div>
 <style>
 .dialog-search .dialog-content {
 	border-radius: 1px;
@@ -35,7 +35,7 @@ const SearchModal = (`
 // Contact modal content
 const ContactModal = (`
 <h3>Send me a message</h3>
-<section class="email-block">
+<div class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
 		<fieldset id="contact_fieldset">
 			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Your Name" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" onfocus="checkInput()" autofocus required></p>
@@ -45,7 +45,7 @@ const ContactModal = (`
 		</fieldset>
 		<p id="MessageInfo" class="contact_server"><b id="ServerMessage"></b></p>
     </form>
-</section>
+</div>
 <style>
 .dialog-content h3 {
     margin: 0;
@@ -454,4 +454,14 @@ function checkInput() {
             inputNum[i].onkeypress = () => event.charCode >= 33 && event.charCode <= 122;
         }
     }	
+}
+
+// Ajax function
+function loadHtmlModal(f, id) {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        document.getElementById(id).innerHTML = this.responseText;
+    }
+    xmlhttp.open("GET", `${f}?${v}`, true);
+    xmlhttp.send();
 }

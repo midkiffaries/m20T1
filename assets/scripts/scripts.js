@@ -454,8 +454,8 @@ document.addEventListener("scroll", function () {
 		position: fixed;
 		visibility: hidden;
 		opacity: 0;
-		right: 1em;
-		bottom: 1em;
+		right: 1.1em;
+		bottom: 1.4em;
 		width: 40px;
 		height: 40px;
 		border-radius: 0.2em;
@@ -478,8 +478,12 @@ document.addEventListener("scroll", function () {
 		visibility: visible;
 		opacity: 1;
 	}
+    @media (max-width: 812px) {
+		.scroll-to-top-float {display: none}
+
+    }
 	@media only print {
-		.scroll-to-top-float {display: none;}
+		.scroll-to-top-float {display: none}
 	}
 	`);
 	document.body.appendChild(st);

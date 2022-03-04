@@ -310,7 +310,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'customize-selective-refresh-widgets' );
 
     // Custom Logo Support
-    add_theme_support( 'custom-logo', array( 'height' => 100, 'width' => 640, 'header-text' => array( 'site-title', 'site-description' ), ) );
+    add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'header-text' => array( 'site-title', 'site-description' ), ) );
     
     // HTML5 Support
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );

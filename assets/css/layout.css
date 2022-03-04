@@ -162,14 +162,7 @@ body.dark-mode,
 .dark-mode [type='range'] {
 	background: transparent;
 }
-/*
-.dark-mode button,
-.dark-mode [type='button'],
-.dark-mode [type='reset'],
-.dark-mode [type='submit'] {
-	color: #fff;
-}
-*/
+
 /* Specific dark-mode items */
 .dark-mode .logo-text,
 .dark-mode .square-button,
@@ -177,6 +170,10 @@ body.dark-mode,
 .dark-mode .dialog-close-button,
 .dark-mode .dialog-close {
 	filter: invert();
+}
+
+.dark-mode .header-logo img {
+	filter: grayscale(100%) invert();
 }
 
 /* Hamburger menu pull down on narrow screens */
@@ -325,26 +322,12 @@ Main site layout
 	top: 0;
 }
 
-.header-text {
-	display: none;
-}
-
 .header-logo {
-	margin: 0.7em 0.4em;
-	padding: 0.3em 0 0 0.5em;
-	white-space: nowrap;
+	margin: 0.2em 0.4em;
 }
 
 .header-logo a {
 	text-decoration: none;
-}
-
-.header-logo img {
-	vertical-align: middle;
-}
-
-.header-logo .logo-image {
-	margin-top: -8px;
 }
 
 .header-content {
@@ -438,9 +421,10 @@ Main site layout
 	background-color: rgba(0,0,0,0.15);
 }
 
-.footer-widgets {
+.footer-widgets,
+.footer-notice {
 	width: var(--page-width);
-	padding: 0.9em;
+	padding: 0.8em;
 	margin: 0 auto;
 	clear: both;
 }
@@ -450,23 +434,27 @@ Main site layout
 	font-size: 0.9em;
 	font-style: italic;
 	opacity: 0.8;
-	margin: 0.5em
 }
 
 .footer-notice {
-	text-align: center;
-	font-size: 0.9em;
-	background-color: rgba(0,0,0,0.05);
-	padding: 1em;
+	font-size: 0.9rem;
+	margin: 0 auto 2em;
 }
 
-.footer-notice p {
-	margin: 0;
+.footer-rule {
+	opacity: 0.4;
+	padding: 1px;
 }
 
-.footer-notice .icon-bear::before {
-	padding-right: 2px;
-	vertical-align: -2px;
+.footer-copyright {
+	width: 50%;
+	float: left;
+}
+
+.footer-footnote {
+	width: 50%;
+	float: right;
+	text-align: right;
 }
 
 /* Footer on mobile devices */
@@ -474,6 +462,11 @@ Main site layout
 	.footer-widgets {
 		width: 100%;
 		margin: 0;
+	}
+	.footer-notice {
+		width: 100%;
+		margin-bottom: 3em;
+		font-size: 0.8rem;
 	}
 }
 

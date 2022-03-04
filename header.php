@@ -20,15 +20,9 @@
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
-            <h1 class="header-text" itemprop="title" aria-hidden="false">
-                <a href="<?php echo home_url(); ?>" rel="bookmark"><?php bloginfo('name'); ?></a>
+            <h1 class="header-logo" itemprop="title">
+                <a href="<?php echo home_url(); ?>" rel="bookmark"><?php m20T1_logo(); ?></a>
             </h1>
-            <div class="header-logo">
-                <a href="<?php echo home_url(); ?>">
-                    <img class="logo-image" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-img.svg" alt="">
-                    <img class="logo-text" src="<?php echo get_template_directory_uri(); ?>/assets/logos/logo-text.svg" alt="">
-                </a>
-            </div>
         </div>
         <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
         <div class="header-content">

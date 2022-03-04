@@ -3,7 +3,6 @@
 // PHP WordPress Functions
 /////////////////////////////
 
-//error_reporting(0);
 //error_reporting(E_ALL);
 
 /////////////////////////////
@@ -58,6 +57,15 @@ function GetPageContent($id) {
 /////////////////////////////
 // SEO & Header Functions
 /////////////////////////////
+
+// Check if user selected a custom logo
+function m20T1_logo() {
+    if (has_custom_logo()) {
+        the_custom_logo();
+    } else {
+        bloginfo('name');
+    }
+}
 
 // Swaps certain special characters with words for SEO purposes
 function SEO_CharSwap($string) {
@@ -300,10 +308,13 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'featured-content' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'customize-selective-refresh-widgets' );
+
+    // Custom Logo Support
+    add_theme_support( 'custom-logo', array( 'height' => 100, 'width' => 640, 'header-text' => array( 'site-title', 'site-description' ), ) );
     
     // HTML5 Support
-    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-    add_theme_support( 'post-formats', array('aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status') );
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+    add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
     
     // Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );

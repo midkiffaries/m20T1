@@ -173,7 +173,7 @@ body.dark-mode,
 }
 
 .dark-mode .header-logo img {
-	filter: grayscale(100%) invert();
+	filter: brightness(0) invert();
 }
 
 /* Hamburger menu pull down on narrow screens */

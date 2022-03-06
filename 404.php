@@ -24,7 +24,7 @@
             <div class="content-404">
                 <p>Whoops... Well that page is gone.</p>
                 <p>But real talk, the page must have been removed, renamed or didn't exist in the first place. 🤔</p>
-                <?php get_search_form(); // Search Form ?>
+                <?php get_search_form('error'); // Search Form ?>
                 
             </div>
         </div>

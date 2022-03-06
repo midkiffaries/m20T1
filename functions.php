@@ -112,16 +112,16 @@ function SEO_Image($id) {
 // Additional <head> meta data
 function m20T1_metadata() {
 ?>
+    <meta name="application-name" content="<?php bloginfo('name'); ?>">
+    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
     <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+    <meta name="format-detection" content="telephone=no">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
-    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
-    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-    <meta name="application-name" content="<?php bloginfo('name'); ?>">
-    <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">
-    <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>" sizes="512x512">
-    <link rel="icon" type="image/png" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>" sizes="192x192">
+    <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">    
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php the_permalink(); ?>">

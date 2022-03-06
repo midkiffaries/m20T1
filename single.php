@@ -64,7 +64,7 @@
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="post-container">
             <h2 class="single-entry-title" itemprop="title">Not Found</h2>
-            <p>Sorry, no posts matched your criteria.</p>
+            <p>Sorry, no posts matched your criteria. Try and search for it?</p>
             <?php get_search_form('post'); // Search Form ?>
         </div>
     </article>

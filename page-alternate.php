@@ -21,8 +21,9 @@
         <aside id="page-widgets" class="page-sidebar page-widgets">
             <?php dynamic_sidebar( 'other' ); // Other Sidebar ?>
 
-            <h3 class="header-childpages">Related Pages</h3>
-            <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>
+            <div class="widget">
+                <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>
+            </div>
         </aside>
 
         <p class="page-last-updated hidden"><?php printf( __( 'Page last modified: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>

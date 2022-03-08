@@ -32,9 +32,8 @@
                     <div class="wp-block-image">
                         <figure class="alignright is-resized"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
                     </div>
-                    <?php echo shorten_the_content($post->post_content); ?>
+                    <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
-                <div class="entry-overflow"></div>
                 <footer class="entry-footer hidden">
                     <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
                     <div class="entry-share"><?php blog_post_share(); ?></div>

@@ -201,6 +201,11 @@ function get_child_pages($id, $thumbnail) {
         'child_of'       => $id,
     ));
 
+    // Display section header
+    if ($page_children) { ?>
+        <h3 class="header-childpages">Related Pages</h3>
+    <?php }
+
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
             <a class="child-card__link" href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">

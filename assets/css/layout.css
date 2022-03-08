@@ -786,22 +786,6 @@ Page Specific Styling
 	overflow: hidden;
 }
 
-.entry-overflow {
-	pointer-events: none;
-	height: 2.2em;
-	/* transform: translateY(-2.2em); */
-}
-
-/*
-.entry-overflow {
-	background: linear-gradient(0deg, var(--page-background) 0%, rgba(255,255,255,0.1) 100%);
-}
-
-.dark-mode .entry-overflow {
-	background: linear-gradient(0deg, #161616 0%, rgba(10,10,10,0.1) 100%);
-}
-*/
-
 .entry-footer {
 	margin-top: -1.5em;
 }

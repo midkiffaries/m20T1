@@ -8,10 +8,10 @@
         <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
                 <h2 class="image-title" itemprop="title"><?php the_title(); ?></h2>
-                <figure class="wp-block-image">
-                    <?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?>
-                    <figcaption class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></figcaption>
-                </figure>
+                <div class="wp-block-image">
+                    <div><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Enlarge image" aria-title="View the full image"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?></a></div>
+                    <div class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></div>
+                </dic>
                 <div class="the-content">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
@@ -19,7 +19,7 @@
                     <span class="image-date">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                 </p>
-                <p class="image-download"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the Full Image</a></p>
+                <p class="image-download"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the full media file</a></p>
             </div>
         </article>
 

@@ -901,9 +901,14 @@ Page Specific Styling
 	margin: 14px;
 }
 
+.page-image .image-caption {
+	font-size: 0.8em;
+	opacity: 0.8;
+}
+
 .page-image .image-copyright {
 	text-align: center;
-	margin-bottom: -2em;
+	margin-bottom: -1em;
 	opacity: 0.9;
 }
 

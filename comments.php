@@ -6,14 +6,14 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 <?php if ( post_password_required() ) : // If comments are password protected ?>
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p>🛑 <i>This article is password protected.</i></p>
+        <p>🛑 <i>These comments are password protected.</i></p>
     </div>
 </section>
 <?php return; endif; ?>
 
 <?php if (have_comments()) : // If post has comments ?>
 
-<section class="comment-list">
+<section class="comment-list" role="comments" id="Comments">
     <div class="comment-container">
         <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments');?></h2>
         <ol class="list-comments">
@@ -39,7 +39,7 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p>🚫 <i>Comments are closed for this article.</i></p>
+        <p>🚫 <i>The comments are closed for this article.</i></p>
     </div>
 </section>
 

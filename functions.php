@@ -116,20 +116,20 @@ function m20T1_metadata() {
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
     <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php printf("%s/icons/favicon-32x32.png", home_url()); ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php printf("%s/icons/favicon-16x16.png", home_url()); ?>">
-    <link rel="icon" type="image/png" sizes="512x512" href="<?php printf("%s/icons/android-chrome-512x512.png", home_url()); ?>">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php printf("%s/icons/android-chrome-192x192.png", home_url()); ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php printf("%s/icons/apple-touch-icon.png", home_url()); ?>">
-    <link rel="manifest" href="<?php printf("%s/manifest.json", home_url()); ?>">    
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php esc_url(printf("%s/icons/favicon-32x32.png", home_url())); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php esc_url(printf("%s/icons/favicon-16x16.png", home_url())); ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?php esc_url(printf("%s/icons/android-chrome-512x512.png", home_url())); ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php esc_url(printf("%s/icons/android-chrome-192x192.png", home_url())); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
+    <link rel="manifest" href="<?php esc_url(printf("%s/manifest.json", home_url())); ?>">    
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php the_permalink(); ?>">
+    <meta property="og:url" content="<?php esc_url(the_permalink()); ?>">
     <meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
     <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
     <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?php the_permalink(); ?>">
+    <meta property="twitter:url" content="<?php esc_url(the_permalink()); ?>">
     <meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
     <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
     <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
@@ -183,8 +183,9 @@ function blog_post_pagination($type) {
 function blog_post_share() {
 ?>
     <ul class="post-social-share" aria-label="Share on social">
-        <li><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" target="_blank">Tweet</a></li>
-        <li><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" target="_blank">Share</a></li>
+        <li><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php esc_url(the_permalink()); ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" target="_blank">Tweet</a></li>
+        <li><a href="https://www.facebook.com/sharer.php?u=<?php esc_url(the_permalink()); ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" target="_blank">Share</a></li>
+        <!--li><a href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url(get_permalink()); ?>&title=<?php urlencode(the_title()); ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" target="_blank">Share</a></li-->
     </ul>
 <?php
 }
@@ -208,7 +209,7 @@ function get_child_pages($id, $thumbnail) {
 
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
-            <a class="child-card__link" href="<?php echo get_permalink($child->ID); ?>" rel="nofollow">
+            <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
                 <p class="child-card__title"><?php echo $child->post_title; ?></p>
                 <?php if ($thumbnail) : ?>
                 <p class="child-card__image"><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>

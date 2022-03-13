@@ -7,7 +7,7 @@
     <?php wp_head(); // WordPress generated meta data and scripts ?>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <base href="<?php echo home_url(); ?>/" id="SiteURI">
+    <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
     <meta name="author" content="Ted Balmer | MarchTwenty.com">
     <?php m20T1_metadata(); // Include additional meta data ?>
 </head>
@@ -21,7 +21,7 @@
     <div class="header-menubar">
         <div class="header-title">
             <h1 class="header-logo" itemprop="title">
-                <a href="<?php echo home_url(); ?>" rel="bookmark"><?php m20T1_logo(); ?></a>
+                <a href="<?php echo esc_url(home_url()); ?>" rel="bookmark"><?php m20T1_logo(); ?></a>
             </h1>
         </div>
         <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>

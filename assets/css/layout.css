@@ -40,7 +40,6 @@ Icon Fonts
 
 .icon-written:before {
 	content: "\e911";
-	padding-right: 0.2em;
 }
 .icon-thingiverse:before {
 	content: "\e910";
@@ -668,6 +667,10 @@ Main site layout
 
 .post-social-share .twitter-share {
     background-color: #1da1f2;
+}
+
+.post-social-share .linkedin-share {
+    background-color: #0077b5;
 }
 
 .post-social-share li a::before {

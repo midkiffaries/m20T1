@@ -443,6 +443,7 @@ Main site layout
 .footer-rule {
 	opacity: 0.4;
 	padding: 1px;
+	margin-top: 0;
 }
 
 .footer-copyright {
@@ -495,7 +496,7 @@ Main site layout
 	padding: 0;
 }
 
-/* Page content on narrow screens */
+/* Page content on narrow screens layout */
 @media (max-width: 1249px) {
 	.page-main {
 		width: 100%;
@@ -512,7 +513,7 @@ Main site layout
 	}
 }
 
-/* Sidebars and widgets */
+/* Sidebars and widgets layout */
 .sidebar-blog,
 .sidebar-archive,
 .sidebar-search {
@@ -770,6 +771,11 @@ figcaption:not(.blocks-gallery-item__caption) {
 	.wp-block-image figure {
 		width: 50%;
 	}
+}
+
+/* Sidebar Widgets */
+.widget_recent_entries a {
+	font-weight: 600;
 }
 
 /************************ 

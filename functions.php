@@ -185,7 +185,7 @@ function blog_post_share() {
     <ul class="post-social-share" aria-label="Share on social">
         <li><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php esc_url(the_permalink()); ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" target="_blank">Tweet</a></li>
         <li><a href="https://www.facebook.com/sharer.php?u=<?php esc_url(the_permalink()); ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" target="_blank">Share</a></li>
-        <!--li><a href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url(get_permalink()); ?>&title=<?php urlencode(the_title()); ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" target="_blank">Share</a></li-->
+        <li><a href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url(get_permalink()); ?>&title=<?php urlencode(the_title()); ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" target="_blank">Share</a></li>
     </ul>
 <?php
 }

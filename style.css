@@ -16,9 +16,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 
 /* Variables */
 :root {
-	--base-color: #40A5FF;
-	--base-color-pale: #8CC9FF;
-	--base-color-dark: #205380;
+	--brand-color: #40A5FF;
+	--brand-color-pale: #8CC9FF;
+	--brand-color-dark: #205380;
 
 	--header-link-color: #000;
 	--body-link-color: #40A5FF;
@@ -71,7 +71,7 @@ textarea,
 select {
 	transition: border 0.25s;
 	border-width: 2px;
-	caret-color: var(--base-color);
+	caret-color: var(--brand-color);
 }
 
 [type="search"]:hover,
@@ -80,7 +80,7 @@ select {
 [type="url"]:hover,
 textarea:hover,
 select:hover {
-	border-color: var(--base-color);
+	border-color: var(--brand-color);
 }
 
 [type="search"]:focus,
@@ -90,8 +90,8 @@ select:hover {
 textarea:focus,
 select:focus {
 	outline: none;
-	box-shadow: 0 0 3px 1px var(--base-color);
-	border-color: var(--base-color-dark);
+	box-shadow: 0 0 3px 1px var(--brand-color);
+	border-color: var(--brand-color-dark);
 }
 
 /* Buttons */
@@ -123,35 +123,35 @@ button:active,
 
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
-	color: var(--base-color-pale);
-	text-decoration-color: var(--base-color-dark);
+	color: var(--brand-color-pale);
+	text-decoration-color: var(--brand-color-dark);
 }
 
 .entry-header a[href]:active,
 .single-entry-header a[href]:active {
-	color: var(--base-color-dark);
+	color: var(--brand-color-dark);
 }
 
 /* Body content links */
 .entry-content a[href],
 .single-entry-content a[href] {
-	color: var(--base-color);
+	color: var(--brand-color);
 	transition: color 0.25s;
 }
 
 .entry-content a[href]:hover,
 .single-entry-content a[href]:hover {
-	color: var(--base-color-pale);
-	text-decoration-color: var(--base-color-dark);
+	color: var(--brand-color-pale);
+	text-decoration-color: var(--brand-color-dark);
 }
 
 .entry-content a[href]:active,
 .single-entry-content a[href]:active {
-	color: var(--base-color-dark);
+	color: var(--brand-color-dark);
 }
 
 .single-entry-category a {
-	color: var(--base-color) !important;
+	color: var(--brand-color) !important;
 }
 
 /* Sidebar links */
@@ -161,11 +161,11 @@ button:active,
 
 .page-sidebar a[href]:hover {
 	text-decoration: underline;
-	color: var(--base-color-dark);
+	color: var(--brand-color-dark);
 }
 
 .page-sidebar a[href]:active {
-	color: var(--base-color-pale)
+	color: var(--brand-color-pale)
 }
 
 
@@ -176,7 +176,7 @@ Page Styling
 /* Page Header Image */
 .header-blog, 
 .header-single-page {
-	background-color: var(--base-color-pale);
+	background-color: var(--brand-color-pale);
 	/* background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg); */
 	background-size: 1em, cover;
 }
@@ -184,7 +184,6 @@ Page Styling
 /* Sticky posts */
 .post.sticky {
 	background: rgba(120,120,120,0.2);
-	box-shadow: 0 0 3px 0 currentColor;
 	padding: 0.8em 0.6em !important;
 	border-radius: 0.4em;
 }

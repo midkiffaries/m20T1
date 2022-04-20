@@ -52,7 +52,7 @@
 
 <?php elseif ( is_page() ) : // Basic Page and privacy-policy header (Use Featured Image) ?>
     <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featuredImage; ?>>
-        <!--h2 class="page-title" itemprop="title"><?php the_title(); ?></h2-->
+        <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
     </div>
 
 <?php elseif ( is_single() ) : // Single blog post (Use Featured Image) ?>

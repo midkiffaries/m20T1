@@ -143,6 +143,16 @@ function shorten_the_content($post) {
     return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">[...]</span>';
 }
 
+// Get the posts thumbnail use fallback if none available
+function PostThumbnail() {
+    $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+    if(get_the_post_thumbnail()) {
+        return "background-image: url(" . $thumb . ");";
+    } else {
+        return "background-image: url(" . get_template_directory_uri() . "/assets/images/header-blank.svg);";
+    }
+}
+
 /////////////////////////////
 // WordPress Functions
 /////////////////////////////
@@ -375,7 +385,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 // Remove RSS feed links
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
-
 
 // Insert into 'wp-config.php' after $table_prefix
 //define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions

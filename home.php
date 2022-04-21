@@ -16,14 +16,12 @@
     <article class="blog-roll" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
         <?php while (have_posts()) : the_post(); // List all the posts ?>
-
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" <?php if(is_sticky( get_the_ID() )) : // If sticky post ?>style="background: linear-gradient(32deg, rgba(232,232,232,1) 10%, rgba(187,187,187,1) 40%, rgba(255,255,255,0.25) 60%), url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>) no-repeat right top;"<?php endif; ?> >
+        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" <?php //if(is_sticky( get_the_ID() )) : // If sticky post ?>Xstyle="background: linear-gradient(32deg, rgba(232,232,232,1) 10%, rgba(187,187,187,1) 40%, rgba(255,255,255,0.25) 60%), url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>) no-repeat right top;"<?php //endif; ?> >
             <div class="post-container">
                 <header class="entry-header">
-                    <?php if(is_sticky( get_the_ID() )) : // If sticky post ?>
-                        <div class="entry-sticky">Featured Article</div>
-                    <?php endif; ?>
-
+                    <div class="entry-thumbnail" style="<?php echo PostThumbnail(); ?>">
+                        <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
+                    </div>
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>

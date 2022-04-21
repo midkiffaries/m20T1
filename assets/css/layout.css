@@ -577,9 +577,20 @@ Main site layout
 	text-decoration: none;
 }
 
+.entry-thumbnail {
+	width: 100%;
+	height: 7rem;
+	border-radius: 0.2rem;
+	background-size: cover;
+	background-position: center center;
+	background-color: #eee;
+}
+
 .entry-sticky {
+	font-size: 1.1rem;
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 600;
+	padding: 10px;
 }
 
 .entry-title {

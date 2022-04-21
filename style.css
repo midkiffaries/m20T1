@@ -23,11 +23,14 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 	--header-link-color: #000;
 	--body-link-color: #40A5FF;
 	--page-background: #fdfdfd;
-
+	--bg-light: rgba(0,0,0,0.02);
 	--highlight-color: rgba(55, 161, 255, 0.7);
 
-	--button-color: #40A5FF;
-	--bg-light: rgba(0,0,0,0.02);
+	--button-base: var(--brand-color);
+	--button-text: #fff;
+
+	--font-main: 'Montserrat', sans-serif;
+	--font-alt: 'Caveat Brush', cursive;
 }
 
 
@@ -36,14 +39,14 @@ Set Up Fonts
 ************************/
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--font-main);
 	text-rendering: auto;
 	font-weight: 400;
 	font-display: swap;
 }
 
 .font-brush {
-	font-family: 'Caveat Brush', cursive;
+	font-family: var(--font-alt);
 	font-display: swap;
 }
 
@@ -97,8 +100,8 @@ select:focus {
 /* Buttons */
 button,
 [type="submit"] {
-	color: #fff;
-	background-color: var(--button-color);
+	color: var(--button-text);
+	background-color: var(--button-base);
 	border-width: 2px;
 	border-color: transparent;
 	transition: filter 0.5s;
@@ -177,24 +180,17 @@ Page Styling
 .header-blog, 
 .header-single-page {
 	background-color: var(--brand-color-pale);
-	/* background-image: url(assets/images/grain-light.png), url(../../uploads/2021/07/base-header.jpg); */
 	background-size: 1em, cover;
 }
 
 /* Sticky posts */
+/*
 .post.sticky {
 	background: rgba(120,120,120,0.2);
 	padding: 0.8em 0.6em !important;
 	border-radius: 0.4em;
 }
-
-/*
-.header-blog[style], 
-.header-single-page[style] {
-	background-size: 1em cover;
-}
 */
-
 /* Page Footer */
 .footer-widgets ul {
 	text-align: center;
@@ -211,11 +207,7 @@ Page Styling
 	fill: #000 !important;
 }
 
-/*
-svg {
-	filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-}
-*/
+
 
 /************************ 
 WordPress Plugins 

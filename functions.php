@@ -98,15 +98,15 @@ function SEO_Excerpt($id) {
     return $description;
 }
 
-// Get the featured image use fallback in none defined
+// Get the featured image use fallback in none defined (thumbnail, medium, medium_large, large, full)
 function SEO_Image($id) {
     // Get page featured image
-    if (get_the_post_thumbnail()) { // Use page's featured image
+    if (has_post_thumbnail($id)) { // Use page's featured image
         $featuredImage = get_the_post_thumbnail_url($id, 'large');
     } else { // Use default image
         $featuredImage = home_url() . "/icons/social-share.jpg";
     }
-    return $featuredImage;
+    return esc_url($featuredImage);
 }
 
 // Additional <head> meta data
@@ -143,14 +143,15 @@ function shorten_the_content($post) {
     return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">[...]</span>';
 }
 
-// Get the posts thumbnail use fallback if none available
-function PostThumbnail() {
-    $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
-    if(get_the_post_thumbnail()) {
-        return "background-image: url(" . $thumb . ");";
-    } else {
-        return "background-image: url(" . get_template_directory_uri() . "/assets/images/header-blank.svg);";
+// Get the posts thumbnail use fallback if none available (thumbnail, medium, medium_large, large, full)
+function PostThumbnailUrl($id, $size) {
+    // Get page featured image
+    if (has_post_thumbnail($id)) {
+        $thumbnail = get_the_post_thumbnail_url($id, $size);
+    } else { // Use default image
+        $thumbnail = get_template_directory_uri() . "/assets/images/featured-blank.svg);";
     }
+    return esc_url($thumbnail);
 }
 
 /////////////////////////////
@@ -220,11 +221,9 @@ function get_child_pages($id, $thumbnail) {
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
             <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <p class="child-card__title"><?php echo $child->post_title; ?></p>
-                <?php if ($thumbnail) : ?>
-                <p class="child-card__image"><?php echo get_the_post_thumbnail($child->ID, 'medium'); ?></p>
-                <?php endif; ?>
-                <p class="child-card__text"><?php echo $child->post_excerpt; ?></p>
+                <div class="child-card__image"><img src="<?php echo esc_url(PostThumbnailUrl($child->ID, 'medium')); ?>" alt=""></div>
+                <div class="child-card__title"><?php echo $child->post_title; ?></div>
+                <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
             </a>
         </div>
     <?php }

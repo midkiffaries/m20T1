@@ -171,7 +171,7 @@ function custom_comment_style($comment, $args, $depth) {
                     </figure>
                 </span>
                 <span class="comment-author" rel="author"><?php printf(__('%s'), get_comment_author()); ?></span>
-                <span class="comment-metadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get the link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time></span>
+                <span class="comment-metadata"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get the link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time></span>
                 <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), ' ', ' ' ); ?></span> 
 			</header>
             <?php if ($comment->comment_approved == '0') : ?>
@@ -186,17 +186,20 @@ function custom_comment_style($comment, $args, $depth) {
 
 // Pagination on the index/archive/search pages
 function blog_post_pagination($type) {
-    previous_posts_link('&#x276E; Previous ' . get_option('posts_per_page') . ' ' . $type, 0); // Right
-    next_posts_link('Next ' . get_option('posts_per_page') . ' ' . $type . ' &#x276F;', 0); // Left
+    previous_posts_link("&#x276E; Previous " . get_option('posts_per_page') . " " . $type, 0); // << Left Side
+    next_posts_link("Next " . get_option('posts_per_page') . " " . $type . " &#x276F;", 0); // Right Side >>
 }
 
 // List social sharing links on each blog post
 function blog_post_share() {
+    $link_Facebook = "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink());
+    $link_Twitter = "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink());
+    $link_LinkedIn = "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . urlencode(get_the_title()) . "&summary=" . urlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name'));
 ?>
-    <ul class="post-social-share" aria-label="Share on social">
-        <li><a href="https://twitter.com/share?text=<?php the_title(); ?>&url=<?php esc_url(the_permalink()); ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" target="_blank">Tweet</a></li>
-        <li><a href="https://www.facebook.com/sharer.php?u=<?php esc_url(the_permalink()); ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" target="_blank">Share</a></li>
-        <li><a href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url(get_permalink()); ?>&title=<?php urlencode(the_title()); ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" target="_blank">Share</a></li>
+    <ul class="post-social-share" aria-label="Share on social media">
+        <li><a href="<?php echo $link_Twitter; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" target="_blank">Tweet</a></li>
+        <li><a href="<?php echo $link_Facebook; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" target="_blank">Share</a></li>
+        <li><a href="<?php echo $link_LinkedIn; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" target="_blank">Share</a></li>
     </ul>
 <?php
 }

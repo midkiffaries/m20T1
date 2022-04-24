@@ -9,12 +9,12 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
     <meta name="author" content="Ted Balmer | MarchTwenty.com">
-    <?php m20T1_metadata(); // Include additional meta data ?>
+    <?php m20T1_metadata(); // Include additional custom meta data ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<?php wp_body_open(); // Wordpress body includes ?>
+<?php wp_body_open(); // WordPress body includes ?>
 
 <header class="page-header" role="banner" id="top">
     <a href="#main-content" class="nav-skip">Skip to main content</a>

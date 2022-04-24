@@ -13,7 +13,7 @@
                 <div class="single-entry-category"><?php the_category(' '); ?></div>
                 <h2 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h2>
                 <div class="single-entry-metadata">
-                    <span class="single-entry-avatar"><?php printf(get_avatar(get_the_author_meta('ID'), 32)); ?></span>
+                    <span class="single-entry-avatar"><?php printf(get_avatar(get_the_author_meta('ID'), 24)); ?></span>
                     <span class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <span class="single-entry-date icon-written"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span>

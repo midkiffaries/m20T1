@@ -169,10 +169,10 @@ function HeaderFeaturedImage($id) {
     if ( is_front_page() ) { // Front-page header (None)
         $className = "noimage";
         $titleHidden = "hidden";
-    } elseif ( is_attachment() || is_404() || is_search() ) { // Attachment and 404 page headers (None)
+    } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (None)
         $className = "noimage";
         $titleHidden = "hidden";
-    } elseif ( is_home() || is_archive() ) { // Blog roll and archive
+    } elseif ( is_home() || is_archive() || is_search() ) { // Blog roll and archive
         $className = "noimage";
         $titleHidden = "hidden";
     } elseif ( is_page() ) { // Basic Page and privacy-policy header (Use Featured Image)

@@ -179,8 +179,10 @@ Page Styling
 /* Page Header Image */
 .header-blog, 
 .header-single-page {
+	/*
 	background-color: var(--brand-color-pale);
 	background-size: 1em, cover;
+	*/
 }
 
 /* Sticky posts */

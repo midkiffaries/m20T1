@@ -40,27 +40,6 @@
         </div>
     </div>
 
-<?php if (get_the_post_thumbnail()) $featuredImage = ' style="background-image:url(' . get_template_directory_uri() . '/assets/images/grain-light.png),url(' . get_the_post_thumbnail_url(get_the_ID(),'full') . ')"'; // Set Header background image ?>
-
-<?php if ( is_front_page()) : // Front-page header (None) ?>
-    <div class="header-homepage">
-        <h2 class="page-title hidden" itemprop="title"><?php the_title(); ?></h2>
-    </div>
-
-<?php elseif ( is_attachment() || is_404() ) : // Attachment and 404 page headers (None) ?>
-    <div class="header-noimage"></div>
-
-<?php elseif ( is_page() ) : // Basic Page and privacy-policy header (Use Featured Image) ?>
-    <div class="header-single-page bg-parallax" data-rate="12"<?php echo $featuredImage; ?>>
-        <h2 class="page-title hidden" itemprop="title"><?php the_title(); ?></h2>
-    </div>
-
-<?php elseif ( is_single() ) : // Single blog post (Use Featured Image) ?>
-    <div class="header-single-post bg-parallax" data-rate="12"<?php echo $featuredImage; ?>></div>
-
-<?php else : // Blog Page, search page and archives header (Use default Image) ?>
-    <div class="header-blog bg-parallax" data-rate="12"></div>
-
-<?php endif; ?>
+    <?php HeaderFeaturedImage(get_the_ID()); // Display featured image in background ?>
 
 </header>

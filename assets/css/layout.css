@@ -312,9 +312,10 @@ Main site layout
 .header-blog {
 	height: 14em;
 	background-color: #ddd;
-	background-image: url(../images/grain-light.png), url(../images/header-blank.svg);
+	/*
 	background-position: 0 0, 50% 0;
-	background-size: cover;
+	background-size: 1em, cover;
+	*/
 	overflow: hidden;
 	position: relative;
 }

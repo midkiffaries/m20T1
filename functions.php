@@ -154,6 +154,46 @@ function PostThumbnailUrl($id, $size) {
     return esc_url($thumbnail);
 }
 
+// Display the header image
+function HeaderFeaturedImage($id) {
+    // Get the featured image if exists or fallback to black header
+    if (has_post_thumbnail($id)) {
+        $featuredImage = esc_url(get_the_post_thumbnail_url($id, 'full'));
+    } else {
+        $featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
+    }
+
+    // Add the Overlay image
+    $overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
+
+    if ( is_front_page() ) { // Front-page header (None)
+        $className = "noimage";
+        $titleHidden = "hidden";
+    } elseif ( is_attachment() || is_404() || is_search() ) { // Attachment and 404 page headers (None)
+        $className = "noimage";
+        $titleHidden = "hidden";
+    } elseif ( is_home() || is_archive() ) { // Blog roll and archive
+        $className = "noimage";
+        $titleHidden = "hidden";
+    } elseif ( is_page() ) { // Basic Page and privacy-policy header (Use Featured Image)
+        $className = "single-page";
+        $titleHidden = "hidden";
+    } elseif ( is_single() ) { // Single blog post (Use Featured Image)
+        $className = "single-post";
+        $titleHidden = "hidden";
+    } else { // Blog Page, search page and archives header (Use default Image)
+        $className = "blog";
+        $titleHidden = "hidden";
+    }
+
+    ?>
+        <div class="header-<?php echo $className; ?> bg-parallax" data-rate="12" style="background-image:url(<?php echo $featuredImage; ?>);">
+            <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
+        </div>
+    <?php
+}
+
+
 /////////////////////////////
 // WordPress Functions
 /////////////////////////////

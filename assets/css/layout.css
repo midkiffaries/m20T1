@@ -298,7 +298,7 @@ Main site layout
 
 /* No header image on homepage */
 .header-homepage {
-	height: 2em;
+	height: 3em;
 }
 
 /* No header image attachment and 404 pages */

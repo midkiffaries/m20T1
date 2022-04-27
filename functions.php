@@ -145,49 +145,55 @@ function shorten_the_content($post) {
 
 // Get the posts thumbnail use fallback if none available (thumbnail, medium, medium_large, large, full)
 function PostThumbnailUrl($id, $size) {
-    // Get page featured image
-    if (has_post_thumbnail($id)) {
+    if (has_post_thumbnail($id)) { // Get the featured image if exists or fallback to blank image
         $thumbnail = get_the_post_thumbnail_url($id, $size);
     } else { // Use default image
-        $thumbnail = get_template_directory_uri() . "/assets/images/featured-blank.svg);";
+        $thumbnail = get_template_directory_uri() . '/assets/images/featured-blank.svg';
     }
     return esc_url($thumbnail);
 }
 
 // Display the header image
 function HeaderFeaturedImage($id) {
-    // Get the featured image if exists or fallback to black header
-    if (has_post_thumbnail($id)) {
-        $featuredImage = esc_url(get_the_post_thumbnail_url($id, 'full'));
+    // Type of page
+    if ( is_front_page() ) { // Front-page header (None)
+        $className = "homepage";
+        $titleHidden = "hidden";
+        $hasFeaturedImage = false;
+    } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (None)
+        $className = "noimage";
+        $titleHidden = "hidden";
+        $hasFeaturedImage = false;
+    } elseif ( is_page() ) { // Basic Page and privacy-policy header (Use Featured Image)
+        $className = "single-page";
+        $titleHidden = "hidden";
+        $hasFeaturedImage = true;
+    } elseif ( is_single() ) { // Single blog post (Use Featured Image)
+        $className = "single-post";
+        $titleHidden = "hidden";
+        $hasFeaturedImage = true;
+    } else { // Blog Page, search page and archives header (Use default Image)
+        $className = "blog";
+        $titleHidden = "hidden";
+        $hasFeaturedImage = false;
+    }
+
+    // Get the featured image if exists or fallback to blank image
+    if ($hasFeaturedImage) {
+        if (has_post_thumbnail($id)) { // Use featured image
+            $featuredImage = esc_url(get_the_post_thumbnail_url($id, 'full'));
+        } else { // Use fallback
+            $featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
+        }
     } else {
-        $featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
+        //$featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
     }
 
     // Add the Overlay image
     $overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
 
-    if ( is_front_page() ) { // Front-page header (None)
-        $className = "noimage";
-        $titleHidden = "hidden";
-    } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (None)
-        $className = "noimage";
-        $titleHidden = "hidden";
-    } elseif ( is_home() || is_archive() || is_search() ) { // Blog roll and archive
-        $className = "noimage";
-        $titleHidden = "hidden";
-    } elseif ( is_page() ) { // Basic Page and privacy-policy header (Use Featured Image)
-        $className = "single-page";
-        $titleHidden = "hidden";
-    } elseif ( is_single() ) { // Single blog post (Use Featured Image)
-        $className = "single-post";
-        $titleHidden = "hidden";
-    } else { // Blog Page, search page and archives header (Use default Image)
-        $className = "blog";
-        $titleHidden = "hidden";
-    }
-
     ?>
-        <div class="header-<?php echo $className; ?> bg-parallax" data-rate="12" style="background-image:url(<?php echo $featuredImage; ?>);">
+        <div class="bg-parallax header-<?php echo $className; ?>" data-rate="12" style="background-image:url(<?php echo $featuredImage; ?>);">
             <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
         </div>
     <?php

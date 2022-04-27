@@ -53,11 +53,11 @@
         <section class="widget widget_block widget-singlepost" aria-label="Page Widgets">
             <?php dynamic_sidebar( 'singlepost' ); // Single Blog Post Sidebar ?>
         </section>
-
-        <section class="widget widget_block widget-comments" aria-label="Article Comments">
-            <?php comments_template(); // Display this posts comments ?>
-        </section>
     </aside>
+
+    <section class="single-post-comments" aria-label="Article Comments">
+        <?php comments_template(); // Display the comments for this post ?>
+    </section>
 
     <?php endwhile; else : // If post doesn't exist ?>
 

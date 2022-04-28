@@ -19,7 +19,7 @@
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" <?php //if(is_sticky( get_the_ID() )) : // If sticky post ?>Xstyle="background: linear-gradient(32deg, rgba(232,232,232,1) 10%, rgba(187,187,187,1) 40%, rgba(255,255,255,0.25) 60%), url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>) no-repeat right top;"<?php //endif; ?> >
             <div class="post-container">
                 <header class="entry-header">
-                    <div class="entry-thumbnail" style="background-image: url(<?php echo PostThumbnailUrl(get_the_ID(), 'large'); ?>);">
+                    <div class="entry-wide-thumbnail" style="background-image:url(<?php echo FeaturedImageURL(get_the_ID(), 'large', '/assets/images/featured-blank.svg'); ?>);">
                         <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
                     </div>
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -29,7 +29,7 @@
                         <span class="entry-comments"><a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
-                <div class="entry-content <?php echo ResizeFontClass($post->post_content); ?>">
+                <div class="entry-content">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">

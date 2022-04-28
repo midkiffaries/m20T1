@@ -596,13 +596,25 @@ Main site layout
 	text-decoration: none;
 }
 
-.entry-thumbnail {
+.entry-wide-thumbnail {
 	width: 100%;
 	height: 8rem;
 	border-radius: 0.2rem;
 	background-size: cover;
 	background-position: center center;
 	background-color: #eee;
+}
+
+.entry-square-thumbnail {
+	width: 150px;
+	height: 150px;
+	border-radius: 0.3rem;
+	background-size: cover;
+	background-position: center center;
+	background-color: #eee;
+	margin: 0.7em;
+	display: block;
+	float: right;
 }
 
 .entry-sticky {

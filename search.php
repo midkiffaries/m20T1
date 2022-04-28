@@ -25,13 +25,12 @@
                     <h3 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
                     <div class="entry-info">
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-date icon-written"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
+                        <span class="entry-date icon-written"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time>%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span></span>
+                        <span class="entry-comments"><span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
                     </div>
                 </header>
                 <div class="entry-content entry-defaultfont">
-                    <div class="wp-block-image">
-                        <figure class="alignright is-resized"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
-                    </div>
+                    <div class="entry-square-thumbnail" style="background-image:url(<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', '/assets/images/featured-blank.svg'); ?>);"></div>
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">

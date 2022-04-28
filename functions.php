@@ -143,18 +143,21 @@ function shorten_the_content($post) {
     return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">[...]</span>';
 }
 
-// Get the posts thumbnail use fallback if none available (thumbnail, medium, medium_large, large, full)
-function PostThumbnailUrl($id, $size) {
-    if (has_post_thumbnail($id)) { // Get the featured image if exists or fallback to blank image
-        $thumbnail = get_the_post_thumbnail_url($id, $size);
-    } else { // Use default image
-        $thumbnail = get_template_directory_uri() . '/assets/images/featured-blank.svg';
+// Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
+function FeaturedImageURL($id, $size, $url) {
+    if (has_post_thumbnail($id)) { // Use featured image url
+        $featuredImage = get_the_post_thumbnail_url($id, $size);
+    } else { // Use fallback image url
+        $featuredImage = get_template_directory_uri() . $url;
     }
-    return esc_url($thumbnail);
+    return esc_url($featuredImage);
 }
+
+// FeaturedImageURL
 
 // Display the header image
 function HeaderFeaturedImage($id) {
+
     // Type of page
     if ( is_front_page() ) { // Front-page header (None)
         $className = "homepage";
@@ -180,16 +183,12 @@ function HeaderFeaturedImage($id) {
 
     // Get the featured image if exists or fallback to blank image
     if ($hasFeaturedImage) {
-        if (has_post_thumbnail($id)) { // Use featured image
-            $featuredImage = esc_url(get_the_post_thumbnail_url($id, 'full'));
-        } else { // Use fallback
-            $featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
-        }
+        $featuredImage = FeaturedImageURL($id, 'full', '/assets/images/header-blank.svg');
     } else {
         //$featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
     }
 
-    // Add the Overlay image
+    // Include the Overlay image
     $overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
 
     ?>
@@ -270,7 +269,7 @@ function get_child_pages($id, $thumbnail) {
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
             <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?php echo esc_url(PostThumbnailUrl($child->ID, 'medium')); ?>" alt=""></div>
+                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', '/assets/images/featured-blank.svg')); ?>" alt=""></div>
                 <div class="child-card__title"><?php echo $child->post_title; ?></div>
                 <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
             </a>

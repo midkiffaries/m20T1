@@ -176,7 +176,7 @@ function HeaderFeaturedImage($id) {
         $titleHidden = "hidden";
         $hasFeaturedImage = true;
     } else { // Blog Page, search page and archives header (Use default Image)
-        $className = "blog";
+        $className = "noimage";
         $titleHidden = "hidden";
         $hasFeaturedImage = false;
     }
@@ -184,9 +184,9 @@ function HeaderFeaturedImage($id) {
     // Get the featured image if exists or fallback to blank image
     if ($hasFeaturedImage) {
         $featuredImage = FeaturedImageURL($id, 'full', '/assets/images/header-blank.svg');
-    } else {
+    } //else {
         //$featuredImage = esc_url(get_template_directory_uri() . '/assets/images/header-blank.svg');
-    }
+    //}
 
     // Include the Overlay image
     $overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');

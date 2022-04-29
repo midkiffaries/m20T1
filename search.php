@@ -3,8 +3,6 @@
 <main class="page-main page-search" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
-
     <?php if (have_posts() && get_search_query()) : // Search results ?>
 
     <section class="search-page-form" id="search-page">
@@ -21,17 +19,18 @@
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">
-                    <div class="entry-type"><b><?php echo get_post_type(); ?></b> - <small><?php the_permalink(); ?></small></div>
                     <h3 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
                     <div class="entry-info">
+                        <span class="entry-type"><?php echo get_post_type(); ?></span>
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-date icon-written"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time>%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span></span>
-                        <span class="entry-comments"><span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
+                        <span class="entry-comments hidden"><span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
                     </div>
                 </header>
                 <div class="entry-content entry-defaultfont">
                     <div class="entry-square-thumbnail" style="background-image:url(<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', '/assets/images/featured-blank.svg'); ?>);"></div>
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
+                    <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Read more...</a></p>
                 </div>
                 <footer class="entry-footer hidden">
                     <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>

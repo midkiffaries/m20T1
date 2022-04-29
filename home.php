@@ -3,8 +3,6 @@
 <main class="page-main page-blog-posts" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
-
     <section class="blog-page-title" aria-label="Blog Info">
         <div class="blog-page-text hidden">
             <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>

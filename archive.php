@@ -3,8 +3,6 @@
 <main class="page-main page-archive" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
-
     <?php $curauth = $wp_query->get_queried_object(); ?>
 
     <section class="archive-header" id="archive-page">

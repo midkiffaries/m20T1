@@ -227,10 +227,7 @@ Wordpress Plugin Style
 	margin: 0;
 	padding: 0;
 	border: 0;
-	background: transparent;
 	text-indent: 0;
-	color: #666;
-	font-size: 0.9em;
 }
 
 .breadcrumbs .trail-items {
@@ -254,7 +251,6 @@ Wordpress Plugin Style
 
 .breadcrumbs .trail-items li a:hover {
 	text-decoration: none;
-	color: #000;
 }
 
 
@@ -340,6 +336,12 @@ Main site layout
 	position: absolute;
 	top: 0.5em;
 	right: 1em;
+}
+
+.header-breadcrumbs {
+	margin-left: 5em;
+	font-size: 0.9rem;
+	opacity: 0.6;
 }
 
 .header-widgets {
@@ -895,16 +897,11 @@ Page Specific Styling
 .search-results .entry-type {
 	background: rgba(100,100,100,0.2);
 	padding: 3px 8px;
-	border-radius: 3px;
+	border-radius: 0.2em;
 	letter-spacing: 0.08em;
-}
-
-.search-results .entry-type {
-	opacity: 0.9;
-}
-
-.search-results .entry-type b {
 	text-transform: uppercase;
+	opacity: 0.9;
+	margin-right: 0.5em;
 }
 
 /* 404 Error Page */

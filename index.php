@@ -3,8 +3,6 @@
 <main class="page-main page-index" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
-
     <?php if (have_posts()) : while (have_posts()) : the_post(); // Display page ?>
 
         <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">

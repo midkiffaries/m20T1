@@ -3,8 +3,6 @@
 <main class="page-main page-error" id="main-content" role="main">
     <div class="page-content width-full">
 
-    <?php breadcrumb_trail(); // Show breadcrumb trail ?>
-
     <article class="page-404 page type-page not-found status-publish" id="page-404" name="page-404" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="page-404-container">
             <div class="page-404-image">

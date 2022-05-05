@@ -36,7 +36,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 
 
 /************************ 
-Set Up Fonts
+Global Fonts
 ************************/
 
 body {
@@ -177,23 +177,6 @@ button:active,
 Page Styling
 ************************/
 
-/* Page Header Image */
-.header-blog, 
-.header-single-page {
-	/*
-	background-color: var(--brand-color-pale);
-	background-size: 1em, cover;
-	*/
-}
-
-/* Sticky posts */
-/*
-.post.sticky {
-	background: rgba(120,120,120,0.2);
-	padding: 0.8em 0.6em !important;
-	border-radius: 0.4em;
-}
-*/
 /* Page Footer */
 .footer-widgets ul {
 	text-align: center;
@@ -203,7 +186,7 @@ Page Styling
 
 .footer-widgets ul li {
 	display: inline-block;
-	margin: auto 3px;
+	margin: auto 0.2em;
 }
 
 .footer-widgets .wp-block-social-links svg {
@@ -211,9 +194,33 @@ Page Styling
 }
 
 
+/************************ 
+Button Styling
+************************/
+
+/* Button Icons */
+.square-button {
+	padding: 1em;
+	margin: 0 1px;
+	border: 0;
+	background-color: transparent !important;
+	background-position: 50% 50%;
+	background-size: 1.8em;
+	background-repeat: no-repeat;
+}
+
+.menu-email {
+	background-image: var(--icon-mail);
+}
+
+.menu-search {
+	background-size: 1.5em;
+	background-image: var(--icon-search);
+}
+
 
 /************************ 
-WordPress Plugins 
+3rd Party Plugins 
 ************************/
 
 /* Secondary Title Plugin (page subtitle) */
@@ -244,7 +251,7 @@ nav .page-subtitle {
 	border: none;
 	font-size: 1.5em;
 	width: 100%;
-	padding: 8px 0.5em;
+	padding: 0.4em 0.5em;
 	margin: 0;
 }
 
@@ -254,11 +261,9 @@ nav .page-subtitle {
 }
 
 .c-accordion__title--button {
-	
 }
 
 .c-accordion__title:hover {
-
 }
 
 .c-accordion__title:focus {

@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
 <main class="page-main page-index" id="main-content" role="main">
@@ -10,7 +11,6 @@
                 <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
                 <div class="the-content">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-                
                 </div>
             </div>
         </article>

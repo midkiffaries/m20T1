@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-widgets">

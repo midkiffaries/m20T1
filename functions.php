@@ -3,6 +3,8 @@
 // PHP WordPress Functions
 /////////////////////////////
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+
 //error_reporting(E_ALL);
 
 /////////////////////////////
@@ -134,6 +136,11 @@ function m20T1_metadata() {
     <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
     <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <?php
+}
+
+// Display a separator inline in the post metadata
+function PostSeparator() {
+    return "&nbsp;";
 }
 
 // Shorten the_content in place of using the_excerpt
@@ -370,20 +377,27 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'customize-selective-refresh-widgets' );
 
+    // Custom background and header support
+    add_theme_support( 'custom-header', array( 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true, ) );
+    add_theme_support( 'custom-background', array( 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll', ) );
+
     // Custom Logo Support
-    add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'header-text' => array( 'site-title', 'site-description' ), ) );
+    add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => array( 'site-title', 'site-description' ), ) );
     
     // HTML5 Support
-    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
     add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
     
     // Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
+
+
 });
 
 // Add elements to WordPress
 add_action('wp_enqueue_scripts', function(){
+    // Get version from style.css
     $version = wp_get_theme()->get('Version');
     
     // Add Javascript to the bottom of the page body
@@ -406,6 +420,9 @@ add_action('wp_enqueue_scripts', function(){
 
 // Set featured image size
 the_post_thumbnail( 'medium' );
+
+// Enable the use of shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
 
 // Set the excerpt length
 add_filter('excerpt_length', function(){
@@ -433,5 +450,3 @@ remove_action( 'wp_head', 'feed_links', 2 );
 
 // Insert into 'wp-config.php' after $table_prefix
 //define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions
-
-?>

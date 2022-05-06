@@ -1,7 +1,4 @@
-<?php 
-// Check to make sure comments.php is not being loaded externally
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) die('Please do not load this page directly.');
-?>
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <?php if ( post_password_required() ) : // If comments are password protected ?>
 <section class="comments-closed" role="comments" id="Comments">

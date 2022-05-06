@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
 <main class="page-main page-simple page-privacy-policy" id="main-content" role="main">

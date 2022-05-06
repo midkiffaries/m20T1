@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Breadcrumb Trail - A breadcrumb menu script for WordPress.
  *

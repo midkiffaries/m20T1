@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+
 <?php $unique_id = wp_unique_id( 'search-form-' ); ?>
 <section class="search-block" id="<?php echo esc_attr($unique_id); ?>" aria-label="Search Form">
     <form method="get" class="search-form" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">

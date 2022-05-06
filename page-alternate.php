@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
 <main class="page-main page-landing page-<?php preg_replace('/\s+/', '-', the_title()); ?>" id="main-content" role="main">

@@ -15,6 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 include 'assets/plugins/breadcrumbs.php';
 
 /////////////////////////////
+// Constants
+/////////////////////////////
+
+// Blank fallback image
+define('BLANK_IMAGE', '/assets/images/featured-blank.svg');
+// Blank hero image
+define('BLANK_HERO', '/assets/images/header-blank.svg');
+// Separator inline in the post metadata
+define('POST_SEPARATOR', '&nbsp;|&nbsp;');
+
+/////////////////////////////
 // Generic Functions
 /////////////////////////////
 
@@ -34,7 +45,7 @@ function numberToRoman($variable) {
 function SearchCount($query) {
     $count = 0;
     $search = new WP_Query("s=$query & showposts=-1");
-    if($search->have_posts()) : while($search->have_posts()) : $search->the_post();	
+    if ($search->have_posts()) : while ($search->have_posts()) : $search->the_post();	
         $count++;
     endwhile; endif;
     return $count;
@@ -138,11 +149,6 @@ function m20T1_metadata() {
 <?php
 }
 
-// Display a separator inline in the post metadata
-function PostSeparator() {
-    return "&nbsp;";
-}
-
 // Shorten the_content in place of using the_excerpt
 function shorten_the_content($post) {
     $length = 350; // Number of characters
@@ -155,16 +161,30 @@ function FeaturedImageURL($id, $size, $url) {
     if (has_post_thumbnail($id)) { // Use featured image url
         $featuredImage = get_the_post_thumbnail_url($id, $size);
     } else { // Use fallback image url
-        $featuredImage = get_template_directory_uri() . $url;
+        //$featuredImage = get_template_directory_uri() . $url;
+        $featuredImage = GetFirstImage();
     }
     return esc_url($featuredImage);
+}
+
+// Get the first image from a post or page
+function GetFirstImage() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+    if (empty($first_img)) {
+        $first_img = get_template_directory_uri() . BLANK_IMAGE;
+    }
+    return $first_img;
 }
 
 // FeaturedImageURL
 
 // Display the header image
 function HeaderFeaturedImage($id) {
-
     // Type of page
     if ( is_front_page() ) { // Front-page header (None)
         $className = "homepage";
@@ -190,7 +210,7 @@ function HeaderFeaturedImage($id) {
 
     // Get the featured image if exists or fallback to blank image
     if ($hasFeaturedImage) {
-        $featuredImage = FeaturedImageURL($id, 'full', '/assets/images/header-blank.svg');
+        $featuredImage = FeaturedImageURL($id, 'full', BLANK_HERO);
     }
 
     // Include the Overlay image
@@ -274,7 +294,7 @@ function get_child_pages($id, $thumbnail) {
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
             <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', '/assets/images/featured-blank.svg')); ?>" alt=""></div>
+                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', BLANK_IMAGE)); ?>" alt=""></div>
                 <div class="child-card__title"><?php echo $child->post_title; ?></div>
                 <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
             </a>

@@ -20,7 +20,7 @@
     <?php endwhile; endif; ?>
 
         <aside id="privacy-policy-widgets" class="privacy-policy-sidebar privacy-policy-widgets">
-            <?php dynamic_sidebar( 'singlepost' ); // Page Sidebar ?>
+            <?php dynamic_sidebar( 'singlepage' ); // Page Sidebar ?>
 
             <div class="widget child-page-widget">
                 <?php get_child_pages(get_the_ID(), false); // Display the children of this page ?>

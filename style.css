@@ -16,6 +16,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 
 /* Variables */
 :root {
+	accent-color: #40A5FF;
+
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
 	--brand-color-dark: #205380;
@@ -29,9 +31,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 	--button-base: var(--brand-color);
 	--button-text: #fff;
 
-	--font-main: 'Montserrat', sans-serif;
+	--font-primary: 'Montserrat', sans-serif;
+	--font-secondary: 'Caveat Brush', cursive;
 	--font-serif: 'Georgia', serif;
-	--font-alt: 'Caveat Brush', cursive;
 }
 
 
@@ -40,14 +42,14 @@ Global Fonts
 ************************/
 
 body {
-	font-family: var(--font-main);
+	font-family: var(--font-primary);
 	text-rendering: auto;
 	font-weight: 400;
 	font-display: swap;
 }
 
 .font-brush {
-	font-family: var(--font-alt);
+	font-family: var(--font-secondary);
 	font-display: swap;
 }
 

@@ -663,6 +663,10 @@ Main site layout
 	text-decoration: underline solid;
 }
 
+.entry-readmore {
+	margin-top: -0.8em;
+}
+
 /* Enlarge <p> font-size in short blog posts */
 .entry-largefont p {
 	font-size: 120%;
@@ -710,6 +714,10 @@ Main site layout
 
 .post-social-share .linkedin-share {
     background-color: #0077b5;
+}
+
+.post-social-share .pinterest-share {
+    background-color: #e60023;
 }
 
 .post-social-share li a::before {
@@ -918,7 +926,7 @@ Page Specific Styling
 .page-image .attachment img {
 	background-color: rgba(0,0,0,0.08);
 	border: 1px solid #fff;
-	box-shadow: 0 10px 10px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
+	box-shadow: 0 7px 9px -6px rgba(0,0,0,0.4), 0 5px 4px -2px rgba(0,0,0,0.1);
 }
 
 .page-image .image-info {
@@ -931,6 +939,7 @@ Page Specific Styling
 }
 
 .page-image .image-caption {
+	margin-top: 0.4em;
 	font-size: 0.8em;
 	opacity: 0.8;
 }
@@ -939,6 +948,17 @@ Page Specific Styling
 	text-align: center;
 	margin-bottom: -1em;
 	opacity: 0.9;
+}
+
+.page-image .image-share ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.page-image .image-share ul li {
+	display: inline-block;
+	margin: 1em 0.1em;
 }
 
 /* Comment Section */

@@ -20,7 +20,8 @@
                     <span class="image-date">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                 </p>
-                <p class="image-download"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the full media file</a></p>
+                <div class="image-share"><?php blog_post_share(); ?></div>
+                <div class="image-download"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the full media file</a></div>
             </div>
         </article>
 
@@ -36,7 +37,7 @@
         </section>
 
         <section class="image-copyright">
-            <p><small><i>Images may be subject to copyright. <a href="https://www.copyright.gov" target="_blank">Learn More</a></i></small></p>
+            <p><small><i>Media and images may be subject to copyright. <a href="https://www.copyright.gov" rel="noopener noreferrer" target="_blank">Learn More</a></i></small></p>
         </section>
 
     </div>

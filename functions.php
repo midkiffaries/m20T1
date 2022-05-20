@@ -157,12 +157,15 @@ function shorten_the_content($post) {
 }
 
 // Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
-function FeaturedImageURL($id, $size, $url) {
+function FeaturedImageURL($id, $size, $url, $isHero) {
     if (has_post_thumbnail($id)) { // Use featured image url
         $featuredImage = get_the_post_thumbnail_url($id, $size);
     } else { // Use fallback image url
-        //$featuredImage = get_template_directory_uri() . $url;
-        $featuredImage = GetFirstImage();
+        if ($isHero) { // If image is the hero/header
+            $featuredImage = get_template_directory_uri() . $url;
+        } else { // Get first image in post
+            $featuredImage = GetFirstImage();
+        }
     }
     return esc_url($featuredImage);
 }
@@ -175,13 +178,9 @@ function GetFirstImage() {
     ob_end_clean();
     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
     $first_img = $matches[1][0];
-    if (empty($first_img)) {
-        $first_img = get_template_directory_uri() . BLANK_IMAGE;
-    }
+    if (empty($first_img)) $first_img = get_template_directory_uri() . BLANK_IMAGE;
     return $first_img;
 }
-
-// FeaturedImageURL
 
 // Display the header image
 function HeaderFeaturedImage($id) {
@@ -210,7 +209,7 @@ function HeaderFeaturedImage($id) {
 
     // Get the featured image if exists or fallback to blank image
     if ($hasFeaturedImage) {
-        $featuredImage = FeaturedImageURL($id, 'full', BLANK_HERO);
+        $featuredImage = FeaturedImageURL($id, 'full', BLANK_HERO, 1);
     }
 
     // Include the Overlay image
@@ -262,14 +261,18 @@ function blog_post_pagination($type) {
 
 // List social sharing links on each blog post
 function blog_post_share() {
+    // Social media links
     $link_Facebook = "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink());
     $link_Twitter = "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink());
     $link_LinkedIn = "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . urlencode(get_the_title()) . "&summary=" . urlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name'));
+    $link_Pinterest = "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(get_the_title()) . "&description=" . urlencode(get_the_excerpt());
+    $link_Reddit = "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink());
 ?>
     <ul class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?php echo $link_Twitter; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" target="_blank">Tweet</a></li>
-        <li><a href="<?php echo $link_Facebook; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" target="_blank">Share</a></li>
-        <li><a href="<?php echo $link_LinkedIn; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" target="_blank">Share</a></li>
+        <li><a href="<?php echo $link_Twitter; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
+        <li><a href="<?php echo $link_Facebook; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $link_LinkedIn; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <!--li><a href="<?php echo $link_Pinterest; ?>" class="icon-pinterest pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin</a></li-->
     </ul>
 <?php
 }
@@ -294,7 +297,7 @@ function get_child_pages($id, $thumbnail) {
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
             <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', BLANK_IMAGE)); ?>" alt=""></div>
+                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', BLANK_IMAGE, 0)); ?>" alt=""></div>
                 <div class="child-card__title"><?php echo $child->post_title; ?></div>
                 <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
             </a>
@@ -364,21 +367,31 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Page Footer Widgets
+    // Page Widgets - bottom of the content
     register_sidebar(array(
-        'id'            => 'footer',
-        'name'          => __( 'Footer Widgets', 'm20T1' ),
-        'description'   => __( 'The page footer widgets.' ),
-        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</nav>',
-        'before_title'  => '<p class="widget-title">',
-        'after_title'   => '</p>',
+        'id'            => 'singlepage',
+        'name'          => __( 'Page Sidebar', 'm20T1' ),
+        'description'   => __( 'Widgets below a single web page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
     ));
     // Page Header Widgets
     register_sidebar(array(
         'id'            => 'header',
         'name'          => __( 'Header Widgets', 'm20T1' ),
         'description'   => __( 'The page header widgets.' ),
+        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</nav>',
+        'before_title'  => '<p class="widget-title">',
+        'after_title'   => '</p>',
+    ));
+    // Page Footer Widgets
+    register_sidebar(array(
+        'id'            => 'footer',
+        'name'          => __( 'Footer Widgets', 'm20T1' ),
+        'description'   => __( 'The page footer widgets.' ),
         'before_widget' => '<nav id="%1$s" class="widget %2$s">',
         'after_widget'  => '</nav>',
         'before_title'  => '<p class="widget-title">',

@@ -213,7 +213,24 @@ body.dark-mode,
 
 
 /************************ 
-Wordpress Plugin Style
+WordPress Styling
+*************************/
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	text-align: center;
+	margin: auto;
+}
+
+/************************ 
+WordPress Plugin Style
 *************************/
 
 /* Breadcrumbs Plugin Style */

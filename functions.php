@@ -424,8 +424,6 @@ add_action( 'after_setup_theme', function(){
     // Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
-
-
 });
 
 // Add elements to WordPress

@@ -7,7 +7,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right">
 
-- Compatible with WordPress 5.9+
+- Compatible with WordPress 6.0+
 - Built in dark mode switch
 - Support for theme.json
 - Built in contact email modal

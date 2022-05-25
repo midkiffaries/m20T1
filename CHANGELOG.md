@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.0 Alpha 7 (May 4, 2022)
+
+* More clean up, readjustments and tidying up.
+
 ### 1.0 Alpha 6 (February 11, 2022)
 
 * More clean up and readjustments.

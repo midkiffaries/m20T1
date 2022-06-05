@@ -24,6 +24,8 @@ define('BLANK_IMAGE', '/assets/images/featured-blank.svg');
 define('BLANK_HERO', '/assets/images/header-blank.svg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
+// Contact Form 7 - Form Shortcode 
+define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
 
 /////////////////////////////
 // Generic Functions
@@ -68,7 +70,23 @@ function GetPageContent($id) {
 }
 
 /////////////////////////////
-// SEO & Header Functions
+// Plugin Functions
+/////////////////////////////
+
+// Display contact section and shortcode generated contact form
+function ContactForm() {
+?>
+<section class="contact-form" id="ContactForm">
+    <div>
+        <h3>Contact Me</h3>
+        <?php echo do_shortcode(FORM_SHORTCODE); ?>
+    </div>
+</section>
+<?php
+}
+
+/////////////////////////////
+// SEO and Header Functions
 /////////////////////////////
 
 // Check if user selected a custom logo
@@ -156,6 +174,10 @@ function shorten_the_content($post) {
     return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">[...]</span>';
 }
 
+/////////////////////////////
+// Featured Image Fallbacks
+/////////////////////////////
+
 // Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
 function FeaturedImageURL($id, $size, $url, $isHero) {
     if (has_post_thumbnail($id)) { // Use featured image url
@@ -213,10 +235,10 @@ function HeaderFeaturedImage($id) {
     }
 
     // Include the Overlay image
-    $overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
+    //$overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
 
     ?>
-        <div class="bg-parallax header-<?php echo $className; ?>" data-rate="12" style="background-image:url(<?php echo $featuredImage; ?>);">
+        <div class="hero-image header-<?php echo $className; ?> bg-parallax" data-rate="12" style="background-image:url(<?php echo $featuredImage; ?>);">
             <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
         </div>
     <?php
@@ -453,6 +475,7 @@ add_action('wp_enqueue_scripts', function(){
 the_post_thumbnail( 'medium' );
 
 // Enable the use of shortcodes in text widgets.
+add_filter( 'widget_text', 'shortcode_unautop' );
 add_filter( 'widget_text', 'do_shortcode' );
 
 // Set the excerpt length

@@ -1,5 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
+<?php ContactForm(); // Display Contact form ?>
+
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-widgets">
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>

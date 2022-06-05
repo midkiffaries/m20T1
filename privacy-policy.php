@@ -1,3 +1,4 @@
+<?php /* Template Name: Privacy Policy Page */ ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 

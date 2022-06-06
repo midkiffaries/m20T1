@@ -271,6 +271,38 @@ WordPress Plugin Style
 	text-decoration: none;
 }
 
+/* Contact Form Styling */
+.contact-form h3 {
+    margin: 0;
+}
+
+.contact-form fieldset {
+	border: none;
+	padding: 0;
+}
+
+.contact-form label {
+	display: block;
+}
+
+.contact-form [type="text"],
+.contact-form [type="email"],
+.contact-form textarea {
+	width: 100%;
+}
+
+.contact-form textarea {
+	height: 10em;
+	max-height: 20em;
+}
+
+.contact-form [type="submit"] {
+	font-size: 1.2em;
+	padding: 0.5em 1em;
+	border-color: transparent;
+	color: #fff;
+}
+
 
 /************************ 
 Main site layout

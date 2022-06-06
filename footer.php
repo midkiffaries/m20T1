@@ -1,7 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
-<?php ContactForm(); // Display Contact form ?>
-
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-widgets">
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
@@ -17,6 +15,7 @@
 </footer>
 
 <?php wp_footer(); // WordPress generated data and scripts ?>
+<script type="text/javascript">const ContactModal = (`<?php ContactForm(); // Display Contact form ?>`);</script>
 
 </body>
 </html>

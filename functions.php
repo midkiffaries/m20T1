@@ -76,12 +76,9 @@ function GetPageContent($id) {
 // Display contact section and shortcode generated contact form
 function ContactForm() {
 ?>
-<section class="contact-form" id="ContactForm">
-    <div>
-        <h3>Contact Me</h3>
-        <?php echo do_shortcode(FORM_SHORTCODE); ?>
-    </div>
-</section>
+<div class="contact-form">
+    <?php echo do_shortcode(FORM_SHORTCODE); ?>
+</div>
 <?php
 }
 

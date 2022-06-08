@@ -320,6 +320,7 @@ const validateEmail = v => {
 }
 
 // Contact Form - Process email and send it
+/*
 function phpSendEmail() {
     const xhttp = new XMLHttpRequest();
 
@@ -367,7 +368,7 @@ function phpSendEmail() {
     xhttp.open("GET", `${themeUri}assets/plugins/mailman.php?${v}`, true);
     xhttp.send();
 }
-
+*/
 // Improve the behavior of certain input types
 function checkInput() {
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;

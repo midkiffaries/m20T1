@@ -21,6 +21,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
 	--brand-color-dark: #205380;
+	--secondary-color: #FF894D;
+	--tertiary-color: #FFD726;
 
 	--header-link-color: #000;
 	--body-link-color: #40A5FF;
@@ -32,7 +34,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 	--button-text: #fff;
 
 	--font-primary: 'Montserrat', sans-serif;
-	--font-secondary: 'Caveat Brush', cursive;
+	--font-secondary: 'Sansita Swashed', cursive;
+	--font-tertiary: '', sans-serif;
 	--font-serif: 'Georgia', serif;
 }
 

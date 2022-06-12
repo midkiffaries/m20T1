@@ -19,9 +19,11 @@ include 'assets/plugins/breadcrumbs.php';
 /////////////////////////////
 
 // Blank fallback image
-define('BLANK_IMAGE', '/assets/images/featured-blank.svg');
+define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg');
 // Blank hero image
-define('BLANK_HERO', '/assets/images/header-blank.svg');
+define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank.svg');
+// Default social sharing image
+define('SOCIAL_SHARE', home_url() . '/icons/social-share.jpg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
 // Contact Form 7 - Form Shortcode 
@@ -132,7 +134,7 @@ function SEO_Image($id) {
     if (has_post_thumbnail($id)) { // Use page's featured image
         $featuredImage = get_the_post_thumbnail_url($id, 'large');
     } else { // Use default image
-        $featuredImage = home_url() . "/icons/social-share.jpg";
+        $featuredImage = SOCIAL_SHARE;
     }
     return esc_url($featuredImage);
 }
@@ -181,7 +183,7 @@ function FeaturedImageURL($id, $size, $url, $isHero) {
         $featuredImage = get_the_post_thumbnail_url($id, $size);
     } else { // Use fallback image url
         if ($isHero) { // If image is the hero/header
-            $featuredImage = get_template_directory_uri() . $url;
+            $featuredImage = $url;
         } else { // Get first image in post
             $featuredImage = GetFirstImage();
         }
@@ -197,7 +199,7 @@ function GetFirstImage() {
     ob_end_clean();
     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
     $first_img = $matches[1][0];
-    if (empty($first_img)) $first_img = get_template_directory_uri() . BLANK_IMAGE;
+    if (empty($first_img)) $first_img = BLANK_IMAGE;
     return $first_img;
 }
 

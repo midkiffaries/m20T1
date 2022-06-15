@@ -78,7 +78,7 @@ function GetPageContent($id) {
 // Display contact section and shortcode generated contact form
 function ContactForm() {
 ?>
-<div class="contact-form">
+<div class="contact-form" onload="checkInput()">
     <?php echo do_shortcode(FORM_SHORTCODE); ?>
 </div>
 <?php
@@ -472,6 +472,9 @@ add_action('wp_enqueue_scripts', function(){
 
 // Set featured image size
 the_post_thumbnail( 'medium' );
+
+// Add excerpt support to pages
+add_post_type_support( 'page', 'excerpt' );
 
 // Enable the use of shortcodes in text widgets.
 add_filter( 'widget_text', 'shortcode_unautop' );

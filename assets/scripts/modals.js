@@ -380,12 +380,13 @@ function checkInput() {
             // Accept everything but spaces
             inputNum[i].onkeypress = () => event.charCode >= 33 && event.charCode <= 122;
         }
-    }	
+    }
 }
 
 
 
 // Ajax function
+/*
 function loadHtmlModal(f, id) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
@@ -394,3 +395,4 @@ function loadHtmlModal(f, id) {
     xhttp.open("GET", `${f}`, true);
     xhttp.send();
 }
+*/

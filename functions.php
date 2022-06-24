@@ -26,7 +26,7 @@ define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank
 define('SOCIAL_SHARE', home_url() . '/icons/social-share.jpg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
-// Contact Form 7 - Form Shortcode 
+// Contact Form 7 Shortcode 
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
 
 /////////////////////////////
@@ -372,7 +372,7 @@ add_action( 'widgets_init', function(){
     register_sidebar(array(
         'id'            => 'frontpage',
         'name'          => __( 'Front Page Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets on the bottom of the front page.' ),
+        'description'   => __( 'Widgets on the bottom of the front page or landing page.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
@@ -393,6 +393,16 @@ add_action( 'widgets_init', function(){
         'id'            => 'singlepage',
         'name'          => __( 'Page Sidebar', 'm20T1' ),
         'description'   => __( 'Widgets below a single web page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Privacy Policy Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'privacypolicy',
+        'name'          => __( 'Privacy Policy Sidebar', 'm20T1' ),
+        'description'   => __( 'Widgets below a the privacy policy page.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',

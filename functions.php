@@ -26,6 +26,8 @@ define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank
 define('SOCIAL_SHARE', home_url() . '/icons/social-share.jpg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
+// Read more text
+define('MORE_TEXT', '[...]');
 // Contact Form 7 Shortcode 
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
 
@@ -115,7 +117,7 @@ function SEO_Excerpt($id) {
         // Get page description from content excerpt
         if (is_single() || is_page()) { // If single blog post
             $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt($id), true));
-            $description = trim(substr($excerpt, 0, $length)) . "[...]";
+            $description = trim(substr($excerpt, 0, $length)) . MORE_TEXT;
         } else { // All other pages use site slogan
             $description = get_bloginfo('description');
         }
@@ -170,7 +172,7 @@ function m20T1_metadata() {
 function shorten_the_content($post) {
     $length = 350; // Number of characters
     $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
-    return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">[...]</span>';
+    return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
 }
 
 /////////////////////////////
@@ -498,7 +500,7 @@ add_filter('excerpt_length', function(){
 // Add a 'Continue Reading' link to excerpts
 add_filter('excerpt_more', function(){
     //return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
-    return ' <span class="entry-read-more">[...]</span>';
+    return ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
 });
 
 // Remove embed function

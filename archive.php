@@ -48,7 +48,7 @@
                     <div class="entry-wide-thumbnail" style="background-image:url(<?php echo FeaturedImageURL(get_the_ID(), 'large', '/assets/images/featured-blank.svg', 0); ?>);">
                         <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
                     </div>
-                    <h3 class="entry-title" itemprop="title"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                    <h2 class="entry-title" itemprop="title"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-info">
                         <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span> <span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>
                         <span class="entry-date"><time class="icon-written" datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time>%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span></span> <span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>
@@ -56,9 +56,6 @@
                     </div>
                 </header>
                 <div class="entry-content">
-                    <div class="wp-block-image">
-                        <figure class="alignright is-resized"><?php the_post_thumbnail( 'thumbnail' ); ?></figure>
-                    </div>
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">

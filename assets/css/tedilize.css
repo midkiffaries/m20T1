@@ -833,12 +833,7 @@ Responsive elements
 		content: " (" attr(title) ")";
 	}
 
-	[href] {
+	main [href] {
 		text-decoration: underline;
-	}
-
-	main [href^='http']::after {
-		content: " [" attr(href) "]";
-		font-size: 65%;
 	}
 }

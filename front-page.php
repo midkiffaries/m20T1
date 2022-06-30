@@ -2,7 +2,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-frontpage page-home" id="main-content" role="main">
+<main class="page-landing-page <?php echo 'page-' . strtolower(preg_replace('/\s+/', '-', get_the_title())); ?>" id="main-content" role="main">
     <div class="page-content width-max">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
@@ -21,7 +21,7 @@
     </div>
 
     <aside id="frontpage-widgets" class="page-sidebar frontpage-widgets">
-        <?php dynamic_sidebar( 'frontpage' ); // Frontpage Sidebar ?>
+        <?php dynamic_sidebar( 'frontpage' ); // Frontpage widgets ?>
 
         <div class="widget child-page-widget">
             <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>

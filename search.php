@@ -56,20 +56,25 @@
 
     <article class="search-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-            <h2 class="page-title" itemprop="title">Query Not Found</h2>
+            <h2 class="page-title" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
             <p>The search query of “<strong><?php echo esc_attr(get_search_query()); ?></strong>” came up empty.</p>
             <p>If it will make you feel better, this probably happens to Google too.</p>
-            <p><b>Care to take another shot?</b></p>
-            <?php get_search_form('search'); // Search Form ?>
         </div>
     </article>
+
+    <section class="search-page-form" id="search-page">
+        <div>
+            <p><b>Care to take another shot?</b></p>
+            <?php get_search_form('search'); // Search form ?>
+        </div>
+    </section>
 
     <?php endif; ?>
 
     </div>
 
     <aside id="sidebar-search" class="page-sidebar sidebar-search">
-        <?php dynamic_sidebar( 'primary' ); // Primary sidebar ?>
+        <?php dynamic_sidebar( 'tertiary' ); // Tertiary sidebar ?>
     </aside>
 
 </main>

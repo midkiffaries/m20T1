@@ -364,17 +364,17 @@ add_action( 'widgets_init', function(){
     register_sidebar(array(
         'id'            => 'secondary',
         'name'          => __( 'Secondary Sidebar', 'm20T1' ),
-        'description'   => __( 'Archives page sidebar widgets.' ),
+        'description'   => __( 'Archives pages sidebar widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Front page Widgets - bottom of the content
+    // Tertiary Sidebar - right side of the content
     register_sidebar(array(
-        'id'            => 'frontpage',
-        'name'          => __( 'Front Page Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets on the bottom of the front page or landing page.' ),
+        'id'            => 'tertiary',
+        'name'          => __( 'Tertiary Sidebar', 'm20T1' ),
+        'description'   => __( 'Search results page sidebar widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
@@ -390,11 +390,21 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
+    // Front page Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'frontpage',
+        'name'          => __( 'Front Page Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets on the bottom of the front page or landing page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
     // Page Widgets - bottom of the content
     register_sidebar(array(
         'id'            => 'singlepage',
-        'name'          => __( 'Page Sidebar', 'm20T1' ),
-        'description'   => __( 'Widgets below a single web page.' ),
+        'name'          => __( 'Basic Page Sidebar', 'm20T1' ),
+        'description'   => __( 'Widgets below the contents on a single web page.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
@@ -404,7 +414,7 @@ add_action( 'widgets_init', function(){
     register_sidebar(array(
         'id'            => 'privacypolicy',
         'name'          => __( 'Privacy Policy Sidebar', 'm20T1' ),
-        'description'   => __( 'Widgets below a the privacy policy page.' ),
+        'description'   => __( 'Widgets below the contents on a privacy policy page.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',

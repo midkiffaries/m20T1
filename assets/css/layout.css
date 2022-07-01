@@ -477,10 +477,6 @@ Main site layout
 
 
 /* Page Footer */
-.page-footer {
-	background-color: rgba(0,0,0,0.15);
-}
-
 .footer-widgets,
 .footer-notice {
 	width: var(--page-width);

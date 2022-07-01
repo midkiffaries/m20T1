@@ -5,8 +5,6 @@
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
     </div>
 
-    <div class="footer-slogan hidden"><?php bloginfo('description'); // Blog Slogan ?></div>
-
     <div class="footer-notice">
         <hr class="footer-rule">
         <div class="footer-copyright">Copyright &copy; <abbr title="<?php echo date('Y'); ?>" aria-label="<?php echo date('Y'); ?>"><?php echo numberToRoman(date('Y')); ?></abbr> <?php bloginfo('name'); ?>. All rights reserved.</div>

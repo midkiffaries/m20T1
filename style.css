@@ -3,7 +3,7 @@ Theme Name: m20T1
 Theme URI: https://github.com/midkiffaries/m20T1
 Author: Ted Balmer
 Author URI: https://marchtwenty.com/
-Description: Theodore's personal WordPress theme.
+Description: This is simply a WordPress theme that I created from scratch, that I use on my own website. The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. 
 Requires at least: 5.8
 Tested up to: 6.0
 Requires PHP: 5.6 and above
@@ -11,13 +11,11 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: m20t1
-Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, block-patterns, sticky-post, threaded-comments, accessibility-ready
+Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments, accessibility-ready, footer-widgets, flexible-header, editor-style
 ************************/
 
 /* Variables */
 :root {
-	accent-color: #40A5FF;
-
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
 	--brand-color-dark: #205380;
@@ -27,7 +25,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 	--header-link-color: #000;
 	--body-link-color: var(--brand-color);
 	--page-background: #fdfdfd;
-	--bg-light: rgba(0,0,0,0.02);
+	--footer-background: rgba(0,0,0,0.15);
+	--background-light: rgba(0,0,0,0.02);
 	--highlight-color: rgba(55, 161, 255, 0.7);
 
 	--button-base: var(--brand-color);
@@ -37,6 +36,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, featured-images, bloc
 	--font-secondary: 'Sansita Swashed', cursive;
 	--font-tertiary: sans-serif;
 	--font-serif: 'Georgia', serif;
+
+	accent-color: var(--brand-color);
 }
 
 
@@ -183,6 +184,10 @@ Page Styling
 ************************/
 
 /* Page Footer */
+.page-footer {
+	background: var(--footer-background);
+}
+
 .footer-widgets ul {
 	text-align: center;
 	justify-content: center;

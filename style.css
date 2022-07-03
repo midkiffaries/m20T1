@@ -21,13 +21,13 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--brand-color-dark: #205380;
 	--secondary-color: #FF894D;
 	--tertiary-color: #FFD726;
+	--highlight-color: rgba(55, 161, 255, 0.7);
 
 	--header-link-color: #000;
 	--body-link-color: var(--brand-color);
 	--page-background: #fdfdfd;
 	--footer-background: rgba(0,0,0,0.15);
 	--background-light: rgba(0,0,0,0.02);
-	--highlight-color: rgba(55, 161, 255, 0.7);
 
 	--button-base: var(--brand-color);
 	--button-text: #fff;

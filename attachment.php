@@ -21,7 +21,7 @@
                     <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                 </p>
                 <div class="image-share"><?php blog_post_share(); ?></div>
-                <div class="image-download"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the full media file</a></div>
+                <div class="image-download hidden"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the full media file</a></div>
             </div>
         </article>
 
@@ -39,6 +39,10 @@
         <section class="image-copyright">
             <p><small><i>Media and images may be subject to copyright. <a href="https://www.copyright.gov" rel="noopener noreferrer" target="_blank">Learn More</a></i></small></p>
         </section>
+
+        <aside id="page-widgets" class="page-sidebar page-widgets">
+            <?php dynamic_sidebar( 'singlepage' ); // Page Sidebar ?>
+        </aside>
 
     </div>
 </main>

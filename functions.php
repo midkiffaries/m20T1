@@ -404,7 +404,7 @@ add_action( 'widgets_init', function(){
     register_sidebar(array(
         'id'            => 'singlepage',
         'name'          => __( 'Basic Page Sidebar', 'm20T1' ),
-        'description'   => __( 'Widgets below the contents on a single web page.' ),
+        'description'   => __( 'Widgets below the contents on a single web page and attachment pages.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',

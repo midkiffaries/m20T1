@@ -57,6 +57,57 @@ body {
 	font-display: swap;
 }
 
+
+/************************************************
+Custom Typography for the page ody content
+************************************************/
+
+.entry-header h1,
+.single-entry-header h1 {
+
+}
+
+.entry-header h2,
+.single-entry-header h2 {
+	
+}
+
+.entry-header h3,
+.single-entry-header h3 {
+	
+}
+
+.entry-header h4,
+.single-entry-header h4 {
+	
+}
+
+.entry-header h5,
+.single-entry-header h5 {
+	
+}
+
+.entry-header h6,
+.single-entry-header h6 {
+	
+}
+
+.entry-header p,
+.single-entry-header p {
+	
+}
+
+.entry-header blockquote,
+.single-entry-header blockquote {
+	
+}
+
+.entry-header p code,
+.single-entry-header p code {
+	
+}
+
+
 /************************ 
 Global Element Styling
 ************************/
@@ -230,7 +281,7 @@ Button Styling
 
 
 /************************ 
-3rd Party Plugins 
+3rd-Party Plugins 
 ************************/
 
 /* Secondary Title Plugin (page subtitle) */
@@ -284,3 +335,8 @@ nav .page-subtitle {
 .c-accordion__content {
 	margin: auto 1em;
 }
+
+/************************ 
+Custom Styling
+************************/
+

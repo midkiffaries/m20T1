@@ -54,7 +54,7 @@
 
     <?php else : // If no posts exist ?>
 
-    <article class="search-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="search-results" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <h2 class="page-title" itemprop="title">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h2>
             <p>The search query of “<strong><?php echo esc_attr(get_search_query()); ?></strong>” came up empty.</p>

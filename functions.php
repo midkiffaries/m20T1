@@ -23,7 +23,7 @@ define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-bl
 // Blank hero image
 define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank.svg');
 // Default social sharing image
-define('SOCIAL_SHARE', home_url() . '/icons/social-share.jpg');
+define('SOCIAL_SHARE', get_template_directory_uri() . '/assets/images/social-share.jpg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
 // Read more text
@@ -51,9 +51,12 @@ function numberToRoman($variable) {
 function SearchCount($query) {
     $count = 0;
     $search = new WP_Query("s=$query & showposts=-1");
-    if ($search->have_posts()) : while ($search->have_posts()) : $search->the_post();	
-        $count++;
-    endwhile; endif;
+    if ($search->have_posts()) {
+        while ($search->have_posts()) {
+            $search->the_post();
+            $count++;
+        }
+    }
     return $count;
 }
 
@@ -291,7 +294,7 @@ function blog_post_share() {
     $link_Pinterest = "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(get_the_title()) . "&description=" . urlencode(get_the_excerpt());
     $link_Reddit = "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink());
 ?>
-    <ul class="post-social-share" aria-label="Share on social media">
+    <ul role="list" class="post-social-share" aria-label="Share on social media">
         <li><a href="<?php echo $link_Twitter; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
         <li><a href="<?php echo $link_Facebook; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?php echo $link_LinkedIn; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
@@ -328,7 +331,7 @@ function get_child_pages($id, $thumbnail) {
     <?php }
 }
 
-// Display the list of menu/navigation links
+// Display the menu/navigation links as a <ul> list
 function menu_nav_list($menu, $id) {
     wp_nav_menu( array(
         'menu'            => $menu,
@@ -341,7 +344,7 @@ function menu_nav_list($menu, $id) {
         'after'           => '',
         'link_before'     => '',
         'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
+        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'">%3$s</ul>',
         'item_spacing'    => 'preserve',
         'depth'           => 0,
         'walker'          => ''

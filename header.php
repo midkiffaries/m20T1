@@ -8,8 +8,8 @@
     <?php wp_head(); // WordPress generated meta data and scripts ?>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
     <meta name="author" content="Ted Balmer | MarchTwenty.com">
+    <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
     <?php m20T1_metadata(); // Include additional custom meta data ?>
 </head>
 

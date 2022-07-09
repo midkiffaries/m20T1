@@ -13,7 +13,7 @@
 <section class="comment-list" role="comments" id="Comments">
     <div class="comment-container">
         <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments');?></h2>
-        <ol class="list-comments">
+        <ol role="list" class="list-comments">
             <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=custom_comment_style'); // List all the comments ?>
         </ol>
     </div>

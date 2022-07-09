@@ -34,8 +34,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 	--font-primary: 'Montserrat', sans-serif;
 	--font-secondary: 'Sansita Swashed', cursive;
-	--font-tertiary: sans-serif;
-	--font-serif: 'Georgia', serif;
+	--font-tertiary: 'Georgia', serif;
 
 	accent-color: var(--brand-color);
 }

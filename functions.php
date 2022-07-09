@@ -18,17 +18,17 @@ include 'assets/plugins/breadcrumbs.php';
 // Constants
 /////////////////////////////
 
-// Blank fallback image
+// Blank fallback featured image
 define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg');
-// Blank hero image
+// Blank hero featured image
 define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank.svg');
 // Default social sharing image
 define('SOCIAL_SHARE', get_template_directory_uri() . '/assets/images/social-share.jpg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
-// Read more text
+// Read more text ending
 define('MORE_TEXT', '[...]');
-// Contact Form 7 Shortcode 
+// Contact Form 7 Shortcode block 
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
 
 /////////////////////////////

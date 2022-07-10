@@ -26,7 +26,7 @@ define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank
 define('SOCIAL_SHARE', get_template_directory_uri() . '/assets/images/social-share.jpg');
 // Separator inline in the post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
-// Read more text ending
+// Read more text conclusion
 define('MORE_TEXT', '[...]');
 // Contact Form 7 Shortcode block 
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
@@ -76,18 +76,6 @@ function GetPageContent($id) {
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
-/////////////////////////////
-// Plugin Functions
-/////////////////////////////
-
-// Display contact section and shortcode generated contact form
-function ContactForm() {
-?>
-<div class="contact-form" onload="checkInput()">
-    <?php echo do_shortcode(FORM_SHORTCODE); ?>
-</div>
-<?php
-}
 
 /////////////////////////////
 // SEO and Header Functions
@@ -532,3 +520,19 @@ remove_action( 'wp_head', 'feed_links', 2 );
 
 // Insert into 'wp-config.php' after $table_prefix
 //define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions
+
+
+/////////////////////////////
+// Plugin Functions
+/////////////////////////////
+
+// Display contact section and shortcode generated contact form
+function ContactForm() {
+?>
+    <div class="contact-form" onload="checkInput()">
+        <?php echo do_shortcode(FORM_SHORTCODE); ?>
+    </div>
+<?php
+}
+
+// echo apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' );

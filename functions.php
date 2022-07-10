@@ -71,9 +71,8 @@ function ResizeFontClass($content) {
 
 // Get WordPress page title and content for select special pages (ie: home.php)
 function GetPageTitle($id) {
-    $page_for_posts_id = get_option( $id );
-    $page_for_posts_obj = get_post( $page_for_posts_id );
-    return apply_filters( 'the_title', $page_for_posts_obj->post_content );
+    $page_for_posts_obj = get_post( get_option( $id ));
+    return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
 

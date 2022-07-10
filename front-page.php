@@ -12,6 +12,7 @@
                 <h1 class="page-title hidden" itemprop="title"><?php the_title(); ?></h1>
                 <div class="the-content">
                     <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
+
                 </div>
             </div>
         </article>
@@ -31,4 +32,4 @@
     <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
 </main>
 
-<?php  get_footer(); ?>
+<?php get_footer(); ?>

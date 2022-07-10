@@ -8,7 +8,7 @@
 
         <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
-                <h2 class="image-title" itemprop="title"><?php the_title(); ?></h2>
+                <h1 class="image-title" itemprop="title"><?php the_title(); ?></h1>
                 <div class="wp-block-image">
                     <div><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Enlarge image" aria-title="View the full image"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?></a></div>
                     <div class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></div>

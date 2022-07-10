@@ -9,7 +9,7 @@
 
         <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
-                <h2 class="page-title" itemprop="title"><?php the_title(); ?></h2>
+                <h1 class="page-title" itemprop="title"><?php the_title(); ?></h1>
                 <p class="policy-last-updated"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
                 <div class="the-content">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>

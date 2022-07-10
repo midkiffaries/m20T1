@@ -10,7 +10,7 @@
         <div class="post-container">
             <header class="single-entry-header">
                 <div class="single-entry-category"><?php the_category(' '); ?></div>
-                <h2 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h2>
+                <h1 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
                     <span class="single-entry-avatar hidden"><?php printf(get_avatar(get_the_author_meta('ID'), 24)); ?></span>
                     <span class="single-entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span> <span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>
@@ -40,7 +40,7 @@
 
     <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets clearfix">
         <section class="widget widget_block single-author-bio" aria-label="Article Author">
-            <h3 class="author-bio-name" itemprop="author">About the Author</h3>
+            <h2 class="author-bio-name" itemprop="author">About the Author</h2>
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
                     <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
@@ -62,7 +62,7 @@
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="post-container">
-            <h2 class="single-entry-title" itemprop="title">Not Found</h2>
+            <h1 class="single-entry-title" itemprop="title">Not Found</h1>
             <p>Sorry, no posts matched your criteria. Try and search for it?</p>
             <?php get_search_form('post'); // Search Form ?>
         </div>

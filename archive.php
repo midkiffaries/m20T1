@@ -8,7 +8,7 @@
 
     <section class="archive-header" id="archive-page">
         <div class="archive-header-container">
-            <h2 class="page-title" itemprop="title"><?php if (have_posts()) : ?>
+            <h1 class="page-title" itemprop="title"><?php if (have_posts()) : ?>
     <?php $post = $posts[0]; ?>
     <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
     <?php /* Tag archive */ elseif( is_tag() ) : ?>Posts tagged <b><?php single_tag_title(); ?></b> <span><?php echo strip_tags(tag_description()); ?></span>
@@ -17,7 +17,7 @@
     <?php /* Yearly archive */ elseif (is_year()) : ?>Posts from <b><?php the_time('Y'); ?></b>
     <?php /* Author archive */ elseif (is_author()) : ?>Posts by <b><?php printf($curauth->display_name); ?></b>
     <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
-    <?php endif; ?></h2>
+    <?php endif; ?></h1>
         </div>
     </section>
 
@@ -81,7 +81,7 @@
 
     <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
-            <h3 class="entry-title">
+            <h2 class="entry-title">
             <?php 
             if ( is_category() ) { // If this is a category archive
                 printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));
@@ -93,7 +93,7 @@
                 printf("No posts found.");
             }
             ?>
-            </h3>
+            </h2>
             <p>Would you like to try a search to find what you are looking for?</p>
             <?php get_search_form('archive'); // Search Form ?>
         </div>

@@ -29,8 +29,8 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--footer-background: rgba(0,0,0,0.15);
 	--background-light: rgba(0,0,0,0.02);
 
-	--button-base: var(--brand-color);
-	--button-text: #fff;
+	--button-base-color: var(--brand-color);
+	--button-text-color: #fff;
 
 	--font-primary: 'Montserrat', sans-serif;
 	--font-secondary: 'Sansita Swashed', cursive;
@@ -157,8 +157,8 @@ select:focus {
 /* Buttons */
 button,
 [type="submit"] {
-	color: var(--button-text);
-	background-color: var(--button-base);
+	color: var(--button-text-color);
+	background-color: var(--button-base-color);
 	border-width: 2px;
 	border-color: transparent;
 	transition: filter 0.5s;

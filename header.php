@@ -21,9 +21,9 @@
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
-            <h1 class="header-logo" itemprop="title">
+            <p class="header-logo" itemprop="title">
                 <a href="<?php echo esc_url(home_url()); ?>" rel="bookmark"><?php m20T1_logo(); ?></a>
-            </h1>
+            </p>
             <div class="header-breadcrumbs"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
         </div>
         <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>

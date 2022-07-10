@@ -5,9 +5,7 @@
     <div class="page-content width-side">
 
     <section class="blog-page-title" aria-label="Blog Info">
-        <div class="blog-page-text hidden">
-            <?php echo GetPageContent('page_for_posts'); // Get blog page content ?>
-        </div>
+        <h1 class="page-title" itemprop="title"><?php echo GetPageTitle('page_for_posts'); // Get blog page title ?></h1>
     </section>
 
     <?php if (have_posts()) : // If posts exist ?>

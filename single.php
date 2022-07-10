@@ -39,7 +39,7 @@
     </section>
 
     <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets clearfix">
-        <section class="widget widget_block single-author-bio" aria-label="Article Author">
+        <section class="widget widget_block single-author-bio" aria-label="Article Author Bio">
             <h2 class="author-bio-name" itemprop="author">About the Author</h2>
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">

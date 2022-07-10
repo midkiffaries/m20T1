@@ -4,7 +4,7 @@
 <main class="page-main page-blog-posts" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <section class="blog-page-title" aria-label="Blog Info">
+    <section class="blog-page-title">
         <h1 class="page-title" itemprop="title"><?php echo GetPageTitle('page_for_posts'); // Get blog page title ?></h1>
     </section>
 

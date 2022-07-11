@@ -1,17 +1,16 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
+<?php $curauth = $wp_query->get_queried_object(); // Get Author Info ?>
 
 <main class="page-main page-archive" id="main-content" role="main">
     <div class="page-content width-side">
 
-    <?php $curauth = $wp_query->get_queried_object(); ?>
-
     <section class="archive-header" id="archive-page">
         <div class="archive-header-container">
-            <h1 class="page-title" itemprop="title"><?php if (have_posts()) : ?>
+            <h1 class="page-title" itemprop="title"><?php if (have_posts()) : // Has posts ?>
     <?php $post = $posts[0]; ?>
     <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?> <span><?php printf(strip_tags(category_description())); ?></span>
-    <?php /* Tag archive */ elseif( is_tag() ) : ?>Posts tagged <b><?php single_tag_title(); ?></b> <span><?php echo strip_tags(tag_description()); ?></span>
+    <?php /* Tag archive */ elseif (is_tag()) : ?>Posts tagged <b><?php single_tag_title(); ?></b> <span><?php echo strip_tags(tag_description()); ?></span>
     <?php /* Daily archive */ elseif (is_day()) : ?>Posts from <b><?php the_time('F j, Y'); ?></b>
     <?php /* Monthly archive */ elseif (is_month()) : ?>Posts from <b><?php the_time('F Y'); ?></b>
     <?php /* Yearly archive */ elseif (is_year()) : ?>Posts from <b><?php the_time('Y'); ?></b>
@@ -21,8 +20,7 @@
         </div>
     </section>
 
-    <?php if (is_author()) : // Author Page ?>
-
+    <?php if (is_author()) : // Display Author Page for when showing by author ?>
     <section class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" role="complementary">
         <div class="author-container">
             <div class="author-avatar">
@@ -35,13 +33,11 @@
             <p class="author-bio-meta"><b><?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
         </div>
     </section>
-
     <?php endif; ?>
 
     <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
-    
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">    
                 <header class="entry-header">
@@ -55,7 +51,7 @@
                         <span class="entry-comments"><span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
                     </div>
                 </header>
-                <div class="entry-content">
+                <div class="the-content">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">
@@ -64,7 +60,6 @@
                 </footer>
             </div>
         </div>
-
     <?php endwhile; ?>
 
     </article>

@@ -21,7 +21,7 @@
 
     </div>
 
-    <aside id="frontpage-widgets" class="page-sidebar frontpage-widgets">
+    <aside id="frontpage-widgets" class="page-sidebar frontpage-widgets width-full">
         <?php dynamic_sidebar( 'frontpage' ); // Frontpage widgets ?>
 
         <div class="widget child-page-widget">

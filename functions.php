@@ -1,11 +1,11 @@
 <?php
+//error_reporting(E_ALL);
+
 /////////////////////////////
 // PHP WordPress Functions
 /////////////////////////////
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
-
-//error_reporting(E_ALL);
 
 /////////////////////////////
 // Includes
@@ -304,7 +304,7 @@ function get_child_pages($id, $thumbnail) {
 
     // Display section header
     if ($page_children) { ?>
-        <h3 class="header-childpages">Related Pages</h3>
+        <h2 class="header-childpages">Related Pages</h2>
     <?php }
 
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
@@ -415,8 +415,8 @@ add_action( 'widgets_init', function(){
         'id'            => 'header',
         'name'          => __( 'Header Widgets', 'm20T1' ),
         'description'   => __( 'The page header widgets.' ),
-        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</nav>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<p class="widget-title">',
         'after_title'   => '</p>',
     ));
@@ -522,7 +522,7 @@ remove_action( 'wp_head', 'feed_links', 2 );
 
 
 /////////////////////////////
-// Plugin Functions
+// 3rd-Party Plugin Functions
 /////////////////////////////
 
 // Display contact section and shortcode generated contact form

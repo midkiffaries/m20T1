@@ -19,7 +19,7 @@
                     <span class="single-entry-comments hidden"><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></span>
                 </div>
             </header>
-            <div class="single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">
+            <div class="the-content single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <footer class="single-entry-footer">
@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets clearfix">
+    <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets width-full clearfix">
         <section class="widget widget_block single-author-bio" aria-label="Article Author Bio">
             <h2 class="author-bio-name" itemprop="author">About the Author</h2>
             <div class="author-avatar">
@@ -49,7 +49,7 @@
             <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?> &#x276F;</a></p>
         </section>
 
-        <section class="widget widget_block widget-singlepost" aria-label="Page Widgets">
+        <section class="widget widget_block" aria-label="Page Widgets">
             <?php dynamic_sidebar( 'singlepost' ); // Single Blog Post Sidebar ?>
         </section>
     </aside>

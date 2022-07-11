@@ -20,7 +20,7 @@
 
     <?php endwhile; endif; ?>
 
-        <aside id="privacy-policy-widgets" class="privacy-policy-sidebar privacy-policy-widgets">
+        <aside id="privacy-policy-widgets" class="page-sidebar privacypolicy-widgets width-full">
             <?php dynamic_sidebar( 'privacypolicy' ); // Privacy policy widgets ?>
 
             <div class="widget child-page-widget">

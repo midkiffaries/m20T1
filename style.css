@@ -36,6 +36,8 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--font-secondary: 'Sansita Swashed', cursive;
 	--font-tertiary: 'Georgia', serif;
 
+	--paragraph-font-size: 1.2rem;
+
 	accent-color: var(--brand-color);
 }
 
@@ -61,51 +63,77 @@ body {
 Custom Typography for the page body content
 ************************************************/
 
-.entry-header h1,
-.single-entry-header h1 {
-
-}
-
-.entry-header h2,
-.single-entry-header h2 {
+.the-content h1 {
 	
 }
 
-.entry-header h3,
-.single-entry-header h3 {
+.the-content h2 {
 	
 }
 
-.entry-header h4,
-.single-entry-header h4 {
+.the-content h3 {
 	
 }
 
-.entry-header h5,
-.single-entry-header h5 {
+.the-content h4 {
 	
 }
 
-.entry-header h6,
-.single-entry-header h6 {
+.the-content h5 {
 	
 }
 
-.entry-header p,
-.single-entry-header p {
+.the-content h6 {
 	
 }
 
-.entry-header blockquote,
-.single-entry-header blockquote {
+.the-content p {
 	
 }
 
-.entry-header p code,
-.single-entry-header p code {
+.the-content blockquote {
 	
 }
 
+.the-content p code {
+	
+}
+
+/************************************************
+Sidebar and Widgets Styling
+************************************************/
+
+.page-sidebar {
+
+}
+
+.singlepost-widgets {
+
+}
+
+.blogroll-widgets {
+
+}
+
+.page-widgets {
+
+}
+
+.privacypolicy-widgets {
+
+}
+
+.frontpage-widgets {
+
+}
+
+.archive-widgets {
+
+}
+
+.attachment-widgets {
+
+}
 
 /************************ 
 Global Element Styling

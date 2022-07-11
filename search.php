@@ -16,7 +16,6 @@
     <article class="search-results" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // List posts ?>
-
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">
@@ -28,7 +27,7 @@
                         <span class="entry-comments hidden"><span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
                     </div>
                 </header>
-                <div class="entry-content entry-defaultfont">
+                <div class="the-content entry-defaultfont">
                     <div class="entry-square-thumbnail" style="background-image:url(<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', '/assets/images/featured-blank.svg', 0); ?>);"></div>
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>
@@ -39,7 +38,6 @@
                 </footer>
             </div>
         </div>
-        
     <?php endwhile; ?>
 
     </article>

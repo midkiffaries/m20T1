@@ -28,7 +28,7 @@
                     </div>
                 </header>
                 <div class="the-content entry-defaultfont">
-                    <div class="entry-square-thumbnail" style="background-image:url(<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', '/assets/images/featured-blank.svg', 0); ?>);"></div>
+                    <img class="entry-square-thumbnail" src="<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', '/assets/images/featured-blank.svg', 0); ?>" alt="">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>
                 </div>

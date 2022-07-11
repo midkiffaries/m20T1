@@ -36,7 +36,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--font-secondary: 'Sansita Swashed', cursive;
 	--font-tertiary: 'Georgia', serif;
 
-	--paragraph-font-size: 1.2rem;
+	--p-font-size: 1.2rem;
 
 	accent-color: var(--brand-color);
 }
@@ -96,6 +96,10 @@ Custom Typography for the page body content
 }
 
 .the-content p code {
+	
+}
+
+.the-content li {
 	
 }
 

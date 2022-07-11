@@ -41,6 +41,16 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	accent-color: var(--brand-color);
 }
 
+/* Selection */
+::-moz-selection {
+    background-color: var(--highlight-color);
+    text-shadow: none;
+}
+
+::selection {
+    background-color: var(--highlight-color);
+    text-shadow: none;
+}
 
 /************************ 
 Global Fonts
@@ -103,6 +113,21 @@ Custom Typography for the page body content
 	
 }
 
+/* Body content links */
+.the-content a[href] {
+	color: var(--brand-color);
+	transition: color 0.25s;
+}
+
+.the-content a[href]:hover {
+	color: var(--brand-color-pale);
+	text-decoration-color: var(--brand-color-dark);
+}
+
+.the-content a[href]:active {
+	color: var(--brand-color-dark);
+}
+
 /************************************************
 Sidebar and Widgets Styling
 ************************************************/
@@ -139,22 +164,26 @@ Sidebar and Widgets Styling
 
 }
 
+/* Sidebar links */
+.page-sidebar a[href] {
+	text-decoration: none;
+	transition: color 0.25s;
+}
+
+.page-sidebar a[href]:hover {
+	text-decoration: underline;
+	color: var(--brand-color-dark);
+}
+
+.page-sidebar a[href]:active {
+	color: var(--brand-color-pale)
+}
+
+
 /************************ 
-Global Element Styling
+Form Elements Styling
 ************************/
 
-/* Selection */
-::-moz-selection {
-    background-color: var(--highlight-color);
-    text-shadow: none;
-}
-
-::selection {
-    background-color: var(--highlight-color);
-    text-shadow: none;
-}
-
-/* Form Elements */
 [type="search"],
 [type="text"],
 [type="email"],
@@ -186,7 +215,6 @@ select:focus {
 	border-color: var(--brand-color-dark);
 }
 
-/* Buttons */
 button,
 [type="submit"] {
 	color: var(--button-text-color);
@@ -206,63 +234,9 @@ button:active,
 	filter: brightness(0.8);
 }
 
-/* Entry Header links */
-.entry-header a[href],
-.single-entry-header a[href] {
-	color: var(--header-color);
-	transition: color 0.25s;
-}
-
-.entry-header a[href]:hover,
-.single-entry-header a[href]:hover {
-	color: var(--brand-color-pale);
-	text-decoration-color: var(--brand-color-dark);
-}
-
-.entry-header a[href]:active,
-.single-entry-header a[href]:active {
-	color: var(--brand-color-dark);
-}
-
-/* Body content links */
-.entry-content a[href],
-.single-entry-content a[href] {
-	color: var(--brand-color);
-	transition: color 0.25s;
-}
-
-.entry-content a[href]:hover,
-.single-entry-content a[href]:hover {
-	color: var(--brand-color-pale);
-	text-decoration-color: var(--brand-color-dark);
-}
-
-.entry-content a[href]:active,
-.single-entry-content a[href]:active {
-	color: var(--brand-color-dark);
-}
-
-.single-entry-category a {
-	color: var(--brand-color) !important;
-}
-
-/* Sidebar links */
-.page-sidebar a[href] {
-	text-decoration: none;
-}
-
-.page-sidebar a[href]:hover {
-	text-decoration: underline;
-	color: var(--brand-color-dark);
-}
-
-.page-sidebar a[href]:active {
-	color: var(--brand-color-pale)
-}
-
 
 /************************ 
-Page Styling
+Custom Page Styling
 ************************/
 
 /* Page Footer */
@@ -285,11 +259,6 @@ Page Styling
 	fill: #000 !important;
 }
 
-
-/************************ 
-Button Styling
-************************/
-
 /* Button Icons */
 .square-button {
 	padding: 1em;
@@ -310,12 +279,34 @@ Button Styling
 	background-image: var(--icon-search);
 }
 
+/* Blog Post Header links */
+.entry-header a[href],
+.single-entry-header a[href] {
+	color: var(--header-color);
+	transition: color 0.25s;
+}
+
+.entry-header a[href]:hover,
+.single-entry-header a[href]:hover {
+	color: var(--brand-color-pale);
+	text-decoration-color: var(--brand-color-dark);
+}
+
+.entry-header a[href]:active,
+.single-entry-header a[href]:active {
+	color: var(--brand-color-dark);
+}
+
+.single-entry-category a {
+	color: var(--brand-color) !important;
+}
 
 /************************ 
-3rd-Party Plugins 
+3rd-Party Plugins Styling
 ************************/
 
 /* Secondary Title Plugin (page subtitle) */
+/*
 nav .page-subtitle {
 	display: none;
 }
@@ -324,7 +315,7 @@ nav .page-subtitle {
 	font-size: 1rem;
 	display: block;
 }
-
+*/
 /* Accordion Plugin */
 .c-accordion__item {
 	border-top: 1px solid currentColor;

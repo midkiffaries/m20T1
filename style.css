@@ -19,7 +19,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
 	--brand-color-dark: #205380;
-	--secondary-color: #FF894D;
+	--secondary-color: #FF6159;
 	--tertiary-color: #FFD726;
 	--highlight-color: rgba(55, 161, 255, 0.7);
 
@@ -72,6 +72,10 @@ body {
 /************************************************
 Custom Typography for the page body content
 ************************************************/
+
+.the-content {
+	
+}
 
 .the-content h1 {
 	
@@ -305,18 +309,7 @@ Custom Page Styling
 3rd-Party Plugins Styling
 ************************/
 
-/* Secondary Title Plugin (page subtitle) */
-/*
-nav .page-subtitle {
-	display: none;
-}
-
-.page-title .page-subtitle {
-	font-size: 1rem;
-	display: block;
-}
-*/
-/* Accordion Plugin */
+/* Builtin Accordion Plugin */
 .c-accordion__item {
 	border-top: 1px solid currentColor;
 	border-bottom: 1px solid currentColor;

@@ -98,7 +98,7 @@
 
     </div>
     
-    <aside id="sidebar-archive" class="page-sidebar sidebar-archive">
+    <aside id="sidebar-archive" class="page-sidebar archive-widgets">
         <?php dynamic_sidebar( 'secondary' ); // Secondary Sidebar ?>
     </aside>
 

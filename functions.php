@@ -442,6 +442,12 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'featured-content' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'customize-selective-refresh-widgets' );
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'align-wide' );
+
+    // Custom WordPress editor styling
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'editor-style.css' );
 
     // Custom background and header support
     add_theme_support( 'custom-header', array( 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true, ) );

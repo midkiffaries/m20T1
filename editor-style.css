@@ -1,0 +1,164 @@
+/********************************************
+Custom WordPress Editor Styling
+*********************************************/
+
+:root {
+	--link-color: #40A5FF;
+	--page-width: 1250px;
+	--base-font: '';
+}
+
+body {
+	background-color: #fefefe;
+	color: #111;
+	line-height: 1.5;
+	max-width: var(--page-width);
+	font-size: 1rem;
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		'Liberation Sans',
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Noto Color Emoji';
+}
+
+a {
+	color: var(--link-color);
+}
+
+p {
+    margin-bottom: 0.75rem;
+	orphans: 3;
+	widows: 3;
+}
+
+ul,
+ol {
+	padding-left: 2rem;
+	page-break-before: avoid;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+small {
+	font-size: 80%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none; 
+}
+
+figure {
+	margin: 0 0 0.1rem;
+	display: inline-block;
+}
+
+figcaption {
+	text-align: center;
+	padding: 0.6em 0.2em;
+	line-height: 1.2;
+}
+
+code,
+kbd,
+samp,
+pre {
+	direction: ltr;
+	unicode-bidi: bidi-override;
+	white-space: pre-wrap;
+	font-size: 1em;
+	font-family:
+		SFMono-Regular,
+		Menlo,
+		Monaco,
+		Consolas,
+		'Roboto Mono',
+		'Liberation Mono',
+		monospace;
+}
+
+blockquote {
+    font-style: italic;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	margin: 0 0 1rem;
+	border-left: 4px solid #ccc !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2.1rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+h6 {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-indent: 0;
+	width: 100%;
+}
+
+td,
+th {
+	padding: 0.15em 0.5em 0.15em;
+	line-height: 1.15;
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+	text-overflow: ellipsis;
+	vertical-align: text-top;
+	font-variant-numeric: tabular-nums;
+}
+
+caption {
+	padding: 0.5rem;
+}

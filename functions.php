@@ -28,7 +28,9 @@ define('SOCIAL_SHARE', get_template_directory_uri() . '/assets/images/social-sha
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
 // Read more text ending
 define('MORE_TEXT', '[...]');
-// Contact Form 7 Shortcode block 
+// Max excerpt length
+define('EXCERPT_LENGTH', 90);
+// Contact Form 7 Shortcode block
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
 
 /////////////////////////////
@@ -303,9 +305,9 @@ function get_child_pages($id, $thumbnail) {
     ));
 
     // Display section header
-    if ($page_children) { ?>
+    if ($page_children) : ?>
         <h2 class="header-childpages">Related Pages</h2>
-    <?php }
+    <?php endif;
 
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
@@ -445,6 +447,12 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'wp-block-styles' );
     add_theme_support( 'align-wide' );
 
+    // Set featured image size
+    the_post_thumbnail( 'medium' );
+
+    // Add excerpt support to pages
+    add_post_type_support( 'page', 'excerpt' );
+
     // Custom WordPress editor styling
     add_theme_support( 'editor-styles' );
     add_editor_style( 'editor-style.css' );
@@ -489,19 +497,13 @@ add_action('wp_enqueue_scripts', function(){
     //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
 });
 
-// Set featured image size
-the_post_thumbnail( 'medium' );
-
-// Add excerpt support to pages
-add_post_type_support( 'page', 'excerpt' );
-
 // Enable the use of shortcodes in text widgets.
 add_filter( 'widget_text', 'shortcode_unautop' );
 add_filter( 'widget_text', 'do_shortcode' );
 
 // Set the excerpt length
 add_filter('excerpt_length', function(){
-    return 90; // Word length
+    return EXCERPT_LENGTH; // Word length
 });
 
 // Add a 'Continue Reading' link to excerpts

@@ -6,6 +6,7 @@ Custom WordPress Editor Styling
 	--link-color: #40A5FF;
 	--page-width: 1250px;
 	--base-font: '';
+	--mono-font: '';
 }
 
 body {
@@ -30,6 +31,10 @@ a {
 	color: var(--link-color);
 }
 
+a img {
+	object-fit: contain;
+}
+
 p {
     margin-bottom: 0.75rem;
 	orphans: 3;
@@ -39,7 +44,6 @@ p {
 ul,
 ol {
 	padding-left: 2rem;
-	page-break-before: avoid;
 }
 
 b,
@@ -57,6 +61,12 @@ sup {
 
 small {
 	font-size: 80%;
+}
+
+abbr[title] {
+	-webkit-text-decoration: underline dotted;
+	text-decoration: underline dotted;
+	border-bottom: none;
 }
 
 img {
@@ -161,4 +171,11 @@ th {
 
 caption {
 	padding: 0.5rem;
+}
+
+svg:not(:root) {
+	height: auto;
+	max-width: 100%;
+	overflow: hidden;
+	vertical-align: middle;
 }

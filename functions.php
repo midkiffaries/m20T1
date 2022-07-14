@@ -525,9 +525,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
 
-// Insert into 'wp-config.php' after $table_prefix
-//define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions
-
 
 /////////////////////////////
 // 3rd-Party Plugin Functions
@@ -543,3 +540,6 @@ function ContactForm() {
 }
 
 // echo apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' );
+
+// Insert into 'wp-config.php' after $table_prefix
+//define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions

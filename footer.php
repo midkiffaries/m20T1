@@ -3,6 +3,7 @@
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-widgets">
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
+        
     </div>
 
     <div class="footer-notice">
@@ -13,7 +14,7 @@
 </footer>
 
 <?php wp_footer(); // WordPress generated data and scripts ?>
-<script type="text/javascript">const ContactModal = (`<?php ContactForm(); // Display Contact form ?>`);</script>
+<script type="text/javascript" id='modal-contact-js'>const ContactModal = (`<?php ContactForm(); // Display Contact form ?>`);</script>
 
 </body>
 </html>

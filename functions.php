@@ -444,8 +444,8 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'featured-content' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'customize-selective-refresh-widgets' );
-    add_theme_support( 'wp-block-styles' );
-    add_theme_support( 'align-wide' );
+    //add_theme_support( 'wp-block-styles' );
+    //add_theme_support( 'align-wide' );
 
     // Set featured image size
     the_post_thumbnail( 'medium' );

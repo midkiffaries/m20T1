@@ -146,7 +146,7 @@ function m20T1_metadata() {
     <link rel="icon" type="image/png" sizes="192x192" href="<?php esc_url(printf("%s/icons/android-chrome-192x192.png", home_url())); ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
     <link rel="manifest" href="<?php esc_url(printf("%s/manifest.json", home_url())); ?>">    
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="<?php echo get_bloginfo('language'); ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php esc_url(the_permalink()); ?>">
     <meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">

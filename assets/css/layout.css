@@ -18,6 +18,7 @@ Base WordPress Page Styling
 	--twitter-color: #1da1f2;
 	--linkedin-color: #0077b5;
 	--pinterest-color: #e60023;
+	--reddit-color: #ff4500;
 }
 
 /************************ 
@@ -26,8 +27,8 @@ Icon Fonts Styling
 
 @font-face {
 	font-family: 'icomoon';
-	src: url('../fonts/icomoon.woff2?ubh0hq') format('woff2'),
-		url('../fonts/icomoon.woff?ubh0hq') format('woff');
+	src: url('../fonts/icomoon.woff2?xc0ne7') format('woff2'),
+		url('../fonts/icomoon.woff?xc0ne7') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -45,18 +46,15 @@ Icon Fonts Styling
 	line-height: 1;
 }
 
+.icon-pinterest:before {
+	content: "\e900";
+}
+.icon-reddit:before {
+	content: "\e901";
+}
 .icon-written:before {
 	content: "\e911";
 	padding-right: 7px;
-}
-.icon-thingiverse:before {
-	content: "\e910";
-}
-.icon-spring:before {
-	content: "\e909";
-}
-.icon-unsplash:before {
-	content: "\e900";
 }
 .icon-linkedin:before {
 	content: "\e905";
@@ -66,9 +64,6 @@ Icon Fonts Styling
 }
 .icon-file:before {
 	content: "\e907";
-}
-.icon-tag:before {
-	content: "\e912";
 }
 .icon-bear:before {
 	content: "\e902";
@@ -87,15 +82,6 @@ Icon Fonts Styling
 .icon-comment:before {
 	content: "\e96b";
 	padding-right: 7px;
-}
-.icon-instagram:before {
-	content: "\ea92";
-}
-.icon-youtube:before {
-	content: "\ea9d";
-}
-.icon-steam:before {
-	content: "\eaad";
 }
 .icon-link:before {
 	content: "\e908";
@@ -585,6 +571,11 @@ Social Sharing Buttons Styling
 .post-social-share .pinterest-share {
     background-color: var(--pinterest-color);
 }
+
+.post-social-share .reddit-share {
+    background-color: var(--reddit-color);
+}
+
 
 
 /***************************** 

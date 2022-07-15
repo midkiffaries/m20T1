@@ -29,9 +29,251 @@ define('POST_SEPARATOR', '&nbsp;|&nbsp;');
 // Read more text ending
 define('MORE_TEXT', '[...]');
 // Max excerpt length
-define('EXCERPT_LENGTH', 90);
+define('EXCERPT_LENGTH', 90); // Number of Words
+// Shorten length of content
+define('SHORT_TEXT_LENGTH', 350); // Number of characters
+
 // Contact Form 7 Shortcode block
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
+
+
+/////////////////////////////
+// WordPress Settings
+/////////////////////////////
+
+// Register the theme and menus/navigation 
+add_action( 'after_setup_theme', function(){
+    // Additional Theme Support
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'custom-line-height' );
+    add_theme_support( 'custom-spacing' );
+    add_theme_support( 'featured-content' );
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
+    add_theme_support( 'align-wide' );
+    //add_theme_support( 'wp-block-styles' );
+
+    // Set featured image size
+    the_post_thumbnail( 'medium' );
+
+    // Add excerpt support to pages
+    add_post_type_support( 'page', 'excerpt' );
+
+    // Custom WordPress editor styling
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'editor-style.css' );
+
+    // Custom background and header support
+    add_theme_support( 'custom-header', array( 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true, ) );
+    add_theme_support( 'custom-background', array( 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll', ) );
+
+    // Custom Logo Support
+    add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => array( 'site-title', 'site-description' ), ) );
+    
+    // HTML5 Support
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+    add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
+    
+    // Navigation Widgets
+    register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
+    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
+    register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
+});
+
+// Add elements to WordPress
+add_action('wp_enqueue_scripts', function(){
+    // Get version from style.css
+    $version = wp_get_theme()->get('Version');
+    
+    // Add Javascript to the bottom of the page body
+    wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
+    wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
+    
+    // Add stylesheets to the HEAD metadata
+    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
+    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), $version, 'all' );
+    wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), $version, 'all' );
+
+    // Remove post comments
+    wp_dequeue_script( 'comment-reply' );
+
+    // Remove WordPress block library
+    //wp_dequeue_style( 'wp-block-library' );
+    //wp_dequeue_style( 'wp-block-library-theme' );
+    //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+});
+
+// Enable the use of shortcodes in text widgets.
+add_filter( 'widget_text', 'shortcode_unautop' );
+add_filter( 'widget_text', 'do_shortcode' );
+
+// Set the excerpt length
+add_filter('excerpt_length', function(){
+    return EXCERPT_LENGTH; // Number of Words
+});
+
+// Add a 'Continue Reading' link to excerpts
+add_filter('excerpt_more', function(){
+    //return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
+    return ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
+});
+
+// Remove embed function
+add_action( 'wp_footer', function(){
+    wp_dequeue_script( 'wp-embed' );
+});
+
+// Remove WordPress Emojis
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// Remove RSS feed links
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+
+
+/////////////////////////////
+// Sidebar and Widgets
+/////////////////////////////
+
+// Register the sidebar widgets 
+add_action( 'widgets_init', function(){
+    // Primary Sidebar - right side of the content
+    register_sidebar(array(
+        'id'            => 'primary',
+        'name'          => __( 'Primary Sidebar Widgets', 'm20T1' ),
+        'description'   => __( 'Sidebar widgets on the full blog page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Secondary Sidebar - right side of the content
+    register_sidebar(array(
+        'id'            => 'secondary',
+        'name'          => __( 'Secondary Sidebar Widgets', 'm20T1' ),
+        'description'   => __( 'Archive pages sidebar widgets.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Tertiary Sidebar - right side of the content
+    register_sidebar(array(
+        'id'            => 'tertiary',
+        'name'          => __( 'Tertiary Sidebar Widgets', 'm20T1' ),
+        'description'   => __( 'Search results page sidebar widgets.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Single Post Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'singlepost',
+        'name'          => __( 'Single Post Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets below a single blog post.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Front page Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'frontpage',
+        'name'          => __( 'Front Page Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets on the bottom of the front page or landing page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Page Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'singlepage',
+        'name'          => __( 'Basic Page Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets below the contents on a single web page and attachment pages.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Page w/ Sidebar Widgets - right side of the content
+    register_sidebar(array(
+        'id'            => 'singlepagesidebar',
+        'name'          => __( 'Basic Page w/ Sidebar Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets on the sidebar on a single web page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Privacy Policy Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'privacypolicy',
+        'name'          => __( 'Privacy Policy Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets below the contents on a privacy policy page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    // Page Header Widgets
+    register_sidebar(array(
+        'id'            => 'header',
+        'name'          => __( 'Header Widgets', 'm20T1' ),
+        'description'   => __( 'The page header widgets.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<p class="widget-title">',
+        'after_title'   => '</p>',
+    ));
+    // Page Footer Widgets
+    register_sidebar(array(
+        'id'            => 'footer',
+        'name'          => __( 'Footer Widgets', 'm20T1' ),
+        'description'   => __( 'The page footer widgets.' ),
+        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</nav>',
+        'before_title'  => '<p class="widget-title">',
+        'after_title'   => '</p>',
+    ));
+});
+
+
+/////////////////////////////
+// Child Pages Functions
+/////////////////////////////
+
+// Display page title and excerpt from child pages of current page
+function get_child_pages($id, $thumbnail) {
+    $page_children = get_pages(array(
+        'sort_order'     => 'ASC',
+        'sort_column'    => 'menu_order, post_title',
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'exclude'        => 0,
+        'child_of'       => $id,
+    ));
+
+    // Display section header
+    if ($page_children) : ?>
+        <h2 class="header-childpages">Related Pages</h2>
+    <?php endif;
+
+    foreach ($page_children as $child) { // Display all the child pages to this one ?>
+        <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
+            <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
+                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', BLANK_IMAGE, 0)); ?>" alt=""></div>
+                <div class="child-card__title"><?php echo $child->post_title; ?></div>
+                <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
+            </a>
+        </div>
+    <?php }
+}
+
 
 /////////////////////////////
 // Generic Functions
@@ -77,10 +319,12 @@ function GetPageTitle($id) {
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
-
-/////////////////////////////
-// SEO and Header Functions
-/////////////////////////////
+// Shorten the_content in place of using the_excerpt
+function shorten_the_content($post) {
+    $length = SHORT_TEXT_LENGTH; 
+    $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
+    return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
+}
 
 // Check if user selected a custom logo
 function m20T1_logo() {
@@ -90,6 +334,10 @@ function m20T1_logo() {
         bloginfo('name');
     }
 }
+
+/////////////////////////////
+// SEO and Header Functions
+/////////////////////////////
 
 // Swaps certain special characters with words for SEO purposes
 function SEO_CharSwap($string) {
@@ -160,12 +408,6 @@ function m20T1_metadata() {
 <?php
 }
 
-// Shorten the_content in place of using the_excerpt
-function shorten_the_content($post) {
-    $length = 350; // Number of characters
-    $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
-    return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
-}
 
 /////////////////////////////
 // Featured Image Fallbacks
@@ -239,7 +481,7 @@ function HeaderFeaturedImage($id) {
 
 
 /////////////////////////////
-// WordPress Functions
+// WordPress Features
 /////////////////////////////
 
 // Blog post user comment styling for each comment
@@ -292,37 +534,9 @@ function blog_post_share() {
 <?php
 }
 
-// Display page title and excerpt from child pages of current page
-function get_child_pages($id, $thumbnail) {
-    $page_children = get_pages(array(
-        'sort_order'     => 'ASC',
-        'sort_column'    => 'menu_order, post_title',
-        'post_type'      => 'page',
-        'post_status'    => 'publish',
-        'posts_per_page' => -1,
-        'exclude'        => 0,
-        'child_of'       => $id,
-    ));
-
-    // Display section header
-    if ($page_children) : ?>
-        <h2 class="header-childpages">Related Pages</h2>
-    <?php endif;
-
-    foreach ($page_children as $child) { // Display all the child pages to this one ?>
-        <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
-            <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', BLANK_IMAGE, 0)); ?>" alt=""></div>
-                <div class="child-card__title"><?php echo $child->post_title; ?></div>
-                <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
-            </a>
-        </div>
-    <?php }
-}
-
 // Display the menu/navigation links as a <ul> list
 function menu_nav_list($menu, $id) {
-    wp_nav_menu( array(
+    wp_nav_menu(array(
         'menu'            => $menu,
         'container'       => 'nav',
         'container_class' => 'nav-'.$id,
@@ -337,193 +551,8 @@ function menu_nav_list($menu, $id) {
         'item_spacing'    => 'preserve',
         'depth'           => 0,
         'walker'          => ''
-    ) );
+    ));
 }
-
-// Register the sidebar widgets 
-add_action( 'widgets_init', function(){
-    // Primary Sidebar - right side of the content
-    register_sidebar(array(
-        'id'            => 'primary',
-        'name'          => __( 'Primary Sidebar', 'm20T1' ),
-        'description'   => __( 'Sidebar widgets on the full blog page.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Secondary Sidebar - right side of the content
-    register_sidebar(array(
-        'id'            => 'secondary',
-        'name'          => __( 'Secondary Sidebar', 'm20T1' ),
-        'description'   => __( 'Archives pages sidebar widgets.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Tertiary Sidebar - right side of the content
-    register_sidebar(array(
-        'id'            => 'tertiary',
-        'name'          => __( 'Tertiary Sidebar', 'm20T1' ),
-        'description'   => __( 'Search results page sidebar widgets.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Single Post Widgets - bottom of the content
-    register_sidebar(array(
-        'id'            => 'singlepost',
-        'name'          => __( 'Single Post Sidebar', 'm20T1' ),
-        'description'   => __( 'Widgets below a single blog post.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Front page Widgets - bottom of the content
-    register_sidebar(array(
-        'id'            => 'frontpage',
-        'name'          => __( 'Front Page Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets on the bottom of the front page or landing page.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Page Widgets - bottom of the content
-    register_sidebar(array(
-        'id'            => 'singlepage',
-        'name'          => __( 'Basic Page Sidebar', 'm20T1' ),
-        'description'   => __( 'Widgets below the contents on a single web page and attachment pages.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Privacy Policy Widgets - bottom of the content
-    register_sidebar(array(
-        'id'            => 'privacypolicy',
-        'name'          => __( 'Privacy Policy Sidebar', 'm20T1' ),
-        'description'   => __( 'Widgets below the contents on a privacy policy page.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Page Header Widgets
-    register_sidebar(array(
-        'id'            => 'header',
-        'name'          => __( 'Header Widgets', 'm20T1' ),
-        'description'   => __( 'The page header widgets.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<p class="widget-title">',
-        'after_title'   => '</p>',
-    ));
-    // Page Footer Widgets
-    register_sidebar(array(
-        'id'            => 'footer',
-        'name'          => __( 'Footer Widgets', 'm20T1' ),
-        'description'   => __( 'The page footer widgets.' ),
-        'before_widget' => '<nav id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</nav>',
-        'before_title'  => '<p class="widget-title">',
-        'after_title'   => '</p>',
-    ));
-});
-
-// Register the theme and menus/navigation 
-add_action( 'after_setup_theme', function(){
-    // Additional Theme Support
-    add_theme_support( 'title-tag' );
-    add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'custom-line-height' );
-    add_theme_support( 'custom-spacing' );
-    add_theme_support( 'featured-content' );
-    add_theme_support( 'automatic-feed-links' );
-    add_theme_support( 'customize-selective-refresh-widgets' );
-    //add_theme_support( 'wp-block-styles' );
-    //add_theme_support( 'align-wide' );
-
-    // Set featured image size
-    the_post_thumbnail( 'medium' );
-
-    // Add excerpt support to pages
-    add_post_type_support( 'page', 'excerpt' );
-
-    // Custom WordPress editor styling
-    add_theme_support( 'editor-styles' );
-    add_editor_style( 'editor-style.css' );
-
-    // Custom background and header support
-    add_theme_support( 'custom-header', array( 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true, ) );
-    add_theme_support( 'custom-background', array( 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll', ) );
-
-    // Custom Logo Support
-    add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => array( 'site-title', 'site-description' ), ) );
-    
-    // HTML5 Support
-    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-    add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
-    
-    // Navigation Widgets
-    register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
-    register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
-    register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
-});
-
-// Add elements to WordPress
-add_action('wp_enqueue_scripts', function(){
-    // Get version from style.css
-    $version = wp_get_theme()->get('Version');
-    
-    // Add Javascript to the bottom of the page body
-    wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
-    wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
-    
-    // Add stylesheets to the HEAD metadata
-    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
-    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), $version, 'all' );
-    wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), $version, 'all' );
-
-    // Remove comments
-    wp_dequeue_script( 'comment-reply' );
-
-    // Remove WordPress block library
-    //wp_dequeue_style( 'wp-block-library' );
-    //wp_dequeue_style( 'wp-block-library-theme' );
-    //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
-});
-
-// Enable the use of shortcodes in text widgets.
-add_filter( 'widget_text', 'shortcode_unautop' );
-add_filter( 'widget_text', 'do_shortcode' );
-
-// Set the excerpt length
-add_filter('excerpt_length', function(){
-    return EXCERPT_LENGTH; // Word length
-});
-
-// Add a 'Continue Reading' link to excerpts
-add_filter('excerpt_more', function(){
-    //return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
-    return ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
-});
-
-// Remove embed function
-add_action( 'wp_footer', function(){
-    wp_dequeue_script( 'wp-embed' );
-});
-
-// Remove WordPress emojis
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-// Remove RSS feed links
-remove_action( 'wp_head', 'feed_links_extra', 3 );
-remove_action( 'wp_head', 'feed_links', 2 );
 
 
 /////////////////////////////
@@ -531,7 +560,7 @@ remove_action( 'wp_head', 'feed_links', 2 );
 /////////////////////////////
 
 // Display contact section and shortcode generated contact form
-function ContactForm() {
+function m20T1_ContactForm() {
 ?>
     <div class="contact-form" onload="checkInput()">
         <?php echo do_shortcode(FORM_SHORTCODE); ?>

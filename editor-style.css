@@ -110,7 +110,6 @@ blockquote {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	margin: 0 0 1rem;
-	border-left: 4px solid #ccc !important;
 }
 
 h1,
@@ -178,4 +177,16 @@ svg:not(:root) {
 	max-width: 100%;
 	overflow: hidden;
 	vertical-align: middle;
+}
+
+select:not([multiple]):not([size]) {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding-right: 1.4em;
+	background-position: 100% 50%;
+	background-size: 1em;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='dimgray'/%3E%3C/svg%3E");
 }

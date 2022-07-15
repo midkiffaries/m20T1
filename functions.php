@@ -1,11 +1,12 @@
 <?php
-//error_reporting(E_ALL);
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 
 /////////////////////////////
 // PHP WordPress Functions
 /////////////////////////////
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+//error_reporting(E_ALL);
 
 /////////////////////////////
 // Includes

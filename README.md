@@ -34,3 +34,7 @@ Follow these links to learn more about me:
 <a href="https://github.com/midkiffaries/m20T1/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=midkiffaries/m20T1" />
 </a>
+
+<img alt="GitHub release (release name instead of tag name)" src="https://img.shields.io/github/v/release/midkiffaries/m20T1?include_prereleases&style=for-the-badge">
+
+[![Generic badge](https://img.shields.io/github/v/release/midkiffaries/m20T1?include_prereleases&style=for-the-badge)](https://shields.io/)

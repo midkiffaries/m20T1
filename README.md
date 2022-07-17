@@ -5,24 +5,24 @@ Version 1.0 BETA (In-Development)
 [![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://shields.io/)
 [![GitHub issues](https://img.shields.io/github/issues/midkiffaries/m20T1)](https://github.com/midkiffaries/m20T1/issues)
 
-This is simply a WordPress theme that I created from scratch, that I use on my own website.
+This is simply a <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
 The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right">
 
 - Compatible with WordPress 6.0+
+- Built with SEO and social media sharing in mind
+- Support for <b>theme.json</b>
 - Built in dark mode switch
-- Support for theme.json
-- Built in contact email modal
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom modals for alerts, confirmation and custom HTML
-- Sidebar and widgets support on on all pages
+- Alternate page templates with full width and sidebar support
+- Widget support on on all pages
 - Widget support in the site header and footer
-- Unique front-page, 404, attachment (image) and a privacy policy pages
-- Featured image support for use as the page header background
-- Built with SEO and social media in mind
-- Built in Breadcrumbs
+- Unique <i>front-page</i>, <i>404</i>, <i>attachment (image)</i> and a <i>privacy-policy</i> pages
+- Featured image support for use as the hero/header image in posts and pages
+- Support for custom WordPress editor styling
 
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across.

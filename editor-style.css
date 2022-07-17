@@ -4,14 +4,16 @@ Custom WordPress Editor Styling
 
 :root {
 	--link-color: #40A5FF;
+	--text-color: #111;
+	--background-color: #fefefe;
 	--page-width: 1250px;
 	--base-font: '';
 	--mono-font: '';
 }
 
 body {
-	background-color: #fefefe;
-	color: #111;
+	background-color: var(--background-color);
+	color: var(--text-color);
 	line-height: 1.5;
 	max-width: var(--page-width);
 	font-size: 1rem;

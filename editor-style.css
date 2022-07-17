@@ -154,17 +154,15 @@ h6 {
 
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
 	text-indent: 0;
 	width: 100%;
 }
 
 td,
 th {
-	padding: 0.15em 0.5em 0.15em;
+	padding: 0.15em 0.5em;
 	line-height: 1.15;
 	text-align: inherit;
-	text-align: -webkit-match-parent;
 	text-overflow: ellipsis;
 	vertical-align: text-top;
 	font-variant-numeric: tabular-nums;

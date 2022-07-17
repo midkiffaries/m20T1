@@ -418,7 +418,7 @@ function FeaturedImageURL($id, $size, $isBackground) {
     if (has_post_thumbnail($id)) { // Use featured image url
         $image = esc_url(get_the_post_thumbnail_url($id, $size));
     } else {
-        if (GetFirstImage()) { // Get first image in post
+        if (GetFirstImage() && $size != 'full') { // Get first image in post
             $image = esc_url(GetFirstImage());
         } else {
             $image = false;

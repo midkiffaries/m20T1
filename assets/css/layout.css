@@ -446,7 +446,7 @@ Blog Post Styling (home, archives)
 	padding: 10px;
 }
 
-/* Entry Featured Image */
+/* Entry Featured Image as a background element */
 .entry-wide-thumbnail {
 	width: 100%;
 	height: 8rem;
@@ -457,11 +457,11 @@ Blog Post Styling (home, archives)
 	background-color: #ACE0FF;
 }
 
+/* Entry Featured Image on the search page */
 .entry-square-thumbnail {
 	width: 150px;
-	height: 150px;
+	max-height: 150px;
 	border-radius: 0.3rem;
-	background-color: #eee;
 	margin: 0.7em;
 	float: right;
 }

@@ -16,15 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 include 'assets/plugins/breadcrumbs.php';
 
 /////////////////////////////
-// Constants
+// Constants and Settings
 /////////////////////////////
 
-// Blank fallback featured image
-define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg'); // FeatureImageURL
-// Blank hero featured image
-define('BLANK_HERO', get_template_directory_uri() . '/assets/images/header-blank.svg');
-// The default social media sharing image
-define('SOCIAL_SHARE', get_template_directory_uri() . '/assets/images/social-share.jpg');
+// Blank fallback featured image URI
+define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg');
+// The default social media sharing image URI
+define('SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-share.jpg');
+//define('SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/social-share.jpg');
 // Inline separator in the blog post metadata
 define('POST_SEPARATOR', '&nbsp;|&nbsp;');
 // Read more text ending
@@ -377,7 +376,7 @@ function SEO_Image($id) {
     if (has_post_thumbnail($id)) { // Use page's featured image
         $featuredImage = get_the_post_thumbnail_url($id, 'large');
     } else { // Use default image
-        $featuredImage = SOCIAL_SHARE;
+        $featuredImage = SOCIAL_IMAGE;
     }
     return esc_url($featuredImage);
 }
@@ -415,29 +414,42 @@ function m20T1_metadata() {
 /////////////////////////////
 
 // Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
-function FeaturedImageURL($id, $size, $url, $isHero) {
+function FeaturedImageURL($id, $size, $isBackground) {
     if (has_post_thumbnail($id)) { // Use featured image url
-        $featuredImage = get_the_post_thumbnail_url($id, $size);
-    } else { // Use fallback image url
-        if ($isHero) { // If image is the hero/header
-            $featuredImage = $url;
-        } else { // Get first image in post
-            $featuredImage = GetFirstImage();
+        $image = esc_url(get_the_post_thumbnail_url($id, $size));
+    } else {
+        if (GetFirstImage()) { // Get first image in post
+            $image = esc_url(GetFirstImage());
+        } else {
+            $image = false;
         }
     }
-    return esc_url($featuredImage);
+
+    // Check if background is being placed in a style attrib or in an image tag
+    if ($isBackground && $image) {
+        return "background-image:url(" . $image . ");";
+    } else {
+        if ($image) {
+            return $image;
+        } else {
+            return BLANK_IMAGE;
+        }
+    }
 }
 
 // Get the first image from a post or page
 function GetFirstImage() {
     global $post, $posts;
-    $first_img = '';
+    $first_image = '';
     ob_start();
     ob_end_clean();
     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
-    $first_img = $matches[1][0];
-    if (empty($first_img)) $first_img = BLANK_IMAGE;
-    return $first_img;
+    $first_image = $matches[1][0];
+    if (empty($first_image)) {
+        return false;
+    } else {
+        return $first_image;
+    }
 }
 
 // Display the header image
@@ -467,14 +479,14 @@ function HeaderFeaturedImage($id) {
 
     // Get the featured image if exists or fallback to blank image
     if ($hasFeaturedImage) {
-        $featuredImage = FeaturedImageURL($id, 'full', BLANK_HERO, 1);
+        $featuredImage = FeaturedImageURL($id, 'full', 1);
     }
 
     // Include the Overlay image
     //$overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
 
     ?>
-        <div class="hero-image header-<?php echo $className; ?> bg-parallax" data-rate="12" style="background-image:url(<?php echo $featuredImage; ?>);">
+        <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>">
             <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
         </div>
     <?php

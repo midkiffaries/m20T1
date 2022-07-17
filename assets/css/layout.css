@@ -209,6 +209,14 @@ Site Header
 	background-image: var(--featured-img-bg);
 }
 
+.header-single-page .header-hero-overlay,
+.header-single-post .header-hero-overlay,
+.header-blog .header-hero-overlay {
+	background: transparent url(../images/grain-light.png) repeat 0 0;
+	width: 100%;
+	height: 100%;
+}
+
 /* Header nav and logo */
 .header-menubar {
 	z-index: 100;

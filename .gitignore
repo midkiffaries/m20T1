@@ -1,4 +1,8 @@
 *.log
+*.DS_Store
+/.htaccess
+/sitemap.xml
+/sitemap.xml.gz
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
@@ -10,14 +14,3 @@ wp-content/uploads/
 wp-content/mu-plugins/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-
-/.htaccess
-/license.txt
-/readme.html
-/sitemap.xml
-/sitemap.xml.gz
-
-_root/
-*.DS_Store
-config.php
-header-extended.php

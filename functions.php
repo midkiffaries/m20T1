@@ -482,12 +482,11 @@ function HeaderFeaturedImage($id) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
     }
 
-    // Include the Overlay image
-    //$overlayImage = esc_url(get_template_directory_uri() . '/assets/images/grain-light.png');
-
     ?>
         <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>">
-            <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
+            <div class="header-hero-overlay">
+                <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
+            </div>
         </div>
     <?php
 }

@@ -204,7 +204,9 @@ Site Header
 	overflow: hidden;
 	position: relative;
 	background-color: #ace0ff;
-	background: var(--featured-img-bg);
+	background-position: 50% 50%;
+	background-size: cover;
+	background-image: var(--featured-img-bg);
 }
 
 /* Header nav and logo */

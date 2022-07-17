@@ -2,15 +2,15 @@
 
 [![Generic badge](https://img.shields.io/github/v/release/midkiffaries/m20T1?include_prereleases&style=for-the-badge)](https://github.com/midkiffaries/m20T1/releases/)
 
-[![Generic badge](https://img.shields.io/badge/Language-php-blue.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Language-php-blue.svg)](https://github.com/midkiffaries/m20T1/search?l=php)
+[![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://github.com/midkiffaries/m20T1/search?l=javascript)
 [![GitHub issues](https://img.shields.io/github/issues/midkiffaries/m20T1)](https://github.com/midkiffaries/m20T1/issues)
 
 This is simply a <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
 The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 
 ## Features
-<img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right">
+<img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right" />
 
 - Compatible with WordPress 6.0+
 - Built with SEO and social media sharing in mind

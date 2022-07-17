@@ -30,3 +30,7 @@ Follow these links to learn more about me:
 <a href="https://github.com/3dfxdev/EDGE/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=midkiffaries/m20T1" />
 </a>
+
+[![Generic badge](https://img.shields.io/badge/Language-php-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://shields.io/)
+[![GitHub issues](https://img.shields.io/github/issues/midkiffaries/m20T1)](https://github.com/midkiffaries/m20T1/issues)

@@ -32,6 +32,12 @@
 
 <?php if (comments_open()) : // If comments are open, but there are no comments ?>
 
+<section class="comments-closed" role="comments" id="Comments">
+    <div>
+        <p>😃 <i>Be the first to comment on this article.</i></p>
+    </div>
+</section>
+
 <?php else : // Comments are closed ?>
 
 <section class="comments-closed" role="comments" id="Comments">

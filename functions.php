@@ -388,12 +388,10 @@ function m20T1_metadata() {
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
     <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php esc_url(printf("%s/icons/favicon-32x32.png", home_url())); ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php esc_url(printf("%s/icons/favicon-16x16.png", home_url())); ?>">
-    <link rel="icon" type="image/png" sizes="512x512" href="<?php esc_url(printf("%s/icons/android-chrome-512x512.png", home_url())); ?>">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php esc_url(printf("%s/icons/android-chrome-192x192.png", home_url())); ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
-    <link rel="manifest" href="<?php esc_url(printf("%s/manifest.json", home_url())); ?>">    
+    <link rel="icon" href="<?php esc_url(printf("%s/favicon.ico", home_url())); ?>" sizes="any">
+    <link rel="icon" href="<?php esc_url(printf("%s/favicon.svg", home_url())); ?>" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
+    <link rel="manifest" href="<?php esc_url(printf("%s/site.webmanifest", home_url())); ?>">
     <meta property="og:locale" content="<?php echo get_bloginfo('language'); ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php esc_url(the_permalink()); ?>">

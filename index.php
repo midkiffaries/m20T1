@@ -61,7 +61,7 @@
 
     </div>
 
-    <aside id="sidebar-blog" class="page-sidebar blogroll-widgets">
+    <aside id="sidebar-blog" class="page-sidebar blogroll-widgets" role="complementary">
         <?php dynamic_sidebar( 'primary' ); ?>
     </aside>
 

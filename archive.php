@@ -66,7 +66,7 @@
 
     <section class="blog-pagination" aria-label="Archive Pagination">
         <div class="pagination-container">
-            <nav class="blog-post-nav">
+            <nav class="blog-post-nav" role="navigation">
                 <?php blog_post_pagination('Posts'); // Post navigation links ?>
             </nav>
         </div>
@@ -78,14 +78,14 @@
         <div <?php post_class(); ?>>
             <h2 class="entry-title">
             <?php 
-            if ( is_category() ) { // If this is a category archive
+            if ( is_category() ) { // By category
                 printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));
-            } else if ( is_date() ) { // If this is a date archive
+            } else if ( is_date() ) { // By date
                 printf("There are no posts with this date.");
-            } else if ( is_author() ) { // If this is a category archive
+            } else if ( is_author() ) { // By Author
                 printf("There are no posts by <b>%s</b>.", $curauth->nickname);
-            } else { // Other or no posts
-                printf("No posts found.");
+            } else { // No posts found
+                printf("No posts found at all.");
             }
             ?>
             </h2>

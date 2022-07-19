@@ -13,7 +13,7 @@
     <article class="blog-roll" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
         <?php while (have_posts()) : the_post(); // List all the posts ?>
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" <?php //if(is_sticky( get_the_ID() )) : // If sticky post ?>Xstyle="background: linear-gradient(32deg, rgba(232,232,232,1) 10%, rgba(187,187,187,1) 40%, rgba(255,255,255,0.25) 60%), url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>) no-repeat right top;"<?php //endif; ?> >
+        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">
                     <div class="entry-wide-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
@@ -41,7 +41,7 @@
 
     <section class="blog-pagination" aria-label="Blog Pagination">
         <div class="pagination-container">
-            <nav class="blog-post-nav">
+            <nav class="blog-post-nav" role="navigation">
                 <?php blog_post_pagination('Posts'); // Blog posts navigation ?>
             </nav>
         </div>

@@ -96,7 +96,7 @@ add_action('wp_enqueue_scripts', function(){
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), $version, 'all' );
 
     // Remove post comments
-    wp_dequeue_script( 'comment-reply' );
+    //wp_dequeue_script( 'comment-reply' );
 
     // Remove WordPress block library
     //wp_dequeue_style( 'wp-block-library' );

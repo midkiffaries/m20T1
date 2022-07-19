@@ -9,6 +9,7 @@
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="post-container">
             <header class="single-entry-header">
+                <div class="single-entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?></div>
                 <div class="single-entry-category"><?php the_category(' '); ?></div>
                 <h1 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">

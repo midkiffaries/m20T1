@@ -321,6 +321,9 @@ Site Header
 	.header-secondary-navigation ul li a {
 		font-size: 1.5em;
 	}
+	.header-breadcrumbs {
+		display: none;
+	}
 }
 
 
@@ -428,6 +431,17 @@ Single Blog Post Styling
 
 .single-entry-content {
 	min-height: 12em;
+}
+
+@media (max-width: 849px) {
+	.single-entry-metadata {
+		font-size: 0.9em;
+	}
+
+	.entry-share {
+		float: left !important;
+		margin-top: 1.4em;
+	}
 }
 
 
@@ -746,10 +760,6 @@ Page Specific Styling
 	border: 1px solid #fff;
 	border-radius: 0.5em;
 	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
-}
-
-.author-bio-about {
-	font-size: 1.1em;
 }
 
 /* Search Page */

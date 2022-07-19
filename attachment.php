@@ -29,7 +29,7 @@
 
         <section class="blog-pagination" aria-label="Image Pagination">
             <div class="pagination-container">
-                <nav class="image-nav">
+                <nav class="image-nav" role="navigation">
                     <?php next_image_link(array(48, 48), '&#x276E; Next Image', 0); // Left ?>
                     <?php previous_image_link(array(48, 48), 'Previous Image &#x276F;', 0); // Right ?>
                 </nav>
@@ -37,7 +37,7 @@
         </section>
 
         <section class="image-copyright">
-            <p><small><i>Media and images may be subject to copyright. <a href="https://www.copyright.gov" rel="noopener noreferrer" target="_blank">Learn More</a></i></small></p>
+            <p><small><i>Media and images may be subject to copyright. <a href="https://www.copyright.gov/" rel="noopener noreferrer" target="_blank">Learn More</a></i></small></p>
         </section>
 
         <aside id="page-widgets" class="page-sidebar attachment-widgets width-full" role="complementary">

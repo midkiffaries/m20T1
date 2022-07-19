@@ -21,7 +21,7 @@
 
 <section class="comment-pagination" aria-label="Comment Pagination">
     <div class="pagination-container">
-        <nav class="comments-nav">
+        <nav class="comments-nav" role="navigation">
             <?php next_comments_link('&#x276E; Next '.get_option('comments_per_page').' Comments', 0); // Left ?>
             <?php previous_comments_link('Previous '.get_option('comments_per_page').' Comments &#x276F;', 0); // Right ?> 
         </nav>
@@ -32,7 +32,7 @@
 
 <?php if (comments_open()) : // If comments are open, but there are no comments ?>
 
-<section class="comments-closed" role="comments" id="Comments">
+<section class="comments-closed" id="Comments">
     <div>
         <p>😃 <i>Be the first to comment on this article.</i></p>
     </div>
@@ -40,7 +40,7 @@
 
 <?php else : // Comments are closed ?>
 
-<section class="comments-closed" role="comments" id="Comments">
+<section class="comments-closed" id="Comments">
     <div>
         <p>🚫 <i>The comments are closed for this article.</i></p>
     </div>
@@ -66,11 +66,11 @@
 		<input type="hidden" name="author" id="author" value="<?php echo $user_identity; ?>">
         <input type="hidden" name="email" id="email" value="<?php printf("%s@%s", $user_identity, $_SERVER['HTTP_HOST']); ?>">   
     <?php else : // If user is not logged in ?>
-		<p><label for="author" <?php if ($req) echo "class='required'"; ?>>Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="your name" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
+		<p><label for="author" <?php if ($req) echo "class='required'"; ?>>Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?php echo esc_attr($comment_author); ?>" placeholder="Your Name" <?php if ($req) echo "aria-required='true'"; ?> autocorrect="off" autocomplete="name" required></p>
 		<p><label for="email" <?php if ($req) echo "class='required'"; ?>>Email</label><input type="email" name="email" id="email" class="comment-email" maxlength="50" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="name@example.com" <?php if ($req) echo "aria-required='true'"; ?> autocapitalize="none" autocorrect="off" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></p>
 		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="https://www.example.com" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
     <?php endif; ?>
-		<p><label for="comment" <?php if ($req) echo "class='required'"; ?>>Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="Your comment..." required></textarea></p>
+		<p><label for="comment" <?php if ($req) echo "class='required'"; ?>>Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="What do you have to say..." required></textarea></p>
 		<p><input type="submit" id="submit-comment" class="comment-submit" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
 
         <?php do_action('comment_form', $post->ID); ?>

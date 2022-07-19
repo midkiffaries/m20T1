@@ -241,6 +241,26 @@ add_action( 'widgets_init', function(){
     ));
 });
 
+// Display the menu/navigation links as a <ul> list
+function menu_nav_list($menu, $id) {
+    wp_nav_menu(array(
+        'menu'            => $menu,
+        'container'       => 'nav',
+        'container_class' => 'nav-'.$id,
+        'container_id'    => $id,
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'">%3$s</ul>',
+        'item_spacing'    => 'preserve',
+        'depth'           => 0,
+        'walker'          => ''
+    ));
+}
+
 
 /////////////////////////////
 // Child Pages Functions
@@ -266,7 +286,7 @@ function get_child_pages($id, $thumbnail) {
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
             <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', BLANK_IMAGE, 0)); ?>" alt=""></div>
+                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', 0)); ?>" alt=""></div>
                 <div class="child-card__title"><?php echo $child->post_title; ?></div>
                 <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
             </a>
@@ -543,26 +563,6 @@ function blog_post_share() {
         <li><a href="<?php echo $link_Reddit; ?>" class="icon-reddit reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
     </ul>
 <?php
-}
-
-// Display the menu/navigation links as a <ul> list
-function menu_nav_list($menu, $id) {
-    wp_nav_menu(array(
-        'menu'            => $menu,
-        'container'       => 'nav',
-        'container_class' => 'nav-'.$id,
-        'container_id'    => $id,
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'">%3$s</ul>',
-        'item_spacing'    => 'preserve',
-        'depth'           => 0,
-        'walker'          => ''
-    ));
 }
 
 

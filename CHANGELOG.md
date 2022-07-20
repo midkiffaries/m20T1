@@ -1,5 +1,10 @@
 # Changes to m20T1
 
+### 1.0 Alpha 7 (July 19, 2022)
+
+* Even more clean up, readjustments and tidying up. 
+* Eliminating unnecessary assets and enabling other assets.
+
 ### 1.0 Alpha 7 (May 4, 2022)
 
 * More clean up, readjustments and tidying up.

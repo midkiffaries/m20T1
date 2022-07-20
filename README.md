@@ -5,7 +5,7 @@
 
 [![Generic badge](https://img.shields.io/badge/Language-php-blue.svg)](https://github.com/midkiffaries/m20T1/search?l=php)
 [![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://github.com/midkiffaries/m20T1/search?l=javascript)
-[![GitHub last commit](https://img.shields.io/github/last-commit/midkiffaries/m20T1?style=flat-square)](https://github.com/midkiffaries/m20T1/commits/master)
+[![GitHub last commit](https://img.shields.io/github/last-commit/midkiffaries/m20T1?style=flat-square)](https://github.com/midkiffaries/m20T1/commits)
 [![GitHub issues](https://img.shields.io/github/issues/midkiffaries/m20T1)](https://github.com/midkiffaries/m20T1/issues)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/midkiffaries/m20T1?style=flat-square)
 

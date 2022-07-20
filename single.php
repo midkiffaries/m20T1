@@ -24,7 +24,7 @@
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <footer class="single-entry-footer">
-                <div class="entry-tags"><?php the_tags('<ul><li rel="tag">', '</li><li rel="tag">', '</li></ul>'); ?></div>
+                <div class="entry-tags"><?php blog_post_tags(); ?></div>
                 <div class="entry-share"><?php blog_post_share(); ?></div>
             </footer>
         </div>

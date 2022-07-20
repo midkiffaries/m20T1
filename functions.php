@@ -546,6 +546,11 @@ function blog_post_pagination($type) {
     next_posts_link("Next " . get_option('posts_per_page') . " " . $type . " &#x276F;", 0); // Right Side >>
 }
 
+// Show the blog post tags
+function blog_post_tags() {
+    return the_tags('<ul role="list"><li rel="tag">', '</li><li rel="tag">', '</li></ul>');
+}
+
 // List social sharing links on each blog post
 function blog_post_share() {
     // Social media links

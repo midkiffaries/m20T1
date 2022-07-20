@@ -6,6 +6,9 @@
 [![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://github.com/midkiffaries/m20T1/search?l=javascript)
 [![GitHub issues](https://img.shields.io/github/issues/midkiffaries/m20T1)](https://github.com/midkiffaries/m20T1/issues)
 
+[![GitHub last commit](https://img.shields.io/github/last-commit/midkiffaries/m20T1?style=flat-square)](https://github.com/midkiffaries/m20T1/commits/master) [![GitHub Release Date](https://img.shields.io/github/release-date/midkiffaries/m20T1?style=flat-square)](https://github.com/midkiffaries/m20T1/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/midkiffaries/m20T1?style=flat-square)
+
+
 This is simply a <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
 The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 

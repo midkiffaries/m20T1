@@ -503,7 +503,7 @@ function HeaderFeaturedImage($id) {
     ?>
         <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>">
             <div class="header-hero-overlay">
-                <h2 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h2>
+                <h1 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h1>
             </div>
         </div>
     <?php

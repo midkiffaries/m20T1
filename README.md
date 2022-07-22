@@ -7,7 +7,7 @@
 [![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://github.com/midkiffaries/m20T1/search?l=javascript)
 [![GitHub last commit](https://img.shields.io/github/last-commit/midkiffaries/m20T1?style=flat-square)](https://github.com/midkiffaries/m20T1/commits)
 [![GitHub issues](https://img.shields.io/github/issues/midkiffaries/m20T1)](https://github.com/midkiffaries/m20T1/issues)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/midkiffaries/m20T1)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/midkiffaries/m20T1)]
 
 
 This is simply a <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.

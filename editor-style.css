@@ -18,7 +18,7 @@ body {
 	line-height: 1.5;
 	max-width: var(--page-width);
 	font-size: 1rem;
-	font-family:
+	font-family: var(--base-font),
 		system-ui,
 		-apple-system,
 		'Segoe UI',

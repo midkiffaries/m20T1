@@ -4,7 +4,7 @@
 
 // Search modal content
 const SearchModal = (`
-<h3>Search</h3>
+<h3 class="search-title">Search</h3>
 <div class="search-block search-modal">
     <form method="get" class="search-form" role="search" action="${siteUri}">
         <input type="search" class="search-input" name="s" value="" placeholder="Search blog posts, pages, etc." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search Input" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
@@ -17,7 +17,7 @@ const SearchModal = (`
 	box-shadow: none;
 	padding: 0;
 }
-.dialog-content h3 {
+.dialog-content .search-title {
     margin: 0;
 }
 .dialog-content .search-input {
@@ -319,56 +319,6 @@ const validateEmail = v => {
     else return false;
 }
 
-// Contact Form - Process email and send it
-/*
-function phpSendEmail() {
-    const xhttp = new XMLHttpRequest();
-
-	// Setup the form field variables
-	const Email = {
-		nameID: document.getElementById("contact_name"),
-		name: () => {
-			return sanitizeInput(Email.nameID.value)
-		},
-		emailID: document.getElementById("contact_email"),
-		email: () => {
-			return sanitizeInput(Email.emailID.value)
-		},
-		messageID: document.getElementById("contact_message"),
-		message: () => {
-			return sanitizeInput(Email.messageID.value)
-		}
-	}
-
-	// Change the element class onfocus
-	Email.nameID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-	Email.emailID.addEventListener("focus", function(e){this.classList.remove("message-error");});	
-	Email.messageID.addEventListener("focus", function(e){this.classList.remove("message-error");});
-
-	// Check if fields are filled in
-	checkField(Email.nameID);
-	checkField(Email.emailID);
-	checkField(Email.messageID);
-
-    xhttp.onload = function() {
-        if (Email.name() && validateEmail(Email.email()) && Email.message()) {
-            let v = "name=" + Email.name() + 
-			"&email=" + Email.email() + 
-			"&message=" + Email.message();
-
-            //document.getElementById("demo").innerHTML = this.responseText;
-            console.log("Email successfully sent.");
-            document.getElementById("ServerMessage").innerHTML = "Your message has been sent! <br />I will try and get back to you as soon as possible.";
-            document.getElementById("MessageInfo").classList.add('contact_success');
-            document.getElementById("contact_fieldset").disabled = true;
-        } else {
-            document.getElementById("ServerMessage").innerHTML = "You need to fill in all the fields to send this message.";
-        }
-    }
-    xhttp.open("GET", `${themeUri}assets/plugins/mailman.php?${v}`, true);
-    xhttp.send();
-}
-*/
 // Improve the behavior of certain input types
 function checkInput() {
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
@@ -382,17 +332,3 @@ function checkInput() {
         }
     }
 }
-
-
-
-// Ajax function
-/*
-function loadHtmlModal(f, id) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById(id).innerHTML = this.responseText;
-    }
-    xhttp.open("GET", `${f}`, true);
-    xhttp.send();
-}
-*/

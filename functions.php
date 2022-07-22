@@ -108,6 +108,11 @@ add_action('wp_enqueue_scripts', function(){
 add_filter( 'widget_text', 'shortcode_unautop' );
 add_filter( 'widget_text', 'do_shortcode' );
 
+// Add Tag support to pages
+add_action('init', function(){
+    register_taxonomy_for_object_type('post_tag', 'page');
+});
+
 // Set the excerpt length
 add_filter('excerpt_length', function(){
     return EXCERPT_LENGTH; // Number of Words
@@ -583,8 +588,3 @@ function m20T1_ContactForm() {
     </div>
 <?php
 }
-
-// echo apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' );
-
-// Insert into 'wp-config.php' after $table_prefix
-//define('WP_POST_REVISIONS', 10); // Put a limit on storing post/page revisions

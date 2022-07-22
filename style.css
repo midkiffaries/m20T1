@@ -39,6 +39,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--p-font-size: 1.2rem;
 
 	accent-color: var(--brand-color);
+	caret-color: var(--brand-color);
 }
 
 /* Selection */
@@ -196,7 +197,6 @@ textarea,
 select {
 	transition: border 0.25s;
 	border-width: 2px;
-	caret-color: var(--brand-color);
 }
 
 [type="search"]:hover,

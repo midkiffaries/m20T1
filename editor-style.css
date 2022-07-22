@@ -10,6 +10,7 @@ Custom WordPress Editor Styling
 	--base-font: '';
 
 	accent-color: var(--link-color);
+	caret-color: var(--link-color);
 }
 
 body {

@@ -89,7 +89,7 @@ add_action('wp_enqueue_scripts', function(){
     // Add Javascript to the bottom of the page body
     wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
     wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
-    
+
     // Add stylesheets to the HEAD metadata
     wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
     wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), $version, 'all' );
@@ -120,7 +120,6 @@ add_filter('excerpt_length', function(){
 
 // Add a 'Continue Reading' link to excerpts
 add_filter('excerpt_more', function(){
-    //return '... <a href="' . get_permalink(get_the_ID()) . '" class="entry-read-more">Continue Reading</a>';
     return ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
 });
 
@@ -285,7 +284,7 @@ function get_child_pages($id, $thumbnail) {
 
     // Display section header
     if ($page_children) : ?>
-        <h2 class="header-childpages">Related Pages</h2>
+        <h2 class="child-title">Related Pages</h2>
     <?php endif;
 
     foreach ($page_children as $child) { // Display all the child pages to this one ?>

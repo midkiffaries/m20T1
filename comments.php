@@ -32,7 +32,7 @@
 
 <?php if (comments_open()) : // If comments are open, but there are no comments ?>
 
-<section class="comments-closed" id="Comments">
+<section class="comments-closed" role="comments" id="Comments">
     <div>
         <p>😃 <i>Be the first to comment on this article.</i></p>
     </div>
@@ -40,7 +40,7 @@
 
 <?php else : // Comments are closed ?>
 
-<section class="comments-closed" id="Comments">
+<section class="comments-closed" role="comments" id="Comments">
     <div>
         <p>🚫 <i>The comments are closed for this article.</i></p>
     </div>
@@ -59,7 +59,7 @@
     <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>" class="login-link">logged in</a> to post a comment.</p>
     <?php else : ?>
 
-    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="CommentForm" name="commentform" autocomplete="on">
+    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="CommentForm" name="commentform" autocomplete="on" role="form">
 
     <?php if (is_user_logged_in()) : // If user is logged in ?>
 		<p>You are logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo wp_logout_url(get_permalink()); ?>" class="logout-link">Log out</a></p>

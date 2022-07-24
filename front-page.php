@@ -22,7 +22,7 @@
     </div>
 
     <aside id="frontpage-widgets" class="page-sidebar frontpage-widgets width-full">
-        <?php dynamic_sidebar( 'frontpage' ); // Frontpage widgets ?>
+        <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'frontpage') ); // Select from 'Widgets Slug' custom field ?>
 
         <div class="widget child-page-widget">
             <?php get_child_pages(get_the_ID(), true); // Display the children of this page ?>

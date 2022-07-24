@@ -41,7 +41,7 @@ define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]')
 // WordPress Settings
 /////////////////////////////
 
-// Register the theme and menus/navigation 
+// Enable WordPress features and register menus
 add_action( 'after_setup_theme', function(){
     // Additional Theme Support
     add_theme_support( 'title-tag' );
@@ -82,10 +82,10 @@ add_action( 'after_setup_theme', function(){
 
     // Setting Custom Fields
     add_post_meta(460, 'Widgets Slug', 'singlepage', true);
-    //delete_post_meta_by_key( 'custom_field_name' );
+    //delete_post_meta_by_key( 'custom_field_name' ); // Delete custom field
 });
 
-// Add elements to WordPress
+// Enable styles and scripts
 add_action('wp_enqueue_scripts', function(){
     // Get version from style.css
     $version = wp_get_theme()->get('Version');
@@ -108,30 +108,30 @@ add_action('wp_enqueue_scripts', function(){
     //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
 });
 
-// Enable the use of shortcodes in text widgets.
-add_filter( 'widget_text', 'shortcode_unautop' );
-add_filter( 'widget_text', 'do_shortcode' );
-
 // Add Category and Tag support to pages
-add_action('init', function(){
+add_action( 'init', function(){
     register_taxonomy_for_object_type('category', 'page');
     //register_taxonomy_for_object_type('post_tag', 'page');
-});
-
-// Set the excerpt length
-add_filter('excerpt_length', function(){
-    return EXCERPT_LENGTH; // Number of Words
-});
-
-// Add a 'Continue Reading' link to excerpts
-add_filter('excerpt_more', function(){
-    return ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
 });
 
 // Remove embed function
 add_action( 'wp_footer', function(){
     wp_dequeue_script( 'wp-embed' );
 });
+
+// Set the excerpt length
+add_filter( 'excerpt_length', function(){
+    return EXCERPT_LENGTH; // Number of Words
+});
+
+// Add a 'Continue Reading' link to excerpts
+add_filter( 'excerpt_more', function(){
+    return ' <span class="entry-read-more" aria-label="Read more in the post">' . MORE_TEXT . '</span>';
+});
+
+// Enable the use of shortcodes in text widgets.
+add_filter( 'widget_text', 'shortcode_unautop' );
+add_filter( 'widget_text', 'do_shortcode' );
 
 // Remove WordPress Emojis
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -218,16 +218,6 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Privacy Policy Widgets - bottom of the content
-    register_sidebar(array(
-        'id'            => 'privacypolicy',
-        'name'          => __( 'Privacy Policy Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets below the contents on a privacy policy page.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
     // Page Header Widgets
     register_sidebar(array(
         'id'            => 'header',
@@ -250,11 +240,11 @@ add_action( 'widgets_init', function(){
     ));
 });
 
-// Get Custom Field sidebar slug for displaying different widgets on pages
-function getSidebarCustomField($id) {
+// Get 'Widgets Slug' Custom Field which changes the sidebar selection
+function selectSidebarCustomField($id, $default) {
     $key = get_post_meta( $id, 'Widgets Slug', true );
     if (empty($key)) {
-        return 'singlepage'; // Default widgets
+        return $default; // Default widgets
     } else {
         return $key;
     }

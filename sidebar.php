@@ -22,7 +22,7 @@
     </div>
 
     <aside id="pagesidebar-widgets" class="page-sidebar pagesidebar-widgets" role="complementary">
-        <?php dynamic_sidebar( 'singlepagesidebar' ); // Page Sidebar ?>
+        <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepagesidebar') ); // Select from 'Widgets Slug' custom field ?>
 
         <div class="widget child-page-widget">
             <?php get_child_pages(get_the_ID(), false); // Display the children of this page ?>

@@ -1,10 +1,10 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
-
 /////////////////////////////
 // PHP WordPress Functions
 /////////////////////////////
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 
 //error_reporting(E_ALL);
 
@@ -81,7 +81,7 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
 
     // Setting Custom Fields
-    add_post_meta(460, 'Widgets Slug', 'singlepage', true);
+    add_post_meta( 'slug', 'Widgets Slug', 'singlepage', true );
     //delete_post_meta_by_key( 'custom_field_name' ); // Delete custom field
 });
 

@@ -15,7 +15,7 @@
 
     <article class="search-results" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
-    <?php while (have_posts()) : the_post(); // List posts ?>
+    <?php while (have_posts()) : the_post(); // List posts and pages ?>
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">

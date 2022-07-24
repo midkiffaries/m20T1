@@ -14,7 +14,7 @@
     <div class="comment-container">
         <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments');?></h2>
         <ol role="list" class="list-comments">
-            <?php wp_list_comments('type=comment&reply_text=&login_text=&callback=custom_comment_style'); // List all the comments ?>
+            <?php wp_list_comments('type=comment&avatar_size=64&login_text=&callback=custom_comment_style'); // List all the comments ?>
         </ol>
     </div>
 </section>

@@ -79,6 +79,10 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
+
+    // Setting Custom Fields
+    add_post_meta(460, 'Widgets Slug', 'singlepage', true);
+    //delete_post_meta_by_key( 'custom_field_name' );
 });
 
 // Add elements to WordPress
@@ -108,9 +112,10 @@ add_action('wp_enqueue_scripts', function(){
 add_filter( 'widget_text', 'shortcode_unautop' );
 add_filter( 'widget_text', 'do_shortcode' );
 
-// Add Tag support to pages
+// Add Category and Tag support to pages
 add_action('init', function(){
-    register_taxonomy_for_object_type('post_tag', 'page');
+    register_taxonomy_for_object_type('category', 'page');
+    //register_taxonomy_for_object_type('post_tag', 'page');
 });
 
 // Set the excerpt length
@@ -244,6 +249,16 @@ add_action( 'widgets_init', function(){
         'after_title'   => '</p>',
     ));
 });
+
+// Get Custom Field sidebar slug for displaying different widgets on pages
+function getSidebarCustomField($id) {
+    $key = get_post_meta( $id, 'Widgets Slug', true );
+    if (empty($key)) {
+        return 'singlepage'; // Default widgets
+    } else {
+        return $key;
+    }
+}
 
 // Display the menu/navigation links as a <ul> list
 function menu_nav_list($menu, $id) {

@@ -18,7 +18,7 @@
     <?php endwhile; endif; ?>
 
         <aside id="page-widgets" class="page-sidebar page-widgets width-full" role="complementary">
-            <?php dynamic_sidebar( 'singlepage' ); // Page Sidebar ?>
+            <?php dynamic_sidebar( getSidebarCustomField(get_the_ID()) ); // Page Sidebar ?>
 
             <div class="widget child-page-widget">
                 <?php get_child_pages(get_the_ID(), false); // Display the children of this page ?>

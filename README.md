@@ -25,7 +25,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 - Widget support on on all pages
 - Widget support in the site header and footer
 - Unique <i>front-page</i>, <i>404</i>, <i>attachment (image)</i> and a <i>privacy-policy</i> pages
-- Featured image support for use as the hero/header image in posts and pages
+- Featured image support for use as the hero/header image on posts and pages
 - Support for custom WordPress editor styling
 - Support for <b>dark mode</b> via a built in switch
 

@@ -21,7 +21,7 @@
     </section>
 
     <?php if (is_author()) : // Display Author Page for when showing by author ?>
-    <section class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" role="complementary">
+    <section class="archive-author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" role="complementary">
         <div class="author-container">
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">

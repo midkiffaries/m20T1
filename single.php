@@ -41,13 +41,14 @@
 
     <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets width-full clearfix" role="complementary">
         <section class="widget widget_block single-author-bio" aria-label="Article Author Bio">
-            <h2 class="author-bio-name" itemprop="author">About the Author</h2>
+            <h2 class="author-bio-title" itemprop="author">About the Author</h2>
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
                     <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
                 </figure>
             </div>
-            <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?> <a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author">See more posts from <?php echo get_the_author_meta( 'nickname' ); ?> &#x276F;</a></p>
+            <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author."><?php echo get_the_author_meta( 'display_name' ); ?></a></h3>
+            <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">

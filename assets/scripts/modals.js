@@ -285,6 +285,7 @@ function HtmlModal(c, v) {
 }
 
 // Close all open dialog nodes specific "c = ClassName"
+/*
 function closeModals(c) {
     let dialog = document.getElementsByClassName(c), 
         l = dialog.length;
@@ -299,7 +300,7 @@ function closeModals(c) {
         }
     }
 }
-
+*/
 // Check field for validity
 const checkField = v => {
 	if (!v.value) v.classList.add("message-error");

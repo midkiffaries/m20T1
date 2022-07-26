@@ -45,7 +45,7 @@ const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('h
     }
 }());
 
-// Keyup Events
+// Keyboard on Keyup Events
 document.addEventListener("keyup", (e) => {
 	e = e || window.event;
     if (e.keyCode === 27) { // Esc Key
@@ -212,7 +212,7 @@ function closeModals(c) {
     }
 }
 
-// Dark mode switch
+// Dark mode button switch
 (function(){
 	let buttonText, theme;
 	const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)"),

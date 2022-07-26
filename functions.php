@@ -33,7 +33,7 @@ define('EXCERPT_LENGTH', 90); // Number of Words
 // Shorten length of content
 define('SHORT_TEXT_LENGTH', 350); // Number of characters
 
-// Contact Form 7 Shortcode block
+// Contact Form 7 Shortcode block -- Requires 'Contact Form 7' plugin
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
 
 
@@ -114,9 +114,10 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type('post_tag', 'page');
 });
 
-// Remove embed function
+// Append and remove code from the page footer
 add_action( 'wp_footer', function(){
-    wp_dequeue_script( 'wp-embed' );
+// Display Contact form  ?>
+<script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script><?php
 });
 
 // Set the excerpt length
@@ -584,11 +585,3 @@ function blog_post_share() {
 // 3rd-Party Plugin Functions
 /////////////////////////////
 
-// Display contact section and shortcode generated contact form
-function m20T1_ContactForm() {
-?>
-    <div class="contact-form" onload="checkInput()">
-        <?php echo do_shortcode(FORM_SHORTCODE); ?>
-    </div>
-<?php
-}

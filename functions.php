@@ -114,7 +114,7 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type('post_tag', 'page');
 });
 
-// Append and remove code from the page footer
+// Append or remove code from the page footer
 add_action( 'wp_footer', function(){
 // Display Contact form  ?>
 <script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script><?php

@@ -300,7 +300,7 @@ function closeModals(c) {
     }
 }
 
-// Check field
+// Check field for validity
 const checkField = v => {
 	if (!v.value) v.classList.add("message-error");
 	else v.classList.remove("message-error");

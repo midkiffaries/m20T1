@@ -32,6 +32,8 @@ define('MORE_TEXT', '[...]');
 define('EXCERPT_LENGTH', 90); // Number of Words
 // Shorten length of content
 define('SHORT_TEXT_LENGTH', 350); // Number of characters
+// SEO text excerpt length
+define('SEO_TEXT_LENGTH', 165); // Number of characters
 
 // Contact Form 7 Shortcode block -- Requires 'Contact Form 7' plugin
 define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
@@ -336,7 +338,7 @@ function get_child_pages($id, $thumbnail) {
 
 
 /////////////////////////////
-// Generic Functions
+// Specialized Functions
 /////////////////////////////
 
 // Converts a number in to roman numerals... for fun
@@ -386,14 +388,6 @@ function shorten_the_content($post) {
     return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
 }
 
-// Check if user selected a custom logo
-function m20T1_logo() {
-    if (has_custom_logo()) {
-        the_custom_logo();
-    } else {
-        bloginfo('name');
-    }
-}
 
 /////////////////////////////
 // SEO and Header Functions
@@ -409,7 +403,7 @@ function SEO_CharSwap($string) {
 // Get the excerpt from either the content or the user defined excerpt  
 function SEO_Excerpt($id) {
     // Set the total character length
-    $length = 165;
+    $length = SEO_TEXT_LENGTH;
     // Check if post has a user defined excerpt
     if (has_excerpt($id) && !is_attachment()) {
         $description = trim(substr(get_the_excerpt($id), 0, $length));
@@ -439,6 +433,15 @@ function SEO_Image($id) {
         $featuredImage = SOCIAL_IMAGE;
     }
     return esc_url($featuredImage);
+}
+
+// Check if user selected a custom logo
+function m20T1_logo() {
+    if (has_custom_logo()) {
+        the_custom_logo();
+    } else {
+        bloginfo('name');
+    }
 }
 
 
@@ -526,7 +529,7 @@ function HeaderFeaturedImage($id) {
 
 
 /////////////////////////////
-// WordPress Features
+// WordPress Functions
 /////////////////////////////
 
 // Blog post user comment styling for each comment
@@ -584,9 +587,3 @@ function blog_post_share() {
     </ul>
 <?php
 }
-
-
-/////////////////////////////
-// 3rd-Party Plugin Functions
-/////////////////////////////
-

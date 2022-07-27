@@ -119,6 +119,7 @@ add_action( 'init', function(){
 // Append to the page head tag
 add_action( 'wp_head', function(){
 ?>
+<meta name="title" content="<?php bloginfo('name'); ?>">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
 <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
@@ -147,7 +148,6 @@ add_action( 'wp_head', function(){
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
 ?>
-
 <?php
 });
 

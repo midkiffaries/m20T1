@@ -116,7 +116,7 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type('post_tag', 'page');
 });
 
-// Append or remove code from the page header
+// Append to the page head tag
 add_action( 'wp_head', function(){
 ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -144,9 +144,15 @@ add_action( 'wp_head', function(){
 <?php
 });
 
-// Append or remove code from the page footer
+// Append to the top of the page body tag
+add_action( 'wp_body_open', function(){
+?>
+
+<?php
+});
+
+// Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
-    // Display Contact form 
 ?>
 <script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script>
 <?php

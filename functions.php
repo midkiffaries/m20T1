@@ -114,10 +114,40 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type('post_tag', 'page');
 });
 
+// Append or remove code from the page header
+add_action( 'wp_head', function(){
+?>
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+<meta name="author" content="Ted Balmer | MarchTwenty.com">
+<base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
+<meta name="application-name" content="<?php bloginfo('name'); ?>">
+<meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
+<meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="<?php esc_url(printf("%s/favicon.ico", home_url())); ?>" sizes="any">
+<link rel="icon" href="<?php esc_url(printf("%s/favicon.svg", home_url())); ?>" type="image/svg+xml">
+<link rel="apple-touch-icon" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
+<link rel="manifest" href="<?php esc_url(printf("%s/site.webmanifest", home_url())); ?>">
+<meta property="og:locale" content="<?php echo get_bloginfo('language'); ?>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?php esc_url(the_permalink()); ?>">
+<meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+<meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
+<meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="<?php esc_url(the_permalink()); ?>">
+<meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+<meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
+<meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<?php
+    });
+
 // Append or remove code from the page footer
 add_action( 'wp_footer', function(){
-// Display Contact form  ?>
-<script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script><?php
+    // Display Contact form 
+?>
+<script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script>
+<?php
 });
 
 // Set the excerpt length
@@ -409,31 +439,6 @@ function SEO_Image($id) {
         $featuredImage = SOCIAL_IMAGE;
     }
     return esc_url($featuredImage);
-}
-
-// Additional <head> meta data
-function m20T1_metadata() {
-?>
-    <meta name="application-name" content="<?php bloginfo('name'); ?>">
-    <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
-    <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="<?php esc_url(printf("%s/favicon.ico", home_url())); ?>" sizes="any">
-    <link rel="icon" href="<?php esc_url(printf("%s/favicon.svg", home_url())); ?>" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
-    <link rel="manifest" href="<?php esc_url(printf("%s/site.webmanifest", home_url())); ?>">
-    <meta property="og:locale" content="<?php echo get_bloginfo('language'); ?>">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php esc_url(the_permalink()); ?>">
-    <meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-    <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
-    <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?php esc_url(the_permalink()); ?>">
-    <meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-    <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
-    <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<?php
 }
 
 

@@ -2,16 +2,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>" >
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="<?php bloginfo('charset'); ?>" >
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); // WordPress generated meta data and scripts ?>
 
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <meta name="author" content="Ted Balmer | MarchTwenty.com">
-    <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
-<?php m20T1_metadata(); // Include additional custom meta data ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

@@ -2,36 +2,6 @@
  * Modals JavaScript
 **************************/
 
-// Search modal content
-const SearchModal = (`
-<h3 class="search-title">Search</h3>
-<div class="search-block search-modal">
-    <form method="get" class="search-form" role="search" action="${siteUri}">
-        <input type="search" class="search-input" name="s" value="" placeholder="Search blog posts, pages, etc." autocapitalize="none" autocorrect="off" accesskey="s" maxlength="255" pattern="[^'\x22]+" aria-label="Search Input" autofocus required><input type="submit" value="&nbsp;" class="button-square search-submit" aria-label="Submit Search">
-    </form>
-</div>
-<style>
-.dialog-search .dialog-content {
-	border-radius: 1px;
-	background: none;
-	box-shadow: none;
-	padding: 0;
-}
-.dialog-content .search-title {
-    margin: 0;
-}
-.dialog-content .search-input {
-	width: calc(100% - 2em);
-	font-size: 1.4em;
-}
-.dialog-content .search-submit {
-	width: 2em;
-	font-size: 1.4em;
-	border-color: transparent;
-}
-</style>
-`);
-
 // Display Alert Modal Box -- text: displayed text | bgColor: background-color
 function AlertModal(text, bgColor) {
     const dialog = document.createElement("dialog"), 

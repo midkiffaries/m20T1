@@ -350,3 +350,88 @@ Custom Page Styling
 .c-accordion__content {
 	margin: auto 1em;
 }
+
+
+/************************ 
+Dialogs
+************************/
+
+/* Email Dialog */
+.dialog-content h3 {
+    margin: 0;
+}
+.dialog-content fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.dialog-content label {
+	display: block;
+}
+.dialog-content [type="text"],
+.dialog-content [type="email"],
+.dialog-content textarea {
+	width: 100%;
+}
+.dialog-content textarea {
+	height: 10em;
+	max-height: 20em;
+}
+.dialog-content [type="submit"] {
+	font-size: 1.2em;
+	padding: 0.5em 1em;
+	border-color: transparent;
+	color: #fff;
+}
+.dialog-content .contact_error::after {
+	opacity: 0;
+	display: inline-block;
+	margin-left: 0.3rem;
+	vertical-align: middle;
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M13.2 13.2V6h-2.4v7.2zm0 4.8v-2.4h-2.4V18zM12 0q5 0 8.5 3.5T24 12q0 5-3.5 8.5T12 24q-5 0-8.5-3.5T0 12q0-5 3.5-8.5T12 0z' fill='red'/%3E%3C/svg%3E");
+	transition: opacity 0.3s ease-in-out 0s;
+}
+.dialog-content .contact_server {
+	position: absolute;
+	padding: 0;
+	transform: translate(10em, -4em);
+	width: calc(100% - 11em);
+	color: #d00;
+}
+.dialog-content .contact_success {
+	transform: translate(1em,-18em);
+	width: calc(92%);
+	color: #090;
+	text-align: center;
+	border: 2px solid #090;
+	background: #fff;
+	font-size: 1.2em;
+}
+@media (max-width: 812px) {
+	.dialog-content .contact_server {
+		transform: translate(10em, -5em);
+	}
+}
+
+/* Search Dialog */
+.dialog-search .dialog-content {
+	border-radius: 1px;
+	background: none;
+	box-shadow: none;
+	padding: 0;
+}
+.dialog-search .search-title {
+	margin: 0;
+}
+.dialog-search .search-input {
+	width: calc(100% - 3em);
+	height: 2.1em;
+	font-size: 1.4em;
+}
+.dialog-search .search-submit {
+	vertical-align: -5px;
+	width: 2.2em;
+	height: 2.1em;
+	font-size: 1.4em;
+	border-color: transparent;
+}

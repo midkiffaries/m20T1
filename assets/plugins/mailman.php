@@ -47,5 +47,3 @@ if ($Name && $Email && $Message) {
 function cleanUserInput($input) {
     return htmlspecialchars(strip_tags($input));
 }
-
-?>

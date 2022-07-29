@@ -1,3 +1,4 @@
+<?php // Global Search Form ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <?php $unique_id = wp_unique_id( 'search-form-' ); ?>

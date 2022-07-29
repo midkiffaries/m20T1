@@ -35,9 +35,6 @@ define('SHORT_TEXT_LENGTH', 350); // Number of characters
 // SEO text excerpt length
 define('SEO_TEXT_LENGTH', 165); // Number of characters
 
-// Contact Form 7 Shortcode block -- Requires 'Contact Form 7' plugin
-define('FORM_SHORTCODE', '[contact-form-7 id="2479" title="Main Contact Form"]');
-
 
 /////////////////////////////
 // WordPress Settings
@@ -155,6 +152,14 @@ add_action( 'wp_body_open', function(){
 add_action( 'wp_footer', function(){
 ?>
 <script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script>
+<template id="Search-Modal">
+    <h3 class="search-title">Search</h3>
+    <?php get_search_form('search-modal'); // Load searchform.php ?>
+</template>
+
+<template id="Contact-Modal">
+    <?php include 'contactform.php'; // Load contactform.php ?>
+</template>
 <?php
 });
 

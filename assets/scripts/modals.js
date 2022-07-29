@@ -179,6 +179,8 @@ function HtmlModal(c, v) {
         dialog = document.createElement('dialog'),
         headerDiv = document.createElement('header'),
 		innerDiv = document.createElement('div');
+    const tempID = document.getElementById(v);
+    const tempClone = tempID.content.cloneNode(true);
 
 	// Dialog frame
 	dialog.setAttribute('class', `dialog-html dialog-${c}`);
@@ -191,7 +193,8 @@ function HtmlModal(c, v) {
 
 	// Dialog body
 	innerDiv.setAttribute('class', 'dialog-content');
-	innerDiv.innerHTML = v;
+	//innerDiv.innerHTML = v;
+    innerDiv.appendChild(tempClone);
 
 	// Dialog style
 	style.textContent = (`
@@ -284,23 +287,32 @@ function HtmlModal(c, v) {
 	setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
 }
 
-// Close all open dialog nodes specific "c = ClassName"
-/*
-function closeModals(c) {
-    let dialog = document.getElementsByClassName(c), 
-        l = dialog.length;
-    
-    if (l) {
-        for (let i = 0; i < l; i++) {
-            document.body.classList.remove("disable-scroll");
-            dialog[i].classList.add("dialog-close");
-            setTimeout(() => { 
-                dialog[i].parentNode.removeChild(dialog[i]);
-            }, 150);
+// Contact form logic when submit button is pressed
+function SubmitContactForm() {
+    const formName = sanitizeInput(document.getElementById("contact_name").value),
+        formEmail = sanitizeInput(document.getElementById("contact_email").value),
+        formMessage = sanitizeInput(document.getElementById("contact_message").value);
+
+    if (formName && validateEmail(formEmail) && formMessage) {
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            //if (this.responseText == true) {
+                AlertModal('Your message has been sent! I will get back to you as soon as possible.', '#00bb00')
+            //} else {
+            //    AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
+            //}
         }
+        xmlhttp.open("GET", `${themeUri}assets/plugins/mailman.php?name=${formName}&email=${formEmail}&message=${formMessage}`);
+        xmlhttp.send();
+
+        closeModals('dialog-email');
+        return;
+    } else {
+        AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
+        return;
     }
 }
-*/
+
 // Check field for validity
 const checkField = v => {
 	if (!v.value) v.classList.add("message-error");
@@ -318,18 +330,4 @@ const validateEmail = v => {
     const mailhash = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (v.match(mailhash)) return true;
     else return false;
-}
-
-// Improve the behavior of certain input types
-function checkInput() {
-    const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
-
-	for (let i = 0; i < l; i++) {
-        let inputAttrib = inputNum[i].getAttribute("type");
-        // Custom charset for input[type="email"] and input[type="url"]
-        if (inputAttrib === "email" || inputAttrib === "url") {
-            // Accept everything but spaces
-            inputNum[i].onkeypress = () => event.charCode >= 33 && event.charCode <= 122;
-        }
-    }
 }

@@ -28,6 +28,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 - Featured image support for use as the hero/header image on posts and pages
 - Support for custom WordPress editor styling
 - Support for <b>dark mode</b> via a built in switch
+- Built in contact form and accompanying email logic
 
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across.

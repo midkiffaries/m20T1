@@ -293,7 +293,7 @@ function SubmitContactForm() {
         formEmail = sanitizeInput(document.getElementById("contact_email").value),
         formMessage = sanitizeInput(document.getElementById("contact_message").value);
 
-    if (formName && validateEmail(formEmail) && formMessage) {
+    if (formName && validateEmail(formEmail) && formMessage) { // Success
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function() {
             //if (this.responseText == true) {
@@ -304,10 +304,9 @@ function SubmitContactForm() {
         }
         xmlhttp.open("GET", `${themeUri}assets/plugins/mailman.php?name=${formName}&email=${formEmail}&message=${formMessage}`);
         xmlhttp.send();
-
         closeModals('dialog-email');
         return;
-    } else {
+    } else { // Error
         AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
         return;
     }

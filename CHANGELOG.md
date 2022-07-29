@@ -1,5 +1,10 @@
 # Changes to m20T1
 
+### 1.0 Alpha 9 (July 28, 2022)
+
+* Re-implemented the contact form and changed how the contact and search forms are stored and retrieved.
+* Eliminating unnecessary assets and cleaning up code.
+
 ### 1.0 Alpha 8 (July 19, 2022)
 
 * Even more clean up, readjustments and tidying up. 

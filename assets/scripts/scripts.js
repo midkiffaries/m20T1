@@ -261,7 +261,6 @@ function closeModals(c) {
 }());
 
 // Embedded YouTube video iframe auto lazy loading
-/*
 (function(){
     let st = document.createElement("style"), 
         youtube = document.getElementsByClassName("youtube"), 
@@ -337,7 +336,7 @@ function closeModals(c) {
         document.body.appendChild(st);
     }
 }());
-*/
+
 // Parallaxing backgrounds, use class="bg-parallax" and data-rate="10"
 (function(){
     let par = document.getElementsByClassName("bg-parallax"), 

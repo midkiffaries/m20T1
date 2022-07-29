@@ -90,8 +90,7 @@ add_action('wp_enqueue_scripts', function(){
     $version = wp_get_theme()->get('Version');
     
     // Add Javascript to the bottom of the page body
-    wp_enqueue_script( 'base-script', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
-    wp_enqueue_script( 'modals-script', get_template_directory_uri() . "/assets/scripts/modals.js", array(), $version, true );
+    wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), $version, true );
 
     // Add stylesheets to the HEAD metadata
     wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );

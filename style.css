@@ -70,12 +70,12 @@ body {
 }
 
 
-/************************************************
-Custom Typography for the page body content
-************************************************/
+/************************************
+Typography for the page body content
+************************************/
 
 .the-content {
-	
+	font-size: 1.2rem;
 }
 
 .the-content h1 {
@@ -118,6 +118,10 @@ Custom Typography for the page body content
 	
 }
 
+.the-content figure {
+	margin: 0.1rem 0.9rem 1rem;
+}
+
 /* Body content links */
 .the-content a[href] {
 	color: var(--brand-color);
@@ -133,9 +137,9 @@ Custom Typography for the page body content
 	color: var(--brand-color-dark);
 }
 
-/************************************************
+/************************************
 Sidebar and Widgets Styling
-************************************************/
+***********************************/
 
 .page-sidebar {
 
@@ -248,7 +252,6 @@ button:focus,
 [type="submit"]:focus,
 [type="reset"]:focus {
 	outline: none;
-	xbox-shadow: 0 0 3px 1px var(--brand-color);
 	border-color: var(--brand-color-dark);
 }
 

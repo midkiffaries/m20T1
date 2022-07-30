@@ -300,7 +300,7 @@ document.addEventListener("scroll", function () {
 		visibility: hidden;
 		opacity: 0;
 		right: 1.1em;
-		bottom: 1.4em;
+		bottom: 1.6em;
 		width: 40px;
 		height: 40px;
 		border-radius: 0.2em;

@@ -13,6 +13,7 @@ Base WordPress Page Styling
 	--icon-search: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='488'%3E%3Cpath d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/%3E%3C/svg%3E");
 	--icon-mail: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='512'%3E%3Cpath d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/%3E%3C/svg%3E");
 	--featured-img-bg: linear-gradient(135deg, rgba(6, 6, 6, 0.01) 0%, rgba(6, 6, 6, 0.01) 1%,rgba(131, 131, 131, 0.01) 1%, rgba(131, 131, 131, 0.01) 14%,rgba(250, 250, 250, 0.01) 14%, rgba(250, 250, 250, 0.01) 26%,rgba(30, 30, 30, 0.01) 26%, rgba(30, 30, 30, 0.01) 62%,rgba(117, 117, 117, 0.01) 62%, rgba(117, 117, 117, 0.01) 66%,rgba(248, 248, 248, 0.01) 66%, rgba(248, 248, 248, 0.01) 76%,rgba(39, 39, 39, 0.01) 76%, rgba(39, 39, 39, 0.01) 100%),linear-gradient(135deg, rgba(57, 57, 57, 0.06) 0%, rgba(57, 57, 57, 0.06) 4%,rgba(227, 227, 227, 0.06) 4%, rgba(227, 227, 227, 0.06) 26%,rgba(67, 67, 67, 0.06) 26%, rgba(67, 67, 67, 0.06) 27%,rgba(126, 126, 126, 0.06) 27%, rgba(126, 126, 126, 0.06) 39%,rgba(103, 103, 103, 0.06) 39%, rgba(103, 103, 103, 0.06) 72%,rgba(16, 16, 16, 0.06) 72%, rgba(16, 16, 16, 0.06) 76%,rgba(21, 21, 21, 0.06) 76%, rgba(21, 21, 21, 0.06) 88%,rgba(69, 69, 69, 0.06) 88%, rgba(69, 69, 69, 0.06) 100%),linear-gradient(135deg, rgba(156, 156, 156, 0.05) 0%, rgba(156, 156, 156, 0.05) 12%,rgba(54, 54, 54, 0.05) 12%, rgba(54, 54, 54, 0.05) 48%,rgba(169, 169, 169, 0.05) 48%, rgba(169, 169, 169, 0.05) 59%,rgba(104, 104, 104, 0.05) 59%, rgba(104, 104, 104, 0.05) 62%,rgba(165, 165, 165, 0.05) 62%, rgba(165, 165, 165, 0.05) 68%,rgba(124, 124, 124, 0.05) 68%, rgba(124, 124, 124, 0.05) 77%,rgba(189, 189, 189, 0.05) 77%, rgba(189, 189, 189, 0.05) 85%,rgba(173, 173, 173, 0.05) 85%, rgba(173, 173, 173, 0.05) 100%),linear-gradient(135deg, rgba(182, 182, 182, 0.07) 0%, rgba(182, 182, 182, 0.07) 22%,rgba(122, 122, 122, 0.07) 22%, rgba(122, 122, 122, 0.07) 28%,rgba(62, 62, 62, 0.07) 28%, rgba(62, 62, 62, 0.07) 44%,rgba(89, 89, 89, 0.07) 44%, rgba(89, 89, 89, 0.07) 61%,rgba(110, 110, 110, 0.07) 61%, rgba(110, 110, 110, 0.07) 83%,rgba(185, 185, 185, 0.07) 83%, rgba(185, 185, 185, 0.07) 86%,rgba(192, 192, 192, 0.07) 86%, rgba(192, 192, 192, 0.07) 100%),linear-gradient(135deg, rgba(8, 8, 8, 0.06) 0%, rgba(8, 8, 8, 0.06) 54%,rgba(48, 48, 48, 0.06) 54%, rgba(48, 48, 48, 0.06) 57%,rgba(245, 245, 245, 0.06) 57%, rgba(245, 245, 245, 0.06) 86%,rgba(12, 12, 12, 0.06) 86%, rgba(12, 12, 12, 0.06) 94%,rgba(225, 225, 225, 0.06) 94%, rgba(225, 225, 225, 0.06) 100%),linear-gradient(135deg, rgb(32,83,128) 0%,rgb(64,165,255) 80%,rgb(32,83,128) 100%);
+	--featured-img-bg-over: rgba(0,0,0,0.1) url(../images/grain-light.png) repeat 0 0;
 
 	--facebook-color: #3b5998;
 	--twitter-color: #1da1f2;
@@ -212,9 +213,10 @@ Site Header
 .header-single-page .header-hero-overlay,
 .header-single-post .header-hero-overlay,
 .header-blog .header-hero-overlay {
-	background: transparent url(../images/grain-light.png) repeat 0 0;
+	background: var(--featured-img-bg-over);
 	width: 100%;
-	height: 100%;
+	height: var(--header-height);
+	background-size: 1.5em 1.5em;
 }
 
 /* Header nav and logo */
@@ -323,6 +325,27 @@ Site Header
 	}
 	.header-breadcrumbs {
 		display: none;
+	}
+	/* Hamburger menu pull down on narrow screens */
+	.menubar {
+		padding: 0.6em;
+		width: auto;
+		position: fixed;
+		top: 0;
+		z-index: 100;
+	}
+	.pull-menu-left {
+		will-change: auto;
+		background-color: rgba(255,255,255,0.97);
+		position: fixed;
+		left: -200em;
+		padding: 1em;
+		width: 100vw;
+		height: 100vh;
+	}
+	.pull-menu-left.menu-show {
+		left: 0;
+		transition: left 0.3s ease-in-out;
 	}
 }
 
@@ -1006,24 +1029,11 @@ Page Pagination Section
 	margin: 0 0.8em;
 }
 
+
 /************************ 
-Special Functions
+Dark Mode Styling
 *************************/
 
-/* Parallax effect */
-.bg-parallax {
-    background-size: cover;
-    will-change: auto;
-}
-
-.element-parallax {
-	top: 0;
-	left: 0;
-    position: absolute;
-    will-change: auto;
-}
-
-/* Dark Mode Styling */
 body.dark-mode,
 .dark-mode dialog > div {
 	color: #eee;
@@ -1073,28 +1083,7 @@ body.dark-mode,
 	filter: brightness(0) invert();
 }
 
-/* Hamburger menu pull down on narrow screens */
 @media (max-width: 850px) {
-	.menubar {
-		padding: 0.6em;
-		width: auto;
-		position: fixed;
-		top: 0;
-		z-index: 100;
-	}
-	.pull-menu-left {
-		will-change: auto;
-		background-color: rgba(255,255,255,0.97);
-		position: fixed;
-		left: -200em;
-		padding: 1em;
-		width: 100vw;
-		height: 100vh;
-	}
-	.pull-menu-left.menu-show {
-		left: 0;
-		transition: left 0.3s ease-in-out;
-	}
 	.dark-mode .pull-menu-left {
 		background-color: rgba(0,0,0,0.95);
 	}
@@ -1105,10 +1094,27 @@ body.dark-mode,
 
 
 /************************ 
-WordPress Plugin Style
+Special Custom Features
 *************************/
 
-/* Breadcrumbs Plugin Style */
+/* Parallax effect */
+.bg-parallax {
+    background-size: cover;
+    will-change: auto;
+}
+
+.element-parallax {
+	top: 0;
+	left: 0;
+    position: absolute;
+    will-change: auto;
+}
+
+
+/************************ 
+Breadcrumbs Plugin Style
+*************************/
+
 .breadcrumbs .trail-browse {
 	display: none;
 }
@@ -1147,35 +1153,102 @@ WordPress Plugin Style
 
 
 /************************ 
-Contact Form Styling
+Contact Modal Styling
 *************************/
 
-.contact-form h3 {
+.dialog-email h3 {
     margin: 0;
 }
 
-.contact-form fieldset {
+.dialog-email fieldset {
 	border: none;
 	padding: 0;
+	margin: 0;
 }
 
-.contact-form label {
+.dialog-email label {
 	display: block;
+	font-size: 1.1rem;
 }
 
-.contact-form [type="text"],
-.contact-form [type="email"],
-.contact-form textarea {
+.dialog-email [type="text"],
+.dialog-email [type="email"],
+.dialog-email textarea {
 	width: 100%;
+	font-size: 1.2rem;
 }
 
-.contact-form textarea {
+.dialog-email textarea {
 	height: 10em;
 	max-height: 20em;
 }
 
-.contact-form [type="submit"] {
+.dialog-email [type="submit"] {
 	font-size: 1.2em;
 	padding: 0.5em 1em;
+	border-color: transparent;
+	color: #fff;
+}
+
+.dialog-email .contact_error::after {
+	opacity: 0;
+	display: inline-block;
+	margin-left: 0.3rem;
+	vertical-align: middle;
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M13.2 13.2V6h-2.4v7.2zm0 4.8v-2.4h-2.4V18zM12 0q5 0 8.5 3.5T24 12q0 5-3.5 8.5T12 24q-5 0-8.5-3.5T0 12q0-5 3.5-8.5T12 0z' fill='red'/%3E%3C/svg%3E");
+	transition: opacity 0.3s ease-in-out 0s;
+}
+
+.dialog-email .contact_server {
+	position: absolute;
+	padding: 0;
+	transform: translate(10em, -4em);
+	width: calc(100% - 11em);
+	color: #d00;
+}
+
+.dialog-email .contact_success {
+	transform: translate(1em,-18em);
+	width: calc(92%);
+	color: #090;
+	text-align: center;
+	border: 2px solid #090;
+	background: #fff;
+	font-size: 1.2em;
+}
+
+@media (max-width: 812px) {
+	.dialog-email .contact_server {
+		transform: translate(10em, -5em);
+	}
+}
+
+
+/************************ 
+Search Modal Styling
+*************************/
+
+.dialog-search .dialog-content {
+	border-radius: 1px;
+	background: none;
+	box-shadow: none;
+	padding: 0;
+}
+
+.dialog-search .search-title {
+	margin: 0;
+}
+
+.dialog-search .search-input {
+	width: calc(100% - 3em);
+	height: 2.1em;
+	font-size: 1.4em;
+}
+
+.dialog-search .search-submit {
+	vertical-align: -5px;
+	width: 2.2em;
+	height: 2.1em;
+	font-size: 1.4em;
 	border-color: transparent;
 }

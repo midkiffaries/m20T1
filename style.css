@@ -27,7 +27,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--body-link-color: var(--brand-color);
 	--page-background: #fdfdfd;
 	--footer-background: rgba(0,0,0,0.15);
-	--background-light: rgba(0,0,0,0.02);
+	--comment-background: rgba(0,0,0,0.05);
 
 	--button-base-color: var(--brand-color);
 	--button-text-color: #fff;
@@ -278,6 +278,10 @@ Custom Page Styling
 
 .footer-widgets .wp-block-social-links svg {
 	fill: #000 !important;
+}
+
+.list-comments .comment {
+	background: var(--comment-background);
 }
 
 /* Buttons with Icons */

@@ -957,6 +957,11 @@ Comments Section
 	margin: 0;
 }
 
+.comments-title small {
+	color: #777;
+	margin-left: 4px;
+}
+
 .comment-name,
 .comment-email,
 .comment-url,
@@ -1246,7 +1251,7 @@ Search Modal Styling
 }
 
 .dialog-search .search-submit {
-	vertical-align: -5px;
+	vertical-align: 0;
 	width: 2.2em;
 	height: 2.1em;
 	font-size: 1.4em;

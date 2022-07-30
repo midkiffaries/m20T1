@@ -189,6 +189,7 @@ Sidebar and Widgets Styling
 Form Elements Styling
 ************************/
 
+/* Input elements */
 [type="search"],
 [type="text"],
 [type="email"],
@@ -197,6 +198,7 @@ textarea,
 select {
 	transition: border 0.25s;
 	border-width: 2px;
+	transition: border-color 0.5s, box-shadow 0.3s;
 }
 
 [type="search"]:hover,
@@ -205,7 +207,7 @@ select {
 [type="url"]:hover,
 textarea:hover,
 select:hover {
-	border-color: var(--brand-color);
+	border-color: var(--brand-color-dark);
 }
 
 [type="search"]:focus,
@@ -215,12 +217,14 @@ select:hover {
 textarea:focus,
 select:focus {
 	outline: none;
-	box-shadow: 0 0 3px 1px var(--brand-color);
-	border-color: var(--brand-color-dark);
+	box-shadow: 0 0 2px 1px var(--brand-color);
+	border-color: var(--brand-color);
 }
 
+/* Buttons */
 button,
-[type="submit"] {
+[type="submit"],
+[type="reset"] {
 	color: var(--button-text-color);
 	background-color: var(--button-base-color);
 	border-width: 2px;
@@ -229,13 +233,23 @@ button,
 }
 
 button:hover,
-[type="submit"]:hover {
+[type="submit"]:hover,
+[type="reset"]:hover {
 	filter: brightness(1.2);
 }
 
 button:active,
-[type="submit"]:active {
+[type="submit"]:active,
+[type="reset"]:active {
 	filter: brightness(0.8);
+}
+
+button:focus,
+[type="submit"]:focus,
+[type="reset"]:focus {
+	outline: none;
+	xbox-shadow: 0 0 3px 1px var(--brand-color);
+	border-color: var(--brand-color-dark);
 }
 
 
@@ -263,7 +277,7 @@ Custom Page Styling
 	fill: #000 !important;
 }
 
-/* Button Icons */
+/* Buttons with Icons */
 .square-button {
 	padding: 1em;
 	margin: 0 1px;
@@ -283,7 +297,7 @@ Custom Page Styling
 	background-image: var(--icon-search);
 }
 
-/* Blog Post Header links */
+/* Blog Post Links */
 .entry-header a[href],
 .single-entry-header a[href] {
 	color: var(--header-color);

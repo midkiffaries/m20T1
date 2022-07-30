@@ -772,7 +772,7 @@ function SubmitContactForm() {
         closeModals('dialog-email');
         return;
     } else { // Error
-        AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
+        AlertModal('There was an issue sending you message.', '#cc2222')
         return;
     }
 }

@@ -299,6 +299,7 @@ iframe {
 	vertical-align: middle;
 	border: none;
 	object-fit: cover;
+	margin: 0;
 }
 
 img[src$='.gif'] {

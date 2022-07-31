@@ -14,7 +14,13 @@ Text Domain: m20t1
 Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments, accessibility-ready, footer-widgets, flexible-header, editor-style
 ************************/
 
-/* Variables */
+/* Import External Fonts */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&display=swap');
+*/
+
+/* Site Variables */
 :root {
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
@@ -42,7 +48,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	caret-color: var(--brand-color);
 }
 
-/* Selection */
+/* Text Selection */
 ::-moz-selection {
     background-color: var(--highlight-color);
     text-shadow: none;

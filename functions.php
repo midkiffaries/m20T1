@@ -541,6 +541,25 @@ function HeaderFeaturedImage($id) {
 // WordPress Functions
 /////////////////////////////
 
+// Display the author's user level
+function user_level($level) {
+    if ($level > 7) {
+        return "Administrator";
+    } else {
+        switch ($level) {
+            case 7:
+                return "Editor";
+                break;
+            case 2:
+                return "Author";
+                break;
+            default:
+                return "Contributor";
+                break;
+        }
+    }
+}
+
 // Blog post user comment styling for each comment
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;

@@ -48,7 +48,7 @@
                 </figure>
             </div>
             <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author."><?php echo get_the_author_meta( 'display_name' ); ?> (<?php echo user_level(get_the_author_meta( 'user_level' )); ?>)</a></h3>
-            <p class="author-bio-about"><?php printf(get_the_author_meta( 'user_description' )); ?></p>
+            <p class="author-bio-about"><?php printf(shorten_the_content(get_the_author_meta( 'user_description' ))); ?></p>
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">

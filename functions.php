@@ -392,9 +392,12 @@ function GetPageTitle($id) {
 
 // Shorten the_content in place of using the_excerpt
 function shorten_the_content($post) {
-    $length = SHORT_TEXT_LENGTH; 
     $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
-    return trim(substr($excerpt, 0, $length)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
+    if (strlen($excerpt) > SHORT_TEXT_LENGTH) {
+        return trim(substr($excerpt, 0, SHORT_TEXT_LENGTH)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
+    } else {
+        return $excerpt;
+    }
 }
 
 

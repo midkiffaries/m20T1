@@ -1,6 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?> id="top-of-site">
 <head>
 <meta charset="<?php bloginfo('charset'); ?>" >
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,7 +12,7 @@
 
 <?php wp_body_open(); // WordPress body includes ?>
 
-<header class="page-header" role="banner" id="top">
+<header class="page-header" role="banner">
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">

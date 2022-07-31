@@ -142,10 +142,9 @@ add_action( 'wp_head', function(){
 });
 
 // Append to the top of the page body tag
-add_action( 'wp_body_open', function(){
-?>
-<?php
-});
+//add_action( 'wp_body_open', function(){
+
+//});
 
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
@@ -157,7 +156,7 @@ add_action( 'wp_footer', function(){
 </template>
 
 <template id="Contact-Modal">
-    <?php include 'contactform.php'; // Load contactform.php ?>
+    <?php get_template_part('contactform'); // Load contactform.php ?>
 </template>
 <?php
 });

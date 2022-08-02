@@ -384,7 +384,7 @@ function ResizeFontClass($content) {
     }
 }
 
-// Get WordPress page title and content for select special pages (ie: home.php)
+// Get WordPress page title and content for the blog list page (index.php)
 function GetPageTitle($id) {
     $page_for_posts_obj = get_post( get_option( $id ));
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
@@ -544,22 +544,21 @@ function HeaderFeaturedImage($id) {
 // WordPress Functions
 /////////////////////////////
 
-// Display the author's user level
+// Display the author's user level/role
 function user_level($level) {
-    if ($level > 7) {
-        return "Administrator";
-    } else {
-        switch ($level) {
-            case 7:
-                return "Editor";
-                break;
-            case 2:
-                return "Author";
-                break;
-            default:
-                return "Contributor";
-                break;
-        }
+    switch ($level) {
+        case 10: 
+            return "Administrator";
+            break;
+        case 7:
+            return "Editor";
+            break;
+        case 2:
+            return "Author";
+            break;
+        default:
+            return "Contributor";
+            break;
     }
 }
 

@@ -72,7 +72,9 @@ add_action( 'after_setup_theme', function(){
     
     // HTML5 Support
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-    add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
+    
+    // Set the different post formats that the author can select
+    //add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
     
     // Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );

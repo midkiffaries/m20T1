@@ -70,13 +70,13 @@ add_action( 'after_setup_theme', function(){
     // Custom Logo Support
     add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => array( 'site-title', 'site-description' ), ) );
     
-    // HTML5 Support
+    // Add HTML5 Support
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
     
     // Set the different post formats that the author can select
     //add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
     
-    // Navigation Widgets
+    // Set the Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );

@@ -288,6 +288,9 @@ Site Header
 	.header-blog {
 		height: 11em;
 	}
+	.header-logo {
+		margin: 0.6em 0.4em;
+	}
 	.header-menubar {
 		position: fixed;
 		background-color: rgba(255,255,255,0.98);

@@ -5,7 +5,7 @@
     <div class="page-content width-side">
 
     <section class="blog-page-title">
-        <h1 class="page-title" itemprop="title"><?php echo GetPageTitle('page_for_posts'); // Get blog page title ?></h1>
+        <?php echo GetPageTitle('page_for_posts'); // Get blog page title ?>
     </section>
 
     <?php if (have_posts()) : // If posts exist ?>

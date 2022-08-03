@@ -144,9 +144,9 @@ add_action( 'wp_head', function(){
 });
 
 // Append to the top of the page body tag
-//add_action( 'wp_body_open', function(){
+add_action( 'wp_body_open', function(){
 
-//});
+});
 
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
@@ -169,7 +169,7 @@ add_filter( 'excerpt_length', function(){
 
 // Add a 'Continue Reading' link to excerpts
 add_filter( 'excerpt_more', function(){
-    return ' <span class="entry-read-more" aria-label="Read more in the post">' . MORE_TEXT . '</span>';
+    return ' <span class="entry-read-more" aria-label="Read more.">' . MORE_TEXT . '</span>';
 });
 
 // Enable the use of shortcodes in text widgets.

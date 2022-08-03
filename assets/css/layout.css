@@ -1081,7 +1081,7 @@ body.dark-mode,
 
 .dark-mode select:not([multiple]):not([size]),
 .dark-mode select, 
-.dark-mode input, 
+.dark-mode input:not([type="submit"]):not([type="button"]):not([type="reset"]), 
 .dark-mode textarea {
 	color: #fff;
 	background-color: #333;

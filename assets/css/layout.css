@@ -461,7 +461,11 @@ Single Blog Post Styling (single)
 
 .author-bio-name {
 	font-size: 1.2rem;
-	margin: 0;
+	margin: -2px 0 0;
+}
+
+.author-bio-name small {
+	font-size: 0.8rem;
 }
 
 .author-bio-about {
@@ -790,6 +794,16 @@ Page Specific Styling
 }
 
 /* Archive Page - Author Bio block */
+.author-container {
+	margin-top: 1em;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+	min-height: 10em;
+}
+
+.author-container p {
+	margin: 3px 0;
+}
+
 .author-avatar {
 	float: left;
 	margin-right: 0.6rem;

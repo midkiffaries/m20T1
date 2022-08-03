@@ -74,7 +74,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
     
     // Set the different post formats that the author can select
-    //add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
+    add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
     
     // Set the Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
@@ -151,7 +151,6 @@ add_action( 'wp_head', function(){
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
 ?>
-<script type="text/javascript" id="modal-contact-js">const ContactModal=(`<div class="contact-form" onload="checkInput()"><?php echo do_shortcode(FORM_SHORTCODE); ?></div>`);</script>
 <template id="Search-Modal">
     <h3 class="search-title">Search</h3>
     <?php get_search_form('search-modal'); // Load searchform.php ?>

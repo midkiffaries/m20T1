@@ -28,9 +28,9 @@
                     <?php printf(get_avatar(get_the_author_meta('ID'), 128)); ?>
                 </figure>
             </div>
+            <p class="author-bio-meta"><b><?php echo user_level(get_the_author_meta( 'user_level' )); ?> - <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
             <p class="author-bio-about"><?php printf($curauth->description); ?><br>
             🌎 <a href="<?php esc_url(printf($curauth->user_url)); ?>" rel="author"><?php printf($curauth->user_url); ?></a></p>
-            <p class="author-bio-meta"><b><?php echo user_level(get_the_author_meta( 'user_level' )); ?> - <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
         </div>
     </section>
     <?php endif; ?>

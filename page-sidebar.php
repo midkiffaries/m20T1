@@ -2,7 +2,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-simple <?php echo 'page-' . strtolower(preg_replace('/\s+/', '-', get_the_title())); ?>" id="main-content" role="main">
+<main class="page-main page-simple <?php echo get_page_class(); ?>" id="main-content" role="main">
     <div class="page-content width-side">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

@@ -37,6 +37,6 @@
         </div>
     </div>
 
-    <?php HeaderFeaturedImage(get_the_ID()); // Display featured image in background ?>
+    <?php Header_Hero(get_the_ID()); // Display featured image in background ?>
 
 </header>

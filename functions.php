@@ -502,7 +502,7 @@ function GetFirstImage() {
 }
 
 // Display the header image
-function HeaderFeaturedImage($id) {
+function Header_Hero($id) {
     // Type of page
     if ( is_front_page() ) { // Front-page header (None)
         $className = "homepage";
@@ -598,6 +598,11 @@ function blog_post_pagination($type) {
 // Show the blog post tags
 function blog_post_tags() {
     return the_tags('<ul role="list"><li rel="tag">', '</li><li rel="tag">', '</li></ul>');
+}
+
+// Create a unique body main page class for all pages "page-{slug}"
+function get_page_class() {
+    return 'page-' . preg_replace('/\s+/', '-', get_post_field( 'post_name', get_post() ));
 }
 
 // List social sharing links on each blog post

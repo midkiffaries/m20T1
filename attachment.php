@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-image" id="main-content" role="main">
+<main class="page-main page-image <?php echo get_page_class(); ?>" id="main-content" role="main">
     <div class="page-content width-full">
 
     <?php while ( have_posts() ) : the_post(); // Display selected media ?>

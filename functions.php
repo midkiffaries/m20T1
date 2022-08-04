@@ -51,7 +51,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'customize-selective-refresh-widgets' );
     add_theme_support( 'align-wide' );
-    //add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'wp-block-styles' );
 
     // Set featured image size
     the_post_thumbnail( 'medium' );
@@ -108,18 +108,42 @@ add_action('wp_enqueue_scripts', function(){
     //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
 });
 
-// Add Category and Tag support to pages
+// Enable or disable WordPress features on initialize
 add_action( 'init', function(){
+    // Add Category support to pages
     register_taxonomy_for_object_type('category', 'page');
+    
+    // Add Tag support to pages
     //register_taxonomy_for_object_type('post_tag', 'page');
+    
+    // Remove WordPress Emojis
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
+    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
+    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+    add_filter( 'wp_resource_hints', 'disable_emojis', 10, 2 );
+
+    // Enable the use of shortcodes in text widgets.
+    add_filter( 'widget_text', 'shortcode_unautop' );
+    add_filter( 'widget_text', 'do_shortcode' );
+
+    // Remove RSS feed links
+    remove_action( 'wp_head', 'feed_links_extra', 3 );
+    remove_action( 'wp_head', 'feed_links', 2 );
 });
+
+
 
 // Append to the page head tag
 add_action( 'wp_head', function(){
 ?>
 <meta name="title" content="<?php bloginfo('name'); ?>">
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
+<link rel="dns-prefetch" href="<?php echo preg_replace("(^https?:)", '', home_url() ); ?>">
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
 <meta name="application-name" content="<?php bloginfo('name'); ?>">
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
@@ -171,18 +195,6 @@ add_filter( 'excerpt_length', function(){
 add_filter( 'excerpt_more', function(){
     return ' <span class="entry-read-more" aria-label="Read more.">' . MORE_TEXT . '</span>';
 });
-
-// Enable the use of shortcodes in text widgets.
-add_filter( 'widget_text', 'shortcode_unautop' );
-add_filter( 'widget_text', 'do_shortcode' );
-
-// Remove WordPress Emojis
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-// Remove RSS feed links
-remove_action( 'wp_head', 'feed_links_extra', 3 );
-remove_action( 'wp_head', 'feed_links', 2 );
 
 
 /////////////////////////////

@@ -579,14 +579,7 @@ function user_level($level) {
 function reading_time() {
     $word_count = str_word_count(strip_tags(get_the_content()));
     $time = ceil($word_count / 200);
-    
-    if ($time == 1) { // 1 minute
-        $minutes = "minute";
-    } else { // greater than 1 minute
-        $minutes = "minutes";
-    }
-
-    return "{$time} {$minutes}";
+    return "{$time} min read";
 }
 
 // Blog post user comment styling for each comment

@@ -48,7 +48,7 @@
                     <div class="entry-info">
                         <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="single-entry-last-updated hidden"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time>%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span></span>
                         <span class="entry-author"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span> 
-                        <span class="entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> Read time: <?php echo reading_time(); ?></span>
+                        <span class="entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <?php echo reading_time(); ?></span>
                         <span class="entry-comments"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
                     </div>
                 </header>

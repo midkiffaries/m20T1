@@ -21,10 +21,10 @@
                     </div>
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-metadata">
-                        <span class="entry-author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span> <span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>
-                        <span class="entry-date"><time class="icon-written" datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="entry-last-updated hidden"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( '(Updated <time>%s</time>)', 'textdomain' ), get_the_modified_date() ); ?></span></span> <span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>
-                        <span class="entry-comments"><a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
-                        <span class="entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>Read time: <?php echo reading_time(); ?></span>
+                        <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time>
+                        <span class="entry-author"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                        <span class="entry-comments"> <span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> Read time: <?php echo reading_time(); ?></span>
                     </div>
                 </header>
                 <div class="the-content">

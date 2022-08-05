@@ -446,11 +446,6 @@ Single Blog Post Styling (single)
 	font-size: 1.1rem;
 }
 
-.single-entry-last-updated {
-	margin-left: 0.2rem;
-	font-style: italic;
-}
-
 .single-entry-footer {
 	clear: both;
 }
@@ -531,17 +526,18 @@ Blog Post Styling (home, archives)
 	font-size: 2.1em;
 }
 
-.entry-last-updated {
-	opacity: 0.8;
-	font-size: 0.9em;
-}
-
 .entry-separator {
 	width: 0.9rem;
 }
 
 .entry-readmore {
 	margin-top: -0.8em;
+}
+
+.entry-last-updated {
+	opacity: 0.8;
+	font-size: 0.9rem !important;
+	font-style: italic;
 }
 
 /* Enlarge <p> font-size in short blog posts */

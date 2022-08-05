@@ -22,6 +22,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom modals for alerts, confirmation and custom HTML
 - Built in contact form and accompanying email logic
+- Built in blog post reading time
 - Alternate page templates with full width and sidebar support
 - Widget support on on all pages
 - Widget support in the site header and footer

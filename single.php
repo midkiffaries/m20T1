@@ -18,7 +18,7 @@
                     <span class="single-entry-date"><time class="icon-written" datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
                     <span class="single-entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span>
                     <span class="single-entry-comments hidden"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span><a href="#Comments"><?php comments_number('No comments', 'One comment', '% comments'); ?></a></span>
-                    <span class="single-entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>Read time: <?php echo reading_time(); ?></span>
+                    <span class="single-entry-read-time hidden"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>Read time: <?php echo reading_time(); ?></span>
                 </div>
             </header>
             <div class="the-content single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">

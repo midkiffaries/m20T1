@@ -24,10 +24,9 @@
                         <span class="entry-type"><?php echo get_post_type(); ?></span>
                         <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                         <span class="entry-author"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-comments hidden"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <span class="icon-comment"><?php comments_number('0', '1', '%');?></span></span>
                     </div>
                 </header>
-                <div class="the-content entry-defaultfont">
+                <div class="the-content">
                     <img class="entry-square-thumbnail" src="<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', false); ?>" alt="">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>

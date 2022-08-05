@@ -575,6 +575,20 @@ function user_level($level) {
     }
 }
 
+// Get a blog post's reading time
+function reading_time() {
+    $word_count = str_word_count(strip_tags(get_the_content()));
+    $time = ceil($word_count / 200);
+    
+    if ($time == 1) { // 1 minute
+        $minutes = "minute";
+    } else { // greater than 1 minute
+        $minutes = "minutes";
+    }
+
+    return "{$time} {$minutes}";
+}
+
 // Blog post user comment styling for each comment
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;

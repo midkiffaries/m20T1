@@ -12,7 +12,7 @@
 
     <article class="blog-roll" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
-        <?php while (have_posts()) : the_post(); // List all the posts ?>
+    <?php while (have_posts()) : the_post(); // List all the posts ?>
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">
@@ -36,7 +36,7 @@
                 </footer>
             </div>
         </div>
-        <?php endwhile; ?>
+    <?php endwhile; ?>
 
     </article>
 

@@ -189,12 +189,12 @@ Site Header
 
 /* No header image on homepage */
 .header-homepage {
-	height: 3em;
+	height: 0;
 }
 
-/* No header image attachment and 404 pages */
+/* No header - blog, attachment, search and 404 pages */
 .header-noimage {
-	height: 3.5em;
+	height: 2.5em;
 }
 
 /* Standard header image on all other pages */

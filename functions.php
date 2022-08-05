@@ -29,9 +29,9 @@ define('POST_SEPARATOR', '&nbsp;|&nbsp;');
 // Read more text ending
 define('MORE_TEXT', '[...]');
 // Max excerpt length
-define('EXCERPT_LENGTH', 90); // Number of Words
+define('EXCERPT_LENGTH', 90); // Number of words
 // Shorten length of content
-define('SHORT_TEXT_LENGTH', 350); // Number of characters
+define('SHORT_TEXT_LENGTH', 60); // Number of words
 // SEO text excerpt length
 define('SEO_TEXT_LENGTH', 165); // Number of characters
 
@@ -134,8 +134,6 @@ add_action( 'init', function(){
     remove_action( 'wp_head', 'feed_links_extra', 3 );
     remove_action( 'wp_head', 'feed_links', 2 );
 });
-
-
 
 // Append to the page head tag
 add_action( 'wp_head', function(){
@@ -406,11 +404,7 @@ function GetPageTitle($id) {
 // Shorten the_content in place of using the_excerpt
 function shorten_the_content($post) {
     $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
-    if (strlen($excerpt) > SHORT_TEXT_LENGTH) {
-        return trim(substr($excerpt, 0, SHORT_TEXT_LENGTH)) . ' <span class="entry-read-more">' . MORE_TEXT . '</span>';
-    } else {
-        return $excerpt;
-    }
+    return wp_trim_words($excerpt, SHORT_TEXT_LENGTH, ' <span class="entry-read-more">' . MORE_TEXT . '</span>');
 }
 
 
@@ -577,8 +571,8 @@ function user_level($level) {
 
 // Get a blog post's reading time
 function reading_time() {
-    $word_count = str_word_count(strip_tags(get_the_content()));
-    $time = ceil($word_count / 200);
+    $wordcount = str_word_count(strip_tags(get_the_content()));
+    $time = ceil($wordcount / 200);
     return "{$time} min read";
 }
 

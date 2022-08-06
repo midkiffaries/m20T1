@@ -25,7 +25,7 @@ define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-bl
 define('SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-share.jpg');
 //define('SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/social-share.jpg');
 // Inline separator in the blog post metadata
-define('POST_SEPARATOR', '&nbsp;|&nbsp;');
+define('POST_SEPARATOR', '&nbsp;–&nbsp;');
 // Read more text ending
 define('MORE_TEXT', '[...]');
 // Max excerpt length
@@ -482,7 +482,7 @@ function FeaturedImageURL($id, $size, $isBackground) {
 
     // Check if background is being placed in a style attrib or in an image tag
     if ($isBackground && $image) {
-        return "background-image:url(" . $image . ");";
+        return "background-image:url({$image});";
     } else {
         if ($image) {
             return $image;

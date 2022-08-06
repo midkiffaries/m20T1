@@ -38,26 +38,26 @@
     <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-            <div class="post-container">    
+    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+            <div class="post-container">
+                <div class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
+                    <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
+                </div>
                 <header class="entry-header">
-                    <div class="entry-wide-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
-                        <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
-                    </div>
-                    <h2 class="entry-title" itemprop="title"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                    <div class="entry-info">
-                        <span class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time> <span class="single-entry-last-updated hidden"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated <time>%s</time>', 'textdomain' ), get_the_modified_date() ); ?></span></span>
-                        <span class="entry-author"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span>Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span> 
-                        <span class="entry-comments"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <span class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments'); ?></span></span>
+                    <div class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>
+                    <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                    <div class="entry-metadata">
+                        <span class="entry-author">Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <?php echo reading_time(); ?></span>
+                        <span class="entry-comments"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">
-                    <div class="entry-tags"><?php blog_post_tags(); ?></div>
-                    <div class="entry-share"><?php blog_post_share(); ?></div>
+                    <div class="entry-tags"><?php //blog_post_tags(); ?></div>
+                    <div class="entry-share"><?php //blog_post_share(); ?></div>
                 </footer>
             </div>
         </div>

@@ -32,8 +32,8 @@
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>
                 </div>
                 <footer class="entry-footer hidden">
-                    <div class="entry-tags"><?php blog_post_tags(); ?></div>
-                    <div class="entry-share"><?php blog_post_share(); ?></div>
+                    <div class="entry-tags"><?php //blog_post_tags(); ?></div>
+                    <div class="entry-share"><?php //blog_post_share(); ?></div>
                 </footer>
             </div>
         </div>

@@ -518,7 +518,7 @@ Blog Post Styling (index/home, archives)
 	background-repeat: no-repeat;
 	background-position: center center;
     background-size: cover;
-    margin: 0 1.5em 2em 0;
+    margin: 0 1.5em 3em 0;
     background-color: var(--brand-color-dark);
     background-image: var(--featured-img-bg);
 }

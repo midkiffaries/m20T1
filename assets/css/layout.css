@@ -444,6 +444,7 @@ Single Blog Post Styling (single)
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 0.5em;
 	font-size: 1.1rem;
+	padding-left: 0.4em;
 }
 
 .single-entry-footer {
@@ -1087,6 +1088,10 @@ body.dark-mode,
 
 .dark-mode a[href] {
 	color: #fff;
+}
+
+.dark-mode header a[href] {
+	color: #fff !important;
 }
 
 .dark-mode code, 

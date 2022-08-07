@@ -313,14 +313,16 @@ Custom Page Styling
 /* Blog Post Links */
 .entry-header a[href],
 .single-entry-header a[href] {
-	color: var(--header-color);
+	color: var(--header-link-color);
 	transition: color 0.25s;
+	text-decoration: none;
 }
 
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
 	color: var(--brand-color);
 	text-decoration-color: var(--brand-color);
+	text-decoration: underline;
 }
 
 .entry-header a[href]:active,
@@ -328,15 +330,13 @@ Custom Page Styling
 	color: var(--brand-color-dark);
 }
 
-.single-entry-category a {
-	color: var(--brand-color) !important;
-}
 
 /************************ 
 3rd-Party Plugins Styling
 ************************/
 
 /* Builtin Accordion Plugin */
+/*
 .c-accordion__item {
 	border-top: 1px solid currentColor;
 	border-bottom: 1px solid currentColor;
@@ -377,3 +377,4 @@ Custom Page Styling
 .c-accordion__content {
 	margin: auto 1em;
 }
+*/

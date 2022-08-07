@@ -1,4 +1,3 @@
-<?php /* Page Name: Things */ ?>
 <?php // Global Contact Form ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <h3>Send me a message</h3>

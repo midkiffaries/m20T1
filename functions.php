@@ -419,7 +419,7 @@ function post_separator() {
 
 // Append the proper size units to a file size 
 function file_units($file) {
-    $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB', ' PB', ' EB', ' ZB', ' YB');
+    $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB');
 	if (file_exists($file)) {
         return round($file/pow(1024, ($i = floor(log($file, 1024)))), 2) . $filesizeunits[$i];
     } else {

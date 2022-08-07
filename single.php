@@ -51,7 +51,7 @@
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">
-            <?php dynamic_sidebar( 'singlepost' ); // Single Blog Post Sidebar ?>
+            <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepost') ); // Select from 'Widgets_Slug' custom field ?>
         </section>
     </aside>
 

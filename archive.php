@@ -48,8 +48,8 @@
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-read-time"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <?php echo reading_time(); ?></span>
-                        <span class="entry-comments"><span class="entry-separator"><?php echo POST_SEPARATOR; ?></span> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
+                        <span class="entry-comments"><?php echo post_separator(); ?> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content">

@@ -25,7 +25,7 @@ define('BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-bl
 define('SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-share.jpg');
 //define('SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/social-share.jpg');
 // Inline separator in the blog post metadata
-define('POST_SEPARATOR', '&nbsp;–&nbsp;');
+define('POST_SEPARATOR', '–');
 // Read more text ending
 define('MORE_TEXT', '[...]');
 // Max excerpt length
@@ -191,7 +191,7 @@ add_filter( 'excerpt_length', function(){
 
 // Add a 'Continue Reading' link to excerpts
 add_filter( 'excerpt_more', function(){
-    return ' <span class="entry-read-more" aria-label="Read more.">' . MORE_TEXT . '</span>';
+    return ' <span class="entry-read-more" aria-label="Read more">' . MORE_TEXT . '</span>';
 });
 
 
@@ -407,6 +407,11 @@ function shorten_the_content($post) {
     return wp_trim_words($excerpt, SHORT_TEXT_LENGTH, ' <span class="entry-read-more">' . MORE_TEXT . '</span>');
 }
 
+// Separator that breaks up a post's metadata
+function post_separator() {
+    return '<span class="entry-separator">' . POST_SEPARATOR . '</span>';
+}
+
 
 /////////////////////////////
 // SEO and Header Functions
@@ -470,6 +475,7 @@ function m20T1_logo() {
 
 // Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
 function FeaturedImageURL($id, $size, $isBackground) {
+
     if (has_post_thumbnail($id)) { // Use featured image url
         $image = esc_url(get_the_post_thumbnail_url($id, $size));
     } else {
@@ -480,9 +486,16 @@ function FeaturedImageURL($id, $size, $isBackground) {
         }
     }
 
-    // Check if background is being placed in a style attrib or in an image tag
+    // Check if background is being placed in a style attrib or in an image tag and return
     if ($isBackground && $image) {
-        return "background-image:url({$image});";
+        // Get image extension
+        $file = new SplFileInfo($image);
+        $extension  = $file->getExtension();
+
+        if ($extension == 'png' || $extension == 'gif')
+            $bgsize = "background-size:auto;";
+
+        return "background-image:url({$image});{$bgsize}";
     } else {
         if ($image) {
             return $image;

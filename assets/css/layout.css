@@ -517,6 +517,7 @@ Blog Post Styling (index/home, archives)
     height: 250px;
 	border-radius: 0.3rem;
     float: left;
+	background-repeat: no-repeat;
 	background-position: center center;
     background-size: cover;
     margin: 0 1.5em 2em 0;

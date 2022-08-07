@@ -187,7 +187,7 @@ Sidebar and Widgets Styling
 
 .page-sidebar a[href]:hover {
 	text-decoration: underline;
-	color: var(--brand-color-pale);
+	color: var(--brand-color);
 }
 
 .page-sidebar a[href]:active {

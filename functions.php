@@ -417,6 +417,16 @@ function post_separator() {
     return '<span class="entry-separator">' . POST_SEPARATOR . '</span>';
 }
 
+// Append the proper size units to a file size 
+function file_units($file) {
+    $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB', ' PB', ' EB', ' ZB', ' YB');
+	if (file_exists($file)) {
+        return round($file/pow(1024, ($i = floor(log($file, 1024)))), 2) . $filesizeunits[$i];
+    } else {
+        return 'N/A';
+    }
+}
+
 
 /////////////////////////////
 // SEO and Header Functions
@@ -494,8 +504,7 @@ function FeaturedImageURL($id, $size, $isBackground) {
     // Check if background is being placed in a style attrib or in an image tag and return
     if ($isBackground && $image) {
         // Get image extension
-        $file = new SplFileInfo($image);
-        $extension  = $file->getExtension();
+        $extension = end(explode('.', strtolower($image)));
 
         if ($extension == 'png' || $extension == 'gif')
             $bgsize = "background-size:auto;";

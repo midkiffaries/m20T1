@@ -4,6 +4,9 @@
 
 "use strict";
 
+// Welcome Message
+console.log("Welcome to the world of m20T1!");
+
 // Declare Global Variables and settings
 const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('href')),
     themeUri = `${siteUri}wp-content/themes/m20T1/`,

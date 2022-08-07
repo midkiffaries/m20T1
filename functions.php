@@ -297,9 +297,9 @@ add_action( 'widgets_init', function(){
     ));
 });
 
-// Get 'Widgets Slug' Custom Field which changes the sidebar selection
+// Get 'Widgets_Slug' Custom Field which changes the sidebar selection
 function selectSidebarCustomField($id, $default) {
-    $key = get_post_meta( $id, 'Widgets Slug', true );
+    $key = get_post_meta( $id, 'Widgets_Slug', true );
     if (empty($key)) {
         return $default; // Default widgets
     } else {

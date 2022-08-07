@@ -187,11 +187,11 @@ Sidebar and Widgets Styling
 
 .page-sidebar a[href]:hover {
 	text-decoration: underline;
-	color: var(--brand-color-dark);
+	color: var(--brand-color-pale);
 }
 
 .page-sidebar a[href]:active {
-	color: var(--brand-color-pale)
+	color: var(--brand-color-dark);
 }
 
 
@@ -319,8 +319,8 @@ Custom Page Styling
 
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
-	color: var(--brand-color-pale);
-	text-decoration-color: var(--brand-color-dark);
+	color: var(--brand-color);
+	text-decoration-color: var(--brand-color);
 }
 
 .entry-header a[href]:active,

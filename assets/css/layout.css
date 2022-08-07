@@ -487,19 +487,17 @@ Blog Post Styling (index/home, archives)
     display: inline-block;
     width: calc(100% - 250px - 1.5em);
 }
+
 .entry-header a {
     text-decoration: none;
 }
 
-.entry-footer {
-	margin-top: -1.5em;
+.entry-header a:hover {
+    text-decoration: underline;
 }
 
-.entry-category a {
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	padding: 1px 2px;
-	text-decoration: none;
+.entry-footer {
+	margin-top: -1.5em;
 }
 
 .entry-sticky {
@@ -741,7 +739,7 @@ Figures and Galleries
 
 .wp-block-image figcaption {
 	padding: 0;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 }
 
 .wp-block-gallery figure > a::after {

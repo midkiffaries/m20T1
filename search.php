@@ -26,7 +26,7 @@
                         <span class="entry-author"><?php echo post_separator(); ?> By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>
                 </header>
-                <div class="the-content">
+                <div class="the-content content-excerpt">
                     <img class="entry-square-thumbnail" src="<?php echo FeaturedImageURL(get_the_ID(), 'thumbnail', false); ?>" alt="">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>

@@ -1,4 +1,4 @@
-<?php /* Template Name: Default template w/ Sidebar */ ?>
+<?php /* Template Name: Page w/ Sidebar */ ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 

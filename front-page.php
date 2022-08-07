@@ -1,4 +1,4 @@
-<?php /* Template Name: Landing Page - Full Width */ ?>
+<?php /* Template Name: Custom Full Width */ ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 

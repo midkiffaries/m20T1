@@ -785,7 +785,7 @@ Page Specific Styling
 }
 
 /* Archive Page */
-.archive-header .page-title span {
+.archive-header .page-title .subtitle {
 	font-size: 0.7em;
 	color: #777;
 }

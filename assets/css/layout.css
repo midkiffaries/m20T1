@@ -523,6 +523,14 @@ Blog Post Styling (index/home, archives)
     background-image: var(--featured-img-bg);
 }
 
+@media (max-width: 849px) {
+	.entry-thumbnail {
+		width: 100%;
+		height: 180px;
+		float: none;
+	}
+}
+
 .entry-title {
 	margin: 0.1em 0 0.3em;
 	font-size: 2.1em;

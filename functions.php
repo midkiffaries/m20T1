@@ -403,7 +403,8 @@ function GetPageTitle($id) {
 
 // Shorten the_content in place of using the_excerpt
 function shorten_the_content($post) {
-    $excerpt = html_entity_decode(wp_strip_all_tags($post, true));
+    $regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?).*$)@"; // remove URLs
+    $excerpt = preg_replace($regex, ' ', html_entity_decode(wp_strip_all_tags($post, true)));
     return wp_trim_words($excerpt, SHORT_TEXT_LENGTH, ' <span class="entry-read-more">' . MORE_TEXT . '</span>');
 }
 

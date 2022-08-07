@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 /////////////////////////////
 
 // Breadcrumb trail plugin
-include 'assets/plugins/breadcrumbs.php';
+include_once 'assets/plugins/breadcrumbs.php';
 
 /////////////////////////////
 // Constants and Settings
@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
 
     // Setting Custom Fields
-    add_post_meta( 'slug', 'Widgets Slug', 'singlepage', true );
+    add_post_meta( 'slug', 'Widgets_Slug', 'singlepage', true );
     //delete_post_meta_by_key( 'custom_field_name' ); // Delete custom field
 });
 
@@ -139,7 +139,7 @@ add_action( 'init', function(){
     remove_action( 'wp_head', 'feed_links', 2 );
 });
 
-// Append to the page head tag
+// Append metadata to the page head tag
 add_action( 'wp_head', function(){
 ?>
 <meta name="title" content="<?php bloginfo('name'); ?>">

@@ -26,9 +26,9 @@ define('SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-sha
 //define('SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/social-share.jpg');
 // Inline separator in the blog post metadata
 define('POST_SEPARATOR', '–');
-// Read more text ending
+// Read more excerpt text ending
 define('MORE_TEXT', '[...]');
-// Max excerpt length
+// The length of an excerpt
 define('EXCERPT_LENGTH', 90); // Number of words
 // Shorten length of content
 define('SHORT_TEXT_LENGTH', 60); // Number of words
@@ -114,11 +114,13 @@ add_action('wp_enqueue_scripts', function(){
 
 // Enable or disable WordPress features on initialize
 add_action( 'init', function(){
-    // Add Category support to pages
-    register_taxonomy_for_object_type('category', 'page');
+    // Add Category support to pages and attachments
+    register_taxonomy_for_object_type( 'category', 'page' );
+    register_taxonomy_for_object_type( 'category', 'attachment' );
     
-    // Add Tag support to pages
-    //register_taxonomy_for_object_type('post_tag', 'page');
+    // Add Tag support to pages and attachments
+    //register_taxonomy_for_object_type( 'post_tag', 'page' );
+    //register_taxonomy_for_object_type( 'post_tag', 'attachment' );
     
     // Remove WordPress Emojis
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -405,7 +407,7 @@ function GetPageTitle($id) {
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
-// Shorten the_content in place of using the_excerpt
+// Shorten the_content in place of using the_excerpt for more control
 function shorten_the_content($post) {
     $regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?).*$)@"; // remove URLs
     $excerpt = preg_replace($regex, ' ', html_entity_decode(wp_strip_all_tags($post, true)));
@@ -519,7 +521,7 @@ function FeaturedImageURL($id, $size, $isBackground) {
     }
 }
 
-// Get the first image from a post or page
+// Get the first image seen on a post or page
 function GetFirstImage() {
     global $post, $posts;
     $first_image = '';
@@ -534,7 +536,7 @@ function GetFirstImage() {
     }
 }
 
-// Display the header image
+// Display the header/hero image from the featured image
 function Header_Hero($id) {
     // Type of page
     if ( is_front_page() ) { // Front-page header (None)
@@ -635,7 +637,7 @@ function blog_post_pagination($type) {
     next_posts_link("Next " . get_option('posts_per_page') . " " . $type . " &#x276F;", 0); // Right Side >>
 }
 
-// Show the blog post tags
+// Show the blog post tags as a list
 function blog_post_tags() {
     return the_tags('<ul role="list"><li rel="tag">', '</li><li rel="tag">', '</li></ul>');
 }

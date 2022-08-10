@@ -299,6 +299,7 @@ document.addEventListener("scroll", function () {
 	// Button styling
 	st.textContent = (`
 	.scroll-to-top-float {
+        z-index: 200;
 		position: fixed;
 		visibility: hidden;
 		opacity: 0;

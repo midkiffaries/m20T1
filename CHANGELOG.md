@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.0 Beta 1 (August 10, 2022)
+* Implemented more WordPress features.
+* More code clean up.
+
 ### 1.0 Alpha 9 (July 28, 2022)
 
 * Re-implemented the contact form and changed how the contact and search forms are stored and retrieved.

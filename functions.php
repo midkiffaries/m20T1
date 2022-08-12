@@ -169,7 +169,7 @@ add_action( 'wp_head', function(){
 <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <script type="application/ld+json">
-<?php json_schema_article(); ?>
+<?php json_schema_website(); ?>
 </script>
 <?php
 });

@@ -7,7 +7,7 @@
 
     <section class="archive-header" id="archive-page">
         <div class="archive-header-container">
-            <h1 class="page-title" itemprop="title"><?php if (have_posts()) : // Has posts ?>
+            <h1 class="page-title" itemprop="name"><?php if (have_posts()) : // Has posts ?>
     <?php $post = $posts[0]; ?>
     <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?> <span class="subtitle"><?php printf(strip_tags(category_description())); ?></span>
     <?php /* Tag archive */ elseif (is_tag()) : ?>Posts tagged <b><?php single_tag_title(); ?></b> <span class="subtitle"><?php echo strip_tags(tag_description()); ?></span>
@@ -45,19 +45,17 @@
                 </div>
                 <header class="entry-header">
                     <div class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>
-                    <h2 class="entry-title" id="<?php echo $post->post_name; ?>"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                    <h2 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="name"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
                         <span class="entry-comments"><?php echo post_separator(); ?> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
-                <div class="the-content content-excerpt">
+                <div class="the-content content-excerpt" itemprop="description">
                     <p><?php echo shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">
-                    <div class="entry-tags"><?php //blog_post_tags(); ?></div>
-                    <div class="entry-share"><?php //blog_post_share(); ?></div>
                 </footer>
             </div>
         </div>

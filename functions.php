@@ -168,8 +168,165 @@ add_action( 'wp_head', function(){
 <meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<script type="application/ld+json">
+<?php json_schema_article(); ?>
+</script>
 <?php
 });
+
+// Schema
+function json_schema_website() {
+?>
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "<?php echo home_url(); ?>/#website",
+    "headline": "<?php bloginfo('name'); ?>",
+    "name": "<?php bloginfo('name'); ?>",
+    "description": "<?php echo get_bloginfo('description'); ?>",
+    "url": "<?php echo home_url(); ?>"
+},
+
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "<?php esc_url(the_permalink()); ?>#breadcrumb",
+    "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "<?php home_url(); ?>",
+                "name": "<?php bloginfo('name'); ?>"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "<?php esc_url(the_permalink()); ?>",
+                "name": "<?php the_title(); ?>"
+            }
+        }
+    ]
+}
+<?php
+}
+
+// Schema
+function json_schema_article() {    
+?>
+{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "@id": "<?php esc_url(the_permalink()); ?>/#newsarticle",
+    "url": "<?php esc_url(the_permalink()); ?>",
+    "headline": "<?php the_title(); ?>",
+    "datePublished": "<?php printf(get_the_date(DATE_ATOM)); ?>",
+    "dateModified": "<?php printf(get_the_modified_date(DATE_ATOM)); ?>",
+    "description": "<?php echo SEO_Excerpt($post->ID); ?>",
+    "articleSection": "<?php //wp_strip_all_tags(the_category(' ')); ?>",
+    "articleBody": "<?php echo SEO_Excerpt($post->ID); ?>",
+    "keywords": "<?php //wp_strip_all_tags(strip_tags( the_tags('', ',', ''))); ?>",
+    "name": "<?php the_title(); ?>",
+    "thumbnailUrl": "<?php echo SEO_Image($post->ID); ?>",
+    "wordCount": "<?php echo str_word_count(strip_tags(get_the_content())); ?>",
+    "timeRequired": "<?php echo reading_time(); ?>",
+    "mainEntity": {
+        "@type": "WebPage",
+        "@id": "<?php esc_url(the_permalink()); ?>"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "<?php the_author(); ?>",
+        "description": "",
+        "url": "<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>",
+        "sameAs": ["<?php echo home_url(); ?>"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "<?php echo get_avatar_url( get_the_author_meta('ID'), 128) ?>",
+            "height": 128,
+            "width": 128
+        }
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "<?php bloginfo('name'); ?>",
+        "url": "<?php echo home_url(); ?>",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "<?php echo esc_url(get_custom_logo()); ?>",
+            "width": "600",
+            "height": "332"
+        }
+    },
+    "image": [{
+            "@type": "ImageObject",
+            "@id": "<?php echo FeaturedImageURL(get_the_ID(), 'large', false); ?>/#primaryimage",
+            "url": "<?php echo FeaturedImageURL(get_the_ID(), 'large', false); ?>",
+            "width": "1024",
+            "height": "768"
+        }]
+    }
+}
+<?php
+}
+
+// Schema
+function json_schema_webpage() {
+?>
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "<?php esc_url(the_permalink()); ?>/#webpage",
+    "url": "<?php esc_url(the_permalink()); ?>",
+    "name": "<?php the_title(); ?>",
+    "lastReviewed": "<?php printf(get_the_modified_date(DATE_ATOM)); ?>",
+    "dateCreated": "<?php printf(get_the_date(DATE_ATOM)); ?>",
+    "inLanguage": "en-US",
+    "description": "<?php echo SEO_Excerpt($post->ID); ?>",
+    "mainEntity": {
+        "@type": "Article",
+        "mainEntityOfPage": "<?php esc_url(the_permalink()); ?>",
+        "headline": "<?php the_title(); ?>",
+        "description": "<?php echo SEO_Excerpt($post->ID); ?>",
+        "keywords": "<?php strip_tags(the_category(' ')); ?>",
+        "datePublished": "<?php printf(get_the_date(DATE_ATOM)); ?>",
+        "dateModified": "<?php printf(get_the_modified_date(DATE_ATOM)); ?>",
+        "author": {
+            "@type": "Person",
+            "name": "<?php the_author(); ?>",
+            "description": "",
+            "url": "<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>",
+            "sameAs": ["<?php echo home_url(); ?>"],
+            "image": {
+                "@type": "ImageObject",
+                "url": "<?php echo get_avatar_url( get_the_author_meta('ID'), 128) ?>",
+                "height": 128,
+                "width": 128
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "<?php bloginfo('name'); ?>",
+            "url": "<?php echo home_url(); ?>",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "<?php echo esc_url(get_custom_logo()); ?>",
+                "width": "600",
+                "height": "332"
+            }
+        },
+        "image": [{
+            "@type": "ImageObject",
+            "@id": "<?php echo FeaturedImageURL(get_the_ID(), 'large', false); ?>/#primaryimage",
+            "url": "<?php echo FeaturedImageURL(get_the_ID(), 'large', false); ?>",
+            "width": "1024",
+            "height": "768"
+        }]
+    }
+}
+<?php
+}
 
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){

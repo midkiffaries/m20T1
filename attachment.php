@@ -8,16 +8,16 @@
 
         <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
-                <h1 class="image-title" itemprop="title"><?php the_title(); ?></h1>
+                <h1 class="image-title" itemprop="name"><?php the_title(); ?></h1>
                 <div class="wp-block-image">
                     <div><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Enlarge image" aria-title="View the full image"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?></a></div>
                     <div class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </dic>
-                <div class="the-content">
+                <div class="the-content" itemprop="description">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">
-                    <span class="image-date">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
+                    <span class="image-date" itemprop="uploadDate">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <br>
                     <span class="image-category">Category: <?php the_category(' '); ?></span>

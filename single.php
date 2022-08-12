@@ -11,14 +11,14 @@
             <header class="single-entry-header">
                 <div class="single-entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?></div>
                 <div class="single-entry-category"><?php the_category(' '); ?></div>
-                <h1 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="title"><?php the_title(); ?></h1>
+                <h1 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="name"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
                     <span class="single-entry-author"><?php echo post_separator(); ?> Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <span class="single-entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
                 </div>
             </header>
-            <div class="the-content single-entry-content <?php echo ResizeFontClass($post->post_content); ?>">
+            <div class="the-content single-entry-content <?php echo ResizeFontClass($post->post_content); ?>" itemprop="description">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 <p class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
             </div>

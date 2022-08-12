@@ -9,8 +9,8 @@
 
         <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div>
-                <h1 class="page-title hidden" itemprop="title"><?php the_title(); ?></h1>
-                <div class="the-content">
+                <h1 class="page-title hidden" itemprop="name"><?php the_title(); ?></h1>
+                <div class="the-content" itemprop="description">
                     <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
 
                 </div>

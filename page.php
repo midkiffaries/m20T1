@@ -8,8 +8,8 @@
 
         <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
-                <h1 class="page-title" itemprop="title"><?php the_title(); ?></h1>
-                <div class="the-content">
+                <h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
+                <div class="the-content" itemprop="description">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
             </div>

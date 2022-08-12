@@ -9,8 +9,8 @@
             <div class="page-404-image">
                 <?php echo PAGE_404_IMAGE; ?>
             </div>
-            <h1 class="page-title" itemprop="title">Page Not Found</h1>
-            <div class="content-404">
+            <h1 class="page-title" itemprop="name">Page Not Found</h1>
+            <div class="content-404" itemprop="description">
                 <p>Whoops... Well that page is gone.</p>
                 <p>But real talk, the page must have been removed, renamed or didn't exist in the first place. 🤔</p>
                 <?php get_search_form('error'); // Search Form ?>

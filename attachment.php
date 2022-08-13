@@ -24,7 +24,7 @@
                     <span class="image-filesize"><?php echo post_separator(); ?> File size: <?php echo file_units(wp_filesize(wp_get_attachment_url(get_the_ID()))); ?></a></span>
                 </p>
                 <div class="image-share"><?php blog_post_share(); ?></div>
-                <div class="image-download hidden"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>">View the full media file</a></div>
+                <div class="image-links"><i>Featured Post</i><br><a href="<?php get_permalink( get_post_parent(get_the_ID()) ); ?>"><?php if (has_post_parent(get_the_ID())) echo get_the_title( get_post_parent(get_the_ID()) ); else echo "none"; ?></a></div>
             </div>
         </article>
 

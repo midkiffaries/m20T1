@@ -16,7 +16,7 @@
         <ol role="list" class="list-comments">
             <?php wp_list_comments('type=comment&avatar_size=64&login_text=&callback=custom_comment_style'); // List all the comments ?>
         </ol>
-        <?php if (!comments_open()) : // Comments are closed ?>
+        <?php if (!comments_open()) : // If comments are closed ?>
             <div class="comments-closed">
                 <p>🚫 <i>The comments are closed for this article.</i></p>
             </div>

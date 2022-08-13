@@ -522,6 +522,7 @@ Blog Post Styling (index/home, archives)
     margin: 0 1.5em 3em 0;
     background-color: var(--brand-color-dark);
     background-image: var(--featured-img-bg);
+	text-decoration: none;
 }
 
 @media (max-width: 849px) {

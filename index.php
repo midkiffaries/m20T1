@@ -15,9 +15,9 @@
     <?php while (have_posts()) : the_post(); // List all the posts ?>
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
-                <div class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
+                <a href="<?php esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
                     <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
-                </div>
+                </a>
                 <header class="entry-header">
                     <div class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="name"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>

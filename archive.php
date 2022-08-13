@@ -21,16 +21,16 @@
     </section>
 
     <?php if (is_author()) : // Display Author Page for when showing by author ?>
-    <section class="archive-author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" role="complementary">
+    <section class="archive-author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
         <div class="author-container">
             <div class="author-avatar">
-                <figure class="alignleft" aria-label="Authors Avatar">
+                <figure class="alignleft">
                     <?php printf(get_avatar(get_the_author_meta('ID'), 128)); ?>
                 </figure>
             </div>
             <p class="author-bio-meta"><b><?php echo user_level(get_the_author_meta( 'user_level' )); ?> – <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
-            <p class="author-bio-about"><?php printf($curauth->description); ?><br>
-            🌎 <a href="<?php esc_url(printf($curauth->user_url)); ?>" rel="author"><?php printf($curauth->user_url); ?></a></p>
+            <p class="author-bio-about"><?php printf($curauth->description); ?><br><br>
+            🌎 <a href="<?php esc_url(printf($curauth->user_url)); ?>" rel="author">Learn more about <?php printf($curauth->display_name); ?></a></p>
         </div>
     </section>
     <?php endif; ?>

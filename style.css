@@ -378,3 +378,16 @@ Custom Page Styling
 	margin: auto 1em;
 }
 */
+
+
+/*
+h2 {
+	font-size: 2.2rem;
+	background: linear-gradient(to bottom, #bc4500 4%,#ff9c07 33%,#ffe7d3 50%,#03235b 51%,#26a1ff 74%,#eaf6ff 96%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: -1px -1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee, 1px 1px 0 #eee, 5px 5px 0 rgba(0,0,0,0.5);
+}
+*/
+

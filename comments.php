@@ -10,7 +10,7 @@
 
 <?php if (have_comments()) : // If post has comments ?>
 
-<section class="comment-list" role="comments" id="Comments">
+<section class="comment-list" role="comments" id="Comments" itemprop="">
     <div class="comment-container">
         <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments');?> <small><?php comments_number('0', '1', '%');?></small></h2>
         <ol role="list" class="list-comments">

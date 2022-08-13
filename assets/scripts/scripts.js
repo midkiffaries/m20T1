@@ -381,6 +381,7 @@ function smoothScroll(loc, duration) {
 				// Dialog box attributes
                 dialog.setAttribute('class', 'dialog-image');	
 				dialog.setAttribute('role', 'dialog');
+				dialog.setAttribute('rel', 'lightbox');
 				dialog.setAttribute('open', 'open');
 
 				// Dialog close button
@@ -390,9 +391,9 @@ function smoothScroll(loc, duration) {
 				// Dialog body
 				innerDiv.setAttribute('class', 'dialog-content');
 				innerDiv.innerHTML = (`
-				<p class="dialog-body-image"><img src="${this.href}" alt="${imgName}"></p>
-				<h4 class="dialog-body-header">${imgName}</h4>
-				<p class="dialog-body-info">${imgAlt}</p>
+				<p class="dialog-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image"></p>
+				<h3 class="dialog-body-header" itemprop="name">${imgName}</h3>
+				<p class="dialog-body-info" itemprop="description">${imgAlt}</p>
 				<p class="dialog-body-download"><a href="${this.href}">Download this image</a></p>
 				`);
 				
@@ -436,11 +437,11 @@ function smoothScroll(loc, duration) {
                     background: no-repeat center center / 5em;
                     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 128 128'%3E%3Cg%3E%3Cpath fill='white' d='M64 10a54 54 0 00-54 54H0a64 64 0 01128 0h-10a54 54 0 00-54-54z'/%3E%3CanimateTransform attributeName='transform' dur='2s' from='0 64 64' repeatCount='indefinite' to='360 64 64' type='rotate'/%3E%3C/g%3E%3C/svg%3E");
                 }
-                .dialog-content h4 {
+                .dialog-content h3 {
                     text-transform: uppercase;
                     letter-spacing: 0.08em;
                 }
-                .dialog-content h4,
+                .dialog-content h3,
                 .dialog-content p  {
                     color: #fff;
                     text-align: center;

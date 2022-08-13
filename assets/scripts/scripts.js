@@ -146,7 +146,7 @@ document.addEventListener("keyup", (e) => {
             top: -17%;
             cursor: pointer;
         }
-        .youtube button {
+        .youtube .play-button {
             width: 6em;
             height: 4em;
             background: rgba(50,50,50,0.4);
@@ -156,20 +156,20 @@ document.addEventListener("keyup", (e) => {
             border-radius: 0.8em;
             transition: background 0.5s;
         }
-        .youtube:hover button {
+        .youtube:hover .play-button {
             opacity: 1;   
             background: rgba(255,30,30,0.7);
         }
-        .youtube button::before {
+        .youtube .play-button::before {
             content: "";
             border-style: solid;
             border-width: 15px 0 15px 26px;
             border-color: transparent transparent transparent #fff;
         }
-        .youtube img, .youtube iframe, .youtube button, .youtube button::before {
+        .youtube img, .youtube iframe, .youtube .play-button, .youtube .play-button::before {
             position: absolute;
         }
-        .youtube button, .youtube button::before {
+        .youtube .play-button, .youtube .play-button::before {
             top: 50%;
             left: 50%;
             transform: translate3d(-50%,-50%,0);

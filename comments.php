@@ -16,6 +16,11 @@
         <ol role="list" class="list-comments">
             <?php wp_list_comments('type=comment&avatar_size=64&login_text=&callback=custom_comment_style'); // List all the comments ?>
         </ol>
+        <?php if (!comments_open()) : // Comments are closed ?>
+            <div class="comments-closed">
+                <p>🚫 <i>The comments are closed for this article.</i></p>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -51,7 +56,6 @@
 <?php endif; ?>
 
 <?php if (comments_open()) : // Comment entry form ?>
-
 <section class="comment-form">
     <h3 class="comment-form-title" id="comment-form"><?php comment_form_title( 'Leave a Reply', 'Post a reply to %s' ); ?></h3>
 

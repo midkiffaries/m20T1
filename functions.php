@@ -210,7 +210,7 @@ add_action( 'wp_footer', function(){
 });
 
 // Remove xmlrpc WordPress feature
-add_filter('xmlrpc_enabled', '__return_false');
+add_filter( 'xmlrpc_enabled', '__return_false' );
 
 // Set the excerpt length
 add_filter( 'excerpt_length', function(){
@@ -228,7 +228,7 @@ add_filter( 'admin_footer_text', function(){
 });
 
 // Add addition file types to be uploaded to the media library
-add_filter( 'upload_mimes', function() {
+add_filter( 'upload_mimes', function(){
     return array(
         'svg'   => 'image/svg+xml',
         'svgz'  => 'image/svg+xml',
@@ -236,7 +236,7 @@ add_filter( 'upload_mimes', function() {
 });
 
 // Add additional contact methods to user profiles
-add_filter('user_contactmethods', function() {
+add_filter( 'user_contactmethods', function(){
     return array(
         'twitter'   => 'Twitter',
         'facebook'  => 'Facebook',
@@ -248,7 +248,7 @@ add_filter('user_contactmethods', function() {
 
 // Change the WordPress editor's logo
 /*
-add_action('wp_before_admin_bar_render', function() {
+add_action('wp_before_admin_bar_render', function(){
     echo '<style type="text/css">
     #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
         background-image: url(http://localhost:8888/WP-marchtwenty/apple-touch-icon.png) !important;

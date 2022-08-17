@@ -148,14 +148,45 @@ add_action( 'init', function(){
     // Add another post type to the editor
     register_post_type( 'portfolio', array(
         'labels' => array(
-            'name' => __( 'Portfolio' ),
-            'singular_name' => __( 'Portfolio' )
+            'name'                  => _x( 'Portfolio', 'Post type general name', 'portfolio' ),
+            'singular_name'         => _x( 'Portfolio', 'Post type singular name', 'portfolio' ),
+            'menu_name'             => _x( 'Portfolio', 'Admin Menu text', 'portfolio' ),
+            'name_admin_bar'        => _x( 'Recipe', 'Add New on Toolbar', 'portfolio' ),
+            'add_new'               => __( 'Add New', 'portfolio' ),
+            'add_new_item'          => __( 'Add New Portfolio', 'portfolio' ),
+            'new_item'              => __( 'New Portfolio', 'portfolio' ),
+            'edit_item'             => __( 'Edit Portfolio', 'portfolio' ),
+            'view_item'             => __( 'View Portfolio', 'portfolio' ),
+            'all_items'             => __( 'All Portfolios', 'portfolio' ),
+            'search_items'          => __( 'Search Portfolio', 'portfolio' ),
+            'parent_item_colon'     => __( 'Parent Portfolio:', 'portfolio' ),
+            'not_found'             => __( 'No portfolios found.', 'portfolio' ),
+            'not_found_in_trash'    => __( 'No portfolio found in Trash.', 'portfolio' ),
+            'featured_image'        => _x( 'Featured Image', 'Overrides the “Featured Image” phrase for this post type.', 'portfolio' ),
+            'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type.', 'portfolio' ),
+            'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type.', 'portfolio' ),
+            'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type.', 'portfolio' ),
+            'archives'              => _x( 'Portfolio archives', 'The post type archive label used in nav menus. Default “Post Archives”.', 'portfolio' ),
+            'insert_into_item'      => _x( 'Insert into portfolio', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post).', 'portfolio' ),
+            'uploaded_to_this_item' => _x( 'Uploaded to this portfolio', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post).', 'portfolio' ),
+            'filter_items_list'     => _x( 'Filter portfolio list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”.', 'portfolio' ),
+            'items_list_navigation' => _x( 'Portfolio list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”.', 'portfolio' ),
+            'items_list'            => _x( 'Portfolio list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”.', 'portfolio' ),
         ),
-        'has_archive' => true,
-        'public' => true,
-        'rewrite' => array('slug' => 'portfolio'),
-        'show_in_rest' => true,
-        'supports' => array('editor')
+        'description'        => 'A portfolio of projects or works.',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'portfolio' ),
+        'capability_type'    => 'page',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
+        'taxonomies'         => array( 'category' ),
+        'show_in_rest'       => true
     ));
 });
 

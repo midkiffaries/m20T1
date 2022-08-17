@@ -29,8 +29,14 @@
                 </figure>
             </div>
             <p class="author-bio-meta"><b><?php echo user_level(get_the_author_meta( 'user_level' )); ?> – <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
-            <p class="author-bio-about"><?php printf($curauth->description); ?><br><br>
-            🌎 <a href="<?php esc_url(printf($curauth->user_url)); ?>" rel="author">Learn more about <?php printf($curauth->display_name); ?></a></p>
+            <p class="author-bio-about"><?php printf($curauth->description); ?></p>
+            <p class="author-bio-contact">
+                <?php if ($curauth->linkedin) : ?><a href="<?php esc_url(printf($curauth->linkedin)); ?>" rel="author">LinkedIn</a> | <?php endif; ?>
+                <?php if ($curauth->twitter) : ?><a href="<?php esc_url(printf($curauth->twitter)); ?>" rel="author">Twitter</a> | <?php endif; ?>
+                <?php if ($curauth->facebook) : ?><a href="<?php esc_url(printf($curauth->facebook)); ?>" rel="author">Facebook</a> | <?php endif; ?>
+                <?php if ($curauth->instagram) : ?><a href="<?php esc_url(printf($curauth->instagram)); ?>" rel="author">Instagram</a> | <?php endif; ?>
+                <?php if ($curauth->user_url) : ?><a href="<?php esc_url(printf($curauth->user_url)); ?>" rel="author">Website</a><?php endif; ?>
+            </p>
         </div>
     </section>
     <?php endif; ?>

@@ -209,6 +209,7 @@ add_action( 'wp_footer', function(){
 <?php
 });
 
+// Remove xmlrpc WordPress feature
 add_filter('xmlrpc_enabled', '__return_false');
 
 // Set the excerpt length
@@ -223,14 +224,15 @@ add_filter( 'excerpt_more', function(){
 
 // Change the WordPress editor's footer text
 add_filter( 'admin_footer_text', function(){
-    echo ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1</a>.</i>' ;
+    return ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1</a>.</i>' ;
 });
 
 // Add addition file types to be uploaded to the media library
 add_filter( 'upload_mimes', function() {
-    $mimes['svg']  = 'image/svg+xml';
-    $mimes['svgz'] = 'image/svg+xml';
-    return $mimes;
+    return array(
+        'svg'   => 'image/svg+xml',
+        'svgz'  => 'image/svg+xml',
+    );
 });
 
 // Add additional contact methods to user profiles

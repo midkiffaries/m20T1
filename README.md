@@ -11,7 +11,7 @@
 
 
 This is simply a <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
-The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
+The intention is for this theme is to be minimally reliant on 3rd party plugins while providing the same features that most popular plugins would provide. It does this by relying on the built in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="" width="300" align="right" />
@@ -30,6 +30,8 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins,
 - Featured image support for use as the hero/header image on posts and pages
 - Support for custom WordPress editor styling
 - Support for <b>dark mode</b> via a built in switch
+- Built in support for an additional <i>post type</i> as 'Portfolio'
+- Built in SVG media library upload support
 
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across.

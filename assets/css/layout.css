@@ -936,6 +936,10 @@ Page Specific Styling
 	min-height: 24em;
 }
 
+.page-404 .search-input {
+	width: calc(100% - 10em);
+}
+
 /* Page last updated section */
 .homepage-last-updated,
 .page-last-updated {

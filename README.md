@@ -22,16 +22,16 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom modals for alerts, confirmation and custom HTML
 - Built in contact form and accompanying email logic
-- Built in blog post reading time
+- Built in blog post read time
 - Alternate page templates with full width and sidebar support
-- Widget support on on all pages
+- Widget support on on all pages with customizations
 - Widget support in the site header and footer
 - Unique <i>front-page</i>, <i>404</i> and <i>attachment (image)</i> pages
-- Featured image support for use as the hero/header image on posts and pages
+- Featured image support for use as the hero/header image on posts and pages, with fallbacks
 - Support for custom WordPress editor styling
 - Support for <b>dark mode</b> via a built in switch
-- Built in support for an additional <i>post type</i> as 'Portfolio'
-- Built in SVG media library upload support
+- Built in support for an additional <i>post type</i> set as 'Portfolio'
+- Enabled SVG files upload to media library
 
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across.

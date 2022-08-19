@@ -19,7 +19,7 @@ include_once 'assets/plugins/breadcrumbs.php';
 // Constants and Settings
 /////////////////////////////
 
-// Default fallback featured image URI -- 
+// Default fallback featured image URI
 define( 'BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg' );
 // Default social media sharing image URI
 define( 'SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-share.jpg' );

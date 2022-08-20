@@ -260,14 +260,6 @@ add_filter( 'admin_footer_text', function(){
     return ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1</a>.</i>' ;
 });
 
-// Add addition file types to be uploaded to the media library
-add_filter( 'upload_mimes', function(){
-    return array(
-        'svg'   => 'image/svg+xml',
-        'svgz'  => 'image/svg+xml',
-    );
-});
-
 // Add additional contact methods to user profiles
 add_filter( 'user_contactmethods', function(){
     return array(
@@ -278,7 +270,25 @@ add_filter( 'user_contactmethods', function(){
     );
 });
 
+// Add addition file types to be uploaded to the media library
+function add_custom_mime_types( $mimes ) {
+    $mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    $mimes['html'] = 'text/html';
+    $mimes['txt']  = 'text/plain';
+    $mimes['webp'] = 'image/webp';
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'add_custom_mime_types' );
 
+// Adjust the output image
+/*
+add_filter( 'get_custom_logo', function(){
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $html = sprintf( wp_get_attachment_image( $custom_logo_id, 'full', false, array('class' => 'custom-logo')) );
+    return $html;  
+});
+*/
 /////////////////////////////
 // Sidebar and Widgets
 /////////////////////////////

@@ -10,7 +10,9 @@
             <div class="post-container">
                 <h1 class="image-title" itemprop="name"><?php the_title(); ?></h1>
                 <div class="wp-block-image">
-                    <div><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="Enlarge image" aria-title="View the full image"><?php echo wp_get_attachment_image(get_the_ID(), 'large', 0); ?></a></div>
+                    <div class="image-attachment"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document">
+                        <?php echo attachment_page_image(get_the_ID()); ?>
+                    </a></div>
                     <div class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </dic>
                 <div class="the-content" itemprop="description">
@@ -24,7 +26,7 @@
                     <span class="image-filesize"><?php echo post_separator(); ?> File size: <?php echo file_units(wp_filesize(wp_get_attachment_url(get_the_ID()))); ?></a></span>
                 </p>
                 <div class="image-share"><?php blog_post_share(); ?></div>
-                <div class="image-links"><i>Image seen on</i><br> <a href="<?php get_permalink( get_post_parent(get_the_ID()) ); ?>"><?php if (has_post_parent(get_the_ID())) echo get_the_title( get_post_parent(get_the_ID()) ); else echo "none"; ?></a></div>
+                <div class="image-links"><i>Attachment seen on</i><br> <a href="<?php get_permalink( get_post_parent(get_the_ID()) ); ?>"><?php if (has_post_parent(get_the_ID())) echo get_the_title( get_post_parent(get_the_ID()) ); else echo "Not attached to any posts"; ?></a></div>
             </div>
         </article>
 

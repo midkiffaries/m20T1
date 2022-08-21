@@ -155,8 +155,8 @@ add_action( 'init', function(){
             'add_new'               => __( 'Add New' ),
             'add_new_item'          => __( 'Add New Work' ),
             'new_item'              => __( 'New Portfolio' ),
-            'edit_item'             => __( 'Edit Work', 'portfolio' ),
-            'view_item'             => __( 'View Work', 'portfolio' ),
+            'edit_item'             => __( 'Edit Work' ),
+            'view_item'             => __( 'View Work' ),
             'all_items'             => __( 'All Works' ),
             'search_items'          => __( 'Search Portfolio' ),
             'parent_item_colon'     => __( 'Parent Portfolio:' ),
@@ -281,14 +281,16 @@ function add_custom_mime_types( $mimes ) {
 }
 add_filter( 'upload_mimes', 'add_custom_mime_types' );
 
-// Adjust the output image
-/*
+// Alter the site custom logo
 add_filter( 'get_custom_logo', function(){
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
-    $html = sprintf( wp_get_attachment_image( $custom_logo_id, 'full', false, array('class' => 'custom-logo')) );
-    return $html;  
+    if (has_custom_logo()) {
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => ' ') );
+    } else {
+        return bloginfo('name');
+    }
 });
-*/
+
+
 /////////////////////////////
 // Sidebar and Widgets
 /////////////////////////////
@@ -564,15 +566,6 @@ function SEO_Image($id) {
     return esc_url($featuredImage);
 }
 
-// Check if user selected a custom logo
-function m20T1_logo() {
-    if (has_custom_logo()) {
-        the_custom_logo();
-    } else {
-        bloginfo('name');
-    }
-}
-
 
 /////////////////////////////
 // Featured Image Fallbacks
@@ -691,6 +684,12 @@ function reading_time() {
     $wordcount = str_word_count(strip_tags(get_the_content()));
     $time = ceil($wordcount / 200);
     return "{$time} min read";
+}
+
+// Get the file extension from a path
+function get_file_extension($path) {
+    $extension = wp_check_filetype($path);
+    return $extension['ext'];
 }
 
 // Blog post user comment styling for each comment

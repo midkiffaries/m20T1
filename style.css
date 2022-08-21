@@ -80,6 +80,11 @@ body {
 Typography for the page body content
 ************************************/
 
+.page-title,
+.blog-page-title h1 {
+
+}
+
 .the-content {
 	font-size: 1.2rem;
 }

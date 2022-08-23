@@ -206,15 +206,16 @@ add_action( 'wp_head', function(){
 <link rel="manifest" href="<?php esc_url(printf("%s/site.webmanifest", home_url())); ?>">
 <meta property="og:locale" content="<?php echo get_bloginfo('language'); ?>">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <meta property="og:url" content="<?php esc_url(the_permalink()); ?>">
 <meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php esc_url(the_permalink()); ?>">
 <meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
 <?php
 });
 

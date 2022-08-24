@@ -83,7 +83,6 @@ Typography for the page body content
 .page-title,
 .blog-page-title h1 {
 	font-size: 3.5rem;
-	margin-top: 0;
 	background-color: var(--brand-color);
 	background: linear-gradient(0deg, rgba(230,81,0,1) 0%, rgba(244,151,28,1) 54%, rgba(255,231,0,1) 100%);
 	-webkit-background-clip: text;

@@ -791,16 +791,20 @@ Page Specific Styling
 ************************/
 
 /* Page Title */
-.page-title,
-.blog-page-title h1 {
+.page-title {
 	font-size: 3rem;
 	font-weight: 700;
-	margin-top: 0.5em;
+	margin-top: 0;
 }
 
 /* The Blog Page */
 .blog-page-title {
 	margin: 0.5em auto 3em;
+}
+
+.blog-page-title h1 {
+	font-size: 3rem;
+	font-weight: 700;
 }
 
 .page-content .post {

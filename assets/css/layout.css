@@ -807,15 +807,24 @@ Page Specific Styling
 	font-weight: 700;
 }
 
+.blog-page-title p {
+	font-size: 1.4em;
+	margin: 0 !important;
+}
+
 .page-content .post {
 	margin: 0.5em auto 3em;
 	clear: both;
 }
 
 /* Archive Page */
-.archive-header .page-title .subtitle {
-	font-size: 0.7em;
-	color: #777;
+.archive-header .page-title {
+	margin: 0.8em auto 0.1em;
+}
+
+.archive-header .subtitle {
+	font-size: 1.4em;
+	margin-bottom: 1em;
 }
 
 .page-archive .post {

@@ -81,6 +81,7 @@ Typography for the page body content
 ************************************/
 
 .page-title,
+.single-entry-title,
 .blog-page-title h1 {
 	font-size: 3.5rem;
 	background-color: var(--brand-color);
@@ -89,6 +90,14 @@ Typography for the page body content
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.8));
+}
+
+.page-title .subtitle {
+	color: #777;
+	background: none !important;
+	-webkit-background-clip: 0 !important;
+	background-clip: 0 !important;
+	-webkit-text-fill-color: 0 !important;
 }
 
 .the-content {

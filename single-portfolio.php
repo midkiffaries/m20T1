@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-simple <?php echo get_page_class(); ?>" id="main-content" role="main">
+<main class="page-main page-portfolio <?php echo get_page_class(); ?>" id="main-content" role="main">
     <div class="page-content width-full">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -18,7 +18,7 @@
 
     <?php endwhile; endif; ?>
 
-        <aside id="page-widgets" class="page-sidebar page-widgets width-full" role="complementary">
+        <aside id="page-widgets" class="page-sidebar portfolio-widgets width-full" role="complementary">
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepage') ); // Select from 'Widgets_Slug' custom field ?>
 
         </aside>

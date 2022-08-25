@@ -9,14 +9,18 @@
         <div class="archive-header-container">
             <h1 class="page-title" itemprop="name"><?php if (have_posts()) : // Has posts ?>
     <?php $post = $posts[0]; ?>
-    <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?> <span class="subtitle"><?php printf(strip_tags(category_description())); ?></span>
-    <?php /* Tag archive */ elseif (is_tag()) : ?>Posts tagged <b><?php single_tag_title(); ?></b> <span class="subtitle"><?php echo strip_tags(tag_description()); ?></span>
+    <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?>
+    <?php /* Tag archive */ elseif (is_tag()) : ?>Posts tagged <b><?php single_tag_title(); ?></b>
     <?php /* Daily archive */ elseif (is_day()) : ?>Posts from <b><?php the_time('F j, Y'); ?></b>
     <?php /* Monthly archive */ elseif (is_month()) : ?>Posts from <b><?php the_time('F Y'); ?></b>
     <?php /* Yearly archive */ elseif (is_year()) : ?>Posts from <b><?php the_time('Y'); ?></b>
     <?php /* Author archive */ elseif (is_author()) : ?>Posts by <b><?php printf($curauth->display_name); ?></b>
     <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
     <?php endif; ?></h1>
+            <div class="subtitle">
+                <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())); ?>
+                <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())); ?>
+            </div>
         </div>
     </section>
 
@@ -46,7 +50,7 @@
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
     <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
-                <a href="<?php esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
+                <a href="<?php esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
                     <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
                 </a>
                 <header class="entry-header">
@@ -55,7 +59,7 @@
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
-                        <span class="entry-comments"><?php echo post_separator(); ?> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark" class="icon-comment"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-comments"><?php echo post_separator(); ?> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="description">

@@ -755,18 +755,20 @@ function get_page_class() {
 // List social sharing links on each blog post
 function blog_post_share() {
     // Social media links
-    $link_Facebook = "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink());
-    $link_Twitter = "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink());
-    $link_LinkedIn = "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . urlencode(get_the_title()) . "&summary=" . urlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name'));
-    $link_Pinterest = "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(get_the_title()) . "&description=" . urlencode(get_the_excerpt());
-    $link_Reddit = "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink());
+    $social_links = array(
+        'facebook'  => "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink()),
+        'twitter'   => "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink()),
+        'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . urlencode(get_the_title()) . "&summary=" . urlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
+        'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(get_the_title()) . "&description=" . urlencode(get_the_excerpt()),
+        'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),
+    );
 ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?php echo $link_Twitter; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
-        <li><a href="<?php echo $link_Facebook; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?php echo $link_LinkedIn; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?php echo $link_Pinterest; ?>" class="icon-pinterest pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin</a></li>
-        <li><a href="<?php echo $link_Reddit; ?>" class="icon-reddit reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $social_links['twitter']; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
+        <li><a href="<?php echo $social_links['facebook']; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $social_links['linkedin']; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $social_links['pinterest']; ?>" class="icon-pinterest pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin</a></li>
+        <li><a href="<?php echo $social_links['reddit']; ?>" class="icon-reddit reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
     </ul>
 <?php
 }

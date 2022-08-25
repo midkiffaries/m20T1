@@ -477,7 +477,6 @@ button,
 	background-color: #eee;
 	overflow: visible;
 	cursor: pointer;
-	white-space: nowrap;
 	-webkit-appearance: none;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -823,6 +822,10 @@ Responsive elements
 		max-width: 100%;
 	}
 
+	iframe {
+		display: none;
+	}
+
 	thead {
 		display: table-header-group;
 	}
@@ -836,7 +839,9 @@ Responsive elements
 		content: " (" attr(title) ")";
 	}
 
-	main [href] {
+	a[href] {
+		background: transparent;
 		text-decoration: underline;
+		page-break-inside: avoid;
 	}
 }

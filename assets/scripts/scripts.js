@@ -189,14 +189,14 @@ document.addEventListener("keyup", (e) => {
 (function(){
     let par = document.getElementsByClassName("bg-parallax"), 
         l = par.length,
-        posy = 0, 
+        posy = 50, 
         pr = 10;
-    
+
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
             pr = par[i].getAttribute("data-rate");
             posy =- (window.pageYOffset / pr);
-            par[i].style.backgroundPosition = `50% ${posy}px`;
+            par[i].style.backgroundPosition = `50% ${posy}%`;
         }
     }, true);
 }());

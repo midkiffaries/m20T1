@@ -586,10 +586,10 @@ function FeaturedImageURL($id, $size, $isBackground) {
     // Check if background is being placed in a style attrib or in an image tag and return
     if ($isBackground && $image) {
         // Get image extension
-        $extension = end(explode('.', strtolower($image)));
+        $extension = get_file_extension($image);
 
         if ($extension == 'png' || $extension == 'gif')
-            $bgsize = "background-size:auto;";
+            $bgsize = "background-size:85%;";
 
         return "background-image:url({$image});{$bgsize}";
     } else {
@@ -649,7 +649,7 @@ function Header_Hero($id) {
     ?>
         <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>" data-rate="10">
             <div class="header-hero-overlay">
-                <h1 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h1>
+            <h1 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h1>
             </div>
         </div>
     <?php

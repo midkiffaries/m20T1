@@ -206,7 +206,7 @@ Site Header
 	position: relative;
 	background-color: #555;
 	background-position: 50% 50%;
-	background-size: cover;
+	background-size: 100%;
 	background-image: var(--featured-img-bg);
 }
 
@@ -1191,7 +1191,6 @@ Special Custom Features
 
 /* Parallax effect */
 .bg-parallax {
-    background-size: cover;
     will-change: auto;
 }
 

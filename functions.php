@@ -648,9 +648,8 @@ function Header_Hero($id) {
 
     ?>
         <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>" data-rate="10">
-            <div class="header-hero-overlay">
+            <div class="header-hero-overlay"></div>
             <h1 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h1>
-            </div>
         </div>
     <?php
 }

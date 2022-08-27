@@ -312,12 +312,12 @@ Custom Page Styling
 
 /* Buttons with Icons */
 .square-button {
-	padding: 1em;
-	margin: 0 1px;
+	padding: 1.2em;
+	margin: 0 2px;
 	border: 0;
 	background-color: transparent !important;
 	background-position: 50% 50%;
-	background-size: 1.8em;
+	background-size: 1.9em;
 	background-repeat: no-repeat;
 }
 
@@ -326,7 +326,7 @@ Custom Page Styling
 }
 
 .menu-search {
-	background-size: 1.5em;
+	background-size: 1.6em;
 	background-image: var(--icon-search);
 }
 

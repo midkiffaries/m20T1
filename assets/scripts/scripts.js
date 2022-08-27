@@ -79,7 +79,7 @@ document.addEventListener("keyup", (e) => {
     // Append the light switch button style [class="light-switch"]
     st.textContent = (`
     .light-switch {
-        background: transparent no-repeat 50% 50% / 2em;
+        background: transparent no-repeat 50% 50% / 2.2em;
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='1024'%3E%3Cpath d='M349 242c0 242 165 438 370 438 51 0 99-12 143-34a378 378 0 11-507-480c-4 25-6 50-6 76z' fill='black'/%3E%3C/svg%3E");
     }
     body.dark-mode .light-switch {

@@ -802,7 +802,7 @@ Page Specific Styling
 .page-title {
 	font-size: 3rem;
 	font-weight: 700;
-	margin-top: 0;
+	margin: 0 auto -0.3em;
 }
 
 /* The Blog Page */
@@ -830,7 +830,7 @@ Page Specific Styling
 	margin: 0.8em auto 0.1em;
 }
 
-.archive-header .subtitle {
+.archive-header-container .subtitle {
 	font-size: 1.4em;
 	margin-bottom: 1em;
 }

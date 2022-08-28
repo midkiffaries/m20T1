@@ -25,7 +25,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
 	--brand-color-dark: #205380;
-	--secondary-color: #FF6159;
+	--secondary-color: #e65100;
 	--tertiary-color: #FFD726;
 	--highlight-color: rgba(55, 161, 255, 0.7);
 
@@ -60,18 +60,13 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 }
 
 /************************ 
-Global Fonts
+Global Typography
 ************************/
 
 body {
 	font-family: var(--font-primary);
 	text-rendering: auto;
 	font-weight: 400;
-	font-display: swap;
-}
-
-.font-brush {
-	font-family: var(--font-secondary);
 	font-display: swap;
 }
 
@@ -84,7 +79,7 @@ Typography for the page body content
 .single-entry-title,
 .blog-page-title h1 {
 	font-size: 3.5rem;
-	background-color: var(--brand-color);
+	background-color: var(--secondary-color);
 	background: linear-gradient(0deg, rgba(230,81,0,1) 0%, rgba(244,151,28,1) 54%, rgba(255,231,0,1) 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -92,12 +87,10 @@ Typography for the page body content
 	filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.8));
 }
 
-.page-title .subtitle {
-	color: #777;
-	background: none !important;
-	-webkit-background-clip: 0 !important;
-	background-clip: 0 !important;
-	-webkit-text-fill-color: 0 !important;
+.archive-header-container .subtitle,
+.blog-page-title p {
+	font-family: var(--font-secondary);
+	color: #444;
 }
 
 .the-content {

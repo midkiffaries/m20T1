@@ -725,14 +725,14 @@ hr.wp-block-separator.is-style-default {
 
 /* Sidebar Widgets */
 .widget_recent_entries a {
-	font-weight: 600;
+	font-weight: bold;
 	font-size: 1.1rem;
 }
 
 /* Current selected nav item */
 .current_page_item a,
 .current-menu-item a {
-	font-weight: bolder !important;
+	font-weight: 700 !important;
 }
 
 /************************ 

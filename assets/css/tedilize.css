@@ -167,7 +167,7 @@ h2 {
 
 h3 {
 	font-size: 1.75rem;
-	font-weight: 600;
+	font-weight: bolder;
 }
 
 h4 {
@@ -176,12 +176,12 @@ h4 {
 
 h5 {
 	font-size: 1.25rem;
-	font-weight: 500;
+	font-weight: bold;
 }
 
 h6 {
 	font-size: 1.1rem;
-	font-weight: 600;
+	font-weight: bolder;
 }
 
 
@@ -223,7 +223,7 @@ ol {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: bolder;
 }
 
 dd {

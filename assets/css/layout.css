@@ -949,6 +949,11 @@ Page Specific Styling
 	opacity: 0.8;
 }
 
+.page-image .image-description {
+	font-size: 1.2rem;
+	min-height: auto !important;
+}
+
 .page-image .image-copyright {
 	text-align: center;
 	margin-bottom: -1em;

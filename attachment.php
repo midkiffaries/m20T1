@@ -15,7 +15,7 @@
                     </a></div>
                     <div class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </dic>
-                <div class="the-content" itemprop="description">
+                <div class="image-description" itemprop="description">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">

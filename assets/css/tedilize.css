@@ -788,7 +788,7 @@ Responsive elements
 
 /* Printing */
 @media print {
-	@page { margin: 1cm; }
+	@page { margin: 2cm; }
 
 	*,
 	*::before,

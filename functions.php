@@ -269,6 +269,15 @@ add_filter( 'user_contactmethods', function(){
     );
 });
 
+// Alter the site custom logo
+add_filter( 'get_custom_logo', function(){
+    if (has_custom_logo()) {
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => ' ') );
+    } else {
+        return bloginfo('name');
+    }
+});
+
 // Add addition file types to be uploaded to the media library
 function add_custom_mime_types( $mimes ) {
     $mimes['svg']  = 'image/svg+xml';
@@ -279,15 +288,6 @@ function add_custom_mime_types( $mimes ) {
     return $mimes;
 }
 add_filter( 'upload_mimes', 'add_custom_mime_types' );
-
-// Alter the site custom logo
-add_filter( 'get_custom_logo', function(){
-    if (has_custom_logo()) {
-        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => ' ') );
-    } else {
-        return bloginfo('name');
-    }
-});
 
 
 /////////////////////////////

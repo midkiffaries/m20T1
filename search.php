@@ -8,7 +8,7 @@
 
     <section class="search-page-form" id="search-page">
         <div>
-            <h1 class="page-title" itemprop="name">Your search netted <?php printf(SearchCount($s)); ?> result(s)</h1>
+            <h1 class="page-title" itemprop="name">Your search netted <b><?php printf(SearchCount($s)); ?></b> result(s)</h1>
             <?php get_search_form('search'); // Search form ?>
         </div>
     </section>

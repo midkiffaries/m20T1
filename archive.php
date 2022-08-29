@@ -10,16 +10,18 @@
             <h1 class="page-title" itemprop="name"><?php if (have_posts()) : // Has posts ?>
     <?php $post = $posts[0]; ?>
     <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?>
-    <?php /* Tag archive */ elseif (is_tag()) : ?>Posts tagged <b><?php single_tag_title(); ?></b>
-    <?php /* Daily archive */ elseif (is_day()) : ?>Posts from <b><?php the_time('F j, Y'); ?></b>
-    <?php /* Monthly archive */ elseif (is_month()) : ?>Posts from <b><?php the_time('F Y'); ?></b>
-    <?php /* Yearly archive */ elseif (is_year()) : ?>Posts from <b><?php the_time('Y'); ?></b>
-    <?php /* Author archive */ elseif (is_author()) : ?>Posts by <b><?php printf($curauth->display_name); ?></b>
+    <?php /* Tag archive */ elseif (is_tag()) : ?>Posts tagged: <b><?php single_tag_title(); ?></b>
+    <?php /* Daily archive */ elseif (is_day()) : ?><?php the_time('F j, Y'); ?>
+    <?php /* Monthly archive */ elseif (is_month()) : ?><?php the_time('F Y'); ?>
+    <?php /* Yearly archive */ elseif (is_year()) : ?><?php the_time('Y'); ?>
+    <?php /* Author archive */ elseif (is_author()) : ?>Posts by <?php printf($curauth->display_name); ?>
     <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
     <?php endif; ?></h1>
             <div class="subtitle">
-                <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())); ?>
-                <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())); ?>
+                <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this article"); ?>
+                <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts with this tag"); ?>
+                <?php /* Monthly archive */ if (is_month()) printf("This month's posts"); ?>
+                <?php /* Yearly archive */ if (is_year()) printf("Posts from this year"); ?>
             </div>
         </div>
     </section>

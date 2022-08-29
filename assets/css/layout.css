@@ -439,10 +439,6 @@ Single Blog Post Styling (single)
 	font-weight: bold;
 }
 
-.single-entry-avatar img {
-	border-radius: 1em;
-}
-
 .single-entry-metadata {
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 0.5em;
@@ -458,21 +454,14 @@ Single Blog Post Styling (single)
 	min-height: 12em;
 }
 
-.author-bio-name {
-	font-size: 1.2rem;
+/* Post author info */
+.single-author-bio .author-bio-name {
+	font-size: 1.4rem;
 	margin: -2px 0 0;
 }
 
-.author-bio-name small {
-	font-size: 0.8rem;
-}
-
-.author-bio-about {
+.single-author-bio .author-bio-about {
 	margin: 0;
-}
-
-.author-bio-contact {
-	margin-top: 1em !important;
 }
 
 @media (max-width: 849px) {
@@ -842,6 +831,10 @@ Page Specific Styling
 
 .archive-author-bio {
 	margin: 0 1em 3em;
+}
+
+.archive-author-bio .author-bio-meta {
+	font-size: 1.2rem;
 }
 
 /* Archive Page - Author Bio block */
@@ -1355,6 +1348,3 @@ Search Modal Styling
 Other Styling
 *************************/
 
-.wp-youtube {
-	width: 100%;
-}

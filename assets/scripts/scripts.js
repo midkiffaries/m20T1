@@ -180,6 +180,9 @@ document.addEventListener("keyup", (e) => {
             top: 0;
             left: 0;
         }
+        .wp-youtube {
+            width: 100%;
+        }
         `);
         document.body.appendChild(st);
     }

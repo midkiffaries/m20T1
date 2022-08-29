@@ -325,7 +325,7 @@ figcaption {
 svg:not(:root) {
 	height: auto;
 	max-width: 100%;
-	overflow: visible;
+	overflow: hidden;
 	vertical-align: middle;
 }
 

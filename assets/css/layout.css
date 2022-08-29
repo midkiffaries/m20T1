@@ -860,11 +860,15 @@ Page Specific Styling
 }
 
 /* Search Page */
-.search-page-form {
-	margin: 0 1em 1.4em;
+.page-search .page-title {
+	margin-top: 0.8em;
 }
 
-.search-page-form input {
+.page-search .search-container {
+	margin: 1.6em 1em 1.4em 0.4em;
+}
+
+.page-search .search-container input {
 	font-size: 1.4em;
 }
 
@@ -968,7 +972,8 @@ Page Specific Styling
 .page-404 {
 	font-size: 1.5em;
 	text-align: center;
-	min-height: 24em;
+	margin-top: 3em;
+	min-height: 25em;
 }
 
 .page-404 .search-input {

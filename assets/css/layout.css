@@ -523,7 +523,16 @@ Blog Post Styling (index/home, archives)
 }
 
 .entry-thumbnail:hover {
-	background-size: 180% !important;
+	background-size: 180%;
+	filter: blur(1px);
+}
+
+.entry-thumbnail:is([style$='.png)'],[style$='.gif)'],[style$='.svg)']) {
+	background-size: 85%;
+}
+
+.entry-thumbnail:is([style$='.png)'],[style$='.gif)'],[style$='.svg)']):hover {
+	background-size: 105%;
 	filter: blur(1px);
 }
 

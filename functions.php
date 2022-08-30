@@ -585,13 +585,7 @@ function FeaturedImageURL($id, $size, $isBackground) {
 
     // Check if background is being placed in a style attrib or in an image tag and return
     if ($isBackground && $image) {
-        // Get image extension
-        $extension = get_file_extension($image);
-
-        if ($extension == 'png' || $extension == 'gif')
-            $bgsize = "background-size:85%;";
-
-        return "background-image:url({$image});{$bgsize}";
+        return "background-image:url({$image})";
     } else {
         if ($image) {
             return $image;

@@ -214,7 +214,6 @@ Form Elements Styling
 [type="url"],
 textarea,
 select {
-	transition: border 0.25s;
 	border-width: 2px;
 	transition: all 0.4s;
 }

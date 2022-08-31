@@ -801,11 +801,12 @@ function closeModals(c) {
 }
 
 // Check field for validity
+/*
 const checkField = v => {
 	if (!v.value) v.classList.add("message-error");
 	else v.classList.remove("message-error");
 }
-
+*/
 // Sanitize user input
 const sanitizeInput = v => {
 	if (v) return v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim();

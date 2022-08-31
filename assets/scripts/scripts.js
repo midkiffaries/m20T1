@@ -10,8 +10,7 @@ console.log("Welcome to the world of m20T1!");
 // Declare Global Variables and settings
 const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('href')),
     themeUri = `${siteUri}wp-content/themes/m20T1/`,
-    TodaysDate = new Date(),
-    Locale = 'en-US';
+    TodaysDate = new Date();
 
 // Improve the behavior of input types
 (function(){
@@ -63,8 +62,7 @@ document.addEventListener("keyup", (e) => {
 // Dark mode button switch
 (function(){
 	let buttonText, theme;
-	const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)"),
-		modeButton = document.querySelector(".light-switch"),
+	const modeButton = document.querySelector(".light-switch"),
 		currentTheme = localStorage.getItem("theme"),
         st = document.createElement("style");
 	
@@ -90,6 +88,7 @@ document.addEventListener("keyup", (e) => {
 
 	// Generate button switch logic
 	modeButton.onclick = () => {
+        //const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 		//if (isDarkMode.matches) {
 		//	document.body.classList.toggle("light-mode");
 		//	document.body.classList.toggle("dark-mode");

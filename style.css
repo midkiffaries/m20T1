@@ -79,7 +79,7 @@ Typography for the page body content
 .blog-page-title h1 {
 	font-size: 3.5rem;
 	background-color: var(--secondary-color);
-	background: linear-gradient(0deg, rgba(230,81,0,1) 0%, rgba(244,151,28,1) 54%, rgba(255,231,0,1) 100%);
+	background-image: linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -95,7 +95,7 @@ Typography for the page body content
 .the-content {
 	font-size: 1.2rem;
 }
-
+/*
 .the-content h1 {
 	
 }
@@ -135,7 +135,7 @@ Typography for the page body content
 .the-content li {
 	
 }
-
+*/
 .the-content figure {
 	margin: 0.1rem 0.9rem 1rem;
 }
@@ -158,7 +158,7 @@ Typography for the page body content
 /************************************
 Sidebar and Widgets Styling
 ***********************************/
-
+/*
 .page-sidebar {
 
 }
@@ -175,10 +175,6 @@ Sidebar and Widgets Styling
 
 }
 
-.privacypolicy-widgets {
-
-}
-
 .frontpage-widgets {
 
 }
@@ -190,7 +186,7 @@ Sidebar and Widgets Styling
 .attachment-widgets {
 
 }
-
+*/
 /* Sidebar links */
 .page-sidebar a[href] {
 	text-decoration: none;
@@ -220,7 +216,7 @@ textarea,
 select {
 	transition: border 0.25s;
 	border-width: 2px;
-	transition: border-color 0.5s, box-shadow 0.3s;
+	transition: all 0.4s;
 }
 
 [type="search"]:hover,
@@ -333,8 +329,7 @@ Page Styling
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
 	color: var(--brand-color);
-	text-decoration-color: var(--brand-color);
-	text-decoration: underline;
+	text-decoration: underline solid var(--brand-color);
 }
 
 .entry-header a[href]:active,

@@ -115,9 +115,6 @@ Main Site Layout
 /* Page main body layout */
 .page-main {
 	min-height: 30em;
-}
-
-.page-main {
 	width: var(--page-width);
 	margin: 0 auto;
 }
@@ -278,7 +275,7 @@ Site Header
 
 .page-header .menu-button {
 	display: none;
-	margin: 0.9em 0.9em;
+	margin: 0.9em;
 }
 
 .header-secondary-navigation {
@@ -1095,7 +1092,7 @@ Page Pagination Section
 
 .blog-pagination {
 	text-align: center;
-	padding: 0.5em 0 1em 0;
+	padding: 0.5em 0 1em;
 }
 
 .blog-pagination nav a {

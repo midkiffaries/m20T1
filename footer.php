@@ -1,5 +1,9 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
+<?php // Background embellishments ?>
+<div class="body-top-background"></div>
+<div class="body-bottom-background"></div>
+
 <footer class="page-footer" role="contentinfo">
     <div id="footer-widgets" class="footer-widgets">
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>

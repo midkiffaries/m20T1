@@ -256,7 +256,7 @@ add_filter( 'excerpt_more', function(){
 
 // Change the WordPress editor's footer text
 add_filter( 'admin_footer_text', function(){
-    return ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 ' . THEME_VERSION . '</a>.</i>' ;
+    return ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 ' . THEME_VERSION . '</a>.</i>' ;
 });
 
 // Add additional contact methods to user profiles

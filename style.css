@@ -348,7 +348,7 @@ Standard Page Styling
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: -20;
+	z-index: -1;
 	width: 100vw;
 	height: 15em;
 	background-image: var(--body-top-background);
@@ -356,7 +356,7 @@ Standard Page Styling
 
 .body-bottom-background {
 	position: relative;
-	z-index: -21;
+	z-index: -1;
 	width: 100vw;
 	height: 12em;
 	margin-top: -12em;

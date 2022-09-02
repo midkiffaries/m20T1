@@ -243,7 +243,9 @@ Site Header
 .header-breadcrumbs {
 	margin-left: 5em;
 	font-size: 0.9rem;
+	font-weight: 500;
 	opacity: 0.6;
+	text-transform: uppercase;
 }
 
 .header-widgets {

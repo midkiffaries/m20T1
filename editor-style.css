@@ -110,11 +110,32 @@ pre {
 		monospace;
 }
 
+kbd {
+	background-color: #ddd;
+	padding: 0.1rem 0.4rem;
+	border-radius: 0.2rem;
+	border-bottom: 1px solid #aaa;
+	white-space: nowrap;
+}
+
 blockquote {
     font-style: italic;
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	margin: 0 0 1rem;
+}
+
+blockquote:not(.is-style-plain) {
+	padding-left: 0.7em;
+	border-left: 4px solid #333;
+}
+
+blockquote p {
+	margin: 0.2em 0;
+}
+
+blockquote cite {
+	font: smaller;
 }
 
 h1,

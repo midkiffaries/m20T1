@@ -83,13 +83,13 @@ Typography for the page body content
 .page-title,
 .single-entry-title,
 .blog-page-title h1 {
-	font-size: 3.5rem;
+	font-size: 3.6rem;
 	background-color: var(--secondary-color);
 	background-image: linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.8));
+	filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.8));
 }
 
 .archive-header-container .subtitle,
@@ -103,35 +103,45 @@ Typography for the page body content
 }
 
 .the-content h1 {
-	font-size: inherit;
+	color: var(--secondary-color);
 }
 
 .the-content h2 {
-	font-size: inherit;
+	font-weight: 300;
 }
 
 .the-content h3 {
-	font-size: inherit;
+	font-weight: 500;
 }
 
 .the-content h4 {
-	font-size: inherit;
+	font-weight: auto;
 }
 
 .the-content h5 {
-	font-size: inherit;
+	font-weight: auto;
 }
 
 .the-content h6 {
-	font-size: inherit;
+	font-weight: auto;
 }
 
 .the-content p {
 	font-size: inherit;
 }
 
-.the-content blockquote {
-	font-size: inherit;
+.the-content blockquote:not(.is-style-plain) {
+	padding-left: 0.7em;
+	border-left: 4px solid var(--brand-color);
+}
+
+.the-content blockquote p {
+	margin: 0.2em 0;
+}
+
+.the-content blockquote cite {
+	font-size: smaller;
+	font-style: normal;
 }
 
 .the-content p code {
@@ -177,7 +187,7 @@ Sidebar and Widgets Styling
 	font-size: 1rem;
 }
 
-.page-widgets {
+.page-sidebar {
 	font-size: 1em;
 }
 

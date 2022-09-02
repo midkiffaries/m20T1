@@ -9,8 +9,7 @@ console.log("Welcome to the world of m20T1!");
 
 // Declare Global Variables and settings
 const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('href')),
-    themeUri = `${siteUri}wp-content/themes/m20T1/`,
-    TodaysDate = new Date();
+    themeUri = `${siteUri}wp-content/themes/m20T1/`;
 
 // Improve the behavior of input types
 (function(){
@@ -813,7 +812,7 @@ const sanitizeInput = v => {
 	else return null;
 }
 
-// Validate user inputed email address
+// Validate user input email address
 const validateEmail = v => {
     const mailhash = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (v.match(mailhash)) return true;

@@ -1102,9 +1102,9 @@ Page Pagination Section
 .blog-pagination nav a {
 	text-decoration: none;
 	font-size: 1.3rem;
-	padding: 4px 8px;
+	padding: 4px 10px;
 	display: inline-block;
-	transition: background 0.3s;
+	transition: all 0.4s;
 	border-radius: 0.3em;
 	border-bottom: 1px solid transparent;
 	font-weight: 500;
@@ -1115,9 +1115,13 @@ Page Pagination Section
 }
 
 .blog-pagination nav a:hover {
-	color: var(--brand-color-dark);
-	background-color: var(--brand-color-pale);
+	background-color: #ccc;
 	border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.blog-pagination nav a:active {
+	opacity: 0.7;
+	border-color: transparent;
 }
 
 .single-blog-post-nav div span {

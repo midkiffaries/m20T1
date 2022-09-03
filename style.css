@@ -285,6 +285,12 @@ button:focus,
 	border-color: var(--brand-color-dark);
 }
 
+/* Pagination links */
+.blog-pagination nav a:hover {
+	color: #fff;
+	background-color: var(--secondary-color);
+}
+
 
 /************************ 
 Standard Page Styling

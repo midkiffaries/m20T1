@@ -362,21 +362,23 @@ Site Footer
 .footer-widgets,
 .footer-notice {
 	width: var(--page-width);
-	padding: 0.8em;
-	margin: 0 auto;
 	clear: both;
 }
 
-.footer-slogan {
-	text-align: center;
-	font-size: 0.9em;
-	font-style: italic;
-	opacity: 0.8;
+.footer-widgets {
+	padding: 2em 1em;
+	margin: 0 auto;
+}
+
+.footer-widgets .menu-item a {
+	font-size: 1.2rem;
+	text-decoration: none;
 }
 
 .footer-notice {
-	font-size: 0.9rem;
+	font-size: 0.95rem;
 	margin: 0 auto 2em;
+	padding: 0.8em;
 }
 
 .footer-rule {
@@ -404,7 +406,7 @@ Site Footer
 	.footer-notice {
 		width: 100%;
 		margin-bottom: 3em;
-		font-size: 0.8rem;
+		font-size: 0.85rem;
 	}
 }
 
@@ -1099,8 +1101,12 @@ Page Pagination Section
 
 .blog-pagination nav a {
 	text-decoration: none;
-	font-size: 1.1em;
-	padding: 2px 4px;
+	font-size: 1.3rem;
+	padding: 4px 8px;
+	display: inline-block;
+	transition: background 0.3s;
+	border-radius: 0.3em;
+	border-bottom: 1px solid transparent;
 }
 
 .blog-pagination .blog-post-nav a {
@@ -1108,13 +1114,17 @@ Page Pagination Section
 }
 
 .blog-pagination nav a:hover {
-	text-decoration: underline;
+	color: var(--brand-color-dark);
+	background-color: var(--brand-color-pale);
+	border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 
 .single-blog-post-nav div span {
 	font-size: 85%;
 	display: block;
 	margin: 0;
+	font-weight: 800;
+	text-transform: uppercase;
 }
 
 .single-blog-post-nav .left {

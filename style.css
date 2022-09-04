@@ -77,7 +77,7 @@ body {
 
 
 /************************************
-Typography for the page body content
+Typography for the page body
 ************************************/
 
 /* Blog Page title */
@@ -104,7 +104,11 @@ Typography for the page body content
 	background-color: var(--tertiary-color);
 }
 
-/* WordPress editor styling */
+
+/************************************
+WordPress editor styling
+************************************/
+
 .the-content {
 	font-size: 1.2rem;
 }
@@ -362,7 +366,7 @@ Standard Page Styling
 	background-image: var(--icon-search);
 }
 
-/* Blog Post Links */
+/* Blog Post Metadata links */
 .entry-header a[href],
 .single-entry-header a[href] {
 	color: var(--header-link-color);

@@ -14,14 +14,15 @@
     <?php /* Daily archive */ elseif (is_day()) : ?><?php the_time('F j, Y'); ?>
     <?php /* Monthly archive */ elseif (is_month()) : ?><?php the_time('F Y'); ?>
     <?php /* Yearly archive */ elseif (is_year()) : ?><?php the_time('Y'); ?>
-    <?php /* Author archive */ elseif (is_author()) : ?>Posts by <?php printf($curauth->display_name); ?>
+    <?php /* Author archive */ elseif (is_author()) : ?><?php printf($curauth->display_name); ?>
     <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
     <?php endif; ?></h1>
             <div class="subtitle">
                 <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this article"); ?>
-                <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts with this tag"); ?>
-                <?php /* Monthly archive */ if (is_month()) printf("This month's posts"); ?>
+                <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
+                <?php /* Monthly archive */ if (is_month()) printf("Posts from this month"); ?>
                 <?php /* Yearly archive */ if (is_year()) printf("Posts from this year"); ?>
+                <?php /* Author archive */ if (is_author()) printf("All the posts written by this author"); ?>
             </div>
         </div>
     </section>

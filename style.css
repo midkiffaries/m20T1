@@ -100,8 +100,8 @@ Typography for the page body content
 	color: #444;
 }
 
-.single-entry-sticky {
-	background: var(--tertiary-color);
+.single-entry-sticky:not(:empty) {
+	background-color: var(--tertiary-color);
 }
 
 /* WordPress editor styling */

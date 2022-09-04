@@ -248,7 +248,7 @@ Sidebar and Widgets Styling
 
 
 /************************ 
-Form Elements Styling
+Form Element Styling
 ************************/
 
 /* Input elements */
@@ -312,10 +312,27 @@ button:focus,
 	border-color: var(--brand-color-dark);
 }
 
+
+/************************ 
+Blog Post Styling
+************************/
+
 /* Pagination links */
+.blog-pagination nav a {
+	border-radius: 0.3em;
+	border-bottom: 1px solid transparent;
+	font-weight: 500;
+	transition: all 0.4s;
+}
+
 .blog-pagination nav a:hover {
 	color: #fff;
 	background-color: var(--secondary-color);
+	border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.blog-pagination nav a:active {
+	filter: brightness(75%);
 }
 
 

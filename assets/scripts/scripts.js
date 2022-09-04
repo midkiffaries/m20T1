@@ -812,9 +812,9 @@ const sanitizeInput = v => {
 	else return null;
 }
 
-// Validate user input email address
+// Validate users email address
 const validateEmail = v => {
-    const mailhash = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (v.match(mailhash)) return true;
+    const h = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (v.match(h)) return true;
     else return false;
 }

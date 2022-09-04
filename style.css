@@ -138,7 +138,7 @@ Typography for the page body content
 }
 
 .the-content figure img[src$='.jpg'] {
-	box-shadow: 6px 6px 0 0 rgba(0,0,0,0.2), -8px -8px 0 0 var(--secondary-color);
+	box-shadow: 6px 6px 0 0 rgba(0,0,0,0.2), -8px -8px 0 0 var(--brand-color-pale);
 }
 
 .the-content figcaption {

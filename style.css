@@ -137,6 +137,14 @@ Typography for the page body content
 	font-size: inherit;
 }
 
+.the-content figure img[src$='.jpg'] {
+	box-shadow: 6px 6px 0 0 rgba(0,0,0,0.2), -8px -8px 0 0 var(--secondary-color);
+}
+
+.the-content figcaption {
+	padding-top: 4px;
+}
+
 .the-content blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
 	border-left: 4px solid var(--brand-color);

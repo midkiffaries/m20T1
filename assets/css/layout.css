@@ -154,6 +154,7 @@ Main Site Layout
 .page-sidebar {
 	width: var(--sidebar-width);
 	padding: 0.8em;
+	margin-top: 1em;
 	float: right;
 }
 
@@ -424,12 +425,12 @@ Single Blog Post Styling (single)
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 1.4rem;
-	margin: -3em 0.1em 0.5em;
+	margin: -2.7em 0.1em 0.5em;
 	position: absolute;
 	padding: 4px 10px;
 	background-color: #ddd;
 	border-radius: 0.5em;
-	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.7);
+	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.7);
 }
 
 .single-entry-title {
@@ -503,7 +504,7 @@ Blog Post Styling (index/home, archives)
 	margin-top: -1.5em;
 }
 
-.entry-sticky {
+.entry-sticky:not(:empty) {
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -765,12 +766,11 @@ Figures and Galleries
 	position: absolute;
 	transform: translate(-1.5em,0.5em);
 }
-
+/*
 .wp-block-image figure img:not([src$=".png"]) {
 	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.6), 0 5px 10px -2px rgba(0,0,0,0.1);
-	border-radius: 0.3em;
 }
-
+*/
 .wp-block-image figcaption {
 	padding: 0;
 	font-size: 0.9rem;

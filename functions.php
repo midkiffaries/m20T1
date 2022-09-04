@@ -262,10 +262,9 @@ add_filter( 'admin_footer_text', function(){
 // Add additional contact methods to user profiles
 add_filter( 'user_contactmethods', function(){
     return array(
-        'linkedin'  => 'LinkedIn',
-        'twitter'   => 'Twitter',
-        'facebook'  => 'Facebook',
-        'instagram' => 'Instagram',
+        'linkedin' => 'LinkedIn',
+        'twitter'  => 'Twitter',
+        'facebook' => 'Facebook',
     );
 });
 

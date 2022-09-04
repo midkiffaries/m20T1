@@ -156,7 +156,7 @@ WordPress editor styling
 
 .the-content blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
-	border-left: 4px solid var(--brand-color);
+	border-left: 6px solid var(--brand-color);
 }
 
 .the-content blockquote p {
@@ -194,6 +194,7 @@ WordPress editor styling
 .the-content a[href]:active {
 	color: var(--brand-color-dark);
 }
+
 
 /************************************
 Sidebar and Widgets Styling

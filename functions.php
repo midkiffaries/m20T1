@@ -388,6 +388,7 @@ add_action( 'widgets_init', function(){
 });
 
 // Get 'Widgets_Slug' Custom Field which changes the sidebar selection
+// SLUGS: primary, secondary, tertiary, singlepost, frontpage, singlepage, singlepagesidebar, header, footer
 function selectSidebarCustomField($id, $default) {
     $key = get_post_meta( $id, 'Widgets_Slug', true );
     if (empty($key)) {

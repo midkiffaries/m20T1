@@ -80,6 +80,7 @@ body {
 Typography for the page body content
 ************************************/
 
+/* Blog Page title */
 .page-title,
 .single-entry-title,
 .blog-page-title h1 {
@@ -92,6 +93,7 @@ Typography for the page body content
 	filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.8));
 }
 
+/* Subtitle */
 .archive-header-container .subtitle,
 .blog-page-title p {
 	font-family: var(--font-secondary);
@@ -103,7 +105,6 @@ Typography for the page body content
 }
 
 /* WordPress editor styling */
-
 .the-content {
 	font-size: 1.2rem;
 }

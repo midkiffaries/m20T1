@@ -101,6 +101,8 @@ Typography for the page body
 }
 
 .single-entry-sticky:not(:empty) {
+	border-radius: 0.5em;
+	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.7);
 	background-color: var(--tertiary-color);
 }
 

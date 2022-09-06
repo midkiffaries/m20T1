@@ -544,7 +544,8 @@ Blog Post Styling (index/home, archives)
 @media (max-width: 849px) {
 	.entry-thumbnail {
 		width: 100%;
-		height: 150px;
+		height: 9em;
+		margin-bottom: 0.8em;
 	}
 }
 

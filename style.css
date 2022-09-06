@@ -217,10 +217,6 @@ Sidebar and Widgets Styling
 	font-size: 1rem;
 }
 
-.page-sidebar {
-	font-size: 1em;
-}
-
 .frontpage-widgets {
 	font-size: 1em;
 }
@@ -350,7 +346,6 @@ Standard Page Styling
 
 /* Page Footer */
 .page-footer {
-	background-image: #eee;
 	background: var(--footer-background);
 }
 

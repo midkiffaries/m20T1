@@ -276,6 +276,10 @@ Site Header
 	text-decoration-thickness: 3px;
 }
 
+.header-navigation ul li a:active {
+	opacity: 0.6;
+}
+
 .page-header .menu-button {
 	display: none;
 	margin: 0.9em;
@@ -374,6 +378,11 @@ Site Footer
 .footer-widgets .menu-item a {
 	font-size: 1.2rem;
 	text-decoration: none;
+}
+
+.footer-widgets .menu-item a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
 }
 
 .footer-notice {

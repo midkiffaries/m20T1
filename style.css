@@ -176,8 +176,13 @@ WordPress editor styling
 	font-size: inherit;
 }
 
-.the-content figure {
+.the-content figure.alignright,
+.the-content figure.alignleft {
 	margin: 0.1rem 0.9rem 1rem;
+}
+
+.the-content figure.aligncenter {
+	margin: 0.2rem auto;
 }
 
 /* Body content links */

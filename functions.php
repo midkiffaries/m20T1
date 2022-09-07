@@ -146,16 +146,16 @@ add_action( 'init', function(){
     // Add another post type to the editor
     register_post_type( 'portfolio', array(
         'labels' => array(
-            'name'                  => _x( 'Works', 'Post type general name' ),
+            'name'                  => _x( 'Portfolio', 'Post type general name' ),
             'singular_name'         => _x( 'Portfolio', 'Post type singular name' ),
             'menu_name'             => _x( 'Portfolio', 'Admin Menu text' ),
-            'name_admin_bar'        => _x( 'Work', 'Add New on Toolbar' ),
+            'name_admin_bar'        => _x( 'Portfolio', 'Add New on Toolbar' ),
             'add_new'               => __( 'Add New' ),
-            'add_new_item'          => __( 'Add New Work' ),
+            'add_new_item'          => __( 'Add New Portfolio' ),
             'new_item'              => __( 'New Portfolio' ),
-            'edit_item'             => __( 'Edit Work' ),
-            'view_item'             => __( 'View Work' ),
-            'all_items'             => __( 'All Works' ),
+            'edit_item'             => __( 'Edit Portfolio' ),
+            'view_item'             => __( 'View Portfolio' ),
+            'all_items'             => __( 'All Portfolios' ),
             'search_items'          => __( 'Search Portfolio' ),
             'parent_item_colon'     => __( 'Parent Portfolio:' ),
             'not_found'             => __( 'No works found.' ),

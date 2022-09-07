@@ -50,6 +50,10 @@ ol {
 	padding-left: 2rem;
 }
 
+ul li::marker {
+	color: var(--link-color);
+}
+
 b,
 strong {
 	font-weight: bolder;
@@ -127,15 +131,26 @@ blockquote {
 
 blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
-	border-left: 4px solid #333;
+	border-left: 6px solid #666;
 }
 
 blockquote p {
 	margin: 0.2em 0;
 }
 
+blockquote p::before {
+	content: '“';
+	font-size: 1.2rem;
+}
+
+blockquote p::after {
+	content: '”';
+	font-size: 1.2rem;
+}
+
 blockquote cite {
-	font: smaller;
+	font-size: smaller;
+	margin-left: 0.5em;
 }
 
 h1,

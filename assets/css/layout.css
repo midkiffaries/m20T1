@@ -16,6 +16,7 @@ Base WordPress Page Styling
 	--featured-img-bg-over: rgba(255,255,255,0.09) url(../images/dots-overlay.svg) repeat 0 0;
 
 	--darkmode-bg-color: #161616;
+	--footer-bg-color: #212121;
 
 	--facebook-color: #3b5998;
 	--twitter-color: #1da1f2;
@@ -365,35 +366,30 @@ Site Header
 Site Footer
 ************************************/
 
-.footer-widgets,
-.footer-notice {
-	width: var(--page-width);
-	clear: both;
+.page-footer {
+	color: #fff;
+	position: relative;
+	background-color: var(--footer-bg-color);
+	background-image: linear-gradient(135deg, rgba(234, 234, 234,0.06) 0%, rgba(234, 234, 234,0.06) 50%,rgba(169, 169, 169,0.06) 50%, rgba(169, 169, 169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20)); 
+	background-size: 72px 72px;
 }
 
 .footer-widgets {
+	width: var(--page-width);
 	padding: 2em 1em;
 	margin: 0 auto;
-}
-
-.footer-widgets .menu-item a {
-	font-size: 1.2rem;
-	text-decoration: none;
-}
-
-.footer-widgets .menu-item a:hover {
-	text-decoration: underline;
-	text-decoration-thickness: 2px;
 }
 
 .footer-notice {
 	font-size: 0.95rem;
 	margin: 0 auto 2em;
 	padding: 0.8em;
+	clear: both;
+	width: var(--page-width);
 }
 
 .footer-rule {
-	opacity: 0.4;
+	opacity: 0.1;
 	padding: 1px;
 	margin-top: 0;
 }
@@ -409,6 +405,21 @@ Site Footer
 	text-align: right;
 }
 
+.page-footer::before {
+    background: linear-gradient(-45deg, var(--footer-bg-color) 16px, transparent 0), linear-gradient(45deg, var(--footer-bg-color) 16px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -28px;
+    left: 0px;
+    width: 100%;
+    height: 35px;
+	filter: drop-shadow(-4px -1px 0px #aaa);
+}
+
 @media (max-width: 1249px) {
 	.footer-widgets {
 		width: 100%;
@@ -420,7 +431,6 @@ Site Footer
 		font-size: 0.85rem;
 	}
 }
-
 
 /*********************************** 
 Single Blog Post Styling (single)

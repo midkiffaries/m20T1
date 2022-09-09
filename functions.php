@@ -701,7 +701,7 @@ function attachment_page_image($id) {
     // Check if attachment matches the extension video array
     foreach ($video_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
-            return 'Play Video'; // Return attachment
+            return '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512"><path d="m192 192 160 112-160 112V192z" fill="red"/><path d="M458.9 114.5c-11.1-15.1-26.6-32.8-43.6-49.8S380.6 32.2 365.5 21C339.7 2.1 327.2 0 320 0H72C50 0 32 18 32 40v432c0 22 18 40 40 40h368c22 0 40-18 40-40V160c0-7.2-2.2-19.7-21.1-45.5zm-66.2-27.2A436.4 436.4 0 0 1 429 128h-77V51a436 436 0 0 1 40.7 36.3zM448 472c0 4.3-3.7 8-8 8H72c-4.3 0-8-3.7-8-8V40c0-4.3 3.7-8 8-8h248v112a16 16 0 0 0 16 16h112v312z" fill="darkred"/></svg>'; // Return attachment
         }
     }
 

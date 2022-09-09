@@ -686,15 +686,25 @@ function get_file_extension($path) {
 
 // Get proper attachment image or use a document placeholder 
 function attachment_page_image($id) {
-    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'ico', 'mp3', 'm4a', 'ogg', 'wav', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');
+    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'ico');
+    $video_ext = array('mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');
+    
     $fileExt = get_file_extension(wp_get_attachment_url($id));
 
-    // Check if attachment matches the extension array
+    // Check if attachment matches the extension images array
     foreach ($image_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
             return wp_get_attachment_image($id, 'large', 0, array('loading' => '')); // Return attachment
         }
     }
+
+    // Check if attachment matches the extension video array
+    foreach ($video_ext as $ext) {
+        if (strpos($fileExt, $ext) !== FALSE) {
+            return 'Play Video'; // Return attachment
+        }
+    }
+
     // Check if attachment is SVG or other document
     if ($fileExt == 'svg' || $fileExt == 'svgz') { // SVG Images
         return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" class="attachment-svg">';

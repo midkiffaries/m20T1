@@ -8,7 +8,7 @@
 
         <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
-                <h1 class="image-title" itemprop="name"><?php the_title(); ?></h1>
+                <h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
                 <div class="wp-block-image">
                     <div class="image-attachment"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document">
                         <?php echo attachment_page_image(get_the_ID()); ?>

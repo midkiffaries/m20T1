@@ -544,7 +544,6 @@ Blog Post Styling (index/home, archives)
 
 .entry-thumbnail:is([style$='.png)'],[style$='.gif)'],[style$='.svg)']):hover {
 	background-size: 105%;
-	filter: blur(1px);
 }
 
 @media (max-width: 849px) {

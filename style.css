@@ -33,6 +33,9 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--page-background: #fdfdfd;
 	--comment-background: rgba(0,0,0,0.05);
 
+	--footer-bg-color: #212121;
+	--footer-bg-image: linear-gradient(135deg, rgba(234, 234, 234,0.06) 0%, rgba(234, 234, 234,0.06) 50%,rgba(169, 169, 169,0.06) 50%, rgba(169, 169, 169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
+
 	--body-top-background: linear-gradient(0deg, rgba(254,254,254,1) 8%, rgba(254,254,254,0.6) 66%), 
 						linear-gradient(45deg, rgba(254,254,254,1) 25%, rgba(254,254,254,0) 80%),
 						url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='none'/><path d='M40 45a5 5 0 110-10 5 5 0 010 10zM0 45a5 5 0 110-10 5 5 0 010 10zM0 5A5 5 0 110-5 5 5 0 010 5zm40 0a5 5 0 110-10 5 5 0 010 10z'  stroke-width='1' stroke='none' fill='hsla(0,0%,0%,0.06)'/><path d='M20 25a5 5 0 110-10 5 5 0 010 10z'  stroke-width='1' stroke='none' fill='hsla(0,0%,0%,0.06)'/></pattern></defs><rect width='800%' height='800%' transform='translate(-69,-69)' fill='url(%23a)'/></svg>");
@@ -361,6 +364,29 @@ Standard Page Styling
 
 /* Page Footer */
 
+.page-footer {
+	background-color: var(--footer-bg-color);
+	background-image: var(--footer-bg-image); 
+	background-size: 72px 72px;
+	position: relative;
+}
+
+/* Add saw effect to top of footer */
+.page-footer::before {
+    background: linear-gradient(-45deg, var(--footer-bg-color) 16px, transparent 0), linear-gradient(45deg, var(--footer-bg-color) 16px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -28px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+	filter: drop-shadow(-4px -1px 0px #aaa);
+}
+
 .footer-widgets ul {
 	text-align: center;
 	justify-content: center;
@@ -379,6 +405,8 @@ Standard Page Styling
 .footer-widgets .wp-block-social-links svg {
 	fill: #fff !important;
 }
+
+/* Comments section */
 
 .list-comments .comment {
 	background: var(--comment-background);

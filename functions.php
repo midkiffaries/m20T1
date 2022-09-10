@@ -24,8 +24,8 @@ define( 'THEME_VERSION', wp_get_theme()->get('Version') );
 // Default fallback featured image URI
 define( 'BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg' );
 // Default social media sharing image URI
-define( 'SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-share.jpg' );
-//define('SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/social-share.jpg');
+//define( 'SOCIAL_IMAGE', get_template_directory_uri() . '/assets/images/social-share.jpg' ); // Default
+define( 'SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/08/social-share.jpg' );
 // Inline separator in the blog post metadata
 define( 'POST_SEPARATOR', '–' );
 // Read more excerpt text ending

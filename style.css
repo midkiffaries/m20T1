@@ -482,6 +482,8 @@ Standard Page Styling
 }
 
 .merch-stores-links div a:hover {
+	color: var(--brand-color-dark) !important;
+	background-color: var(--brand-color-pale) !important;
 	filter: brightness(110%);
 }
 

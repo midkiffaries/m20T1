@@ -37,21 +37,22 @@ Icon Fonts Styling
 	font-display: block;
 }
 
-a[href$=".pdf"]::after, 
-a[href$=".zip"]::after {
+/* Special Links */
+.the-content [href$=".pdf"]::after, 
+.the-content [href$=".zip"]::after {
 	font-family: 'icomoon';
 	content: "\e907";
 	padding-left: 1px;
 	font-size: 0.9rem;
 }
 
-[href^="mailto:"]::before {
+.the-content [href^="mailto:"]::before {
 	font-family: 'icomoon' !important;
 	content: "\e903";
     padding-right: 1px;
 }
 
-[href^="tel:"]::before {
+.the-content [href^="tel:"]::before {
     font-family: 'icomoon' !important;
 	content: "\e942";
     padding-right: 1px;

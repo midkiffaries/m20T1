@@ -20,7 +20,9 @@
             </header>
             <div class="the-content single-entry-content <?php echo ResizeFontClass($post->post_content); ?>" itemprop="description">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-                <p class="entry-last-updated"><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
+            </div>
+            <div class="entry-last-updated">
+                <p><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
             </div>
             <footer class="single-entry-footer">
                 <div class="entry-tags"><?php blog_post_tags(); ?></div>

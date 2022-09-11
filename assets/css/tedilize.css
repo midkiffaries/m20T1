@@ -14,6 +14,7 @@ Tedilize 2.0 - Normalization and Base Styling
 *::after {
 	text-decoration: inherit;
 	white-space: pre;
+	line-height: 1;
 }
 
 html:focus-within {

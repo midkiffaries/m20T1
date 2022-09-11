@@ -490,3 +490,12 @@ Standard Page Styling
 .merch-stores-links div a:active {
 	filter: brightness(90%);
 }
+
+/* Add embelishment to last P in article */
+.single-entry-content p:last-of-type::after {
+	font-family: 'icomoon' !important;
+	content: "\e902";
+	margin-left: 0.4em;
+	line-height: 1;
+	opacity: 0.5;
+}

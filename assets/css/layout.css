@@ -33,56 +33,39 @@ Icon Fonts Styling
 		url('../fonts/icomoon.woff?xc0ne7') format('woff');
 	font-weight: normal;
 	font-style: normal;
+	font-variant: normal;
 	font-display: block;
 }
 
-[class^="icon-"]::before, 
-[class*=" icon-"]::before, 
-[class^="icon-"]::after, 
-[class*=" icon-"]::after {
-	font-family: 'icomoon' !important;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+a[href$=".pdf"]::after, 
+a[href$=".zip"]::after {
+	font-family: 'icomoon';
+	content: "\e907";
+	padding-left: 1px;
+	font-size: 0.9rem;
 }
 
-.icon-pinterest:before {
-	content: "\e900";
+[href^="mailto:"]::before {
+	font-family: 'icomoon' !important;
+	content: "\e903";
+    padding-right: 1px;
 }
-.icon-reddit:before {
-	content: "\e901";
+
+[href^="tel:"]::before {
+    font-family: 'icomoon' !important;
+	content: "\e942";
+    padding-right: 1px;
+    font-size: 0.9rem;
+}
+
+/*
+.icon-comment::before {
+	font-family: 'icomoon' !important;
+	content: "\e96b";
+	padding-right: 7px;
 }
 .icon-written:before {
 	content: "\e911";
-	padding-right: 7px;
-}
-.icon-linkedin:before {
-	content: "\e905";
-}
-.icon-twitter:before {
-	content: "\e906";
-}
-.icon-file:before {
-	content: "\e907";
-}
-.icon-bear:before {
-	content: "\e902";
-	padding-right: 2px;
-	vertical-align: middle;
-}
-.icon-email:before {
-	content: "\e903";
-}
-.icon-home:before {
-	content: "\e904";
-}
-.icon-phone:before {
-	content: "\e942";
-}
-.icon-comment:before {
-	content: "\e96b";
 	padding-right: 7px;
 }
 .icon-link:before {
@@ -90,9 +73,6 @@ Icon Fonts Styling
 }
 .icon-map:before {
 	content: "\e90a";
-}
-.icon-facebook:before {
-	content: "\e90b";
 }
 .icon-arrow-up:before {
 	content: "\e90c";
@@ -106,7 +86,7 @@ Icon Fonts Styling
 .icon-arrow-down:before {
 	content: "\e90f";
 }
-
+*/
 
 /************************ 
 Main Site Layout
@@ -405,6 +385,13 @@ Site Footer
 	text-align: right;
 }
 
+.footer-footnote .wp-theme-title::before {
+	font-family: 'icomoon' !important;
+	content: "\e902";
+	padding-right: 2px;
+	vertical-align: -2px;
+}
+
 @media (max-width: 1249px) {
 	.footer-widgets {
 		width: 100%;
@@ -665,20 +652,45 @@ Social Sharing Buttons Styling
     background-color: var(--facebook-color);
 }
 
+.post-social-share .facebook-share::before {
+	font-family: 'icomoon' !important;
+	content: "\e90b";
+}
+
 .post-social-share .twitter-share {
     background-color: var(--twitter-color);
+}
+
+.post-social-share .twitter-share::before {
+	font-family: 'icomoon' !important;
+	content: "\e906";
 }
 
 .post-social-share .linkedin-share {
     background-color: var(--linkedin-color);
 }
 
+.post-social-share .linkedin-share::before {
+	font-family: 'icomoon' !important;
+	content: "\e905";
+}
+
 .post-social-share .pinterest-share {
     background-color: var(--pinterest-color);
 }
 
+.post-social-share .pinterest-share::before {
+	font-family: 'icomoon' !important;
+	content: "\e900";
+}
+
 .post-social-share .reddit-share {
     background-color: var(--reddit-color);
+}
+
+.post-social-share .reddit-share::before {
+	font-family: 'icomoon' !important;
+	content: "\e901";
 }
 
 

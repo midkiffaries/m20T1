@@ -767,11 +767,11 @@ function blog_post_share() {
     );
 ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?php echo $social_links['twitter']; ?>" class="icon-twitter twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
-        <li><a href="<?php echo $social_links['facebook']; ?>" class="icon-facebook facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?php echo $social_links['linkedin']; ?>" class="icon-linkedin linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?php echo $social_links['pinterest']; ?>" class="icon-pinterest pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin</a></li>
-        <li><a href="<?php echo $social_links['reddit']; ?>" class="icon-reddit reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $social_links['twitter']; ?>" class="twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
+        <li><a href="<?php echo $social_links['facebook']; ?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $social_links['linkedin']; ?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?php echo $social_links['pinterest']; ?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin</a></li>
+        <li><a href="<?php echo $social_links['reddit']; ?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
     </ul>
 <?php
 }

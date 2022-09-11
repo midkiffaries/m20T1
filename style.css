@@ -241,7 +241,6 @@ Sidebar and Widgets Styling
 
 .archive-widgets {
 	font-size: 1em;
-
 }
 
 .attachment-widgets {
@@ -363,7 +362,6 @@ Standard Page Styling
 ************************/
 
 /* Page Footer */
-
 .page-footer {
 	background-color: var(--footer-bg-color);
 	background-image: var(--footer-bg-image); 
@@ -475,4 +473,18 @@ Standard Page Styling
 .dark-mode .body-bottom-background {
 	filter: invert(91.8%);
 	opacity: 0.9;
+}
+
+/* Merch Stores Links */
+.merch-stores-links div a {
+	font-weight: 600;
+	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.2);
+}
+
+.merch-stores-links div a:hover {
+	filter: brightness(110%);
+}
+
+.merch-stores-links div a:active {
+	filter: brightness(90%);
 }

@@ -59,35 +59,6 @@ Icon Fonts Styling
     font-size: 0.9rem;
 }
 
-/*
-.icon-comment::before {
-	font-family: 'icomoon' !important;
-	content: "\e96b";
-	padding-right: 7px;
-}
-.icon-written:before {
-	content: "\e911";
-	padding-right: 7px;
-}
-.icon-link:before {
-	content: "\e908";
-}
-.icon-map:before {
-	content: "\e90a";
-}
-.icon-arrow-up:before {
-	content: "\e90c";
-}
-.icon-arrow-left:before {
-	content: "\e90d";
-}
-.icon-arrow-right:before {
-	content: "\e90e";
-}
-.icon-arrow-down:before {
-	content: "\e90f";
-}
-*/
 
 /************************ 
 Main Site Layout
@@ -1130,6 +1101,7 @@ Page Pagination Section
 	font-size: 1.3rem;
 	padding: 4px 10px;
 	display: inline-block;
+	font-size: 1.2rem;
 }
 
 .blog-pagination .blog-post-nav a {

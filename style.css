@@ -505,3 +505,24 @@ Standard Page Styling
 	border-radius: 1em;
 	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);
 }
+
+/* Homepage recent posts styling */
+.homepage-recent-posts {
+	max-width: var(--page-width);
+	margin: 0 auto;
+}
+
+.homepage-recent-posts a {
+	font-weight: 500;
+	font-size: 1.2em;
+	text-decoration-color: var(--brand-color-pale);
+}
+
+.homepage-recent-posts time {
+	opacity: 0.6;
+	font-weight: 500;
+}
+
+.homepage-recent-posts div {
+	font-size: 0.9em;
+}

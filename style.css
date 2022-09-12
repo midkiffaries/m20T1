@@ -491,11 +491,17 @@ Standard Page Styling
 	filter: brightness(90%);
 }
 
-/* Add embelishment to last P in article */
+/* Add embelishment to last <p> in article */
 .single-entry-content p:last-of-type::after {
 	font-family: 'icomoon' !important;
 	content: "\e902";
 	margin-left: 0.4em;
 	line-height: 1;
 	opacity: 0.5;
+}
+
+/* Embedded Youtube video */
+.embed-youtube {
+	border-radius: 1em;
+	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);
 }

@@ -109,19 +109,19 @@ document.addEventListener("keyup", (e) => {
 // Embedded YouTube video iframe automatic lazy loading
 (function(){
     let st = document.createElement("style"), 
-        youtube = document.getElementsByClassName("youtube"), 
+        youtube = document.getElementsByClassName("embed-youtube"), 
         l = youtube.length;
 
     for (let i = 0; i < l; i++) {
         let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`;
         let image = new Image();
         image.src = source;
-        image.alt = "Play this YouTube video";
+        image.alt = "Play YouTube video";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
         youtube[i].addEventListener("click", function() {
             let iframe = document.createElement("iframe");
             iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute("loading", "lazy");
+            //iframe.setAttribute("loading", "lazy");
             iframe.setAttribute("allow", "accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
             iframe.setAttribute("allowfullscreen", "");
             iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?feature=oembed`);
@@ -133,18 +133,25 @@ document.addEventListener("keyup", (e) => {
     // Append stylesheet if "youtube" exists
     if (l) {
         st.textContent = (`
-        .youtube {
+        .wp-youtube {
+            width: 100%;
+        }
+        .embed-youtube {
             width: 100%;
             position: relative;
             padding-top: 56.25%;
             overflow: hidden;
-        }
-        .youtube img {
-            width: 100%;
-            top: -17%;
+            transition: outline 0.5s;
             cursor: pointer;
         }
-        .youtube .play-button {
+        .embed-youtube:hover {
+            outline: 4px solid rgba(255,30,30);
+        }
+        .embed-youtube img {
+            width: 100%;
+            top: -17%;
+        }
+        .embed-youtube .play-button {
             width: 6em;
             height: 4em;
             background: rgba(50,50,50,0.4);
@@ -154,32 +161,29 @@ document.addEventListener("keyup", (e) => {
             border-radius: 0.8em;
             transition: background 0.5s;
         }
-        .youtube:hover .play-button {
+        .embed-youtube:hover .play-button {
             opacity: 1;   
             background: rgba(255,30,30,0.7);
         }
-        .youtube .play-button::before {
+        .embed-youtube .play-button::before {
             content: "";
             border-style: solid;
             border-width: 15px 0 15px 26px;
             border-color: transparent transparent transparent #fff;
         }
-        .youtube img, .youtube iframe, .youtube .play-button, .youtube .play-button::before {
+        .embed-youtube img, .embed-youtube iframe, .embed-youtube .play-button, .embed-youtube .play-button::before {
             position: absolute;
         }
-        .youtube .play-button, .youtube .play-button::before {
+        .embed-youtube .play-button, .embed-youtube .play-button::before {
             top: 50%;
             left: 50%;
             transform: translate3d(-50%,-50%,0);
         }
-        .youtube iframe {
+        .embed-youtube iframe {
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-        }
-        .wp-youtube {
-            width: 100%;
         }
         `);
         document.body.appendChild(st);

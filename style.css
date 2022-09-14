@@ -228,23 +228,23 @@ Sidebar and Widgets Styling
 }
 
 .singlepost-widgets {
-	font-size: 1em;
+	font-size: inherit;
 }
 
 .blogroll-widgets {
-	font-size: 1rem;
+	font-size: inherit;
 }
 
 .frontpage-widgets {
-	font-size: 1em;
+	font-size: inherit;
 }
 
 .archive-widgets {
-	font-size: 1em;
+	font-size: inherit;
 }
 
 .attachment-widgets {
-	font-size: 1em;
+	font-size: inherit;
 }
 
 /* Sidebar links */
@@ -515,7 +515,15 @@ Standard Page Styling
 .homepage-recent-posts a {
 	font-weight: 500;
 	font-size: 1.2em;
-	text-decoration-color: var(--brand-color-pale);
+	color: var(--brand-color);
+	text-decoration: underline !important;
+	text-decoration-thickness: 2px !important;
+	text-decoration-color: var(--brand-color-pale) !important;
+}
+
+.homepage-recent-posts a:hover {
+	color: var(--brand-color-pale) !important;
+	text-decoration-color: var(--brand-color) !important;
 }
 
 .homepage-recent-posts time {

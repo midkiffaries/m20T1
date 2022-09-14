@@ -716,7 +716,7 @@ img.wp-smiley, img.emoji {
 
 /* Seperator */
 hr.wp-block-separator.is-style-default {
-	width: 7em;
+	width: 7em !important;
 	margin: auto;
 }
 

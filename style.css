@@ -514,7 +514,7 @@ Standard Page Styling
 
 .homepage-recent-posts a {
 	font-weight: 500;
-	font-size: 1.2em;
+	font-size: 1.3rem;
 	color: var(--brand-color);
 	text-decoration: underline !important;
 	text-decoration-thickness: 2px !important;
@@ -529,8 +529,9 @@ Standard Page Styling
 .homepage-recent-posts time {
 	opacity: 0.6;
 	font-weight: 500;
+	font-size: 0.9rem;
 }
 
 .homepage-recent-posts div {
-	font-size: 0.9em;
+	font-size: 1rem;
 }

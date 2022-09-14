@@ -500,6 +500,11 @@ Standard Page Styling
 	opacity: 0.5;
 }
 
+/* Author title */
+.author-bio-title {
+	color: var(--brand-color-dark);
+}
+
 /* Embedded Youtube video */
 .embed-youtube {
 	border-radius: 1em;

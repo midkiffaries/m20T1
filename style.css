@@ -385,27 +385,18 @@ Standard Page Styling
 	filter: drop-shadow(-4px -1px 0px #aaa);
 }
 
-.footer-widgets ul {
-	text-align: center;
-	justify-content: center;
-	margin: 0.5em 0.5em 0;
-}
-
-.footer-widgets ul li {
-	display: inline-block;
-	margin: auto 0.2em;
-}
-
-.footer-widgets ul li a {
+/* Footer Widgets */
+.footer-widgets  .widget_nav_menu a {
+	font-size: 1.2rem;
 	text-decoration: none;
 }
 
-.footer-widgets .wp-block-social-links svg {
-	fill: #fff !important;
+.footer-widgets  .widget_nav_menu a:hover {
+	text-decoration: underline;
+	text-decoration-color: #aaa;
 }
 
 /* Comments section */
-
 .list-comments .comment {
 	background: var(--comment-background);
 }
@@ -517,7 +508,8 @@ Standard Page Styling
 	margin: 0 auto;
 }
 
-.homepage-recent-posts a {
+.homepage-recent-posts a,
+.single-recent-posts a {
 	font-weight: 500;
 	font-size: 1.3rem;
 	color: var(--brand-color);
@@ -526,17 +518,26 @@ Standard Page Styling
 	text-decoration-color: var(--brand-color-pale) !important;
 }
 
-.homepage-recent-posts a:hover {
+.homepage-recent-posts a:hover,
+.single-recent-posts a:hover {
 	color: var(--brand-color-pale) !important;
 	text-decoration-color: var(--brand-color) !important;
 }
 
-.homepage-recent-posts time {
+.homepage-recent-posts time,
+.single-recent-posts time {
 	opacity: 0.6;
 	font-weight: 500;
 	font-size: 0.9rem;
 }
 
-.homepage-recent-posts div {
+.homepage-recent-posts div,
+.single-recent-posts div {
 	font-size: 1rem;
+}
+
+@media (max-width: 1250px) {
+	.homepage-recent-posts {
+		margin: 0 0.8em;
+	}
 }

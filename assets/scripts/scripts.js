@@ -180,6 +180,7 @@ document.addEventListener("keyup", (e) => {
             transform: translate3d(-50%,-50%,0);
         }
         .embed-youtube iframe {
+            background-color: #111;
             width: 100%;
             height: 100%;
             top: 0;

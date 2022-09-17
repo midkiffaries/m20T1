@@ -211,16 +211,19 @@ Site Header
 	vertical-align: middle;
 }
 
-.header-navigation {
+.header-navigation,
+.header-secondary-navigation {
 	display: inline-block;
 	vertical-align: middle;
 }
 
-.header-navigation ul li {
+.header-navigation ul li,
+.header-secondary-navigation ul li {
 	display: inline-block;
 }
 
-.header-navigation ul li a {
+.header-navigation ul li a,
+.header-secondary-navigation ul li a {
 	font-size: 1.4em;
 	font-weight: 600;
 	text-decoration: none;
@@ -228,12 +231,14 @@ Site Header
 	margin: 0 1px;
 }
 
-.header-navigation ul li a:hover {
+.header-navigation ul li a:hover,
+.header-secondary-navigation ul li a:hover {
 	text-decoration: underline;
 	text-decoration-thickness: 3px;
 }
 
-.header-navigation ul li a:active {
+.header-navigation ul li a:active,
+.header-secondary-navigation ul li a:active {
 	opacity: 0.6;
 }
 
@@ -285,6 +290,7 @@ Site Header
 	.header-navigation ul li,
 	.header-secondary-navigation ul li {
 		display: block;
+		line-height: 1.9;
 	}
 	.header-navigation ul li a,
 	.header-secondary-navigation ul li a {

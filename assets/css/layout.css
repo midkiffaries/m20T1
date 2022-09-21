@@ -186,6 +186,7 @@ Site Header
 
 .header-logo {
 	margin: 0.5em 0.7em 0;
+	display: inline-block;
 }
 
 .header-logo a {
@@ -202,7 +203,6 @@ Site Header
 	margin-left: 5em;
 	font-size: 0.9rem;
 	font-weight: 500;
-	opacity: 0.6;
 	text-transform: uppercase;
 }
 
@@ -1231,17 +1231,19 @@ Breadcrumbs Plugin Style
 	display: none;
 }
 
-.breadcrumbs .trail-items,
-.breadcrumbs .trail-items li {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	text-indent: 0;
-}
-
 .breadcrumbs .trail-items {
 	list-style: none;
+	display: inline-block;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	opacity: 0.8;
+	margin: 0;
+	padding: 0 5px;
+	border-radius: 5px;
+}
+
+.breadcrumbs .trail-items li {
+	display: inline-block;
 }
 
 .breadcrumbs .trail-items li:first-of-type::before {

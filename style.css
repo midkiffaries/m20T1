@@ -165,6 +165,25 @@ WordPress editor styling
 	border-left: 6px solid var(--tertiary-color);
 }
 
+.the-content .wp-block-gallery figure img {
+	box-shadow: none;
+	border: 3px solid var(--brand-color-dark);
+	transition: all 0.2s ease-in-out;
+}
+
+.the-content .wp-block-gallery figure img:hover {
+	transform: scale(1.1);
+	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.2);
+}
+
+.the-content .wp-block-gallery figcaption {
+	background: none !important;
+	color: #666 !important;
+	font-weight: 500;
+	margin-bottom: -25px !important;
+	z-index: -1;
+}
+
 .the-content blockquote p {
 	margin: 0.2em 0;
 	font-style: italic;

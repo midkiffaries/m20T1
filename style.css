@@ -490,6 +490,13 @@ Standard Page Styling
 	opacity: 0.9;
 }
 
+/* Homepage tagline introduction text */
+.homepage-tagline {
+	text-shadow: 1px 1px 0 #000;
+	max-width: var(--page-width);
+	margin: 0 auto 1em;
+}
+
 /* Homepage Main Links */
 .homepage-links div a {
 	font-weight: 600;
@@ -554,6 +561,11 @@ Standard Page Styling
 .embed-youtube {
 	border-radius: 1em;
 	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);
+	transition: all 0.4s ease !important;
+}
+
+.embed-youtube:hover {
+	border-radius: 0;
 }
 
 /* Homepage recent posts styling */

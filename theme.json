@@ -122,12 +122,17 @@
 				{
 					"name": "Secondary",
 					"slug": "secondary",
-					"color": "#bada55"
+					"color": "#e65100"
 				},
 				{
 					"name": "Tertiary",
 					"slug": "tertiary",
 					"color": "#ffd726"
+				},
+				{
+					"name": "Quaternary",
+					"slug": "quaternary",
+					"color": "#bada55"
 				}
 			]
 		},

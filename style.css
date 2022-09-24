@@ -25,8 +25,9 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--brand-color-pale: #8CC9FF;
 	--brand-color-dark: #205380;
 	--secondary-color: #e65100;
-	--tertiary-color: #FFD726;
-	--highlight-color: rgba(55, 161, 255, 0.7);
+	--tertiary-color: #ffd726;
+	--quaternary-color: #bada55;
+	--highlight-color: rgba(55,161,255,0.7);
 
 	--header-link-color: #000;
 	--body-link-color: var(--brand-color);
@@ -34,7 +35,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--comment-background: rgba(0,0,0,0.05);
 
 	--footer-bg-color: #212121;
-	--footer-bg-image: linear-gradient(135deg, rgba(234, 234, 234,0.06) 0%, rgba(234, 234, 234,0.06) 50%,rgba(169, 169, 169,0.06) 50%, rgba(169, 169, 169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
+	--footer-bg-image: linear-gradient(135deg, rgba(234,234,234,0.06) 0%, rgba(234,234,234,0.06) 50%,rgba(169,169,169,0.06) 50%, rgba(169,169,169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
 
 	--body-top-background: linear-gradient(0deg, rgba(254,254,254,1) 8%, rgba(254,254,254,0.6) 66%), 
 						linear-gradient(45deg, rgba(254,254,254,1) 25%, rgba(254,254,254,0) 80%),

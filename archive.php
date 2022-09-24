@@ -4,22 +4,25 @@
 
 <main class="page-main page-archive" id="main-content" role="main">
     <div class="page-content width-side">
-
+    
+    <?php if (have_posts()) : // Has posts ?>
+    
     <section class="archive-header" id="archive-page">
         <div class="archive-header-container">
-            <h1 class="page-title" itemprop="name"><?php if (have_posts()) : // Has posts ?>
-    <?php $post = $posts[0]; ?>
-    <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?>
-    <?php /* Tag archive */ elseif (is_tag()) : ?><b>#</b><?php single_tag_title(); ?>
-    <?php /* Daily archive */ elseif (is_day()) : ?><?php the_time('F j, Y'); ?>
-    <?php /* Monthly archive */ elseif (is_month()) : ?><?php the_time('F Y'); ?>
-    <?php /* Yearly archive */ elseif (is_year()) : ?><?php the_time('Y'); ?>
-    <?php /* Author archive */ elseif (is_author()) : ?><?php printf($curauth->display_name); ?>
-    <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
-    <?php endif; ?></h1>
+            <h1 class="page-title" itemprop="name">
+                <?php $post = $posts[0]; ?>
+                <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?>
+                <?php /* Tag archive */ elseif (is_tag()) : ?><b>#</b><?php single_tag_title(); ?>
+                <?php /* Daily archive */ elseif (is_day()) : ?><?php the_time('F j, Y'); ?>
+                <?php /* Monthly archive */ elseif (is_month()) : ?><?php the_time('F Y'); ?>
+                <?php /* Yearly archive */ elseif (is_year()) : ?><?php the_time('Y'); ?>
+                <?php /* Author archive */ elseif (is_author()) : ?><?php printf($curauth->display_name); ?>
+                <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
+            <?php endif; ?></h1>
             <div class="subtitle">
                 <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
                 <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
+                <?php /* Daily archive */ if (is_day()) printf("Posts from this date"); ?>
                 <?php /* Monthly archive */ if (is_month()) printf("Posts from this month"); ?>
                 <?php /* Yearly archive */ if (is_year()) printf("Posts from this year"); ?>
                 <?php /* Author archive */ if (is_author()) printf("All the posts written by this author"); ?>
@@ -88,7 +91,7 @@
 
     <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
-            <h2 class="entry-title">
+            <h1 class="entry-title">
             <?php 
             if ( is_category() ) { // By category
                 printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));
@@ -100,7 +103,7 @@
                 printf("No posts found at all.");
             }
             ?>
-            </h2>
+            </h1>
             <p>Would you like to try a search to find what you are looking for?</p>
             <?php get_search_form('archive'); // Search Form ?>
         </div>

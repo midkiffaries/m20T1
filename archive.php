@@ -11,13 +11,13 @@
         <div class="archive-header-container">
             <h1 class="page-title" itemprop="name">
                 <?php $post = $posts[0]; ?>
-                <?php /* Category archive */ if (is_category()) : ?><?php single_cat_title(); ?>
-                <?php /* Tag archive */ elseif (is_tag()) : ?><b>#</b><?php single_tag_title(); ?>
-                <?php /* Daily archive */ elseif (is_day()) : ?><?php the_time('F j, Y'); ?>
-                <?php /* Monthly archive */ elseif (is_month()) : ?><?php the_time('F Y'); ?>
-                <?php /* Yearly archive */ elseif (is_year()) : ?><?php the_time('Y'); ?>
-                <?php /* Author archive */ elseif (is_author()) : ?><?php printf($curauth->display_name); ?>
-                <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
+                <?php /* Category archive */ if (is_category()) : single_cat_title(); ?>
+                <?php /* Tag archive */ elseif (is_tag()) : printf("<b>#</b>") . single_tag_title(); ?>
+                <?php /* Daily archive */ elseif (is_day()) : the_time('F j, Y'); ?>
+                <?php /* Monthly archive */ elseif (is_month()) : the_time('F Y'); ?>
+                <?php /* Yearly archive */ elseif (is_year()) : the_time('Y'); ?>
+                <?php /* Author archive */ elseif (is_author()) : printf($curauth->display_name); ?>
+                <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : printf("Blog Archives"); ?>
             <?php endif; ?></h1>
             <div class="subtitle">
                 <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>

@@ -78,8 +78,14 @@ body {
 	font-display: swap;
 }
 
+/* Change list bullet color */
 ul li::marker {
 	color: var(--secondary-color);
+}
+
+/* Use the secondary font */
+.font-secondary {
+	font-family: var(--font-secondary);
 }
 
 

@@ -18,7 +18,7 @@
     <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>Blog Archives
     <?php endif; ?></h1>
             <div class="subtitle">
-                <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this article"); ?>
+                <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
                 <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
                 <?php /* Monthly archive */ if (is_month()) printf("Posts from this month"); ?>
                 <?php /* Yearly archive */ if (is_year()) printf("Posts from this year"); ?>

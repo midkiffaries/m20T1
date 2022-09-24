@@ -11,21 +11,21 @@
         <div class="archive-header-container">
             <h1 class="page-title" itemprop="name">
                 <?php $post = $posts[0]; ?>
-                <?php /* Category archive */ if (is_category()) : single_cat_title(); ?>
-                <?php /* Tag archive */ elseif (is_tag()) : printf("<b>#</b>") . single_tag_title(); ?>
-                <?php /* Daily archive */ elseif (is_day()) : the_time('F j, Y'); ?>
-                <?php /* Monthly archive */ elseif (is_month()) : the_time('F Y'); ?>
-                <?php /* Yearly archive */ elseif (is_year()) : the_time('Y'); ?>
-                <?php /* Author archive */ elseif (is_author()) : printf($curauth->display_name); ?>
-                <?php /* Paged archive */ elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : printf("Blog Archives"); ?>
-            <?php endif; ?></h1>
+                <?php /* Category */ if (is_category()) single_cat_title(); ?>
+                <?php /* Tags */ if (is_tag()) printf("<b>#</b>") . single_tag_title(); ?>
+                <?php /* Daily */ if (is_day()) the_time('F j, Y'); ?>
+                <?php /* Monthly */ if (is_month()) the_time('F Y'); ?>
+                <?php /* Yearly */ if (is_year()) the_time('Y'); ?>
+                <?php /* Author */ if (is_author()) printf($curauth->display_name); ?>
+                <?php /* Paged */ if (isset($_GET['paged']) && !empty($_GET['paged'])) printf("Blog Archives"); ?>
+            </h1>
             <div class="subtitle">
-                <?php /* Category archive */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
-                <?php /* Tag archive */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
-                <?php /* Daily archive */ if (is_day()) printf("Posts from this date"); ?>
-                <?php /* Monthly archive */ if (is_month()) printf("Posts from this month"); ?>
-                <?php /* Yearly archive */ if (is_year()) printf("Posts from this year"); ?>
-                <?php /* Author archive */ if (is_author()) printf("All the posts written by this author"); ?>
+                <?php /* Category */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
+                <?php /* Tags */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
+                <?php /* Daily */ if (is_day()) printf("Posts from this date"); ?>
+                <?php /* Monthly */ if (is_month()) printf("Posts from this month"); ?>
+                <?php /* Yearly */ if (is_year()) printf("Posts from this year"); ?>
+                <?php /* Author */ if (is_author()) printf("All the posts written by this author"); ?>
             </div>
         </div>
     </section>

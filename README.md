@@ -34,6 +34,9 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Built in support for an additional <i>post type</i> set as 'Portfolio'
 - Enabled SVG files upload to media library
 
+## Note
+This theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code> and the <code>style.css</code> files.
+
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across.
 

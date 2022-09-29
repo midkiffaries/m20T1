@@ -650,7 +650,7 @@ Specific Page Styling
 /* REMLAB page */
 
 /* Right Column */
-.remlab-col-hex {
+.remlab-col-aside {
 	border: 2px solid rgba(0,0,0,0.1);
 	box-shadow: 3px 3px 7px -1px rgba(0,0,0,0.5) inset;
 	border-radius: 8px;
@@ -658,6 +658,22 @@ Specific Page Styling
 	background-attachment: fixed;
 }
 
-.remlab-col-hex img {
+.remlab-col-aside img {
 	filter: drop-shadow(1px 1px 3px #aaa);
+}
+
+/* Mistletoe page */
+
+/* Right Column */
+.mistletoe-col-aside {
+	border: 2px solid rgba(0,0,0,0.1);
+	border-radius: 8px;
+}
+
+.mistletoe-col-aside figure img[src$='.jpg'] {
+	box-shadow: 1px 3px 8px 3px rgba(0,0,0,0.2) !important;
+}
+
+.mistletoe-col-aside figure img[src$='.svg'] {
+	margin: 0.5em;
 }

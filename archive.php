@@ -25,7 +25,7 @@
                 <?php /* Daily */ if (is_day()) printf("Posts from this date"); ?>
                 <?php /* Monthly */ if (is_month()) printf("Posts from this month"); ?>
                 <?php /* Yearly */ if (is_year()) printf("Posts from this year"); ?>
-                <?php /* Author */ if (is_author()) printf("All the posts written by this author"); ?>
+                <?php /* Author */ if (is_author()) printf("Posts written by this author"); ?>
             </div>
         </div>
     </section>

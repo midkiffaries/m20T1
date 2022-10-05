@@ -742,8 +742,11 @@ hr.wp-block-separator.is-style-default {
 Figures and Galleries
 ************************/
 
-.page-content figure > a img {
+figure > a img[srcset] {
 	cursor: zoom-in;
+}
+
+.page-content figure > a img {
     transition: filter 0.5s ease;
 }
 

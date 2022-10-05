@@ -374,7 +374,7 @@ function smoothScroll(loc, duration) {
         l = fig.length;
 
     for (let i = 0; i < l; i++) {
-        if (fig[i].firstElementChild && fig[i].firstElementChild.tagName == "A") {
+        if (fig[i].firstElementChild && fig[i].firstElementChild.tagName == "A" && fig[i].firstElementChild.firstElementChild.hasAttribute('srcset')) {
             fig[i].firstElementChild.addEventListener("click", function(e) {
                 e.preventDefault();
 				const style = document.createElement('style'),

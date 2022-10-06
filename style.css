@@ -385,7 +385,7 @@ Blog Post Styling
 /* Pagination links */
 .blog-pagination nav a {
 	border-radius: 0.3em;
-	border-bottom: 1px solid transparent;
+	border-bottom: 2px solid transparent;
 	font-weight: 500;
 	transition: all 0.4s;
 }
@@ -393,7 +393,7 @@ Blog Post Styling
 .blog-pagination nav a:hover {
 	color: #fff;
 	background-color: var(--secondary-color);
-	border-bottom: 1px solid rgba(0,0,0,0.4);
+	border-bottom-color: rgba(0,0,0,0.4);
 }
 
 .blog-pagination nav a:active {
@@ -660,15 +660,60 @@ Specific Page Styling
 	}
 }
 
+/* Related posts button */
+.related-posts-button {
+	margin-top: -1.5em;
+}
+
+.related-posts-button div a {
+	background: transparent;
+	color: initial;
+	border-radius: 0.3em;
+	border-bottom: 2px solid transparent;
+	font-weight: 600;
+	transition: all 0.4s ease-in-out !important;
+	text-transform: uppercase;
+}
+
+.related-posts-button div a:hover {
+	color: #fff !important;
+	background-color: var(--secondary-color);
+	border-bottom-color: rgba(0,0,0,0.4);
+}
+
+.related-posts-button div a:active {
+	filter: brightness(75%);
+}
+
+/* Learn more button */
+.learn-more-button .is-style-outline a {
+	transition: all 0.2s ease-in-out;
+}
+
+.learn-more-button .is-style-outline a:hover {
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+	color: #fff;
+}
+
+.learn-more-button .is-style-outline a:active {
+	filter: brightness(80%);
+}
+
 /* Embedded Youtube video */
-.embed-youtube {
+.home .embed-youtube {
 	border-radius: 1em;
 	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);
 	transition: all 0.4s ease !important;
 }
 
-.embed-youtube:hover {
+.home .embed-youtube:hover {
 	border-radius: 0;
+}
+
+.home .wp-youtube figcaption {
+	color: #c00;
+	font-weight: 600;
 }
 
 /* REMLAB page */

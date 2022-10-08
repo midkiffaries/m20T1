@@ -47,7 +47,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--button-text-color: #fff;
 
 	--font-primary: 'Montserrat', sans-serif;
-	--font-secondary: 'Permanent Marker', cursive;
+	--font-secondary: 'Permanent Marker', sans-serif;
 	--font-tertiary: 'Georgia', serif;
 
 	--p-font-size: 1.2rem;
@@ -144,8 +144,11 @@ WordPress editor styling
 	color: var(--secondary-color);
 }
 
-.the-content h2 {
-	font-weight: 300;
+.the-content h2:not(.page-subtitle):not(.has-text-align-center) {
+	font-weight: 600;
+	margin-top: 0.8em;
+	border-bottom: 3px solid rgba(0,0,0,0.03);
+	border-radius: 0 0 0 9px;
 }
 
 .the-content h3 {
@@ -547,9 +550,10 @@ Standard Page Styling
 	position: absolute;
 	width: 100%;
 	height: 10em;
+	right: 0;
 	background: var(--body-top-background);
 	z-index: -1;
-	transform: translate(0, -3.5em);
+	transform: translate(0, -3.8em);
 }
 
 .dark-mode .body-top-background,

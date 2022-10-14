@@ -374,9 +374,10 @@ function smoothScroll(loc, duration) {
         l = fig.length;
 
     for (let i = 0; i < l; i++) {
-        if (fig[i].firstElementChild && fig[i].firstElementChild.tagName == "A" && fig[i].firstElementChild.firstElementChild.hasAttribute('srcset')) {
+        if (fig[i].firstElementChild && fig[i].firstElementChild.tagName == "A" && isLinkAnImage(fig[i].firstElementChild.getAttribute('href'))) {
             fig[i].firstElementChild.addEventListener("click", function(e) {
                 e.preventDefault();
+
 				const style = document.createElement('style'),
 					dialog = document.createElement('dialog'),
 					headerDiv = document.createElement('header'),
@@ -804,13 +805,21 @@ function closeModals(c) {
     }
 }
 
-// Check field for validity
-/*
-const checkField = v => {
-	if (!v.value) v.classList.add("message-error");
-	else v.classList.remove("message-error");
+// Get a filename or URL extension
+function getExtension(v) {
+    return v.split('.').pop();
 }
-*/
+
+// Check if href link is a specific image type
+function isLinkAnImage(v) {
+    const img = v.split('.').pop();
+    if (img == 'jpg' || img == 'webp' || img == 'png') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // Sanitize user input
 const sanitizeInput = v => {
 	if (v) return v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim();

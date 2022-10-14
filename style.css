@@ -523,7 +523,11 @@ Standard Page Styling
 .single-entry-category a {
 	font-family: var(--font-secondary);
 	font-size: 1.4rem;
-	color: #444 !important;
+	color: #444;
+}
+
+.single-entry-category a:hover {
+	text-decoration: none !important;
 }
 
 /* Page Background embellishments */

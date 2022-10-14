@@ -140,7 +140,7 @@ WordPress editor styling
 	font-size: 1.2rem;
 }
 
-.the-content h1 {
+.the-content h1 { /* Page Title */
 	color: var(--secondary-color);
 }
 
@@ -520,9 +520,15 @@ Standard Page Styling
 	opacity: 0.5;
 }
 
+.single-entry-category a {
+	font-family: var(--font-secondary);
+	font-size: 1.4rem;
+	color: #444 !important;
+}
+
 /* Page Background embellishments */
 
-/* page body top */
+/* Page Body top background */
 .body-top-background {
 	position: absolute;
 	left: 0;
@@ -533,7 +539,7 @@ Standard Page Styling
 	background-image: var(--body-top-background);
 }
 
-/* content bottom */
+/* Page content bottom background */
 .body-bottom-background {
 	position: relative;
 	z-index: -1;
@@ -543,8 +549,9 @@ Standard Page Styling
 	background-image: var(--body-bottom-background);
 }
 
-/* Page content top */
-.page .the-content::before {
+/* Page content top background */
+.page .the-content::before,
+.single .the-content::before {
 	content: "";
 	display: block;
 	position: absolute;
@@ -553,12 +560,17 @@ Standard Page Styling
 	right: 0;
 	background: var(--body-top-background);
 	z-index: -1;
-	transform: translate(0, -3.8em);
+	transform: translateY(-3.8em);
+}
+
+.single .the-content::before {
+	transform: translateY(-10.7em);
 }
 
 .dark-mode .body-top-background,
 .dark-mode .body-bottom-background,
-.dark-mode .page .the-content::before {
+.dark-mode.page .the-content::before,
+.dark-mode.single .the-content::before {
 	filter: invert(91.8%);
 	opacity: 0.9;
 }

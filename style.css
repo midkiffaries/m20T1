@@ -93,11 +93,6 @@ ul li::marker {
 Typography for the page body
 ************************************/
 
-/* Header Site Logo */
-.header-logo {
-	filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
-}
-
 /* Blog Page title */
 .page-title,
 .single-entry-title,
@@ -407,6 +402,16 @@ Blog Post Styling
 /************************ 
 Standard Page Styling
 ************************/
+
+/* Site header text highlights */
+.header-logo {
+	filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.5));
+}
+
+.nav-primary-navigation,
+.header-widgets {
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+}
 
 /* Page Footer */
 .page-footer {

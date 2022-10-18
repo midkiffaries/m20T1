@@ -235,7 +235,7 @@ Site Header
 
 .header-navigation ul li a:hover,
 .header-secondary-navigation ul li a:hover {
-	border-bottom: 4px solid #000;
+	border-bottom: 4px solid currentColor;
 }
 
 .header-navigation ul li a:active,

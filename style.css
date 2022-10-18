@@ -584,6 +584,10 @@ Standard Page Styling
 	opacity: 0.9;
 }
 
+.dark-mode .breadcrumbs .trail-items {
+	background-color: rgba(0,0,0,0.5);
+}
+
 /* Author title */
 .author-bio-title {
 	color: var(--brand-color-dark);

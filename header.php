@@ -13,11 +13,11 @@
 <?php wp_body_open(); // WordPress body includes ?>
 
 <header class="page-header" role="banner">
-    <a href="<?php the_permalink(); ?>#main-content" class="nav-skip">Skip to main content</a>
+    <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
             <p class="header-logo">
-                <a href="<?php echo esc_url(home_url()); ?>" rel="home" itemprop="url"><?php echo get_custom_logo(); ?></a>
+                <a href="<?php echo home_url(); ?>" rel="home" itemprop="url"><?php echo get_custom_logo(); ?></a>
             </p>
             <div class="header-breadcrumbs"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
         </div>

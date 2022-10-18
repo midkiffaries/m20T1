@@ -196,9 +196,9 @@ add_action( 'wp_head', function(){
 ?>
 <meta name="title" content="<?php bloginfo('name'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
-<link rel="dns-prefetch" href="<?php echo preg_replace("(^https?:)", '', home_url() ); ?>">
+<link rel="dns-prefetch" href="<?php echo esc_url(preg_replace("(^https?:)", '', home_url() )); ?>">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<base href="<?php echo esc_url(home_url()); ?>/" id="SiteURI">
+<link rel="Siteuri" href="<?php echo home_url(); ?>/" id="SiteURI">
 <meta name="application-name" content="<?php bloginfo('name'); ?>">
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
 <meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
@@ -215,7 +215,7 @@ add_action( 'wp_head', function(){
 <meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?php esc_url(the_permalink()); ?>">
+<meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
 <meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">

@@ -225,16 +225,17 @@ Site Header
 .header-navigation ul li a,
 .header-secondary-navigation ul li a {
 	font-size: 1.4em;
-	font-weight: 600;
+	font-weight: 700;
 	text-decoration: none;
-	padding: 2px 4px;
+	padding: 2px 4px 0;
 	margin: 0 1px;
+	transition: all 0.2s;
+	border-bottom: 0 solid transparent;
 }
 
 .header-navigation ul li a:hover,
 .header-secondary-navigation ul li a:hover {
-	text-decoration: underline;
-	text-decoration-thickness: 3px;
+	border-bottom: 4px solid #000;
 }
 
 .header-navigation ul li a:active,
@@ -733,8 +734,9 @@ hr.wp-block-separator.is-style-default {
 
 /* Current selected nav item */
 .current_page_item a,
+.current_page_parent a,
 .current-menu-item a {
-	font-weight: 700 !important;
+	font-weight: 800 !important;
 }
 
 /************************ 

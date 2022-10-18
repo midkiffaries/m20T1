@@ -408,9 +408,18 @@ Standard Page Styling
 	filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.5));
 }
 
+.dark-mode .header-logo {
+	filter: drop-shadow(1px 1px 0 #111);
+}
+
 .nav-primary-navigation,
 .header-widgets {
-	text-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+	filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.6));
+}
+
+.dark-mode .nav-primary-navigation,
+.dark-mode .header-widgets {
+	filter: none;
 }
 
 /* Page Footer */

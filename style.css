@@ -790,3 +790,8 @@ Specific Page Styling
 .mistletoe-col-aside figure img[src$='.svg'] {
 	margin: 0.5em;
 }
+
+.header-trivia {
+	border-bottom: 2px solid #999;
+	margin-bottom: -10px !important;
+}

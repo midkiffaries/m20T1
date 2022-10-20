@@ -482,6 +482,13 @@ Blog Post Styling (index/home, archives)
 	text-shadow: 1px 1px 0 #fff;
 }
 
+.entry-readmore a {
+	text-transform: uppercase;
+	font-weight: 600;
+	text-decoration-thickness: 2px;
+	margin-left: 4px;
+}
+
 /* Entry Featured Image as a background element */
 .entry-thumbnail {
     width: 250px;

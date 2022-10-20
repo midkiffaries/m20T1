@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets width-full clearfix" role="complementary">
+    <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets width-full clearfix">
         <section class="widget widget_block single-author-bio" aria-label="Article Author Bio">
             <h2 class="author-bio-title" itemprop="author">About the Author</h2>
             <div class="author-avatar">

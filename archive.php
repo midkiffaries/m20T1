@@ -81,7 +81,7 @@
 
     <section class="blog-pagination" aria-label="Archive Pagination">
         <div class="pagination-container">
-            <nav class="blog-post-nav" role="navigation">
+            <nav class="blog-post-nav">
                 <?php blog_post_pagination('Posts'); // Post navigation links ?>
             </nav>
         </div>
@@ -113,7 +113,7 @@
 
     </div>
     
-    <aside id="sidebar-archive" class="page-sidebar archive-widgets" role="complementary">
+    <aside id="sidebar-archive" class="page-sidebar archive-widgets">
         <?php dynamic_sidebar( 'secondary' ); // Secondary Sidebar ?>
     </aside>
 

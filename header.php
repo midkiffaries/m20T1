@@ -12,7 +12,7 @@
 
 <?php wp_body_open(); // WordPress body includes ?>
 
-<header class="page-header" role="banner">
+<header class="page-header">
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">

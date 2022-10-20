@@ -21,7 +21,7 @@
         <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 
-    <aside id="pagesidebar-widgets" class="page-sidebar pagesidebar-widgets" role="complementary">
+    <aside id="pagesidebar-widgets" class="page-sidebar pagesidebar-widgets">
         <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepagesidebar') ); // Select from 'Widgets Slug' custom field ?>
 
         <div class="widget child-page-widget">

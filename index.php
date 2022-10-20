@@ -39,7 +39,7 @@
 
     <section class="blog-pagination" aria-label="Blog Pagination">
         <div class="pagination-container">
-            <nav class="blog-post-nav" role="navigation">
+            <nav class="blog-post-nav">
                 <?php blog_post_pagination('Posts'); // Blog posts navigation ?>
             </nav>
         </div>

@@ -304,6 +304,12 @@ Sidebar and Widgets Styling
 	color: var(--brand-color-dark);
 }
 
+.widget_block h4 {
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
 /* Hide extra label for side bar widgets */
 .widget_archive label {
 	display: none;

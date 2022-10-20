@@ -70,7 +70,7 @@
 
     </div>
 
-    <aside id="sidebar-search" class="page-sidebar sidebar-search" role="complementary">
+    <aside id="sidebar-search" class="page-sidebar sidebar-search">
         <?php dynamic_sidebar( 'tertiary' ); // Tertiary sidebar ?>
     </aside>
 

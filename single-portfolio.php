@@ -18,7 +18,7 @@
 
     <?php endwhile; endif; ?>
 
-        <aside id="page-widgets" class="page-sidebar portfolio-widgets width-full" role="complementary">
+        <aside id="page-widgets" class="page-sidebar portfolio-widgets width-full">
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepage') ); // Select from 'Widgets_Slug' custom field ?>
 
         </aside>

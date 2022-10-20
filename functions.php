@@ -577,7 +577,7 @@ function SEO_Image($id) {
 function FeaturedImageURL($id, $size, $isBackground) {
 
     if (has_post_thumbnail($id)) { // Use featured image url
-        $image = esc_url(get_the_post_thumbnail_url($id, $size));
+        $image = get_the_post_thumbnail_url($id, $size);
     } else {
         if (GetFirstImage() && $size != 'full') { // Get first image in post
             $image = esc_url(GetFirstImage());
@@ -592,7 +592,8 @@ function FeaturedImageURL($id, $size, $isBackground) {
     } else {
         if ($image) {
             return $image;
-        } else {
+        } 
+        if (!$isBackground) {
             return BLANK_IMAGE;
         }
     }

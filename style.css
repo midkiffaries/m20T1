@@ -411,7 +411,7 @@ Standard Page Styling
 
 /* Site header text highlights */
 .header-logo {
-	filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.5));
+	filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.2));
 }
 
 .dark-mode .header-logo {

@@ -670,7 +670,6 @@ function HtmlModal(c, v) {
 
 	// Dialog body
 	innerDiv.setAttribute('class', 'dialog-content');
-	//innerDiv.innerHTML = v;
     innerDiv.appendChild(tempClone);
 
 	// Dialog style
@@ -798,9 +797,7 @@ function closeModals(c) {
         for (let i = 0; i < l; i++) {
             document.body.classList.remove("disable-scroll");
             dialog[i].classList.add("dialog-close");
-            setTimeout(() => { 
-                dialog[i].parentNode.removeChild(dialog[i]);
-            }, 150);
+            dialog[i].addEventListener('transitionend', () => dialog[i].style.display = 'none');
         }
     }
 }

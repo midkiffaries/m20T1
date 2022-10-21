@@ -578,15 +578,11 @@ Standard Page Styling
 	display: block;
 	position: absolute;
 	width: 100%;
-	height: 10em;
+	height: 12em;
 	right: 0;
 	background: var(--body-top-background);
 	z-index: -1;
-	transform: translateY(-3.8em);
-}
-
-.single .the-content::before {
-	transform: translateY(-10.7em);
+	top: 9em;
 }
 
 .dark-mode .body-top-background,

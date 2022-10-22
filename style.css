@@ -163,7 +163,8 @@ WordPress editor styling
 }
 
 .the-content p {
-	font-size: var(--p-font-size);
+	/* font-size: var(--p-font-size); */
+	font-size: clamp(0.4rem, 0.4rem + 2vw, var(--p-font-size));
 }
 
 .the-content figure img[src$='.jpg'],
@@ -267,6 +268,14 @@ Sidebar and Widgets Styling
 
 .page-sidebar {
 	font-size: 1em;
+}
+
+.page-sidebar a {
+	line-height: 1.2;
+}
+
+.page-sidebar ul {
+	padding-left: 1.5rem;
 }
 
 .singlepost-widgets {

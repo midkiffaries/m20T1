@@ -655,6 +655,12 @@ Specific Page Styling
 	font-size: 0.7em;
 }
 
+/* Homepage social links */
+.home .the-content .wp-block-social-links a {
+	font-weight: 700;
+	font-size: 1.2em;
+}
+
 /* Homepage Merch Stores Links */
 .merch-stores-links div a {
 	font-weight: 600;

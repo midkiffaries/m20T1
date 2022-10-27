@@ -131,10 +131,6 @@ Typography for the page body
 WordPress editor styling
 ************************************/
 
-.the-content {
-	font-size: 1.2rem;
-}
-
 .the-content h1 { /* Page Title */
 	color: var(--secondary-color);
 }
@@ -142,8 +138,8 @@ WordPress editor styling
 .the-content h2:not(.page-subtitle):not(.has-text-align-center) {
 	font-weight: 600;
 	margin-top: 0.8em;
-	border-bottom: 3px solid rgba(0,0,0,0.03);
-	border-radius: 0 0 0 9px;
+	/* border-bottom: 3px solid rgba(0,0,0,0.03);
+	border-radius: 0 0 0 9px; */
 }
 
 .the-content h3 {
@@ -163,14 +159,14 @@ WordPress editor styling
 }
 
 .the-content p {
-	/* font-size: var(--p-font-size); */
 	font-size: clamp(0.4rem, 0.4rem + 2vw, var(--p-font-size));
+	line-height: 1.7;
 }
 
 .the-content figure img[src$='.jpg'],
 .the-content figure img[src$='.webp'] {
 	box-shadow: 7px 7px 0 0 #888, -9px -9px 0 0 var(--brand-color-pale);
-	transition: all 0.3s ease-in-out;
+	cursor: zoom-in;
 }
 
 .the-content figure a img[src$='.jpg']:hover,
@@ -803,7 +799,7 @@ Specific Page Styling
 }
 
 .trivia-block {
-	border: 1px solid #eee;
+	border: 1px solid #fff;
 	box-shadow: 6px 6px 0 0 #888;
 	transform: rotate(2deg);
 	background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04),rgba(0,0,0,0.08),rgba(0,0,0,0.05),rgba(0,0,0,0.04),rgba(0,0,0,0.01),rgba(0,0,0,0.1),rgba(0,0,0,0.09),rgba(0,0,0,0.1),rgba(0,0,0,0.03),transparent,rgba(0,0,0,0.07),rgba(0,0,0,0.03),rgba(0,0,0,0.06) 4px),linear-gradient(90deg, rgb(193, 255, 253),rgb(59, 104, 247));

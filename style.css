@@ -128,7 +128,7 @@ Typography for the page body
 
 
 /************************************
-WordPress editor styling
+Basic WordPress Editor Styling
 ************************************/
 
 .the-content h1 { /* Page Title */
@@ -261,6 +261,12 @@ WordPress editor styling
 Sidebar and Widgets Styling
 ***********************************/
 
+.widget_block h4 {
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
 .page-sidebar {
 	font-size: 1em;
 }
@@ -308,12 +314,6 @@ Sidebar and Widgets Styling
 	color: var(--brand-color-dark);
 }
 
-.widget_block h4 {
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	font-weight: 700;
-}
-
 /* Hide extra label for side bar widgets */
 .widget_archive label {
 	display: none;
@@ -324,7 +324,7 @@ Sidebar and Widgets Styling
 Form Element Styling
 ************************/
 
-/* Input elements */
+/* Input & Textarea Types */
 [type="search"],
 [type="text"],
 [type="email"],
@@ -410,7 +410,7 @@ Blog Post Styling
 
 
 /************************ 
-Standard Page Styling
+Global Page Styling
 ************************/
 
 /* Site header text highlights */
@@ -483,11 +483,6 @@ Standard Page Styling
 	transform: scale(1.1);
 }
 
-/* Comments section */
-.list-comments .comment {
-	background: var(--comment-background);
-}
-
 /* Buttons with Icons */
 .square-button {
 	padding: 1.2em;
@@ -514,6 +509,11 @@ Standard Page Styling
 	background-image: var(--icon-search);
 }
 
+/* Comments section */
+.list-comments .comment {
+	background: var(--comment-background);
+}
+
 /* Blog Post Metadata links */
 .entry-header a[href],
 .single-entry-header a[href] {
@@ -533,7 +533,7 @@ Standard Page Styling
 	color: var(--brand-color-dark);
 }
 
-/* Add embelishment to last <p> in article */
+/* Add embellishment to last <p> in article */
 .single-entry-content p:last-of-type::after {
 	font-family: 'icomoon' !important;
 	content: "\e902";
@@ -542,6 +542,7 @@ Standard Page Styling
 	opacity: 0.5;
 }
 
+/* Single Blog Post */
 .single-entry-category a {
 	font-family: var(--font-secondary);
 	font-size: 1.4rem;
@@ -551,6 +552,12 @@ Standard Page Styling
 .single-entry-category a:hover {
 	text-decoration: none !important;
 }
+
+/* Author title */
+.author-bio-title {
+	color: var(--brand-color-dark);
+}
+
 
 /* Page Background embellishments */
 
@@ -599,11 +606,6 @@ Standard Page Styling
 
 .dark-mode .breadcrumbs .trail-items {
 	background-color: rgba(0,0,0,0.5);
-}
-
-/* Author title */
-.author-bio-title {
-	color: var(--brand-color-dark);
 }
 
 
@@ -670,6 +672,22 @@ Specific Page Styling
 
 .merch-stores-links div a:active {
 	filter: brightness(90%);
+}
+
+/* Embedded Youtube video */
+.home .embed-youtube {
+	border-radius: 1em;
+	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);
+	transition: all 0.4s ease !important;
+}
+
+.home .embed-youtube:hover {
+	border-radius: 0;
+}
+
+.home .wp-youtube figcaption {
+	color: #c00;
+	font-weight: 600;
 }
 
 /* Homepage recent posts styling */
@@ -748,22 +766,6 @@ Specific Page Styling
 	filter: brightness(80%);
 }
 
-/* Embedded Youtube video */
-.home .embed-youtube {
-	border-radius: 1em;
-	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);
-	transition: all 0.4s ease !important;
-}
-
-.home .embed-youtube:hover {
-	border-radius: 0;
-}
-
-.home .wp-youtube figcaption {
-	color: #c00;
-	font-weight: 600;
-}
-
 /* REMLAB page */
 
 /* Right Column */
@@ -797,6 +799,9 @@ Specific Page Styling
 	margin: 0.5em;
 }
 
+/* About page */
+
+/* Right Column */
 .trivia-block {
 	border: 1px solid #fff;
 	box-shadow: 6px 6px 0 0 #888;

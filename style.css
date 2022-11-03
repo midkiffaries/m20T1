@@ -78,11 +78,6 @@ body {
 	font-display: swap;
 }
 
-/* Change list bullet color */
-ul li::marker {
-	color: var(--secondary-color);
-}
-
 /* Use the secondary font */
 .font-secondary {
 	font-family: var(--font-secondary);
@@ -163,6 +158,21 @@ Basic WordPress Editor Styling
 	line-height: 1.7;
 }
 
+.the-content li {
+	font-size: clamp(0.4rem, 0.4rem + 2vw, var(--p-font-size));
+	line-height: 1.5;
+}
+
+.the-content li::marker {
+	color: var(--secondary-color);
+	font-size: 1.5rem;
+	line-height: 1;
+}
+
+.the-content p code {
+	font-size: inherit;
+}
+
 .the-content figure img[src$='.jpg'],
 .the-content figure img[src$='.webp'] {
 	box-shadow: 7px 7px 0 0 #888, -9px -9px 0 0 var(--brand-color-pale);
@@ -222,14 +232,6 @@ Basic WordPress Editor Styling
 	font-size: smaller;
 	font-style: normal;
 	margin-left: 0.5em;
-}
-
-.the-content p code {
-	font-size: inherit;
-}
-
-.the-content li {
-	font-size: inherit;
 }
 
 .the-content figure.alignright,
@@ -817,9 +819,4 @@ Specific Page Styling
 
 .trivia-block ul {
 	padding-left: 1.2em;
-}
-
-.trivia-block li::marker {
-	font-size: 1.5rem;
-	line-height: 1;
 }

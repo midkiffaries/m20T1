@@ -16,7 +16,7 @@ Custom WordPress Editor Styling
 body {
 	background-color: var(--page-background);
 	color: var(--text-color);
-	line-height: 1.5;
+	line-height: 1.7;
 	max-width: var(--page-width);
 	font-size: 1.2rem;
 	font-family: var(--base-font),

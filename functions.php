@@ -126,6 +126,9 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type( 'post_tag', 'page' );
     //register_taxonomy_for_object_type( 'post_tag', 'attachment' );
     
+    // Remove WordPress generated site favicon
+    remove_action( 'wp_head', 'wp_site_icon', 99 );
+
     // Remove WordPress Emojis
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );

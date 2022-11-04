@@ -148,7 +148,7 @@ add_action( 'init', function(){
     remove_action( 'wp_head', 'feed_links_extra', 3 );
     remove_action( 'wp_head', 'feed_links', 2 );
 
-    // Remove version number from the generator
+    // Remove version number from the generator for security
     remove_action( 'wp_head', 'wp_generator' );
 
     // Add another post type to the editor

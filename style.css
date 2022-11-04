@@ -159,7 +159,7 @@ Basic WordPress Editor Styling
 }
 
 .the-content li {
-	font-size: clamp(0.4rem, 0.4rem + 2vw, var(--p-font-size));
+	font-size: inherit;
 	line-height: 1.5;
 }
 

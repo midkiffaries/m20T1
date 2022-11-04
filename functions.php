@@ -179,7 +179,7 @@ add_action( 'init', function(){
             'items_list_navigation' => _x( ADDITIONAL_POST_TYPE.' list navigation', '' ),
             'items_list'            => _x( ADDITIONAL_POST_TYPE.' list', '' ),
         ),
-        'description'        => 'A '.ADDITIONAL_POST_TYPE.' of projects or works.',
+        'description'        => 'Additional post type (works, products, etc.)',
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,

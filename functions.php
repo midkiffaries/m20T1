@@ -36,6 +36,8 @@ define( 'EXCERPT_LENGTH', 90 ); // Number of words
 define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 // SEO text excerpt length
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
+// Define the title of an additional post type
+define( 'ADDITIONAL_POST_TYPE', 'Portfolio');
 // Image on the 404 error page
 define( 'PAGE_404_IMAGE', '<svg role="image" class="logo-404" height="230" viewBox="0 0 114 50" width="428" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="404"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="104.6" x2="104.2" y1="33.1" y2="65"><stop offset="0" stop-color="#2a7fff"/><stop offset="1" stop-color="#2a7fff" stop-opacity="0.5"/></linearGradient><radialGradient id="b" cx="105.2" cy="59.6" gradientTransform="matrix(1.14621 -.0033 .00017 .0606 -16 56.5)" gradientUnits="userSpaceOnUse" r="57.3"><stop offset="0" stop-color="#ccc"/><stop offset="0.3" stop-color="#eee"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><g transform="translate(-48 -14)"><ellipse cx="104.5" cy="59.8" fill="url(#b)" rx="56.6" ry="3.5"/><path d="m86.2 51.5h-4.5v8h-11v-8h-16.1v-8l17-25h10.2v24.8h4.5zm-15.4-8.2c0-3.6-.1-7.2.2-10.8-2.2 3.7-4.4 7-7 10.8zm47.7-68.1c0 5.3-.4 11-3.4 15.6-2.4 3.7-7 5.4-11.3 5.3-4.2.1-8.7-1.6-11-5.2a29 29 0 0 1 -3.8-16.7c.2-5.2.7-10.6 3.7-15 2.5-3.8 7.3-5.3 11.8-5 4.2 0 8.4 2 10.6 5.7 2.9 4.5 3.4 10 3.4 15.3zm-18.5 0c.1 3.4 0 6.9 1.1 10.1.5 1.7 2.8 2.7 4.3 1.5 1.7-1.6 1.7-4.3 2-6.5.2-4.6.4-9.3-.5-13.9-.3-1.6-1.4-3.7-3.4-3.4-2.1.2-2.8 2.6-3 4.4-.4 2.6-.5 5.2-.5 7.8zm53.2 76.3h-4.5v8h-10.9v-8h-16.3v-8l17-25h10.2v24.8h4.5zm-15.4-8.2c0-3.6 0-7.2.3-10.8l-7 10.8z" stroke="white" stroke-width="0.4"/><path id="Bear404" d="m112.6 17.8c9.3 3.8 14.9 11 15.4 20.3 0 12-10.7 21.7-23.9 21.7-13 0-23.7-9.7-23.7-21.7.2-9.4 7.8-17.4 15.3-20.3a25 25 0 0 1 16.9 0zm-8.4 20c-3 0-5.4 1.4-5.4 3.3 0 1.8 2.4 3.2 5.4 3.2s5.4-1.4 5.4-3.2c0-1.9-2.4-3.3-5.4-3.3zm6.7-8.4a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm-13.3 0a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm-8.6-15.2c2.4-.1 4.4 1.1 6 2.7-5.7 2-10.2 6.1-13 11.3-1.3-1.3-1.3-3.4-1.5-5 0-5 3.8-9 8.5-9zm30.7 0c-2.4-.1-4.3 1.1-6 2.7a24 24 0 0 1 13 11.3c1.3-1.4 1.4-3.4 1.5-5 0-5-3.8-9.1-8.5-9.1z" fill="url(#a)"/></g></svg><style>#Bear404 {transform-origin: 90% 95%;animation: BearRock 2s ease-in-out 0s alternate infinite;}@keyframes BearRock {0% { transform: rotate(-20deg) }100% { transform: rotate(20deg) }}</style>' );
 // Image on the search page with no results
@@ -126,7 +128,7 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type( 'post_tag', 'page' );
     //register_taxonomy_for_object_type( 'post_tag', 'attachment' );
     
-    // Remove WordPress generated site favicon
+    // Remove WordPress generated site Favicon and app icons
     remove_action( 'wp_head', 'wp_site_icon', 99 );
 
     // Remove WordPress Emojis
@@ -150,40 +152,40 @@ add_action( 'init', function(){
     remove_action( 'wp_head', 'wp_generator' );
 
     // Add another post type to the editor
-    register_post_type( 'portfolio', array(
+    register_post_type( ADDITIONAL_POST_TYPE, array(
         'labels' => array(
-            'name'                  => _x( 'Portfolio', 'Post type general name' ),
-            'singular_name'         => _x( 'Portfolio', 'Post type singular name' ),
-            'menu_name'             => _x( 'Portfolio', 'Admin Menu text' ),
-            'name_admin_bar'        => _x( 'Portfolio', 'Add New on Toolbar' ),
+            'name'                  => _x( ADDITIONAL_POST_TYPE, 'Post type general name' ),
+            'singular_name'         => _x( ADDITIONAL_POST_TYPE, 'Post type singular name' ),
+            'menu_name'             => _x( ADDITIONAL_POST_TYPE, 'Admin Menu text' ),
+            'name_admin_bar'        => _x( ADDITIONAL_POST_TYPE, 'Add New on Toolbar' ),
             'add_new'               => __( 'Add New' ),
-            'add_new_item'          => __( 'Add New Portfolio' ),
-            'new_item'              => __( 'New Portfolio' ),
-            'edit_item'             => __( 'Edit Portfolio' ),
-            'view_item'             => __( 'View Portfolio' ),
-            'all_items'             => __( 'All Portfolios' ),
-            'search_items'          => __( 'Search Portfolio' ),
-            'parent_item_colon'     => __( 'Parent Portfolio:' ),
-            'not_found'             => __( 'No works found.' ),
-            'not_found_in_trash'    => __( 'No works found in Trash.' ),
-            'featured_image'        => _x( 'Featured Image', 'Overrides the "Featured Image" phrase for this post type.' ),
-            'set_featured_image'    => _x( 'Set cover image', 'Overrides the "Set featured image" phrase for this post type.' ),
-            'remove_featured_image' => _x( 'Remove cover image', 'Overrides the "Remove featured image" phrase for this post type.' ),
-            'use_featured_image'    => _x( 'Use as cover image', 'Overrides the "Use as featured image" phrase for this post type.' ),
-            'archives'              => _x( 'Portfolio archives', 'The post type archive label used in nav menus. Default "Post Archives".' ),
-            'insert_into_item'      => _x( 'Insert into portfolio', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post).' ),
-            'uploaded_to_this_item' => _x( 'Uploaded to this portfolio', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post).' ),
-            'filter_items_list'     => _x( 'Filter portfolio list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”.' ),
-            'items_list_navigation' => _x( 'Portfolio list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”.' ),
-            'items_list'            => _x( 'Portfolio list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”.' ),
+            'add_new_item'          => __( 'Add New '.ADDITIONAL_POST_TYPE ),
+            'new_item'              => __( 'New '.ADDITIONAL_POST_TYPE ),
+            'edit_item'             => __( 'Edit '.ADDITIONAL_POST_TYPE ),
+            'view_item'             => __( 'View '.ADDITIONAL_POST_TYPE ),
+            'all_items'             => __( 'All '.ADDITIONAL_POST_TYPE.'s' ),
+            'search_items'          => __( 'Search '.ADDITIONAL_POST_TYPE ),
+            'parent_item_colon'     => __( 'Parent '.ADDITIONAL_POST_TYPE.':' ),
+            'not_found'             => __( 'No '.ADDITIONAL_POST_TYPE.'s found.' ),
+            'not_found_in_trash'    => __( 'No '.ADDITIONAL_POST_TYPE.'s found in Trash.' ),
+            'featured_image'        => _x( 'Featured Image', '' ),
+            'set_featured_image'    => _x( 'Set cover image', '' ),
+            'remove_featured_image' => _x( 'Remove cover image', '' ),
+            'use_featured_image'    => _x( 'Use as cover image', '' ),
+            'archives'              => _x( ADDITIONAL_POST_TYPE.' archives', '' ),
+            'insert_into_item'      => _x( 'Insert into '.ADDITIONAL_POST_TYPE,'' ),
+            'uploaded_to_this_item' => _x( 'Uploaded to this '.ADDITIONAL_POST_TYPE, '' ),
+            'filter_items_list'     => _x( 'Filter '.ADDITIONAL_POST_TYPE.' list', '' ),
+            'items_list_navigation' => _x( ADDITIONAL_POST_TYPE.' list navigation', '' ),
+            'items_list'            => _x( ADDITIONAL_POST_TYPE.' list', '' ),
         ),
-        'description'        => 'A portfolio of projects or works.',
+        'description'        => 'A '.ADDITIONAL_POST_TYPE.' of projects or works.',
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'portfolio' ),
+        'rewrite'            => array( 'slug' => sanitize_title(ADDITIONAL_POST_TYPE) ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,

@@ -204,7 +204,7 @@ Site Header
 
 .header-content {
 	position: absolute;
-	top: 0.1em;
+	top: -0.4em;
 	right: 1em;
 }
 
@@ -233,7 +233,7 @@ Site Header
 
 .header-navigation ul li a,
 .header-secondary-navigation ul li a {
-	font-size: 1.4em;
+	font-size: 1.7rem;
 	font-weight: 700;
 	text-decoration: none;
 	padding: 2px 4px 0;

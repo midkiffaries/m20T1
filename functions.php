@@ -128,7 +128,7 @@ add_action( 'init', function(){
     //register_taxonomy_for_object_type( 'post_tag', 'page' );
     //register_taxonomy_for_object_type( 'post_tag', 'attachment' );
     
-    // Remove WordPress generated site Favicon and app icons
+    // Remove WordPress generated site Favicon and app icons in favor of my own metadata
     remove_action( 'wp_head', 'wp_site_icon', 99 );
 
     // Remove WordPress Emojis
@@ -141,15 +141,15 @@ add_action( 'init', function(){
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
     add_filter( 'wp_resource_hints', 'disable_emojis', 10, 2 );
 
-    // Enable the use of shortcodes in text widgets.
-    add_filter( 'widget_text', 'do_shortcode' );
-
     // Remove RSS feed links
     remove_action( 'wp_head', 'feed_links_extra', 3 );
     remove_action( 'wp_head', 'feed_links', 2 );
 
     // Remove version number from the generator for security
     remove_action( 'wp_head', 'wp_generator' );
+
+    // Enable the use of shortcodes in text widgets.
+    add_filter( 'widget_text', 'do_shortcode' );
 
     // Add another post type to the editor
     register_post_type( ADDITIONAL_POST_TYPE, array(

@@ -563,7 +563,7 @@ Global Page Styling
 
 /* Page Background embellishments */
 
-/* Page Body top background */
+/* All pages/post body top background */
 .body-top-background {
 	position: absolute;
 	left: 0;
@@ -574,7 +574,7 @@ Global Page Styling
 	background-image: var(--body-top-background);
 }
 
-/* Page content bottom background */
+/* All pages/posts content bottom background */
 .body-bottom-background {
 	position: relative;
 	z-index: -1;
@@ -584,7 +584,7 @@ Global Page Styling
 	background-image: var(--body-bottom-background);
 }
 
-/* Page content top background */
+/* Pages/single posts with the-content top background */
 .page .the-content::before,
 .single .the-content::before {
 	content: "";
@@ -595,7 +595,14 @@ Global Page Styling
 	right: 0;
 	background: var(--body-top-background);
 	z-index: -1;
-	top: 9em;
+	top: 12em;
+}
+
+@media (max-width: 850px) {
+	.page .the-content::before,
+	.single .the-content::before {
+		top: -2em;
+	}
 }
 
 .dark-mode .body-top-background,

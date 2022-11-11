@@ -16,7 +16,8 @@
     <article class="search-results" role="article" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // List posts and pages ?>
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+        <div class="post-<?php the_ID(); ?> post type-post status-publish format-standard hentry" id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <header class="entry-header">
                     <h2 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="name"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>

@@ -665,6 +665,18 @@ Specific Page Styling
 	font-size: 0.7em;
 }
 
+@media (max-width: 800px) {
+	.homepage-links div a:link {
+		width: 100vw !important;
+		height: auto;
+		font-size: 1.3rem !important;
+		text-align: center;
+	}
+	.homepage-links div a img {
+		margin: 0;
+	}
+}
+
 /* Homepage social links */
 .home .the-content .wp-block-social-links a {
 	font-weight: 700;

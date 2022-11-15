@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.0.0 Live (November 14, 2022)
+* This is the live release that is now being used on my personal website. As such I consider this theme largely complete.
+* Code clean up.
+
 ### 1.0 Beta 1 (August 10, 2022)
 * Implemented more WordPress features.
 * More code clean up.

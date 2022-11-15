@@ -667,7 +667,7 @@ Specific Page Styling
 
 @media (max-width: 800px) {
 	.homepage-links div a:link {
-		width: 100vw !important;
+		width: 95vw !important;
 		height: auto;
 		font-size: 1.3rem !important;
 		text-align: center;

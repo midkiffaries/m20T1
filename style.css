@@ -154,12 +154,12 @@ Basic WordPress Editor Styling
 }
 
 .the-content p {
-	font-size: clamp(0.4rem, 0.4rem + 2vw, var(--p-font-size));
+	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
 	line-height: 1.7;
 }
 
 .the-content li:not(.wp-social-link) {
-	font-size: clamp(0.4rem, 0.4rem + 2vw, var(--p-font-size));
+	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
 	line-height: 1.5;
 }
 
@@ -681,6 +681,7 @@ Specific Page Styling
 .home .the-content .wp-block-social-links a {
 	font-weight: 700;
 	font-size: 1.2em;
+	white-space: nowrap;
 }
 
 /* Homepage Merch Stores Links */

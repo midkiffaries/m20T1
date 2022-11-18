@@ -6,7 +6,7 @@
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" name="<?php printf($post->post_name); ?>" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
                 <h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
                 <div class="the-content" itemprop="description">

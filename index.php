@@ -10,7 +10,7 @@
 
     <?php if (have_posts()) : // If posts exist ?>
 
-    <article class="blog-roll" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="blog-roll" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // List all the posts ?>
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -47,7 +47,7 @@
 
     <?php else : // No page exists ?>
 
-    <article class="blog-roll" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="blog-roll" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <h2 class="entry-title">Not Found</h2>
             <p>Sorry, but you are looking for something that isn't here for some reason.</p>

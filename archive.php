@@ -51,7 +51,7 @@
     </section>
     <?php endif; ?>
 
-    <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
     <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -89,7 +89,7 @@
 
     <?php else : // If no results ?>
 
-    <article class="archive-page" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
             <h1 class="entry-title">
             <?php 

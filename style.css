@@ -786,7 +786,7 @@ Specific Page Styling
 .learn-more-button .is-style-outline a:hover {
 	background-color: var(--secondary-color) !important;
 	border-color: var(--secondary-color) !important;
-	color: #fff;
+	color: #fff !important;
 }
 
 .learn-more-button .is-style-outline a:active {

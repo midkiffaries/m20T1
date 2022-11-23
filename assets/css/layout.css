@@ -392,6 +392,14 @@ Site Footer
 	}
 }
 
+@media (max-width: 800px) {
+	.footer-copyright,
+	.footer-footnote {
+		width: 100%;
+		text-align: center;
+	}
+}
+
 /*********************************** 
 Single Blog Post Styling (single)
 ************************************/

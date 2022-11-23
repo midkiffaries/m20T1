@@ -701,6 +701,11 @@ Specific Page Styling
 }
 
 /* Embedded Youtube video */
+.home .wp-youtube {
+	max-width: 800px;
+	margin: 0;
+}
+
 .home .embed-youtube {
 	border-radius: 1em;
 	box-shadow: 0 0 10px 6px rgba(255,255,255,0.5);

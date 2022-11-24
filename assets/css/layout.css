@@ -608,10 +608,10 @@ Blog Post Styling (index/home, archives)
 
 
 /***************************** 
-Social Sharing Buttons Styling
+Entry Social Sharing Styling
 *****************************/
 
-/* Sharing layout */
+/* Entry Social Sharing layout */
 .entry-share {
 	float: right;
 }
@@ -624,9 +624,10 @@ Social Sharing Buttons Styling
 
 .entry-share ul li {
 	display: inline-block;
-	margin: auto 1px;
+	margin: 6px 1px;
 }
 
+/* Entry Social Sharing Links */
 .post-social-share li a {
 	text-decoration: none;
 	color: #fff;
@@ -635,19 +636,18 @@ Social Sharing Buttons Styling
 	transition: filter 0.3s;
 }
 
-/* Sharing buttons */
+.post-social-share li a::before {
+	padding-right: 3px;
+	vertical-align: -2px;
+	font-size: 1.2em;
+}
+
 .post-social-share li a:hover {
 	filter: brightness(1.2);
 }
 
 .post-social-share li a:active {
 	filter: brightness(0.8);
-}
-
-.post-social-share li a::before {
-	padding-right: 3px;
-	vertical-align: -2px;
-	font-size: 1.2em;
 }
 
 .post-social-share .facebook-share {
@@ -694,7 +694,6 @@ Social Sharing Buttons Styling
 	font-family: 'icomoon' !important;
 	content: "\e901";
 }
-
 
 
 /***************************** 

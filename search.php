@@ -58,8 +58,8 @@
     </section>
 
     <article class="search-results" itemscope itemtype="http://schema.org/NewsArticle">
-        <div class="aligncenter">
-            <p>The search query of “<strong><?php echo esc_attr(get_search_query()); ?></strong>” came up empty.</p>
+        <div class="the-content aligncenter">
+            <p>The search query of <strong><?php echo esc_attr(get_search_query()); ?></strong> came up empty.</p>
             <p>If it will make you feel better, this probably happens to Google too.</p>
             <div class="page-search-image">
                 <?php echo SEARCH_ERROR_IMAGE; ?>

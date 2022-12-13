@@ -241,7 +241,7 @@ add_action( 'wp_footer', function(){
 </template>
 
 <template id="Contact-Modal">
-    <?php get_template_part('contactform'); // Load contactform.php ?>
+    <?php //get_template_part('contactform'); // Load contactform.php ?>
 </template>
 <?php
 });

@@ -1,7 +1,7 @@
 <?php // Global Contact Form ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <h3>Send me a message</h3>
-<div class="email-block">
+<!--div class="email-block">
     <form id="ContactForm" autocomplete="on" onsubmit="event.preventDefault()">
 		<fieldset id="contact_fieldset">
 			<p><label for="contact_name">Name <span class="contact_error"></span></label> <input type="text" name="name" id="contact_name" placeholder="Your Name" maxlength="100" inputmode="name" autocomplete="name" autocapitalize="words" autofocus required></p>
@@ -11,4 +11,4 @@
 		</fieldset>
 		<p id="MessageInfo" class="contact_server"><b id="ServerMessage"></b></p>
     </form>
-</div>
+</div-->

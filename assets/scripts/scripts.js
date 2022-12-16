@@ -772,11 +772,11 @@ function SubmitContactForm() {
     if (formName && validateEmail(formEmail) && formMessage) { // Success
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function() {
-            //if (this.responseText == true) {
+            if (this.responseText == true) {
                 AlertModal('Your message has been sent! I will get back to you as soon as possible.', '#00bb00')
-            //} else {
-            //    AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
-            //}
+            } else {
+                AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
+            }
         }
         xmlhttp.open("GET", `${themeUri}assets/plugins/mailman.php?name=${formName}&email=${formEmail}&message=${formMessage}`);
         xmlhttp.send();
@@ -802,19 +802,17 @@ function closeModals(c) {
     }
 }
 
-// Get a filename or URL extension
+// Get a file or URL extension
 function getExtension(v) {
     return v.split('.').pop();
 }
 
 // Check if href link is a specific image type
 function isLinkAnImage(v) {
-    const img = v.split('.').pop();
-    if (img == 'jpg' || img == 'webp' || img == 'png') {
-        return true;
-    } else {
-        return false;
-    }
+    const img = v.split('.').pop(),
+        ext = ['jpg', 'jpeg', 'png', 'webp'];
+    if (ext.includes(img)) return true;
+    else return false;
 }
 
 // Sanitize user input

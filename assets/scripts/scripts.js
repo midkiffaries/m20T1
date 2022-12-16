@@ -681,8 +681,7 @@ function HtmlModal(c, v) {
 	.dialog-html {
 		width: 100vw;
 		height: 100vh;
-		overflow-x: hidden;
-        overflow-y: scroll;
+        overflow: hidden;
 		background-color: rgba(240,240,240,0.85);
 		border: none;
 		opacity: 0;
@@ -707,7 +706,7 @@ function HtmlModal(c, v) {
 		box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
 		transform: scale(0.8);
 		transition: transform 0.15s ease-in-out 0s;
-		overflow: hidden;
+        overflow-y: scroll;
 	}
 	.dialog-close-button {
 		position: absolute;

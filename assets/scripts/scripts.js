@@ -681,7 +681,8 @@ function HtmlModal(c, v) {
 	.dialog-html {
 		width: 100vw;
 		height: 100vh;
-		overflow: hidden;
+		overflow-x: hidden;
+        overflow-y: scroll;
 		background-color: rgba(240,240,240,0.85);
 		border: none;
 		opacity: 0;

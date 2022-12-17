@@ -810,7 +810,7 @@ function getExtension(v) {
 // Check if href link is a specific image type
 function isLinkAnImage(v) {
     const img = v.split('.').pop(),
-        ext = ['jpg', 'jpeg', 'png', 'webp'];
+        ext = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
     if (ext.includes(img)) return true;
     else return false;
 }

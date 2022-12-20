@@ -176,11 +176,12 @@ Basic WordPress Editor Styling
 .the-content figure img[src$='.jpg'],
 .the-content figure img[src$='.webp'] {
 	box-shadow: 7px 7px 0 0 #888, -9px -9px 0 0 var(--brand-color-pale);
+	transition: box-shadow 0.5s ease-in-out;
 }
 
 .the-content figure a img[src$='.jpg']:hover,
 .the-content figure a img[src$='.webp']:hover {
-	transform: scale(1.05);
+	transform: scale(1.01);
 	box-shadow: 13px 13px 0 0 #888, -12px -12px 0 0 var(--brand-color-pale);
 }
 

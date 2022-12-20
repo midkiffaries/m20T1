@@ -407,7 +407,7 @@ Single Blog Post Styling (single)
 
 /* Single Blog Post */
 .single-entry-header {
-	margin: 1.5em auto;
+	margin: 0.5em auto;
 }
 
 .single-entry-sticky:not(:empty) {
@@ -772,11 +772,11 @@ figure > a img[srcset] {
 }
 
 .page-content figure > a img {
-    transition: filter 0.5s ease;
+    transition: filter 0.5s ease-in-out;
 }
 
 .page-content figure > a:hover img {
-	filter: brightness(1.15);
+	filter: brightness(1.05);
 }
 
 .page-content figure > a:active img {

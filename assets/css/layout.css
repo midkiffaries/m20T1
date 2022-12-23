@@ -1070,6 +1070,10 @@ Comments Section
 	color: #000;
 }
 
+.comment-edit-link {
+	color: #a00;
+}
+
 .comment-edit-link::before {
 	content: "✎ ";
 }

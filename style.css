@@ -541,7 +541,7 @@ Global Page Styling
 .single-entry-content p:last-of-type::after {
 	font-family: 'icomoon' !important;
 	content: "\e902";
-	margin-left: 0.4em;
+	margin-left: 0.5em;
 	line-height: 1;
 	opacity: 0.5;
 }

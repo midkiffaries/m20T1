@@ -18,7 +18,7 @@
                     <span class="single-entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
                 </div>
             </header>
-            <div class="the-content single-entry-content <?php echo ResizeFontClass($post->post_content); ?>" itemprop="description">
+            <div class="the-content single-entry-content" itemprop="description">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <div class="entry-last-updated">

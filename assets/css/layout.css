@@ -40,7 +40,8 @@ Icon Fonts Styling
 
 /* Special Links */
 .the-content [href$=".pdf"]::after, 
-.the-content [href$=".zip"]::after {
+.the-content [href$=".zip"]::after,
+.link-document::after {
 	font-family: 'icomoon';
 	content: "\e907";
 	padding-left: 1px;
@@ -565,11 +566,6 @@ Blog Post Styling (index/home, archives)
 
 .the-content {
 	min-height: 10em;
-}
-
-/* Enlarge <p> font-size in short blog posts */
-.entry-largefont p {
-	font-size: 120%;
 }
 
 /* Entry Tags */

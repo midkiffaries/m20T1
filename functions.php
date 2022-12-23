@@ -491,15 +491,6 @@ function SearchCount($query) {
     return $count;
 }
 
-// Enlarge blog post text for short blog posts
-function ResizeFontClass($content) {
-    if (strlen(wp_strip_all_tags($content)) < 430) {
-        return 'entry-largefont'; // Larger font size
-    } else {
-        return 'entry-defaultfont'; // Default font size
-    }
-}
-
 // Get WordPress page title and content for the blog list page (index.php)
 function GetPageTitle($id) {
     $page_for_posts_obj = get_post( get_option( $id ));

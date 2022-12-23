@@ -187,9 +187,11 @@ add_action( 'init', function(){
         'query_var'          => true,
         'rewrite'            => array( 'slug' => sanitize_title(ADDITIONAL_POST_TYPE) ),
         'capability_type'    => 'post',
+        'exclude_from_search'=> false,
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-book',
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'trackbacks', 'revisions', 'custom-fields' ),
         'taxonomies'         => array( 'category' ),
         'show_in_rest'       => true

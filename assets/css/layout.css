@@ -345,7 +345,7 @@ Site Footer
 
 .footer-widgets {
 	width: var(--page-width);
-	padding: 2em 1em;
+	padding: 2em 1em 1em;
 	margin: 0 auto;
 }
 

@@ -1090,6 +1090,10 @@ Comments Section
 	margin-left: 4px;
 }
 
+.commnet-form label {
+	text-transform: uppercase;
+}
+
 .comment-name,
 .comment-email,
 .comment-url,
@@ -1105,6 +1109,7 @@ Comments Section
 	padding: 0.5em 2em;
 	border-color: transparent;
 	font-size: 1.1em;
+	text-transform: uppercase;
 }
 
 .required::after {

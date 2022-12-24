@@ -302,6 +302,10 @@ Sidebar and Widgets Styling
 	font-size: inherit;
 }
 
+.page-sidebar .widget_recent_entries ul li {
+	margin-bottom: 10px;
+}
+
 /* Sidebar links */
 .page-sidebar a[href] {
 	text-decoration: none;

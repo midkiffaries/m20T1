@@ -2,6 +2,7 @@
 
 [![Generic badge](https://img.shields.io/github/v/release/midkiffaries/m20T1?include_prereleases&style=for-the-badge)](https://github.com/midkiffaries/m20T1/releases/)
 ![GitHub](https://img.shields.io/github/license/midkiffaries/m20T1?color=blue&style=for-the-badge)
+[![changelog][changelog-image]][changelog-url]
 
 [![Generic badge](https://img.shields.io/badge/Language-php-blue.svg)](https://github.com/midkiffaries/m20T1/search?l=php)
 [![Generic badge](https://img.shields.io/badge/Language-javascript-red.svg)](https://github.com/midkiffaries/m20T1/search?l=javascript)

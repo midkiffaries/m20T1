@@ -198,7 +198,7 @@ add_action( 'init', function(){
     ));
 });
 
-// Append metadata to the page head tag
+// Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){
 ?>
 <meta name="title" content="<?php bloginfo('name'); ?>">
@@ -708,7 +708,7 @@ function attachment_page_image($id) {
         }
     }
 
-    // Check if attachment is SVG or other document
+    // Check if attachment is SVG file or other document
     if ($fileExt == 'svg' || $fileExt == 'svgz') { // SVG Images
         return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" class="attachment-svg">';
     } else { // All other documents types
@@ -716,7 +716,7 @@ function attachment_page_image($id) {
     }
 }
 
-// Blog post user comment styling for each comment
+// Blog post user comment HTML and formatting for each comment
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>

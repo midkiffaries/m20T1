@@ -248,10 +248,10 @@ add_action( 'wp_footer', function(){
 <?php
 });
 
-// Hide error messages on login to WordPress
+// Hide error messages on login to WordPress for security reasons
 add_filter( 'login_errors', create_function('$a', 'return "Login Error.";') );
 
-// Remove xml-rpc WordPress feature for security reasons
+// Decactivate xml-rpc WordPress feature for security reasons
 //add_filter( 'xmlrpc_enabled', '__return_false' );
 
 // Set the excerpt length

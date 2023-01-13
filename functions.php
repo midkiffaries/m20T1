@@ -778,3 +778,43 @@ function blog_post_share() {
     </ul>
 <?php
 }
+
+// Add thumbnail/featured image column
+function AddThumbColumn($cols) {
+    $cols['thumbnail'] = __('Image');
+    return $cols;
+}
+
+// Set thumbnail for Image column
+function AddThumbValue($column_name, $post_id) {
+    $width = 36;
+    $height = 36;
+    
+    if ( 'thumbnail' == $column_name ) {
+        // Get Featured Image
+        $thumbnail_id = get_post_meta( $post_id, '_thumbnail_id', true );
+        $attachments = get_children( array('post_parent' => $post_id, 'post_type' => 'attachment', 'post_mime_type' => 'image') );
+        
+        if ($thumbnail_id)
+            $thumb = wp_get_attachment_image( $thumbnail_id, array($width, $height), true );
+        elseif ($attachments) {
+            foreach ( $attachments as $attachment_id => $attachment ) {
+                $thumb = wp_get_attachment_image( $attachment_id, array($width, $height), true );
+            }
+        }
+        
+        if ( isset($thumb) && $thumb ) {
+            echo $thumb;
+        } else {
+            echo __('—');
+        }
+    }
+}
+
+// Set for Posts
+add_filter( 'manage_posts_columns', 'AddThumbColumn' );
+add_action( 'manage_posts_custom_column', 'AddThumbValue', 10, 2 );
+
+// Set for Pages
+add_filter( 'manage_pages_columns', 'AddThumbColumn' );
+add_action( 'manage_pages_custom_column', 'AddThumbValue', 10, 2 );

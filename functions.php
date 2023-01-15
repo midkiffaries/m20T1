@@ -814,13 +814,13 @@ add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
 
 // Add SEO Excerpt column
 function AddExcerptColumn($columns) {
-    $columns['excerpt'] = __('SEO Excerpt');
+    $columns['seo_excerpt'] = __('SEO Excerpt');
     return $columns;
 }
 
 // Add SEO Excerpt values
 function AddExcerptValue($column_name, $post_id) {
-    if ( $column_name == 'excerpt') {
+    if ( $column_name == 'seo_excerpt') {
         if ( $post_id ) {
             echo SEO_Excerpt($post_id);
         } else {

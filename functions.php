@@ -779,42 +779,60 @@ function blog_post_share() {
 <?php
 }
 
-// Add thumbnail/featured image column
-function AddThumbColumn($cols) {
-    $cols['thumbnail'] = __('Image');
-    return $cols;
+
+/////////////////////////////
+// Add New Columns
+/////////////////////////////
+
+// Add Featured Image column
+function AddImageColumn($columns) {
+    $columns['thumbnail'] = __('Image');
+    return $columns;
 }
 
-// Set thumbnail for Image column
-function AddThumbValue($column_name, $post_id) {
-    $width = 36;
-    $height = 36;
-    
-    if ( 'thumbnail' == $column_name ) {
-        // Get Featured Image
-        $thumbnail_id = get_post_meta( $post_id, '_thumbnail_id', true );
-        $attachments = get_children( array('post_parent' => $post_id, 'post_type' => 'attachment', 'post_mime_type' => 'image') );
-        
-        if ($thumbnail_id)
-            $thumb = wp_get_attachment_image( $thumbnail_id, array($width, $height), true );
-        elseif ($attachments) {
-            foreach ( $attachments as $attachment_id => $attachment ) {
-                $thumb = wp_get_attachment_image( $attachment_id, array($width, $height), true );
-            }
+// Add Featured Image values
+function AddImageValue($column_name, $post_id) {
+	if ( $column_name == 'thumbnail' ) {
+		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+		if ( $post_thumbnail_id ) {
+			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
+			echo '<img src="' . $post_thumbnail_img[0] . '" width="100" height="100" alt="">';
+		} else {
+            echo __('—');
         }
-        
-        if ( isset($thumb) && $thumb ) {
-            echo $thumb;
+	}
+}
+
+// Add Image Column to Posts
+add_filter( 'manage_posts_columns', 'AddImageColumn' );
+add_action( 'manage_posts_custom_column', 'AddImageValue', 10, 2 );
+
+// Add Image Column to Pages
+add_filter( 'manage_pages_columns', 'AddImageColumn' );
+add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
+
+
+// Add SEO Excerpt column
+function AddExcerptColumn($columns) {
+    $columns['excerpt'] = __('SEO Excerpt');
+    return $columns;
+}
+
+// Add SEO Excerpt values
+function AddExcerptValue($column_name, $post_id) {
+    if ( $column_name == 'excerpt') {
+        if ( $post_id ) {
+            echo SEO_Excerpt($post_id);
         } else {
             echo __('—');
         }
     }
 }
 
-// Set for Posts
-add_filter( 'manage_posts_columns', 'AddThumbColumn' );
-add_action( 'manage_posts_custom_column', 'AddThumbValue', 10, 2 );
+// Add SEO Excerpt Column to Posts
+add_filter( 'manage_posts_columns', 'AddExcerptColumn' );
+add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
 
-// Set for Pages
-add_filter( 'manage_pages_columns', 'AddThumbColumn' );
-add_action( 'manage_pages_custom_column', 'AddThumbValue', 10, 2 );
+// Add SEO Excerpt Column to Pages
+add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
+add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );

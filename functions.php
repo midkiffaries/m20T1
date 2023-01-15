@@ -540,7 +540,7 @@ function SEO_Excerpt($id) {
         $description = trim(substr(get_the_excerpt($id), 0, $length));
     } else {
         // Get page description from content excerpt
-        if (is_single() || is_page()) { // If single blog post
+        if (is_single() || is_page() || is_admin()) { // If single blog post
             $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt($id), true));
             $description = trim(substr($excerpt, 0, $length)) . MORE_TEXT;
         } else { // All other pages use site slogan
@@ -796,7 +796,7 @@ function AddImageValue($column_name, $post_id) {
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 		if ( $post_thumbnail_id ) {
 			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
-			echo '<img src="' . $post_thumbnail_img[0] . '" width="100" height="100" alt="">';
+			echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" alt="">';
 		} else {
             echo __('—');
         }

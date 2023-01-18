@@ -478,12 +478,8 @@ Blog Post Styling (index/home, archives)
     width: calc(100% - 250px - 1.5em);
 }
 
-.entry-header a {
+.entry-header a[href] {
     text-decoration: none;
-}
-
-.entry-header a:hover {
-    text-decoration: underline;
 }
 
 .entry-footer {

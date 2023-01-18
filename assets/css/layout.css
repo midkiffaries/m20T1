@@ -478,10 +478,6 @@ Blog Post Styling (index/home, archives)
     width: calc(100% - 250px - 1.5em);
 }
 
-.entry-header a[href] {
-    text-decoration: none;
-}
-
 .entry-footer {
 	margin-top: -1.5em;
 }
@@ -582,13 +578,17 @@ Blog Post Styling (index/home, archives)
 .entry-tags ul li a {
 	color: #555;
 	padding: 3px;
-	-webkit-text-decoration: underline solid #bbb;
-	text-decoration: underline solid #bbb;
+	text-decoration: underline;
+	text-decoration-color: #bbb;
 }
 
 .entry-tags ul li a:hover {
-	-webkit-text-decoration: underline solid #222;
-	text-decoration: underline solid #222;
+	text-decoration: underline;
+	text-decoration-color: #222;
+}
+
+.entry-tags ul li a:active {
+	opacity: 0.6;
 }
 
 .entry-tags ul li a::before {

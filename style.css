@@ -547,7 +547,8 @@ Global Page Styling
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
 	color: var(--brand-color);
-	text-decoration: underline solid var(--brand-color) !important;
+	text-decoration: underline;
+	text-decoration-color: var(--brand-color);
 }
 
 .entry-header a[href]:active,

@@ -131,6 +131,8 @@ small {
 ins {
 	-webkit-text-decoration: underline dashed currentColor;
 	text-decoration: underline dashed currentColor;
+
+	
 }
 
 abbr[title] {

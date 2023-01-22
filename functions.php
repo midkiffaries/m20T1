@@ -87,7 +87,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
     
     // Set the different post formats that the author can select
-    add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
+    //add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
     
     // Set the Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
@@ -780,9 +780,9 @@ function blog_post_share() {
 }
 
 
-/////////////////////////////
-// Add New Columns
-/////////////////////////////
+//////////////////////////////////////
+// Additional Columns for the editor
+//////////////////////////////////////
 
 // Add Featured Image column
 function AddImageColumn($columns) {

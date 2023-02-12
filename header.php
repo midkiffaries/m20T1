@@ -8,7 +8,7 @@
 <?php wp_head(); // WordPress generated meta data and scripts ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class(); // Add classes to the body tag ?> itemscope itemtype="http://schema.org/WebPage">
 
 <?php wp_body_open(); // WordPress body includes ?>
 

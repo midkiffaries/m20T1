@@ -139,7 +139,7 @@ add_action( 'init', function(){
     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-    add_filter( 'wp_resource_hints', 'disable_emojis', 10, 2 );
+    //add_filter( 'wp_resource_hints', 'disable_emojis', 10, 2 );
 
     // Remove RSS feed links
     remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -208,7 +208,7 @@ add_action( 'wp_head', function(){
 <link rel="Siteuri" href="<?php echo home_url(); ?>/" id="SiteURI">
 <meta name="application-name" content="<?php bloginfo('name'); ?>">
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
-<meta name="description" content="<?php echo SEO_Excerpt($post->ID); ?>">
+<meta name="description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="<?php esc_url(printf("%s/favicon.ico", home_url())); ?>" sizes="any">
 <link rel="icon" href="<?php esc_url(printf("%s/favicon.svg", home_url())); ?>" type="image/svg+xml">
@@ -219,20 +219,20 @@ add_action( 'wp_head', function(){
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <meta property="og:url" content="<?php the_permalink(); ?>">
 <meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="og:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<meta property="og:image" content="<?php echo SEO_Image($post->ID); ?>">
+<meta property="og:description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
+<meta property="og:image" content="<?php echo SEO_Image(get_the_id()); ?>">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php the_permalink(); ?>">
 <meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="twitter:description" content="<?php echo SEO_Excerpt($post->ID); ?>">
-<meta property="twitter:image" content="<?php echo SEO_Image($post->ID); ?>">
+<meta property="twitter:description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
+<meta property="twitter:image" content="<?php echo SEO_Image(get_the_id()); ?>">
 <?php
 });
 
 // Append to the top of the page body tag
-add_action( 'wp_body_open', function(){
+//add_action( 'wp_body_open', function(){
 
-});
+//});
 
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
@@ -247,9 +247,6 @@ add_action( 'wp_footer', function(){
 </template>
 <?php
 });
-
-// Hide error messages on login to WordPress for security reasons
-add_filter( 'login_errors', create_function('$a', 'return "Login Error.";') );
 
 // Decactivate xml-rpc WordPress feature for security reasons
 //add_filter( 'xmlrpc_enabled', '__return_false' );
@@ -465,18 +462,6 @@ function get_child_pages($id, $thumbnail) {
 /////////////////////////////
 // Specialized Functions
 /////////////////////////////
-
-// Converts a number in to roman numerals... for fun
-function numberToRoman($variable) {
-	$n = intval($variable);
-	$lookup = array('M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1);
-	foreach ($lookup as $roman => $value) {
-		$matches = intval($n / $value);
-		$result .= str_repeat($roman, $matches);
-		$n = $n % $value;
-	}
-	return $result;
-}
 
 // Get the number of times this keyword comes up in search queries
 function SearchCount($query) {

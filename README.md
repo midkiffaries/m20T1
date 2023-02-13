@@ -35,6 +35,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Support for <b>dark mode</b> via a built in switch
 - Built in support for an additional <i>post type</i> set as 'Portfolio'
 - Enabled SVG files upload to media library
+- Theme supports PHP 8.0+
 
 ## Note
 This theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code>, <code>editor-style.css</code>, <code>theme.json</code> and the <code>style.css</code> files.

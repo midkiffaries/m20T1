@@ -251,6 +251,11 @@ add_action( 'wp_footer', function(){
 // Decactivate xml-rpc WordPress feature for security reasons
 //add_filter( 'xmlrpc_enabled', '__return_false' );
 
+// Add custom message to login screen
+add_filter( 'login_message', function(){
+    return '<h2 style="text-align:center">Welcome to m20T1</h2>';
+});
+
 // Set the excerpt length
 add_filter( 'excerpt_length', function(){
     return EXCERPT_LENGTH; // Number of Words

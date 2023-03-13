@@ -227,6 +227,7 @@ add_action( 'wp_head', function(){
 <meta property="twitter:description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
 <meta property="twitter:image" content="<?php echo SEO_Image(get_the_id()); ?>">
 <?php
+    //addSchemaMetaData();
 });
 
 // Append to the top of the page body tag
@@ -518,7 +519,7 @@ function file_units($file) {
 function SEO_CharSwap($string) {
     $string = preg_replace('/\%/', 'percent', $string); 
     $string = preg_replace('/\&/', 'and', $string); 
-    return $string;
+    return trim($string);
 }
 
 // Get the excerpt from either the content or the user defined excerpt  
@@ -666,7 +667,7 @@ function user_level($level) {
 
 // Get a blog post's reading time
 function reading_time() {
-    $wordcount = str_word_count(strip_tags(get_the_content()));
+    $wordcount = str_word_count(wp_strip_all_tags(get_the_content()));
     $time = ceil($wordcount / 200);
     return "{$time} min read";
 }
@@ -827,3 +828,46 @@ add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
 // Add SEO Excerpt Column to Pages
 add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
 add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
+
+
+//////////////////////////////////////
+// Schema meta data
+//////////////////////////////////////
+
+// Display schemea data under a script tag
+function addSchemaMetaData() {
+?>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<?php the_permalink(); ?>"
+    },
+    "headline": "<?php SEO_CharSwap(wp_title(null, true, 'right')); ?>",
+    "image": [
+        "<?php echo SEO_Image(get_the_id()); ?>"
+    ],
+    "datePublished": "<?php printf(get_the_date('c')); ?>",
+    "description": "<?php echo SEO_Excerpt(get_the_id()); ?>",
+    "articleBody": "<?php echo SEO_Excerpt(get_the_id()); ?>",
+    "articleSection": "<?php echo get_the_category()[0]->name; ?>",
+    "keywords": "<?php echo get_the_tags()[0]->name; ?>",
+    "name": "<?php SEO_CharSwap(wp_title(null, true, 'right')); ?>",
+    "author": {
+        "@type": "Person",
+        "name": "<?php get_the_author_meta('id'); ?>"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "<?php bloginfo('name'); ?>",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]; ?>"
+        }
+    }
+}
+</script>
+<?php
+}

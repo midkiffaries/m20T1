@@ -777,6 +777,10 @@ figure > a img[srcset] {
 	opacity: 0.6;
 }
 
+.wp-block-embed iframe {
+	height: 280px;
+}
+
 .wp-block-image figure > a::after {
 	position: absolute;
 	transform: translate(-1.5em,0.5em);

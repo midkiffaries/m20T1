@@ -490,8 +490,10 @@ function GetPageTitle($id) {
 
 // Shorten the_content in place of using the_excerpt for more control
 function shorten_the_content($post) {
-    $regex = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?).*$)@"; // remove URLs
-    $excerpt = preg_replace($regex, ' ', html_entity_decode(wp_strip_all_tags($post, true)));
+    $regex_figure = "/<figure[^>]*>([\s\S]*?)<\/figure[^>]*>/"; // Remove figure/figcaption
+    $regex_url = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?).*$)@"; // Remove URLs
+    $excerpt = preg_replace($regex_figure, ' ', html_entity_decode($post));
+    $excerpt = preg_replace($regex_url, ' ', html_entity_decode(wp_strip_all_tags($excerpt, true)));
     return wp_trim_words($excerpt, SHORT_TEXT_LENGTH, ' <span class="entry-read-more">' . MORE_TEXT . '</span>');
 }
 

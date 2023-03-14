@@ -791,7 +791,6 @@ function AddImageValue($column_name, $post_id) {
 			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
             echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" alt="">';
 		} else {
-            //echo '<img src="' . SOCIAL_IMAGE . '" width="90" height="90" style="object-fit:cover;" alt="">';
             echo __('—');
         }
 	}

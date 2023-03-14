@@ -294,6 +294,10 @@ Sidebar and Widgets Styling
 	font-size: inherit;
 }
 
+.singlepost-widgets section {
+	margin-top: 3em;
+}
+
 .blogroll-widgets {
 	font-size: inherit;
 }

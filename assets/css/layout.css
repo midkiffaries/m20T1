@@ -349,6 +349,13 @@ Site Footer
 	margin: 0 auto;
 }
 
+.footer-load-time {
+	font-size: 0.75rem;
+	opacity: 0.7;
+	line-height: 0.2;
+	text-align: right;
+}
+
 .footer-notice {
 	font-size: 0.95rem;
 	margin: 0 auto 2em;

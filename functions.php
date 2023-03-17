@@ -1,15 +1,15 @@
-<?php
-
-/////////////////////////////
-// PHP WordPress Functions
-/////////////////////////////
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+<?php // Custom PHP WordPress functions and settings
 
 //error_reporting(E_ALL);
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Define the start time for the page loading timer
+define( 'PAGE_LOAD_START', microtime(TRUE) );
+
 /////////////////////////////
-// Includes
+// Includes and Plugins
 /////////////////////////////
 
 // Breadcrumb trail plugin
@@ -45,8 +45,6 @@ define( 'SEARCH_ERROR_IMAGE', '<svg clip-rule="evenodd" height="454" stroke-line
 // Message on the 404 error page
 define( 'PAGE_404_CONTENT', "<p>Whoops... Well that page is gone.</p>
 <p>But real talk, the page must have been removed, renamed or didn't exist in the first place. 🤔</p>" );
-// Define the start time for the page loading timer
-define( 'PAGE_LOAD_START', microtime(TRUE) );
 
 
 /////////////////////////////

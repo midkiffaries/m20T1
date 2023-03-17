@@ -8,7 +8,7 @@
     <div id="footer-widgets" class="footer-widgets">
         <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
 
-        <?php $pageload_end = round((microtime(TRUE) - PAGE_LOAD_START), 3); // Get page load time ?>
+        <?php $pageload_end = round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Get page load time ?>
         <div class="footer-load-time">Page loaded in <?php echo $pageload_end; ?>s</div>
     </div>
 

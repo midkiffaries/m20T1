@@ -515,12 +515,12 @@ function file_units($file) {
 
 // Get the the image information and file size
 function image_metadata($filename) {
+    $size = file_units(wp_filesize($filename));
     if (@is_array(getimagesize($filename))) {
         list($width, $height, $type, $attr) = getimagesize($filename);
-        $size = file_units(wp_filesize($filename));
         return "File: " . image_type_to_mime_type($type) . " – Dimensions: " . $width . "x" . $height . "px – Size: " . $size;
     } else {
-        return null;
+        return "File: document – Size: " . $size;
     }
 }
 

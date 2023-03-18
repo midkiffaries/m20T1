@@ -183,8 +183,9 @@ Basic WordPress Editor Styling
 
 .the-content figure img[src$='.jpg'],
 .the-content figure img[src$='.webp'] {
-	box-shadow: 7px 7px 0 0 #888, -9px -9px 0 0 var(--brand-color-pale);
 	transition: box-shadow 0.5s ease-in-out;
+	box-shadow: 7px 7px 0 0 #888, -9px -9px 0 0 var(--brand-color-pale);
+	border: 1px solid #f6f6f6;
 }
 
 .the-content figure a img[src$='.jpg']:hover,
@@ -245,7 +246,7 @@ Basic WordPress Editor Styling
 
 .the-content figure.alignright,
 .the-content figure.alignleft {
-	margin: 0.1rem 0.9rem 1rem;
+	margin: 0.3rem 1.1rem 0.6rem;
 }
 
 .the-content figure.aligncenter {

@@ -754,7 +754,8 @@ Specific Page Styling
 
 .homepage-recent-posts a {
 	font-weight: 500;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
+	line-height: 1;
 	color: var(--brand-color);
 	text-decoration: underline !important;
 	text-decoration-thickness: 2px !important;

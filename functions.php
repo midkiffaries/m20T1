@@ -1,6 +1,6 @@
 <?php // Custom PHP WordPress functions and settings
 
-//error_reporting(E_ALL);
+error_reporting(0);
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -622,36 +622,34 @@ function Header_Hero($id) {
     // Type of page
     if ( is_front_page() ) { // Front-page header (None)
         $className = "homepage";
-        $titleHidden = "hidden";
         $hasFeaturedImage = false;
     } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (None)
         $className = "noimage";
-        $titleHidden = "hidden";
         $hasFeaturedImage = false;
     } elseif ( is_page() ) { // Basic Page and privacy-policy header (Use Featured Image)
         $className = "single-page";
-        $titleHidden = "hidden";
         $hasFeaturedImage = true;
     } elseif ( is_single() ) { // Single blog post (Use Featured Image)
         $className = "single-post";
-        $titleHidden = "hidden";
         $hasFeaturedImage = true;
     } else { // Blog Page, search page and archives header (Use default Image)
         $className = "noimage";
-        $titleHidden = "hidden";
         $hasFeaturedImage = false;
     }
 
     // Get the featured image if exists or fallback to blank image
     if ($hasFeaturedImage) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
+        $attachmentTitle = '<a href="'. home_url() . '/?p='.get_post_thumbnail_id($id).'">' . wp_get_attachment_caption(get_post_thumbnail_id($id)) . '</a>';
+    } else {
+        $attachmentTitle = "";
     }
 
     ?>
         <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>" data-rate="10">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
-            <h1 class="page-title <?php echo $titleHidden; ?>" itemprop="title"><?php the_title(); ?></h1>
+            <div class="header-hero-caption"><?php echo $attachmentTitle; ?></div>
         </div>
     <?php
 }

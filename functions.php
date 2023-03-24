@@ -637,7 +637,7 @@ function Header_Hero($id) {
         $hasFeaturedImage = false;
     }
 
-    // Get the featured image if exists or fallback to blank image
+    // Get the featured image and image caption if exists or fallback to blank image
     if ($hasFeaturedImage) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
         $attachmentTitle = '<a href="'. home_url() . '/?p='.get_post_thumbnail_id($id).'">' . wp_get_attachment_caption(get_post_thumbnail_id($id)) . '</a>';

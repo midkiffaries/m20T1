@@ -642,7 +642,7 @@ function Header_Hero($id) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
         $attachmentTitle = '<a href="'. home_url() . '/?p='.get_post_thumbnail_id($id).'">' . wp_get_attachment_caption(get_post_thumbnail_id($id)) . '</a>';
     } else {
-        $attachmentTitle = "";
+        $attachmentTitle = '';
     }
 
     ?>

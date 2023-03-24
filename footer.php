@@ -21,7 +21,7 @@
     </div>
 </footer>
 
-<?php wp_footer(); // Wordpress generated data and scripts ?>
+<?php wp_footer(); // WordPress generated data and scripts ?>
 
 </body>
 </html>

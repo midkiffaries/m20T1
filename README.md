@@ -25,7 +25,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Support for <b>theme.json</b>
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom modals for alerts, confirmation and custom HTML
-- Built in blog post read time
+- Built in blog post read time in minutes
 - Alternate page templates with full width and sidebar support
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
@@ -33,7 +33,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Featured image support for use as the hero/header image on posts and pages, with fallbacks
 - Support for custom WordPress editor styling
 - Support for <b>dark mode</b> via a built in switch
-- Built in support for an additional <i>post type</i> set as 'Portfolio'
+- Built in support for an additional <i>post type</i>, default set as 'Portfolio'
 - Enabled SVG files upload to media library
 
 ## Note

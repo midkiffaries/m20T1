@@ -39,7 +39,7 @@
                 </figure>
             </div>
             <p class="author-bio-meta"><b><?=user_level(get_the_author_meta( 'user_level' )); ?> – <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
-            <p class="author-bio-about"><?php nl2br(printf($curauth->description)); ?></p>
+            <p class="author-bio-about"><?=nl2br($curauth->description); ?></p>
             <p class="author-bio-contact">
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author">LinkedIn</a> | <?php endif; ?>
                 <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author">Twitter</a> | <?php endif; ?>

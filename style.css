@@ -62,9 +62,10 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
     text-shadow: none;
 }
 
-/************************ 
+
+/************************************
 Global Typography
-************************/
+************************************/
 
 body {
 	font-family: var(--font-primary);
@@ -334,10 +335,9 @@ Sidebar and Widgets Styling
 	display: none;
 }
 
-
-/************************ 
+/************************************
 Form Element Styling
-************************/
+************************************/
 
 /* Input & Textarea Types */
 [type="search"],
@@ -401,9 +401,9 @@ button:focus,
 }
 
 
-/************************ 
+/************************************
 Blog Post Styling
-************************/
+************************************/
 
 /* Pagination links */
 .blog-pagination nav a {
@@ -424,9 +424,9 @@ Blog Post Styling
 }
 
 
-/************************ 
+/************************************
 Global Page Styling
-************************/
+************************************/
 
 /* Site header text highlights */
 .header-logo {
@@ -582,7 +582,9 @@ Global Page Styling
 }
 
 
-/* Page Background embellishments */
+/************************************
+Page Background embellishments
+************************************/
 
 /* All pages/post body top background */
 .body-top-background {
@@ -639,11 +641,11 @@ Global Page Styling
 }
 
 
-/************************ 
+/************************************
 Specific Page Styling
-************************/
+************************************/
 
-/* Homepage */
+/* Home Page */
 
 /* Homepage tagline introduction text */
 .homepage-tagline {

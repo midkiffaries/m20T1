@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-blogpost <?php echo get_page_class(); ?>" id="main-content" role="main">
+<main class="page-main page-blogpost <?=get_page_class(); ?>" id="main-content" role="main">
     <div class="page-content width-full">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); // Single post ?>
@@ -11,11 +11,11 @@
             <header class="single-entry-header">
                 <div class="single-entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?></div>
                 <div class="single-entry-category"><?php the_category(' '); ?></div>
-                <h1 class="single-entry-title" id="<?php echo $post->post_name; ?>" itemprop="name"><?php the_title(); ?></h1>
+                <h1 class="single-entry-title" id="<?=$post->post_name; ?>" itemprop="name"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
-                    <span class="single-entry-date"><time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
-                    <span class="single-entry-author"><?php echo post_separator(); ?> Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                    <span class="single-entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
+                    <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
+                    <span class="single-entry-author"><?=post_separator(); ?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="single-entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
                 </div>
             </header>
             <div class="the-content single-entry-content" itemprop="description">
@@ -45,11 +45,11 @@
             <h2 class="author-bio-title" itemprop="author">About the Author</h2>
             <div class="author-avatar">
                 <figure class="alignleft" aria-label="Authors Avatar">
-                    <?php printf(get_avatar(get_the_author_meta('ID'), 64)); ?>
+                    <?=get_avatar(get_the_author_meta('ID'), 64); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author."><?php echo get_the_author_meta( 'display_name' ); ?></a></h3>
-            <p class="author-bio-about"><?php printf(shorten_the_content(get_the_author_meta( 'user_description' ))); ?></p>
+            <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author."><?=get_the_author_meta( 'display_name' ); ?></a></h3>
+            <p class="author-bio-about"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">

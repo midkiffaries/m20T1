@@ -2,12 +2,12 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main-wide page-landing-page <?php echo get_page_class(); ?>" id="main-content" role="main">
+<main class="page-main-wide page-landing-page <?=get_page_class(); ?>" id="main-content" role="main">
     <div class="page-content width-max">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
 
-        <article <?php post_class(); ?> id="<?php printf($post->post_name); ?>" itemscope itemtype="http://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="http://schema.org/NewsArticle">
             <div>
                 <h1 class="page-title hidden" itemprop="name" aria-hidden="true"><?php the_title(); ?></h1>
                 <div class="the-content" itemprop="description">

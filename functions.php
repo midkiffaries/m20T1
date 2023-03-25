@@ -1,9 +1,10 @@
 <?php // Custom PHP WordPress functions and settings
 
-error_reporting(0);
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Visual error reporting
+error_reporting(0);
 
 // Define the start time for the page loading timer
 define( 'PAGE_LOAD_START', microtime(TRUE) );

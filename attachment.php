@@ -8,26 +8,26 @@
 
         <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
-                <h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
+                <h1 class="page-title" itemprop="name"><?=the_title(); ?></h1>
                 <div class="wp-block-image">
-                    <div class="image-attachment"><a href="<?php echo wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document">
-                        <?php echo attachment_page_image(get_the_ID()); ?>
+                    <div class="image-attachment"><a href="<?=wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document">
+                        <?=attachment_page_image(get_the_ID()); ?>
                     </a></div>
-                    <div class="image-caption"><?php echo wp_kses_post( wp_get_attachment_caption() ); ?></div>
+                    <div class="image-caption"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </dic>
                 <div class="image-description" itemprop="description">
-                    <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
+                    <?=the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">
-                    <span class="image-date" itemprop="uploadDate">Uploaded on <time datetime="<?php printf(get_the_date('c')); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
-                    <span class="image-author">by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="image-date" itemprop="uploadDate">Uploaded on <time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
+                    <span class="image-author">by <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <br>
                     <span class="image-category">Category: <b><?php the_category(' '); ?></b></span>
                     <br>
-                    <span class="image-filesize"><?php echo image_metadata(wp_get_attachment_url(get_the_ID())); ?></span>
+                    <span class="image-filesize"><?=image_metadata(wp_get_attachment_url(get_the_ID())); ?></span>
                 </p>
-                <div class="image-share"><?php blog_post_share(); ?></div>
-                <div class="image-links"><i>Related Post</i><br> <a href="<?php echo get_permalink( get_post_parent(get_the_ID()) ); ?>"><?php if (has_post_parent(get_the_ID())) echo get_the_title( get_post_parent(get_the_ID()) ); else echo "Not attached to any posts"; ?></a></div>
+                <div class="image-share"><?=blog_post_share(); ?></div>
+                <div class="image-links"><i>Related Post</i><br> <a href="<?=get_permalink( get_post_parent(get_the_ID()) ); ?>"><?php if (has_post_parent(get_the_ID())) echo get_the_title( get_post_parent(get_the_ID()) ); else echo "Not attached to any posts"; ?></a></div>
             </div>
         </article>
 

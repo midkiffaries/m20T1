@@ -7,13 +7,13 @@
     <article class="page-404 page type-page not-found status-publish" id="page-404" itemscope itemtype="http://schema.org/NewsArticle">
         <div class="page-404-container">
             <div class="page-404-image">
-                <?php echo PAGE_404_IMAGE; ?>
+                <?=PAGE_404_IMAGE; // Error Image ?>
             </div>
             <h1 class="page-title" itemprop="name">Page Not Found</h1>
             <div class="content-404" itemprop="description">                
-                <?php echo PAGE_404_CONTENT; // Error Message ?>
+                <?=PAGE_404_CONTENT; // Error Message ?>
 
-                <?php get_search_form('error'); // Search Form ?>
+                <?=get_search_form('error'); // Search Form ?>
                 
             </div>
         </div>

@@ -31,21 +31,21 @@
     </section>
 
     <?php if (is_author()) : // Display Author Page for when showing by author ?>
-    <section class="archive-author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
+    <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
         <div class="author-container">
             <div class="author-avatar">
                 <figure class="alignleft">
-                    <?php printf(get_avatar(get_the_author_meta('ID'), 128)); ?>
+                    <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><b><?php echo user_level(get_the_author_meta( 'user_level' )); ?> – <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
+            <p class="author-bio-meta"><b><?=user_level(get_the_author_meta( 'user_level' )); ?> – <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
             <p class="author-bio-about"><?php nl2br(printf($curauth->description)); ?></p>
             <p class="author-bio-contact">
-                <?php if ($curauth->linkedin) : ?><a href="<?php esc_url(printf($curauth->linkedin)); ?>" rel="author">LinkedIn</a> | <?php endif; ?>
-                <?php if ($curauth->twitter) : ?><a href="<?php esc_url(printf($curauth->twitter)); ?>" rel="author">Twitter</a> | <?php endif; ?>
-                <?php if ($curauth->facebook) : ?><a href="<?php esc_url(printf($curauth->facebook)); ?>" rel="author">Facebook</a> | <?php endif; ?>
-                <?php if ($curauth->instagram) : ?><a href="<?php esc_url(printf($curauth->instagram)); ?>" rel="author">Instagram</a> | <?php endif; ?>
-                <?php if ($curauth->user_url) : ?><a href="<?php esc_url(printf($curauth->user_url)); ?>" rel="author">Website</a><?php endif; ?>
+                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author">LinkedIn</a> | <?php endif; ?>
+                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author">Twitter</a> | <?php endif; ?>
+                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author">Facebook</a> | <?php endif; ?>
+                <?php if ($curauth->instagram) : ?><a href="<?=esc_url($curauth->instagram); ?>" rel="author">Instagram</a> | <?php endif; ?>
+                <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author">Website</a><?php endif; ?>
             </p>
         </div>
     </section>
@@ -54,22 +54,22 @@
     <article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
-    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+    <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
             <div class="post-container">
-                <a href="<?php esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
+                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
                     <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
                 </a>
                 <header class="entry-header">
-                    <div class="entry-date"><time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>
-                    <h2 class="entry-title" id="<?php echo $post->post_name; ?>" itemprop="name"><a href="<?php esc_url(the_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                    <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
+                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark"><?=the_title(); ?></a></h2>
                     <div class="entry-metadata">
-                        <span class="entry-author">Written By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-read-time"><?php echo post_separator(); ?> <?php echo reading_time(); ?></span>
-                        <span class="entry-comments"><?php echo post_separator(); ?> <a href="<?php esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?php comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                        <span class="entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
+                        <span class="entry-comments"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="description">
-                    <p><?php echo shorten_the_content($post->post_content); ?></p>
+                    <p><?=shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">
                 </footer>
@@ -82,7 +82,7 @@
     <section class="blog-pagination" aria-label="Archive Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
-                <?php blog_post_pagination('Posts'); // Post navigation links ?>
+                <?=blog_post_pagination('Posts'); // Post navigation links ?>
             </nav>
         </div>
     </section>

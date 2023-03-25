@@ -13,10 +13,10 @@
 
     <div class="footer-notice">
         <hr class="footer-rule">
-        <div class="footer-copyright">Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</div>
+        <div class="footer-copyright">Copyright &copy; <?=date('Y'); ?> <?=bloginfo('name'); ?>. All rights reserved.</div>
         <div class="footer-footnote">
-            <a href="https://github.com/midkiffaries/m20T1" class="wp-theme-title"><?php echo wp_get_theme()->get('Name'); ?> Theme</a> | 
-            <a href="<?php echo esc_url(home_url()); ?>/privacy-policy/" rel="license">Privacy Policy</a>
+            <a href="https://github.com/midkiffaries/m20T1" class="wp-theme-title"><?=wp_get_theme()->get('Name'); ?> Theme</a> | 
+            <a href="<?=esc_url(home_url()); ?>/privacy-policy/" rel="license">Privacy Policy</a>
         </div>
     </div>
 </footer>

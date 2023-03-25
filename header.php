@@ -17,7 +17,7 @@
     <div class="header-menubar">
         <div class="header-title">
             <p class="header-logo">
-                <a href="<?php echo home_url(); ?>" rel="home" itemprop="url"><?php echo get_custom_logo(); ?></a>
+                <a href="<?=home_url(); ?>" rel="home" itemprop="url"><?=get_custom_logo(); ?></a>
             </p>
             <div class="header-breadcrumbs"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
         </div>

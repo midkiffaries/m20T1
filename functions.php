@@ -202,33 +202,32 @@ add_action( 'init', function(){
 // Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){
 ?>
-<meta name="title" content="<?php bloginfo('name'); ?>">
+<meta name="title" content="<?=bloginfo('name'); ?>">
 <meta name="author" content="Ted Balmer | MarchTwenty.com">
-<link rel="dns-prefetch" href="<?php echo esc_url(preg_replace("(^https?:)", '', home_url() )); ?>">
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<link rel="Siteuri" href="<?php echo home_url(); ?>/" id="SiteURI">
-<meta name="application-name" content="<?php bloginfo('name'); ?>">
-<meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?>">
-<meta name="description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
+<link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url() )); ?>">
+<link rel="pingback" href="<?=bloginfo('pingback_url'); ?>">
+<link rel="Siteuri" href="<?=home_url(); ?>/" id="SiteURI">
+<meta name="application-name" content="<?=bloginfo('name'); ?>">
+<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); ?>">
+<meta name="description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta name="format-detection" content="telephone=no">
-<link rel="icon" href="<?php esc_url(printf("%s/favicon.ico", home_url())); ?>" sizes="any">
-<link rel="icon" href="<?php esc_url(printf("%s/favicon.svg", home_url())); ?>" type="image/svg+xml">
-<link rel="apple-touch-icon" href="<?php esc_url(printf("%s/icons/apple-touch-icon.png", home_url())); ?>">
-<link rel="manifest" href="<?php esc_url(printf("%s/site.webmanifest", home_url())); ?>">
-<meta property="og:locale" content="<?php echo get_bloginfo('language'); ?>">
+<link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico"); ?>" sizes="any">
+<link rel="icon" href="<?=esc_url(home_url() . "/favicon.svg"); ?>" type="image/svg+xml">
+<link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/icons/apple-touch-icon.png"); ?>">
+<link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest"); ?>">
+<meta property="og:locale" content="<?=get_bloginfo('language'); ?>">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
-<meta property="og:url" content="<?php the_permalink(); ?>">
-<meta property="og:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="og:description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
-<meta property="og:image" content="<?php echo SEO_Image(get_the_id()); ?>">
+<meta property="og:site_name" content="<?=bloginfo('name'); ?>">
+<meta property="og:url" content="<?=the_permalink(); ?>">
+<meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+<meta property="og:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
+<meta property="og:image" content="<?=SEO_Image(get_the_id()); ?>">
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?php the_permalink(); ?>">
-<meta property="twitter:title" content="<?php SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="twitter:description" content="<?php echo SEO_Excerpt(get_the_id()); ?>">
-<meta property="twitter:image" content="<?php echo SEO_Image(get_the_id()); ?>">
+<meta property="twitter:url" content="<?=the_permalink(); ?>">
+<meta property="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+<meta property="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
+<meta property="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
 <?php
-    //addSchemaMetaData();
 });
 
 // Append to the top of the page body tag
@@ -241,14 +240,14 @@ add_action( 'wp_footer', function(){
 ?>
 <template id="Search-Modal">
     <h3 class="search-title">Search</h3>
-    <?php get_search_form('search-modal'); // Load searchform.php ?>
+    <?=get_search_form('search-modal'); // Load searchform.php ?>
 </template>
 
 <template id="Contact-Modal">
-    <?php get_template_part('contactform'); // Load contactform.php ?>
+    <?=get_template_part('contactform'); // Load contactform.php ?>
 </template>
 
-<script>document.getElementById('PageLoadTime').textContent = <?php echo round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
+<script>document.getElementById('PageLoadTime').textContent = <?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
 <?php
 });
 
@@ -457,11 +456,11 @@ function get_child_pages($id, $thumbnail) {
     <?php endif;
 
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
-        <div class="child-card" id="child-card-<?php echo $child->ID; ?>">
-            <a class="child-card__link" href="<?php echo esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?php echo esc_url(FeaturedImageURL($child->ID, 'medium', 0)); ?>" loading="lazy" decoding="async" alt=""></div>
-                <div class="child-card__title"><?php echo $child->post_title; ?></div>
-                <div class="child-card__text"><?php echo $child->post_excerpt; ?></div>
+        <div class="child-card" id="child-card-<?=$child->ID; ?>">
+            <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
+                <div class="child-card__image"><img src="<?=esc_url(FeaturedImageURL($child->ID, 'medium', 0)); ?>" loading="lazy" decoding="async" alt=""></div>
+                <div class="child-card__title"><?=$child->post_title; ?></div>
+                <div class="child-card__text"><?=$child->post_excerpt; ?></div>
             </a>
         </div>
     <?php }
@@ -648,10 +647,10 @@ function Header_Hero($id) {
     }
 
     ?>
-        <div class="header-hero-image header-<?php echo $className; ?>" style="<?php echo $featuredImage; ?>" data-rate="10">
+        <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" data-rate="10">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
-            <div class="header-hero-caption"><?php echo $attachmentTitle; ?></div>
+            <div class="header-hero-caption"><?=$attachmentTitle; ?></div>
         </div>
     <?php
 }
@@ -725,23 +724,23 @@ function attachment_page_image($id) {
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+	<li <?=comment_class(); ?> id="comment-<?=comment_ID() ?>">
         <div class="comment-content" role="comment">
 			<header class="comment-header">
                 <span class="comment-avatar hidden">
                     <figure class="alignleft" aria-label="Authors Avatar">
-                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+                        <?=get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
                     </figure>
                 </span>
                 <span class="comment-author" rel="author"><?php printf(__('%s'), get_comment_author()); ?></span>
-                <span class="comment-metadata"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get the link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time></span>
-                <span class="comment-reply"><?php get_comment_reply_link( __( 'Reply', 'textdomain' ), '', '' ); ?></span> 
+                <span class="comment-metadata"><a href="<?=esc_url(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" aria-label="Get the link to this comment">#</a> <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time></span>
+                <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'textdomain' ), '', '' ); ?></span> 
 			</header>
             <?php if ($comment->comment_approved == '0') : ?>
                 <div class="comment-moderation"><?php _e('⚠️ Your comment is awaiting moderation.'); ?></div>
             <?php endif; ?>
-            <div class="comment-text"><?php comment_text(); ?></div>
-            <div class="comment-edit"><?php edit_comment_link( __( 'Edit Comment', 'textdomain' ), '', '' ); ?></div>
+            <div class="comment-text"><?=comment_text(); ?></div>
+            <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'textdomain' ), '', '' ); ?></div>
         </div>
     </li>
 <?php
@@ -775,11 +774,11 @@ function blog_post_share() {
     );
 ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?php echo $social_links['twitter']; ?>" class="twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
-        <li><a href="<?php echo $social_links['facebook']; ?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?php echo $social_links['linkedin']; ?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?php echo $social_links['pinterest']; ?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>
-        <li><a href="<?php echo $social_links['reddit']; ?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['twitter']; ?>" class="twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
+        <li><a href="<?=$social_links['facebook']; ?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['linkedin']; ?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['pinterest']; ?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>
+        <li><a href="<?=$social_links['reddit']; ?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
     </ul>
 <?php
 }
@@ -856,28 +855,28 @@ function addSchemaMetaData() {
     "@type": "NewsArticle",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "<?php the_permalink(); ?>"
+        "@id": "<?=the_permalink(); ?>"
     },
-    "headline": "<?php SEO_CharSwap(wp_title(null, true, 'right')); ?>",
+    "headline": "<?=SEO_CharSwap(wp_title(null, true, 'right')); ?>",
     "image": [
-        "<?php echo SEO_Image(get_the_id()); ?>"
+        "<?=SEO_Image(get_the_id()); ?>"
     ],
-    "datePublished": "<?php printf(get_the_date('c')); ?>",
-    "description": "<?php echo SEO_Excerpt(get_the_id()); ?>",
-    "articleBody": "<?php echo SEO_Excerpt(get_the_id()); ?>",
-    "articleSection": "<?php echo get_the_category()[0]->name; ?>",
-    "keywords": "<?php echo get_the_tags()[0]->name; ?>",
-    "name": "<?php SEO_CharSwap(wp_title(null, true, 'right')); ?>",
+    "datePublished": "<?=get_the_date('c'); ?>",
+    "description": "<?=SEO_Excerpt(get_the_id()); ?>",
+    "articleBody": "<?=SEO_Excerpt(get_the_id()); ?>",
+    "articleSection": "<?=get_the_category()[0]->name; ?>",
+    "keywords": "<?=get_the_tags()[0]->name; ?>",
+    "name": "<?=SEO_CharSwap(wp_title(null, true, 'right')); ?>",
     "author": {
         "@type": "Person",
-        "name": "<?php get_the_author_meta('id'); ?>"
+        "name": "<?=get_the_author_meta('id'); ?>"
     },
     "publisher": {
         "@type": "Organization",
-        "name": "<?php bloginfo('name'); ?>",
+        "name": "<?=bloginfo('name'); ?>",
         "logo": {
             "@type": "ImageObject",
-            "url": "<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]; ?>"
+            "url": "<?=wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]; ?>"
         }
     }
 }

@@ -1,12 +1,12 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-image <?php echo get_page_class(); ?>" id="main-content" role="main">
+<main class="page-main page-image <?=get_page_class(); ?>" id="main-content" role="main">
     <div class="page-content width-full">
 
     <?php while ( have_posts() ) : the_post(); // Display selected media ?>
 
-        <article <?php post_class(); ?> id="<?php echo $post->post_name; ?>" itemscope itemtype="http://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
                 <h1 class="page-title" itemprop="name"><?=the_title(); ?></h1>
                 <div class="wp-block-image">

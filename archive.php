@@ -38,7 +38,7 @@
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><b><?=user_level(get_the_author_meta( 'user_level' )); ?> – <?php printf("%s Posts", number_format_i18n(get_the_author_posts())); ?></b></p>
+            <p class="author-bio-meta"><b><?=user_level(get_the_author_meta( 'user_level' )); ?> – <?=number_format_i18n(get_the_author_posts()); ?> Posts</b></p>
             <p class="author-bio-about"><?=nl2br($curauth->description); ?></p>
             <p class="author-bio-contact">
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author">LinkedIn</a> | <?php endif; ?>

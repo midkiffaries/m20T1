@@ -1,10 +1,29 @@
 # Changes to m20T1
 
+### 1.3.0 Live (March 28, 2023)
+
+* Included a few more features, such as: Page load timer in the footer and hero image caption and link.
+* More code clean up.
+
+### 1.2.1 Live (Febuary 16, 2023)
+
+* Fixed/removed code causing issues with PHP 8.x. Fixed a number of other small bugs.
+
+### 1.2.0 Live (Febuary 15, 2023)
+
+* Added SEO Excerpt and Image Thumbnail columns to the Posts and Pages sections.
+
+### 1.1.0 Live (January 11, 2023)
+
+* Made a lot of adjustments to the code since launching the live site.
+
 ### 1.0.0 Live (November 14, 2022)
+
 * This is the live release that is now being used on my personal website. As such I consider this theme largely complete.
 * Code clean up.
 
 ### 1.0 Beta 1 (August 10, 2022)
+
 * Implemented more WordPress features.
 * More code clean up.
 

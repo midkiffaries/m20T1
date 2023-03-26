@@ -294,7 +294,7 @@ add_filter( 'get_custom_logo', function(){
     }
 });
 
-// Add addition file types to be uploaded to the media library
+// Add addition file types uploadable to the media library
 function add_custom_mime_types( $mimes ) {
     $mimes['svg']  = 'image/svg+xml';
     $mimes['svgz'] = 'image/svg+xml';
@@ -506,11 +506,11 @@ function post_separator() {
     return '<span class="entry-separator">' . POST_SEPARATOR . '</span>';
 }
 
-// Append the proper size units to a file size 
-function file_units($file) {
+// Append the proper size units to a numerical file size 
+function file_units($filesize) {
     $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB');
-	if (file_exists($file)) {
-        return round($file/pow(1024, ($i = floor(log($file, 1024)))), 2) . $filesizeunits[$i];
+	if ($filesize) {
+        return round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 2) . $filesizeunits[$i];
     } else {
         return 'N/A';
     }
@@ -518,13 +518,18 @@ function file_units($file) {
 
 // Get the the image information and file size
 function image_metadata($filename) {
-    $size = file_units(wp_filesize($filename));
+    $filesize = file_units(wp_filesize(get_filepath($filename)));
     if (@is_array(getimagesize($filename))) {
         list($width, $height, $type, $attr) = getimagesize($filename);
-        return "File: " . image_type_to_mime_type($type) . " – Dimensions: " . $width . "x" . $height . "px – Size: " . $size;
+        return "File: " . image_type_to_mime_type($type) . " – Dimensions: " . $width . "x" . $height . "px – Size: " . $filesize;
     } else {
-        return "File: document – Size: " . $size;
+        return "File: document – Size: " . $filesize;
     }
+}
+
+// Get the full file path on the server from the file's URI
+function get_filepath($fileurl){
+    return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
 }
 
 
@@ -773,6 +778,7 @@ function blog_post_share() {
         'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . urlencode(get_the_title()) . "&summary=" . urlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
         'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(SEO_Image(get_the_id())) . "&description=" . urlencode(get_the_excerpt()),
         'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),
+        //'email'     => "mailto:?subject=" . urlencode(get_the_title()) . "&body=" . urlencode(get_the_title()) . " | " . esc_url(get_the_permalink()),
     );
 ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">

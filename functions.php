@@ -204,8 +204,9 @@ add_action( 'init', function(){
 add_action( 'wp_head', function(){
 ?>
 <meta name="title" content="<?=bloginfo('name'); ?>">
-<meta name="author" content="Ted Balmer | MarchTwenty.com">
-<link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url() )); ?>">
+<meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
+<meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>">
+<link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url())); ?>">
 <link rel="pingback" href="<?=bloginfo('pingback_url'); ?>">
 <link rel="Siteuri" href="<?=home_url(); ?>/" id="SiteURI">
 <meta name="application-name" content="<?=bloginfo('name'); ?>">
@@ -870,7 +871,7 @@ function addSchemaMetaData() {
     "name": "<?=SEO_CharSwap(wp_title(null, true, 'right')); ?>",
     "author": {
         "@type": "Person",
-        "name": "<?=get_the_author_meta('id'); ?>"
+        "name": "<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>"
     },
     "publisher": {
         "@type": "Organization",

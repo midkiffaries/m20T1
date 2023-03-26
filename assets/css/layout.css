@@ -24,6 +24,7 @@ Base WordPress Page Styling
 	--reddit-color: #ff4500;
 }
 
+
 /************************ 
 Icon Fonts Styling
 ************************/
@@ -497,7 +498,7 @@ Single Blog Post Styling (single)
 
 
 /*********************************** 
-Blog Post Styling (index/home, archives)
+Blog Post Styling - index/home/archives
 ************************************/
 
 .entry-header {
@@ -731,7 +732,7 @@ img.wp-smiley, img.emoji {
 	padding: 0 !important;
 }
 
-/* WP Classes */
+/* WordPress Editor Classes */
 .alignright {
 	float: right;
 }
@@ -842,7 +843,7 @@ figure > a img[srcset] {
 
 
 /************************ 
-Page Specific Styling
+Specific Page Styling
 ************************/
 
 /* Page Title */

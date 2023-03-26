@@ -3,7 +3,7 @@
 ### 1.3.0 Live (March 28, 2023)
 
 * Included a few more features, such as: Page load timer in the footer and hero image caption and link.
-* More code clean up.
+* More code clean up and bug fixes.
 
 ### 1.2.1 Live (Febuary 16, 2023)
 

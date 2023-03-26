@@ -510,7 +510,7 @@ function post_separator() {
 function file_units($filesize) {
     $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB');
 	if ($filesize) {
-        return round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 2) . $filesizeunits[$i];
+        return round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 1) . $filesizeunits[$i];
     } else {
         return 'N/A';
     }

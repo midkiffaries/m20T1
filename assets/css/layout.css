@@ -438,11 +438,11 @@ Single Blog Post Styling (single)
 	margin: 0.5em auto;
 }
 
-.single-entry-sticky:not(:empty) {
+.single-entry-sticky {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 1.4rem;
-	margin: -2.7em 0.1em 0.5em;
+	margin-top: -2em;
 	position: absolute;
 	padding: 4px 10px;
 	background-color: #ddd;
@@ -501,6 +501,12 @@ Single Blog Post Styling (single)
 Blog Post Styling - index/home/archives
 ************************************/
 
+.blog-roll .sticky {
+	background-color: #eee;
+	padding: 0.8em;
+	border-radius: 0.3em;
+}
+
 .entry-header {
     display: inline-block;
     width: calc(100% - 250px - 1.5em);
@@ -510,14 +516,14 @@ Blog Post Styling - index/home/archives
 	margin-top: -1.5em;
 }
 
-.entry-sticky:not(:empty) {
-	color: #111;
+.entry-sticky {
+	color: #eee;
 	font-size: 1.2rem;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 800;
 	padding: 10px;
 	text-align: center;
-	text-shadow: 1px 1px 0 #fff;
+	text-shadow: 1px 1px 0 #000;
 }
 
 .entry-readmore a {

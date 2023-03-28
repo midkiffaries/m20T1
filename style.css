@@ -105,7 +105,7 @@ Typography for the page body
 	}
 }
 
-/* Subtitle */
+/* Page Subtitle */
 .archive-header-container .subtitle,
 .page-subtitle,
 .blog-page-title p {
@@ -115,16 +115,29 @@ Typography for the page body
 	margin: -0.5em 0.5em 1em !important;
 }
 
-.single-entry-sticky:not(:empty) {
+.page-subtitle {
+	margin: 0.5em 0.2em 0 !important;
+}
+
+/* Sticky/Featured article callout */
+.single-entry-sticky {
 	border-radius: 0.5em;
 	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.7);
 	background-color: var(--tertiary-color);
 }
 
-.page-subtitle {
-	margin: 0.5em 0.2em 0 !important;
+.entry-sticky {
+	color: var(--tertiary-color);
 }
 
+.blog-roll .sticky {
+	background-image: radial-gradient(circle at 47% 98%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 53% 90%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 17% 34%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 85% 36%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 22% 21%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 99% 30%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 82% 84%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 62% 49%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 85% 14%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 89% 22%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 37% 65%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 57% 27%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 95% 91%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 85% 34%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 7% 65%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 69% 41%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 33% 2%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 57% 84%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 80% 86%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 45%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),linear-gradient(45deg, rgb(64,165,255),rgb(17,67,111));
+	color: #fff;
+}
+
+.blog-roll .sticky a[href] {
+	color: #fff;
+}
 
 /************************************
 Basic WordPress Editor Styling
@@ -137,8 +150,6 @@ Basic WordPress Editor Styling
 .the-content h2:not(.page-subtitle):not(.has-text-align-center) {
 	font-weight: 600;
 	margin-top: 0.8em;
-	/* border-bottom: 3px solid rgba(0,0,0,0.03);
-	border-radius: 0 0 0 9px; */
 }
 
 .the-content h3 {

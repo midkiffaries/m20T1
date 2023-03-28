@@ -16,7 +16,7 @@
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
             <div class="post-container">
                 <a href="<?php the_permalink(); ?>" rel="bookmark" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
-                    <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
+                    <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured Article</div><?php endif; ?>
                 </a>
                 <header class="entry-header">
                     <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></div>

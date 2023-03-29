@@ -230,6 +230,7 @@ add_action( 'wp_head', function(){
 <meta property="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta property="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
 <?php
+//echo addSchemaMetaData();
 });
 
 // Append to the top of the page body tag

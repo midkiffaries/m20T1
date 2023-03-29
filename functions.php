@@ -230,13 +230,12 @@ add_action( 'wp_head', function(){
 <meta property="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta property="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
 <?php
-//echo addSchemaMetaData();
 });
 
 // Append to the top of the page body tag
-//add_action( 'wp_body_open', function(){
-
-//});
+add_action( 'wp_body_open', function(){
+// Stuff
+});
 
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
@@ -296,15 +295,71 @@ add_filter( 'get_custom_logo', function(){
 });
 
 // Add addition file types uploadable to the media library
-function add_custom_mime_types( $mimes ) {
+add_filter( 'upload_mimes', function($mimes) {
     $mimes['svg']  = 'image/svg+xml';
     $mimes['svgz'] = 'image/svg+xml';
     $mimes['html'] = 'text/html';
     $mimes['txt']  = 'text/plain';
     $mimes['webp'] = 'image/webp';
     return $mimes;
+});
+
+
+//////////////////////////////////////
+// Additional columns for the editor
+//////////////////////////////////////
+
+// Add Featured Image column
+function AddImageColumn($columns) {
+    $columns['thumbnail'] = __('Image');
+    return $columns;
 }
-add_filter( 'upload_mimes', 'add_custom_mime_types' );
+
+// Add Featured Image values
+function AddImageValue($column_name, $post_id) {
+	if ( $column_name == 'thumbnail' ) {
+		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+		if ( $post_thumbnail_id ) {
+			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
+            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="sync" alt="">';
+		} else {
+            echo __('—');
+        }
+	}
+}
+
+// Add Image Column to Posts
+add_filter( 'manage_posts_columns', 'AddImageColumn' );
+add_action( 'manage_posts_custom_column', 'AddImageValue', 10, 2 );
+
+// Add Image Column to Pages
+add_filter( 'manage_pages_columns', 'AddImageColumn' );
+add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
+
+// Add SEO Excerpt column
+function AddExcerptColumn($columns) {
+    $columns['seo_excerpt'] = __('SEO Excerpt');
+    return $columns;
+}
+
+// Add SEO Excerpt values
+function AddExcerptValue($column_name, $post_id) {
+    if ( $column_name == 'seo_excerpt') {
+        if ( $post_id ) {
+            echo SEO_Excerpt($post_id);
+        } else {
+            echo __('—');
+        }
+    }
+}
+
+// Add SEO Excerpt Column to Posts
+add_filter( 'manage_posts_columns', 'AddExcerptColumn' );
+add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
+
+// Add SEO Excerpt Column to Pages
+add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
+add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
 
 
 /////////////////////////////
@@ -772,14 +827,13 @@ function get_page_class() {
 
 // List social sharing links on each blog post
 function blog_post_share() {
-    // Social media links
-    $social_links = array(
+    $social_links = array( // Social media links
         'facebook'  => "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink()),
         'twitter'   => "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink()),
-        'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . urlencode(get_the_title()) . "&summary=" . urlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
-        'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(SEO_Image(get_the_id())) . "&description=" . urlencode(get_the_excerpt()),
+        'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . rawurlencode(get_the_title()) . "&summary=" . rawurlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
+        'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(SEO_Image(get_the_id())) . "&description=" . rawurlencode(get_the_excerpt()),
         'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),
-        //'email'     => "mailto:?subject=" . urlencode(get_the_title()) . "&body=" . urlencode(get_the_title()) . " | " . esc_url(get_the_permalink()),
+        'email'     => "mailto:?subject=" . rawurlencode(get_the_title()) . "&body=" . rawurlencode(get_the_title()) . " | " . esc_url(get_the_permalink()),
     );
 ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
@@ -788,107 +842,9 @@ function blog_post_share() {
         <li><a href="<?=$social_links['linkedin']; ?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?=$social_links['pinterest']; ?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>
         <li><a href="<?=$social_links['reddit']; ?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['email']; ?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank">Email</a></li>
     </ul>
 <?php
 }
 
 
-//////////////////////////////////////
-// Additional Columns for the editor
-//////////////////////////////////////
-
-// Add Featured Image column
-function AddImageColumn($columns) {
-    $columns['thumbnail'] = __('Image');
-    return $columns;
-}
-
-// Add Featured Image values
-function AddImageValue($column_name, $post_id) {
-	if ( $column_name == 'thumbnail' ) {
-		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
-		if ( $post_thumbnail_id ) {
-			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
-            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="sync" alt="">';
-		} else {
-            echo __('—');
-        }
-	}
-}
-
-// Add Image Column to Posts
-add_filter( 'manage_posts_columns', 'AddImageColumn' );
-add_action( 'manage_posts_custom_column', 'AddImageValue', 10, 2 );
-
-// Add Image Column to Pages
-add_filter( 'manage_pages_columns', 'AddImageColumn' );
-add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
-
-
-// Add SEO Excerpt column
-function AddExcerptColumn($columns) {
-    $columns['seo_excerpt'] = __('SEO Excerpt');
-    return $columns;
-}
-
-// Add SEO Excerpt values
-function AddExcerptValue($column_name, $post_id) {
-    if ( $column_name == 'seo_excerpt') {
-        if ( $post_id ) {
-            echo SEO_Excerpt($post_id);
-        } else {
-            echo __('—');
-        }
-    }
-}
-
-// Add SEO Excerpt Column to Posts
-add_filter( 'manage_posts_columns', 'AddExcerptColumn' );
-add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
-
-// Add SEO Excerpt Column to Pages
-add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
-add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
-
-
-//////////////////////////////////////
-// Schema meta data
-//////////////////////////////////////
-
-// Display schemea data under a script tag
-function addSchemaMetaData() {
-?>
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "<?=the_permalink(); ?>"
-    },
-    "headline": "<?=SEO_CharSwap(wp_title(null, true, 'right')); ?>",
-    "image": [
-        "<?=SEO_Image(get_the_id()); ?>"
-    ],
-    "datePublished": "<?=get_the_date('c'); ?>",
-    "description": "<?=SEO_Excerpt(get_the_id()); ?>",
-    "articleBody": "<?=SEO_Excerpt(get_the_id()); ?>",
-    "articleSection": "<?=get_the_category()[0]->name; ?>",
-    "keywords": "<?=get_the_tags()[0]->name; ?>",
-    "name": "<?=SEO_CharSwap(wp_title(null, true, 'right')); ?>",
-    "author": {
-        "@type": "Person",
-        "name": "<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "<?=bloginfo('name'); ?>",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "<?=wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]; ?>"
-        }
-    }
-}
-</script>
-<?php
-}

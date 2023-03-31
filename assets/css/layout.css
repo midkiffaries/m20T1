@@ -1431,6 +1431,7 @@ Search Modal Styling
 	background: none;
 	box-shadow: none;
 	padding: 0;
+	overflow-y: hidden;
 }
 
 .dialog-search .search-title {

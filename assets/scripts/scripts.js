@@ -691,7 +691,6 @@ function HtmlModal(c, v) {
 	}
 	.dialog-header {
 		max-width: 70vw;
-		max-height: calc(85vh - 15vh);
 		padding: 1.1em;
 		margin: 0 auto 0 auto;
         position: relative;
@@ -699,7 +698,7 @@ function HtmlModal(c, v) {
 	.dialog-content {
 		max-width: 70vw;
 		min-height: 9em;
-		max-height: calc(85vh - 15vh);
+		max-height: 85vh;
 		margin: 1vh auto 0 auto;
 		padding: 1em;
 		background-color: #fdfdfd;

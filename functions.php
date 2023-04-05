@@ -713,7 +713,7 @@ function Header_Hero($id) {
         <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" data-rate="10">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
-            <div class="header-hero-caption"><?=$attachmentTitle; ?></div>
+            <div class="header-hero-caption" role="caption"><?=$attachmentTitle; ?></div>
         </div>
     <?php
 }

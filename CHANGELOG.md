@@ -2,7 +2,7 @@
 
 ### 1.3.1 Live (April 5, 2023)
 
-* Bug fixes and minor accessability enhancements.
+* Bug fixes and minor accessibility enhancements.
 
 ### 1.3.0 Live (March 28, 2023)
 

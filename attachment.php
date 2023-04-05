@@ -42,7 +42,7 @@
             </div>
         </section>
 
-        <section class="image-copyright">
+        <section class="image-copyright" role="note">
             <p>Media and images may be subject to copyright. <a href="https://www.copyright.gov/" rel="noopener noreferrer" target="_blank">Learn More</a></p>
         </section>
 

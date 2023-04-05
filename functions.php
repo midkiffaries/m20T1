@@ -187,7 +187,7 @@ add_action( 'init', function(){
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 
+        'rewrite' => array( 
             'slug' => esc_url(ADDITIONAL_POST_TYPE), 
         ),
         'capability_type'    => 'post',

@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.3.1 Live (April 5, 2023)
+
+* Bug fixes and minor accessability enhancements.
+
 ### 1.3.0 Live (March 28, 2023)
 
 * Included a few more features, such as: Page load timer in the footer and hero image caption and link.

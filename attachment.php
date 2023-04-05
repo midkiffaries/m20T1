@@ -9,12 +9,12 @@
         <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="post-container">
                 <h1 class="page-title" itemprop="name"><?=the_title(); ?></h1>
-                <div class="wp-block-image">
+                <div class="wp-block-image" role="figure">
                     <div class="image-attachment"><a href="<?=wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document">
                         <?=attachment_page_image(get_the_ID()); ?>
                     </a></div>
-                    <div class="image-caption"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
-                </dic>
+                    <div class="image-caption" role="caption"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
+                </div>
                 <div class="image-description" itemprop="description">
                     <?=the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>

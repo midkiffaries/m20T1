@@ -18,7 +18,7 @@
                 <div class="image-description" itemprop="description">
                     <?=the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
-                <p class="image-info">
+                <p class="image-info" role="note">
                     <span class="image-date" itemprop="uploadDate">Uploaded on <time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <br>

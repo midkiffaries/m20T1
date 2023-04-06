@@ -903,7 +903,7 @@ Specific Page Styling
 	background-size: 1em;
 }
 
-.wp-social-link .page-about [href^="https://unsplash.com"]::before {
+.page-about .wp-social-link [href^="https://unsplash.com"]::before {
 	filter: brightness(0);
 }
 

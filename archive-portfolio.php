@@ -26,9 +26,7 @@
                     <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
                     <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark"><?=the_title(); ?></a></h2>
                     <div class="entry-metadata">
-                        <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
-                        <span class="entry-comments"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-author">By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="description">

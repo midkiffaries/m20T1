@@ -2,7 +2,7 @@
 
 ### 1.3.2 Live (April 16, 2023)
 
-* Adjustments to the additional post type content (Portfolio) and a unique page to display those post types.
+* Adjustments to the additional post type content (Portfolio) and add a unique page to display those post types.
 
 ### 1.3.1 Live (April 5, 2023)
 

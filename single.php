@@ -6,7 +6,7 @@
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); // Single post ?>
 
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/NewsArticle">
+    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
         <div class="post-container">
             <header class="single-entry-header">
                 <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="single-entry-sticky">Featured Article</div><?php endif; ?>
@@ -63,7 +63,7 @@
 
     <?php endwhile; else : // If post doesn't exist ?>
 
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/NewsArticle">
+    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
         <div class="post-container">
             <h1 class="single-entry-title" itemprop="title">Not Found</h1>
             <p>Sorry, no posts matched your criteria. Try and search for it?</p>

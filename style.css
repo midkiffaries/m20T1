@@ -106,7 +106,7 @@ Typography for the page body
 }
 
 /* Page Subtitle */
-.archive-header-container .subtitle,
+.subtitle,
 .page-subtitle,
 .blog-page-title p {
 	font-family: var(--font-secondary);

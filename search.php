@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <article class="search-results" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="search-results" itemscope itemtype="https://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // List posts and pages ?>
 

@@ -6,7 +6,7 @@
 
     <?php while ( have_posts() ) : the_post(); // Display selected media ?>
 
-        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="http://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
                 <h1 class="page-title" itemprop="name"><?=the_title(); ?></h1>
                 <div class="wp-block-image" role="figure">

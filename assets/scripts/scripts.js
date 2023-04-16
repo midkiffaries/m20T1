@@ -113,8 +113,8 @@ document.addEventListener("keyup", (e) => {
         l = youtube.length;
 
     for (let i = 0; i < l; i++) {
-        let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`;
-        let image = new Image();
+        let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`,
+            image = new Image();
         image.src = source;
         image.alt = "Play YouTube video";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));

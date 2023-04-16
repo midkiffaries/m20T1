@@ -51,7 +51,7 @@
     </section>
     <?php endif; ?>
 
-    <article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="archive-page" itemscope itemtype="https://schema.org/NewsArticle">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
     <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
@@ -89,9 +89,9 @@
 
     <?php else : // If no results ?>
 
-    <article class="archive-page" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="archive-page" itemscope itemtype="https://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
-            <h1 class="entry-title">
+            <h1 class="page-title">
             <?php 
             if ( is_category() ) { // By category
                 printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));

@@ -300,11 +300,13 @@ add_filter( 'get_custom_logo', function(){
 
 // Add addition file types uploadable to the media library
 add_filter( 'upload_mimes', function($mimes) {
-    $mimes['svg']  = 'image/svg+xml';
-    $mimes['svgz'] = 'image/svg+xml';
-    $mimes['html'] = 'text/html';
-    $mimes['txt']  = 'text/plain';
-    $mimes['webp'] = 'image/webp';
+    $mimes['svg']   = 'image/svg+xml';
+    $mimes['svgz']  = 'image/svg+xml';
+    $mimes['html']  = 'text/html';
+    $mimes['txt']   = 'text/plain';
+    $mimes['vcf']   = 'text/vcard';
+    $mimes['vcard'] = 'text/vcard';
+    $mimes['webp']  = 'image/webp';
     return $mimes;
 });
 
@@ -704,13 +706,13 @@ function Header_Hero($id) {
     } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (None)
         $className = "noimage";
         $hasFeaturedImage = false;
-    } elseif ( is_page() ) { // Basic Page and privacy-policy header (Use Featured Image)
+    } elseif ( is_page() ) { // Single Page header (Use featured image)
         $className = "single-page";
         $hasFeaturedImage = true;
-    } elseif ( is_single() ) { // Single blog post (Use Featured Image)
+    } elseif ( is_single() ) { // Single blog post (Use featured image)
         $className = "single-post";
         $hasFeaturedImage = true;
-    } else { // Blog Page, search page and archives header (Use default Image)
+    } else { // Blog Page, search page and archives header (Use default image)
         $className = "noimage";
         $hasFeaturedImage = false;
     }

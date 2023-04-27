@@ -300,13 +300,13 @@ add_filter( 'get_custom_logo', function(){
 
 // Add addition file types uploadable to the media library
 add_filter( 'upload_mimes', function($mimes) {
-    $mimes['svg']   = 'image/svg+xml';
-    $mimes['svgz']  = 'image/svg+xml';
-    $mimes['html']  = 'text/html';
-    $mimes['txt']   = 'text/plain';
-    $mimes['vcf']   = 'text/vcard';
-    $mimes['vcard'] = 'text/vcard';
-    $mimes['webp']  = 'image/webp';
+    $mimes['svg']   = 'image/svg+xml'; // SVG image
+    $mimes['svgz']  = 'image/svg+xml'; // SVG image
+    $mimes['html']  = 'text/html'; // HTML document
+    $mimes['txt']   = 'text/plain'; // TXT document
+    $mimes['vcf']   = 'text/vcard'; // vCard doc
+    $mimes['vcard'] = 'text/vcard'; // vCard doc
+    $mimes['webp']  = 'image/webp'; // webP image
     return $mimes;
 });
 

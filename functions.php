@@ -304,9 +304,11 @@ add_filter( 'upload_mimes', function($mimes) {
     $mimes['svgz']  = 'image/svg+xml'; // SVG image
     $mimes['html']  = 'text/html'; // HTML document
     $mimes['txt']   = 'text/plain'; // TXT document
-    $mimes['vcf']   = 'text/vcard'; // vCard doc
-    $mimes['vcard'] = 'text/vcard'; // vCard doc
-    $mimes['webp']  = 'image/webp'; // webP image
+    $mimes['vcf']   = 'text/vcard'; // vCard data
+    $mimes['vcard'] = 'text/vcard'; // vCard data
+    $mimes['ical']  = 'text/calendar'; // iCalendar data
+    $mimes['ics']   = 'text/calendar'; // iCalendar data
+    $mimes['webp']  = 'image/webp'; // WebP image
     return $mimes;
 });
 

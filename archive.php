@@ -9,7 +9,7 @@
     
     <section class="archive-header" id="archive-page">
         <div class="archive-header-container">
-            <h1 class="page-title" itemprop="name">
+            <h1 class="page-title" itemprop="name author">
                 <?php $post = $posts[0]; ?>
                 <?php /* Category */ if (is_category()) single_cat_title(); ?>
                 <?php /* Tags */ if (is_tag()) printf("<b>#</b>") . single_tag_title(); ?>
@@ -19,7 +19,7 @@
                 <?php /* Author */ if (is_author()) printf($curauth->display_name); ?>
                 <?php /* Paged */ if (isset($_GET['paged']) && !empty($_GET['paged'])) printf("Blog Archives"); ?>
             </h1>
-            <div class="subtitle">
+            <div class="subtitle" itemprop="about">
                 <?php /* Category */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
                 <?php /* Tags */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
                 <?php /* Daily */ if (is_day()) printf("Posts from this date"); ?>
@@ -31,21 +31,21 @@
     </section>
 
     <?php if (is_author()) : // Display Author Page for when showing by author ?>
-    <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
+    <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" itemscope itemtype="https://schema.org/Person">
         <div class="author-container">
             <div class="author-avatar">
-                <figure class="alignleft">
+                <figure class="alignleft" itemprop="image">
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
             <p class="author-bio-meta"><b><?=user_level(get_the_author_meta( 'user_level' )); ?> – <?=number_format_i18n(get_the_author_posts()); ?> Posts</b></p>
-            <p class="author-bio-about"><?=nl2br($curauth->description); ?></p>
+            <p class="author-bio-about" itemprop="description"><?=nl2br($curauth->description); ?></p>
             <p class="author-bio-contact">
-                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author">LinkedIn</a> | <?php endif; ?>
-                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author">Twitter</a> | <?php endif; ?>
-                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author">Facebook</a> | <?php endif; ?>
-                <?php if ($curauth->instagram) : ?><a href="<?=esc_url($curauth->instagram); ?>" rel="author">Instagram</a> | <?php endif; ?>
-                <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author">Website</a><?php endif; ?>
+                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="url">LinkedIn</a> | <?php endif; ?>
+                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author" itemprop="url">Twitter</a> | <?php endif; ?>
+                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author" itemprop="url">Facebook</a> | <?php endif; ?>
+                <?php if ($curauth->instagram) : ?><a href="<?=esc_url($curauth->instagram); ?>" rel="author" itemprop="url">Instagram</a> | <?php endif; ?>
+                <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author" itemprop="url">Website</a><?php endif; ?>
             </p>
         </div>
     </section>
@@ -64,8 +64,8 @@
                     <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark"><?=the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
-                        <span class="entry-comments"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
+                        <span class="entry-comments" itemprop="commentcount"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="description">
@@ -91,7 +91,7 @@
 
     <article class="archive-page" itemscope itemtype="https://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
-            <h1 class="page-title">
+            <h1 class="page-title" itemprop="name">
             <?php 
             if ( is_category() ) { // By category
                 printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));
@@ -104,7 +104,7 @@
             }
             ?>
             </h1>
-            <p>Would you like to try a search to find what you are looking for?</p>
+            <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
             <?php get_search_form('archive'); // Search Form ?>
         </div>
     </article>

@@ -27,9 +27,9 @@
                         <span class="entry-author"><?=post_separator(); ?> By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>
                 </header>
-                <div class="the-content content-excerpt" itemprop="description">
-                    <img class="entry-square-thumbnail" src="<?=FeaturedImageURL(get_the_ID(), 'thumbnail', false); ?>" alt="">
-                    <p><?=shorten_the_content($post->post_content); ?></p>
+                <div class="the-content content-excerpt">
+                    <img class="entry-square-thumbnail" src="<?=FeaturedImageURL(get_the_ID(), 'thumbnail', false); ?>" alt="" itemprop="image">
+                    <p itemprop="text"><?=shorten_the_content($post->post_content); ?></p>
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>
                 </div>
                 <footer class="entry-footer hidden">
@@ -52,16 +52,16 @@
 
     <section class="search-page-form" id="search-page">
         <div>
-            <h1 class="page-title" itemprop="title">Your search netted <strong><?=SearchCount($s); ?></strong> result(s)</h1>
+            <h1 class="page-title" itemprop="name">Your search netted <strong><?=SearchCount($s); ?></strong> result(s)</h1>
             <?php get_search_form('search'); // Search form ?>
         </div>
     </section>
 
     <article class="search-results" itemscope itemtype="http://schema.org/NewsArticle">
-        <div class="the-content aligncenter">
+        <div class="the-content aligncenter" itemprop="text">
             <p>The search query of <strong><?=esc_attr(get_search_query()); ?></strong> came up empty.</p>
             <p>If it will make you feel better, this probably happens to Google too.</p>
-            <div class="page-search-image">
+            <div class="page-search-image" itemprop="image">
                 <?=SEARCH_ERROR_IMAGE; ?>
             </div>
         </div>

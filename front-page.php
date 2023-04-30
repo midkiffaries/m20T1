@@ -10,7 +10,7 @@
         <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div>
                 <h1 class="page-title hidden" itemprop="name" aria-hidden="true"><?php the_title(); ?></h1>
-                <div class="the-content" itemprop="description">
+                <div class="the-content" itemprop="text">
                     <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
 
                 </div>

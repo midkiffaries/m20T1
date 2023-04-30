@@ -1,5 +1,14 @@
 # Changes to m20T1
 
+### 1.3.4 Live (April 30, 2023)
+
+* Adjustments to the social sharing in the header metadata.
+* Adjustment and additions to the microcode in the HTML.
+
+### 1.3.3 Live (April 29, 2023)
+
+* Minor bug fixes and inclusion of vCard and iCalendar media library upload support.
+
 ### 1.3.2 Live (April 16, 2023)
 
 * Adjustments to the additional post type content (Portfolio) and added a unique page to display those post types.

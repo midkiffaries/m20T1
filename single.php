@@ -15,10 +15,10 @@
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
                     <span class="single-entry-author"><?=post_separator(); ?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                    <span class="single-entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
+                    <span class="single-entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
                 </div>
             </header>
-            <div class="the-content single-entry-content" itemprop="description">
+            <div class="the-content single-entry-content" itemprop="text">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <div class="entry-last-updated">
@@ -41,15 +41,15 @@
     </section>
 
     <aside id="singlepost-widgets" class="page-sidebar singlepost-widgets width-full clearfix">
-        <section class="widget widget_block single-author-bio" aria-label="Article Author Bio">
-            <h2 class="author-bio-title" itemprop="author">About the Author</h2>
+        <section class="widget widget_block single-author-bio" aria-label="Article Author Bio" itemscope itemtype="https://schema.org/Person">
+            <h2 class="author-bio-title">About the Author</h2>
             <div class="author-avatar">
-                <figure class="alignleft" aria-label="Authors Avatar">
+                <figure class="alignleft" aria-label="Authors Avatar" itemprop="image">
                     <?=get_avatar(get_the_author_meta('ID'), 64); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author."><?=get_the_author_meta( 'display_name' ); ?></a></h3>
-            <p class="author-bio-about"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
+            <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" itemprop="author name" aria-label="See more posts by this author."><?=get_the_author_meta( 'display_name' ); ?></a></h3>
+            <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">
@@ -65,8 +65,8 @@
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
         <div class="post-container">
-            <h1 class="single-entry-title" itemprop="title">Not Found</h1>
-            <p>Sorry, no posts matched your criteria. Try and search for it?</p>
+            <h1 class="single-entry-title" itemprop="name">Not Found</h1>
+            <p itemprop="text">Sorry, no posts matched your criteria. Try and search for it?</p>
             <?php get_search_form('post'); // Search Form ?>
         </div>
     </article>

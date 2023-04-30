@@ -21,8 +21,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 
 - Compatible with WordPress 6.2
 - Theme supports PHP 8.0+
-- Built with SEO performance and social media sharing in mind
-- Support for <b>theme.json</b>
+- Built with SEO performance and social media sharing in mind, including schema.org <b>microdata</b>
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom modals for alerts, confirmation and custom HTML
 - Built in blog post read time in minutes
@@ -30,8 +29,8 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
 - Unique <i>front-page</i>, <i>404</i> and <i>attachment (image)</i> pages
-- Featured image support for use as the hero/header image on posts and pages, with fallbacks
-- Support for custom WordPress editor styling
+- Featured image support for use as the hero/header image on posts and pages with a fallback image
+- Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
 - Support for <b>dark mode</b> via a built in switch
 - Built in support for an additional <i>post type</i>, default set as 'Portfolio'
 - Enabled SVG files upload to media library

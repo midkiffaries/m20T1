@@ -6,11 +6,11 @@
 
     <article class="page-404 page type-page not-found status-publish" id="page-404" itemscope itemtype="https://schema.org/NewsArticle">
         <div class="page-404-container">
-            <div class="page-404-image">
+            <div class="page-404-image" itemprop="image">
                 <?=PAGE_404_IMAGE; // Error Image ?>
             </div>
             <h1 class="page-title" itemprop="name">Page Not Found</h1>
-            <div class="content-404" itemprop="description">                
+            <div class="content-404" itemprop="text">                
                 <?=PAGE_404_CONTENT; // Error Message ?>
 
                 <?=get_search_form('error'); // Search Form ?>

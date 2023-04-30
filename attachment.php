@@ -10,12 +10,12 @@
             <div class="post-container">
                 <h1 class="page-title" itemprop="name"><?=the_title(); ?></h1>
                 <div class="wp-block-image" role="figure">
-                    <div class="image-attachment"><a href="<?=wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document">
+                    <div class="image-attachment"><a href="<?=wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document" itemprop="image">
                         <?=attachment_page_image(get_the_ID()); ?>
                     </a></div>
                     <div class="image-caption" role="caption"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </div>
-                <div class="image-description" itemprop="description">
+                <div class="image-description" itemprop="text">
                     <?=the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info" role="note">
@@ -24,7 +24,7 @@
                     <br>
                     <span class="image-category">Category: <b><?php the_category(' '); ?></b></span>
                     <br>
-                    <span class="image-filesize"><?=image_metadata(wp_get_attachment_url(get_the_ID())); ?></span>
+                    <span class="image-filesize" itemprop="size"><?=image_metadata(wp_get_attachment_url(get_the_ID())); ?></span>
                 </p>
                 <div class="image-share"><?=blog_post_share(); ?></div>
                 <div class="image-links"><i>Related Post</i><br> <a href="<?=get_permalink( get_post_parent(get_the_ID()) ); ?>"><?php if (has_post_parent(get_the_ID())) echo get_the_title( get_post_parent(get_the_ID()) ); else echo "Not attached to any posts"; ?></a></div>

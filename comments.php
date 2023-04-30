@@ -3,14 +3,14 @@
 <?php if ( post_password_required() ) : // If comments are password protected ?>
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p>🛑 <i>These comments are password protected.</i></p>
+        <p itemprop="text">🛑 <i>These comments are password protected.</i></p>
     </div>
 </section>
 <?php return; endif; ?>
 
 <?php if (have_comments()) : // If post has comments ?>
 
-<section class="comment-list" role="comments" id="Comments">
+<section class="comment-list" role="comments" id="Comments" itemscope itemtype="https://schema.org/Comments">
     <div class="comment-container">
         <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments'); ?> <small><?php comments_number('0', '1', '%'); ?></small></h2>
         <ol role="list" class="list-comments">
@@ -18,7 +18,7 @@
         </ol>
         <?php if (!comments_open()) : // If comments are closed ?>
             <div class="comments-closed">
-                <p>🚫 <i>The comments are closed for this article.</i></p>
+                <p itemprop="text">🚫 <i>The comments are closed for this article.</i></p>
             </div>
         <?php endif; ?>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p>😃 <i>Be the first to comment on this article.</i></p>
+        <p itemprop="text">😃 <i>Be the first to comment on this article.</i></p>
     </div>
 </section>
 
@@ -47,7 +47,7 @@
 
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p>🚫 <i>The comments are closed for this article.</i></p>
+        <p itemprop="text">🚫 <i>The comments are closed for this article.</i></p>
     </div>
 </section>
 

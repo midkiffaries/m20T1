@@ -299,7 +299,7 @@ add_filter( 'get_custom_logo', function(){
 });
 
 // Add addition file types uploadable to the media library
-add_filter( 'upload_mimes', function($mimes) {
+add_filter( 'upload_mimes', function($mimes){
     $mimes['svg']   = 'image/svg+xml'; // SVG image
     $mimes['svgz']  = 'image/svg+xml'; // SVG image
     $mimes['html']  = 'text/html'; // HTML document

@@ -228,11 +228,16 @@ add_action( 'wp_head', function(){
 <meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="og:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta property="og:image" content="<?=SEO_Image(get_the_id()); ?>">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?=the_permalink(); ?>">
-<meta property="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
-<meta property="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
+<!--meta property="article:publisher" content="https://www.facebook.com/ted.balmer"-->
+<meta property="article:modified_time" content="<?=get_the_date('c'); ?>">
+<meta name="twitter:card" content="summary_large_image">
+<!--meta name="twitter:site" content="@ArtOfTed"-->
+<meta name="twitter:url" content="<?=the_permalink(); ?>">
+<meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
+<meta name="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
+<meta name="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
+<meta name="twitter:label1" content="Est. reading time">
+<meta name="twitter:data1" content="<?=reading_time(); ?>">
 <?php
 });
 

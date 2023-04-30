@@ -47,7 +47,10 @@ This WordPress theme is just a pet project of mine, and I am happy to share the 
 
 ## About Me
 Follow these links to learn more about me:
-<a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a>
+<ul>
+  <li><a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a></li>
+  <li><a href="https://www.marchtwenty.com/">My Personal Website</a></li>
+</ul>
 
 <a href="https://github.com/midkiffaries/m20T1/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=midkiffaries/m20T1" />

@@ -39,6 +39,9 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 ## Note
 This theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code>, <code>editor-style.css</code>, <code>theme.json</code> and the <code>style.css</code> files.
 
+## How to use this theme
+This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section.
+
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across while working on it.
 

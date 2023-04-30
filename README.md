@@ -23,17 +23,17 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Theme supports PHP 8.0+
 - Built with SEO performance and social media sharing in mind, including schema.org <b>microdata</b>
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
-- Custom modals for alerts, confirmation and custom HTML
-- Built in blog post read time in minutes
+- Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
 - Alternate page templates with full width and sidebar support
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
 - Unique <i>front-page</i>, <i>404</i> and <i>attachment (image)</i> pages
 - Featured image support for use as the hero/header image on posts and pages with a fallback image
 - Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
-- Support for <b>dark mode</b> via a built in switch
-- Built in support for an additional <i>post type</i>, default set as 'Portfolio'
-- Enabled SVG files upload to media library
+- Support for <b>dark mode</b> page styling via a built in switch
+- Built in support for an <b>additional post type</b>, default set as "Portfolio"
+- Built in blog post read time in minutes
+- Enabled SVG, iCal and vCard files upload to media library
 
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section.

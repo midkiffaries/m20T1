@@ -46,7 +46,7 @@ This theme is configured for my personal website. I did however keep the persona
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across while working on it.
 
 ## About Me
-Follow these links to learn more about me:
+Follow these links to learn more about me and my works:
 <ul>
   <li><a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a></li>
   <li><a href="https://www.marchtwenty.com/">My Personal Website</a></li>

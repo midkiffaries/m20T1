@@ -39,14 +39,13 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section.
 
-## Note
-This theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code>, <code>editor-style.css</code>, <code>theme.json</code> and the <code>style.css</code> files.
+FYI, this theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code>, <code>editor-style.css</code>, <code>theme.json</code> and the <code>style.css</code> files. So you would need to go into those files to make necessary adjustments to the visuals.
 
 ## Disclaimer
 This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across while working on it.
 
 ## About Me
-Follow these links to learn more about me and my works:
+Follow these links to learn more about me and my work:
 <ul>
   <li><a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a></li>
   <li><a href="https://www.marchtwenty.com/">My Personal Website</a></li>

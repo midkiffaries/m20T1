@@ -228,10 +228,10 @@ add_action( 'wp_head', function(){
 <meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="og:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta property="og:image" content="<?=SEO_Image(get_the_id()); ?>">
-<!--meta property="article:publisher" content="https://www.facebook.com/ted.balmer"-->
+<meta property="article:publisher" content="<?=get_the_author_meta('facebook', get_post_field ('post_author', get_the_ID())); ?>">
 <meta property="article:modified_time" content="<?=get_the_date('c'); ?>">
 <meta name="twitter:card" content="summary_large_image">
-<!--meta name="twitter:site" content="@ArtOfTed"-->
+<meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/'); ?>">
 <meta name="twitter:url" content="<?=the_permalink(); ?>">
 <meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta name="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">

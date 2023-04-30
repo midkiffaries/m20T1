@@ -42,7 +42,7 @@ This theme is not available on the official WordPress theme library. In order to
 FYI, this theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code>, <code>editor-style.css</code>, <code>theme.json</code> and the <code>style.css</code> files. So you would need to go into those files to make necessary adjustments to the visuals.
 
 ## Disclaimer
-This WordPress theme is just a pet project of mine, and I am happy to share the code, but there really is no support other than any issues that I come across while working on it.
+This WordPress theme is just a personal pet project of mine, and I am happy to share the code, however there really is no support for it other than any issues that I come across while working on it for my personal website.
 
 ## About Me
 Follow these links to learn more about me and my work:

@@ -507,7 +507,7 @@ function menu_nav_list($menu, $id) {
         'after'           => '',
         'link_before'     => '',
         'link_after'      => '',
-        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'">%3$s</ul>',
+        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'" itemprop="name">%3$s</ul>',
         'item_spacing'    => 'preserve',
         'depth'           => 0,
         'walker'          => ''

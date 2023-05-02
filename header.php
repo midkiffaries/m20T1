@@ -16,14 +16,14 @@
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
-            <p class="header-logo" itemprop="title">
-                <a href="<?=home_url(); ?>" rel="home" itemprop="image"><?=get_custom_logo(); ?></a>
+            <p class="header-logo" itemprop="name">
+                <a href="<?=home_url(); ?>" rel="home" itemprop="url"><?=get_custom_logo(); ?></a>
             </p>
             <div class="header-breadcrumbs" itemprop="breadcrumb"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
         </div>
         <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
         <div class="header-content">
-            <div id="MainMenu" class="pull-menu-left menubar">
+            <div id="MainMenu" class="pull-menu-left menubar" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <div class="header-navigation">
                     <?php menu_nav_list('Primary Navigation', 'primary-navigation'); // Main Navigation ?>
                 </div>

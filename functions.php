@@ -733,7 +733,7 @@ function Header_Hero($id) {
     }
 
     ?>
-        <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" itemprop="image">
+        <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" role="figure" itemprop="image">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
             <div class="header-hero-caption" role="caption" itemprop="name"><?=$attachmentTitle; ?></div>

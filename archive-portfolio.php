@@ -29,7 +29,7 @@
                         <span class="entry-author">By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>
                 </header>
-                <div class="the-content content-excerpt" itemprop="description">
+                <div class="the-content content-excerpt" itemprop="text description ">
                     <p><?=shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">

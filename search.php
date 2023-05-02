@@ -28,7 +28,7 @@
                 </header>
                 <div class="the-content content-excerpt">
                     <img class="entry-square-thumbnail" src="<?=FeaturedImageURL(get_the_ID(), 'thumbnail', false); ?>" alt="" itemprop="image">
-                    <p itemprop="text articleBody"><?=shorten_the_content($post->post_content); ?></p>
+                    <p itemprop="description articleBody"><?=shorten_the_content($post->post_content); ?></p>
                     <p class="entry-readmore"><a href="<?php the_permalink(); ?>" rel="bookmark">Continue reading...</a></p>
                 </div>
                 <footer class="entry-footer hidden">

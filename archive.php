@@ -65,7 +65,7 @@
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
-                        <span class="entry-comments" itemprop="commentcount"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-comments" itemprop="commentCount"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="description articleBody">

@@ -2,12 +2,12 @@
 
 ### 1.3.5 Live (May 2, 2023)
 
-* Improvements to the schema microcode and other tweaks.
+* Improvements to the schema microdata and other tweaks.
 
 ### 1.3.4 Live (April 30, 2023)
 
 * Adjustments to the social sharing in the header metadata.
-* Adjustment and additions to the microcode in the HTML.
+* Adjustment and additions to the microdata in the HTML.
 
 ### 1.3.3 Live (April 29, 2023)
 

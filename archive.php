@@ -9,7 +9,7 @@
     
     <section class="archive-header" id="archive-page">
         <div class="archive-header-container">
-            <h1 class="page-title" itemprop="name author">
+            <h1 class="page-title" itemprop="name headline">
                 <?php $post = $posts[0]; ?>
                 <?php /* Category */ if (is_category()) single_cat_title(); ?>
                 <?php /* Tags */ if (is_tag()) printf("<b>#</b>") . single_tag_title(); ?>
@@ -61,14 +61,14 @@
                 </a>
                 <header class="entry-header">
                     <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
-                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark"><?=the_title(); ?></a></h2>
+                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                         <span class="entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
                         <span class="entry-comments" itemprop="commentcount"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
-                <div class="the-content content-excerpt" itemprop="description">
+                <div class="the-content content-excerpt" itemprop="description articleBody">
                     <p><?=shorten_the_content($post->post_content); ?></p>
                 </div>
                 <footer class="entry-footer hidden">

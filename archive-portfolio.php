@@ -9,7 +9,7 @@
     
     <section class="portfolio-header" id="portfolio-page">
         <div class="portfolio-header-container">
-            <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name); ?></h1>
+            <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name); ?></h1>
             <div class="subtitle" itemprop="about"><?=esc_html($postType->description); ?></div>
         </div>
     </section>
@@ -24,7 +24,7 @@
                 </a>
                 <header class="entry-header">
                     <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
-                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark"><?=the_title(); ?></a></h2>
+                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>

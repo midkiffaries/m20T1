@@ -12,7 +12,7 @@
 
 <section class="comment-list" role="comments" id="Comments" itemscope itemtype="https://schema.org/Comments">
     <div class="comment-container">
-        <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments'); ?> <small><?php comments_number('0', '1', '%'); ?></small></h2>
+        <h2 class="comments-title"><?php comments_number('No Comments', 'Comment', 'Comments'); ?> <small itemprop="commentcount"><?php comments_number('0', '1', '%'); ?></small></h2>
         <ol role="list" class="list-comments">
             <?php wp_list_comments('type=comment&avatar_size=64&login_text=&callback=custom_comment_style'); // List all the comments ?>
         </ol>

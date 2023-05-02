@@ -9,8 +9,8 @@
             <div class="page-404-image" itemprop="image">
                 <?=PAGE_404_IMAGE; // Error Image ?>
             </div>
-            <h1 class="page-title" itemprop="name">Page Not Found</h1>
-            <div class="content-404" itemprop="text">                
+            <h1 class="page-title" itemprop="name headline">Page Not Found</h1>
+            <div class="content-404" itemprop="text articleBody">                
                 <?=PAGE_404_CONTENT; // Error Message ?>
 
                 <?=get_search_form('error'); // Search Form ?>

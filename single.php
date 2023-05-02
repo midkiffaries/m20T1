@@ -10,22 +10,22 @@
         <div class="post-container">
             <header class="single-entry-header">
                 <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="single-entry-sticky">Featured Article</div><?php endif; ?>
-                <div class="single-entry-category"><?php the_category(' '); ?></div>
-                <h1 class="single-entry-title" id="<?=$post->post_name; ?>" itemprop="name"><?php the_title(); ?></h1>
+                <div class="single-entry-category" itemprop="articleSection"><?php the_category(' '); ?></div>
+                <h1 class="single-entry-title" id="<?=$post->post_name; ?>" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
                     <span class="single-entry-author"><?=post_separator(); ?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <span class="single-entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
                 </div>
             </header>
-            <div class="the-content single-entry-content" itemprop="text">
+            <div class="the-content single-entry-content" itemprop="text articleBody">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <div class="entry-last-updated">
                 <p><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
             </div>
             <footer class="single-entry-footer">
-                <div class="entry-tags"><?php blog_post_tags(); ?></div>
+                <div class="entry-tags" itemprop="keywords"><?php blog_post_tags(); ?></div>
                 <div class="entry-share"><?php blog_post_share(); ?></div>
             </footer>
         </div>
@@ -65,7 +65,7 @@
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
         <div class="post-container">
-            <h1 class="single-entry-title" itemprop="name">Not Found</h1>
+            <h1 class="single-entry-title" itemprop="name headline">Not Found</h1>
             <p itemprop="text">Sorry, no posts matched your criteria. Try and search for it?</p>
             <?php get_search_form('post'); // Search Form ?>
         </div>

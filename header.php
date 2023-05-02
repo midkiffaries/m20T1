@@ -16,7 +16,7 @@
     <a href="#main-content" class="nav-skip">Skip to main content</a>
     <div class="header-menubar">
         <div class="header-title">
-            <p class="header-logo" itemprop="name">
+            <p class="header-logo" itemprop="name headline">
                 <a href="<?=home_url(); ?>" rel="home" itemprop="url"><?=get_custom_logo(); ?></a>
             </p>
             <div class="header-breadcrumbs" itemprop="breadcrumb"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>

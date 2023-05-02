@@ -8,8 +8,8 @@
 
         <article <?php post_class(); ?> id="<?=$post->post_name; ?>" name="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="post-container">
-                <h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
-                <div class="the-content" itemprop="text">
+                <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
+                <div class="the-content" itemprop="text articleBody">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
 
                 </div>

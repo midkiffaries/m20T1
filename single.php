@@ -48,7 +48,7 @@
                     <?=get_avatar(get_the_author_meta('ID'), 64); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name"><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" itemprop="author name" aria-label="See more posts by this author."><?=get_the_author_meta( 'display_name' ); ?></a></h3>
+            <h3 class="author-bio-name" itemprop="author name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a></h3>
             <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 

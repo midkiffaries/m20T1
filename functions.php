@@ -810,8 +810,8 @@ function attachment_page_image($id) {
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 ?>
-	<li <?=comment_class(); ?> id="comment-<?=comment_ID() ?>" itemprop="comment">
-        <div class="comment-content" role="comment">
+	<li <?=comment_class(); ?> id="comment-<?=comment_ID() ?>" itemprop="comment" role="comment">
+        <div class="comment-content">
 			<header class="comment-header">
                 <span class="comment-avatar hidden">
                     <figure class="alignleft" aria-label="Authors Avatar" itemprop="image">

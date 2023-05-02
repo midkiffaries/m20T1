@@ -254,7 +254,7 @@ add_action( 'wp_footer', function(){
     <?=get_search_form('search-modal'); // Load searchform.php ?>
 </template>
 
-<template id="Contact-Modal">
+<template id="Contact-Modal" itemscope itemtype="https://schema.org/ContactPage">
     <?=get_template_part('contactform'); // Load contactform.php ?>
 </template>
 

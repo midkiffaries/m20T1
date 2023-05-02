@@ -10,10 +10,10 @@
 
     <?php if (have_posts()) : // If posts exist ?>
 
-    <article class="blog-roll" itemscope itemtype="https://schema.org/NewsArticle">
+    <section class="blog-roll">
 
     <?php while (have_posts()) : the_post(); // List all the posts ?>
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
                 <a href="<?php the_permalink(); ?>" rel="bookmark" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
                     <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured Article</div><?php endif; ?>
@@ -32,12 +32,12 @@
                 </div>
                 <footer class="entry-footer"></footer>
             </div>
-        </div>
+        </article>
     <?php endwhile; ?>
 
-    </article>
+    </section>
 
-    <section class="blog-pagination" aria-label="Blog Pagination">
+    <section class="blog-pagination" aria-label="Blog Pagination" itemprop="pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?php blog_post_pagination('Posts'); // Blog posts navigation ?>

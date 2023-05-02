@@ -51,10 +51,10 @@
     </section>
     <?php endif; ?>
 
-    <article class="archive-page" itemscope itemtype="https://schema.org/NewsArticle">
+    <section class="archive-page">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
-    <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
+        <article <?php post_class(); ?> id="post-<?=the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
                 <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
                     <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
@@ -74,12 +74,12 @@
                 <footer class="entry-footer hidden">
                 </footer>
             </div>
-        </div>
+        </article>
     <?php endwhile; ?>
 
-    </article>
+    </section>
 
-    <section class="blog-pagination" aria-label="Archive Pagination">
+    <section class="blog-pagination" aria-label="Archive Pagination" itemprop="pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?=blog_post_pagination('Posts'); // Post navigation links ?>

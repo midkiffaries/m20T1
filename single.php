@@ -31,7 +31,7 @@
         </div>
     </article>
 
-    <section class="blog-pagination" aria-label="Blog Pagination">
+    <section class="blog-pagination" aria-label="Blog Pagination" itemprop="pagination">
         <div class="pagination-container">
             <nav class="single-blog-post-nav" role="navigation">
                 <div class="left"><?php next_post_link('%link', '<span>Next</span>%title'); // Left ?></div>

@@ -33,7 +33,7 @@
 
     <?php endwhile; ?>
 
-        <section class="blog-pagination" aria-label="Image Pagination">
+        <section class="blog-pagination" aria-label="Image Pagination" itemprop="pagination">
             <div class="pagination-container">
                 <nav class="image-nav">
                     <?php next_image_link(array(48, 48), '&#x276E; Next Image', 0); // Left ?>

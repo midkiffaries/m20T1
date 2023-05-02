@@ -35,6 +35,12 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Built in blog post read time in minutes
 - Enabled SVG, iCal and vCard files upload to media library
 
+## Todo List
+- Make adjustments to the layout.css and move to CSS Grid page formating
+- Improvements to the microdata
+- Adjust the formating of the Javascript image lightbox
+- Improve the formating of the Profile page
+
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section.
 

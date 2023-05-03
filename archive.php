@@ -38,13 +38,13 @@
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><b><?=user_level(get_the_author_meta( 'user_level' )); ?> – <?=number_format_i18n(get_the_author_posts()); ?> Posts</b></p>
+            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts</b></p>
             <p class="author-bio-about" itemprop="description"><?=nl2br($curauth->description); ?></p>
             <p class="author-bio-contact">
-                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="url">LinkedIn</a> | <?php endif; ?>
-                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author" itemprop="url">Twitter</a> | <?php endif; ?>
-                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author" itemprop="url">Facebook</a> | <?php endif; ?>
-                <?php if ($curauth->instagram) : ?><a href="<?=esc_url($curauth->instagram); ?>" rel="author" itemprop="url">Instagram</a> | <?php endif; ?>
+                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
+                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author" itemprop="sameAs">Twitter</a> | <?php endif; ?>
+                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author" itemprop="sameAs">Facebook</a> | <?php endif; ?>
+                <?php if ($curauth->instagram) : ?><a href="<?=esc_url($curauth->instagram); ?>" rel="author" itemprop="sameAs">Instagram</a> | <?php endif; ?>
                 <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author" itemprop="url">Website</a><?php endif; ?>
             </p>
         </div>

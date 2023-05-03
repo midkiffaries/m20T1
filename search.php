@@ -56,11 +56,11 @@
         </div>
     </section>
 
-    <article class="search-results" itemscope itemtype="http://schema.org/NewsArticle">
+    <article class="search-results" itemscope itemtype="http://schema.org/SearchResultsPage">
         <div class="the-content aligncenter" itemprop="text">
             <p>The search query of <strong><?=esc_attr(get_search_query()); ?></strong> came up empty.</p>
             <p>If it will make you feel better, this probably happens to Google too.</p>
-            <div class="page-search-image" itemprop="image">
+            <div class="page-search-image">
                 <?=SEARCH_ERROR_IMAGE; ?>
             </div>
         </div>

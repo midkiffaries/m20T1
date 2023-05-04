@@ -25,7 +25,7 @@
                 <p><?php if (get_the_modified_date('Y-m-d') != get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
             </div>
             <footer class="single-entry-footer">
-                <div class="entry-tags" itemprop="keywords"><?php blog_post_tags(); ?></div>
+                <div class="entry-tags"><?php blog_post_tags(); ?></div>
                 <div class="entry-share"><?php blog_post_share(); ?></div>
             </footer>
         </div>

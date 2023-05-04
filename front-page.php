@@ -2,7 +2,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main-wide page-landing-page <?=get_page_class(); ?>" id="main-content" role="main">
+<main class="page-main-wide page-landing-page <?=get_page_class(); ?>" id="main-content">
     <div class="page-content width-max">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 

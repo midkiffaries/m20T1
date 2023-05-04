@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <?php $postType = get_post_type_object(get_post_type()); ?>
 
-<main class="page-main page-portfolio" id="main-content" role="main">
+<main class="page-main page-portfolio" id="main-content">
     <div class="page-content width-side">
     
     <?php if (have_posts()) : // Has posts ?>

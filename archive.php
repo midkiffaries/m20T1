@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <?php $curauth = $wp_query->get_queried_object(); // Get Author Info ?>
 
-<main class="page-main page-archive" id="main-content" role="main">
+<main class="page-main page-archive" id="main-content">
     <div class="page-content width-side">
     
     <?php if (have_posts()) : // Has posts ?>

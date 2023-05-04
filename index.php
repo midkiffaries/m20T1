@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-blog-posts" id="main-content" role="main">
+<main class="page-main page-blog-posts" id="main-content">
     <div class="page-content width-side">
 
     <section class="blog-page-title" itemprop="name headline">

@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-search" id="main-content" role="main">
+<main class="page-main page-search" id="main-content">
     <div class="page-content width-side">
 
     <?php if (have_posts() && get_search_query()) : // Search results ?>

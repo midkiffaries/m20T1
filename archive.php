@@ -64,7 +64,7 @@
                     <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
                     <div class="entry-metadata">
                         <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
+                        <span class="entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
                         <span class="entry-comments" itemprop="commentCount"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
@@ -79,7 +79,7 @@
 
     </section>
 
-    <section class="blog-pagination" aria-label="Archive Pagination" itemprop="pagination">
+    <section class="blog-pagination" aria-label="Archive Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?=blog_post_pagination('Posts'); // Post navigation links ?>

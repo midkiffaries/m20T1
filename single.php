@@ -15,7 +15,7 @@
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
                     <span class="single-entry-author"><?=post_separator(); ?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                    <span class="single-entry-read-time" itemprop="duration"><?=post_separator(); ?> <?=reading_time(); ?></span>
+                    <span class="single-entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
                 </div>
             </header>
             <div class="the-content single-entry-content" itemprop="text articleBody">
@@ -31,7 +31,7 @@
         </div>
     </article>
 
-    <section class="blog-pagination" aria-label="Blog Pagination" itemprop="pagination">
+    <section class="blog-pagination" aria-label="Blog Pagination">
         <div class="pagination-container">
             <nav class="single-blog-post-nav" role="navigation">
                 <div class="left"><?php next_post_link('%link', '<span>Next</span>%title'); // Left ?></div>
@@ -48,7 +48,7 @@
                     <?=get_avatar(get_the_author_meta('ID'), 64); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name" itemprop="author name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a></h3>
+            <h3 class="author-bio-name" itemprop="name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a></h3>
             <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 

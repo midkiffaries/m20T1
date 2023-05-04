@@ -40,7 +40,7 @@
 
     </article>
 
-    <section class="blog-pagination" aria-label="Portfolio Pagination" itemprop="pagination">
+    <section class="blog-pagination" aria-label="Portfolio Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?=blog_post_pagination(esc_html($postType->labels->singular_name)); // Portfolio navigation links ?>

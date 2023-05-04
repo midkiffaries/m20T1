@@ -39,7 +39,7 @@
 
     </section>
 
-    <section class="blog-pagination" aria-label="Search Pagination" itemprop="pagination">
+    <section class="blog-pagination" aria-label="Search Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
                 <?php blog_post_pagination('Results'); // Search results navigation ?>

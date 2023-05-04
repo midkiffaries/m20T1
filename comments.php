@@ -24,7 +24,7 @@
     </div>
 </section>
 
-<section class="comment-pagination" aria-label="Comment Pagination" itemprop="pagination">
+<section class="comment-pagination" aria-label="Comment Pagination">
     <div class="pagination-container">
         <nav class="comments-nav">
             <?php next_comments_link('&#x276E; Next '.get_option('comments_per_page').' Comments', 0); // Left ?>

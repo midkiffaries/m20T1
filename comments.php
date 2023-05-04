@@ -3,7 +3,7 @@
 <?php if ( post_password_required() ) : // If comments are password protected ?>
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p itemprop="text">🛑 <i>These comments are password protected.</i></p>
+        <p>🛑 <i>These comments are password protected.</i></p>
     </div>
 </section>
 <?php return; endif; ?>
@@ -18,7 +18,7 @@
         </ol>
         <?php if (!comments_open()) : // If comments are closed ?>
             <div class="comments-closed">
-                <p itemprop="text">🚫 <i>The comments are closed for this article.</i></p>
+                <p>🚫 <i>The comments are closed for this article.</i></p>
             </div>
         <?php endif; ?>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p itemprop="text">😃 <i>Be the first to comment on this article.</i></p>
+        <p>😃 <i>Be the first to comment on this article.</i></p>
     </div>
 </section>
 
@@ -47,7 +47,7 @@
 
 <section class="comments-closed" role="comments" id="Comments">
     <div>
-        <p itemprop="text">🚫 <i>The comments are closed for this article.</i></p>
+        <p>🚫 <i>The comments are closed for this article.</i></p>
     </div>
 </section>
 

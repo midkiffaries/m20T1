@@ -250,7 +250,6 @@ add_action( 'wp_body_open', function(){
 add_action( 'wp_footer', function(){
 ?>
 <template id="Search-Modal">
-    <h3 class="search-title">Search</h3>
     <?=get_search_form('search-modal'); // Load searchform.php ?>
 </template>
 

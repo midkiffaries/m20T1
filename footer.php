@@ -16,7 +16,7 @@
         <div class="footer-copyright" itemprop="copyrightNotice">Copyright &copy; <time datetime="<?=date('Y'); ?>" itemprop="copyrightYear"><?=date('Y'); ?></time> <?=bloginfo('name'); ?>. All rights reserved.</div>
         <div class="footer-footnote">
             <a href="https://github.com/midkiffaries/m20T1" class="wp-theme-title"><?=wp_get_theme()->get('Name'); ?> Theme</a> | 
-            <a href="<?=esc_url(home_url()); ?>/privacy-policy/" rel="license" itemprop="termsOfService">Privacy Policy</a>
+            <a href="<?=esc_url(home_url()); ?>/privacy-policy/" rel="license" itemprop="license">Privacy Policy</a>
         </div>
     </div>
 </footer>

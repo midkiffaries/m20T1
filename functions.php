@@ -296,9 +296,9 @@ add_filter( 'user_contactmethods', function(){
 // Alter the site custom logo
 add_filter( 'get_custom_logo', function(){
     if (has_custom_logo()) {
-        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'name') );
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '') ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
     } else {
-        return bloginfo('name');
+        return '<span itemprop="name headline">' . get_bloginfo('name') . '</span>';
     }
 });
 

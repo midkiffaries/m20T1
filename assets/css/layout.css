@@ -769,7 +769,12 @@ img.wp-smiley, img.emoji {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
+}
+
+.visual-hidden {
+	clip: rect(0,0,0,0);
+	position: absolute;
 }
 
 /* Drop caps */

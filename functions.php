@@ -507,7 +507,7 @@ function menu_nav_list($menu, $id) {
         'after'           => '',
         'link_before'     => '',
         'link_after'      => '',
-        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'" itemprop="name">%3$s</ul>',
+        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'">%3$s</ul>',
         'item_spacing'    => 'preserve',
         'depth'           => 0,
         'walker'          => ''
@@ -896,7 +896,7 @@ function schemaJSONData() {
 // Schema.org JSON site navigation elements
 function schemaNavigation($menu_name) {
 	if (($menu_name) && ($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = get_term( $locations[$menu_name], 'nav_menu' );
+		$menu = get_term($locations[$menu_name], 'nav_menu');
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		
 		foreach ($menuItems as $MenuItem) {

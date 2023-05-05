@@ -23,7 +23,7 @@
         </div>
         <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
         <div class="header-content">
-            <div id="MainMenu" class="pull-menu-left menubar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <div id="MainMenu" class="pull-menu-left menubar">
                 <div class="header-navigation">
                     <?php menu_nav_list('Primary Navigation', 'primary-navigation'); // Main Navigation ?>
                 </div>

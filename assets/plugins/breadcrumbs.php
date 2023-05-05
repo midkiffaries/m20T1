@@ -131,7 +131,7 @@ class Breadcrumb_Trail {
 			'container'       => 'nav',
 			'before'          => '',
 			'after'           => '',
-			'browse_tag'      => 'h2',
+			'browse_tag'      => 'p',
 			'list_tag'        => 'ul',
 			'item_tag'        => 'li',
 			'show_on_front'   => true,
@@ -207,7 +207,7 @@ class Breadcrumb_Trail {
 
 				// Wrap the item with its itemprop.
 				$item = ! empty( $matches )
-					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item$2>', $item )
+					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item url$2>', $item )
 					: sprintf( '<span itemprop="item">%s</span>', $item );
 
 				// Add list item classes.

@@ -19,10 +19,10 @@
                     <?=the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">
-                    <span class="image-date">Uploaded on <time datetime="<?=get_the_date('c'); ?>" itemprop="uploadDate datePublished"><?php the_date(); ?></time></span>
+                    <span class="image-date">Uploaded on <time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <br>
-                    <span class="image-category">Category: <b itemprop="articleSection"><?php the_category(' '); ?></b></span>
+                    <span class="image-category">Category: <b><?php the_category(' '); ?></b></span>
                     <br>
                     <span class="image-filesize" itemprop="size"><?=image_metadata(wp_get_attachment_url(get_the_ID())); ?></span>
                 </p>

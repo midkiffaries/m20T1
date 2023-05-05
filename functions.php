@@ -238,6 +238,7 @@ add_action( 'wp_head', function(){
 <meta name="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
 <meta name="twitter:label1" content="Est. reading time">
 <meta name="twitter:data1" content="<?=reading_time(); ?>">
+<?php schemaJSONData(); ?>
 <?php
 });
 
@@ -872,4 +873,42 @@ function blog_post_share() {
 <?php
 }
 
+/////////////////////////////
+// Schema.org Structured Data
+/////////////////////////////
 
+// Schema.org JSON structured microdata
+function schemaJSONData() {
+?>
+<script type="application/ld+json">
+[{
+    "@context": "https://schema.org/",
+    "@graph": [
+        <?php schemaNavigation('primary'); ?>
+        <?php schemaNavigation('secondary'); ?>
+        <?php schemaNavigation('tertiary'); ?>
+    ]
+}];
+</script>
+<?php
+}
+
+// Schema.org JSON site navigation elements
+function schemaNavigation($menu_name) {
+	if (($menu_name) && ($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = get_term( $locations[$menu_name], 'nav_menu' );
+		$menuItems = wp_get_nav_menu_items($menu->term_id);
+		
+		foreach ($menuItems as $MenuItem) {
+            ?>
+            {
+                "@context": "https://schema.org/",
+                "@type": "SiteNavigationElement",
+                "@id": "<?=esc_url(home_url()); ?>#Main Navigation",
+                "name": "<?=$MenuItem->title; ?>",
+                "url": "<?=$MenuItem->url; ?>"
+            }, 
+            <?php
+		}
+	} 
+}

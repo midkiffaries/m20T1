@@ -887,7 +887,7 @@ function schemaJSONData() {
         <?php schemaNavigation('primary'); ?>
         <?php schemaNavigation('secondary'); ?>
         <?php schemaNavigation('tertiary'); ?>
-    ]
+    {}]
 }];
 </script>
 <?php

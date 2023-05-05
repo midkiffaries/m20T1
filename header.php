@@ -19,7 +19,7 @@
             <p class="header-logo" itemprop="name headline">
                 <a href="<?=home_url(); ?>" rel="home" itemprop="url"><?=get_custom_logo(); ?></a>
             </p>
-            <div class="header-breadcrumbs" itemprop="breadcrumb"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
+            <div class="header-breadcrumbs"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
         </div>
         <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
         <div class="header-content">

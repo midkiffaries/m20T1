@@ -6,16 +6,16 @@
 
     <?php while ( have_posts() ) : the_post(); // Display selected media ?>
 
-        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="post-container">
                 <h1 class="page-title" itemprop="name headline"><?=the_title(); ?></h1>
                 <div class="wp-block-image" role="figure" itemprop="image">
                     <div class="image-attachment"><a href="<?=wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document" itemprop="url">
                         <?=attachment_page_image(get_the_ID()); ?>
                     </a></div>
-                    <div class="image-caption" role="caption"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
+                    <div class="image-caption" role="caption" itemprop="description"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </div>
-                <div class="image-description" itemprop="description">
+                <div class="image-description" itemprop="text">
                     <?=the_content("<p>Continue Reading &raquo;</p>"); ?>
                 </div>
                 <p class="image-info">

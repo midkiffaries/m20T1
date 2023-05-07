@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-blog-posts" id="main-content">
+<main class="page-main page-blog-posts" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content width-side">
 
     <section class="blog-page-title" itemprop="name headline">

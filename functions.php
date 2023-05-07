@@ -882,8 +882,7 @@ function schemaJSONData() {
 ?>
 <script type="application/ld+json">
 [{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=esc_url(home_url()); ?>#website","headline":"<?=bloginfo('name'); ?>","name":"<?=bloginfo('name'); ?>","description":"<?=get_bloginfo('description'); ?>","url":"<?=esc_url(home_url()); ?>"},
-{"@context": "https://schema.org/","@graph": [
-<?php schemaNavigation('primary'); ?>
+{"@context": "https://schema.org/","@graph": [<?php schemaNavigation('primary'); ?>
 <?php schemaNavigation('secondary'); ?>
 <?php schemaNavigation('tertiary'); ?>
 {}]}];

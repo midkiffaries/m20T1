@@ -21,7 +21,8 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 
 - Compatible with WordPress 6.2
 - Theme supports PHP 8.0+
-- Built with SEO performance and social media sharing in mind, including schema.org <b>microdata</b>
+- Built with SEO performance and social media sharing in mind
+- Schema.org structured data enabled
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
 - Alternate page templates with full width and sidebar support

@@ -877,18 +877,16 @@ function blog_post_share() {
 // Schema.org Structured Data
 /////////////////////////////
 
-// Schema.org JSON structured microdata
+// Schema.org JSON structured microdata script
 function schemaJSONData() {
 ?>
 <script type="application/ld+json">
-[{
-    "@context": "https://schema.org/",
-    "@graph": [
-        <?php schemaNavigation('primary'); ?>
-        <?php schemaNavigation('secondary'); ?>
-        <?php schemaNavigation('tertiary'); ?>
-    {}]
-}];
+[{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=esc_url(home_url()); ?>#website","headline":"<?=bloginfo('name'); ?>","name":"<?=bloginfo('name'); ?>","description":"<?=get_bloginfo('description'); ?>","url":"<?=esc_url(home_url()); ?>"},
+{"@context": "https://schema.org/","@graph": [
+<?php schemaNavigation('primary'); ?>
+<?php schemaNavigation('secondary'); ?>
+<?php schemaNavigation('tertiary'); ?>
+{}]}];
 </script>
 <?php
 }
@@ -900,15 +898,7 @@ function schemaNavigation($menu_name) {
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		
 		foreach ($menuItems as $MenuItem) {
-            ?>
-            {
-                "@context": "https://schema.org/",
-                "@type": "SiteNavigationElement",
-                "@id": "<?=esc_url(home_url()); ?>#Main Navigation",
-                "name": "<?=$MenuItem->title; ?>",
-                "url": "<?=$MenuItem->url; ?>"
-            }, 
-            <?php
+            ?>{"@context": "https://schema.org/","@type": "SiteNavigationElement","@id": "<?=esc_url(home_url()); ?>#Main Navigation","name": "<?=$MenuItem->title; ?>","url": "<?=$MenuItem->url; ?>"}, <?php
 		}
 	} 
 }

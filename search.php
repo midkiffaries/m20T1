@@ -23,7 +23,7 @@
                     <div class="entry-info">
                         <span class="entry-type" itemprop="articleSection"><?=get_post_type(); ?></span>
                         <span class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=get_the_date(); ?></time></span>
-                        <span class="entry-author"><?=post_separator(); ?> By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                        <span class="entry-author"><?=post_separator(); ?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt">

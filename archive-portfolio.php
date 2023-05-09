@@ -5,7 +5,7 @@
 <main class="page-main page-portfolio" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content width-side">
     
-    <?php if (have_posts()) : // Has posts ?>
+    <?php if (have_posts()) : // Has portfolio items ?>
     
     <section class="portfolio-header" id="portfolio-page">
         <div class="portfolio-header-container">
@@ -16,23 +16,23 @@
 
     <article class="portfolio-page" itemscope itemtype="https://www.schema.org/CreativeWork">
 
-    <?php while (have_posts()) : the_post(); // Display posts ?>
+    <?php while (have_posts()) : the_post(); // Display portfolio items ?>
     <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
             <div class="post-container">
-                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
-                    <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
+                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" class="portfolio-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
+                    <div class="portfolio-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky portfolio item ?>Featured Item<?php endif; ?>&nbsp;</div>
                 </a>
-                <header class="entry-header">
-                    <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
-                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
-                    <div class="entry-metadata">
-                        <span class="entry-author">By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                <header class="portfolio-header">
+                    <div class="portfolio-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
+                    <h2 class="portfolio-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
+                    <div class="portfolio-metadata">
+                        <span class="portfolio-author">By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="text description ">
                     <p><?=shorten_the_content($post->post_content); ?></p>
                 </div>
-                <footer class="entry-footer hidden">
+                <footer class="portfolio-footer hidden">
                 </footer>
             </div>
         </div>

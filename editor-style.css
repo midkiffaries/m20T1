@@ -54,13 +54,17 @@ ol {
 	padding-left: 2rem;
 }
 
-ul li::marker {
+li::marker {
 	color: var(--link-color);
 }
 
 b,
 strong {
 	font-weight: bolder;
+}
+
+mark {
+	padding: 0.2em;
 }
 
 sub,

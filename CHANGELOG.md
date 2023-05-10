@@ -1,5 +1,14 @@
 # Changes to m20T1
 
+### 1.3.7 Live (May 10, 2023)
+
+* A lot of minor adjustments and fixes to... everything.
+
+### 1.3.6 Live (May 4, 2023)
+
+* More improvements to the schema.org microdata and accessibility enhancements. The embedded schema data can almost replace plugins at this point. 
+* May the fourth be with you...
+
 ### 1.3.5 Live (May 2, 2023)
 
 * Improvements to the schema microdata and other tweaks.

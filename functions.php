@@ -329,7 +329,7 @@ function AddImageColumn($columns) {
     return $columns;
 }
 
-// Add Featured Image values
+// Add Featured Image column values
 function AddImageValue($column_name, $post_id) {
 	if ( $column_name == 'thumbnail' ) {
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
@@ -356,7 +356,7 @@ function AddExcerptColumn($columns) {
     return $columns;
 }
 
-// Add SEO Excerpt values
+// Add SEO Excerpt column values
 function AddExcerptValue($column_name, $post_id) {
     if ( $column_name == 'seo_excerpt') {
         if ( $post_id ) {

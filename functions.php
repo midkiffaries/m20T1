@@ -268,7 +268,7 @@ add_action( 'wp_footer', function(){
 
 // Add custom message to login screen
 add_filter( 'login_message', function(){
-    return '<h2 style="text-align:center" itemprop="name">Welcome to m20T1</h2>';
+    return '<h2 style="text-align:center">Welcome to m20T1</h2>';
 });
 
 // Set the excerpt length

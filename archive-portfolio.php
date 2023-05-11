@@ -18,22 +18,14 @@
 
     <?php while (have_posts()) : the_post(); // Display portfolio items ?>
     <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
-            <div class="post-container">
-                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" class="portfolio-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
+            <div class="portfolio-container">
+                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="portfolio-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
                     <div class="portfolio-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky portfolio item ?>Featured Item<?php endif; ?>&nbsp;</div>
-                </a>
-                <header class="portfolio-header">
-                    <div class="portfolio-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
-                    <h2 class="portfolio-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
-                    <div class="portfolio-metadata">
-                        <span class="portfolio-author">By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <div class="portfolio-info">
+                        <h2 class="portfolio-title" id="<?=$post->post_name; ?>" itemprop="name"><?=the_title(); ?></h2>
+                        <div class="portfolio-author">By <?php the_author(); ?></div>
                     </div>
-                </header>
-                <div class="the-content content-excerpt" itemprop="text description ">
-                    <p><?=shorten_the_content($post->post_content); ?></p>
-                </div>
-                <footer class="portfolio-footer hidden">
-                </footer>
+                </a>
             </div>
         </div>
     <?php endwhile; ?>

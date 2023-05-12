@@ -763,6 +763,7 @@ function HtmlModal(c, v) {
 }
 
 // Contact form logic when submit button is pressed
+/*
 function SubmitContactForm() {
     const formName = sanitizeInput(document.getElementById("contact_name").value),
         formEmail = sanitizeInput(document.getElementById("contact_email").value),
@@ -786,7 +787,7 @@ function SubmitContactForm() {
         return;
     }
 }
-
+*/
 // Close all open dialog nodes specific "c = ClassName"
 function closeModals(c) {
     let dialog = document.getElementsByClassName(c), 

@@ -355,6 +355,12 @@ Site Header
 	}
 }
 
+@media print {
+	.header-menubar {
+		position: relative;
+	}
+}
+
 
 /*********************************** 
 Site Footer

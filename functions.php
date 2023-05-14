@@ -708,19 +708,19 @@ function GetFirstImage() {
 // Display the header/hero image from the featured image
 function Header_Hero($id) {
     // Type of page
-    if ( is_front_page() ) { // Front-page header (None)
+    if ( is_front_page() ) { // Front-page header (No header image)
         $className = "homepage";
         $hasFeaturedImage = false;
-    } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (None)
+    } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (No header image)
         $className = "noimage";
         $hasFeaturedImage = false;
     } elseif ( is_page() ) { // Single Page header (Use featured image)
         $className = "single-page";
         $hasFeaturedImage = true;
-    } elseif ( is_single() ) { // Single blog post (Use featured image)
+    } elseif ( is_single() ) { // Single blog post or portfolio item (Use featured image)
         $className = "single-post";
         $hasFeaturedImage = true;
-    } else { // Blog Page, search page and archives header (Use default image)
+    } else { // Blog Page, portfolio page, search page and archives header (No header image)
         $className = "noimage";
         $hasFeaturedImage = false;
     }
@@ -728,7 +728,7 @@ function Header_Hero($id) {
     // Get the featured image and image caption if exists or fallback to blank image
     if ($hasFeaturedImage) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
-        $attachmentTitle = '<a href="'. home_url() . '/?p='.get_post_thumbnail_id($id).'" itemprop="image">' . wp_get_attachment_caption(get_post_thumbnail_id($id)) . '</a>';
+        $attachmentTitle = '<a href="'. home_url() . '/?p='.get_post_thumbnail_id($id).'" itemprop="url">' . wp_get_attachment_caption(get_post_thumbnail_id($id)) . '</a>';
     } else {
         $attachmentTitle = '';
     }
@@ -874,11 +874,12 @@ function blog_post_share() {
 <?php
 }
 
+
 /////////////////////////////
 // Schema.org Structured Data
 /////////////////////////////
 
-// Schema.org JSON structured microdata script
+// Schema.org JSON structured microdata script for the navigation and WebSite data
 function schemaJSONData() {
 ?>
 <script type="application/ld+json">
@@ -891,13 +892,13 @@ function schemaJSONData() {
 <?php
 }
 
-// Schema.org JSON site navigation elements
+// Schema.org JSON site navigation elements loop
 function schemaNavigation($menu_name) {
 	if (($menu_name) && ($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
 		$menu = get_term($locations[$menu_name], 'nav_menu');
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		
-		foreach ($menuItems as $MenuItem) {
+		foreach ($menuItems as $MenuItem) { // Get each item in the menu
             ?>{"@context": "https://schema.org/","@type": "SiteNavigationElement","@id": "<?=esc_url(home_url()); ?>#Main Navigation","name": "<?=$MenuItem->title; ?>","url": "<?=$MenuItem->url; ?>"}, <?php
 		}
 	} 

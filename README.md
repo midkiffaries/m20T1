@@ -22,7 +22,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Compatible with WordPress 6.2
 - Theme supports PHP 8.0+
 - Built with SEO performance and social media sharing in mind
-- Schema.org structured data enabled
+- Schema.org structured data autonomously generated
 - Built in basic image viewer, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
 - Alternate page templates with full width and sidebar support
@@ -35,6 +35,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Built in support for an <b>additional post type</b>, default set as "Portfolio"
 - Built in blog post read time in minutes
 - Enabled SVG, iCal and vCard files upload to media library
+- Solid page printing support
 
 ## Todo List
 - Make adjustments to the layout.css and move to CSS Grid page formating

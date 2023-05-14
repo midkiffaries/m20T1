@@ -43,7 +43,7 @@ Icon Fonts Styling
 /* Special Links */
 .the-content [href$=".pdf"]::before, 
 .the-content [href^="https://drive.google.com/"]::before {
-	font-family: 'icomoon';
+	font-family: 'icomoon' !important;
 	content: "\e907";
 	padding-right: 2px;
 	font-size: 1rem;

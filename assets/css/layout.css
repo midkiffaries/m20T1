@@ -746,11 +746,11 @@ Portfolio Page Styling
 	grid-template-columns: auto auto auto;
 	gap: 1em;
 }
-
+/*
 .portfolio-page > div {
 
 }
-
+*/
 /* Entry Featured Image as a background element */
 .portfolio-thumbnail {
     width: 300px;

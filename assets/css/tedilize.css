@@ -799,6 +799,12 @@ Responsive elements
 		max-width: 100%;
 	}
 
+	header,
+	footer,
+	aside {
+		position: relative;
+	}
+
 	iframe {
 		display: none;
 	}

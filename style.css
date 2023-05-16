@@ -79,6 +79,30 @@ body {
 	font-family: var(--font-secondary);
 }
 
+/* Special Links with Icons */
+/* .the-content [href$=".pdf"]::before */
+.icon-document::before {
+	font-family: 'icomoon' !important;
+	content: "\e907";
+	padding-right: 2px;
+	font-size: 1rem;
+}
+
+/* .the-content [href^="mailto:"]::before */
+.icon-mail::before {
+	font-family: 'icomoon' !important;
+	content: "\e903";
+    padding-right: 1px;
+}
+
+/* .the-content [href^="tel:"]::before */
+.icon-phone::before {
+    font-family: 'icomoon' !important;
+	content: "\e942";
+    padding-right: 1px;
+    font-size: 0.9rem;
+}
+
 
 /************************************
 Typography for the page body
@@ -914,27 +938,3 @@ Specific Page Styling
 	height: 1em;
 	background-size: 1em;
 }
-
-/* Special Links */
-/*
-.the-content [href$=".pdf"]::before, 
-.the-content [href^="https://drive.google.com/"]::before {
-	font-family: 'icomoon' !important;
-	content: "\e907";
-	padding-right: 2px;
-	font-size: 1rem;
-}
-
-.the-content [href^="mailto:"]::before {
-	font-family: 'icomoon' !important;
-	content: "\e903";
-    padding-right: 1px;
-}
-
-.the-content [href^="tel:"]::before {
-    font-family: 'icomoon' !important;
-	content: "\e942";
-    padding-right: 1px;
-    font-size: 0.9rem;
-}
-*/

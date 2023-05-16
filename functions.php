@@ -315,6 +315,7 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['ical']  = 'text/calendar'; // iCalendar data
     $mimes['ics']   = 'text/calendar'; // iCalendar data
     $mimes['webp']  = 'image/webp'; // WebP image
+    $mimes['heic']  = 'image/heic'; // HEIC/HEIF image
     return $mimes;
 });
 
@@ -537,6 +538,7 @@ function get_child_pages($id, $thumbnail) {
         <h2 class="child-title">Related Pages</h2>
     <?php endif;
 
+    // Loop cards HTML
     foreach ($page_children as $child) { // Display all the child pages to this one ?>
         <div class="child-card" id="child-card-<?=$child->ID; ?>">
             <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
@@ -733,6 +735,7 @@ function Header_Hero($id) {
         $attachmentTitle = '';
     }
 
+    // Header Hero HTML
     ?>
         <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" role="figure">
             <div class="header-hero-gradient"></div>
@@ -810,7 +813,9 @@ function attachment_page_image($id) {
 // Blog post user comment HTML and formatting for each comment
 function custom_comment_style($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
-?>
+
+    // Visitor comment HTML
+    ?>
 	<li <?=comment_class(); ?> id="comment-<?=comment_ID() ?>" itemprop="comment" role="comment">
         <div class="comment-content">
 			<header class="comment-header">
@@ -833,7 +838,7 @@ function custom_comment_style($comment, $args, $depth) {
             <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'textdomain' ), '', '' ); ?></div>
         </div>
     </li>
-<?php
+    <?php
 }
 
 // Pagination on the index/archive/search pages
@@ -862,7 +867,9 @@ function blog_post_share() {
         'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),
         'email'     => "mailto:?subject=" . rawurlencode(get_the_title()) . "&body=" . rawurlencode(get_the_title()) . " | " . esc_url(get_the_permalink()),
     );
-?>
+
+    // Social sharing buttons HTML
+    ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
         <li><a href="<?=$social_links['twitter']; ?>" class="twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
         <li><a href="<?=$social_links['facebook']; ?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
@@ -871,7 +878,7 @@ function blog_post_share() {
         <li><a href="<?=$social_links['reddit']; ?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?=$social_links['email']; ?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank">Email</a></li>
     </ul>
-<?php
+    <?php
 }
 
 

@@ -98,11 +98,8 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
 
-});
-
-// Setting the Custom Fields for the widgets slug
-add_action( 'the_content', function(){	
-	if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
+    // Setting the Custom Fields for the widgets slug
+    if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
         add_post_meta( get_the_ID(), 'Widgets_Slug', 'singlepage', true );
 	}
 });

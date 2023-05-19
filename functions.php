@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', function(){
 
     // Setting the Custom Fields for the widgets slug
     if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
-        add_post_meta( get_the_ID(), 'Widgets_Slug', 'singlepage', true );
+        add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 	}
 });
 

@@ -198,7 +198,7 @@ add_action( 'init', function(){
         'hierarchical'       => false,
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-book',
-        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'trackbacks', 'revisions', 'custom-fields' ),
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'revisions', 'custom-fields' ),
         'taxonomies'         => array( 'category' ),
         'show_in_rest'       => true
     ));

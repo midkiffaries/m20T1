@@ -98,13 +98,17 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
 
-    // Setting Custom Fields
-    add_post_meta( 'slug', 'Widgets_Slug', 'singlepage', true );
-    //delete_post_meta_by_key( 'custom_field_name' ); // Delete custom field
+});
+
+// Setting the Custom Fields for the widgets slug
+add_action( 'the_content', function(){	
+	if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
+        add_post_meta( get_the_ID(), 'Widgets_Slug', 'singlepage', true );
+	}
 });
 
 // Enable styles and scripts
-add_action('wp_enqueue_scripts', function(){    
+add_action( 'wp_enqueue_scripts', function(){    
     // Add Javascript to the bottom of the page body
     wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), THEME_VERSION, true );
 

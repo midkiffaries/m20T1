@@ -654,7 +654,9 @@ function SEO_Excerpt($id) {
 // Get the featured image use fallback in none defined (thumbnail, medium, medium_large, large, full)
 function SEO_Image($id) {
     // Get page featured image
-    if (has_post_thumbnail($id)) { // Use page's featured image
+    if (is_attachment()) { // If attachment page, use attachment image
+        $featuredImage = wp_get_attachment_url(get_the_ID());
+    } else if (has_post_thumbnail($id)) { // Use page's featured image
         $featuredImage = get_the_post_thumbnail_url($id, 'large');
     } else { // Use default image
         $featuredImage = SOCIAL_IMAGE;

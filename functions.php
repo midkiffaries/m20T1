@@ -168,6 +168,7 @@ add_action( 'init', function(){
             'new_item'              => __( 'New '.ADDITIONAL_POST_TYPE ),
             'edit_item'             => __( 'Edit '.ADDITIONAL_POST_TYPE ),
             'view_item'             => __( 'View '.ADDITIONAL_POST_TYPE ),
+            'view_items'             => __( 'View '.ADDITIONAL_POST_TYPE ),
             'all_items'             => __( 'All '.ADDITIONAL_POST_TYPE.'s' ),
             'search_items'          => __( 'Search '.ADDITIONAL_POST_TYPE ),
             'parent_item_colon'     => __( 'Parent '.ADDITIONAL_POST_TYPE.':' ),
@@ -178,11 +179,16 @@ add_action( 'init', function(){
             'remove_featured_image' => _x( 'Remove cover image', '' ),
             'use_featured_image'    => _x( 'Use as cover image', '' ),
             'archives'              => _x( ADDITIONAL_POST_TYPE.' archives', '' ),
+            'attributes'            => _x( ADDITIONAL_POST_TYPE.' attributes', '' ),
             'insert_into_item'      => _x( 'Insert into '.ADDITIONAL_POST_TYPE,'' ),
             'uploaded_to_this_item' => _x( 'Uploaded to this '.ADDITIONAL_POST_TYPE, '' ),
             'filter_items_list'     => _x( 'Filter '.ADDITIONAL_POST_TYPE.' list', '' ),
             'items_list_navigation' => _x( ADDITIONAL_POST_TYPE.' list navigation', '' ),
             'items_list'            => _x( ADDITIONAL_POST_TYPE.' list', '' ),
+            'item_published'        => _x( ADDITIONAL_POST_TYPE.' published', '' ),
+            'item_updated'          => _x( ADDITIONAL_POST_TYPE.' updated', '' ),
+            'item_link'             => _x( ADDITIONAL_POST_TYPE.' link', '' ),
+            'item_link_description' => _x( 'A link to a '.ADDITIONAL_POST_TYPE, '' ),
         ),
         'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
         'public'             => true,
@@ -245,7 +251,7 @@ add_action( 'wp_head', function(){
 
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
-// Stuff
+// Code
 });
 
 // Append to the bottom of the page body tag

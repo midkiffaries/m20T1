@@ -159,16 +159,16 @@ add_action( 'init', function(){
     // Add another post type to the editor
     register_post_type( ADDITIONAL_POST_TYPE, array(
         'labels' => array(
-            'name'                  => _x( ADDITIONAL_POST_TYPE, 'Post type general name' ),
-            'singular_name'         => _x( ADDITIONAL_POST_TYPE, 'Post type singular name' ),
-            'menu_name'             => _x( ADDITIONAL_POST_TYPE, 'Admin Menu text' ),
-            'name_admin_bar'        => _x( ADDITIONAL_POST_TYPE, 'Add New on Toolbar' ),
+            'name'                  => _x( ADDITIONAL_POST_TYPE, '' ),
+            'singular_name'         => _x( ADDITIONAL_POST_TYPE, '' ),
+            'menu_name'             => _x( ADDITIONAL_POST_TYPE, '' ),
+            'name_admin_bar'        => _x( ADDITIONAL_POST_TYPE, '' ),
             'add_new'               => __( 'Add New' ),
             'add_new_item'          => __( 'Add New '.ADDITIONAL_POST_TYPE ),
             'new_item'              => __( 'New '.ADDITIONAL_POST_TYPE ),
             'edit_item'             => __( 'Edit '.ADDITIONAL_POST_TYPE ),
             'view_item'             => __( 'View '.ADDITIONAL_POST_TYPE ),
-            'view_items'             => __( 'View '.ADDITIONAL_POST_TYPE ),
+            'view_items'            => __( 'View '.ADDITIONAL_POST_TYPE ),
             'all_items'             => __( 'All '.ADDITIONAL_POST_TYPE.'s' ),
             'search_items'          => __( 'Search '.ADDITIONAL_POST_TYPE ),
             'parent_item_colon'     => __( 'Parent '.ADDITIONAL_POST_TYPE.':' ),

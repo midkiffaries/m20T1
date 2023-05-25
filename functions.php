@@ -168,7 +168,7 @@ add_action( 'init', function(){
             'new_item'              => __( 'New '.ADDITIONAL_POST_TYPE ),
             'edit_item'             => __( 'Edit '.ADDITIONAL_POST_TYPE ),
             'view_item'             => __( 'View '.ADDITIONAL_POST_TYPE ),
-            'view_items'            => __( 'View '.ADDITIONAL_POST_TYPE ),
+            'view_items'            => __( 'View '.ADDITIONAL_POST_TYPE.'s' ),
             'all_items'             => __( 'All '.ADDITIONAL_POST_TYPE.'s' ),
             'search_items'          => __( 'Search '.ADDITIONAL_POST_TYPE ),
             'parent_item_colon'     => __( 'Parent '.ADDITIONAL_POST_TYPE.':' ),

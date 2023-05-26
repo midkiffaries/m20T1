@@ -7,8 +7,6 @@ Custom WordPress Editor Styling
 	--link-color: #40A5FF;
 	--text-color: #111;
 	--page-background: #fdfdfd;
-	--page-width: 1250px;
-
 	accent-color: var(--link-color);
 }
 
@@ -16,9 +14,9 @@ body {
 	background-color: var(--page-background);
 	color: var(--text-color);
 	line-height: 1.7;
-	max-width: var(--page-width);
+	width: 1100px;
 	font-size: 1.2rem;
-	margin: auto;
+	margin: 0 auto;
 	padding: 0 0.5rem;
 	font-family: 
 		system-ui,
@@ -30,6 +28,12 @@ body {
 		'Apple Color Emoji',
 		'Segoe UI Emoji',
 		'Noto Color Emoji';
+}
+
+@media (max-width: 1099px) {
+	body {
+		width: 100%;
+	}
 }
 
 a {

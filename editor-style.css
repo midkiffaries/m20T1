@@ -6,7 +6,7 @@ Custom WordPress Editor Styling
 :root {
 	--link-color: #40A5FF;
 	--text-color: #111;
-	--page-background: #fefefe;
+	--page-background: #fdfdfd;
 	--page-width: 1250px;
 
 	accent-color: var(--link-color);
@@ -18,6 +18,8 @@ body {
 	line-height: 1.7;
 	max-width: var(--page-width);
 	font-size: 1.2rem;
+	margin: auto;
+	padding: 0 0.5rem;
 	font-family: 
 		system-ui,
 		-apple-system,
@@ -202,7 +204,6 @@ h6 {
 table {
 	border-collapse: collapse;
 	text-indent: 0;
-	width: 100%;
 }
 
 td,
@@ -224,6 +225,12 @@ svg:not(:root) {
 	max-width: 100%;
 	overflow: hidden;
 	vertical-align: middle;
+}
+
+textarea,
+input {
+	margin: 0;
+	border-radius: 0;
 }
 
 select:not([multiple]):not([size]) {

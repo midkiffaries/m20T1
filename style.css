@@ -402,6 +402,7 @@ select:focus {
 
 /* Buttons */
 button,
+.is-style-fill,
 [type="submit"],
 [type="reset"] {
 	color: var(--button-text-color);
@@ -412,22 +413,29 @@ button,
 }
 
 button:hover,
+.is-style-fill:hover,
 [type="submit"]:hover,
 [type="reset"]:hover {
 	filter: brightness(1.2);
 }
 
 button:active,
+.is-style-fill:active,
 [type="submit"]:active,
 [type="reset"]:active {
 	filter: brightness(0.8);
 }
 
 button:focus,
+.is-style-fill:focus,
 [type="submit"]:focus,
 [type="reset"]:focus {
 	outline: none;
 	border-color: var(--brand-color-dark);
+}
+
+.is-style-fill a[href] {
+	color: var(--button-text-color);
 }
 
 

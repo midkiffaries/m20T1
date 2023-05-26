@@ -244,6 +244,11 @@ svg:not(:root) {
 	vertical-align: middle;
 }
 
+.wp-block-button:not(.is-style-outline) {
+	color: var(--page-background);
+	background-color: var(--link-color);
+}
+
 textarea,
 input {
 	margin: 0;

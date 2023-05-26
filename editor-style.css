@@ -157,7 +157,7 @@ blockquote {
 
 blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
-	border-left: 6px solid #666;
+	border-left: 6px solid var(--link-color);
 }
 
 blockquote p {

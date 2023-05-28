@@ -783,6 +783,9 @@ Portfolio Page Styling
 }
 
 @media (max-width: 849px) {
+	.portfolio-page {
+		grid-template-columns: auto;
+	}
 	.portfolio-thumbnail {
 		width: 100%;
 		height: 9em;

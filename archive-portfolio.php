@@ -1,18 +1,28 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
-<?php $postType = get_post_type_object(get_post_type()); ?>
 
 <main class="page-main page-portfolio" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content width-side">
     
     <?php if (have_posts()) : // Has portfolio items ?>
     
-    <section class="portfolio-header" id="portfolio-page">
-        <div class="portfolio-header-container">
-            <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name); ?></h1>
-            <div class="subtitle" itemprop="about"><?=esc_html($postType->description); ?></div>
-        </div>
-    </section>
+    <?php if (ADDITIONAL_POST_TYPE_PAGE_ID) : // If portfolio page exists ?>
+
+        <section class="blog-page-title porfolio-page-title" itemprop="name headline">
+            <?=GetPageTitle(ADDITIONAL_POST_TYPE_PAGE_ID); // Get portfolio page title and content ?>
+        </section>
+
+    <?php else : // Use default page settings ?>
+
+        <?php $postType = get_post_type_object(get_post_type()); ?>
+        <section class="portfolio-header" id="portfolio-page">
+            <div class="portfolio-header-container">
+                <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name); ?></h1>
+                <div class="subtitle" itemprop="about"><?=esc_html($postType->description); ?></div>
+            </div>
+        </section>
+
+    <?php endif; ?>
 
     <article class="portfolio-page" itemscope itemtype="https://www.schema.org/CreativeWork">
 

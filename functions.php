@@ -29,7 +29,7 @@ define( 'BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-b
 define( 'SOCIAL_IMAGE', home_url() . '/wp-content/uploads/2022/08/social-share.jpg' ); // Custom Image
 // Inline separator that appears in the post/page metadata
 define( 'POST_SEPARATOR', '–' );
-// Read more text excerpt ending
+// Read more excerpt text ending
 define( 'MORE_TEXT', '[...]' );
 // Maximum excerpt length
 define( 'EXCERPT_LENGTH', 90 ); // Number of words
@@ -39,6 +39,8 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 // Define the title of the additional post type
 define( 'ADDITIONAL_POST_TYPE', 'Portfolio' );
+// Define the additional post type page ID from slug
+define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path( 'portfolio-page' ) );
 // Define the subtitle of the additional post type
 define( 'ADDITIONAL_POST_TYPE_SUBTITLE', 'The work I have done professionally' );
 // Image on the search page when no results are present
@@ -202,7 +204,7 @@ add_action( 'init', function(){
         'capability_type'    => 'post',
         'exclude_from_search'=> false,
         'has_archive'        => true,
-        'hierarchical'       => false,
+        'hierarchical'       => true,
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-book',
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
@@ -577,7 +579,7 @@ function SearchCount($query) {
 
 // Get WordPress page title and content for the blog list page (index.php)
 function GetPageTitle($id) {
-    $page_for_posts_obj = get_post( get_option( $id ));
+    $page_for_posts_obj = get_post( $id );
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 

@@ -39,7 +39,7 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 // Define the title of the additional post type
 define( 'ADDITIONAL_POST_TYPE', 'Portfolio' );
-// Define the additional post type page ID from slug
+// Define the additional post type page ID from the slug
 define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path(rawurlencode(strtolower(ADDITIONAL_POST_TYPE))) );
 // Define the subtitle of the additional post type
 define( 'ADDITIONAL_POST_TYPE_SUBTITLE', 'The work I have done professionally' );

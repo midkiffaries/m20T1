@@ -2,7 +2,7 @@
 
 ### 1.3.10 Live (May 28, 2023)
 
-* Improvements to the additional post types. You can now assign a WordPress Page to be the root page.
+* Improvements to the additional post types. You can now assign a WordPress Page of the same title to be the root page.
 * Bug fixes.
 
 ### 1.3.9 Live (May 25, 2023)

@@ -35,10 +35,11 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Built in support for an <b>additional post type</b>, default set as "Portfolio"
 - Built in blog post read time in minutes
 - Enabled SVG, iCal and vCard files upload to media library
-- Solid page printing support
+- Support for printing pages neatly
 
 ## Todo List
 - Make adjustments to the layout.css and move to CSS Grid page formating
+- Improve built in SVG support
 - Adjust the formating of the Javascript image lightbox
 - Improve the formating of the "Portfolio" pages
 

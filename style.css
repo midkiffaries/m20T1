@@ -941,3 +941,19 @@ Specific Page Styling
 	height: 1em;
 	background-size: 1em;
 }
+
+@media print {
+	.page-title,
+	.single-entry-title,
+	.blog-page-title h1 {
+		color: var(--secondary-color);
+		-webkit-text-fill-color: var(--secondary-color);
+	}
+	.page-footer {
+		color: #333;
+		background: #fff;
+	}
+	.page-footer::before {
+		background: none;
+	}
+}

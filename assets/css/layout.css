@@ -719,7 +719,7 @@ Portfolio Page Styling
 
 .portfolio-page {
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto auto auto auto;
 	gap: 1em;
 }
 /*

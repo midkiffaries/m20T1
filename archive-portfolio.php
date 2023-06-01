@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <main class="page-main page-portfolio" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content width-side">
+    <div class="page-content width-full">
     
     <?php if (have_posts()) : // Has portfolio items ?>
     
@@ -61,7 +61,7 @@
 
     </div>
     
-    <aside id="sidebar-portfolio" class="page-sidebar portfolio-widgets">
+    <aside id="sidebar-portfolio" class="page-sidebar portfolio-widgets width-full clearfix">
         <?php dynamic_sidebar( 'quaternary' ); // Quaternary Sidebar ?>
     </aside>
 

@@ -12,6 +12,7 @@
                 <div class="the-content" itemprop="text description">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
 
+                    <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
                 </div>
             </div>
         </article>
@@ -22,7 +23,6 @@
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepage') ); // Select from 'Widgets_Slug' custom field ?>
         </aside>
 
-        <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
     </div>
 </main>
 

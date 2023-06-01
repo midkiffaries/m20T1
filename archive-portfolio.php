@@ -7,7 +7,7 @@
     <?php if (have_posts()) : // Has portfolio items ?>
     
     <?php if (ADDITIONAL_POST_TYPE_PAGE_ID) : // If portfolio page exists ?>
-        <section class="blog-page-title porfolio-page-title" itemprop="name headline">
+        <section class="porfolio-page-title" itemprop="name headline">
             <?=GetPageTitle(ADDITIONAL_POST_TYPE_PAGE_ID); // Get portfolio page title and content ?>
         </section>
     <?php else : // Use default page settings ?>

@@ -106,7 +106,8 @@ Typography for the page body
 /* Blog Page title */
 .page-title,
 .single-entry-title,
-.blog-page-title h1 {
+.blog-page-title h1,
+.porfolio-page-title h1 {
 	font-size: 3.6rem;
 	background-color: var(--secondary-color);
 	background-image: linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%);
@@ -119,7 +120,8 @@ Typography for the page body
 @media (max-width: 849px) {
 	.page-title,
 	.single-entry-title,
-	.blog-page-title h1 {
+	.blog-page-title h1,
+	.porfolio-page-title h1 {
 		font-size: 2.7em;
 	}
 }
@@ -127,7 +129,8 @@ Typography for the page body
 /* Page Subtitle */
 .subtitle,
 .page-subtitle,
-.blog-page-title p {
+.blog-page-title p::first-line,
+.porfolio-page-title p::first-line {
 	font-family: var(--font-secondary);
 	color: #444;
 	font-size: 1.5rem;
@@ -945,7 +948,8 @@ Specific Page Styling
 @media print {
 	.page-title,
 	.single-entry-title,
-	.blog-page-title h1 {
+	.blog-page-title h1,
+	.porfolio-page-title h1 {
 		color: var(--secondary-color);
 		-webkit-text-fill-color: var(--secondary-color);
 	}

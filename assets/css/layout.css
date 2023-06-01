@@ -943,21 +943,25 @@ Specific Page Styling
 	margin: 0 auto -0.3em;
 }
 
-/* The Blog Page */
-.blog-page-title {
+/* The Blog and Portfolio Pages Titles */
+.blog-page-title,
+.porfolio-page-title {
 	margin: 3em auto 2em;
 }
 
-.blog-page-title h1 {
+.blog-page-title h1,
+.porfolio-page-title h1 {
 	font-size: 3rem;
 	font-weight: 700;
 }
 
-.blog-page-title p {
+.blog-page-title p,
+.porfolio-page-title p {
 	font-size: 1.4em;
 	margin: 0 !important;
 }
 
+/* Base page content */
 .page-content .post {
 	margin: 0.5em auto 3em;
 	clear: both;

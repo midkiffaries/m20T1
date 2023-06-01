@@ -129,8 +129,8 @@ Typography for the page body
 /* Page Subtitle */
 .subtitle,
 .page-subtitle,
-.blog-page-title p::first-line,
-.porfolio-page-title p::first-line {
+.blog-page-title p:first-of-type,
+.porfolio-page-title p:first-of-type {
 	font-family: var(--font-secondary);
 	color: #444;
 	font-size: 1.5rem;

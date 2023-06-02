@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.3.11 Live (June 2, 2023)
+
+* More code cleanup and Portfolio related enhancements.
+
 ### 1.3.10 Live (May 28, 2023)
 
 * Improvements to the additional post types. You can now assign a WordPress Page of the same title to be the root page.

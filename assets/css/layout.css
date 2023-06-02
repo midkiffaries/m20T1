@@ -955,8 +955,8 @@ Specific Page Styling
 	font-weight: 700;
 }
 
-.blog-page-title p,
-.porfolio-page-title p {
+.blog-page-title p:first-of-type,
+.porfolio-page-title p:first-of-type {
 	font-size: 1.4em;
 	margin: 0 !important;
 }

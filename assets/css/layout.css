@@ -938,8 +938,6 @@ Specific Page Styling
 
 /* Page Title */
 .page-title {
-	font-size: 3rem;
-	font-weight: 700;
 	margin: 0 auto -0.3em;
 }
 
@@ -947,18 +945,6 @@ Specific Page Styling
 .blog-page-title,
 .porfolio-page-title {
 	margin: 3em auto 2em;
-}
-
-.blog-page-title h1,
-.porfolio-page-title h1 {
-	font-size: 3rem;
-	font-weight: 700;
-}
-
-.blog-page-title p:first-of-type,
-.porfolio-page-title p:first-of-type {
-	font-size: 1.4em;
-	margin: 0 !important;
 }
 
 /* Base page content */

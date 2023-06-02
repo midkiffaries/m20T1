@@ -471,6 +471,16 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
+    // Portfolio Page Widgets - bottom of the content
+    register_sidebar(array(
+        'id'            => 'portfoliopage',
+        'name'          => __( 'Portfolio Page Widgets', 'm20T1' ),
+        'description'   => __( 'Widgets below the contents on a portfolio page.' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
     // Page Header Widgets
     register_sidebar(array(
         'id'            => 'header',

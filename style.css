@@ -827,13 +827,16 @@ Specific Page Styling
 	margin-top: -1.5em;
 }
 
+.related-posts-button div {
+	border-radius: 0.5em;
+}
+
 .related-posts-button div a {
 	background: transparent;
 	color: initial;
-	border-radius: 0.3em;
 	border-bottom: 2px solid transparent;
 	font-weight: 600;
-	transition: all 0.4s ease-in-out !important;
+	transition: all 0.5s ease-out !important;
 	text-transform: uppercase;
 }
 
@@ -844,7 +847,7 @@ Specific Page Styling
 }
 
 .related-posts-button div a:active {
-	filter: brightness(75%);
+	filter: brightness(95%);
 }
 
 /* Learn more button */

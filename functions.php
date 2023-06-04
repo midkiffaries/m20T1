@@ -200,8 +200,7 @@ add_action( 'init', function(){
         'rewrite' => array( 
             'slug' => rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), 
         ),
-        'capability_type'    => 'post',
-        //'capability_type'    => array(ADDITIONAL_POST_TYPE, ADDITIONAL_POST_TYPE.'s'),
+        'capability_type'    => 'page',
         'exclude_from_search'=> false,
         'has_archive'        => true,
         'hierarchical'       => true,
@@ -214,6 +213,7 @@ add_action( 'init', function(){
         'show_in_rest'       => true
     ));
 });
+
 
 // Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){

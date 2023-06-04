@@ -74,6 +74,11 @@ body {
 	font-family: var(--font-secondary);
 }
 
+/* Use the tertiary font */
+.font-tertiary {
+	font-family: var(--font-tertiary);
+}
+
 /* Special Links with Icons */
 /* .the-content [href$=".pdf"]::before */
 .icon-document::before {

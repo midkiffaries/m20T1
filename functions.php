@@ -201,6 +201,7 @@ add_action( 'init', function(){
             'slug' => rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), 
         ),
         'capability_type'    => 'post',
+        //'capability_type'    => array(ADDITIONAL_POST_TYPE, ADDITIONAL_POST_TYPE.'s'),
         'exclude_from_search'=> false,
         'has_archive'        => true,
         'hierarchical'       => true,
@@ -208,6 +209,8 @@ add_action( 'init', function(){
         'menu_icon'          => 'dashicons-book',
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
         'taxonomies'         => array( 'category' ),
+        'can_export'         => true,
+        'map_meta_cap'       => true,
         'show_in_rest'       => true
     ));
 });

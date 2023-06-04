@@ -4,9 +4,6 @@
 
 "use strict";
 
-// Welcome Message
-console.log("Welcome to the world of m20T1!");
-
 // Declare Global Variables and settings
 const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('href')),
     themeUri = `${siteUri}wp-content/themes/m20T1/`;
@@ -802,27 +799,14 @@ function closeModals(c) {
     }
 }
 
-// Get a file or URL extension
-function getExtension(v) {
-    return v.split('.').pop();
-}
-
 // Check if href link is a specific image type
 function isLinkAnImage(v) {
-    const img = v.split('.').pop(), ext = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'heic'];
-    if (ext.includes(img)) return true;
-    else return false;
+    const ext = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'heic'];
+    return ext.includes(v.split('.').pop()) ? true : false;
 }
 
 // Sanitize user input
-const sanitizeInput = v => {
-	if (v) return v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim();
-	else return null;
-}
+//const sanitizeInput = v => v ? v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim() : null;
 
 // Validate users email address
-const validateEmail = v => {
-    const h = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (v.match(h)) return true;
-    else return false;
-}
+//const validateEmail = v => v.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/) ? true : false;

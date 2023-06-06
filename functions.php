@@ -20,8 +20,6 @@ include_once 'assets/plugins/breadcrumbs.php';
 // Personalized Settings
 /////////////////////////////
 
-// Get the version of m20T1 from style.css
-define( 'THEME_VERSION', wp_get_theme()->get('Version') );
 // Default fallback featured image URI
 define( 'BLANK_IMAGE', get_template_directory_uri() . '/assets/images/featured-blank.svg' );
 // Default social media sharing image URI
@@ -54,6 +52,9 @@ define( 'PAGE_404_CONTENT', "<p>Whoops... Well that page is gone.</p><p>But real
 /////////////////////////////
 // WordPress Settings
 /////////////////////////////
+
+// Get the version of m20T1 from style.css
+define( 'THEME_VERSION', wp_get_theme()->get('Version') );
 
 // Enable WordPress features and register menus
 add_action( 'after_setup_theme', function(){
@@ -300,9 +301,9 @@ add_filter( 'admin_footer_text', function(){
 // Add additional contact methods to user profiles
 add_filter( 'user_contactmethods', function(){
     return array(
-        'linkedin' => 'LinkedIn',
-        'twitter'  => 'Twitter',
-        'facebook' => 'Facebook',
+        'linkedin' => 'LinkedIn URL',
+        'twitter'  => 'Twitter URL',
+        'facebook' => 'Facebook URL',
     );
 });
 

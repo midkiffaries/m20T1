@@ -1,5 +1,5 @@
 /**************************
- * JavaScript
+ * m20T1 JavaScript
 **************************/
 
 "use strict";
@@ -9,7 +9,7 @@ const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('h
     themeUri = `${siteUri}wp-content/themes/m20T1/`;
 
 // Improve the behavior of input types
-(function(){
+(() => {
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
 	
     for (let i = 0; i < l; i++) {
@@ -41,7 +41,7 @@ const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('h
             }
         }
     }
-}());
+})();
 
 // Keyboard on Keyup Events
 document.addEventListener("keyup", (e) => {
@@ -56,7 +56,7 @@ document.addEventListener("keyup", (e) => {
 },false);
 
 // Dark mode button switch
-(function(){
+(() => {
 	let buttonText, theme;
 	const modeButton = document.querySelector(".light-switch"),
 		currentTheme = localStorage.getItem("theme"),
@@ -101,10 +101,10 @@ document.addEventListener("keyup", (e) => {
 		// Store last used state
         localStorage.setItem("theme", theme);
 	}	
-}());
+})();
 
 // Embedded YouTube video iframe automatic lazy loading
-(function(){
+(() => {
     let st = document.createElement("style"), 
         youtube = document.getElementsByClassName("embed-youtube"), 
         l = youtube.length;
@@ -186,10 +186,10 @@ document.addEventListener("keyup", (e) => {
         `);
         document.body.appendChild(st);
     }
-}());
+})();
 
 // Parallaxing backgrounds, use class="bg-parallax" and data-rate="10"
-(function(){
+(() => {
     let par = document.getElementsByClassName("bg-parallax"), 
         l = par.length,
         posy = 50, 
@@ -202,7 +202,7 @@ document.addEventListener("keyup", (e) => {
             par[i].style.backgroundPosition = `50% ${posy}%`;
         }
     }, true);
-}());
+})();
 
 // Parallaxing elements, use class="element-parallax" and data-rate="12"
 (function(){
@@ -218,10 +218,10 @@ document.addEventListener("keyup", (e) => {
             par[i].style.transform = `translateY(${posy}px)`;
         }
     }, true);
-}());
+})();
 
 // Hamburger button and menu animation
-(function(){
+(() => {
     const id = document.getElementById("btnMenu"),
         st = document.createElement("style");
 
@@ -279,7 +279,7 @@ document.addEventListener("keyup", (e) => {
     }
     `);
     document.body.appendChild(st);
-}());
+})();
 
 // Checks the position of the window focus
 document.addEventListener("scroll", function () {
@@ -289,7 +289,7 @@ document.addEventListener("scroll", function () {
 },true);
 
 // Creates floating scroll to top button
-(function(){
+(() => {
     const sc = document.createElement("div"), 
         st = document.createElement('style');
 
@@ -339,7 +339,7 @@ document.addEventListener("scroll", function () {
 	}
 	`);
 	document.body.appendChild(st);
-}());
+})();
 
 // Smooth scrolling to the Top of the page
 function smoothScroll(loc, duration) {
@@ -366,7 +366,7 @@ function smoothScroll(loc, duration) {
 **************************/
 
 // Modal images with a nested <figure> <a> <img> tag inside
-(function(){
+(() => {
     let fig = document.getElementsByTagName("figure"), 
         l = fig.length;
 
@@ -504,7 +504,7 @@ function smoothScroll(loc, duration) {
             },false);
         }
     }
-}());
+})();
 
 // Display Alert Modal Box -- text: displayed text | bgColor: background-color
 function AlertModal(text, bgColor) {

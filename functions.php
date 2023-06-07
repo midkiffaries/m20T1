@@ -302,8 +302,8 @@ add_filter( 'admin_footer_text', function(){
 add_filter( 'user_contactmethods', function(){
     return array(
         'linkedin' => 'LinkedIn URL',
-        'twitter'  => 'Twitter URL',
         'facebook' => 'Facebook URL',
+        'twitter'  => 'Twitter URL',
     );
 });
 
@@ -933,4 +933,40 @@ function schemaNavigation($menu_name) {
             ?>{"@context": "https://schema.org/","@type": "SiteNavigationElement","@id": "<?=esc_url(home_url()); ?>#Main Navigation","name": "<?=$MenuItem->title; ?>","url": "<?=$MenuItem->url; ?>"}, <?php
 		}
 	} 
+}
+
+
+//////////////////////////////////////////
+// Add Additional values to user profiles
+//////////////////////////////////////////
+
+// Add additional section to the user profiles
+add_action( 'show_user_profile', 'show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'show_extra_profile_fields' );
+
+function show_extra_profile_fields($user) { ?>
+    <h3>Additional Information</h3>
+    <p>Let the world know how you're feeling today.</p>
+    <table class="form-table">
+        <tr>
+            <th><label for="mental">My Mental State</label></th>
+            <td>
+                <select name="mental" id="mental">
+                    <option value="happy" <?php selected( 'happy', get_the_author_meta( 'mental', $user->ID ) ); ?>>Happy 😄</option>
+                    <option value="okay" <?php selected( 'okay', get_the_author_meta( 'mental', $user->ID ) ); ?>>Okay 🫤</option>
+                    <option value="sad" <?php selected( 'sad', get_the_author_meta( 'mental', $user->ID ) ); ?>>Sad 🙁</option>
+                    <option value="pizza" <?php selected( 'pizza', get_the_author_meta( 'mental', $user->ID ) ); ?>>Pizza 🍕</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+<?php };
+
+// Save additional information for users
+add_action( 'personal_options_update', 'save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
+
+function save_extra_profile_fields( $user_id ) {
+    if ( !current_user_can( 'edit_user', $user_id ) ) return false;
+    update_user_meta( $user_id, 'mental', $_POST['mental'] );
 }

@@ -773,7 +773,7 @@ function closeModals(c) {
     }
 }
 
-// Check if href link is a specific image type
+// Check if href link is of a specific image type
 function isLinkAnImage(v) {
-    return ['jpg', 'jpeg', 'png', 'webp', 'gif', 'heic'].includes(v.split('.').pop()) ? true : false;
+    return ['jpg', 'jpeg', 'jp2', 'png', 'webp', 'gif', 'heic'].includes(v.split('.').pop()) ? true : false;
 }

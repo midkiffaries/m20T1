@@ -759,32 +759,6 @@ function HtmlModal(c, v) {
 	setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
 }
 
-// Contact form logic when submit button is pressed
-/*
-function SubmitContactForm() {
-    const formName = sanitizeInput(document.getElementById("contact_name").value),
-        formEmail = sanitizeInput(document.getElementById("contact_email").value),
-        formMessage = sanitizeInput(document.getElementById("contact_message").value);
-
-    if (formName && validateEmail(formEmail) && formMessage) { // Success
-        const xmlhttp = new XMLHttpRequest();
-        xmlhttp.onload = function() {
-            if (this.responseText == true) {
-                AlertModal('Your message has been sent! I will get back to you as soon as possible.', '#00bb00')
-            } else {
-                AlertModal('There was an issue sending you message. Try again later?', '#cc0000')
-            }
-        }
-        xmlhttp.open("GET", `${themeUri}assets/plugins/mailman.php?name=${formName}&email=${formEmail}&message=${formMessage}`);
-        xmlhttp.send();
-        closeModals('dialog-email');
-        return;
-    } else { // Error
-        AlertModal('There was an issue sending you message.', '#cc2222')
-        return;
-    }
-}
-*/
 // Close all open dialog nodes specific "c = ClassName"
 function closeModals(c) {
     let dialog = document.getElementsByClassName(c), 
@@ -801,12 +775,5 @@ function closeModals(c) {
 
 // Check if href link is a specific image type
 function isLinkAnImage(v) {
-    const ext = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'heic'];
-    return ext.includes(v.split('.').pop()) ? true : false;
+    return ['jpg', 'jpeg', 'png', 'webp', 'gif', 'heic'].includes(v.split('.').pop()) ? true : false;
 }
-
-// Sanitize user input
-//const sanitizeInput = v => v ? v.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').trim() : null;
-
-// Validate users email address
-//const validateEmail = v => v.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/) ? true : false;

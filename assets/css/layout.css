@@ -866,7 +866,7 @@ hr.wp-block-separator.is-style-default {
 
 /* Current selected nav item */
 .current_page_item a,
-.current_page_parent a,
+body:not(.post-type-archive-portfolio) .current_page_parent a,
 .current-menu-item a {
 	font-weight: 800 !important;
 }

@@ -304,6 +304,7 @@ add_filter( 'user_contactmethods', function(){
         'linkedin' => 'LinkedIn URL',
         'facebook' => 'Facebook URL',
         'twitter'  => 'Twitter URL',
+        'pinterest'=> 'Pinterest URL',
     );
 });
 

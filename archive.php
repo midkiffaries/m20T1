@@ -44,7 +44,7 @@
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
                 <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author" itemprop="sameAs">Twitter</a> | <?php endif; ?>
                 <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author" itemprop="sameAs">Facebook</a> | <?php endif; ?>
-                <?php if ($curauth->instagram) : ?><a href="<?=esc_url($curauth->instagram); ?>" rel="author" itemprop="sameAs">Instagram</a> | <?php endif; ?>
+                <?php if ($curauth->pinterest) : ?><a href="<?=esc_url($curauth->pinterest); ?>" rel="author" itemprop="sameAs">Pinterest</a> | <?php endif; ?>
                 <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author" itemprop="url">Website</a><?php endif; ?>
             </p>
         </div>

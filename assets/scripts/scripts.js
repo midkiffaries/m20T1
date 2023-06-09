@@ -84,12 +84,15 @@ document.addEventListener("keyup", (e) => {
 
 	// Generate button switch logic
 	modeButton.onclick = () => {
-        //const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-		//if (isDarkMode.matches) {
-		//	document.body.classList.toggle("light-mode");
-		//	document.body.classList.toggle("dark-mode");
-		//	theme = document.body.classList.contains("light-mode") ? "light":"dark";
-		//} else {
+        // Check if user has browser pre-set to dark mode and set accordingly
+        /*
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+		if (isDarkMode.matches) {
+			document.body.classList.toggle("light-mode");
+			document.body.classList.toggle("dark-mode");
+			theme = document.body.classList.contains("light-mode") ? "light":"dark";
+		} else {
+        */
 			document.body.classList.toggle("dark-mode");
 			theme = document.body.classList.contains("dark-mode") ? "dark":"light";
 		//}

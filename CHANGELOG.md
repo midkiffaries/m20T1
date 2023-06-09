@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.3.13 Live (June 12, 2023)
+
+* Fixes to the @media print formating.
+
 ### 1.3.12 Live (June 9, 2023)
 
 * Adjustments and additions to the user profile section.

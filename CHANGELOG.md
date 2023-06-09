@@ -1,5 +1,10 @@
 # Changes to m20T1
 
+### 1.3.12 Live (June 9, 2023)
+
+* Adjustments and additions to the user profile section.
+* Bug fixes.
+
 ### 1.3.11 Live (June 4, 2023)
 
 * More code cleanup and Portfolio post type related enhancements.

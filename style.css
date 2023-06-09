@@ -46,9 +46,19 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--font-tertiary: 'Georgia', serif;
 
 	--p-font-size: 1.2rem;
+	--p-line-height: 1.7;
 
 	accent-color: var(--brand-color);
 	caret-color: var(--brand-color);
+}
+
+/* Print-friendly */
+@media print {
+	:root {
+		--p-font-size: 1rem;
+		--p-line-height: 1.2;
+		--button-text-color: #333;
+	}
 }
 
 /* Text Selection */
@@ -198,7 +208,7 @@ Basic WordPress Editor Styling
 
 .the-content p {
 	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
-	line-height: 1.7;
+	line-height: var(--p-line-height);
 }
 
 .the-content li:not(.wp-social-link) {

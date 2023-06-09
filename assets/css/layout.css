@@ -331,12 +331,6 @@ Site Header
 	}
 }
 
-@media print {
-	.header-menubar {
-		position: relative;
-	}
-}
-
 
 /*********************************** 
 Site Footer
@@ -1524,4 +1518,22 @@ Search Modal Styling
 	height: 2.1em;
 	font-size: 1.4em;
 	border-color: transparent;
+}
+
+/* Printing */
+@media print {
+	.header-menubar {
+		position: relative;
+	}
+	.header-hero-image {
+		display: none;
+	}
+	.page-main,
+	.page-header,
+	.page-footer,
+	.footer-notice,
+	.footer-widgets {
+		width: 97% !important;
+		margin: 0;
+	}
 }

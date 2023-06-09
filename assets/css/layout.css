@@ -28,8 +28,8 @@ Base WordPress Page Styling
 /* Print-friendly */
 @media print {
 	:root {
-		--page-width: 98%;
-		--sidebar-width: 12em;
+		--page-width: 99%;
+		--sidebar-width: 11em;
 	}
 }
 
@@ -336,6 +336,16 @@ Site Header
 	.pull-menu-left.menu-show {
 		left: 0;
 		transition: left 0.3s ease-in-out;
+	}
+}
+
+/* Print-friendly */
+@media print {
+	.header-menubar {
+		position: relative;
+	}
+	.header-hero-image {
+		display: none;
 	}
 }
 
@@ -1526,14 +1536,4 @@ Search Modal Styling
 	height: 2.1em;
 	font-size: 1.4em;
 	border-color: transparent;
-}
-
-/* Printing */
-@media print {
-	.header-menubar {
-		position: relative;
-	}
-	.header-hero-image {
-		display: none;
-	}
 }

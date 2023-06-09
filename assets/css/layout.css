@@ -25,6 +25,14 @@ Base WordPress Page Styling
 	--email-color: #ffb700;
 }
 
+/* Print-friendly */
+@media print {
+	:root {
+		--page-width: 98%;
+		--sidebar-width: 12em;
+	}
+}
+
 
 /************************ 
 Icon Fonts Styling
@@ -1527,13 +1535,5 @@ Search Modal Styling
 	}
 	.header-hero-image {
 		display: none;
-	}
-	.page-main,
-	.page-header,
-	.page-footer,
-	.footer-notice,
-	.footer-widgets {
-		width: 97% !important;
-		margin: 0;
 	}
 }

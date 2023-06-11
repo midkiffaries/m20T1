@@ -58,6 +58,8 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 		--p-font-size: 1rem;
 		--p-line-height: 1.2;
 		--button-text-color: #333;
+		--body-top-background: none;
+		--body-bottom-background: none;
 	}
 }
 

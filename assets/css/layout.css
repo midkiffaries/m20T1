@@ -344,7 +344,9 @@ Site Header
 	.header-menubar {
 		position: relative;
 	}
-	.header-hero-image {
+	.header-hero-image,
+	.header-content,
+	.single-entry-sticky {
 		display: none;
 	}
 }

@@ -763,7 +763,7 @@ Responsive elements
 	}
 }
 
-/* Printing */
+/* Print Friendly */
 @media print {
 	@page { margin: 2cm; }
 
@@ -786,6 +786,7 @@ Responsive elements
 	pre,
 	nav,
 	svg,
+	iframe,
 	blockquote,
 	figure,
 	video,
@@ -797,10 +798,6 @@ Responsive elements
 		page-break-inside: avoid;
 		break-inside: avoid;
 		max-width: 100%;
-	}
-
-	iframe {
-		display: none;
 	}
 
 	thead {

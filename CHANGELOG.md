@@ -2,7 +2,7 @@
 
 ### 1.3.13 Live (June 12, 2023)
 
-* Fixes to the @media print formating and other CSS trickery.
+* Fixes to the @media print formatting and other CSS trickery.
 
 ### 1.3.12 Live (June 9, 2023)
 

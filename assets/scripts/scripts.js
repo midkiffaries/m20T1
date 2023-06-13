@@ -121,7 +121,6 @@ document.addEventListener("keyup", (e) => {
         youtube[i].addEventListener("click", function() {
             let iframe = document.createElement("iframe");
             iframe.setAttribute("frameborder", "0");
-            //iframe.setAttribute("loading", "lazy");
             iframe.setAttribute("allow", "accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
             iframe.setAttribute("allowfullscreen", "");
             iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?feature=oembed`);

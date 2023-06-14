@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.3.14 Live (June 14, 2023)
+
+* Proper inclusion of SVG image support, which included the removal of the srcset for SVG images.
+
 ### 1.3.13 Live (June 12, 2023)
 
 * Fixes to the @media print formatting and other CSS trickery.

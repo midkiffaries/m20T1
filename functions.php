@@ -308,15 +308,6 @@ add_filter( 'user_contactmethods', function(){
     );
 });
 
-// Alter the site custom logo
-add_filter( 'get_custom_logo', function(){
-    if (has_custom_logo()) {
-        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '') ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
-    } else {
-        return '<span itemprop="name headline">' . get_bloginfo('name') . '</span>';
-    }
-});
-
 // Add addition file types uploadable to the media library
 add_filter( 'upload_mimes', function($mimes){
     $mimes['svg']   = 'image/svg+xml'; // SVG image
@@ -331,6 +322,26 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['heic']  = 'image/heic'; // HEIC/HEIF image
     return $mimes;
 });
+
+// Set a text fallback to the custom image logo hook
+add_filter( 'get_custom_logo', function(){
+    if (has_custom_logo()) { // Use image logo
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image') ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
+    } else { // No logo, use site title
+        return '<span itemprop="name headline">' . get_bloginfo('name') . '</span>';
+    }
+});
+
+// Remove srcset from SVG images so they will display correctly
+function remove_svg_srcset( string $sizes, array $size, $image_src = null ) {
+	$image_type = end(explode('.', $image_src));
+	if ( $image_type === 'svg' || $image_type === 'svgz' ) {
+		return null;
+	} else {
+        return $sizes;
+    }
+}
+add_filter( 'wp_calculate_image_sizes', 'remove_svg_srcset', 10, 3 );
 
 
 //////////////////////////////////////

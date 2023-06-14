@@ -332,7 +332,7 @@ add_filter( 'get_custom_logo', function(){
     }
 });
 
-// Remove srcset from SVG images so they will display correctly
+// Remove srcset from SVG images so SVG files in img tags will display correctly
 function remove_svg_srcset( string $sizes, array $size, $image_src = null ) {
 	$image_type = end(explode('.', $image_src));
 	if ( $image_type === 'svg' || $image_type === 'svgz' ) {

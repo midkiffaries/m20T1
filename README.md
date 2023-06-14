@@ -39,7 +39,6 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 
 ## Todo List
 - Make adjustments to the layout.css and move to CSS Grid page formating
-- Improve built in SVG support
 - Adjust the formating of the Javascript image lightbox
 - Improve the formating of the "Portfolio" pages
 

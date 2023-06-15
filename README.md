@@ -34,8 +34,8 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Support for <b>dark mode</b> page styling via a built in switch
 - Built in support for an <b>additional post type</b>, default set as "Portfolio"
 - Built in blog post read time in minutes
-- Enabled SVG, iCal and vCard files upload to media library
-- Support for printing pages neatly
+- Enabled SVG support and iCal/vCard files upload to media library
+- Support for printing pages cleanly
 
 ## Todo List
 - Make adjustments to the layout.css and move to CSS Grid page formating

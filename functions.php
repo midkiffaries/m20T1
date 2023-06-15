@@ -255,9 +255,9 @@ add_action( 'wp_head', function(){
 });
 
 // Append to the top of the page body tag
-add_action( 'wp_body_open', function(){
+//add_action( 'wp_body_open', function(){
 // Code
-});
+//});
 
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){

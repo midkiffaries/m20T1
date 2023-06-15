@@ -38,7 +38,7 @@
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts</b></p>
+            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts – <?=wp_strip_all_tags($curauth->city); ?></b></p>
             <p class="author-bio-about" itemprop="description"><?=nl2br($curauth->description); ?></p>
             <p class="author-bio-contact">
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>

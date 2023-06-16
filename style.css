@@ -127,6 +127,7 @@ Typography for the page body
 .porfolio-page-title h1 {
 	font-weight: 700;
 	font-size: 3.6rem;
+	letter-spacing: -0.1rem;
 	background-color: var(--secondary-color);
 	background-image: linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%);
 	-webkit-background-clip: text;

@@ -25,7 +25,9 @@
             </div>
         </aside>
 
-        <p class="page-last-updated hidden"><?php printf( __( 'Updated <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
+        <div class="page-last-updated hidden">
+            <?php display_last_updated() ?>
+        </div>
     </div>
 </main>
 

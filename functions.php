@@ -787,6 +787,15 @@ function Header_Hero($id) {
 // WordPress Functions
 /////////////////////////////
 
+// Display the date of the last entry update
+function display_last_updated() {
+    ?><p><?php 
+    if (get_the_modified_date('Y-m-d') > get_the_date('Y-m-d')) {
+        printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); 
+    }
+    ?></p><?php
+}
+
 // Display the author's user level/role
 function user_level($level) {
     switch ($level) {

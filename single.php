@@ -22,7 +22,7 @@
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <div class="entry-last-updated">
-                <p><?php if (get_the_modified_date('Y-m-d') > get_the_date('Y-m-d')) printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); ?></p>
+                <?php display_last_updated() ?>
             </div>
             <footer class="single-entry-footer">
                 <div class="entry-tags"><?php blog_post_tags(); ?></div>

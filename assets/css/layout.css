@@ -796,6 +796,14 @@ Portfolio Page Styling
 	font-size: 0.8rem;
 }
 
+.portfolio-name {
+	margin-bottom: -0.7em;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	font-weight: bold;
+	font-family: 'Courier New', Courier, monospace;
+}
+
 @media (max-width: 849px) {
 	.portfolio-page {
 		grid-template-columns: auto;

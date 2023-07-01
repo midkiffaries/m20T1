@@ -233,7 +233,6 @@ add_action( 'dashboard_glance_items', function(){
     }
 });
 
-
 // Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){
 ?>

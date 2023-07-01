@@ -161,9 +161,9 @@ add_action( 'init', function(){
     // Add a custom post type to the editor
     register_post_type( ADDITIONAL_POST_TYPE, array(
         'labels' => array(
-            'name'                   => _x( ADDITIONAL_POST_TYPE, '' ),
+            'name'                   => _x( ADDITIONAL_POST_TYPE.'s', '' ),
             'singular_name'          => _x( ADDITIONAL_POST_TYPE, '' ),
-            'menu_name'              => _x( ADDITIONAL_POST_TYPE, '' ),
+            'menu_name'              => _x( ADDITIONAL_POST_TYPE.'s', '' ),
             'name_admin_bar'         => _x( ADDITIONAL_POST_TYPE, '' ),
             'add_new'                => __( 'Add New' ),
             'add_new_item'           => __( 'Add New '.ADDITIONAL_POST_TYPE ),
@@ -846,7 +846,7 @@ function get_file_extension($path) {
 
 // Get proper attachment image or use a document placeholder 
 function attachment_page_image($id) {
-    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'ico');
+    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'heic', 'ico');
     $video_ext = array('mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));

@@ -220,6 +220,19 @@ add_action( 'init', function(){
     ));
 });
 
+// Custom post types counts
+add_action( 'dashboard_glance_items', function(){
+    $post_types = get_post_types( array( '_builtin' => false ), 'objects' );
+    foreach ( $post_types as $post_type ) {
+        $num_posts = wp_count_posts( $post_type->name );
+        $num = number_format_i18n( $num_posts->publish );
+        $text = _n( $post_type->labels->name, $post_type->labels->name, $num_posts->publish );
+        if ( current_user_can( 'edit_posts' ) && $text == ADDITIONAL_POST_TYPE ) {
+            echo '<li class="page-count"><a href="edit.php?post_type=' . $post_type->name . '">' . $num . ' ' . $text . 's</a></li>';
+        }
+    }
+});
+
 
 // Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){

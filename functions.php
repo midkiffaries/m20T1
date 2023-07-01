@@ -158,7 +158,7 @@ add_action( 'init', function(){
     // Enable the use of shortcodes in text widgets.
     add_filter( 'widget_text', 'do_shortcode' );
 
-    // Add another post type to the editor
+    // Add a custom post type to the editor
     register_post_type( ADDITIONAL_POST_TYPE, array(
         'labels' => array(
             'name'                   => _x( ADDITIONAL_POST_TYPE, '' ),
@@ -220,7 +220,7 @@ add_action( 'init', function(){
     ));
 });
 
-// Custom post types counts
+// Add custom post type to the dashboard "At a Glance" card
 add_action( 'dashboard_glance_items', function(){
     $post_types = get_post_types( array( '_builtin' => false ), 'objects' );
     foreach ( $post_types as $post_type ) {

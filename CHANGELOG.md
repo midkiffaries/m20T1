@@ -3,7 +3,7 @@
 ### 1.3.15 Live (July 2, 2023)
 
 * More enhancements to the custom post type code and features.
-* Adjustments to the CSS.
+* Adjustments to the overall CSS.
 
 ### 1.3.14 Live (June 14, 2023)
 

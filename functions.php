@@ -211,7 +211,7 @@ add_action( 'init', function(){
         'has_archive'        => true,
         'hierarchical'       => true,
         'menu_position'      => 20,
-        'menu_icon'          => 'dashicons-book',
+        'menu_icon'          => 'dashicons-portfolio',
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
         'taxonomies'         => array( 'category' ),
         'can_export'         => true,
@@ -228,7 +228,7 @@ add_action( 'dashboard_glance_items', function(){
         $num = number_format_i18n( $num_posts->publish );
         $text = _n( $post_type->labels->singular_name, $post_type->labels->singular_name, $num_posts->publish );
         if ( current_user_can( 'edit_posts' ) && $text == ADDITIONAL_POST_TYPE ) {
-            echo '<li class="page-count"><a href="edit.php?post_type=' . $post_type->name . '">' . $num . ' ' . $text . 's</a></li>';
+            echo '<li class="'.$post_type->capability_type.'-count-X"><a href="edit.php?post_type=' . $post_type->name . '" class="cust-post"><span class="dashicons '.$post_type->menu_icon.'" style="padding-right:5px"></span>' . $num . ' ' . $text . 's</a><style>.cust-post:before{content:" " !important}</style></li>';
         }
     }
 });

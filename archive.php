@@ -38,8 +38,11 @@
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts – <?=wp_strip_all_tags($curauth->city); ?></b></p>
-            <p class="author-bio-about" itemprop="description"><?=nl2br($curauth->description); ?></p>
+            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts – <?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Earth'); ?></b></p>
+            <p class="author-bio-about" itemprop="description">
+                <?=nl2br($curauth->description); ?>
+                <i><?php //echo "Last seen ". do_shortcode('[lastlogin]') ." ago."; ?></i>
+            </p>
             <p class="author-bio-contact">
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
                 <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author" itemprop="sameAs">Twitter</a> | <?php endif; ?>
@@ -91,21 +94,25 @@
 
     <article class="archive-page" itemscope itemtype="https://schema.org/NewsArticle">
         <div <?php post_class(); ?>>
-            <h1 class="page-title" itemprop="name">
-            <?php 
-            if ( is_category() ) { // By category
-                printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));
-            } else if ( is_date() ) { // By date
-                printf("There are no posts with this date.");
-            } else if ( is_author() ) { // By Author
-                printf("There are no posts by <b>%s</b>.", $curauth->nickname);
-            } else { // No posts found
-                printf("No posts found at all.");
-            }
-            ?>
-            </h1>
-            <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
-            <?php get_search_form('archive'); // Search Form ?>
+            <section class="archive-header" id="archive-page">
+                <div class="archive-header-container">
+                    <h1 class="page-title" itemprop="name">
+                    <?php 
+                    if ( is_category() ) { // By category
+                        printf("There are no posts under the <b>%s</b> category.", single_cat_title('', false));
+                    } else if ( is_date() ) { // By date
+                        printf("There are no posts with this date.");
+                    } else if ( is_author() ) { // By author
+                        printf("There are no posts by <b>%s</b>.", $curauth->nickname);
+                    } else { // No posts found
+                        printf("No posts found at all.");
+                    }
+                    ?>
+                    </h1>
+                    <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
+                    <?php get_search_form('archive'); // Search Form ?>
+                </div>
+            </section>
         </div>
     </article>
 

@@ -1009,3 +1009,45 @@ function save_extra_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) ) return false;
     update_user_meta( $user_id, 'mental', $_POST['mental'] );
 }
+
+
+
+// Capture user login and add it as timestamp
+add_action( 'wp_login', 'user_last_login', 10, 2 );
+
+function user_last_login( $user_login, $user ) {
+    update_user_meta( $user->ID, 'last_login', time() );
+}
+
+// Add shortcode for the user's last login time
+add_shortcode( 'lastlogin' , function(){ 
+    $last_login = get_the_author_meta('last_login');
+    $the_login_date = human_time_diff($last_login);
+    //$the_login_date = date('M j, Y h:i a', $last_login);
+    return $the_login_date;
+});
+
+
+/*
+// Add User's last login column
+function AddUserLoginColumn($columns) {
+    $columns['last_login'] = __('Last Login');
+    return $columns;
+}
+
+// Add User's last login values
+function AddUserLoginValue($column_name, $user_id) {
+    if ( $column_name == 'last_login') {
+        if ( $user_id ) {
+            $user = get_userdata( $user_id );
+            return date('M j, Y h:i a', get_the_author_meta('last_login'));;
+        } else {
+            //return get_the_author_meta($last_login);
+            return __('—');
+        }
+    }
+}
+
+add_filter( 'manage_users_columns', 'AddUserLoginColumn' );
+add_filter( 'manage_users_custom_column', 'AddUserLoginValue', 10, 3 );
+*/

@@ -127,6 +127,7 @@ add_action( 'wp_enqueue_scripts', function(){
 
 // Enable or disable WordPress features on initialize
 add_action( 'init', function(){
+
     // Add Category support to pages and attachments
     register_taxonomy_for_object_type( 'category', 'page' );
     register_taxonomy_for_object_type( 'category', 'attachment' );
@@ -294,6 +295,8 @@ add_action( 'wp_footer', function(){
 
 // Decactivate xml-rpc WordPress feature for security reasons
 //add_filter( 'xmlrpc_enabled', '__return_false' );
+
+//add_filter( 'load_configurator_on_page', '__return_true' );
 
 // Add custom message to login screen
 add_filter( 'login_message', function(){
@@ -982,7 +985,6 @@ function schemaNavigation($menu_name) {
 // Add additional section to the user profiles
 add_action( 'show_user_profile', 'show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'show_extra_profile_fields' );
-
 function show_extra_profile_fields($user) { ?>
     <h3>Additional Information</h3>
     <p>Let the world know how you're feeling today.</p>
@@ -1004,29 +1006,23 @@ function show_extra_profile_fields($user) { ?>
 // Save additional information for users
 add_action( 'personal_options_update', 'save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
-
 function save_extra_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) ) return false;
     update_user_meta( $user_id, 'mental', $_POST['mental'] );
 }
 
-
-
-// Capture user login and add it as timestamp
+// Record user login time and add it as timestamp
 add_action( 'wp_login', 'user_last_login', 10, 2 );
-
 function user_last_login( $user_login, $user ) {
     update_user_meta( $user->ID, 'last_login', time() );
 }
 
-// Add shortcode for the user's last login time
-add_shortcode( 'lastlogin' , function(){ 
+// Add get the user's last login time
+function get_user_last_login() {
     $last_login = get_the_author_meta('last_login');
-    $the_login_date = human_time_diff($last_login);
-    //$the_login_date = date('M j, Y h:i a', $last_login);
-    return $the_login_date;
-});
-
+    //return date('M j, Y h:i a', $last_login);
+    return human_time_diff($last_login);
+}
 
 /*
 // Add User's last login column

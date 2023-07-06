@@ -41,7 +41,7 @@
             <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts – <?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Earth'); ?></b></p>
             <p class="author-bio-about" itemprop="description">
                 <?=nl2br($curauth->description); ?>
-                <i><?php //echo "Last seen ". do_shortcode('[lastlogin]') ." ago."; ?></i>
+                <i><?php //echo "Last seen " . get_user_last_login() . " ago."; ?></i>
             </p>
             <p class="author-bio-contact">
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>

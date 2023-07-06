@@ -1017,7 +1017,7 @@ function user_last_login( $user_login, $user ) {
     update_user_meta( $user->ID, 'last_login', time() );
 }
 
-// Add get the user's last login time
+// Add get the User's last login time
 function get_user_last_login() {
     $last_login = get_the_author_meta('last_login');
     //return date('M j, Y h:i a', $last_login);

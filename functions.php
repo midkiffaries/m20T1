@@ -1028,9 +1028,7 @@ add_filter( 'manage_users_custom_column', 'last_login_column', 10, 3 );
 function last_login_column( $output, $column_id, $user_id ){
 	if ( $column_id == 'last_login' ) {
         $last_login = get_user_meta( $user_id, 'last_login', true );
-        $date_format = 'M j, Y';
-        $hover_date_format = 'F j, Y, g:i a';
-		$output = $last_login ? '<time title="Last login ' . date( $hover_date_format, $last_login ) . '">' . human_time_diff( $last_login ) . '</time>' : 'No record';
+		$output = $last_login ? '<time title="Last login ' . date('F j, Y, g:i a', $last_login ) . '">' . human_time_diff( $last_login ) . '</time>' : 'No record';
 	}
 	return $output;
 }

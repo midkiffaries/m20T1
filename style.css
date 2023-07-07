@@ -44,6 +44,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--font-primary: 'Montserrat', sans-serif;
 	--font-secondary: 'Permanent Marker', sans-serif;
 	--font-tertiary: 'Georgia', serif;
+	--font-mono: 'Courier New', Courier, monospace;
 
 	--p-font-size: 1.2rem;
 	--p-line-height: 1.7;
@@ -91,6 +92,11 @@ body {
 	font-family: var(--font-tertiary);
 }
 
+/* Use the monospace font */
+.font-monospace {
+	font-family: var(--font-mono);
+}
+
 /* Special Links with Icons */
 /* .the-content [href$=".pdf"]::before */
 .icon-document::before {
@@ -116,9 +122,9 @@ body {
 }
 
 
-/************************************
-Typography for the page body
-************************************/
+/*****************************************
+Typography for the page title and subtitle
+******************************************/
 
 /* Blog Page title */
 .page-title,
@@ -162,7 +168,16 @@ Typography for the page body
 	margin: 0.6em 0.2em 0 !important;
 }
 
-/* Sticky/Featured article callout */
+.portfolio-name {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: var(--font-mono);
+}
+
+/************************************
+Sticky/Featured article highlight
+************************************/
+
 .single-entry-sticky {
 	border-radius: 0.5em;
 	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.7);
@@ -181,6 +196,7 @@ Typography for the page body
 .blog-roll .sticky a[href] {
 	color: #fff;
 }
+
 
 /************************************
 Basic WordPress Editor Styling

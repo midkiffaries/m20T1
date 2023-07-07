@@ -1,9 +1,9 @@
 # Changes to m20T1
 
-### 1.3.15 Live (July 10, 2023)
+### 1.4 Live (July 10, 2023)
 
 * More enhancements to the custom post type code and features.
-* Added last login column to the Users page and to archives page.
+* Added a Last Login column to the Users page and to the author archives page.
 * Adjustments to the overall CSS.
 
 ### 1.3.14 Live (June 14, 2023)

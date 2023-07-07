@@ -7,7 +7,7 @@ Description: M20T1 is a WordPress theme that I created from scratch that I use o
 Requires at least: 6.0
 Tested up to: 6.2.2
 Requires PHP: 7.4 and above
-Version: 1.3.15
+Version: 1.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: m20t1
@@ -72,7 +72,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 
 /************************************
-Global Typography
+Global Font Declarations
 ************************************/
 
 body {
@@ -199,7 +199,7 @@ Sticky/Featured article highlight
 
 
 /************************************
-Basic WordPress Editor Styling
+WordPress Gutenburg Content Styling
 ************************************/
 
 .the-content h1 { /* Page Title */
@@ -920,7 +920,7 @@ Specific Page Styling
 	filter: drop-shadow(1px 1px 3px #aaa);
 }
 
-/* Mistletoe page */
+/* Mistletoe's Night page */
 
 /* Right Column */
 .mistletoe-col-aside {
@@ -960,7 +960,7 @@ Specific Page Styling
 }
 
 
-/* Add new brand icons for social links */
+/* Add additional brand icons for social links */
 .wp-social-link [href^="https://unsplash.com"] svg, 
 .wp-social-link [href^="https://music.apple.com"] svg {
 	display: none;
@@ -986,6 +986,7 @@ Specific Page Styling
 	background-size: 1em;
 }
 
+/* Print friendly styling */
 @media print {
 	.page-title,
 	.single-entry-title,

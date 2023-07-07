@@ -318,17 +318,6 @@ add_filter( 'admin_footer_text', function(){
     return ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 ' . THEME_VERSION . '</a>.</i>' ;
 });
 
-// Add additional contact methods to user profiles
-add_filter( 'user_contactmethods', function(){
-    return array(
-        'linkedin' => 'LinkedIn URL',
-        'facebook' => 'Facebook URL',
-        'twitter'  => 'Twitter URL',
-        'pinterest'=> 'Pinterest URL',
-        'city'     => 'City/State',
-    );
-});
-
 // Add addition file types uploadable to the media library
 add_filter( 'upload_mimes', function($mimes){
     $mimes['svg']   = 'image/svg+xml'; // SVG image
@@ -981,6 +970,17 @@ function schemaNavigation($menu_name) {
 //////////////////////////////////////////
 // Add Additional values to user profiles
 //////////////////////////////////////////
+
+// Add additional contact methods to user profiles
+add_filter( 'user_contactmethods', function(){
+    return array(
+        'linkedin' => 'LinkedIn URL',
+        'facebook' => 'Facebook URL',
+        'twitter'  => 'Twitter URL',
+        'pinterest'=> 'Pinterest URL',
+        'city'     => 'City/State',
+    );
+});
 
 // Add additional section to the user profiles
 add_action( 'show_user_profile', 'show_extra_profile_fields' );

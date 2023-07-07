@@ -948,9 +948,9 @@ function blog_post_share() {
 }
 
 
-/////////////////////////////
+//////////////////////////////
 // Schema.org Structured Data
-/////////////////////////////
+//////////////////////////////
 
 // Schema.org JSON structured microdata script for the navigation and WebSite data
 function schemaJSONData() {

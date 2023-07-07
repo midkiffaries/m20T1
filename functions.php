@@ -1011,39 +1011,51 @@ function save_extra_profile_fields( $user_id ) {
     update_user_meta( $user_id, 'mental', $_POST['mental'] );
 }
 
-// Record user login time and add it as timestamp
-add_action( 'wp_login', 'user_last_login', 10, 2 );
-function user_last_login( $user_login, $user ) {
+// Add a column for User's Last Login time
+add_filter( 'manage_users_columns', function($columns){
+	$columns['last_login'] = 'Last Login';
+	return $columns;
+});
+
+// Record User's last login to custom metadata
+add_action( 'wp_login', 'smartwp_capture_login_time', 10, 2 );
+function smartwp_capture_login_time( $user_login, $user ) {
     update_user_meta( $user->ID, 'last_login', time() );
 }
 
-// Add get the User's last login time
-function get_user_last_login() {
+// Populate the Last Login column
+add_filter( 'manage_users_custom_column', 'last_login_column', 10, 3 );
+function last_login_column( $output, $column_id, $user_id ){
+	if ( $column_id == 'last_login' ) {
+        $last_login = get_user_meta( $user_id, 'last_login', true );
+        $date_format = 'M j, Y';
+        $hover_date_format = 'F j, Y, g:i a';
+		$output = $last_login ? '<time title="Last login ' . date( $hover_date_format, $last_login ) . '">' . human_time_diff( $last_login ) . '</time>' : 'No record';
+	}
+	return $output;
+}
+
+// Allow the Last Login columns to be sortable
+add_filter( 'manage_users_sortable_columns', function($columns){
+	return wp_parse_args( array('last_login' => 'last_login'), $columns );
+});
+add_action( 'pre_get_users', function($query){
+	if ( !is_admin() ) return $query;
+	$screen = get_current_screen();
+	if ( isset( $screen->base ) && $screen->base !== 'users' ) return $query;
+	if ( isset( $_GET[ 'orderby' ] ) && $_GET[ 'orderby' ] == 'last_login' ) {
+		$query->query_vars['meta_key'] = 'last_login';
+		$query->query_vars['orderby'] = 'meta_value';
+	}
+    return $query;
+});
+
+// Display the User's last login time relative to the current time
+function users_last_login() {
     $last_login = get_the_author_meta('last_login');
-    //return date('M j, Y h:i a', $last_login);
-    return human_time_diff($last_login);
-}
-
-/*
-// Add User's last login column
-function AddUserLoginColumn($columns) {
-    $columns['last_login'] = __('Last Login');
-    return $columns;
-}
-
-// Add User's last login values
-function AddUserLoginValue($column_name, $user_id) {
-    if ( $column_name == 'last_login') {
-        if ( $user_id ) {
-            $user = get_userdata( $user_id );
-            return date('M j, Y h:i a', get_the_author_meta('last_login'));;
-        } else {
-            //return get_the_author_meta($last_login);
-            return __('—');
-        }
+    if ( empty($last_login) ) {
+        return false;
+    } else {
+        return human_time_diff($last_login);
     }
 }
-
-add_filter( 'manage_users_columns', 'AddUserLoginColumn' );
-add_filter( 'manage_users_custom_column', 'AddUserLoginValue', 10, 3 );
-*/

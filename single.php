@@ -48,8 +48,8 @@
                     <?=get_avatar(get_the_author_meta('ID'), 64); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name" itemprop="name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a></h3>
-            <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?> <i><?="Last seen " . users_last_login() . " ago."; ?></i></p>
+            <h3 class="author-bio-name" itemprop="name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a> <small><?="Last seen " . users_last_login() . " ago"; ?></small></h3>
+            <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">

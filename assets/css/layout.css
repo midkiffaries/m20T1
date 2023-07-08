@@ -478,6 +478,11 @@ Single Blog Post Styling (single)
 	margin: -2px 0 0;
 }
 
+.single-author-bio .author-bio-name small {
+	font-size: 1rem;
+	opacity: 0.5;
+}
+
 .single-author-bio .author-bio-about {
 	margin: 0;
 }
@@ -983,6 +988,7 @@ Specific Page Styling
 	padding: 0.7em;
 }
 
+/* Archive Page - Author Bio block */
 .archive-author-bio {
 	margin: 0 1em 3em;
 }
@@ -991,10 +997,12 @@ Specific Page Styling
 	font-size: 1.2rem;
 }
 
-/* Archive Page - Author Bio block */
+.archive-author-bio hr {
+	opacity: 0.2;
+}
+
 .author-container {
 	margin-top: 1em;
-	border-bottom: 2px solid rgba(0,0,0,0.2);
 	min-height: 10em;
 }
 

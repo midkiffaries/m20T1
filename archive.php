@@ -38,10 +38,10 @@
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=number_format_i18n(get_the_author_posts()); ?> Posts – <?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Earth'); ?></b></p>
+            <p class="author-bio-meta"><b><span itemprop="jobTitle"><?=user_level(get_the_author_meta( 'user_level' )); ?></span> – <?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Earth'); ?> - <?=number_format_i18n(get_the_author_posts()); ?> Posts</b></p>
             <p class="author-bio-about" itemprop="description">
                 <?=nl2br($curauth->description); ?>
-                <i><?="Last seen " . users_last_login() . " ago."; ?></i>
+                <p><b><?="Last seen " . users_last_login() . " ago"; ?></b></p>
             </p>
             <p class="author-bio-contact">
                 <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
@@ -51,7 +51,10 @@
                 <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author" itemprop="url">Website</a><?php endif; ?>
             </p>
         </div>
+        <hr size="5">
     </section>
+
+
     <?php endif; ?>
 
     <section class="archive-page">

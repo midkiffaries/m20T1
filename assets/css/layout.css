@@ -1021,6 +1021,11 @@ Specific Page Styling
 	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
 }
 
+.author-bio-lastlogin {
+	opacity: 0.5;
+	font-weight: 600;
+}
+
 /* Portfolio Page */
 .portfolio-header .page-title {
 	margin: 0.8em auto 0.1em;

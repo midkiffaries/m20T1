@@ -503,7 +503,7 @@ Blog Post Styling
 .single-author-bio {
 	padding: 1rem 1.2rem;
 	outline: 3px dashed var(--brand-color-dark);
-	border: 1px solid #f9f9f9;
+	border: 1px solid #f6f6f6;
 	background-color: #f6f6f6;
 	background-image: repeating-linear-gradient(135deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(45deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, hsl(183,0%,100%),hsl(183,0%,100%));
 }

@@ -243,8 +243,8 @@ add_action( 'wp_head', function(){
 <link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url())); ?>">
 <link rel="pingback" href="<?=bloginfo('pingback_url'); ?>">
 <link rel="Siteuri" href="<?=home_url(); ?>/" id="SiteURI">
-<meta name="application-name" content="<?=bloginfo('name'); ?>">
-<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('-', true, 'left')); ?>">
+<meta name="application-name" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left')); ?>">
+<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left')); ?>">
 <meta name="description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico"); ?>" sizes="any">

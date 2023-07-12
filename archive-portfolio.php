@@ -50,10 +50,16 @@
 
     <article class="portfolio-page" itemscope itemtype="https://www.schema.org/CreativeWork">
         <div <?php post_class(); ?>>
-            <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name); ?> is Empty</h1>
+            <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name); ?> is empty</h1>
             <div class="subtitle">There seems to be nothing here.</div>
-            <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
-            <?php get_search_form('archive'); // Search Form ?>
+            <div class="the-content">
+                <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
+                <?php get_search_form('archive'); // Search Form ?>
+                <p>&nbsp;</p>
+                <div class="page-search-image aligncenter">
+                    <?=SEARCH_ERROR_IMAGE; ?>
+                </div>
+            </div>
         </div>
     </article>
 

@@ -1063,7 +1063,7 @@ Specific Page Styling
 }
 
 /* Search input field */
-.search-page-form .search-input {
+.search-input {
 	width: calc(100% - 5em);
 }
 

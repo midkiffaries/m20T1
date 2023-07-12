@@ -17,16 +17,16 @@
             </div>
         </article>
 
+        <div class="page-last-updated">
+            <?php display_last_updated() ?>
+        </div>
+
     <?php endwhile; endif; ?>
 
         <aside id="page-widgets" class="page-sidebar portfolio-widgets width-full">
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'portfoliopage') ); // Select from 'Widgets_Slug' custom field ?>
             
         </aside>
-
-        <div class="page-last-updated">
-            <?php display_last_updated() ?>
-        </div>
 
     </div>
 </main>

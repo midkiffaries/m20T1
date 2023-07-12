@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.4.1 Live (July 12, 2023)
+
+* Some minor bug and formating fixes.
+
 ### 1.4 Live (July 10, 2023)
 
 * More enhancements to the custom post type code and features.

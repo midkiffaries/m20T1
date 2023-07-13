@@ -258,7 +258,9 @@ add_action( 'wp_head', function(){
 <meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta property="og:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta property="og:image" content="<?=SEO_Image(get_the_id()); ?>">
+<meta property="og:image:type" content="image/<?=get_file_extension(SEO_Image(get_the_id())); ?>">
 <meta property="article:publisher" content="<?=get_the_author_meta('facebook', get_post_field ('post_author', get_the_ID())); ?>">
+<meta property="article:published_time" content="<?=get_the_date('c'); ?>">
 <meta property="article:modified_time" content="<?=get_the_date('c'); ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/'); ?>">
@@ -266,8 +268,10 @@ add_action( 'wp_head', function(){
 <meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
 <meta name="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta name="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
-<meta name="twitter:label1" content="Est. reading time">
-<meta name="twitter:data1" content="<?=reading_time(); ?>">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="<?=reading_time(); ?>">
 <?php schemaJSONData(); ?>
 <?php
 });

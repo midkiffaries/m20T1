@@ -36,14 +36,7 @@ body {
 	}
 }
 
-a {
-	color: var(--link-color);
-}
-
-a img {
-	object-fit: contain;
-}
-
+/* Block elements */
 p {
     margin-bottom: 0.75rem;
 	orphans: 3;
@@ -62,6 +55,15 @@ ol {
 
 li::marker {
 	color: var(--link-color);
+}
+
+/* Inline elements */
+a {
+	color: var(--link-color);
+}
+
+a img {
+	object-fit: contain;
 }
 
 b,
@@ -90,6 +92,7 @@ abbr[title] {
 	border-bottom: none;
 }
 
+/* Images and Figures */
 img {
     max-width: 100%;
     height: auto;
@@ -121,6 +124,7 @@ figcaption {
 	font-size: 0.9rem;
 }
 
+/* Monospace elements */
 code,
 kbd,
 samp,
@@ -160,6 +164,7 @@ kbd {
 	white-space: nowrap;
 }
 
+/* Blockquotes */
 blockquote {
     font-style: italic;
 	-webkit-hyphens: auto;
@@ -191,6 +196,7 @@ blockquote cite {
 	margin-left: 0.5em;
 }
 
+/* Headings */
 h1,
 h2,
 h3,
@@ -230,6 +236,7 @@ h6 {
 	font-weight: 600;
 }
 
+/* Tables */
 table {
 	border-collapse: collapse;
 	text-indent: 0;
@@ -256,6 +263,7 @@ svg:not(:root) {
 	vertical-align: middle;
 }
 
+/* Form elements */
 .wp-block-button:not(.is-style-outline) {
 	color: var(--page-background);
 	background-color: var(--link-color);

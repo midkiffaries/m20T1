@@ -58,7 +58,7 @@ li::marker {
 }
 
 /* Inline elements */
-a {
+a:not(.wp-block-button__link) {
 	color: var(--link-color);
 }
 

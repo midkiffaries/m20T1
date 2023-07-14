@@ -319,17 +319,17 @@ WordPress Gutenburg Content Styling
 }
 
 /* Body content links */
-.the-content a[href] {
+.the-content a[href]:not(.wp-block-button__link) {
 	color: var(--brand-color);
 	transition: color 0.25s;
 }
 
-.the-content a[href]:hover {
+.the-content a[href]:not(.wp-block-button__link):hover {
 	color: var(--brand-color-pale);
 	text-decoration-color: var(--brand-color-dark);
 }
 
-.the-content a[href]:active {
+.the-content a[href]:not(.wp-block-button__link):active {
 	color: var(--brand-color-dark);
 }
 

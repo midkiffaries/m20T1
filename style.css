@@ -968,6 +968,10 @@ Specific Page Styling
 
 
 /* Add additional brand icons for social links */
+.the-content .wp-block-social-link a {
+	line-height: 1.8;
+}
+
 .wp-social-link [href^="https://unsplash.com"] svg, 
 .wp-social-link [href^="https://music.apple.com"] svg {
 	display: none;
@@ -979,6 +983,7 @@ Specific Page Styling
 	width: 1em;
 	height: 1em;
 	background-size: 1em;
+	margin-right: 0.2em;
 }
 
 .page-about .wp-social-link [href^="https://unsplash.com"]::before {
@@ -991,6 +996,7 @@ Specific Page Styling
 	width: 1em;
 	height: 1em;
 	background-size: 1em;
+	margin-right: 0.2em;
 }
 
 /* Print friendly styling */

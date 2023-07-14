@@ -22,7 +22,7 @@
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
             </div>
             <div class="entry-last-updated">
-                <?php display_last_updated() ?>
+                <?php display_last_updated(); ?>
             </div>
             <footer class="single-entry-footer">
                 <div class="entry-tags"><?php blog_post_tags(); ?></div>

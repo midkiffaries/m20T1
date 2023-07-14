@@ -18,7 +18,7 @@
         </article>
 
         <div class="page-last-updated">
-            <?php display_last_updated() ?>
+            <?php display_last_updated(); ?>
         </div>
 
     <?php endwhile; endif; ?>

@@ -26,7 +26,7 @@
         </aside>
 
         <div class="page-last-updated hidden">
-            <?php display_last_updated() ?>
+            <?php display_last_updated(); ?>
         </div>
     </div>
 </main>

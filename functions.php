@@ -261,7 +261,7 @@ add_action( 'wp_head', function(){
 <meta property="og:image:type" content="image/<?=get_file_extension(SEO_Image(get_the_id())); ?>">
 <meta property="article:publisher" content="<?=get_the_author_meta('facebook', get_post_field ('post_author', get_the_ID())); ?>">
 <meta property="article:published_time" content="<?=get_the_date('c'); ?>">
-<meta property="article:modified_time" content="<?=get_the_date('c'); ?>">
+<meta property="article:modified_time" content="<?=get_the_modified_date('c'); ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/'); ?>">
 <meta name="twitter:url" content="<?=the_permalink(); ?>">

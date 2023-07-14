@@ -106,7 +106,19 @@ figcaption {
 	text-align: center;
 	padding: 0.6em 0.2em;
 	line-height: 1.2;
-	font-size: 1rem;
+	font-size: 0.9rem;
+}
+
+/* Block Gallery */
+.wp-block-gallery.has-nested-images {
+	margin-bottom: 22px;
+}
+
+.wp-block-gallery.has-nested-images .wp-block-image figcaption {
+	background: none;
+	color: var(--text-color);
+	margin-bottom: -25px;
+	font-size: 0.9rem;
 }
 
 code,

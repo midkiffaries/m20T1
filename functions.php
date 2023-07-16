@@ -840,7 +840,7 @@ function get_file_extension($path) {
     return $extension['ext'];
 }
 
-// Get proper attachment image or use a document placeholder 
+// Get proper attachment image or use a document placeholder
 function attachment_page_image($id) {
     $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'heic', 'ico');
     $video_ext = array('mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');

@@ -274,13 +274,13 @@ WordPress Gutenburg Content Styling
 }
 
 /* Images, Figures and Galleries */
-.the-content figure img[src]:not([src$='.png']) {
+.the-content figure img[src]:not([src$='.png']):not([src$='.svg']) {
 	transition: box-shadow 0.4s ease-in-out;
 	box-shadow: 7px 7px 0 0 #888, -9px -9px 0 0 var(--brand-color-pale);
 	border: 1px solid #f6f6f6;
 }
 
-.the-content figure a img[src]:not([src$='.png']):hover {
+.the-content figure a img[src]:not([src$='.png']):not([src$='.svg']):hover {
 	transform: scale(1.01);
 	box-shadow: 13px 13px 0 0 #888, -12px -12px 0 0 var(--brand-color-pale);
 }

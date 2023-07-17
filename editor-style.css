@@ -97,7 +97,6 @@ img {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
-    border-style: none; 
 }
 
 figure {
@@ -297,4 +296,10 @@ select:not([multiple]):not([size]) {
 	margin: 0.6em 0.2em 0;
 	padding-left: 0.5em;
 	line-height: 1;
+}
+
+.has-alpha img {
+	border: none;
+	background-color: transparent;
+	box-shadow: none;
 }

@@ -283,6 +283,21 @@ WordPress Gutenburg Content Styling
 	margin-bottom: -2em !important;
 }
 
+.the-content figure.alignright,
+.the-content figure.alignleft {
+	margin: 0.3rem 1.1rem 0.6rem;
+}
+
+.the-content figure.aligncenter {
+	margin: 0.2rem auto;
+}
+
+.the-content figure.no-border {
+	border: none;
+	background: transparent;
+}
+
+/* Blockquotes */
 .the-content blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
 	border-left: 6px solid var(--tertiary-color);
@@ -309,14 +324,7 @@ WordPress Gutenburg Content Styling
 	margin-left: 0.5em;
 }
 
-.the-content figure.alignright,
-.the-content figure.alignleft {
-	margin: 0.3rem 1.1rem 0.6rem;
-}
 
-.the-content figure.aligncenter {
-	margin: 0.2rem auto;
-}
 
 /* Body content links */
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {

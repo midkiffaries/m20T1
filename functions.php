@@ -849,6 +849,9 @@ function attachment_page_image($id) {
 
     // Check if attachment matches the extension images array
     foreach ($image_ext as $ext) {
+        //if ($ext == 'png' && (ord(file_get_contents(get_filepath(wp_get_attachment_url($id)), false, null, 25, 1)) & 4) > 0) {
+            //return wp_get_attachment_image($id, 'large', 0, array('loading' => '', 'itemprop' => 'image', 'class' => 'png-alpha')); // Return attachment
+        //}
         if (strpos($fileExt, $ext) !== FALSE) {
             return wp_get_attachment_image($id, 'large', 0, array('loading' => '', 'itemprop' => 'image')); // Return attachment
         }

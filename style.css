@@ -231,6 +231,10 @@ WordPress Gutenburg Content Styling
 	line-height: var(--p-line-height);
 }
 
+.the-content p code {
+	font-size: inherit;
+}
+
 .the-content li:not(.wp-social-link) {
 	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
 	line-height: 1.5;
@@ -242,11 +246,34 @@ WordPress Gutenburg Content Styling
 	line-height: 1;
 }
 
-.the-content p code {
-	font-size: inherit;
+/* Blockquotes */
+.the-content blockquote:not(.is-style-plain) {
+	padding-left: 0.7em;
+	border-left: 6px solid var(--tertiary-color);
 }
 
-/* Figures and Galleries */
+.the-content blockquote p {
+	margin: 0.2em 0;
+	font-style: italic;
+}
+
+.the-content blockquote p::before {
+	content: '“';
+	font-size: 1.2rem;
+}
+
+.the-content blockquote p::after {
+	content: '”';
+	font-size: 1.2rem;
+}
+
+.the-content blockquote cite {
+	font-size: smaller;
+	font-style: normal;
+	margin-left: 0.5em;
+}
+
+/* Images, Figures and Galleries */
 .the-content figure img[src$='.jpg'],
 .the-content figure img[src$='.webp'] {
 	transition: box-shadow 0.4s ease-in-out;
@@ -296,35 +323,6 @@ WordPress Gutenburg Content Styling
 	border: none;
 	background: transparent;
 }
-
-/* Blockquotes */
-.the-content blockquote:not(.is-style-plain) {
-	padding-left: 0.7em;
-	border-left: 6px solid var(--tertiary-color);
-}
-
-.the-content blockquote p {
-	margin: 0.2em 0;
-	font-style: italic;
-}
-
-.the-content blockquote p::before {
-	content: '“';
-	font-size: 1.2rem;
-}
-
-.the-content blockquote p::after {
-	content: '”';
-	font-size: 1.2rem;
-}
-
-.the-content blockquote cite {
-	font-size: smaller;
-	font-style: normal;
-	margin-left: 0.5em;
-}
-
-
 
 /* Body content links */
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {

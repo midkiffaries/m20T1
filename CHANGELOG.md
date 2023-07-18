@@ -1,9 +1,9 @@
 # Changes to m20T1
 
-### 1.4.1 Live (July 14, 2023)
+### 1.4.1 Live (July 17, 2023)
 
 * Inclusion of more metadata in the header.
-* Some minor bug and formating fixes.
+* Some minor bug and formating fixes throughout.
 
 ### 1.4 Live (July 10, 2023)
 

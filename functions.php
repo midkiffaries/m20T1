@@ -195,6 +195,7 @@ add_action( 'init', function(){
             'item_scheduled'         => _x( ADDITIONAL_POST_TYPE.' scheduled', '' ),
             'item_link'              => _x( ADDITIONAL_POST_TYPE.' link', '' ),
             'item_link_description'  => _x( 'A link to a '.ADDITIONAL_POST_TYPE, '' ),
+            'uri_slug'               => _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ),
         ),
         'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
         'public'             => true,

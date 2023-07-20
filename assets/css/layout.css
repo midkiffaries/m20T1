@@ -809,7 +809,7 @@ Portfolio Page Styling
 .portfolio-view-all {
 	position: absolute;
 	right: 7em;
-	top: calc(var(--header-height) + 1.5em);
+	top: calc(var(--header-height) + 2.5em);
 	z-index: 10;
 	line-height: 1;
 }

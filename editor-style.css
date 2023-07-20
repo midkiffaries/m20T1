@@ -289,6 +289,10 @@ select:not([multiple]):not([size]) {
 
 /* Custom Classes */
 
+.alignjustify {
+	text-align: justify;
+}
+
 .page-subtitle, 
 .subtitle {
 	color: #666;
@@ -302,4 +306,8 @@ select:not([multiple]):not([size]) {
 	border: none;
 	background-color: transparent;
 	box-shadow: none;
+}
+
+.fancy-border img {
+	
 }

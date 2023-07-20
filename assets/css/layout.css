@@ -872,6 +872,10 @@ img.wp-smiley, img.emoji {
 	margin: auto;
 }
 
+.alignjustify {
+	text-align: justify;
+}
+
 .clearfix {
 	content: "";
 	clear: both;

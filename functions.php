@@ -810,24 +810,6 @@ function display_last_updated() {
     ?></p><?php
 }
 
-// Display the author's user level/role
-function user_level($level) {
-    switch ($level) {
-        case 10: 
-            return "Administrator";
-            break;
-        case 7:
-            return "Editor";
-            break;
-        case 2:
-            return "Author";
-            break;
-        default:
-            return "Contributor";
-            break;
-    }
-}
-
 // Get a blog post's reading time
 function reading_time() {
     $wordcount = str_word_count(wp_strip_all_tags(get_the_content()));
@@ -979,9 +961,28 @@ function schemaNavigation($menu_name) {
 // Add Additional values to user profiles
 //////////////////////////////////////////
 
-// Add additional contact methods to user profiles
+// Display the author's user level/role
+function user_level($level) {
+    switch ($level) {
+        case 10: 
+            return "Administrator";
+            break;
+        case 7:
+            return "Editor";
+            break;
+        case 2:
+            return "Author";
+            break;
+        default:
+            return "Contributor";
+            break;
+    }
+}
+
+// Add additional contact methods and information to user profiles
 add_filter( 'user_contactmethods', function(){
     return array(
+        'jobtitle' => 'Job Title',
         'linkedin' => 'LinkedIn URL',
         'facebook' => 'Facebook URL',
         'twitter'  => 'Twitter URL',

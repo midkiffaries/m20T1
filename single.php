@@ -1,6 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
-<?php $curauth = $wp_query->get_queried_object(); // Get Author Info ?>
 
 <main class="page-main page-blogpost <?=get_page_class(); ?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content width-full">
@@ -49,7 +48,7 @@
                     <?=get_avatar(get_the_author_meta('ID'), 64); ?>
                 </figure>
             </div>
-            <h3 class="author-bio-name" itemprop="name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a> <small itemprop="jobTitle"><?=($curauth->jobtitle) ? $curauth->jobtitle : user_level(get_the_author_meta( 'user_level' )); ?></small></h3>
+            <h3 class="author-bio-name" itemprop="name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a> <small itemprop="jobTitle"><?=(get_the_author_meta( 'jobtitle' )) ? get_the_author_meta( 'jobtitle' ) : user_level(get_the_author_meta( 'user_level' )); ?></small></h3>
             <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
         </section>
 

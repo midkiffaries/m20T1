@@ -38,7 +38,7 @@
                     <?=get_avatar(get_the_author_meta('ID'), 128); ?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><span itemprop="jobTitle"><?=($curauth->jobtitle) ? $curauth->jobtitle : user_level(get_the_author_meta( 'user_level' )); ?></span> – <span itemprop="homeLocation"><?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Earth'); ?></span> – <span><?=number_format_i18n(get_the_author_posts()); ?> Posts</span></p>
+            <p class="author-bio-meta"><span itemprop="jobTitle"><?=($curauth->jobtitle) ? wp_strip_all_tags($curauth->jobtitle) : user_level(get_the_author_meta( 'user_level' )); ?></span> – <span itemprop="homeLocation"><?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Planet Earth'); ?></span> – <span><?=number_format_i18n(get_the_author_posts()); ?> Posts</span></p>
             <p class="author-bio-about" itemprop="description">
                 <?=nl2br($curauth->description); ?>
                 <p class="author-bio-lastlogin"><?="Last seen " . users_last_login() . " ago"; ?></p>

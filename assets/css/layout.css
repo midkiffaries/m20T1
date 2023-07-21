@@ -956,6 +956,14 @@ figure > a img[srcset] {
 	pointer-events: none;
 }
 
+.wp-block-gallery {
+	margin-bottom: 1em;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+	bottom: -3px;
+}
+
 @media (max-width: 600px) {
 	.wp-block-image figure {
 		width: 50%;

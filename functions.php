@@ -987,7 +987,7 @@ add_filter( 'user_contactmethods', function(){
         'facebook' => 'Facebook URL',
         'twitter'  => 'Twitter URL',
         'pinterest'=> 'Pinterest URL',
-        'city'     => 'City/State',
+        'city'     => 'City/State/Co',
     );
 });
 

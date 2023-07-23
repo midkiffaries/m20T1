@@ -206,6 +206,17 @@ Typography for the page title and subtitle
 	text-decoration: none;
 }
 
+@media (max-width: 800px) {
+	.portfolio-view-all {
+		top: -1em;
+		right: -1em;
+		transform: scale(0.6) rotate(18deg);
+	}
+	.portfolio-view-all:hover {
+		transform: scale(0.7);
+	}
+}
+
 /************************************
 Sticky/Featured article highlight
 ************************************/

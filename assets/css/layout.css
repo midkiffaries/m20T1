@@ -812,14 +812,14 @@ Portfolio Page Styling
 
 .portfolio-view-all {
 	position: absolute;
-	right: 7em;
+	right: 4em;
 	top: calc(var(--header-height) + 20px);
 	z-index: 10;
 	line-height: 1;
 	transform-origin: 50% 50%;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1249px) {
 	.portfolio-page {
 		grid-template-columns: auto auto;
 	}
@@ -828,7 +828,7 @@ Portfolio Page Styling
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 849px) {
 	.portfolio-page {
 		grid-template-columns: auto;
 	}
@@ -845,7 +845,7 @@ Portfolio Page Styling
 	}
 	.portfolio-view-all {
 		top: 1.1em;
-		right: 1em;
+		right: 0.5em;
 	}
 }
 

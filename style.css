@@ -175,6 +175,7 @@ Typography for the page title and subtitle
 	font-family: var(--font-mono);
 }
 
+/* Portfolio page view all badge */
 .portfolio-view-all {
 	width: 142px;
 	height: 142px;

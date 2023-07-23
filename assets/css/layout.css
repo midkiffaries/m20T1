@@ -813,13 +813,22 @@ Portfolio Page Styling
 .portfolio-view-all {
 	position: absolute;
 	right: 7em;
-	top: calc(var(--header-height) + 2.7em);
+	top: calc(var(--header-height) + 20px);
 	z-index: 10;
 	line-height: 1;
-	filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.4));
+	transform-origin: 50% 50%;
 }
 
-@media (max-width: 849px) {
+@media (max-width: 1250px) {
+	.portfolio-page {
+		grid-template-columns: auto auto;
+	}
+	.portfolio-thumbnail {
+		width: 100%;
+	}
+}
+
+@media (max-width: 800px) {
 	.portfolio-page {
 		grid-template-columns: auto;
 	}

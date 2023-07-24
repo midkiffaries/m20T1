@@ -183,7 +183,7 @@ Typography for the page title and subtitle
 	background-size: contain;
 	background-image: var(--portfolio-view-background);
 	text-align: center;
-	transition: all 0.2s ease-in-out;
+	transition: all 0.2s cubic-bezier(.14,.7,.87,.54);
 	transform: scale(1) rotate(18deg);
 	filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.35));
 }

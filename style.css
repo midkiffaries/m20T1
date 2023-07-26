@@ -802,13 +802,15 @@ Specific Page Styling
 /* Home Page */
 
 /* Homepage tagline introduction text */
+/*
 .homepage-tagline {
 	text-shadow: 2px 2px 0 #000;
 	max-width: var(--page-width);
 	margin: 0 auto 1em;
 }
-
+*/
 /* Homepage Main Links */
+/*
 .homepage-links div a:link {
 	font-weight: 600;
 	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.3);
@@ -852,15 +854,17 @@ Specific Page Styling
 		margin: 0;
 	}
 }
-
+*/
 /* Homepage social links */
+/*
 .home .the-content .wp-block-social-links a {
 	font-weight: 700;
 	font-size: 1.2em;
 	white-space: nowrap;
 }
-
+*/
 /* Homepage Merch Stores Links */
+/*
 .merch-stores-links div a {
 	font-weight: 600;
 	box-shadow: 5px 5px 0 0 rgba(0,0,0,0.2);
@@ -875,8 +879,9 @@ Specific Page Styling
 .merch-stores-links div a:active {
 	filter: brightness(90%);
 }
-
+*/
 /* Embedded Youtube video */
+/*
 .home .wp-youtube {
 	max-width: 800px;
 	margin: 0;
@@ -896,8 +901,9 @@ Specific Page Styling
 	color: #c00;
 	font-weight: 600;
 }
-
+*/
 /* Homepage recent posts styling */
+/*
 .homepage-recent-posts {
 	max-width: var(--page-width);
 	margin: 0 auto;
@@ -933,8 +939,49 @@ Specific Page Styling
 		margin: 0 0.8em;
 	}
 }
+*/
 
-/* Related posts button */
+
+
+/* REMLAB page */
+
+/* Right Column */
+/*
+.remlab-col-aside {
+	--remlab: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z' stroke-width='1' stroke='hsla(0, 0%, 0%, 0.05)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+	border: 2px solid rgba(0,0,0,0.1);
+	box-shadow: 3px 3px 7px -1px rgba(0,0,0,0.5) inset;
+	border-radius: 8px;
+	background-image: var(--remlab);
+	background-attachment: fixed;
+}
+
+.remlab-col-aside img {
+	filter: drop-shadow(1px 1px 3px #aaa);
+}
+*/
+/* Mistletoe's Night page */
+
+/* Right Column */
+/*
+.mistletoe-col-aside {
+	--mistletoe: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M10-10L20 0v10L10 0zM20 0L10-10V0l10 10zm0 10L10 0v10l10 10zm0 10L10 10v10l10 10zM0 20l10-10v10L0 30zm0-10L10 0v10L0 20zM0 0l10-10V0L0 10z'  stroke-width='1' stroke='hsla(0, 0%, 0%, 0.02)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+	border: 2px solid rgba(0,0,0,0.1);
+	border-radius: 8px;
+	background-image: var(--mistletoe);
+	background-attachment: fixed;
+}
+
+.mistletoe-col-aside figure img[src$='.jpg'] {
+	box-shadow: 0 0 8px 1px rgba(0,0,0,0.2) !important;
+}
+
+.mistletoe-col-aside figure img[src$='.svg'] {
+	margin: 0.5em;
+}
+*/
+
+/* Related posts buttons */
 .related-posts-button {
 	margin-top: -1.5em;
 }
@@ -962,7 +1009,7 @@ Specific Page Styling
 	filter: brightness(95%);
 }
 
-/* Learn more button */
+/* Learn more buttons */
 .learn-more-button .is-style-outline a {
 	transition: all 0.2s ease-in-out;
 	text-transform: uppercase;
@@ -977,63 +1024,6 @@ Specific Page Styling
 .learn-more-button .is-style-outline a:active {
 	filter: brightness(80%);
 }
-
-
-/* REMLAB page */
-
-/* Right Column */
-.remlab-col-aside {
-	--remlab: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z' stroke-width='1' stroke='hsla(0, 0%, 0%, 0.05)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-	border: 2px solid rgba(0,0,0,0.1);
-	box-shadow: 3px 3px 7px -1px rgba(0,0,0,0.5) inset;
-	border-radius: 8px;
-	background-image: var(--remlab);
-	background-attachment: fixed;
-}
-
-.remlab-col-aside img {
-	filter: drop-shadow(1px 1px 3px #aaa);
-}
-
-/* Mistletoe's Night page */
-
-/* Right Column */
-.mistletoe-col-aside {
-	--mistletoe: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M10-10L20 0v10L10 0zM20 0L10-10V0l10 10zm0 10L10 0v10l10 10zm0 10L10 10v10l10 10zM0 20l10-10v10L0 30zm0-10L10 0v10L0 20zM0 0l10-10V0L0 10z'  stroke-width='1' stroke='hsla(0, 0%, 0%, 0.02)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-	border: 2px solid rgba(0,0,0,0.1);
-	border-radius: 8px;
-	background-image: var(--mistletoe);
-	background-attachment: fixed;
-}
-
-.mistletoe-col-aside figure img[src$='.jpg'] {
-	box-shadow: 0 0 8px 1px rgba(0,0,0,0.2) !important;
-}
-
-.mistletoe-col-aside figure img[src$='.svg'] {
-	margin: 0.5em;
-}
-
-/* About page */
-
-/* Right Column */
-.trivia-block {
-	border: 1px solid #fff;
-	box-shadow: 6px 6px 0 0 #888;
-	transform: rotate(2deg);
-	background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04),rgba(0,0,0,0.08),rgba(0,0,0,0.05),rgba(0,0,0,0.04),rgba(0,0,0,0.01),rgba(0,0,0,0.1),rgba(0,0,0,0.09),rgba(0,0,0,0.1),rgba(0,0,0,0.03),transparent,rgba(0,0,0,0.07),rgba(0,0,0,0.03),rgba(0,0,0,0.06) 4px),linear-gradient(90deg, rgb(193, 255, 253),rgb(59, 104, 247));
-}
-
-.trivia-block h3 {
-	border-bottom: 2px solid #000;
-	margin-bottom: -10px !important;
-}
-
-.trivia-block ul {
-	padding-left: 0.2em;
-	list-style: none;
-}
-
 
 /* Add additional brand icons for social links */
 .the-content .wp-block-social-link a {
@@ -1053,11 +1043,11 @@ Specific Page Styling
 	background-size: 1em;
 	margin-right: 0.2em;
 }
-
+/*
 .page-about .wp-social-link [href^="https://unsplash.com"]::before {
 	filter: brightness(0);
 }
-
+*/
 .wp-social-link [href^="https://music.apple.com"]::before {
 	content: "";
 	background-image: url("data:image/svg+xml,<svg height='1024' width='1024' xmlns='http://www.w3.org/2000/svg'><path d='m301.995 1004.8c-20.181-13.483-38.101-29.995-53.077-49.067-16.341-19.755-31.488-40.533-45.397-62.037-32.683-47.787-58.24-100.053-75.947-155.136-21.333-64.085-31.701-125.44-31.701-185.472 0-66.987 14.507-125.44 42.752-174.507 20.907-38.4 52.053-70.528 89.6-93.099 36.267-22.613 78.507-34.987 121.173-35.84 14.933 0 31.147 2.133 48.213 6.4 12.373 3.413 27.307 8.96 45.653 15.787 23.467 8.96 36.267 14.507 40.533 15.787 13.653 5.12 25.173 7.253 34.133 7.253 6.827 0 16.64-2.133 27.52-5.547 6.187-2.133 17.92-5.973 34.56-13.227 16.469-5.973 29.525-11.093 39.893-14.933 15.787-4.693 31.061-8.96 44.8-11.093 16.64-2.56 33.152-3.413 48.981-2.133 30.293 2.133 58.027 8.533 82.773 17.92 43.52 17.493 78.635 44.8 104.832 83.627-11.093 6.827-21.333 14.763-30.933 23.467-20.779 18.347-38.4 40.107-52.48 64.213-18.347 32.853-27.733 69.973-27.477 107.52.64 46.208 12.373 86.827 35.84 122.027 16.512 25.6 38.571 47.531 65.451 65.536 13.227 8.96 24.832 15.147 35.84 19.2-5.12 16-10.752 31.573-17.28 46.933-14.805 34.432-32.427 67.413-53.333 98.56-18.432 26.88-32.939 46.933-43.947 60.16-17.152 20.48-33.707 35.84-50.347 46.805-18.347 12.16-39.893 18.603-61.952 18.603-14.933.64-29.867-1.28-44.117-5.419-12.373-4.053-24.576-8.619-36.523-13.781a296.24 296.24 0 0 0 -38.613-14.507c-16.213-4.267-32.853-6.315-49.664-6.272-17.067 0-33.707 2.133-49.493 6.187-13.227 3.755-26.027 8.363-38.699 13.867-17.92 7.467-29.653 12.373-36.48 14.507a190.754 190.754 0 0 1 -42.24 7.467c-22.187 0-42.837-6.4-62.848-19.755zm292.437-787.627c-29.013 14.507-56.576 20.651-84.181 18.603-4.267-27.563 0-55.893 11.52-86.912 10.24-26.453 23.893-50.347 42.667-71.68 19.627-22.187 43.093-40.533 69.547-53.76 28.16-14.507 55.04-22.187 80.64-23.467 3.413 29.013 0 57.6-10.667 88.32-9.728 27.307-24.235 52.48-42.667 75.093-18.56 22.187-41.6 40.533-66.859 53.803z' fill='black'/></svg>");

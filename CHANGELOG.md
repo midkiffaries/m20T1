@@ -1,8 +1,9 @@
 # Changes to m20T1
 
-### 1.4.2 Live (July 28, 2023)
+### 1.4.2 Live (July 26, 2023)
 
-* Addition of a Custom Field for emebeding CSS "Page_CSS" into a page or post. This will allow me to remove more of my page specific styling from style.css.
+* The addition of a Custom Field ("Page_CSS") for embedding page-specific CSS into a page or post.
+* Removal of marchtwenty.com page specific CSS from style.css, with the goal of moving layout.css into style.css at some point and moving more code to the editor.
 * Added more custom CSS to the editor-style stylesheet to better balance things.
 * More code cleanup that I missed.
 

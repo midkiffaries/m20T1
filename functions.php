@@ -284,7 +284,7 @@ add_action( 'wp_head', function(){
 
 // Append to the top of the page body tag
 //add_action( 'wp_body_open', function(){
-// Code
+// Code Here
 //});
 
 // Append to the bottom of the page body tag
@@ -305,7 +305,6 @@ add_action( 'wp_footer', function(){
 
 // Decactivate xml-rpc WordPress feature for security reasons
 //add_filter( 'xmlrpc_enabled', '__return_false' );
-
 //add_filter( 'load_configurator_on_page', '__return_true' );
 
 // Add custom message to login screen
@@ -369,13 +368,13 @@ add_filter( 'wp_calculate_image_sizes', 'remove_svg_srcset', 10, 3 );
 //////////////////////////////////////
 
 // Add Featured Image column
-function AddImageColumn($columns) {
+function AddImageColumn( $columns ) {
     $columns['thumbnail'] = __('Image');
     return $columns;
 }
 
 // Add Featured Image column values
-function AddImageValue($column_name, $post_id) {
+function AddImageValue( $column_name, $post_id ) {
 	if ( $column_name == 'thumbnail' ) {
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 		if ( $post_thumbnail_id ) {
@@ -396,13 +395,13 @@ add_filter( 'manage_pages_columns', 'AddImageColumn' );
 add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
 
 // Add SEO Excerpt column
-function AddExcerptColumn($columns) {
+function AddExcerptColumn( $columns ) {
     $columns['seo_excerpt'] = __('SEO Excerpt');
     return $columns;
 }
 
 // Add SEO Excerpt column values
-function AddExcerptValue($column_name, $post_id) {
+function AddExcerptValue( $column_name, $post_id ) {
     if ( $column_name == 'seo_excerpt') {
         if ( $post_id ) {
             echo SEO_Excerpt($post_id);
@@ -541,7 +540,7 @@ add_action( 'widgets_init', function(){
 
 // Get 'Widgets_Slug' Custom Field which changes the sidebar selection
 // SLUGS: primary, secondary, tertiary, quaternary, singlepost, frontpage, singlepage, singlepagesidebar, portfoliopage, header, footer
-function selectSidebarCustomField($id, $default) {
+function selectSidebarCustomField( $id, $default ) {
     $key = get_post_meta( $id, 'Widgets_Slug', true );
     if (empty($key)) {
         return $default; // Default widgets
@@ -556,7 +555,7 @@ function selectSidebarCustomField($id, $default) {
 /////////////////////////////
 
 // Display the menu/navigation links as a <ul> list
-function menu_nav_list($menu, $id) {
+function menu_nav_list( $menu, $id ) {
     wp_nav_menu(array(
         'menu'            => $menu,
         'container'       => 'nav',
@@ -581,7 +580,7 @@ function menu_nav_list($menu, $id) {
 /////////////////////////////
 
 // Display page title and excerpt from child pages of current page
-function get_child_pages($id, $thumbnail) {
+function get_child_pages( $id, $thumbnail ) {
     $page_children = get_pages(array(
         'sort_order'     => 'ASC',
         'sort_column'    => 'menu_order, post_title',
@@ -615,7 +614,7 @@ function get_child_pages($id, $thumbnail) {
 /////////////////////////////
 
 // Get 'Page_CSS' Custom Field which adds custom page styling
-function custom_page_css($id) {
+function custom_page_css( $id ) {
     $css = get_post_meta( $id, 'Page_CSS', true );
     if (empty($css)) {
         return '';
@@ -625,7 +624,7 @@ function custom_page_css($id) {
 }
 
 // Get the number of times this keyword comes up in search queries
-function SearchCount($query) {
+function SearchCount( $query ) {
     $count = 0;
     $search = new WP_Query("s=$query & showposts=-1");
     if ($search->have_posts()) {
@@ -638,13 +637,13 @@ function SearchCount($query) {
 }
 
 // Get WordPress page title and content for the blog list page (index.php)
-function GetPageTitle($id) {
+function GetPageTitle( $id ) {
     $page_for_posts_obj = get_post( $id );
     return apply_filters( 'the_content', $page_for_posts_obj->post_content );
 }
 
 // Shorten the_content in place of using the_excerpt for more control
-function shorten_the_content($post) {
+function shorten_the_content( $post ) {
     $regex_figure = "/<figure[^>]*>([\s\S]*?)<\/figure[^>]*>/"; // Remove figure/figcaption
     $regex_url = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?).*$)@"; // Remove URLs
     $excerpt = preg_replace($regex_figure, ' ', html_entity_decode($post));
@@ -658,7 +657,7 @@ function post_separator() {
 }
 
 // Append the proper size units to a numerical file size 
-function file_units($filesize) {
+function file_units( $filesize ) {
     $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB');
 	if ($filesize) {
         return round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 1) . $filesizeunits[$i];
@@ -668,7 +667,7 @@ function file_units($filesize) {
 }
 
 // Get the the image information and file size
-function image_metadata($filename) {
+function image_metadata( $filename ) {
     $filesize = file_units(wp_filesize(get_filepath($filename)));
     if (@is_array(getimagesize($filename))) {
         list($width, $height, $type, $attr) = getimagesize($filename);
@@ -679,7 +678,7 @@ function image_metadata($filename) {
 }
 
 // Get the full file path on the server from the file's URI
-function get_filepath($fileurl){
+function get_filepath( $fileurl ) {
     return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
 }
 
@@ -689,14 +688,14 @@ function get_filepath($fileurl){
 /////////////////////////////
 
 // Swaps certain special characters with words for SEO purposes
-function SEO_CharSwap($string) {
+function SEO_CharSwap( $string ) {
     $string = preg_replace('/\%/', 'percent', $string); 
     $string = preg_replace('/\&/', 'and', $string); 
     return trim($string);
 }
 
 // Get the excerpt from either the content or the user defined excerpt  
-function SEO_Excerpt($id) {
+function SEO_Excerpt( $id ) {
     // Set the total character length
     $length = SEO_TEXT_LENGTH;
     // Check if post has a user defined excerpt
@@ -720,7 +719,7 @@ function SEO_Excerpt($id) {
 }
 
 // Get the featured image use fallback in none defined (thumbnail, medium, medium_large, large, full)
-function SEO_Image($id) {
+function SEO_Image( $id ) {
     // Get page featured image
     if (is_attachment()) { // If attachment page, use attachment image
         $featuredImage = wp_get_attachment_url(get_the_ID());
@@ -738,7 +737,7 @@ function SEO_Image($id) {
 /////////////////////////////
 
 // Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
-function FeaturedImageURL($id, $size, $isBackground) {
+function FeaturedImageURL( $id, $size, $isBackground ) {
 
     if (has_post_thumbnail($id)) { // Use featured image url
         $image = get_the_post_thumbnail_url($id, $size);
@@ -779,7 +778,7 @@ function GetFirstImage() {
 }
 
 // Display the header/hero image from the featured image
-function Header_Hero($id) {
+function Header_Hero( $id ) {
     // Type of page
     if ( is_front_page() ) { // Front-page header (No header image)
         $className = "homepage";
@@ -838,13 +837,13 @@ function reading_time() {
 }
 
 // Get the file extension from a path
-function get_file_extension($path) {
+function get_file_extension( $path ) {
     $extension = wp_check_filetype($path);
     return $extension['ext'];
 }
 
 // Get proper attachment image or use a document placeholder
-function attachment_page_image($id) {
+function attachment_page_image( $id ) {
     $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'heic', 'ico');
     $video_ext = array('mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');
     
@@ -876,7 +875,7 @@ function attachment_page_image($id) {
 }
 
 // Blog post user comment HTML and formatting for each comment
-function custom_comment_style($comment, $args, $depth) {
+function custom_comment_style( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
     // Visitor comment HTML
@@ -907,7 +906,7 @@ function custom_comment_style($comment, $args, $depth) {
 }
 
 // Pagination on the index/archive/search pages
-function blog_post_pagination($type) {
+function blog_post_pagination( $type ) {
     previous_posts_link("&#x276E; Previous " . get_option('posts_per_page') . " {$type}", 0); // << Left Side
     next_posts_link("Next " . get_option('posts_per_page') . " {$type} &#x276F;", 0); // Right Side >>
 }
@@ -965,7 +964,7 @@ function schemaJSONData() {
 }
 
 // Schema.org JSON site navigation elements loop
-function schemaNavigation($menu_name) {
+function schemaNavigation( $menu_name ) {
 	if (($menu_name) && ($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
 		$menu = get_term($locations[$menu_name], 'nav_menu');
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
@@ -982,7 +981,7 @@ function schemaNavigation($menu_name) {
 //////////////////////////////////////////
 
 // Display the author's user level/role
-function user_level($level) {
+function user_level( $level ) {
     switch ($level) {
         case 10: 
             return "Administrator";
@@ -1014,7 +1013,7 @@ add_filter( 'user_contactmethods', function(){
 // Add additional section to the user profiles
 add_action( 'show_user_profile', 'show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'show_extra_profile_fields' );
-function show_extra_profile_fields($user) { ?>
+function show_extra_profile_fields( $user ) { ?>
     <h3>Additional Information</h3>
     <p>Let the world know how you're feeling today.</p>
     <table class="form-table">

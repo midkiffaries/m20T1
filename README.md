@@ -47,6 +47,16 @@ This theme is not available on the official WordPress theme library. In order to
 
 FYI, this theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>functions.php</code>, <code>editor-style.css</code>, <code>theme.json</code> and the <code>style.css</code> files. You will need to go into those files to make necessary adjustments to the visuals other configuration changes.
 
+## Custom CSS for use in the Editor
+These CSS classes are usable in the Guetenburg editor and will render accordingly.
+<ul>
+  <li><code>.page-subtitle / .subtitle</code> - Used to make the subtitle text in a handwritten style font</li>
+  <li><code>.alignjustify</code> - Justifies the text block</li>
+  <li><code>.has-alpha</code> - Removes borders and background from an image element</li>
+  <li><code>.fancy-border</code> - Adds a fancy border around an image element</li>
+  <li><code>.add-drop-shadow</code> - Adds a drop shadow to an image element</li>
+</ul>
+
 ## Disclaimer
 This WordPress theme is just a personal pet project of mine, and I am happy to share the code, however there really is no support for it other than any issues that I come across while working on it for my personal website.
 

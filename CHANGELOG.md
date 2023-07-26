@@ -3,7 +3,7 @@
 ### 1.4.2 Live (July 26, 2023)
 
 * The addition of a Custom Field ("Page_CSS") for embedding page-specific CSS into a page or post.
-* Removal of marchtwenty.com page specific CSS from style.css, with the goal of moving layout.css into style.css at some point and moving more code to the editor.
+* Removal of marchtwenty.com page specific CSS from style.css.
 * Added more custom CSS to the editor-style stylesheet to better balance things.
 * More code cleanup that I missed.
 

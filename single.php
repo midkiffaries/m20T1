@@ -20,6 +20,7 @@
             </header>
             <div class="the-content single-entry-content" itemprop="text articleBody">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
+                <?=custom_page_css(get_the_ID()); ?>
             </div>
             <div class="entry-last-updated">
                 <?php display_last_updated(); ?>

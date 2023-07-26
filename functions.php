@@ -100,10 +100,15 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
 
-    // Setting the Custom Fields for the widgets slug
+    // Setting a Custom Field for the widgets slug
     if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
         add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 	}
+
+    // Setting a Custom Field for the page CSS style
+    if (empty(get_post_meta( get_the_ID(), 'Page_CSS', true ))) {
+        add_post_meta( get_the_ID(), 'Page_CSS', '', true );
+    }
 });
 
 // Enable styles and scripts
@@ -535,7 +540,7 @@ add_action( 'widgets_init', function(){
 });
 
 // Get 'Widgets_Slug' Custom Field which changes the sidebar selection
-// SLUGS: primary, secondary, tertiary, quaternary, singlepost, frontpage, singlepage, singlepagesidebar, header, footer
+// SLUGS: primary, secondary, tertiary, quaternary, singlepost, frontpage, singlepage, singlepagesidebar, portfoliopage, header, footer
 function selectSidebarCustomField($id, $default) {
     $key = get_post_meta( $id, 'Widgets_Slug', true );
     if (empty($key)) {
@@ -544,6 +549,11 @@ function selectSidebarCustomField($id, $default) {
         return $key;
     }
 }
+
+
+/////////////////////////////
+// Navigation
+/////////////////////////////
 
 // Display the menu/navigation links as a <ul> list
 function menu_nav_list($menu, $id) {
@@ -603,6 +613,16 @@ function get_child_pages($id, $thumbnail) {
 /////////////////////////////
 // Specialized Functions
 /////////////////////////////
+
+// Get 'Page_CSS' Custom Field which adds custom page styling
+function custom_page_css($id) {
+    $css = get_post_meta( $id, 'Page_CSS', true );
+    if (empty($css)) {
+        return '';
+    } else {
+        return '<style type="text/css" class="hidden" aria-hidden="true">'.$css.'</style>';
+    }
+}
 
 // Get the number of times this keyword comes up in search queries
 function SearchCount($query) {

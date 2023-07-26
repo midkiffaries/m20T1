@@ -12,7 +12,7 @@
                 <h1 class="page-title hidden" itemprop="name headline" aria-hidden="true"><?php the_title(); ?></h1>
                 <div class="the-content" itemprop="text articleBody">
                     <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
-
+                    <?=custom_page_css(get_the_ID()); ?>
                 </div>
             </div>
         </article>

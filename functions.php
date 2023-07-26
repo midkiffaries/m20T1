@@ -619,7 +619,7 @@ function custom_page_css( $id ) {
     if (empty($css)) {
         return '';
     } else {
-        return '<style type="text/css" id="Page-Inline-CSS" aria-hidden="true" hidden>'.wp_strip_all_tags($css).'</style>';
+        return '<style type="text/css" id="Page-CSS" aria-hidden="true" hidden>'.wp_strip_all_tags($css).'</style>';
     }
 }
 

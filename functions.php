@@ -545,7 +545,7 @@ function selectSidebarCustomField( $id, $default ) {
     if (empty($key)) {
         return $default; // Default widgets
     } else {
-        return $key;
+        return wp_strip_all_tags($key);
     }
 }
 

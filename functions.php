@@ -195,7 +195,7 @@ add_action( 'init', function(){
             'items_list_navigation'  => _x( ADDITIONAL_POST_TYPE.' list navigation', '' ),
             'items_list'             => _x( ADDITIONAL_POST_TYPE.' list', '' ),
             'item_published'         => _x( ADDITIONAL_POST_TYPE.' published', '' ),
-            'item_published_privately'=> _x( ADDITIONAL_POST_TYPE.' published privately', '' ),
+            'item_published_privately'=>_x( ADDITIONAL_POST_TYPE.' published privately', '' ),
             'item_updated'           => _x( ADDITIONAL_POST_TYPE.' updated', '' ),
             'item_reverted_to_draft' => _x( ADDITIONAL_POST_TYPE.' reverted to draft', '' ),
             'item_scheduled'         => _x( ADDITIONAL_POST_TYPE.' scheduled', '' ),
@@ -221,7 +221,7 @@ add_action( 'init', function(){
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
-        'taxonomies'         => array( 'category' ),
+        'taxonomies'         => array( 'category' ), // category, post_tag
         'can_export'         => true,
         'map_meta_cap'       => true,
         'show_in_rest'       => true

@@ -120,7 +120,7 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
     wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), THEME_VERSION, 'all' );
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );
-    wp_enqueue_style( 'dashicons' ); // Dashicons [class="dashicons dashicons-google"] 
+    //wp_enqueue_style( 'dashicons' ); // Dashicons [class="dashicons dashicons-google"] 
 
     // Remove post comments
     wp_dequeue_script( 'comment-reply' );

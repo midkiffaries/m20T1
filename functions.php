@@ -120,6 +120,7 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
     wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), THEME_VERSION, 'all' );
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );
+    wp_enqueue_style( 'dashicons' ); // Dashicons [class="dashicons dashicons-google"] 
 
     // Remove post comments
     wp_dequeue_script( 'comment-reply' );
@@ -218,7 +219,7 @@ add_action( 'init', function(){
         'has_archive'        => true,
         'hierarchical'       => true,
         'menu_position'      => 20,
-        'menu_icon'          => 'dashicons-portfolio',
+        'menu_icon'          => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/#google
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
         'taxonomies'         => array( 'category' ),
         'can_export'         => true,

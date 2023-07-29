@@ -219,7 +219,7 @@ add_action( 'init', function(){
         'has_archive'        => true,
         'hierarchical'       => true,
         'menu_position'      => 20,
-        'menu_icon'          => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/#google
+        'menu_icon'          => 'dashicons-portfolio', // https://developer.wordpress.org/resource/dashicons/
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
         'taxonomies'         => array( 'category' ),
         'can_export'         => true,

@@ -445,13 +445,12 @@ Single Blog Post Styling (single)
 }
 
 .single-entry-sticky {
+	float: right;
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 1.4rem;
-	margin-top: -2em;
-	position: absolute;
-	padding: 4px 10px;
-	background-color: #ddd;
+	font-size: 1.3rem;
+	padding: 3px 10px;
+	margin: -0.6em 0.5em;
 }
 
 .single-entry-title {
@@ -501,7 +500,8 @@ Single Blog Post Styling (single)
 }
 
 @media (max-width: 849px) {
-	.single-entry-metadata {
+	.single-entry-metadata,
+	.single-entry-sticky {
 		font-size: 0.9em;
 	}
 
@@ -980,7 +980,7 @@ figure > a img[srcset] {
 	bottom: -3px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 	.wp-block-image figure {
 		width: 50%;
 	}

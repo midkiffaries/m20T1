@@ -145,10 +145,12 @@ Typography for the page title and subtitle
 
 @media (max-width: 849px) {
 	.page-title,
+	.page-image .page-title,
 	.single-entry-title,
 	.blog-page-title h1,
 	.porfolio-page-title h1 {
-		font-size: 2.7em;
+		font-size: 2.7rem;
+		line-height: 1;
 	}
 }
 

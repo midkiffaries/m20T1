@@ -1,8 +1,8 @@
 # Changes to m20T1
 
-### 1.4.3 Live (August 10, 2023)
+### 1.4.3 Live (August 5, 2023)
 
-* 
+* CSS optimizations.
 
 ### 1.4.2 Live (July 26, 2023)
 

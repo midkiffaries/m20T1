@@ -284,9 +284,9 @@ add_action( 'wp_head', function(){
 });
 
 // Append to the top of the page body tag
-//add_action( 'wp_body_open', function(){
-// Code Here
-//});
+add_action( 'wp_body_open', function(){
+    set_page_views(); // Page view counter
+});
 
 // Append to the bottom of the page body tag
 add_action( 'wp_footer', function(){
@@ -419,6 +419,47 @@ add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
 // Add SEO Excerpt Column to Pages
 add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
 add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
+
+// Add a page view count column to the posts and pages sections
+// Get the number of page views
+function get_page_views() {
+    $count = get_post_meta( get_the_ID(), 'post_views_count', true );
+    if ($count < 1) {
+        return 0;
+    } else {
+        return $count;
+    }
+}
+
+// Set the page view counter
+function set_page_views() {
+    $key = 'post_views_count';
+    $post_id = get_the_ID();
+    $count = (int) get_post_meta( $post_id, $key, true );
+    $count++;
+    update_post_meta( $post_id, $key, $count );
+}
+
+// Add the page views column header
+function add_column_header_views( $column ) {
+    $column['post_views'] = 'Views';
+    return $column;
+}
+
+// Add the page views column content
+function add_column_views( $column ) {
+    if ( $column === 'post_views') {
+        echo get_page_views();
+    }
+}
+
+// Add Views Column to Posts
+add_filter( 'manage_posts_columns', 'add_column_header_views' );
+add_action( 'manage_posts_custom_column', 'add_column_views' );
+
+// Add Views Column to Pages
+add_filter( 'manage_pages_columns', 'add_column_header_views' );
+add_action( 'manage_pages_custom_column', 'add_column_views' );
 
 
 /////////////////////////////
@@ -1066,6 +1107,7 @@ function last_login_column( $output, $column_id, $user_id ){
 add_filter( 'manage_users_sortable_columns', function($columns){
 	return wp_parse_args( array('last_login' => 'last_login'), $columns );
 });
+
 add_action( 'pre_get_users', function($query){
 	if ( !is_admin() ) return $query;
 	$screen = get_current_screen();

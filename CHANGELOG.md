@@ -2,6 +2,7 @@
 
 ### 1.4.3 Live (August 5, 2023)
 
+* Inclusion of a basic page view counter.
 * CSS optimizations and clean up.
 
 ### 1.4.2 Live (July 26, 2023)

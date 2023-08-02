@@ -5,6 +5,7 @@ Custom WordPress Editor Styling
 
 :root {
 	--link-color: #40A5FF;
+	--marker-color: #e65100;
 	--text-color: #111;
 	--page-background: #fdfdfd;
 	accent-color: var(--link-color);
@@ -54,7 +55,7 @@ ol {
 }
 
 li::marker {
-	color: var(--link-color);
+	color: var(--marker-color);
 }
 
 /* Inline elements */

@@ -9,7 +9,7 @@
         <article <?php post_class(); ?> id="<?=$post->post_name; ?>" name="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="post-container">
                 <?php $postType = get_post_type_object(get_post_type()); ?>
-                <div class="portfolio-name" itemprop="articleSection"><?=get_post_type(); ?></div>
+                <div class="portfolio-name" itemprop="articleSection"><a href="<?=home_url() . "/" . esc_html($postType->labels->uri_slug) . "/"; ?>"><?=get_post_type(); ?></a></div>
                 <div class="portfolio-view-all"><a href="<?=home_url() . "/" . esc_html($postType->labels->uri_slug) . "/"; ?>">View all <?=esc_html($postType->labels->name); ?></a></div>
                 <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="the-content" itemprop="text description">

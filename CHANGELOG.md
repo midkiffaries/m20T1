@@ -2,7 +2,7 @@
 
 ### 1.4.3 Live (August 5, 2023)
 
-* CSS optimizations.
+* CSS optimizations and clean up.
 
 ### 1.4.2 Live (July 26, 2023)
 

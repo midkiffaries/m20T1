@@ -177,6 +177,10 @@ Typography for the page title and subtitle
 	font-family: var(--font-mono);
 }
 
+.portfolio-name a:hover {
+	color: var(--brand-color);
+}
+
 /* Portfolio page view all badge */
 .portfolio-view-all {
 	width: 142px;
@@ -232,6 +236,7 @@ Sticky/Featured article highlight
 
 .entry-sticky {
 	color: var(--tertiary-color);
+	background-size: 40px;
 }
 
 .blog-roll .sticky {

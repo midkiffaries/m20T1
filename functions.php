@@ -283,6 +283,16 @@ add_action( 'wp_head', function(){
 <?php
 });
 
+// Settings for the Admin floating toolbar
+add_action( 'admin_head', function(){
+?>
+<style type="text/css">
+.column-post_views {width: 4em;}
+.column-thumbnail {width: 7em;}
+</style>
+<?php
+});
+
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
     set_page_views(); // Page view counter

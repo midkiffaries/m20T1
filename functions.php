@@ -287,7 +287,7 @@ add_action( 'wp_head', function(){
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
-.column-post_views {width: 4em}
+.column-post_views {width: 3em}
 .column-thumbnail {width: 7em}
 </style>
 <?php

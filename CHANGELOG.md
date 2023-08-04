@@ -1,6 +1,8 @@
 # Changes to m20T1
 
-### 1.4.3 Live (August 5, 2023)
+### 1.4.4 Live (August 12, 2023)
+
+### 1.4.3 Live (August 3, 2023)
 
 * Inclusion of a basic page view counter.
 * Improvements to the column spacing in the editor.

@@ -859,10 +859,10 @@ function Header_Hero( $id ) {
 
     // Header Hero HTML
     ?>
-        <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" role="figure" aria-labelledby="header-hero-caption">
+        <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" role="img" aria-labelledby="header-hero-caption">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
-            <div class="header-hero-caption" id="header-hero-caption" role="caption"><?=$attachmentTitle; ?></div>
+            <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle; ?></div>
         </div>
     <?php
 }

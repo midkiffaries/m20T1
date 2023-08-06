@@ -60,12 +60,13 @@ Icon Fonts Styling
 Main Site Layout
 ************************/
 
-/* WordPress Admin bar adjustments */
-.admin-bar .header-menubar {
-	margin-top: 1.8em;
-}
-
 /* Page main body layout */
+/*
+.body-container {
+	background-color: #fefefe;
+	position: relative;
+}
+*/
 .page-main {
 	min-height: 30em;
 	width: var(--page-width);
@@ -199,6 +200,11 @@ Site Header
 	background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 32%);
 	width: 100%;
 	height: var(--header-height);
+}
+
+/* WordPress Admin bar adjustments */
+.admin-bar .header-menubar {
+	margin-top: 1.8em;
 }
 
 /* Header nav and logo */
@@ -1363,6 +1369,7 @@ Dark Mode Styling
 *************************/
 
 body.dark-mode,
+/* .dark-mode .body-container, */
 .dark-mode dialog > div {
 	color: #eee;
 	background-color: var(--darkmode-bg-color);

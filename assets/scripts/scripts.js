@@ -320,6 +320,8 @@ document.addEventListener("scroll", function () {
 		background: no-repeat center center / 1em;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/%3E%3C/svg%3E");
 		background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
 	}
 	.scroll-to-top-float:hover {
 		background-color: rgba(0,0,0,0.5); 

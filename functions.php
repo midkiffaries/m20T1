@@ -122,13 +122,13 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );
     //wp_enqueue_style( 'dashicons' ); // Dashicons [class="dashicons dashicons-google"] 
 
-    // Remove post comments
+    // Remove post comments reply
     wp_dequeue_script( 'comment-reply' );
 
-    // Remove WordPress block library
-    //wp_dequeue_style( 'wp-block-library' );
+    // Remove WordPress block library CSS
     wp_dequeue_style( 'wp-block-library-theme' );
-    //wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+    //wp_dequeue_style( 'wp-block-library' );
+    //wp_dequeue_style( 'wc-block-style' ); // WooCommerce block
 });
 
 // Enable or disable WordPress features on initialize

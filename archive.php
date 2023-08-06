@@ -3,7 +3,7 @@
 <?php $curauth = $wp_query->get_queried_object(); // Get Author Info ?>
 
 <main class="page-main page-archive" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content width-side">
+    <div class="page-content width-side" role="feed">
     
     <?php if (have_posts()) : // Has posts ?>
     

@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <main class="page-main page-portfolio" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content width-full">
+    <div class="page-content width-full" role="feed">
     
     <?php if (have_posts()) : // Has portfolio items ?>
     

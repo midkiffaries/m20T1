@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 <main class="page-main page-search" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content width-side">
+    <div class="page-content width-side" role="feed">
 
     <?php if (have_posts() && get_search_query()) : // Search results ?>
 

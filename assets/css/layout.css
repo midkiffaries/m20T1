@@ -326,7 +326,8 @@ Site Header
 	}
 	.header-navigation ul li a,
 	.header-secondary-navigation ul li a {
-		font-size: 1.5em;
+		font-size: 1.55em;
+		padding: 6px 2px 3px;
 	}
 	.header-breadcrumbs {
 		display: none;
@@ -815,7 +816,7 @@ Portfolio Page Styling
 }
 
 .portfolio-name {
-	margin-bottom: -0.5em;
+	margin-bottom: -0.25em;
 	font-size: 1.5rem;
 }
 

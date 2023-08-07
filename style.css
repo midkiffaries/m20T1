@@ -180,6 +180,7 @@ Typography for the page title and subtitle
 
 .portfolio-name a:hover {
 	color: var(--brand-color);
+	text-decoration: underline;
 }
 
 /* Portfolio page view all badge */

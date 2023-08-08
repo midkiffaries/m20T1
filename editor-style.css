@@ -88,8 +88,8 @@ small {
 }
 
 abbr[title] {
-	-webkit-text-decoration: underline dotted;
-	text-decoration: underline dotted;
+	-webkit-text-decoration: underline dotted currentColor;
+	text-decoration: underline dotted currentColor;
 	border-bottom: none;
 }
 
@@ -289,7 +289,6 @@ select:not([multiple]):not([size]) {
 
 
 /* Custom Classes */
-
 .alignjustify {
 	text-align: justify;
 }

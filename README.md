@@ -19,7 +19,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="" width="300" align="right" />
 
-- Compatible with WordPress 6.2+
+- Compatible with WordPress 6.3+
 - Theme supports PHP 8.0+
 - Built with SEO performance and social media sharing in mind
 - Schema.org structured data autonomously generated

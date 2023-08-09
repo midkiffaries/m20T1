@@ -115,9 +115,11 @@ document.addEventListener("keyup", (e) => {
     for (let i = 0; i < l; i++) {
         let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`,
             image = new Image();
+
         image.src = source;
         image.alt = "Play YouTube video";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
+
         youtube[i].addEventListener("click", function() {
             let iframe = document.createElement("iframe");
             iframe.setAttribute("frameborder", "0");
@@ -656,9 +658,9 @@ function HtmlModal(c, v) {
 	const style = document.createElement('style'),
         dialog = document.createElement('dialog'),
         headerDiv = document.createElement('header'),
-		innerDiv = document.createElement('div');
-    const tempID = document.getElementById(v);
-    const tempClone = tempID.content.cloneNode(true);
+		innerDiv = document.createElement('div'),
+        tempID = document.getElementById(v),
+        tempClone = tempID.content.cloneNode(true);
 
 	// Dialog frame
 	dialog.setAttribute('class', `dialog-html dialog-${c}`);
@@ -779,5 +781,5 @@ function closeModals(c) {
 
 // Check if href link is of a specific image type
 function isLinkAnImage(v) {
-    return ['jpg', 'jpeg', 'jp2', 'png', 'webp', 'gif', 'heic'].includes(v.split('.').pop()) ? true : false;
+    return ['jpg','jpeg','jp2','png','webp','gif','heic'].includes(v.split('.').pop()) ? true : false;
 }

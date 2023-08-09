@@ -2,6 +2,9 @@
 
 ### 1.4.4 Live (August 12, 2023)
 
+* Compatible with WordPress 6.3.
+* Minor CSS Adjustments.
+
 ### 1.4.3 Live (August 3, 2023)
 
 * Inclusion of a basic page view counter.

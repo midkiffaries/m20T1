@@ -4,6 +4,7 @@
 
 * Compatible with WordPress 6.3.
 * Minor CSS Adjustments.
+* Custom Footnote styling.
 
 ### 1.4.3 Live (August 3, 2023)
 

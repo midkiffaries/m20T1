@@ -302,6 +302,23 @@ select:not([multiple]):not([size]) {
 	line-height: 1;
 }
 
+.wp-block-footnotes li a,
+.fn a {
+	color: var(--marker-color); 
+	padding: 0 1px;
+}
+
+.wp-block-footnotes li {
+	font-size: 0.9em;
+	margin-left: 1em;
+	line-height: 1.1;
+}
+
+.wp-block-footnotes li::marker {
+	font-size: initial;
+	color: initial;
+}
+
 .wp-block-gallery {
 	margin-bottom: 1.6em !important;
 }

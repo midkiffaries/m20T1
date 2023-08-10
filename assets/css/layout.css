@@ -915,6 +915,24 @@ img.wp-smiley, img.emoji {
 	position: absolute;
 }
 
+/* Footnotes */
+.wp-block-footnotes li a,
+.fn a {
+	color: #f90 !important;
+	padding: 0 1px !important;
+}
+
+.wp-block-footnotes li {
+	font-size: 1em !important;
+	margin-left: 1em !important;
+	line-height: 1.1 !important;
+}
+
+.wp-block-footnotes li::marker {
+	font-size: initial !important;
+	color: initial !important;
+}
+
 /* Drop caps */
 .has-drop-cap:not(:focus):first-letter {
 	font-weight: 700;

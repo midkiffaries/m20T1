@@ -288,19 +288,7 @@ select:not([multiple]):not([size]) {
 }
 
 
-/* Custom Classes */
-.alignjustify {
-	text-align: justify;
-}
-
-.page-subtitle, 
-.subtitle {
-	color: #666;
-	font-size: 1.5rem;
-	margin: 0.6em 0.2em 0;
-	padding-left: 0.5em;
-	line-height: 1;
-}
+/* WordPress Blocks */
 
 .wp-block-footnotes li a,
 .fn a {
@@ -329,6 +317,21 @@ select:not([multiple]):not([size]) {
 
 .wp-block-gallery figure figcaption {
 	bottom: -2px !important;
+}
+
+/* Custom Classes */
+
+.page-subtitle, 
+.subtitle {
+	color: #666;
+	font-size: 1.5rem;
+	margin: 0.6em 0.2em 0;
+	padding-left: 0.5em;
+	line-height: 1;
+}
+
+.alignjustify {
+	text-align: justify;
 }
 
 .has-alpha img {

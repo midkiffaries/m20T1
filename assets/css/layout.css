@@ -682,12 +682,13 @@ Entry Social Sharing Styling
 	padding: 6px 8px;
 	border-radius: 5px;
 	display: inline-block;
-	transition: transform 0.3s cubic-bezier(.14,.7,.87,.54) !important;
+	box-shadow: 0 0 0 0 #666;
+	transition: all 0.3s cubic-bezier(.14,.7,.87,.54) !important;
 }
 
 .post-social-share li a:hover {
 	transform: scale(1.15);
-	box-shadow: 0 2px 2px 1px rgba(0,0,0,0.1);
+	box-shadow: 3px 3px 1px 0 rgba(0,0,0,0.2);
 }
 
 .post-social-share li a:active {

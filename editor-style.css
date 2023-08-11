@@ -287,9 +287,7 @@ select:not([multiple]):not([size]) {
 	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='dimgray'/></svg>");
 }
 
-
 /* WordPress Blocks */
-
 .wp-block-footnotes li a,
 .fn a {
 	color: var(--marker-color); 
@@ -320,7 +318,6 @@ select:not([multiple]):not([size]) {
 }
 
 /* Custom Classes */
-
 .page-subtitle, 
 .subtitle {
 	color: #666;

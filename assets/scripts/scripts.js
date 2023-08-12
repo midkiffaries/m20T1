@@ -783,3 +783,18 @@ function closeModals(c) {
 function isLinkAnImage(v) {
     return ['jpg','jpeg','jp2','png','webp','gif','heic'].includes(v.split('.').pop()) ? true : false;
 }
+
+// Disable/enable 'style.css'
+/*
+(() => {
+    const styleSwitch = document.getElementById("style-switch");
+    const stylesheet = document.getElementById("base-style-css");
+    stylesheet.disabled = true;
+
+    styleSwitch.addEventListener("click", () => {
+        stylesheet.disabled = !stylesheet.disabled;
+        const buttonText = stylesheet.disabled ? "Enable" : "Disable";
+        styleSwitch.innerText = buttonText;
+    });
+})();
+*/

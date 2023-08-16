@@ -287,8 +287,9 @@ add_action( 'wp_head', function(){
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
-.column-post_views {width: 3em}
-.column-thumbnail {width: 7em}
+.column-post_views {width:3em}
+.column-thumbnail {width:7em}
+.media-icon .attachment-60x60 {min-width:60px;}
 </style>
 <?php
 });
@@ -356,7 +357,7 @@ add_filter( 'upload_mimes', function($mimes){
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){
     if (has_custom_logo()) { // Use image logo
-        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image') ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image', 'fetchpriority' => 'high') ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
     } else { // No logo, use site title
         return '<span itemprop="name headline">' . get_bloginfo('name') . '</span>';
     }
@@ -390,7 +391,7 @@ function AddImageValue( $column_name, $post_id ) {
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 		if ( $post_thumbnail_id ) {
 			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
-            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="sync" itemprop="image" alt="" fetchpriority="low">';
+            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="async" itemprop="image" alt="" fetchpriority="low">';
 		} else {
             echo __('—');
         }
@@ -669,7 +670,7 @@ function get_child_pages( $id, $thumbnail ) {
 function custom_page_css( $id ) {
     $css = get_post_meta( $id, 'Page_CSS', true );
     if (empty($css)) {
-        return '';
+        return NULL;
     } else {
         return '<style type="text/css" id="Page-CSS" aria-hidden="true" hidden>'.wp_strip_all_tags($css).'</style>';
     }
@@ -904,7 +905,7 @@ function attachment_page_image( $id ) {
     // Check if attachment matches the extension images array
     foreach ($image_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
-            return wp_get_attachment_image($id, 'large', 0, array('loading' => '', 'itemprop' => 'image')); // Return attachment
+            return wp_get_attachment_image($id, 'large', 0, array('loading' => '', 'itemprop' => 'image', 'fetchpriority' => 'high')); // Return attachment
         }
     }
 
@@ -917,7 +918,7 @@ function attachment_page_image( $id ) {
 
     // Check if attachment is SVG file or other document
     if ($fileExt == 'svg' || $fileExt == 'svgz') { // SVG Images
-        return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" loading="lazy" decoding="sync" class="attachment-svg" itemprop="image" fetchpriority="high">';
+        return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" loading="lazy" decoding="async" class="attachment-svg" itemprop="image" fetchpriority="high">';
     } else { // All other documents types
         return '<svg id="GenericDoc" xmlns="http://www.w3.org/2000/svg" width="512" height="512" role="img"><path d="M458.9 114.5c-11.1-15.1-26.6-32.8-43.6-49.8S380.6 32.2 365.5 21C339.7 2.1 327.2 0 320 0H72C50 0 32 18 32 40v432c0 22 18 40 40 40h368c22 0 40-18 40-40V160c0-7.2-2.2-19.7-21.1-45.5zm-66.2-27.2A436.4 436.4 0 0 1 429 128h-77V51a436 436 0 0 1 40.7 36.3zM448 472c0 4.3-3.7 8-8 8H72c-4.3 0-8-3.7-8-8V40c0-4.3 3.7-8 8-8h248v112a16 16 0 0 0 16 16h112v312z" fill="dodgerblue"/><path d="M368 416H144a16 16 0 0 1 0-32h224a16 16 0 1 1 0 32zm0-64H144a16 16 0 0 1 0-32h224a16 16 0 1 1 0 32zm0-64H144a16 16 0 0 1 0-32h224a16 16 0 1 1 0 32z" fill="lightblue"/></svg>';
     }

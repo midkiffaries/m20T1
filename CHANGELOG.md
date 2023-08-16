@@ -2,6 +2,7 @@
 
 ### 1.4.5 Live (August 24, 2023)
 
+* Bug fixes.
 
 ### 1.4.4 Live (August 14, 2023)
 

@@ -118,6 +118,9 @@ document.addEventListener("keyup", (e) => {
 
         image.src = source;
         image.alt = "Play YouTube video";
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.role = "button";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
 
         youtube[i].addEventListener("click", function() {
@@ -125,6 +128,7 @@ document.addEventListener("keyup", (e) => {
             iframe.setAttribute("frameborder", "0");
             iframe.setAttribute("allow", "accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
             iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("loading", "lazy");
             iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?feature=oembed`);
             this.innerHTML = "";
             this.appendChild(iframe);
@@ -314,6 +318,7 @@ document.addEventListener("scroll", function () {
 		bottom: 1.6em;
 		width: 40px;
 		height: 40px;
+        border: 1px solid #fff;
 		border-radius: 0.2em;
 		font-size: 2em;
 		cursor: pointer;
@@ -393,6 +398,7 @@ function smoothScroll(loc, duration) {
 				dialog.setAttribute('role', 'dialog');
 				dialog.setAttribute('rel', 'lightbox');
 				dialog.setAttribute('open', 'open');
+                dialog.setAttribute('onclick', "closeModals('lightbox-image')");
 
 				// Dialog close button
 				headerDiv.setAttribute('class', 'lightbox-header');
@@ -401,7 +407,7 @@ function smoothScroll(loc, duration) {
 				// Dialog body
 				innerDiv.setAttribute('class', 'lightbox-content');
 				innerDiv.innerHTML = (`
-				<div class="lightbox-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image"></div>
+				<div class="lightbox-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image" decoding="async" loading="lazy" fetchpriority="high"></div>
 				<h2 class="lightbox-body-header" itemprop="name">${imgName}</h2>
 				<p class="lightbox-body-info" itemprop="description">${imgAlt}</p>
 				<p class="lightbox-body-download"><a href="${this.href}">Download this image</a></p>

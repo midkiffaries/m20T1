@@ -438,8 +438,6 @@ textarea,
 	background: inherit;
 }
 
-[role='button'],
-[role='textbox'],
 [role='listbox'],
 button,
 input,
@@ -472,7 +470,6 @@ select:not([multiple]):not([size]) {
 }
 
 button,
-[role='button'],
 [type='button'],
 [type='reset'],
 [type='submit'] {

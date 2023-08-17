@@ -48,7 +48,7 @@ document.addEventListener("keyup", (e) => {
 	e = e || window.event;
     if (e.keyCode === 27) { // Esc Key
         closeModals('dialog-html');
-        closeModals('dialog-image');
+        closeModals('lightbox-image');
     }
     if (e.keyCode === 13) { // Enter Key
         closeModals('dialog-alert');
@@ -371,7 +371,7 @@ function smoothScroll(loc, duration) {
  * Modals and Dialogs Logic
 **************************/
 
-// Modal images with a nested <figure> <a> <img> tag inside
+// Lightbox Modal images with a nested <figure> <a> <img> tag inside
 (() => {
     let fig = document.getElementsByTagName("figure"), 
         l = fig.length;
@@ -389,22 +389,22 @@ function smoothScroll(loc, duration) {
 					imgName = this.href.substring(this.href.lastIndexOf('/') + 1).replace(/_/g," ").replace(/-/g," ").split('.')[0];
 
 				// Dialog box attributes
-                dialog.setAttribute('class', 'dialog-image');	
+                dialog.setAttribute('class', 'lightbox-image');	
 				dialog.setAttribute('role', 'dialog');
 				dialog.setAttribute('rel', 'lightbox');
 				dialog.setAttribute('open', 'open');
 
 				// Dialog close button
-				headerDiv.setAttribute('class', 'dialog-header');
-				headerDiv.innerHTML = `<button class="dialog-close-button" onclick="closeModals('dialog-image')" aria-label="Close this modal"></button>`;
+				headerDiv.setAttribute('class', 'lightbox-header');
+				headerDiv.innerHTML = `<button class="dialog-close-button" onclick="closeModals('lightbox-image')" aria-label="Close this modal"></button>`;
 	
 				// Dialog body
-				innerDiv.setAttribute('class', 'dialog-content');
+				innerDiv.setAttribute('class', 'lightbox-content');
 				innerDiv.innerHTML = (`
-				<div class="dialog-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image"></div>
-				<h2 class="dialog-body-header" itemprop="name">${imgName}</h2>
-				<p class="dialog-body-info" itemprop="description">${imgAlt}</p>
-				<p class="dialog-body-download"><a href="${this.href}">Download this image</a></p>
+				<div class="lightbox-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image"></div>
+				<h2 class="lightbox-body-header" itemprop="name">${imgName}</h2>
+				<p class="lightbox-body-info" itemprop="description">${imgAlt}</p>
+				<p class="lightbox-body-download"><a href="${this.href}">Download this image</a></p>
 				`);
 				
 				// Dialog style
@@ -413,7 +413,7 @@ function smoothScroll(loc, duration) {
 					overflow: hidden;
 					height: auto;
 				}
-				.dialog-image {
+				.lightbox-image {
 					width: 100vw;
 					height: 100vh;
 					background-color: rgba(30,30,30,0.94);
@@ -424,38 +424,41 @@ function smoothScroll(loc, duration) {
                     -webkit-backdrop-filter: blur(3px) grayscale(50%);
                     backdrop-filter: blur(3px) grayscale(50%);
 				}
-				.dialog-header {
+				.lightbox-header {
 					max-width: 70vw;
 					max-height: calc(85vh - 15vh);
 					padding: 1.1em;
 					margin: 0 auto;
 				}
-				.dialog-content {
-					max-width: 70vw;
+				.lightbox-content {
+					max-width: 55vw;
 					min-height: 16em;
 					max-height: calc(85vh - 15vh);
 					margin: 1vh auto 0 auto;
 					padding: 0;
+                    text-align: center;
 					background-color: transparent;
 					transform: scale(0.8);
 					transition: transform 0.15s ease-in-out 0s;
 				}
-                .dialog-content img {
+                .lightbox-content img {
                     border: 1px solid #eee;
                     min-height: 10em;
                     box-shadow: 0 1px 6px 1px rgba(0,0,0,0.3);
                     background: no-repeat center center / 5em;
                     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 128 128'%3E%3Cg%3E%3Cpath fill='white' d='M64 10a54 54 0 00-54 54H0a64 64 0 01128 0h-10a54 54 0 00-54-54z'/%3E%3CanimateTransform attributeName='transform' dur='2s' from='0 64 64' repeatCount='indefinite' to='360 64 64' type='rotate'/%3E%3C/g%3E%3C/svg%3E");
                 }
-                .dialog-body-header {
+                .lightbox-body-header {
                     text-transform: uppercase;
                     letter-spacing: 0.08em;
                 }
-                .dialog-body-header,
-                .dialog-content p  {
+                .lightbox-body-header,
+                .lightbox-content p  {
                     color: #fff;
-                    text-align: center;
-                    margin: 8px 0;
+                    margin: 12px 0;
+                }
+                .lightbox-body-download {
+                    padding-bottom: 35px;
                 }
 				.dialog-close-button {
 					position: fixed;
@@ -488,13 +491,13 @@ function smoothScroll(loc, duration) {
 					transition: opacity 0.15s ease-out 0s;
 					opacity: 0;
 				}
-				@media (max-width: 812px) {
-					.dialog-content {
+				@media (max-width:812px) {
+					.lightbox-content {
 						max-width: 99%;
 						margin: 1vh auto;
 						max-height: 85vh
 					}
-					.dialog-header {
+					.lightbox-header {
 						max-width: 99%;
 					}
 				}
@@ -638,7 +641,7 @@ function ConfirmModal(text, action) {
         transition: opacity 0.15s ease-out 0s;
         opacity: 0;
     }
-    @media (max-width: 812px) {
+    @media (max-width:812px) {
         .dialog-confirm div {
             max-width: 99%;
         }
@@ -742,7 +745,7 @@ function HtmlModal(c, v) {
         transition: opacity 0.15s ease-out 0s;
         opacity: 0;
 	}
-    @media (max-width: 812px) {
+    @media (max-width:812px) {
         .dialog-content {
             max-width: 99%;
             margin: 1vh auto;

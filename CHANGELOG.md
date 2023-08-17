@@ -3,7 +3,7 @@
 ### 1.4.5 Live (August 24, 2023)
 
 * Overall CSS bug fixes.
-* JavaScript fixes and enhancements.
+* JavaScript fixes and enhancements to the lightbox script.
 
 ### 1.4.4 Live (August 14, 2023)
 

@@ -39,7 +39,6 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 
 ## Todo List
 - Make adjustments to layout.css and move to CSS Grid page formating
-- Adjust the formating/behavoir of the JavaScript image lightbox function
 - Incorporate extensive custom code/meta data to WordPress editor
 - Move the sidebar widgets into a pulldown list when in mobile or narrow screen view
 

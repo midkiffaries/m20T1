@@ -2,7 +2,8 @@
 
 ### 1.4.5 Live (August 24, 2023)
 
-* Bug fixes.
+* Overall CSS bug fixes.
+* JavaScript fixes and enhancements.
 
 ### 1.4.4 Live (August 14, 2023)
 

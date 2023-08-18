@@ -311,7 +311,7 @@ add_action( 'wp_footer', function(){
     <?=get_template_part('contactform'); // Load contactform.php ?>
 </template>
 
-<script>document.getElementById('PageLoadTime').textContent = <?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
+<scrip>document.getElementById('PageLoadTime').textContent = <?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
 <?php
 });
 
@@ -668,14 +668,16 @@ function get_child_pages( $id, $thumbnail ) {
 
 // Get 'Page_CSS' Custom Field which adds custom page styling
 function custom_page_css( $id ) {
-    $css = wp_strip_all_tags(get_post_meta( $id, 'Page_CSS', true ));
+    $css = get_post_meta( $id, 'Page_CSS', true );
+    $css = preg_replace('/<\/style>/', '', $css); // Remove end style
+    $css = preg_replace('/<script.*?>(.*)?<\/script>/im', '$1', $css); // remove script
     $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
     $css = preg_replace('/;}/', '}', $css); // Remove new lines
 
     if (empty($css)) {
         return NULL;
     } else {
-        return '<style type="text/css" id="Page-CSS">'.$css.'</style>';
+        return '<style type="text/css" id="Page-CSS" hidden>'.$css.'</style>';
     }
 }
 

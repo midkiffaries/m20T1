@@ -108,23 +108,23 @@ document.addEventListener("keyup", (e) => {
 
 // Embedded YouTube video iframe automatic lazy loading
 (() => {
-    let st = document.createElement("style"), 
+    const st = document.createElement("style"), 
         youtube = document.getElementsByClassName("embed-youtube"), 
         l = youtube.length;
 
     for (let i = 0; i < l; i++) {
-        let source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`,
+        const source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`,
             image = new Image();
 
         image.src = source;
-        image.alt = "Play YouTube video";
+        image.alt = "Load YouTube video";
         image.loading = "lazy";
         image.decoding = "async";
         image.role = "button";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
 
         youtube[i].addEventListener("click", function() {
-            let iframe = document.createElement("iframe");
+            const iframe = document.createElement("iframe");
             iframe.setAttribute("frameborder", "0");
             iframe.setAttribute("allow", "accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
             iframe.setAttribute("allowfullscreen", "");

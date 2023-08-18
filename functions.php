@@ -668,11 +668,14 @@ function get_child_pages( $id, $thumbnail ) {
 
 // Get 'Page_CSS' Custom Field which adds custom page styling
 function custom_page_css( $id ) {
-    $css = get_post_meta( $id, 'Page_CSS', true );
+    $css = wp_strip_all_tags(get_post_meta( $id, 'Page_CSS', true ));
+    $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
+    $css = preg_replace('/;}/', '}', $css); // Remove new lines
+
     if (empty($css)) {
         return NULL;
     } else {
-        return '<style type="text/css" id="Page-CSS" aria-hidden="true" hidden>'.wp_strip_all_tags($css).'</style>';
+        return '<style type="text/css" id="Page-CSS">'.$css.'</style>';
     }
 }
 
@@ -1054,7 +1057,7 @@ add_filter( 'user_contactmethods', function(){
         'jobtitle' => 'Job Title',
         'linkedin' => 'LinkedIn URL',
         'facebook' => 'Facebook URL',
-        'twitter'  => 'Twitter URL',
+        'twitter'  => 'Twitter/X URL',
         'pinterest'=> 'Pinterest URL',
         'city'     => 'City/State/Co',
     );

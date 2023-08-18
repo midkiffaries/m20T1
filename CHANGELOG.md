@@ -1,8 +1,9 @@
 # Changes to m20T1
 
-### 1.4.5 Live (August 24, 2023)
+### 1.4.5 Live (August 18, 2023)
 
-* Overall CSS bug fixes.
+* Small CSS bug fixes. 
+* Adjustments to the PHP. 
 * JavaScript fixes and enhancements to the lightbox script.
 
 ### 1.4.4 Live (August 14, 2023)

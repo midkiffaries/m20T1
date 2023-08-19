@@ -311,7 +311,7 @@ add_action( 'wp_footer', function(){
     <?=get_template_part('contactform'); // Load contactform.php ?>
 </template>
 
-<scrip>document.getElementById('PageLoadTime').textContent = <?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
+<script>document.getElementById('PageLoadTime').textContent = <?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
 <?php
 });
 

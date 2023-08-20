@@ -283,13 +283,14 @@ add_action( 'wp_head', function(){
 <?php
 });
 
-// Settings for the Admin floating toolbar
+// Settings for the Admin floating toolbar and editor
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
-.column-post_views {width:3em}
-.column-thumbnail {width:7em}
-.media-icon .attachment-60x60 {min-width:60px;}
+.wp-admin .column-post_views {width:3em}
+.wp-admin .column-thumbnail {width:7em}
+.wp-admin .media-icon .attachment-60x60 {min-width:60px}
+.wp-admin .thumbnail .details-image {min-height:50%}
 </style>
 <?php
 });

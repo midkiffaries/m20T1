@@ -115,7 +115,7 @@ figcaption {
 
 /* Block Gallery */
 .wp-block-gallery.has-nested-images {
-	margin-bottom: 2.1em !important;
+	margin-bottom: 2.5em !important;
 }
 
 .wp-block-gallery.has-nested-images .wp-block-image figcaption {

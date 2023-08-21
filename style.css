@@ -348,8 +348,14 @@ WordPress Gutenburg Content Styling
 	padding-top: 4px;
 }
 
-.the-content .wp-block-gallery {
-	margin-bottom: 22px;
+.the-content .wp-block-gallery.has-nested-images {
+	margin-bottom: 2.4em !important;
+}
+
+@media (max-width: 850px) {
+	.the-content .wp-block-gallery.has-nested-images {
+		margin-bottom: 3em !important;
+	}
 }
 
 .the-content .wp-block-gallery figure img[src] {

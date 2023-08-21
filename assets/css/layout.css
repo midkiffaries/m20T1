@@ -1159,19 +1159,20 @@ Specific Page Styling
 	padding-bottom: 3px;
 }
 
-.page-image .attachment img:not([class="attachment-svg"]) {
+.page-image .attachment img:not(.attachment-svg) {
 	min-width: 200px;
 	background-color: rgba(0,0,0,0.08);
 	box-shadow: 0 7px 9px -6px rgba(0,0,0,0.4), 0 5px 4px -2px rgba(0,0,0,0.1);
 }
 
 .page-image img.attachment-svg {
-	min-width: 550px;
+	min-height: 500px;
 }
 
 @media (max-width: 849px) {
 	.page-image img.attachment-svg {
-		min-width: 90%;
+		max-width: 80%;
+		min-height: 300px;
 	}
 }
 

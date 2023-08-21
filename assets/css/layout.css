@@ -1000,10 +1000,6 @@ figure > a img[srcset] {
 	pointer-events: none;
 }
 
-.wp-block-gallery {
-	margin-bottom: 1em;
-}
-
 @media (max-width: 650px) {
 	.wp-block-image figure {
 		width: 50%;

@@ -290,7 +290,7 @@ add_action( 'admin_head', function(){
 .wp-admin .column-post_views {width:3em}
 .wp-admin .column-thumbnail {width:7em}
 .wp-admin .media-icon .attachment-60x60 {min-width:60px}
-.wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:60%}
+.wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
 </style>
 <?php
 });

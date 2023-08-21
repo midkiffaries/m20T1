@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.4.7 Live (August 25, 2023)
+
+* More adjustments to the SVG presentation on the front and back ends.
+
 ### 1.4.6 Live (August 19, 2023)
 
 * A couple of quick fixes.

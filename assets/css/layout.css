@@ -1004,10 +1004,6 @@ figure > a img[srcset] {
 	margin-bottom: 1em;
 }
 
-.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
-	bottom: -3px;
-}
-
 @media (max-width: 650px) {
 	.wp-block-image figure {
 		width: 50%;

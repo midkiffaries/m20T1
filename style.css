@@ -348,6 +348,10 @@ WordPress Gutenburg Content Styling
 	padding-top: 4px;
 }
 
+.the-content .wp-block-gallery {
+	margin-bottom: 22px;
+}
+
 .the-content .wp-block-gallery figure img[src] {
 	box-shadow: none;
 	border: 3px solid var(--brand-color-dark);
@@ -363,8 +367,9 @@ WordPress Gutenburg Content Styling
 	background: none !important;
 	color: #666 !important;
 	font-weight: 500;
-	font-size: 0.9rem;
-	margin-bottom: -2em !important;
+	margin-bottom: -1.9em !important;
+	height: 1rem;
+	overflow: hidden !important;
 }
 
 .the-content figure.alignright,

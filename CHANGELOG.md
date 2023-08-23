@@ -3,6 +3,7 @@
 ### 1.4.7 Live (August 25, 2023)
 
 * More adjustments to the SVG presentation on the front and back ends.
+* Even more CSS adjustments throughout.
 
 ### 1.4.6 Live (August 19, 2023)
 

@@ -1,4 +1,4 @@
-<?php /* Template Name: Custom Full Width */ ?>
+<?php /* Template Name: Full Width Page */ ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 

@@ -60,7 +60,7 @@
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
         <article <?php post_class(); ?> id="post-<?=the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
-                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
+                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true); ?>">
                     <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
                 </a>
                 <header class="entry-header">

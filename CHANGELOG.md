@@ -3,6 +3,7 @@
 ### 1.5.0 Live (August 28, 2023)
 
 * Accordion mechanism added to the side bar on pages where it sits to the right of the main content.
+* Proper styling of the child pages block.
 
 ### 1.4.7 Live (August 22, 2023)
 

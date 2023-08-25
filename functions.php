@@ -648,18 +648,20 @@ function get_child_pages( $id, $thumbnail ) {
     // Display section header
     if ($page_children) : ?>
         <h2 class="child-title">Related Pages</h2>
-    <?php endif;
+    <?php endif; ?>
 
-    // Loop cards HTML
-    foreach ($page_children as $child) { // Display all the child pages to this one ?>
-        <div class="child-card" id="child-card-<?=$child->ID; ?>">
-            <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                <div class="child-card__image"><img src="<?=esc_url(FeaturedImageURL($child->ID, 'medium', 0)); ?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
-                <div class="child-card__title"><?=$child->post_title; ?></div>
-                <div class="child-card__text"><?=$child->post_excerpt; ?></div>
-            </a>
-        </div>
-    <?php }
+    <div class="child-block">
+        <?php // Loop to create each card
+        foreach ($page_children as $child) { // Display all the child pages ?>
+            <div class="child-card" id="child-card-<?=$child->ID; ?>">
+                <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
+                    <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium')); ?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
+                    <div class="child-card__title"><?=$child->post_title; ?></div>
+                    <div class="child-card__text"><?=$child->post_excerpt; ?></div>
+                </a>
+            </div>
+        <?php } ?>
+    </div><?php
 }
 
 

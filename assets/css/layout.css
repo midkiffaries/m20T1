@@ -1467,6 +1467,64 @@ body.dark-mode,
 	}
 }
 
+/************************ 
+Child Page Section
+*************************/
+
+.child-page-widget {
+	margin: 2em;
+}
+
+.child-block {
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	gap: 1em;
+}
+
+.child-card {
+	text-align: center;
+	text-wrap: balance;
+	background-color: rgba(255,255,255,0.5);
+	border: 1px solid #999;
+	box-shadow: 4px 4px 0 0 #777;
+	transition: all 0.2s ease;
+}
+
+.child-card:hover {
+	transform: scale(1.02);
+	box-shadow: 6px 6px 0 0 #666;
+}
+
+.child-card__link:hover {
+	text-decoration: none !important;
+	color: initial !important;
+}
+
+.child-card__image {
+	object-fit: cover;
+	background-color: #eee;
+}
+
+.child-card__image img {
+	object-fit: cover;
+	height: 150px;
+	width: 100%;
+}
+
+.child-card__title {
+	font-weight: 600;
+	padding: 4px;
+}
+
+.child-card__text {
+	display: none;
+}
+
+@media (max-width: 849px) {
+	.child-block {
+		grid-template-columns: auto auto;
+	}
+}
 
 /************************ 
 Special Custom Features

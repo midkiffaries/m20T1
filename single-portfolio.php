@@ -1,3 +1,4 @@
+<?php /* Template Name: Portfolio Page */ ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 

@@ -15,7 +15,7 @@
     <?php while (have_posts()) : the_post(); // List all the posts ?>
         <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
-                <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
+                <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?php echo FeaturedImageURL(get_the_ID(), 'large', true); ?>">
                     <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured Article</div><?php endif; ?>
                 </a>
                 <header class="entry-header">

@@ -60,7 +60,12 @@
     </div>
 
     <aside id="sidebar-blog" class="page-sidebar blogroll-widgets" role="complementary">
-        <?php dynamic_sidebar( 'primary' ); ?>
+        <div class="accordion" role="tablist" aria-label="Accordion">
+            <button role="tab" class="active">Additional Information</button>
+            <section role="tabpanel">
+                <?php dynamic_sidebar( 'primary' ); // Primary Sidebar ?>
+            </section>
+        </div>
     </aside>
 
 </main>

@@ -106,10 +106,82 @@ document.addEventListener("keyup", (e) => {
 	}	
 })();
 
+// Accordion Style Element, use class="accordion"
+(() => {
+    const ac = document.getElementsByClassName("accordion"),
+        st = document.createElement("style"),
+        l = ac.length;
+
+    for (let i = 0; i < l; i++) {
+        let a = ac[i].firstChild.nextSibling;
+        a.onclick = function() {
+            this.classList.toggle("active");
+            const panel = this.nextSibling.nextSibling;
+            if (this.classList.contains("active")) {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } else {
+                panel.style.maxHeight = 0;
+            }
+        }
+        if (window.outerWidth < 849 && a.classList.contains("active")) {
+            a.classList.remove("active");
+        }
+    }
+
+    // Append stylesheet if "accordion" exists
+    if (l) {
+        st.textContent = (`
+        .accordion > button {
+            display: none;
+            color: inherit;
+            width: 100%;
+            background: none;
+            border: 1px solid #888;
+            font-size: 1.25em;
+            line-height: 1;
+            outline: none;
+            padding: .55em;
+        }
+        .accordion > button:hover {
+            font-weight: bold;
+        }
+        .accordion > button:focus {
+            outline: 5px auto -webkit-focus-ring-color;
+        }
+        .accordion > button::before {
+            content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
+            margin: 0 .5em 0 0;
+            display: inline-block;
+            transition: transform .4s ease-in-out 0s;
+            transform-origin: 50% 50%;
+        }
+        .accordion > button.active::before {
+            transform: rotate(135deg);
+        }
+        .accordion > section {
+            padding: 0 1em;
+            overflow: hidden;
+            transition: max-height .25s ease-out;
+        }
+        @media (max-width: 849px) {
+            .accordion > button {
+                display: block;
+                margin-bottom: 1em;
+            }
+            .accordion > section {
+                max-height: 0;
+                margin-bottom: 2em;
+            }
+        }
+        `);
+        document.body.appendChild(st);
+    }
+})();
+
 // Embedded YouTube video iframe automatic lazy loading
 (() => {
-    const st = document.createElement("style"), 
-        youtube = document.getElementsByClassName("embed-youtube"), 
+    const youtube = document.getElementsByClassName("embed-youtube"),
+        st = document.createElement("style"), 
         l = youtube.length;
 
     for (let i = 0; i < l; i++) {
@@ -145,7 +217,7 @@ document.addEventListener("keyup", (e) => {
             position: relative;
             padding-top: 56.25%;
             overflow: hidden;
-            transition: outline 0.5s;
+            transition: outline .5s;
             cursor: pointer;
         }
         .embed-youtube:hover {
@@ -158,16 +230,16 @@ document.addEventListener("keyup", (e) => {
         .embed-youtube .play-button {
             width: 6em;
             height: 4em;
-            background: rgba(50,50,50,0.4);
-            box-shadow: 0 0 0.9em rgba(0,0,0,0.9);
+            background: rgba(50,50,50,.4);
+            box-shadow: 0 0 .9em rgba(0,0,0,.9);
             z-index: 1;
-            opacity: 0.8;
-            border-radius: 0.8em;
-            transition: background 0.5s;
+            opacity: .8;
+            border-radius: .8em;
+            transition: background .5s;
         }
         .embed-youtube:hover .play-button {
             opacity: 1;   
-            background: rgba(255,30,30,0.7);
+            background: rgba(255,30,30,.7);
         }
         .embed-youtube .play-button::before {
             content: "";
@@ -237,7 +309,7 @@ document.addEventListener("keyup", (e) => {
     id.appendChild(document.createElement("span"));
 
     // Button Logic
-    id.onclick = function () {
+    id.onclick = function() {
         // Button Animation        
         this.classList.toggle("active");
         // Button Action
@@ -249,7 +321,7 @@ document.addEventListener("keyup", (e) => {
     #btnMenu {
         width: 2.6em;
         height: 2.6em;
-        padding: 0.2em;
+        padding: .2em;
         overflow: hidden;
         border: 0;
         background: none;
@@ -259,22 +331,22 @@ document.addEventListener("keyup", (e) => {
         height: 4px;
         width: 2.2em;
         background: #000;
-        margin: 0.5em 0;
-        border-radius: 0.8em;
+        margin: .5em 0;
+        border-radius: .8em;
         will-change: auto;
-        transition: margin 0.2s ease-in-out;
+        transition: margin .2s ease-in-out;
     }
     #btnMenu:hover span, #btnMenu:focus span {
-        margin: 0.7em 0 0.4em 0;
+        margin: .7em 0 .4em 0;
     }
     #btnMenu:hover span:first-of-type, #btnMenu:focus span:first-of-type {
-        margin-top: 0.3em; 
+        margin-top: .3em; 
     }
     #btnMenu:hover span:last-of-type, #btnMenu:focus span:last-of-type {
-        margin-bottom: 0.3em; 
+        margin-bottom: .3em; 
     }
     #btnMenu.active span {
-        transition: transform 0.25s ease-in-out;
+        transition: transform .25s ease-in-out;
         width: 2.5em;
         margin: -3px;
     }
@@ -289,7 +361,7 @@ document.addEventListener("keyup", (e) => {
 })();
 
 // Checks the position of the window focus
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", function() {
     const el = document.getElementById("ScrollToTop");
     if (window.pageYOffset > 500) el.classList.add("scActive");
     else el.classList.remove("scActive");
@@ -318,23 +390,23 @@ document.addEventListener("scroll", function () {
 		width: 40px;
 		height: 40px;
         border: 1px solid #fff;
-		border-radius: 0.2em;
+		border-radius: .2em;
 		font-size: 2em;
 		cursor: pointer;
-		transition: all 0.25s ease-in-out 0s;
+		transition: all .25s ease-in-out 0s;
 		will-change: transform;
 		background: no-repeat center center / 1em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>");
-		background-color: rgba(0,0,0,0.3);
+		background-color: rgba(0,0,0,.3);
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
 	}
 	.scroll-to-top-float:hover {
-		background-color: rgba(0,0,0,0.5); 
+		background-color: rgba(0,0,0,.5); 
 		transform: scale(1.1);
 	}
 	.scroll-to-top-float:active {
-		background-color: rgba(0,0,0,0.7);
+		background-color: rgba(0,0,0,.7);
 	}
 	.scroll-to-top-float.scActive {
 		visibility: visible;
@@ -342,7 +414,6 @@ document.addEventListener("scroll", function () {
 	}
     @media (max-width: 812px) {
 		.scroll-to-top-float {display: none}
-
     }
 	@media only print {
 		.scroll-to-top-float {display: none}
@@ -377,7 +448,7 @@ function smoothScroll(loc, duration) {
 
 // Lightbox Modal images with a nested <figure> <a> <img> tag inside
 (() => {
-    let fig = document.getElementsByTagName("figure"), 
+    const fig = document.getElementsByTagName("figure"), 
         l = fig.length;
 
     for (let i = 0; i < l; i++) {
@@ -421,11 +492,11 @@ function smoothScroll(loc, duration) {
 				.lightbox-image {
 					width: 100vw;
 					height: 100vh;
-					background-color: rgba(30,30,30,0.94);
+					background-color: rgba(30,30,30,.94);
 					border: none;
 					opacity: 0;
                     overflow-y: scroll;
-					transition: opacity 0.15s ease-in-out 0s;
+					transition: opacity .15s ease-in-out 0s;
                     -webkit-backdrop-filter: blur(3px) grayscale(50%);
                     backdrop-filter: blur(3px) grayscale(50%);
 				}
@@ -443,21 +514,21 @@ function smoothScroll(loc, duration) {
 					padding: 0;
                     text-align: center;
 					background-color: transparent;
-					transform: scale(0.8);
-					transition: transform 0.15s ease-in-out 0s;
+					transform: scale(.8);
+					transition: transform .15s ease-in-out 0s;
 				}
                 .lightbox-content img {
                     border: 1px solid #eee;
                     min-height: 10em;
                     min-width: 10em;
-                    transform: all 0.5s ease-in-out;
-                    box-shadow: 0 1px 6px 1px rgba(0,0,0,0.3);
+                    transform: all .5s ease-in-out;
+                    box-shadow: 0 1px 6px 1px rgba(0,0,0,.3);
                     background: no-repeat center center / 5em;
                     background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 128 128'><g><path fill='white' d='M64 10a54 54 0 00-54 54H0a64 64 0 01128 0h-10a54 54 0 00-54-54z'/><CanimateTransform attributeName='transform' dur='2s' from='0 64 64' repeatCount='indefinite' to='360 64 64' type='rotate'/></g></svg>");
                 }
                 .lightbox-body-header {
                     text-transform: uppercase;
-                    letter-spacing: 0.08em;
+                    letter-spacing: .08em;
                 }
                 .lightbox-body-header,
                 .lightbox-content p  {
@@ -473,20 +544,20 @@ function smoothScroll(loc, duration) {
 					height: 1.3em;
 					padding: 1.4em;
 					right: 1em;
-					top: 0.5em;
+					top: .5em;
 					border: none;
 					background: transparent no-repeat center center / 1.6em;
 					background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z' fill='white'/></svg>");
 				}
 				.dialog-close-button:hover {
-					opacity: 0.9;
-					filter: drop-shadow(0 0 5px rgba(220,220,220,0.8));
+					opacity: .9;
+					filter: drop-shadow(0 0 5px rgba(220,220,220,.8));
 				}
 				.dialog-close-button:focus:hover {
 					filter: none;
 				}
 				.dialog-close-button:active {
-					opacity: 0.5;
+					opacity: .5;
 				}
 				.dialog-open {
 					opacity: 1;
@@ -495,7 +566,7 @@ function smoothScroll(loc, duration) {
 					transform: scale(1);
 				}
 				.dialog-close {
-					transition: opacity 0.15s ease-out 0s;
+					transition: opacity .15s ease-out 0s;
 					opacity: 0;
 				}
 				@media (max-width:812px) {
@@ -540,18 +611,18 @@ function AlertModal(text, bgColor) {
         border: none;
         width: 100%;
         height: 2.8em;
-        padding: 0.8em;
+        padding: .8em;
         text-align: center;
         font-size: 1.4em;
         opacity: 0;
-        transition: opacity 0.15s ease-in-out 0s;
+        transition: opacity .15s ease-in-out 0s;
         background-color: ${bgColor};
     }
     .dialog-open {
         opacity: 1;
     }   
     .dialog-close {
-        transition: opacity 0.15s ease-out 0s;
+        transition: opacity .15s ease-out 0s;
         opacity: 0;
     }    
     `);
@@ -606,9 +677,9 @@ function ConfirmModal(text, action) {
         border: none;
         width: 100vw;
         height: 100%;
-        background-color: rgba(255,255,255,0.6);
+        background-color: rgba(255,255,255,.6);
         opacity: 0;
-        transition: opacity 0.16s ease-in-out 0s;
+        transition: opacity .16s ease-in-out 0s;
         -webkit-backdrop-filter: grayscale(40%);
         backdrop-filter: grayscale(40%);
     }
@@ -618,7 +689,7 @@ function ConfirmModal(text, action) {
         padding: 1em;    
         transform: translate(0, -100%);
         background-color: #fff;
-        box-shadow: 0 14px 14px -7px rgba(0,0,0,0.8), 5px 5px 18px 5px rgba(0,0,0,0);
+        box-shadow: 0 14px 14px -7px rgba(0,0,0,.8), 5px 5px 18px 5px rgba(0,0,0,0);
         border: 1px solid #eee;
         text-align: right;
         overscroll-behavior-y: contain;
@@ -630,12 +701,12 @@ function ConfirmModal(text, action) {
     }
     .dialog-confirm p::before {
         content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><path d='M20.9 14.8q1.5-1.5 1.5-3.6 0-2.6-1.9-4.5T16 4.8q-2.6 0-4.5 1.9t-1.9 4.5h3.2q0-1.3 1-2.3 1-1 2.2-1 1.3 0 2.3 1 1 1 1 2.3 0 1.3-1 2.2l-2 2q-1.9 2.1-1.9 4.6v.8h3.2q0-2.5 1.9-4.5zm-3.3 12.4V24h-3.2v3.2zM16 0q6.6 0 11.3 4.7Q32 9.4 32 16q0 6.6-4.7 11.3Q22.6 32 16 32q-6.6 0-11.3-4.7Q0 22.6 0 16 0 9.4 4.7 4.7 9.4 0 16 0z'/></svg>");
-        padding: 0 0.6em 1em 0;
+        padding: 0 .6em 1em 0;
         display: block;
         float: left;
     }
     .dialog-confirm button {
-        margin-right: 0.9em;
+        margin-right: .9em;
         min-width: 5em;
     }   
     .dialog-open {
@@ -645,7 +716,7 @@ function ConfirmModal(text, action) {
         transform: scale(1);
     }
     .dialog-close {
-        transition: opacity 0.15s ease-out 0s;
+        transition: opacity .15s ease-out 0s;
         opacity: 0;
     }
     @media (max-width:812px) {
@@ -695,10 +766,10 @@ function HtmlModal(c, v) {
 		width: 100vw;
 		height: 100vh;
         overflow: hidden;
-		background-color: rgba(240,240,240,0.85);
+		background-color: rgba(240,240,240,.85);
 		border: none;
 		opacity: 0;
-		transition: opacity 0.15s ease-in-out 0s;
+		transition: opacity .15s ease-in-out 0s;
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
 	}
@@ -715,9 +786,9 @@ function HtmlModal(c, v) {
 		margin: 1vh auto 0 auto;
 		padding: 1em;
 		background-color: #fdfdfd;
-		box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.7), 5px 5px 16px 5px rgba(0,0,0,0);
-		transform: scale(0.8);
-		transition: transform 0.15s ease-in-out 0s;
+		box-shadow: 0px 10px 14px -7px rgba(0,0,0,.7), 5px 5px 16px 5px rgba(0,0,0,0);
+		transform: scale(.8);
+		transition: transform .15s ease-in-out 0s;
         overflow-y: scroll;
 	}
 	.dialog-close-button {
@@ -728,19 +799,19 @@ function HtmlModal(c, v) {
 		right: 0;
 		top: 0;
 		border: none;
-		filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+		filter: drop-shadow(1px 1px 2px rgba(0,0,0,.3));
 		background: transparent no-repeat center center / 1.5em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/></svg>");
 	}
     .dialog-close-button:hover {
         background-color: transparent;
-        filter: invert() drop-shadow(0 0 10px rgba(0,0,0,0.3));
+        filter: invert() drop-shadow(0 0 10px rgba(0,0,0,.3));
     }
     .dialog-close-button:focus:hover {
         filter: none;
     }
     .dialog-close-button:active {
-        opacity: 0.5;
+        opacity: .5;
     }
 	.dialog-open {
 		opacity: 1;
@@ -749,7 +820,7 @@ function HtmlModal(c, v) {
 		transform: scale(1);
 	}
 	.dialog-close {
-        transition: opacity 0.15s ease-out 0s;
+        transition: opacity .15s ease-out 0s;
         opacity: 0;
 	}
     @media (max-width:812px) {
@@ -777,7 +848,7 @@ function HtmlModal(c, v) {
 
 // Close all open dialog nodes specific "c = ClassName"
 function closeModals(c) {
-    let dialog = document.getElementsByClassName(c), 
+    const dialog = document.getElementsByClassName(c), 
         l = dialog.length;
     
     if (l) {

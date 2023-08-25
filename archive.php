@@ -130,7 +130,12 @@
     </div>
     
     <aside id="sidebar-archive" class="page-sidebar archive-widgets">
-        <?php dynamic_sidebar( 'secondary' ); // Secondary Sidebar ?>
+        <div class="accordion" role="tablist" aria-label="Accordion">
+            <button role="tab" class="active">Additional Information</button>
+            <section role="tabpanel">
+                <?php dynamic_sidebar( 'secondary' ); // Secondary Sidebar ?>
+            </section>
+        </div>
     </aside>
 
 </main>

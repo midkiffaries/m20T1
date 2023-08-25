@@ -71,7 +71,12 @@
     </div>
 
     <aside id="sidebar-search" class="page-sidebar sidebar-search">
-        <?php dynamic_sidebar( 'tertiary' ); // Tertiary sidebar ?>
+        <div class="accordion" role="tablist" aria-label="Accordion">
+            <button role="tab" class="active">Additional Information</button>
+            <section role="tabpanel">
+                <?php dynamic_sidebar( 'tertiary' ); // Tertiary sidebar ?>
+            </section>
+        </div>
     </aside>
 
 </main>

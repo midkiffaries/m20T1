@@ -159,7 +159,6 @@ document.addEventListener("keyup", (e) => {
             transform: rotate(135deg);
         }
         .accordion > section {
-            padding: 0 1em;
             overflow: hidden;
             transition: max-height .25s ease-out;
         }

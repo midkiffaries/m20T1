@@ -102,6 +102,10 @@ Main Site Layout
 		width: 100% !important;
 		padding: 0 0.8em;
 	}
+
+	.page-sidebar {
+		width: 100% !important;
+	}
 }
 
 /* Sidebar Layout */

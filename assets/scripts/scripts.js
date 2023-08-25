@@ -113,8 +113,8 @@ document.addEventListener("keyup", (e) => {
         l = ac.length;
 
     for (let i = 0; i < l; i++) {
-        let a = ac[i].firstChild.nextSibling;
-        a.onclick = function() {
+        const a = ac[i].firstChild.nextSibling;
+        a.addEventListener("click", function() {
             this.classList.toggle("active");
             const panel = this.nextSibling.nextSibling;
             if (this.classList.contains("active")) {
@@ -122,7 +122,7 @@ document.addEventListener("keyup", (e) => {
             } else {
                 panel.style.maxHeight = 0;
             }
-        }
+        });
         if (window.outerWidth < 849 && a.classList.contains("active")) {
             a.classList.remove("active");
         }
@@ -132,28 +132,23 @@ document.addEventListener("keyup", (e) => {
     if (l) {
         st.textContent = (`
         .accordion > button {
-            display: none;
             color: inherit;
             width: 100%;
             background: none;
-            border: 1px solid #888;
+            border: 2px solid #888;
             font-size: 1.25em;
             line-height: 1;
-            outline: none;
             padding: .55em;
         }
         .accordion > button:hover {
             font-weight: bold;
-        }
-        .accordion > button:focus {
-            outline: 5px auto -webkit-focus-ring-color;
         }
         .accordion > button::before {
             content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
             margin: 0 .5em 0 0;
             display: inline-block;
             transition: transform .4s ease-in-out 0s;
-            transform-origin: 50% 50%;
+            transform-origin: 8px 8px;
         }
         .accordion > button.active::before {
             transform: rotate(135deg);
@@ -283,7 +278,7 @@ document.addEventListener("keyup", (e) => {
 })();
 
 // Parallaxing elements, use class="element-parallax" and data-rate="12"
-(function(){
+(() => {
     let par = document.getElementsByClassName("element-parallax"), 
         l = par.length,
         posy = 0, 
@@ -397,8 +392,8 @@ document.addEventListener("scroll", function() {
 		background: no-repeat center center / 1em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>");
 		background-color: rgba(0,0,0,.3);
-        backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
 	}
 	.scroll-to-top-float:hover {
 		background-color: rgba(0,0,0,.5); 

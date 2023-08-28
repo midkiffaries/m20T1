@@ -1,9 +1,10 @@
 # Changes to m20T1
 
-### 1.5.0 Live (August 28, 2023)
+### 1.5.0 Live (August 30, 2023)
 
 * Accordion mechanism added to the side bar on pages where it sits to the right of the main content.
 * Proper styling of the child pages block.
+* More CSS adjustments and removal of a few more files.
 
 ### 1.4.7 Live (August 22, 2023)
 

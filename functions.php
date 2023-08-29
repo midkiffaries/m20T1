@@ -256,7 +256,7 @@ add_action( 'wp_head', function(){
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico"); ?>" sizes="any">
 <link rel="icon" href="<?=esc_url(home_url() . "/favicon.svg"); ?>" type="image/svg+xml">
-<link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/icons/apple-touch-icon.png"); ?>">
+<link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/apple-touch-icon.png"); ?>">
 <link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest"); ?>">
 <meta property="og:locale" content="<?=get_bloginfo('language'); ?>">
 <meta property="og:type" content="website">

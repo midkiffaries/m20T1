@@ -295,6 +295,23 @@ add_action( 'admin_head', function(){
 <?php
 });
 
+// Add a panel to the dashboard with theme info
+add_action('wp_dashboard_setup', function(){
+    wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
+    function custom_dashboard_text() {
+    ?>
+    <p>The list of some built-in CSS classes:</p>
+    <ul>
+        <li><code>.page-subtitle / .subtitle</code> - Defines subtitle</li>
+        <li><code>.alignjustify</code> - Justifies text</li>
+        <li><code>.has-alpha</code> - Removes borders and background</li>
+        <li><code>.fancy-border</code> - Adds fancy border</li>
+        <li><code>.add-drop-shadow</code> - Adds drop shadow</li>
+    </ul>
+    <?php
+    }
+});
+
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
     set_page_views(); // Page view counter
@@ -322,7 +339,9 @@ add_action( 'wp_footer', function(){
 
 // Add custom message to login screen
 add_filter( 'login_message', function(){
-    return '<h2 style="text-align:center">Welcome to m20T1</h2>';
+?>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, array('srcset' => '', 'style' => 'width:80%')); ?></div>
+<?php
 });
 
 // Set the excerpt length
@@ -332,12 +351,16 @@ add_filter( 'excerpt_length', function(){
 
 // Add a 'Continue Reading' link to excerpts
 add_filter( 'excerpt_more', function(){
-    return ' <span class="entry-read-more" aria-label="Read more">' . MORE_TEXT . '</span>';
+?>
+<span class="entry-read-more" aria-label="Read more"><?= MORE_TEXT; ?></span>
+<?php
 });
 
 // Change the WordPress editor's footer text
 add_filter( 'admin_footer_text', function(){
-    return ' <i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 ' . THEME_VERSION . '</a>.</i>' ;
+?>
+<i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 <?=THEME_VERSION; ?></a>.</i>
+<?php
 });
 
 // Add addition file types uploadable to the media library

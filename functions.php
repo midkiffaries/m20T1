@@ -300,7 +300,7 @@ add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
     ?>
-    <p>The list of some built-in CSS classes:</p>
+    <p>List of built-in CSS classes to use in the editor:</p>
     <ul>
         <li><code>.page-subtitle / .subtitle</code> - Defines subtitle</li>
         <li><code>.alignjustify</code> - Justifies text</li>

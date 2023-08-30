@@ -2,7 +2,7 @@
 
 ### 1.5.0 Live (August 30, 2023)
 
-* Accordion mechanism added to the side bar on pages where it sits to the right of the main content.
+* Accordion mechanism added to the sidebar on pages where it sits to the right of the main content.
 * Proper styling of the child pages block.
 * Addition of a new panel to the dashboard that provides notes on the theme.
 * More CSS and PHP adjustments.

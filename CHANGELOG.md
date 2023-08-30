@@ -4,7 +4,9 @@
 
 * Accordion mechanism added to the side bar on pages where it sits to the right of the main content.
 * Proper styling of the child pages block.
-* More CSS adjustments and removal of a few more files.
+* Addition of a new panel to the dashboard that provides notes on the theme.
+* More CSS and PHP adjustments.
+* Removal of a few more unnecessary files.
 
 ### 1.4.7 Live (August 22, 2023)
 

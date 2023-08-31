@@ -38,6 +38,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Support for printing pages cleanly
 
 ## Todo List
+- Move settings variables from functions.php to the editor
 - Make adjustments to layout.css and move to CSS Grid page formating
 - Incorporate extensive custom code/meta data to WordPress editor
 

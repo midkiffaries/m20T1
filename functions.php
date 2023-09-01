@@ -1197,38 +1197,38 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page Text</label></th>
-                <td><textarea name="404_text" id="404_text" placeholder="Page no longer exists." rows="4"><?php echo esc_attr( get_option('404_text') ); ?></textarea></td>
+                <td><textarea name="404_text" id="404_text" class="code" placeholder="Page no longer exists." rows="4" spellcheck="false"><?php echo esc_attr( get_option('404_text') ); ?></textarea></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image</label></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="https://www." value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="https://www." spellcheck="false" value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Results Image</label></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="https://www." value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="https://www." spellcheck="false" value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Media Sharing Image</label></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="https://www." value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
+                <td><input type="url" name="social_image" id="social_image" placeholder="https://www." spellcheck="false" value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Default Blank Image</label></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="https://www." value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="https://www." spellcheck="false" value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
             </tr>
         </table>
         <h2>Insert Additional Metadata and HTML Code</h2>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">&lt;Head&gt; Metatdata</label></th>
-                <td><textarea name="head_metadata" id="head_metadata" placeholder="Enter HTML code..." rows="10"><?php echo esc_attr( get_option('head_metadata') ); ?></textarea></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false"><?php echo esc_attr( get_option('head_metadata') ); ?></textarea></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">&lt;Body&gt; Top HTML</label></th>
-                <td><textarea name="body_top_html" id="body_top_html" placeholder="Enter HTML code..." rows="10"><?php echo esc_attr( get_option('body_top_html') ); ?></textarea></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false"><?php echo esc_attr( get_option('body_top_html') ); ?></textarea></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">&lt;Body&gt; Bottom HTML</label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" placeholder="Enter HTML code..." rows="10"><?php echo esc_attr( get_option('body_bottom_html') ); ?></textarea></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false"><?php echo esc_attr( get_option('body_bottom_html') ); ?></textarea></td>
             </tr>
         </table>
         <?php submit_button(); ?>

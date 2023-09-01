@@ -2,7 +2,7 @@
 
 ### 1.6.0 Live (September 10, 2023)
 
-* Inclusion of an additional settings page that contains user created global metadata for the header and footer, custom 404 page text and image, and other important default image settings as well. 
+* Inclusion of an additional settings page that contains user created global metadata for the header and footer, custom 404 page text and image, and other important default image settings as well. This moves variable settings out of the top of the functions.php.
 
 ### 1.5.0 Live (August 30, 2023)
 

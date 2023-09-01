@@ -1243,7 +1243,7 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">&lt;Body&gt; Top HTML</label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the openning &lt;body&gt; tag.</small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening &lt;body&gt; tag.</small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">&lt;Body&gt; Bottom HTML</label></th>

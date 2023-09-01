@@ -1196,10 +1196,11 @@ function m20T1_settings_page() {
 ?>
 <div class="wrap">
     <h1>m20T1 Additional Theme Options</h1>
-    <p>More settings related to this theme.</p>
+    <p>Additional settings for this theme.
     <form method="post" action="options.php" novalidate="novalidate">
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
+        <h2>Customize the 404 Error Page</h2>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
@@ -1209,6 +1210,9 @@ function m20T1_settings_page() {
                 <th scope="row"><label for="404_image">404 Error Page Image</label></th>
                 <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
             </tr>
+        </table>
+        <h2>Set the default images</h2>
+        <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Results Image</label></th>
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
@@ -1223,6 +1227,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Insert Additional Metadata and HTML Code</h2>
+        <p>Allowed HTML tags: &lt;meta&gt;, &lt;script&gt;, &lt;link&gt;, &lt;style&gt;, &lt;noscript&gt;, &lt;iframe&gt;.
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">&lt;Head&gt; Metatdata</label></th>

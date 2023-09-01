@@ -1166,3 +1166,79 @@ function users_last_login() {
         return human_time_diff($last_login);
     }
 }
+
+
+// Create new menu under the Appearance section
+add_action('admin_menu', function(){
+	add_submenu_page('themes.php', 'm20T1 Additional Settings', 'm20T1 Settings', 'administrator', __FILE__, 'm20T1_settings_page' , 'dashicons-admin-generic', null );
+
+    // Register settings
+	add_action( 'admin_init', function(){
+        register_setting( 'm20t1-settings-group', '404_image' );
+        register_setting( 'm20t1-settings-group', '404_text' );
+        register_setting( 'm20t1-settings-group', 'search_image' );
+        register_setting( 'm20t1-settings-group', 'social_image' );
+        register_setting( 'm20t1-settings-group', 'blank_image' );
+        register_setting( 'm20t1-settings-group', 'head_metadata' );
+        register_setting( 'm20t1-settings-group', 'body_top_html' );
+        register_setting( 'm20t1-settings-group', 'body_bottom_html' );
+    });
+});
+
+// Additional settings page layout
+function m20T1_settings_page() {
+?>
+<div class="wrap">
+    <h1>m20T1 Additional Theme Options</h1>
+    <p>More settings related to this theme.</p>
+    <form method="post" action="options.php" novalidate="novalidate">
+        <?php settings_fields( 'm20t1-settings-group' ); ?>
+        <?php do_settings_sections( 'm20t1-settings-group' ); ?>
+        <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="404_text">404 Error Page Text</label></th>
+                <td><textarea name="404_text" id="404_text" placeholder="Page no longer exists." rows="4"><?php echo esc_attr( get_option('404_text') ); ?></textarea></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="404_image">404 Error Page Image</label></th>
+                <td><input type="url" name="404_image" id="404_image" placeholder="https://www." value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="search_image">Search Page Results Image</label></th>
+                <td><input type="url" name="search_image" id="search_image" placeholder="https://www." value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="social_image">Social Media Sharing Image</label></th>
+                <td><input type="url" name="social_image" id="social_image" placeholder="https://www." value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="blank_image">Default Blank Image</label></th>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="https://www." value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
+            </tr>
+        </table>
+        <h2>Insert Additional Metadata and HTML Code</h2>
+        <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="head_metadata">&lt;Head&gt; Metatdata</label></th>
+                <td><textarea name="head_metadata" id="head_metadata" placeholder="Enter HTML code..." rows="10"><?php echo esc_attr( get_option('head_metadata') ); ?></textarea></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="body_top_html">&lt;Body&gt; Top HTML</label></th>
+                <td><textarea name="body_top_html" id="body_top_html" placeholder="Enter HTML code..." rows="10"><?php echo esc_attr( get_option('body_top_html') ); ?></textarea></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="body_bottom_html">&lt;Body&gt; Bottom HTML</label></th>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" placeholder="Enter HTML code..." rows="10"><?php echo esc_attr( get_option('body_bottom_html') ); ?></textarea></td>
+            </tr>
+        </table>
+        <?php submit_button(); ?>
+    </form>
+    </div>
+    <style type="text/css">
+        .form-table [type='url'],
+        .form-table textarea {
+            width: 100%
+        }
+    </style>
+<?php 
+}

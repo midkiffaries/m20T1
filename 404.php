@@ -11,7 +11,7 @@
             </div>
             <h1 class="page-title" itemprop="name headline">Page Not Found</h1>
             <div class="content-404" itemprop="text articleBody">
-                <?=PAGE_404_CONTENT; // Error Message ?>
+                <?=clean_html(PAGE_404_CONTENT); // Error Message ?>
 
                 <?=get_search_form('error'); // Search Form ?>
                 

@@ -1216,7 +1216,7 @@ function m20T1_settings_page() {
                 <td><textarea name="404_text" id="404_text" class="code" placeholder="Page no longer exists." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(clean_html(get_option('404_text'))); ?></textarea></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="404_image">404 Error Page Image</label></th>
+                <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
                 <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr(get_option('404_image')); ?>"></td>
             </tr>
         </table>

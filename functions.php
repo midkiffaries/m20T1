@@ -1062,9 +1062,9 @@ function schemaNavigation( $menu_name ) {
 }
 
 
-//////////////////////////////////////////
-// Add Additional values to user profiles
-//////////////////////////////////////////
+/////////////////////////////////////////////////
+// Admin: Add Additional values to user profiles
+/////////////////////////////////////////////////
 
 // Display the author's user level/role
 function user_level( $level ) {
@@ -1173,6 +1173,10 @@ function users_last_login() {
     }
 }
 
+
+/////////////////////////////////////////////////
+// Admin: Additional Setting Page
+/////////////////////////////////////////////////
 
 // Create new menu under the Appearance section
 add_action('admin_menu', function(){

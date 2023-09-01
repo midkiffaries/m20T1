@@ -773,7 +773,7 @@ function allow_html_metadata($html) {
 
 // Allow only certain HTML tags for user generated input
 function clean_html($html) {
-    return strip_tags($html, '<p><b><strong><i><em><a><br><span>');
+    return strip_tags($html, '<b><strong><i><em><a><br><span>');
 }
 
 

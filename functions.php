@@ -905,9 +905,9 @@ function Header_Hero( $id ) {
 }
 
 
-/////////////////////////////
-// WordPress Functions
-/////////////////////////////
+//////////////////////////////////
+// WordPress Blog Post Functions
+//////////////////////////////////
 
 // Display the date of the last entry update
 function display_last_updated() {

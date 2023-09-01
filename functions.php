@@ -1207,34 +1207,34 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image</label></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Results Image</label></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Media Sharing Image</label></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
+                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Default Blank Image</label></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
             </tr>
         </table>
         <h2>Insert Additional Metadata and HTML Code</h2>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">&lt;Head&gt; Metatdata</label></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr( get_option('head_metadata') ); ?></textarea></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr( get_option('head_metadata') ); ?></textarea><small>These scripts will be placed inside the &lt;head&gt; tag.</small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">&lt;Body&gt; Top HTML</label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr( get_option('body_top_html') ); ?></textarea></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr( get_option('body_top_html') ); ?></textarea><small>These scripts will be placed below the openning &lt;body&gt; tag.</small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">&lt;Body&gt; Bottom HTML</label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr( get_option('body_bottom_html') ); ?></textarea></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr( get_option('body_bottom_html') ); ?></textarea><small>These scripts will be placed above the closing &lt;body&gt; tag.</small></td>
             </tr>
         </table>
         <?php submit_button(); ?>
@@ -1244,7 +1244,7 @@ function m20T1_settings_page() {
         .form-table textarea {
             width: 100%
         }
-    </s>
+    </style>
 </div>
 <?php 
 }

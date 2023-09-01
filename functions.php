@@ -337,13 +337,6 @@ add_action( 'wp_footer', function(){
 //add_filter( 'xmlrpc_enabled', '__return_false' );
 //add_filter( 'load_configurator_on_page', '__return_true' );
 
-// Add custom message to login screen
-add_filter( 'login_message', function(){
-?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, array('srcset' => '', 'style' => 'width:80%')); ?></div>
-<?php
-});
-
 // Set the excerpt length
 add_filter( 'excerpt_length', function(){
     return EXCERPT_LENGTH; // Number of Words
@@ -351,8 +344,13 @@ add_filter( 'excerpt_length', function(){
 
 // Add a 'Continue Reading' link to excerpts
 add_filter( 'excerpt_more', function(){
+    return '<span class="entry-read-more" aria-label="Read more">'.MORE_TEXT.'</span>';
+});
+
+// Add custom message to login screen
+add_filter( 'login_message', function(){
 ?>
-<span class="entry-read-more" aria-label="Read more"><?= MORE_TEXT; ?></span>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, array('srcset' => '', 'style' => 'width:80%')); ?></div>
 <?php
 });
 
@@ -785,7 +783,7 @@ function SEO_Excerpt( $id ) {
     if (has_excerpt($id) && !is_attachment()) {
         $description = trim(substr(get_the_excerpt($id), 0, $length));
     } else {
-        // Get page description from content excerpt
+        // Get page description from the content
         if (is_single() || is_page() || is_admin()) { // If single blog post
             $excerpt = html_entity_decode(wp_strip_all_tags(get_the_excerpt($id), true));
             $description = trim(substr($excerpt, 0, $length)) . MORE_TEXT;
@@ -1170,7 +1168,7 @@ function users_last_login() {
 
 // Create new menu under the Appearance section
 add_action('admin_menu', function(){
-	add_submenu_page('themes.php', 'm20T1 Additional Settings', 'm20T1 Settings', 'administrator', __FILE__, 'm20T1_settings_page' , 'dashicons-admin-generic', null );
+	add_submenu_page('options-general.php', 'm20T1 Additional Settings', 'm20T1 Settings', 'administrator', __FILE__, 'm20T1_settings_page' , 'dashicons-admin-generic', null );
 
     // Register settings
 	add_action( 'admin_init', function(){
@@ -1201,19 +1199,19 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image</label></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="https://www." spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('404_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Results Image</label></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="https://www." spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('search_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Media Sharing Image</label></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="https://www." spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
+                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('social_image') ); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Default Blank Image</label></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="https://www." spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/..."); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" value="<?php echo esc_attr( get_option('blank_image') ); ?>"></td>
             </tr>
         </table>
         <h2>Insert Additional Metadata and HTML Code</h2>
@@ -1233,12 +1231,12 @@ function m20T1_settings_page() {
         </table>
         <?php submit_button(); ?>
     </form>
-    </div>
     <style type="text/css">
         .form-table [type='url'],
         .form-table textarea {
             width: 100%
         }
     </style>
+</div>
 <?php 
 }

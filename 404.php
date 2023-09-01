@@ -11,7 +11,7 @@
             </div>
             <h1 class="page-title" itemprop="name headline">Page Not Found</h1>
             <div class="content-404" itemprop="text articleBody">
-                <p><?=get_option('404_text') ? clean_html(get_option('404_text')) : "That page must have been deleted or is otherwise inaccessable."; // Error Message ?></p>
+                <p><?=get_option('404_text') ? nl2br(clean_html(get_option('404_text'))) : "That page must have been deleted or is otherwise inaccessable."; // Error Message ?></p>
                 
                 <?=get_search_form('error'); // Search Form ?>
                 

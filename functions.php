@@ -279,7 +279,8 @@ add_action( 'wp_head', function(){
 <meta name="twitter:data1" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>">
 <meta name="twitter:label2" content="Est. reading time">
 <meta name="twitter:data2" content="<?=reading_time(); ?>">
-<?php schemaJSONData(); ?>
+<?=clean_html_metadata(get_option('head_metadata')); // Post user metadata ?>
+<?php schemaJSONData(); // Post Schema JSON ?>
 <?php
 });
 
@@ -314,6 +315,7 @@ add_action('wp_dashboard_setup', function(){
 
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
+    echo clean_html_metadata(get_option('body_top_html')); // Post user metadata
     set_page_views(); // Page view counter
 });
 
@@ -331,6 +333,7 @@ add_action( 'wp_footer', function(){
 
 <script>document.getElementById('PageLoadTime').textContent=<?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
 <?php
+echo clean_html_metadata(get_option('body_bottom_html')); // Post user metadata
 });
 
 // Decactivate xml-rpc WordPress feature for security reasons
@@ -761,6 +764,11 @@ function image_metadata( $filename ) {
 // Get the full file path on the server from the file's URI
 function get_filepath( $fileurl ) {
     return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
+}
+
+// Clean user generated metadata and HTML
+function clean_html_metadata($html) {
+    return strip_tags($html, '<meta><script><link><style><noscript><iframe>');
 }
 
 
@@ -1236,7 +1244,7 @@ function m20T1_settings_page() {
         .form-table textarea {
             width: 100%
         }
-    </style>
+    </s>
 </div>
 <?php 
 }

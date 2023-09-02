@@ -1229,6 +1229,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Other Settings</h2>
+        <p>Adjust the length of the excerpt text seen on the blog post list.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="alt_excerpt_length">Post List Excerpt Length</label></th>

@@ -26,7 +26,7 @@ define( 'POST_SEPARATOR', '–' );
 define( 'MORE_TEXT', '[...]' );
 // Maximum excerpt length
 define( 'EXCERPT_LENGTH', 90 ); // Number of words
-// Shorten length of the content - alternative to excerpt
+// Shorten length of the content - alternative to excerpt()
 define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 // SEO text excerpt length
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters

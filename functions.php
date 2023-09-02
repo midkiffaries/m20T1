@@ -299,7 +299,6 @@ add_action('wp_dashboard_setup', function(){
         <li><code>.fancy-border</code> - Adds fancy border</li>
         <li><code>.add-drop-shadow</code> - Adds drop shadow</li>
     </ul>
-    <p><a href="options-general.php?page=Users%2Ftheodore%2FSites%2Flocalhost%2FWP-marchtwenty%2Fwp-content%2Fthemes%2Fm20T1%2Ffunctions.php">Additional Theme Settings</a></p>
     <?php
     }
 });

@@ -25,7 +25,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Schema.org structured data autonomously generated
 - Built in image lightbox, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
-- Alternate page templates with full width and sidebar support
+- Custom settings page to allow the user to include additional meta data in the header, as well as settings to the 404 and search pages
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
 - Unique <i>front-page</i>, <i>404</i> and <i>attachment (image)</i> pages
@@ -35,7 +35,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Built in support for an <b>additional post type</b>, default set as "Portfolio"
 - Built in blog post read time in minutes
 - Enabled SVG support and iCal/vCard files upload to media library
-- Support for printing pages cleanly
+- Support for printing pages (mostly) cleanly
 
 ## Todo List
 - Make adjustments to layout.css and move to CSS Grid page formating

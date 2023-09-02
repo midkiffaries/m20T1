@@ -38,9 +38,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Support for printing pages cleanly
 
 ## Todo List
-- Move settings variables from functions.php to the editor
 - Make adjustments to layout.css and move to CSS Grid page formating
-- Incorporate extensive custom code/meta data to WordPress editor
 
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section.

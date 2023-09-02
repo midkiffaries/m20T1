@@ -811,7 +811,7 @@ function SEO_Image( $id ) {
     } else if (has_post_thumbnail($id)) { // Use page's featured image
         $featuredImage = get_the_post_thumbnail_url($id, 'large');
     } else { // Use default image
-        $featuredImage = get_option('social_image') ? get_option('social_image') : get_template_directory_uri() . '/assets/images/social-share.jpg';
+        $featuredImage = get_option('social_image') ? esc_url(get_option('social_image')) : get_template_directory_uri() . '/assets/images/social-share.jpg';
     }
     return esc_url($featuredImage);
 }
@@ -842,7 +842,7 @@ function FeaturedImageURL( $id, $size, $isBackground ) {
             return $image;
         } 
         if (!$isBackground) {
-            return get_option('blank_image') ? get_option('blank_image') : get_template_directory_uri() . '/assets/images/featured-blank.svg';
+            return get_option('blank_image') ? esc_url(get_option('blank_image')) : get_template_directory_uri() . '/assets/images/featured-blank.svg';
         }
     }
 }
@@ -1205,7 +1205,7 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
-                <td><textarea name="404_text" id="404_text" class="code" placeholder="Page no longer exists." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(clean_html(get_option('404_text'))); ?></textarea></td>
+                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(clean_html(get_option('404_text'))); ?></textarea></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
@@ -1231,16 +1231,16 @@ function m20T1_settings_page() {
         <p>Allowed HTML tags: &lt;meta&gt;, &lt;script&gt;, &lt;link&gt;, &lt;style&gt;, &lt;noscript&gt;, &lt;iframe&gt;.
         <table class="form-table" role="presentation">
             <tr valign="top">
-                <th scope="row"><label for="head_metadata">&lt;Head&gt; Metatdata</label></th>
+                <th scope="row"><label for="head_metadata">Header HTML</label></th>
                 <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag.</small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="body_top_html">&lt;Body&gt; Top HTML</label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening &lt;body&gt; tag.</small></td>
+                <th scope="row"><label for="body_top_html">Body HTML</label></th>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="body_bottom_html">&lt;Body&gt; Bottom HTML</label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing &lt;body&gt; tag.</small></td>
+                <th scope="row"><label for="body_bottom_html">Footer HTML</label></th>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></td>
             </tr>
         </table>
         <?php submit_button(); ?>

@@ -24,11 +24,11 @@ include_once 'assets/plugins/breadcrumbs.php';
 define( 'POST_SEPARATOR', '–' );
 // Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
-// Maximum excerpt length
+// Maximum excerpt length default
 define( 'EXCERPT_LENGTH', 90 ); // Number of words
-// Shorten length of the content - alternative to excerpt()
+// Shorten length of the content default - Post listing
 define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
-// SEO text excerpt length
+// SEO text excerpt length default
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 
 // Title of the additional post type
@@ -45,6 +45,10 @@ define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path(rawurlencode(strtolower
 
 // Get the version of m20T1 from style.css
 define( 'THEME_VERSION', wp_get_theme()->get('Version') );
+
+// Decactivate xml-rpc WordPress feature for security reasons
+//add_filter( 'xmlrpc_enabled', '__return_false' );
+//add_filter( 'load_configurator_on_page', '__return_true' );
 
 // Enable WordPress features and register menus
 add_action( 'after_setup_theme', function(){
@@ -326,13 +330,9 @@ add_action( 'wp_footer', function(){
 echo allow_html_metadata(get_option('body_bottom_html')); // Post user metadata
 });
 
-// Decactivate xml-rpc WordPress feature for security reasons
-//add_filter( 'xmlrpc_enabled', '__return_false' );
-//add_filter( 'load_configurator_on_page', '__return_true' );
-
 // Set the excerpt length
 add_filter( 'excerpt_length', function(){
-    return EXCERPT_LENGTH; // Number of Words
+    return get_option('excerpt_length') ? get_option('excerpt_length') : EXCERPT_LENGTH; // Number of Words
 });
 
 // Add a 'Continue Reading' link to excerpts
@@ -722,7 +722,7 @@ function shorten_the_content( $post ) {
     $regex_url = "@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?).*$)@"; // Remove URLs
     $excerpt = preg_replace($regex_figure, ' ', html_entity_decode($post));
     $excerpt = preg_replace($regex_url, ' ', html_entity_decode(wp_strip_all_tags($excerpt, true)));
-    return wp_trim_words($excerpt, SHORT_TEXT_LENGTH, ' <span class="entry-read-more">' . MORE_TEXT . '</span>');
+    return wp_trim_words($excerpt, get_option('alt_excerpt_length') ? intval(get_option('alt_excerpt_length')) : SHORT_TEXT_LENGTH, ' <span class="entry-read-more">' . MORE_TEXT . '</span>');
 }
 
 // Separator that breaks up a post's metadata
@@ -1187,6 +1187,8 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'head_metadata' );
         register_setting( 'm20t1-settings-group', 'body_top_html' );
         register_setting( 'm20t1-settings-group', 'body_bottom_html' );
+        register_setting( 'm20t1-settings-group', 'alt_excerpt_length' );
+        register_setting( 'm20t1-settings-group', 'excerpt_length' );
     });
 });
 
@@ -1200,46 +1202,58 @@ function m20T1_settings_page() {
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
         <h2>Customize the 404 Error Page</h2>
-        <p>Allowed HTML tags: &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;a&gt;, &lt;span&gt;.
+        <p>Allowed HTML tags: &lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt;
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
-                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(clean_html(get_option('404_text'))); ?></textarea></td>
+                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(clean_html(get_option('404_text'))); ?></textarea></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr(get_option('404_image')); ?>"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image')); ?>"></td>
             </tr>
         </table>
         <h2>Set the default images</h2>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Results Image</label></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr(get_option('search_image')); ?>"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image')); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Media Sharing Image</label></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr(get_option('social_image')); ?>"></td>
+                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image')); ?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Default Featured Image</label></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo esc_attr(get_option('blank_image')); ?>"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
+            </tr>
+        </table>
+        <h2>Other Settings</h2>
+        <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="alt_excerpt_length">Post List Excerpt Length</label></th>
+                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="excerpt_length">Default Excerpt Length</label></th>
+                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('excerpt_length'); ?>"> words</td>
             </tr>
         </table>
         <h2>Insert Additional Metadata and HTML Code</h2>
-        <p>Allowed HTML tags: &lt;meta&gt;, &lt;script&gt;, &lt;link&gt;, &lt;style&gt;, &lt;noscript&gt;, &lt;iframe&gt;.
+        <p>Google Analytics, fonts, scripts, and other metadata.</p>
+        <p>Allowed HTML tags: &lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header HTML</label></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag.</small></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag.</small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">Body HTML</label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">Footer HTML</label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?php echo esc_attr(allow_html_metadata(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></td>
             </tr>
         </table>
         <?php submit_button(); ?>
@@ -1250,6 +1264,29 @@ function m20T1_settings_page() {
             width: 100%
         }
     </style>
+    <script>
+    (function(){
+        const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
+        for (let i = 0; i < l; i++) {
+            const inputAttrib = inputNum[i].getAttribute("type");
+            if (inputAttrib === "number") {
+                inputNum[i].onkeypress = function () {
+                    return event.charCode >= 40 && event.charCode <= 57;
+                }
+            }
+            if (inputAttrib === "url") {
+                inputNum[i].onkeypress = function () {
+                    return event.charCode >= 33 && event.charCode <= 122;
+                }
+            }
+            inputNum[i].onkeyup = function () {
+                if (this.value.length > this.maxLength && this.maxLength > 0) {
+                    this.value = this.value.slice(0,this.maxLength);
+                }
+            }
+        }
+    }());
+    </script>
 </div>
 <?php 
 }

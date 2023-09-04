@@ -763,7 +763,7 @@ function allow_html_metadata($html) {
 
 // Allow only certain HTML tags for user generated input
 function clean_html($html) {
-    return strip_tags($html, '<b><strong><i><em><a><span>');
+    return strip_tags($html, '<b><strong><i><em><a><span><abbr>');
 }
 
 
@@ -1203,7 +1203,7 @@ function m20T1_settings_page() {
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
         <h2>Customize the 404 Error Page</h2>
-        <p>Allowed HTML tags: &lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt;
+        <p>Allowed HTML tags: &lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
@@ -1214,22 +1214,22 @@ function m20T1_settings_page() {
                 <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image')); ?>"></td>
             </tr>
         </table>
-        <h2>Set the default images</h2>
+        <h2>Set the Default & Fallback Images</h2>
         <table class="form-table" role="presentation">
             <tr valign="top">
-                <th scope="row"><label for="search_image">Search Page Results Image</label></th>
+                <th scope="row"><label for="search_image">Search Page Image (URL)</label></th>
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image')); ?>"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="social_image">Fallback Site Image</label></th>
+                <th scope="row"><label for="social_image">Fallback Site Image (URL)</label></th>
                 <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image')); ?>"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="blank_image">Default Featured Image</label></th>
+                <th scope="row"><label for="blank_image">Fallback Featured Image (URL)</label></th>
                 <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
             </tr>
         </table>
-        <h2>Other Settings</h2>
+        <h2>Other Site Settings</h2>
         <p>Adjust the site representation and the length of the excerpt text seen on the blog post list.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
@@ -1248,20 +1248,20 @@ function m20T1_settings_page() {
                 <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('excerpt_length'); ?>"> words</td>
             </tr>
         </table>
-        <h2>Insert Additional Metadata and HTML Code</h2>
-        <p>Google Analytics, fonts, scripts, and other metadata.</p>
+        <h2>Additional Metadata and <abbr>HTML</abbr> Code</h2>
+        <p>For inserting Google Analytics, fonts, scripts and other metadata.</p>
         <p>Allowed HTML tags: &lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;
         <table class="form-table" role="presentation">
             <tr valign="top">
-                <th scope="row"><label for="head_metadata">Header HTML</label></th>
+                <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label></th>
                 <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag.</small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="body_top_html">Body HTML</label></th>
+                <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label></th>
                 <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="body_bottom_html">Footer HTML</label></th>
+                <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label></th>
                 <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></td>
             </tr>
         </table>

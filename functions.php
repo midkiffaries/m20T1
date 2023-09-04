@@ -1189,6 +1189,7 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'body_bottom_html' );
         register_setting( 'm20t1-settings-group', 'alt_excerpt_length' );
         register_setting( 'm20t1-settings-group', 'excerpt_length' );
+        register_setting( 'm20t1-settings-group', 'site_representation' );
     });
 });
 
@@ -1220,7 +1221,7 @@ function m20T1_settings_page() {
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image')); ?>"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="social_image">Social Media Sharing Image</label></th>
+                <th scope="row"><label for="social_image">Fallback Site Image</label></th>
                 <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image')); ?>"></td>
             </tr>
             <tr valign="top">
@@ -1229,8 +1230,15 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Other Settings</h2>
-        <p>Adjust the length of the excerpt text seen on the blog post list.</p>
+        <p>Adjust the site representation and the length of the excerpt text seen on the blog post list.</p>
         <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="site_representation">Site Representation</label></th>
+                <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation'); ?>">
+                    <option value="Person">Person</option>
+                    <option value="Organization">Organization</option>
+                </select></td>
+            </tr>
             <tr valign="top">
                 <th scope="row"><label for="alt_excerpt_length">Post List Excerpt Length</label></th>
                 <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
@@ -1266,7 +1274,7 @@ function m20T1_settings_page() {
         }
     </style>
     <script>
-    (function(){
+    (() => {
         const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
         for (let i = 0; i < l; i++) {
             const inputAttrib = inputNum[i].getAttribute("type");
@@ -1286,7 +1294,13 @@ function m20T1_settings_page() {
                 }
             }
         }
-    }());
+        for (let i, j = 0; i = document.getElementById('site_representation').options[j]; j++) {
+        if (i.value == '<?=get_option('site_representation'); ?>') {
+            document.getElementById('site_representation').selectedIndex = j;
+            break;
+        }
+    }
+    })();
     </script>
 </div>
 <?php 

@@ -1190,6 +1190,7 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'alt_excerpt_length' );
         register_setting( 'm20t1-settings-group', 'excerpt_length' );
         register_setting( 'm20t1-settings-group', 'site_representation' );
+        register_setting( 'm20t1-settings-group', 'short_title' );
     });
 });
 
@@ -1230,8 +1231,12 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Other Site Settings</h2>
-        <p>Adjust the site representation and the length of the excerpt text seen on the blog post list.</p>
+        <p>Adjust the site representation, an abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
         <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="short_title">Short Site Title</label></th>
+                <td><input type="text" name="short_title" id="short_title" placeholder="<?=bloginfo('name'); ?>" maxlength="18" value="<?=get_option('short_title'); ?>"> (max 18 characters)</td>
+            </tr>
             <tr valign="top">
                 <th scope="row"><label for="site_representation">Site Representation</label></th>
                 <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation'); ?>">
@@ -1240,7 +1245,7 @@ function m20T1_settings_page() {
                 </select></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="alt_excerpt_length">Post List Excerpt Length</label></th>
+                <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
                 <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
             </tr>
             <tr valign="top">
@@ -1295,11 +1300,11 @@ function m20T1_settings_page() {
             }
         }
         for (let i, j = 0; i = document.getElementById('site_representation').options[j]; j++) {
-        if (i.value == '<?=get_option('site_representation'); ?>') {
-            document.getElementById('site_representation').selectedIndex = j;
-            break;
+            if (i.value == '<?=get_option('site_representation'); ?>') {
+                document.getElementById('site_representation').selectedIndex = j;
+                break;
+            }
         }
-    }
     })();
     </script>
 </div>

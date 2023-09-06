@@ -1229,7 +1229,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Customize the 404 Error Page</h2>
-        <p>Allowed HTML tags: &lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;
+        <p>Change the image and the text of the 404 page. Allowed HTML tags: <code>&lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;</code></p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
@@ -1256,8 +1256,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Additional Metadata and Scripts</h2>
-        <p>For inserting Google Analytics, fonts, scripts and other metadata into the header and footer.</p>
-        <p>Allowed HTML tags: &lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;
+        <p>For inserting Google Analytics, fonts, scripts and other metadata into the header and footer. Allowed HTML tags: <code>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</code></p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label></th>

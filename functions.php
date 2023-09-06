@@ -1247,11 +1247,11 @@ function m20T1_settings_page() {
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image')); ?>"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="social_image">Fallback Site Image (URL)</label></th>
+                <th scope="row"><label for="social_image">Site Image Fallback (URL)</label></th>
                 <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image')); ?>"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="blank_image">Fallback Featured Image (URL)</label></th>
+                <th scope="row"><label for="blank_image">Featured Image Fallback (URL)</label></th>
                 <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
             </tr>
         </table>

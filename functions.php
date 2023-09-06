@@ -1200,8 +1200,8 @@ add_action('admin_menu', function(){
 function m20T1_settings_page() {
 ?>
 <div class="wrap">
-    <h1>m20T1 Additional Theme Options</h1>
-    <p>Additional settings for this theme.
+    <h1>m20T1 Theme Settings</h1>
+    <p>Additional global settings this theme uses in lieu of plugins.</p>
     <form method="post" action="options.php" novalidate="novalidate">
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>

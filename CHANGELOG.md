@@ -1,8 +1,8 @@
 # Changes to m20T1
 
-### 1.6.0 Live (September 10, 2023)
+### 1.6.0 Live (September 6, 2023)
 
-* Inclusion of an additional settings page that contains user created global metadata for the header and footer, custom 404 page text and image, and other important default image settings. This moves some of the variable settings out of the top of functions.php.
+* Inclusion of an additional settings page that contains user created global metadata for the header and footer, excerpt length control, custom 404 page text and image, and other important default image settings. This moves some of the variable settings out of the top of functions.php.
 * A few bug fixes.
 
 ### 1.5.0 Live (August 30, 2023)

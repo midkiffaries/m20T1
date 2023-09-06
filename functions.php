@@ -1255,8 +1255,8 @@ function m20T1_settings_page() {
                 <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
             </tr>
         </table>
-        <h2>Additional Metadata and <abbr>HTML</abbr> Code</h2>
-        <p>For inserting Google Analytics, fonts, scripts and other metadata.</p>
+        <h2>Additional Metadata and Scripts</h2>
+        <p>For inserting Google Analytics, fonts, scripts and other metadata into the header and footer.</p>
         <p>Allowed HTML tags: &lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;
         <table class="form-table" role="presentation">
             <tr valign="top">

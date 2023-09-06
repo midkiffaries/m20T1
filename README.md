@@ -25,7 +25,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Schema.org structured data autonomously generated
 - Built in image lightbox, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
-- Custom admin settings page to allow for the inclusion of additional meta data in the header, as well as content settings to the 404, search error page and post excerpt length
+- Custom admin settings page to allow for the inclusion of additional metadata in the header, as well as content settings to the 404, search error page and post excerpt length
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
 - Unique <i>front-page</i>, <i>404</i> and <i>attachment (image)</i> pages

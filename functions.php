@@ -1205,6 +1205,29 @@ function m20T1_settings_page() {
     <form method="post" action="options.php" novalidate="novalidate">
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
+        <h2>Site Settings</h2>
+        <p>Adjust the site representation, an abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
+        <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="short_title">Short Site Title</label></th>
+                <td><input type="text" name="short_title" id="short_title" placeholder="<?=bloginfo('name'); ?>" maxlength="18" value="<?=get_option('short_title'); ?>"> (max 18 characters)</td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="site_representation">Site Representation</label></th>
+                <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation'); ?>">
+                    <option value="Person">Person</option>
+                    <option value="Organization">Organization</option>
+                </select></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
+                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="excerpt_length">Default Excerpt Length</label></th>
+                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('excerpt_length'); ?>"> words</td>
+            </tr>
+        </table>
         <h2>Customize the 404 Error Page</h2>
         <p>Allowed HTML tags: &lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;
         <table class="form-table" role="presentation">
@@ -1230,29 +1253,6 @@ function m20T1_settings_page() {
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Fallback Featured Image (URL)</label></th>
                 <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
-            </tr>
-        </table>
-        <h2>Other Site Settings</h2>
-        <p>Adjust the site representation, an abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
-        <table class="form-table" role="presentation">
-            <tr valign="top">
-                <th scope="row"><label for="short_title">Short Site Title</label></th>
-                <td><input type="text" name="short_title" id="short_title" placeholder="<?=bloginfo('name'); ?>" maxlength="18" value="<?=get_option('short_title'); ?>"> (max 18 characters)</td>
-            </tr>
-            <tr valign="top">
-                <th scope="row"><label for="site_representation">Site Representation</label></th>
-                <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation'); ?>">
-                    <option value="Person">Person</option>
-                    <option value="Organization">Organization</option>
-                </select></td>
-            </tr>
-            <tr valign="top">
-                <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
-                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
-            </tr>
-            <tr valign="top">
-                <th scope="row"><label for="excerpt_length">Default Excerpt Length</label></th>
-                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('excerpt_length'); ?>"> words</td>
             </tr>
         </table>
         <h2>Additional Metadata and <abbr>HTML</abbr> Code</h2>

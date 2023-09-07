@@ -1258,15 +1258,15 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag. Allowed HTML tags: &lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</small></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag. Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag. Allowed HTML tags: &lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag. Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag. Allowed HTML tags: &lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</small></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag. Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
         </table>
         <?php submit_button(); ?>

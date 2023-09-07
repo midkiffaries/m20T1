@@ -194,6 +194,7 @@ document.addEventListener("keyup", (e) => {
             iframe.setAttribute("allow", "accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
             iframe.setAttribute("allowfullscreen", "");
             iframe.setAttribute("loading", "lazy");
+            iframe.setAttribute("role", "presentation");
             iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?feature=oembed`);
             this.innerHTML = "";
             this.appendChild(iframe);

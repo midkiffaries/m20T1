@@ -1227,11 +1227,11 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Customize the 404 Error Page</h2>
-        <p>Change the image and the text of the 404 page. Allowed HTML tags: <code>&lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;</code></p>
+        <p>Change the image and the text of the 404 page.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
-                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(clean_html(get_option('404_text'))); ?></textarea></td>
+                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(clean_html(get_option('404_text'))); ?></textarea><small>Allowed HTML tags: <b>&lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
@@ -1257,16 +1257,16 @@ function m20T1_settings_page() {
         <p>For inserting Google Analytics, fonts, scripts and other metadata into the header and footer.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
-                <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>These scripts will be placed inside the &lt;head&gt; tag. Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label> <br><small>These scripts will be placed inside the &lt;head&gt; tag.</small></th>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag. Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label> <br><small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></th>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html'))); ?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag. Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label> <br><small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></th>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html'))); ?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
         </table>
         <?php submit_button(); ?>

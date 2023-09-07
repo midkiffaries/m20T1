@@ -309,7 +309,7 @@ add_action('wp_dashboard_setup', function(){
 
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
-    echo allow_html_metadata(get_option('body_top_html')); // Post user metadata
+    echo allow_html_tags(get_option('body_top_html')); // Post user HTML
     set_page_views(); // Page view counter
 });
 
@@ -326,8 +326,9 @@ add_action( 'wp_footer', function(){
 </template>
 
 <script>document.getElementById('PageLoadTime').textContent=<?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
+
 <?php
-echo allow_html_metadata(get_option('body_bottom_html')); // Post user metadata
+    echo allow_html_tags(get_option('body_bottom_html')); // Post user HTML
 });
 
 // Set the excerpt length
@@ -756,9 +757,14 @@ function get_filepath( $fileurl ) {
     return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
 }
 
-// Allow only certain HTML tags in the metadata for user generated input
+// Allow only certain HTML tags in the head metadata for user generated content
 function allow_html_metadata($html) {
-    return strip_tags($html, '<meta><script><link><style><noscript><iframe>');
+    return strip_tags($html, '<meta><script><noscript><link><style><iframe>');
+}
+
+// Allow only certain HTML tags for user generated content
+function allow_html_tags($html) {
+    return strip_tags($html, '<style><script><noscript><iframe><div>');
 }
 
 // Allow only certain HTML tags for user generated input
@@ -1256,11 +1262,11 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html'))); ?></textarea> <small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html'))); ?></textarea> <small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></td>
             </tr>
         </table>
         <?php submit_button(); ?>

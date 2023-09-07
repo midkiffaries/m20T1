@@ -1153,6 +1153,8 @@ Specific Page Styling
 
 .page-image .page-title {
 	padding-bottom: 3px;
+	margin: 0.6em auto 0.2em;
+	font-size: 3rem;
 }
 
 .page-image .attachment img:not(.attachment-svg) {
@@ -1182,11 +1184,6 @@ Specific Page Styling
 
 .page-image .attachment svg#GenericDoc {
 	transform: scale(75%);
-}
-
-.page-image .page-title {
-	margin: 0.6em auto 0.2em;
-	font-size: 3rem;
 }
 
 .page-image .image-info {
@@ -1365,7 +1362,6 @@ Page Pagination Section
 
 .blog-pagination nav a {
 	text-decoration: none;
-	font-size: 1.3rem;
 	padding: 4px 10px;
 	display: inline-block;
 	font-size: 1.2rem;

@@ -3,6 +3,7 @@
 ### 1.6.1 Live (September 8, 2023)
 
 * Bug fixes and code clean up.
+* Now requires PHP 8.0+ 
 
 ### 1.6.0 Live (September 6, 2023)
 

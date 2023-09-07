@@ -21,7 +21,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 
 - Compatible with WordPress 6.3+
 - Theme supports PHP 8.0+
-- Built with SEO performance and social media sharing in mind
+- Built with extensive technical SEO and social media sharing in mind
 - Schema.org structured data autonomously generated
 - Built in image lightbox, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>

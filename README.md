@@ -28,7 +28,7 @@ The intention is for this theme is to be minimally reliant on 3rd party plugins 
 - Custom admin settings page to allow for the inclusion of additional metadata in the header, as well as content settings to the 404, search error page and post excerpt length
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
-- Unique <i>front-page</i>, <i>404</i> and <i>attachment (image)</i> pages
+- Unique <i>front-page.php</i>, <i>404.php</i> and <i>attachment.php (image)</i> pages
 - Featured image support for use as the hero/header image on posts and pages with a fallback image
 - Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
 - Support for <b>dark mode</b> page styling via a built in switch

@@ -1052,10 +1052,10 @@ function schemaNavigation( $menu_name ) {
 		$menu = get_term($locations[$menu_name], 'nav_menu');
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		
-		foreach ($menuItems as $MenuItem) { // Get each item in the menu
-            ?>{"@context": "https://schema.org/","@type": "SiteNavigationElement","@id": "<?=esc_url(home_url()); ?>#Main Navigation","name": "<?=$MenuItem->title; ?>","url": "<?=$MenuItem->url; ?>"}, <?php
-		}
-	} 
+		foreach ($menuItems as $MenuItem) { // Get each item in the menu ?>
+            {"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"<?=esc_url(home_url()); ?>#Main Navigation","name":"<?=$MenuItem->title; ?>","url":"<?=$MenuItem->url; ?>"}, 
+        <?php }
+	}
 }
 
 
@@ -1065,20 +1065,12 @@ function schemaNavigation( $menu_name ) {
 
 // Display the author's user level/role
 function user_level( $level ) {
-    switch ($level) {
-        case 10: 
-            return "Administrator";
-            break;
-        case 7:
-            return "Editor";
-            break;
-        case 2:
-            return "Author";
-            break;
-        default:
-            return "Contributor";
-            break;
-    }
+    return match (intval($level)) {
+        2 => 'Author',
+        7 => 'Editor',
+        10 => 'Administrator',
+        default => 'Contributor',
+    };
 }
 
 // Add additional contact methods and information to user profiles
@@ -1104,10 +1096,10 @@ function show_extra_profile_fields( $user ) { ?>
             <th><label for="mental">My Mental State</label></th>
             <td>
                 <select name="mental" id="mental">
-                    <option value="happy" <?php selected( 'happy', get_the_author_meta( 'mental', $user->ID ) ); ?>>Happy 😄</option>
-                    <option value="okay" <?php selected( 'okay', get_the_author_meta( 'mental', $user->ID ) ); ?>>Okay 🫤</option>
-                    <option value="sad" <?php selected( 'sad', get_the_author_meta( 'mental', $user->ID ) ); ?>>Sad 🙁</option>
-                    <option value="pizza" <?php selected( 'pizza', get_the_author_meta( 'mental', $user->ID ) ); ?>>Pizza 🍕</option>
+                    <option value="happy" <?php selected( 'happy', get_the_author_meta( 'mental', $user->ID ) ); ?>>😄 Happy</option>
+                    <option value="okay" <?php selected( 'okay', get_the_author_meta( 'mental', $user->ID ) ); ?>>🫤 Okay</option>
+                    <option value="sad" <?php selected( 'sad', get_the_author_meta( 'mental', $user->ID ) ); ?>>🙁 Sad</option>
+                    <option value="pizza" <?php selected( 'pizza', get_the_author_meta( 'mental', $user->ID ) ); ?>>🍕 Pizza</option>
                 </select>
             </td>
         </tr>

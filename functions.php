@@ -1000,7 +1000,7 @@ function blog_post_pagination( $type ) {
 
 // Show the blog post tags as a list
 function blog_post_tags() {
-    return the_tags('<ul role="list"><li rel="tag" itemprop="keywords">', '</li><li itemprop="keywords">', '</li></ul>');
+    return the_tags('<ul role="list"><li rel="tag" itemprop="keywords">', '</li><li rel="tag" itemprop="keywords">', '</li></ul>');
 }
 
 // Create a unique body main page class for all pages "page-{slug}"

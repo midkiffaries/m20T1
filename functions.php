@@ -1191,6 +1191,7 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'excerpt_length' );
         register_setting( 'm20t1-settings-group', 'site_representation' );
         register_setting( 'm20t1-settings-group', 'short_title' );
+        register_setting( 'm20t1-settings-group', 'contact_shortcode' );
     });
 });
 
@@ -1251,6 +1252,14 @@ function m20T1_settings_page() {
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Featured Image Fallback (URL)</label></th>
                 <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
+            </tr>
+        </table>
+        <h2>Main Contact Form</h2>
+        <p>Form shortcode generated from a 3rd-party plugin.</p>
+        <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="contact_shortcode">Contact Form Shortcode</label></th>
+                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=wp_strip_all_tags(get_option('contact_shortcode')); ?></textarea> <small>Allowed HTML tags: <b>&lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
             </tr>
         </table>
         <h2>Additional Metadata and Scripts</h2>

@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.6.2 Live (September 9, 2023)
+
+* Forgot that I had the contact form shortcode hard-coded in so I made a new entry in the m20T1 settings page.
+
 ### 1.6.1 Live (September 8, 2023)
 
 * Bug fixes and code clean up.

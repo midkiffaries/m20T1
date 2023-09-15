@@ -7,7 +7,7 @@ Description: m20T1 is a WordPress theme that I created from scratch that I use o
 Requires at least: 6.0
 Tested up to: 6.3.1
 Requires PHP: 8.0 and above
-Version: 1.6.2
+Version: 1.6.3
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: m20t1
@@ -383,6 +383,11 @@ WordPress Gutenburg Content Styling
 	margin: 0.2rem auto;
 }
 
+
+/************************************
+Custom Styling
+***********************************/
+
 .the-content figure.has-alpha img {
 	border: none;
 	background: transparent;
@@ -417,6 +422,28 @@ WordPress Gutenburg Content Styling
 
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):active {
 	color: var(--brand-color-dark);
+}
+
+.the-content .text-embellish-box::before {
+	display: block;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background-color: var(--brand-color);
+	content: " ";
+	z-index: -1;
+	opacity: 0.4;
+	margin: -20px 0 0 -15px;
+}
+
+.the-content .text-embellish-line::before {
+	display: block;
+	position: absolute;
+	width: 80px;
+	height: 3px;
+	background-color: var(--secondary-color);
+	content: " ";
+	margin-top: 1.3em;
 }
 
 

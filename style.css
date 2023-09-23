@@ -132,9 +132,9 @@ Typography for the page title and subtitle
 
 /* Blog Page title */
 .page-title,
-.single-entry-title,
 .blog-page-title h1,
-.porfolio-page-title h1 {
+.porfolio-page-title h1,
+.single-entry-title {
 	font-weight: 700;
 	font-size: 3.6rem;
 	letter-spacing: -0.1rem;
@@ -146,6 +146,10 @@ Typography for the page title and subtitle
 	filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.8));
 }
 
+.single-entry-title {
+	font-size: 3.5rem;
+}
+
 @media (max-width: 849px) {
 	.page-title,
 	.page-image .page-title,
@@ -154,6 +158,7 @@ Typography for the page title and subtitle
 	.porfolio-page-title h1 {
 		font-size: 2.7rem;
 		line-height: 1;
+		padding-bottom: 4px;
 	}
 }
 

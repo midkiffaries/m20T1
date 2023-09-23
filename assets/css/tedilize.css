@@ -152,7 +152,7 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1.15;
+	line-height: 1;
 	margin: 1.2rem auto 0.5rem;
 	font-weight: 400;
 	page-break-after: avoid;

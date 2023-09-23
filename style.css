@@ -144,6 +144,7 @@ Typography for the page title and subtitle
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.8));
+	padding-bottom: 4px;
 }
 
 .single-entry-title {
@@ -157,8 +158,6 @@ Typography for the page title and subtitle
 	.blog-page-title h1,
 	.porfolio-page-title h1 {
 		font-size: 2.7rem;
-		line-height: 1;
-		padding-bottom: 3px;
 	}
 }
 

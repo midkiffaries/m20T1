@@ -246,6 +246,8 @@ add_action( 'wp_head', function(){
 <link rel="Siteuri" href="<?=home_url(); ?>/" id="SiteURI">
 <meta name="application-name" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left')); ?>">
 <meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left')); ?>">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="description" content="<?=SEO_Excerpt(get_the_id()); ?>">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico"); ?>" sizes="any">

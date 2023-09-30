@@ -1504,6 +1504,7 @@ Child Page Section
 
 .child-card__image img {
 	object-fit: cover;
+	object-position: 50% 50%;
 	height: 150px;
 	width: 100%;
 }

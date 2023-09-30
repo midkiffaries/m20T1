@@ -1229,8 +1229,8 @@ function m20T1_settings_page() {
                 <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('excerpt_length'); ?>"> words</td>
             </tr>
         </table>
-        <h2>Customize the 404 Error Page</h2>
-        <p>Change the image and the text of the 404 page.</p>
+        <h2>404 Error and Search Page</h2>
+        <p>Set the image and the text of the 404 page and the 'No results' image on the search page .</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
@@ -1240,13 +1240,14 @@ function m20T1_settings_page() {
                 <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
                 <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image')); ?>"></td>
             </tr>
-        </table>
-        <h2>Set the Default and Fallback Images</h2>
-        <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Image (URL)</label></th>
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image')); ?>"></td>
             </tr>
+        </table>
+        <h2>Default and Fallback Images</h2>
+        <p>Set the fallback image for the social media sharing metadata and featured image.</p>
+        <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="social_image">Site Image Fallback (URL)</label></th>
                 <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image')); ?>"></td>

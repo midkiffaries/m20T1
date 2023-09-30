@@ -1207,7 +1207,7 @@ function m20T1_settings_page() {
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
         <h2>Site Settings</h2>
-        <p>Adjust the site representation, an abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
+        <p>Adjust the site representation, the abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="short_title">Short Site Title</label></th>

@@ -379,7 +379,7 @@ WordPress Gutenburg Content Styling
 
 .the-content figure.alignright,
 .the-content figure.alignleft {
-	margin: 0.3rem 1.1rem 0.6rem;
+	margin: 0 1.1rem 0.6rem;
 }
 
 .the-content figure.aligncenter {

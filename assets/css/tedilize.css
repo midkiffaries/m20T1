@@ -388,7 +388,6 @@ dialog {
 	padding: 1em;
 	background-color: #fff;
 	color: inherit;
-	will-change: auto;
 }
 
 dialog:not([open]) {

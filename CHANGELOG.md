@@ -2,7 +2,7 @@
 
 ### 1.6.3 Live (October 31, 2023)
 
-* Bug fixes and adjustments.
+* Bug fixes and more adjustments.
 
 ### 1.6.2 Live (September 9, 2023)
 

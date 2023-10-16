@@ -280,7 +280,7 @@ add_action( 'wp_head', function(){
 <?php
 });
 
-// Settings for the Admin floating toolbar and editor
+// Settings for the Admin floating toolbar and Wordpress editor
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
@@ -288,6 +288,7 @@ add_action( 'admin_head', function(){
 .wp-admin .column-thumbnail {width:7em}
 .wp-admin .media-icon .attachment-60x60 {min-width:60px}
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
+.wp-admin .user-url-wrap input.code {font-family:inherit}
 </style>
 <?php
 });

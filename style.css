@@ -922,9 +922,9 @@ Buttons and Social Links
 	position: relative;
 	transform: perspective(75em) rotateY(-30deg);
 	height: 200px;
-	width: 240px;
+	width: 245px;
 	transition: all 0.5s ease-in-out;
-	margin-bottom: 0.8em;
+	margin-bottom: 1em !important;
 }
 
 .bookify img {
@@ -941,8 +941,8 @@ Buttons and Social Links
 	position: absolute;
 	top: 8px;
 	left: 1px;
-	width: 210px;
 	height: 180px;
+	width: 255px;
 	background-color: #eee;
 	z-index: -1;
 	border-radius: 1px;
@@ -957,8 +957,8 @@ Buttons and Social Links
 	position: absolute;
 	top: 5px;
 	left: 1px;
-	width: 220px;
 	height: 190px;
+	width: 265px;
 	background-color: #555;
 	z-index: -1;
 	border-radius: 5px;

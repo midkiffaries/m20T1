@@ -305,6 +305,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>has-alpha</code> - Removes borders and background</li>
         <li><code>fancy-border</code> - Adds fancy border</li>
         <li><code>add-drop-shadow</code> - Adds drop shadow</li>
+        <li><code>hidden</code> - Hides block</li>
     </ul>
     <?php
     }

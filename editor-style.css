@@ -333,6 +333,10 @@ select:not([multiple]):not([size]) {
 	text-align: justify;
 }
 
+.hidden {
+	opacity: 0.4;
+}
+
 .has-alpha img {
 	border: none;
 	background-color: transparent;

@@ -919,12 +919,13 @@ Buttons and Social Links
 
 /* 3D CSS book effect */
 .bookify {
+	--book-width: 245px;
+	--book-height: 200px;
 	position: relative;
 	transform: perspective(75em) rotateY(-30deg);
-	height: 200px;
-	width: 245px;
+	height: var(--book-height);
+	width: var(--book-width);
 	transition: all 0.5s ease-in-out;
-	margin-bottom: 1em !important;
 }
 
 .bookify img {
@@ -935,14 +936,14 @@ Buttons and Social Links
 	transition: all 0.5s ease;
 }
 
-.bookify::after /* Pages */ {
+.bookify::after { /* Pages */ 
 	content: " ";
 	display: block;
 	position: absolute;
 	top: 8px;
 	left: 1px;
-	height: 180px;
-	width: 255px;
+	width: calc(var(--book-width) + 10px);
+	height: calc(var(--book-height) - 20px);
 	background-color: #eee;
 	z-index: -1;
 	border-radius: 1px;
@@ -951,14 +952,14 @@ Buttons and Social Links
 	transition: all 0.5s ease;
 }
 
-.bookify::before /* Backcover */ {
+.bookify::before { /* Backcover */
 	content: " ";
 	display: block;
 	position: absolute;
 	top: 5px;
 	left: 1px;
-	height: 190px;
-	width: 265px;
+	width: calc(var(--book-width) + 20px);
+	height: calc(var(--book-height) - 10px);
 	background-color: #555;
 	z-index: -1;
 	border-radius: 5px;
@@ -968,7 +969,7 @@ Buttons and Social Links
 
 .bookify:hover {
 	transform: perspective(75em) rotateY(0deg);
-	filter: brightness(1.04);
+	filter: brightness(1.06);
 }
 
 .bookify:hover img {
@@ -985,8 +986,7 @@ Buttons and Social Links
 .bookify:hover:before {
 	transform: perspective(75em) rotateY(0deg);
 	width: 185px;
-}
-
+}  
 
 /* Print friendly styling */
 @media print {

@@ -936,7 +936,7 @@ Buttons and Social Links
 	transition: all 0.5s ease;
 }
 
-.bookify::after { /* Pages */ 
+.bookify::after {
 	content: " ";
 	display: block;
 	position: absolute;
@@ -947,46 +947,26 @@ Buttons and Social Links
 	background-color: #eee;
 	z-index: -1;
 	border-radius: 1px;
-	box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa;
-	transform: perspective(100em) rotateY(-25deg);
-	transition: all 0.5s ease;
-}
-
-.bookify::before { /* Backcover */
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 5px;
-	left: 1px;
-	width: calc(var(--book-width) + 20px);
-	height: calc(var(--book-height) - 10px);
-	background-color: #555;
-	z-index: -1;
-	border-radius: 5px;
+	box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555;
 	transform: perspective(100em) rotateY(-25deg);
 	transition: all 0.5s ease;
 }
 
 .bookify:hover {
 	transform: perspective(75em) rotateY(0deg);
-	filter: brightness(1.06);
+	filter: brightness(1.05);
 }
 
 .bookify:hover img {
 	box-shadow: 1px 1px 8px 0 rgba(0,0,0,0.5);
 }
 
-.bookify:hover:after {
+.bookify:hover::after {
 	transform: perspective(75em) rotateY(0deg);
 	width: 180px;
 	height: 180px;
-	left: 5px;
+	left: 8px;
 }
-
-.bookify:hover:before {
-	transform: perspective(75em) rotateY(0deg);
-	width: 185px;
-}  
 
 /* Print friendly styling */
 @media print {

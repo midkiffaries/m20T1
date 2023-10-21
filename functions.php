@@ -301,11 +301,10 @@ add_action('wp_dashboard_setup', function(){
     <p>List of built-in CSS classes to use in the editor:</p>
     <ul>
         <li><code>subtitle</code> - Defines the page subtitle</li>
-        <li><code>alignjustify</code> - Justifies text block</li>
-        <li><code>has-alpha</code> - Removes borders and background</li>
-        <li><code>fancy-border</code> - Adds fancy border</li>
-        <li><code>add-drop-shadow</code> - Adds drop shadow</li>
-        <li><code>hidden</code> - Hides block from view</li>
+        <li><code>alignjustify</code> - Justifies a text block</li>
+        <li><code>hidden</code> - Hides a block from view</li>
+        <li><code>fancy-border</code> - Adds a fancy border</li>
+        <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
     </ul>
     <?php
     }

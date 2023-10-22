@@ -113,19 +113,6 @@ figcaption {
 	font-size: 0.9rem;
 }
 
-/* Block Gallery */
-.wp-block-gallery {
-	margin-bottom: 2em !important;
-}
-
-.wp-block-gallery.has-nested-images .wp-block-image figcaption {
-	background: none !important;
-	color: #666 !important;
-	margin-bottom: -1.9em !important;
-	height: 1rem;
-	overflow: hidden !important;
-}
-
 /* Monospace elements */
 code,
 kbd,
@@ -289,7 +276,7 @@ select:not([multiple]):not([size]) {
 	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='dimgray'/></svg>");
 }
 
-/* WordPress Blocks */
+/* Footnotes Block */
 .wp-block-footnotes li a,
 .fn a {
 	color: var(--marker-color); 
@@ -307,8 +294,17 @@ select:not([multiple]):not([size]) {
 	color: initial;
 }
 
+/* Block Gallery */
 .wp-block-gallery {
 	margin-bottom: 1.6em !important;
+}
+
+.wp-block-gallery.has-nested-images .wp-block-image figcaption {
+	background: none !important;
+	color: #666 !important;
+	margin-bottom: -1.9em !important;
+	height: 1rem;
+	overflow: hidden !important;
 }
 
 .wp-block-gallery figure {

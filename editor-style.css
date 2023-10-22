@@ -296,13 +296,13 @@ select:not([multiple]):not([size]) {
 
 /* Block Gallery */
 .wp-block-gallery {
-	margin-bottom: 1.6em !important;
+	margin-bottom: 2.5em;
 }
 
 .wp-block-gallery.has-nested-images .wp-block-image figcaption {
 	background: none !important;
 	color: #666 !important;
-	margin-bottom: -1.9em !important;
+	margin-bottom: -1.9em;
 	height: 1rem;
 	overflow: hidden !important;
 }

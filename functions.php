@@ -1179,7 +1179,7 @@ function users_last_login() {
 
 // Create new menu under the Appearance section
 add_action('admin_menu', function(){
-	add_submenu_page('options-general.php', 'm20T1 Additional Settings', 'm20T1 Settings', 'administrator', __FILE__, 'm20T1_settings_page' , 'dashicons-admin-generic', null );
+	add_submenu_page('themes.php', 'm20T1 Additional Settings', 'Theme Settings', 'administrator', __FILE__, 'm20T1_settings_page' , 'dashicons-admin-generic', null );
 
     // Register settings
 	add_action( 'admin_init', function(){

@@ -293,7 +293,7 @@ add_action( 'admin_head', function(){
 <?php
 });
 
-// Add a panel to the dashboard with theme info
+// Add a panel to the dashboard with additional theme info
 add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
@@ -1086,12 +1086,12 @@ function user_level( $level ) {
 // Add additional contact methods and information to user profiles
 add_filter( 'user_contactmethods', function(){
     return array(
-        'jobtitle' => 'Job Title',
-        'linkedin' => 'LinkedIn URL',
-        'facebook' => 'Facebook URL',
-        'twitter'  => 'Twitter/X URL',
-        'pinterest'=> 'Pinterest URL',
-        'city'     => 'City/State/Co',
+        'jobtitle'  => 'Job Title',
+        'linkedin'  => 'LinkedIn URL',
+        'facebook'  => 'Facebook URL',
+        'twitter'   => 'Twitter/X URL',
+        'pinterest' => 'Pinterest URL',
+        'city'      => 'City/State/Co',
     );
 });
 

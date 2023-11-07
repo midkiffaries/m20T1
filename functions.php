@@ -370,6 +370,8 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['ical']  = 'text/calendar'; // iCalendar data
     $mimes['ics']   = 'text/calendar'; // iCalendar data
     $mimes['heic']  = 'image/heic'; // HEIC/HEIF image
+    $mimes['ttf']   = 'font/ttf'; // TrueType font
+    $mimes['woff2'] = 'font/woff2'; // WOFF2 font
     $mimes['glb']   = 'model/gltf.binary'; // glTF WebGL model
     return $mimes;
 });

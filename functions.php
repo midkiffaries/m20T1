@@ -374,7 +374,7 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['woff2'] = 'font/woff2'; // WOFF2 font
     $mimes['glb']   = 'model/gltf.binary'; // glTF WebGL model
     return $mimes;
-});
+}, 1, 1);
 
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){

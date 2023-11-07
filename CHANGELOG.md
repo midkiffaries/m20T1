@@ -8,6 +8,7 @@
 ### 1.6.3 Live (October 27, 2023)
 
 * Bug fixes and more code adjustments.
+* WordPress 6.4 support.
 
 ### 1.6.2 Live (September 9, 2023)
 

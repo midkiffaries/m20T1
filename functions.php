@@ -361,20 +361,33 @@ add_filter( 'admin_footer_text', function(){
 
 // Add addition file types uploadable to the media library
 add_filter( 'upload_mimes', function($mimes){
-    $mimes['svg']   = 'image/svg+xml'; // SVG image
-    $mimes['svgz']  = 'image/svg+xml'; // SVG image
-    $mimes['html']  = 'text/html'; // HTML document
-    $mimes['txt']   = 'text/plain'; // TXT document
-    $mimes['vcard'] = 'text/vcard'; // vCard data
-    $mimes['vcf']   = 'text/vcard'; // vCard data
-    $mimes['ical']  = 'text/calendar'; // iCalendar data
-    $mimes['ics']   = 'text/calendar'; // iCalendar data
-    $mimes['heic']  = 'image/heic'; // HEIC/HEIF image
-    $mimes['ttf']   = 'font/ttf'; // TrueType font
-    $mimes['woff2'] = 'font/woff2'; // WOFF2 font
-    $mimes['glb']   = 'model/gltf.binary'; // glTF WebGL model
+    $mimes['svg']        = 'image/svg+xml'; // SVG image
+    $mimes['txt']        = 'text/plain'; // TXT document
+    $mimes['vcard|vcf']  = 'text/vcard'; // vCard data
+    $mimes['ics|ical']   = 'text/calendar'; // iCalendar data
+    $mimes['ttf']        = 'font/ttf|application/x-font-ttf'; // TrueType font
+    $mimes['woff|woff2'] = 'font/woff2|application/octet-stream|font/x-woff2'; // WOFF2 font
+    $mimes['glb']        = 'model/gltf.binary'; // glTF WebGL model
     return $mimes;
 }, 1, 1);
+
+// Override file check for certain types
+add_filter( 'wp_check_filetype_and_ext', 'my_file_and_ext_webp', 10, 4 );
+function my_file_and_ext_webp( $types, $file, $filename, $mimes ) {
+    if ( false !== strpos( $filename, '.glb' ) ) {
+        $types['ext']  = 'glb';
+        $types['type'] = 'model/gltf.binary';
+    }
+    if ( false !== strpos( $filename, '.ttf' ) ) {
+        $types['ext']  = 'ttf';
+        $types['type'] = 'font/ttf|application/x-font-ttf';
+    }
+    if ( false !== strpos( $filename, '.woff2' ) ) {
+        $types['ext']  = 'woff2';
+        $types['type'] = 'font/woff2|application/octet-stream|font/x-woff2';
+    }
+    return $types;
+}
 
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){

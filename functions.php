@@ -370,7 +370,7 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['ical']  = 'text/calendar'; // iCalendar data
     $mimes['ics']   = 'text/calendar'; // iCalendar data
     $mimes['heic']  = 'image/heic'; // HEIC/HEIF image
-    $mimes['glb']   = 'model/gltf+json'; // glTF WebGL model
+    $mimes['glb']   = 'model/gltf.binary'; // glTF WebGL model
     return $mimes;
 });
 

@@ -369,7 +369,6 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['vcf']   = 'text/vcard'; // vCard data
     $mimes['ical']  = 'text/calendar'; // iCalendar data
     $mimes['ics']   = 'text/calendar'; // iCalendar data
-    $mimes['webp']  = 'image/webp'; // WebP image
     $mimes['heic']  = 'image/heic'; // HEIC/HEIF image
     $mimes['glb']   = 'model/gltf+json'; // glTF WebGL model
     return $mimes;

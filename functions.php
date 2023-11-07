@@ -361,7 +361,7 @@ add_filter( 'admin_footer_text', function(){
 
 // Add addition file types uploadable to the media library
 add_filter( 'upload_mimes', function($mimes){
-    $mimes['svg']        = 'image/svg+xml'; // SVG image
+    $mimes['svg|svgz']   = 'image/svg+xml'; // SVG image
     $mimes['txt']        = 'text/plain'; // TXT document
     $mimes['vcard|vcf']  = 'text/vcard'; // vCard data
     $mimes['ics|ical']   = 'text/calendar'; // iCalendar data
@@ -371,7 +371,7 @@ add_filter( 'upload_mimes', function($mimes){
     return $mimes;
 }, 1, 1);
 
-// Override file check for certain types
+// Override file check for certain file types
 add_filter( 'wp_check_filetype_and_ext', 'my_file_and_ext_webp', 10, 4 );
 function my_file_and_ext_webp( $types, $file, $filename, $mimes ) {
     if ( false !== strpos( $filename, '.glb' ) ) {

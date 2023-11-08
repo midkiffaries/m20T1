@@ -774,18 +774,18 @@ function get_filepath( $fileurl ) {
     return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
 }
 
-// Allow only certain HTML tags in the head metadata for user generated content
-function allow_html_metadata($html) {
+// Allow only certain HTML tags in the <head> metadata for user generated content
+function allow_html_metadata( $html ) {
     return strip_tags($html, '<meta><script><noscript><link><style><iframe>');
 }
 
 // Allow only certain HTML tags for user generated content
-function allow_html_tags($html) {
+function allow_html_tags( $html ) {
     return strip_tags($html, '<style><script><noscript><iframe><div>');
 }
 
-// Allow only certain HTML tags for user generated input
-function clean_html($html) {
+// Allow only certain HTML tags for user generated content
+function clean_html( $html ) {
     return strip_tags($html, '<b><strong><i><em><a><span><abbr>');
 }
 

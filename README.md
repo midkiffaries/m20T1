@@ -19,7 +19,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="" width="300" align="right" />
 
-- Compatible with WordPress 6.3+
+- Compatible with WordPress 6.4+
 - Theme requires PHP 8.0+
 - Built with extensive technical SEO implementation and social media sharing in mind
 - Schema.org structured micro data autonomously generated

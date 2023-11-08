@@ -367,13 +367,12 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['ics|ical']   = 'text/calendar'; // iCalendar data
     $mimes['ttf']        = 'font/ttf|application/x-font-ttf'; // TrueType font
     $mimes['woff|woff2'] = 'font/woff2|application/octet-stream|font/x-woff2'; // WOFF2 font
-    $mimes['glb']        = 'model/gltf.binary'; // glTF WebGL model
+    $mimes['glb|gltf']   = 'model/gltf+json|model/gltf-binary'; // glTF WebGL model
     return $mimes;
 }, 1, 1);
 
 // Override file check for certain file types
-add_filter( 'wp_check_filetype_and_ext', 'my_file_and_ext_webp', 10, 4 );
-function my_file_and_ext_webp( $types, $file, $filename, $mimes ) {
+add_filter( 'wp_check_filetype_and_ext', function($types, $file, $filename, $mimes){
     if ( false !== strpos( $filename, '.glb' ) ) {
         $types['ext']  = 'glb';
         $types['type'] = 'model/gltf.binary';
@@ -387,7 +386,7 @@ function my_file_and_ext_webp( $types, $file, $filename, $mimes ) {
         $types['type'] = 'font/woff2|application/octet-stream|font/x-woff2';
     }
     return $types;
-}
+}, 10, 4 );
 
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){
@@ -399,15 +398,14 @@ add_filter( 'get_custom_logo', function(){
 });
 
 // Remove srcset from SVG images so SVG files in img tags will display correctly
-function remove_svg_srcset( string $sizes, array $size, $image_src = null ) {
+add_filter( 'wp_calculate_image_sizes', function( string $sizes, array $size, $image_src = null ){
 	$image_type = end(explode('.', $image_src));
 	if ( $image_type === 'svg' || $image_type === 'svgz' ) {
 		return null;
 	} else {
         return $sizes;
     }
-}
-add_filter( 'wp_calculate_image_sizes', 'remove_svg_srcset', 10, 3 );
+}, 10, 3 );
 
 
 //////////////////////////////////////
@@ -1152,14 +1150,13 @@ function smartwp_capture_login_time( $user_login, $user ) {
 }
 
 // Populate the Last Login column
-add_filter( 'manage_users_custom_column', 'last_login_column', 10, 3 );
-function last_login_column( $output, $column_id, $user_id ){
+add_filter( 'manage_users_custom_column', function($output, $column_id, $user_id){
 	if ( $column_id == 'last_login' ) {
         $last_login = get_user_meta( $user_id, 'last_login', true );
 		$output = $last_login ? '<time datetime="' . date('c', $last_login) . '" title="Last login ' . date('F j, Y, g:i a', $last_login) . '">' . human_time_diff($last_login) . '</time>' : 'No record';
 	}
 	return $output;
-}
+}, 10, 3 );
 
 // Allow the Last Login columns to be sortable
 add_filter( 'manage_users_sortable_columns', function($columns){

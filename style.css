@@ -167,14 +167,15 @@ Typography for the page title and subtitle
 	font-family: var(--font-secondary);
 	color: #444;
 	font-size: 1.5rem;
-	margin: -0.5em 0.2em 1em !important;
+	margin: 0.6em 0.1em;
 	line-height: 1;
 	letter-spacing: -1px;
 }
 
-.subtitle,
-.page-subtitle {
-	margin: 0.6em 0.2em 0 !important;
+.blog-page-title p:first-of-type,
+.porfolio-page-title p:first-of-type,
+.archive-header p:first-of-type {
+	margin-top: -0.3em !important;
 }
 
 .portfolio-name {

@@ -19,14 +19,14 @@
                 <?php /* Author */ if (is_author()) printf($curauth->display_name); ?>
                 <?php /* Paged */ if (isset($_GET['paged']) && !empty($_GET['paged'])) printf("Blog Archives"); ?>
             </h1>
-            <div class="subtitle" itemprop="about">
+            <p class="subtitle" itemprop="about">
                 <?php /* Category */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
                 <?php /* Tags */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
                 <?php /* Daily */ if (is_day()) printf("Posts from this date"); ?>
                 <?php /* Monthly */ if (is_month()) printf("Posts from this month"); ?>
                 <?php /* Yearly */ if (is_year()) printf("Posts from this year"); ?>
                 <?php /* Author */ if (is_author()) printf("Posts written by this user"); ?>
-            </div>
+            </p>
         </div>
     </section>
 

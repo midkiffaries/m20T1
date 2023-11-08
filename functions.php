@@ -386,7 +386,7 @@ add_filter( 'wp_check_filetype_and_ext', function($types, $file, $filename, $mim
         $types['type'] = 'font/woff2|application/octet-stream|font/x-woff2';
     }
     return $types;
-}, 10, 4 );
+}, 10, 4);
 
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){
@@ -970,7 +970,7 @@ function attachment_page_image( $id ) {
         }
     }
 
-    // Check if attachment is SVG file or other document
+    // Check if attachment is SVG file, GLB or other document
     if ($fileExt == 'svg' || $fileExt == 'svgz') { // SVG Images
         return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" loading="lazy" decoding="async" class="attachment-svg" itemprop="image" fetchpriority="high">';
     } else if ($fileExt == 'glb') { // GLB Web3D model

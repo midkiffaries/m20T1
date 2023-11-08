@@ -1,10 +1,10 @@
 # Changes to m20T1
 
-### 1.6.4 Live (November 10, 2023)
+### 1.6.4 Live (November 8, 2023)
 
 * Support for WordPress 6.4.
-* Support for WebGL models in the media library
-* More bug fixes.
+* Support for (GLB) WebGL models and (TTF & WOFF2) fonts in the media library.
+* Lots of little tweaks and more bug fixes.
 
 ### 1.6.3 Live (October 27, 2023)
 

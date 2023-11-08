@@ -359,19 +359,19 @@ add_filter( 'admin_footer_text', function(){
 <?php
 });
 
-// Add addition file types uploadable to the media library
+// Add addition file types uploadable to the Media Library
 add_filter( 'upload_mimes', function($mimes){
     $mimes['svg|svgz']   = 'image/svg+xml'; // SVG image
-    $mimes['txt']        = 'text/plain'; // TXT document
+    $mimes['txt|md']     = 'text/plain'; // TXT document
     $mimes['vcard|vcf']  = 'text/vcard'; // vCard data
     $mimes['ics|ical']   = 'text/calendar'; // iCalendar data
-    $mimes['ttf']        = 'font/ttf|application/x-font-ttf'; // TrueType font
+    $mimes['ttf|tte']    = 'font/ttf|application/x-font-ttf'; // TrueType font
     $mimes['woff|woff2'] = 'font/woff2|application/octet-stream|font/x-woff2'; // WOFF2 font
     $mimes['glb|gltf']   = 'model/gltf+json|model/gltf-binary'; // glTF WebGL model
     return $mimes;
 }, 1, 1);
 
-// Override file check for certain file types
+// Override file check for certain file types when uploading to the Media Library
 add_filter( 'wp_check_filetype_and_ext', function($types, $file, $filename, $mimes){
     if ( false !== strpos( $filename, '.glb' ) ) {
         $types['ext']  = 'glb';

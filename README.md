@@ -34,8 +34,8 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Support for <b>dark mode</b> page styling via a built in switch
 - Built in support for an <b>additional post type</b>, default set as "Portfolio"
 - Built in blog post read time in minutes
-- Enabled SVG support, GLB models and iCal/vCard files upload to media library
-- Support for printing pages (mostly) cleanly
+- Enabled <b>SVG</b> support, <b>GLB</b> models and iCal/vCard files upload to media library
+- Support for <i>@print</i> for the entire site
 
 ## Todo List
 - Make adjustments to <code>layout.css</code> and move the page layout to CSS Grid

@@ -3,12 +3,12 @@
 ### 1.6.4 Live (November 10, 2023)
 
 * Support for WordPress 6.4.
+* Support for WebGL models in the media library
 * More bug fixes.
 
 ### 1.6.3 Live (October 27, 2023)
 
 * Bug fixes and more code adjustments.
-* WordPress 6.4 support.
 
 ### 1.6.2 Live (September 9, 2023)
 

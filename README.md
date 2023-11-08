@@ -17,7 +17,7 @@ The intention of this theme is to be minimally reliant on 3rd party plugins whil
 Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m20T1 Theme Screenshots and additional information</a>
 
 ## Features
-<img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="" width="300" align="right" />
+<img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right" />
 
 - Compatible with WordPress 6.4+
 - Theme requires PHP 8.0+
@@ -51,11 +51,10 @@ This WordPress theme is just a personal pet project of mine, and I am happy to s
 
 ## About Me
 Follow these links to learn more about me and my work:
-<ul>
-  <li><a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a></li>
-  <li><a href="https://www.marchtwenty.com/">My Personal Website</a></li>
-</ul>
+
+- <a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a>
+- <a href="https://www.marchtwenty.com/">My Personal Website</a>
 
 <a href="https://github.com/midkiffaries/m20T1/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=midkiffaries/m20T1" />
+  <img src="https://contrib.rocks/image?repo=midkiffaries/m20T1" alt="My Avatar" />
 </a>

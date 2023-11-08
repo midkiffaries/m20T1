@@ -316,7 +316,6 @@ select:not([multiple]):not([size]) {
 }
 
 /* Custom Classes */
-.page-subtitle, 
 .subtitle {
 	color: #666;
 	font-size: 1.5rem;

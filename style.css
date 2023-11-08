@@ -160,10 +160,7 @@ Typography for the page title and subtitle
 }
 
 /* Page Subtitle */
-.subtitle,
-.page-subtitle,
-.blog-page-title p:first-of-type,
-.porfolio-page-title p:first-of-type {
+.subtitle {
 	font-family: var(--font-secondary);
 	color: #444;
 	font-size: 1.5rem;
@@ -172,9 +169,9 @@ Typography for the page title and subtitle
 	letter-spacing: -1px;
 }
 
-.blog-page-title p:first-of-type,
-.porfolio-page-title p:first-of-type,
-.archive-header p:first-of-type {
+.blog-page-title .subtitle,
+.porfolio-page-title .subtitle,
+.archive-header .subtitle {
 	margin-top: -0.3em !important;
 }
 
@@ -264,7 +261,7 @@ WordPress Gutenburg Content Styling
 	color: var(--secondary-color);
 }
 
-.the-content h2:not(.page-subtitle):not(.has-text-align-center) {
+.the-content h2:not(.subtitle):not(.has-text-align-center) {
 	font-weight: 600;
 	margin-top: 0.8em;
 }

@@ -51,7 +51,6 @@ This WordPress theme is just a personal pet project of mine, and I am happy to s
 
 ## About Me
 Follow these links to learn more about me and my work:
-
 - <a href="https://www.linkedin.com/in/tedbalmer/">My LinkedIn Profile</a>
 - <a href="https://www.marchtwenty.com/">My Personal Website</a>
 

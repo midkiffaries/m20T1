@@ -41,6 +41,7 @@ AddOutputFilterByType DEFLATE font/woff2
 AddOutputFilterByType DEFLATE font/opentype
 AddOutputFilterByType DEFLATE image/gif
 AddOutputFilterByType DEFLATE image/png
+AddOutputFilterByType DEFLATE model/gltf-binary
 # For Olders Browsers Which Can't Handle Compression
 BrowserMatch ^Mozilla/4 gzip-only-text/html
 BrowserMatch ^Mozilla/4\.0[678] no-gzip

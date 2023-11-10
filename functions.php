@@ -631,7 +631,7 @@ function selectSidebarCustomField( $id, $default ) {
     if (empty($key)) {
         return $default; // Default widgets
     } else {
-        return wp_strip_all_tags($key);
+        return sanitize_text_field($key);
     }
 }
 
@@ -974,7 +974,7 @@ function attachment_page_image( $id ) {
     if ($fileExt == 'svg' || $fileExt == 'svgz') { // SVG Images
         return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" loading="lazy" decoding="async" class="attachment-svg" itemprop="image" fetchpriority="high">';
     } else if ($fileExt == 'glb') { // GLB Web3D model
-        return '<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script><model-viewer id="Model3D" class="aligncenter" style="height:350px" src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" ar poster="" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>';
+        return '<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script><model-viewer id="Model3D" class="aligncenter" itemprop="image" style="height:350px" src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" ar poster="/wp-includes/images/media/interactive.png" shadow-intensity="0" exposure="1.1" shadow-softness="0" tone-mapping="commerce" camera-controls touch-action="pan-y"></model-viewer>';
     } else { // All other documents types
         return '<svg id="GenericDoc" xmlns="http://www.w3.org/2000/svg" width="512" height="512" role="img"><path d="M458.9 114.5c-11.1-15.1-26.6-32.8-43.6-49.8S380.6 32.2 365.5 21C339.7 2.1 327.2 0 320 0H72C50 0 32 18 32 40v432c0 22 18 40 40 40h368c22 0 40-18 40-40V160c0-7.2-2.2-19.7-21.1-45.5zm-66.2-27.2A436.4 436.4 0 0 1 429 128h-77V51a436 436 0 0 1 40.7 36.3zM448 472c0 4.3-3.7 8-8 8H72c-4.3 0-8-3.7-8-8V40c0-4.3 3.7-8 8-8h248v112a16 16 0 0 0 16 16h112v312z" fill="dodgerblue"/><path d="M368 416H144a16 16 0 0 1 0-32h224a16 16 0 1 1 0 32zm0-64H144a16 16 0 0 1 0-32h224a16 16 0 1 1 0 32zm0-64H144a16 16 0 0 1 0-32h224a16 16 0 1 1 0 32z" fill="lightblue"/></svg>';
     }
@@ -1278,7 +1278,7 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="contact_shortcode">Contact Form Shortcode</label></th>
-                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=wp_strip_all_tags(get_option('contact_shortcode')); ?></textarea> <small>Allowed HTML tags: <b>&lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
+                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=sanitize_text_field(get_option('contact_shortcode')); ?></textarea> <small>Allowed HTML tags: <b>&lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
             </tr>
         </table>
         <h2>Additional Metadata and Scripts</h2>

@@ -1,5 +1,9 @@
 # Changes to m20T1
 
+### 1.6.5 Live (November 23, 2023)
+
+* More code clean up.
+
 ### 1.6.4 Live (November 8, 2023)
 
 * Support for WordPress 6.4.

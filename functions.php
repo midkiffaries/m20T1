@@ -575,7 +575,7 @@ add_action( 'widgets_init', function(){
     // Page Widgets
     register_sidebar(array(
         'id'            => 'singlepage',
-        'name'          => __( 'Basic Page Widgets', 'm20T1' ),
+        'name'          => __( 'Page Widgets', 'm20T1' ),
         'description'   => __( 'Widgets below the contents on a single web page and attachment pages.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',

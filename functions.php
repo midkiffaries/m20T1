@@ -512,17 +512,17 @@ add_action( 'manage_pages_custom_column', 'add_column_views' );
 
 // Register the sidebar widgets 
 add_action( 'widgets_init', function(){
-    // Primary Sidebar - right side of the content
+    // Primary Sidebar - Full blog page
     register_sidebar(array(
         'id'            => 'primary',
         'name'          => __( 'Primary Sidebar Widgets', 'm20T1' ),
-        'description'   => __( 'Sidebar widgets on the full blog page.' ),
+        'description'   => __( 'Blog listing page.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Secondary Sidebar - right side of the content
+    // Secondary Sidebar - Archive Pages
     register_sidebar(array(
         'id'            => 'secondary',
         'name'          => __( 'Secondary Sidebar Widgets', 'm20T1' ),
@@ -532,7 +532,7 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Tertiary Sidebar - right side of the content
+    // Tertiary Sidebar - Search Results
     register_sidebar(array(
         'id'            => 'tertiary',
         'name'          => __( 'Tertiary Sidebar Widgets', 'm20T1' ),
@@ -542,17 +542,17 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Quaternary Sidebar - right side of the content
+    // Quaternary Sidebar - Portfolio
     register_sidebar(array(
         'id'            => 'quaternary',
         'name'          => __( 'Quaternary Sidebar Widgets', 'm20T1' ),
-        'description'   => __( 'Portfolio page sidebar.' ),
+        'description'   => __( ADDITIONAL_POST_TYPE.' (custom post type) sidebar.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Single Post Widgets - bottom of the content
+    // Single Post Widgets
     register_sidebar(array(
         'id'            => 'singlepost',
         'name'          => __( 'Single Post Widgets', 'm20T1' ),
@@ -562,41 +562,21 @@ add_action( 'widgets_init', function(){
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Front page Widgets - bottom of the content
+    // Front page Widgets
     register_sidebar(array(
         'id'            => 'frontpage',
         'name'          => __( 'Front Page Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets on the bottom of the front page or landing page.' ),
+        'description'   => __( 'Widgets on the bottom of the front page and landing pages.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ));
-    // Page Widgets - bottom of the content
+    // Page Widgets
     register_sidebar(array(
         'id'            => 'singlepage',
         'name'          => __( 'Basic Page Widgets', 'm20T1' ),
         'description'   => __( 'Widgets below the contents on a single web page and attachment pages.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Page w/ Sidebar Widgets - right side of the content
-    register_sidebar(array(
-        'id'            => 'singlepagesidebar',
-        'name'          => __( 'Basic Page w/ Sidebar Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets on the sidebar on a single web page.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-    // Portfolio Page Widgets - bottom of the content
-    register_sidebar(array(
-        'id'            => 'portfoliopage',
-        'name'          => __( 'Portfolio Page Widgets', 'm20T1' ),
-        'description'   => __( 'Widgets below the contents on a portfolio page.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',

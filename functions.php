@@ -535,7 +535,7 @@ add_action( 'widgets_init', function(){
     // Tertiary Sidebar - Search Results
     register_sidebar(array(
         'id'            => 'tertiary',
-        'name'          => __( 'Tertiary Sidebar Widgets', 'm20T1' ),
+        'name'          => __( 'Search Results Sidebar Widgets', 'm20T1' ),
         'description'   => __( 'Search results page sidebar widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -545,7 +545,7 @@ add_action( 'widgets_init', function(){
     // Quaternary Sidebar - Portfolio
     register_sidebar(array(
         'id'            => 'quaternary',
-        'name'          => __( 'Quaternary Sidebar Widgets', 'm20T1' ),
+        'name'          => __( ADDITIONAL_POST_TYPE.' Sidebar Widgets', 'm20T1' ),
         'description'   => __( ADDITIONAL_POST_TYPE.' (custom post type) sidebar.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',

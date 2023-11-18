@@ -625,6 +625,7 @@ Blog Post Styling - index/archives/search
 /* Entry Tags */
 .entry-tags {
 	float: left;
+	margin-top: 10px;
 }
 
 .entry-tags ul {

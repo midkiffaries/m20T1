@@ -29,6 +29,9 @@
         <aside id="page-widgets" class="page-sidebar portfolio-widgets width-full">
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepage') ); // Select from 'Widgets_Slug' custom field ?>
         
+            <div class="widget child-page-widget">
+                <?php //get_child_pages(get_the_ID(), false); // Display the children of this page ?>
+            </div>
         </aside>
 
     </div>

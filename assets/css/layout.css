@@ -570,16 +570,15 @@ Blog Post Styling - index/archives/search
     float: left;
 	background-repeat: no-repeat;
 	background-position: center center;
-    background-size: 150%;
+    background-size: 160%;
     margin: 0 1.5em 3em 0;
     background-color: var(--brand-color-dark);
     background-image: var(--featured-img-bg);
-	text-decoration: none;
 	transition: all 0.4s ease-in-out;
 }
 
 .entry-thumbnail:hover {
-	background-size: 180%;
+	background-size: 185%;
 }
 
 .entry-thumbnail:active {

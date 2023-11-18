@@ -487,6 +487,7 @@ Single Blog Post Styling (single)
 
 .single-entry-footer {
 	clear: both;
+	margin-top: 3em;
 }
 
 .single-entry-content {

@@ -14,7 +14,10 @@ Text Domain: m20t1
 Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-images, sticky-post, threaded-comments, accessibility-ready, footer-widgets, flexible-header, editor-style, portfolio, news
 ************************/
 
-/* Site Variables */
+/************************************
+Theme Variables
+************************************/
+
 :root {
 	--brand-color: #40A5FF;
 	--brand-color-pale: #8CC9FF;
@@ -69,6 +72,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 ::selection {
     background-color: var(--highlight-color);
     text-shadow: none;
+	filter: none;
 }
 
 
@@ -103,7 +107,7 @@ body {
 /* .the-content [href$=".pdf"]::before */
 .icon-document::before {
 	font-family: 'icomoon' !important;
-	content: "\e907";
+	content: "\e907"; /* document */
 	padding-right: 2px;
 	font-size: 1rem;
 }
@@ -111,14 +115,14 @@ body {
 /* .the-content [href^="mailto:"]::before */
 .icon-mail::before {
 	font-family: 'icomoon' !important;
-	content: "\e903";
+	content: "\e903"; /* envelope */
     padding-right: 1px;
 }
 
 /* .the-content [href^="tel:"]::before */
 .icon-phone::before {
     font-family: 'icomoon' !important;
-	content: "\e942";
+	content: "\e942"; /* phone */
     padding-right: 1px;
     font-size: 0.9rem;
 }
@@ -128,7 +132,7 @@ body {
 Typography for the page title and subtitle
 ******************************************/
 
-/* Blog Page title */
+/* Page and Post title */
 .page-title,
 .blog-page-title h1,
 .porfolio-page-title h1,
@@ -145,8 +149,9 @@ Typography for the page title and subtitle
 	padding-bottom: 4px;
 }
 
+/* Blog post title */
 .single-entry-title {
-	font-size: 3.5rem;
+	font-size: 3.4rem;
 }
 
 @media (max-width: 849px) {
@@ -169,12 +174,14 @@ Typography for the page title and subtitle
 	letter-spacing: -1px;
 }
 
+/* Page subtitle on landing pages */
 .blog-page-title .subtitle,
 .porfolio-page-title .subtitle,
 .archive-header .subtitle {
 	margin-top: -0.3em !important;
 }
 
+/* Portfolio pages */
 .portfolio-name {
 	text-transform: uppercase;
 	font-weight: bold;
@@ -186,7 +193,7 @@ Typography for the page title and subtitle
 	text-decoration: underline;
 }
 
-/* Portfolio page view all badge */
+/* Portfolio page 'view all' badge */
 .portfolio-view-all {
 	width: 142px;
 	height: 142px;

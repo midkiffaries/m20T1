@@ -72,7 +72,6 @@ Theme Variables
 ::selection {
     background-color: var(--highlight-color);
     text-shadow: none;
-	filter: none;
 }
 
 

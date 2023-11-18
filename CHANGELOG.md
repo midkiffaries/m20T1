@@ -1,8 +1,8 @@
 # Changes to m20T1
 
-### 1.6.5 Live (November 23, 2023)
+### 1.6.5 Live (November 30, 2023)
 
-* More code clean up.
+* More code clean up and tweaks.
 
 ### 1.6.4 Live (November 8, 2023)
 

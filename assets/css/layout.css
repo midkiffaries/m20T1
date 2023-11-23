@@ -1186,10 +1186,6 @@ Specific Page Styling
 	filter: brightness(108%);
 }
 
-.page-image .attachment svg#GenericDoc {
-	transform: scale(75%);
-}
-
 .page-image .image-info {
 	font-size: 0.8em;
 	padding: 12px;

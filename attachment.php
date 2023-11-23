@@ -10,9 +10,9 @@
             <div class="post-container">
                 <h1 class="page-title" itemprop="name headline"><?=the_title(); ?></h1>
                 <div class="wp-block-image" role="figure" itemprop="image">
-                    <div class="image-attachment"><a href="<?=wp_get_attachment_url(get_the_ID()); ?>" title="View this image or document" aria-title="View this image or document" itemprop="url">
+                    <div class="image-attachment">
                         <?=attachment_page_image(get_the_ID()); ?>
-                    </a></div>
+                    </div>
                     <div class="image-caption" role="caption" itemprop="description"><?=wp_kses_post( wp_get_attachment_caption() ); ?></div>
                 </div>
                 <div class="image-description" itemprop="text">

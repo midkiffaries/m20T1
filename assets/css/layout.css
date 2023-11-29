@@ -1254,6 +1254,16 @@ Specific Page Styling
 	margin-top: 25px;
 }
 
+.page-product .page-title {
+	font-size: 3.1em;
+}
+
+.page-product .product-title {
+	font-size: 1.2em;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
 
 /************************ 
 Comments Section

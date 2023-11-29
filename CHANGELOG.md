@@ -3,12 +3,13 @@
 ### 1.6.5 Live (November 30, 2023)
 
 * More code clean up and tweaks.
-* Adjustments to attachment.php
+* Adjustments to attachment.php.
+* (WiP) Initial basic WooCommerce support.
 
 ### 1.6.4 Live (November 8, 2023)
 
 * Support for WordPress 6.4.
-* Support for (GLB) WebGL models and (TTF & WOFF2) fonts in the media library.
+* Support for (.GLB files) WebGL models and (.TTF & .WOFF2) fonts in the media library.
 * Lots of little tweaks and more bug fixes.
 
 ### 1.6.3 Live (October 27, 2023)

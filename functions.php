@@ -880,7 +880,7 @@ function Header_Hero( $id ) {
     } elseif ( is_page() ) { // Single Page header (Use featured image)
         $className = "single-page";
         $hasFeaturedImage = true;
-    } elseif ( is_single() ) { // Single blog post or portfolio item (Use featured image)
+    } elseif ( is_single() ) { // Single blog post or portfolio (Use featured image)
         $className = "single-post";
         $hasFeaturedImage = true;
     } else { // Blog Page, portfolio page, search page and archives header (No header image)

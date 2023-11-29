@@ -1249,6 +1249,11 @@ Specific Page Styling
 	clear: both;
 }
 
+/* WooCommerce product page */
+.page-product .the-content {
+	margin-top: 25px;
+}
+
 
 /************************ 
 Comments Section

@@ -1,4 +1,4 @@
-<?php /* Template Name: Portfolio Page */ ?>
+<?php /* Template Name: Product Page */ ?>
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
@@ -25,7 +25,7 @@
     <?php endwhile; endif; ?>
 
         <aside id="page-widgets" class="page-sidebar product-widgets width-full">
-            <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepage') ); // Select from 'Widgets_Slug' custom field ?>
+            <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepost') ); // Select from 'Widgets_Slug' custom field ?>
         
             <div class="widget child-page-widget">
                 <?php //get_child_pages(get_the_ID(), false); // Display the children of this page ?>

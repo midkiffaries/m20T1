@@ -305,6 +305,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>hidden</code> - Hides a block from view</li>
         <li><code>fancy-border</code> - Adds a fancy border</li>
         <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
+        <li><code>old-photo</code> - Ages an image</li>
     </ul>
     <p>Create a <i>Page</i> with the slug <b><?=ADDITIONAL_POST_TYPE; ?></b> to customize that landing page.</p>
     <?php

@@ -369,6 +369,7 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['ttf|tte']    = 'font/ttf|application/x-font-ttf'; // TrueType font
     $mimes['woff|woff2'] = 'font/woff2|application/octet-stream|font/x-woff2'; // WOFF2 font
     $mimes['glb|gltf']   = 'model/gltf+json|model/gltf-binary'; // glTF WebGL model
+    $mimes['avif']       = 'image/avif'; // Advanced image type
     return $mimes;
 }, 1, 1);
 
@@ -936,7 +937,7 @@ function get_file_extension( $path ) {
 
 // Get proper attachment image or use a document placeholder
 function attachment_page_image( $id ) {
-    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'heic', 'ico');
+    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'heic', 'ico', 'avif');
     $video_ext = array('mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));

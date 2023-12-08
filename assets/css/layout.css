@@ -547,11 +547,8 @@ Blog Post Styling - index/archives/search
 
 .entry-sticky {
 	color: #eee;
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	font-weight: 800;
-	padding: 10px;
-	text-align: center;
+	font-size: 2.5rem;
+	padding: 0 8px;
 	text-shadow: 1px 1px 0 #000;
 }
 
@@ -575,6 +572,7 @@ Blog Post Styling - index/archives/search
     background-color: var(--brand-color-dark);
     background-image: var(--featured-img-bg);
 	transition: all 0.4s ease-in-out;
+	text-decoration: none;
 }
 
 .entry-thumbnail:hover {
@@ -1033,6 +1031,7 @@ Specific Page Styling
 /* Base page content */
 .page-content .post {
 	margin: 0.5em auto 3em;
+	padding-bottom: 2em;
 	clear: both;
 }
 

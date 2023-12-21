@@ -280,7 +280,7 @@ add_action( 'wp_head', function(){
 <?php
 });
 
-// Settings for the Admin floating toolbar and Wordpress editor
+// Settings for the Admin floating toolbar and WordPress dashboard and editor
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">

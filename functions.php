@@ -1414,7 +1414,7 @@ class BuildMetaBox {
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
-		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=wp_strip_all_tags($pageCSS); ?></textarea>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
         <?php
 	}
 }

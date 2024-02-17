@@ -1249,7 +1249,7 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="contact_shortcode">Contact Form Shortcode</label></th>
-                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=sanitize_text_field(get_option('contact_shortcode')); ?></textarea> <small>Allowed HTML tags: <b>&lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
+                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=sanitize_text_field(get_option('contact_shortcode')); ?></textarea> <small>Allowed HTML tags: <b>&lt;form&gt; &lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
             </tr>
         </table>
         <h2>Additional Metadata and Scripts</h2>
@@ -1414,7 +1414,7 @@ class BuildMetaBox {
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
-		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
         <?php
 	}
 }

@@ -1,5 +1,10 @@
 # Changes to m20T1
 
+### 1.7.0 Live (March 30, 2024)
+
+* A new meta box for the page editor to edit post specific CSS replacing the custom fields option.
+* Bug fixes.
+
 ### 1.6.5 Live (December 2, 2023)
 
 * More code clean up and tweaks.

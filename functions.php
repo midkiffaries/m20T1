@@ -687,20 +687,6 @@ function get_child_pages( $id, $thumbnail ) {
 // Specialized Functions
 /////////////////////////////
 
-// Get 'Page_CSS' Custom Field which adds custom page styling
-function custom_page_css( $id ) {
-    $css = get_post_meta( $id, 'Page_CSS', true );
-    $css = str_replace(array('<','>'), array('%3C','%3E'), $css); // make HTML safe
-    $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
-    $css = preg_replace('/;}/', '}', $css); // Remove new lines
-
-    if (empty($css)) {
-        return NULL;
-    } else {
-        return '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
-    }
-}
-
 // Get the number of times this keyword comes up in search queries
 function SearchCount( $query ) {
     $count = 0;
@@ -1056,7 +1042,6 @@ function schemaJSONData() {
 <?php
 }
 
-
 // Schema.org JSON site navigation elements loop
 function schemaNavigation( $menu_name ) {
 	if (($menu_name) && ($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
@@ -1322,4 +1307,114 @@ function m20T1_settings_page() {
     </script>
 </div>
 <?php 
+}
+
+
+/////////////////////////////////////////////////
+// Admin: Advanced Options Meta Box
+/////////////////////////////////////////////////
+
+// Get 'Page_CSS' Custom Field which adds custom page styling
+function custom_page_css( $id ) {
+    $css = get_post_meta( $id, 'Page_CSS', true );
+    $css = str_replace(array('<','>'), array('%3C','%3E'), $css); // make HTML safe
+    $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
+    $css = preg_replace('/;}/', '}', $css); // Remove new lines
+
+    if (empty($css)) {
+        return NULL;
+    } else {
+        return '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
+    }
+}
+
+// Custom Meta Box for the post editor
+if ( is_admin() ) {
+	add_action( 'load-post.php', 'call_BuildMetaBox' );
+	add_action( 'load-post-new.php', 'call_BuildMetaBox' );
+}
+
+function call_BuildMetaBox() {
+	new BuildMetaBox();
+}
+
+// Build the meta box.
+class BuildMetaBox {
+
+	public function __construct() {
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+		add_action( 'save_post', array( $this, 'save' ) );
+	}
+
+	public function add_meta_box( $post_type ) {
+        // Post types that get the meta box
+		$post_types = array( 'post', 'page', 'portfolio' );
+
+		if ( in_array( $post_type, $post_types ) ) {
+			add_meta_box(
+				'm20t1_meta_box',
+				__( 'Advanced Options', 'textdomain' ), // meta box title
+				array( $this, 'render_meta_box_content' ),
+				$post_type,
+				'advanced',
+				'high'
+			);
+		}
+	}
+
+    // Saving the me logic
+	public function save( $post_id ) {
+
+		// Check if our nonce is set.
+		if ( ! isset( $_POST['m20t1_meta_box_nonce'] ) ) {
+			return $post_id;
+		}
+
+		$nonce = $_POST['m20t1_meta_box_nonce'];
+
+		// Verify that the nonce is valid.
+		if ( ! wp_verify_nonce( $nonce, 'm20t1_meta_box' ) ) {
+			return $post_id;
+		}
+
+		// If this is an autosave.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return $post_id;
+		}
+
+		// Check the user's permissions.
+		if ( 'page' == $_POST['post_type'] ) {
+			if ( ! current_user_can( 'edit_page', $post_id ) ) {
+				return $post_id;
+			}
+		} else {
+			if ( ! current_user_can( 'edit_post', $post_id ) ) {
+				return $post_id;
+			}
+		}
+		
+		// Make HTML safe.
+		$sanitize_css = str_replace(array('<','>'), array('%3C','%3E'), $_POST['m20t1_css_field']);
+
+		// Update the meta field.
+		update_post_meta( $post_id, 'Page_CSS', $sanitize_css );
+	}
+
+	// Display the meta box in the post editor.
+	public function render_meta_box_content( $post ) {
+
+		// Add an nonce field so we can check for it later.
+		wp_nonce_field( 'm20t1_meta_box', 'm20t1_meta_box_nonce' );
+
+		// Use get_post_meta to retrieve an existing value from the database.
+		$pageCSS = get_post_meta( $post->ID, 'Page_CSS', true );
+
+		// Display the form.
+		?>
+		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
+		</label></div>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=wp_strip_all_tags($pageCSS); ?></textarea>
+        <?php
+	}
 }

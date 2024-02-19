@@ -1348,7 +1348,7 @@ class BuildMetaBox {
 
 	public function add_meta_box( $post_type ) {
         // Post types that get the meta box
-		$post_types = array( 'post', 'page', 'portfolio' );
+		$post_types = array( 'post', 'page', 'portfolio', 'attachment' );
 
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
@@ -1416,5 +1416,6 @@ class BuildMetaBox {
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
         <?php
+        // Future Options: Featured Video, Menu, Subtitle, 
 	}
 }

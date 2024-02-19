@@ -1,8 +1,8 @@
-# Changes to m20T1
+# Changes to m20T1 WordPress Theme
 
 ### 1.7.0 Live (March 30, 2024)
 
-* A new meta box for the page editor to edit post specific CSS replacing the custom fields option.
+* Added a new Advanced Options meta box to the page editor to edit post specific CSS. This replaces the custom fields option.
 * Bug fixes.
 
 ### 1.6.5 Live (December 2, 2023)

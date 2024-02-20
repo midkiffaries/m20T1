@@ -24,7 +24,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Schema.org structured micro data autonomously generated
 - Built in image lightbox, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
-- Custom admin settings page to allow for the inclusion of additional metadata in the header, as well as content settings to the 404, search error page and post excerpt length
+- Custom admin settings page to allow for the inclusion of additional metadata in the header, as well as content settings to the 404, search error page and post excerpt length: <b>Appearance > Theme Settings</b>
 - Widget support on on all pages with customizations
 - Widget support in the site header and footer
 - Unique <i>front-page.php</i>, <i>404.php</i> and <i>attachment.php (image)</i> pages

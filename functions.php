@@ -33,6 +33,8 @@ define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 
 // Title of the additional post type
 define( 'ADDITIONAL_POST_TYPE', 'Portfolio' );
+// Additional post type icon, reference: https://developer.wordpress.org/resource/dashicons/
+define( 'ADDITIONAL_POST_TYPE_ICON', 'dashicons-portfolio' );
 // Additional post type default description/subtitle
 define( 'ADDITIONAL_POST_TYPE_SUBTITLE', 'The work I have done professionally' );
 // Additional post type page ID and URI slug
@@ -213,7 +215,7 @@ add_action( 'init', function(){
         'has_archive'        => true,
         'hierarchical'       => true,
         'menu_position'      => 20,
-        'menu_icon'          => 'dashicons-portfolio', // Alteratives: https://developer.wordpress.org/resource/dashicons/
+        'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
         'taxonomies'         => array( 'category' ), // category, post_tag
         'can_export'         => true,
@@ -307,7 +309,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
         <li><code>old-photo</code> - Ages an image</li>
     </ul>
-    <p>Create a <i>Page</i> with the slug <b><?=ADDITIONAL_POST_TYPE; ?></b> to customize that landing page.</p>
+    <p>Create a <i>Page</i> with the slug <b><?=strtolower(ADDITIONAL_POST_TYPE); ?></b> to customize that landing page.</p>
     <?php
     }
 });

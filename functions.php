@@ -1415,7 +1415,17 @@ class BuildMetaBox {
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+        <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
+		</label></div>
+        <select id="m20t1_schema_field" name="m20t1_schema_field">
+            <?php 
+            $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'JobPosting'];
+            foreach ($schemaArr as $value) { ?>
+                <option value="<?=$value; ?>"><?=$value; ?></option>
+            <?php } ?>
+        </select>
         <?php
-        // Future Options: Featured Video, Menu, Subtitle, 
-	}
+        // Future Options: Featured Video, Menu, Subtitle
+    }
 }

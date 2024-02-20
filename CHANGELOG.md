@@ -3,6 +3,7 @@
 ### 1.7.0 Live (March 30, 2024)
 
 * Added a new Advanced Options meta box to the page editor to edit post specific CSS. This replaces the custom fields option.
+* Added basic Schema.org page type selector to the Advanced Options box.
 * Bug fixes.
 
 ### 1.6.5 Live (December 2, 2023)

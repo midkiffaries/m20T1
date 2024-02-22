@@ -1416,17 +1416,21 @@ class BuildMetaBox {
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
-		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:10px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
         <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
 		</label></div>
-        <select id="m20t1_schema_field" name="m20t1_schema_field">
+        <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:10px">
             <?php 
-            $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'JobPosting'];
+            $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage'];
             foreach ($schemaArr as $value) { ?>
                 <option value="<?=$value; ?>"><?=$value; ?></option>
             <?php } ?>
         </select>
+        <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
+		</label></div>
+        <input type="url" id="m20t1_video_field" name="m20t1_video_field" class="code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%" value="">
         <?php
         // Future Options: Featured Video, Menu, Subtitle
     }

@@ -1422,7 +1422,7 @@ class BuildMetaBox {
 		</label></div>
         <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:10px">
             <?php 
-            $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage'];
+            $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'FAQPage', 'QAPage', 'SearchResultsPage', 'CheckoutPage', 'MedicalWebPage'];
             foreach ($schemaArr as $value) { ?>
                 <option value="<?=$value; ?>"><?=$value; ?></option>
             <?php } ?>

@@ -1340,7 +1340,7 @@ function call_BuildMetaBox() {
 	new BuildMetaBox();
 }
 
-// Build the meta box.
+// Build the meta box
 class BuildMetaBox {
 
 	public function __construct() {
@@ -1367,24 +1367,24 @@ class BuildMetaBox {
     // Saving the me logic
 	public function save( $post_id ) {
 
-		// Check if our nonce is set.
+		// Check if our nonce is set
 		if ( ! isset( $_POST['m20t1_meta_box_nonce'] ) ) {
 			return $post_id;
 		}
 
 		$nonce = $_POST['m20t1_meta_box_nonce'];
 
-		// Verify that the nonce is valid.
+		// Verify that the nonce is valid
 		if ( ! wp_verify_nonce( $nonce, 'm20t1_meta_box' ) ) {
 			return $post_id;
 		}
 
-		// If this is an autosave.
+		// If this is an autosave
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return $post_id;
 		}
 
-		// Check the user's permissions.
+		// Check the user's permissions
 		if ( 'page' == $_POST['post_type'] ) {
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return $post_id;
@@ -1395,43 +1395,54 @@ class BuildMetaBox {
 			}
 		}
 		
-		// Make HTML safe.
+		// Make user input safe
 		$sanitize_css = str_replace(array('<','>'), array('%3C','%3E'), $_POST['m20t1_css_field']);
+		$sanitize_scheme = htmlspecialchars($_POST['m20t1_schema_field']);
+        $sanitize_videolink = htmlspecialchars($_POST['m20t1_video_field']);
 
-		// Update the meta field.
+		// Update the meta field
 		update_post_meta( $post_id, 'Page_CSS', $sanitize_css );
+        update_post_meta( $post_id, 'Page_Scheme', $sanitize_scheme );
+        update_post_meta( $post_id, 'Page_Video', $sanitize_videolink );
 	}
 
-	// Display the meta box in the post editor.
+	// Display the meta box in the post editor
 	public function render_meta_box_content( $post ) {
 
-		// Add an nonce field so we can check for it later.
+		// Add an nonce field so we can check for it later
 		wp_nonce_field( 'm20t1_meta_box', 'm20t1_meta_box_nonce' );
 
-		// Use get_post_meta to retrieve an existing value from the database.
+		// Use get_post_meta to retrieve an existing value from the database
 		$pageCSS = get_post_meta( $post->ID, 'Page_CSS', true );
+        $pageScheme = get_post_meta( $post->ID, 'Page_Scheme', true );
+        $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
 
-		// Display the form.
+		// Display the form
 		?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
-		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:10px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
         <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
 		</label></div>
-        <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:10px">
+        <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:8px">
             <?php 
             $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'FAQPage', 'QAPage', 'SearchResultsPage', 'CheckoutPage', 'MedicalWebPage'];
             foreach ($schemaArr as $value) { ?>
                 <option value="<?=$value; ?>"><?=$value; ?></option>
             <?php } ?>
         </select>
+        <script>document.getElementById('m20t1_schema_field').selectedIndex = <?php echo array_search($pageScheme, $schemaArr); ?>;</script>
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
-        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%" value="">
+        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">
+        <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
+		</label></div>
+        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" autocomplete="off" placeholder="Page subtitle" style="width:100%" maxlength="100" value="<?=$pageSubtitle; ?>">
         <?php
-        // Future Options: Featured Video, Menu, Subtitle
+        // Future Options: Menu, capability, industry
     }
 }

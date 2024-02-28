@@ -1326,7 +1326,7 @@ function custom_page_css( $id ) {
     if (empty($css)) {
         return NULL;
     } else {
-        return '<styl; type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
+        return '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
     }
 }
 

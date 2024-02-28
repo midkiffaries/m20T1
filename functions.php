@@ -1326,7 +1326,18 @@ function custom_page_css( $id ) {
     if (empty($css)) {
         return NULL;
     } else {
-        return '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
+        return '<styl; type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
+    }
+}
+
+// Get 'Page_Scheme' Custom Field for the page schema.org in the body tag
+function custom_page_schema( $id ) {
+    $scheme = get_post_meta( $id, 'Page_Scheme', true );
+
+    if (empty($scheme)) {
+        return "WebPage";
+    } else {
+        return $scheme;
     }
 }
 
@@ -1443,6 +1454,6 @@ class BuildMetaBox {
 		</label></div>
         <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" autocomplete="off" placeholder="Page subtitle" style="width:100%" maxlength="100" value="<?=$pageSubtitle; ?>">
         <?php
-        // Future Options: Menu, capability, industry
+        // Future Options: Select Menu, Select capability, Select industry
     }
 }

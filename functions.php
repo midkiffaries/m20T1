@@ -1427,6 +1427,7 @@ class BuildMetaBox {
 		$pageCSS = get_post_meta( $post->ID, 'Page_CSS', true );
         $pageScheme = get_post_meta( $post->ID, 'Page_Scheme', true );
         $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
+        $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
 
 		// Display the form
 		?>
@@ -1448,11 +1449,10 @@ class BuildMetaBox {
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
-        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">
-        <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
+        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">        
+        <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>
 		</label></div>
-        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" autocomplete="off" placeholder="Page subtitle" style="width:100%" maxlength="100" value="<?=$pageSubtitle; ?>">
         <?php
         // Future Options: Select Menu, Select capability, Select industry
     }

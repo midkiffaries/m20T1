@@ -1335,7 +1335,11 @@ function custom_page_scheme( $id ) {
     $scheme = get_post_meta( $id, 'Page_Scheme', true );
 
     if (empty($scheme)) {
-        return "WebPage"; // Default
+        if (is_archive() || is_search()) {
+            return "CollectionPage"; // Archives
+        } else {
+            return "WebPage"; // Default page
+        }
     } else {
         return $scheme;
     }
@@ -1454,6 +1458,9 @@ class BuildMetaBox {
 			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>
 		</label></div>
         <?php
+        //$articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
         // Future Options: Select Menu, Select capability, Select industry
+        // Contact number
+        // Organization Type
     }
 }

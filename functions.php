@@ -4,7 +4,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Visual error reporting
-error_reporting(0);
+//error_reporting(0);
 
 // Define the start time for the page loading timer
 define( 'PAGE_LOAD_START', microtime(TRUE) );
@@ -1331,11 +1331,11 @@ function custom_page_css( $id ) {
 }
 
 // Get 'Page_Scheme' Custom Field for the page schema.org in the body tag
-function custom_page_schema( $id ) {
+function custom_page_scheme( $id ) {
     $scheme = get_post_meta( $id, 'Page_Scheme', true );
 
     if (empty($scheme)) {
-        return "WebPage";
+        return "WebPage"; // Default
     } else {
         return $scheme;
     }

@@ -8,12 +8,11 @@
 <?php wp_head(); // WordPress generated meta data and scripts ?>
 </head>
 
-<body <?php body_class(); // Add classes to the body tag ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class(); // Add classes to the body tag ?> itemscope itemtype="http://schema.org/<?=custom_page_scheme(get_the_ID()); ?>">
 
 <?php wp_body_open(); // WordPress body includes ?>
 
 <div class="body-container">
-
     <header class="page-header">
         <a href="#main-content" class="nav-skip">Skip to main content</a>
         <div class="header-menubar">

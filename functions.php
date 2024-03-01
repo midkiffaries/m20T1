@@ -1345,6 +1345,17 @@ function custom_page_scheme( $id ) {
     }
 }
 
+// Get 'Page_Article' Custom Field for the page schema.org in the main tag on single.php
+function custom_page_article( $id ) {
+    $scheme = get_post_meta( $id, 'Page_Article', true );
+
+    if (empty($scheme)) {
+        return "Article"; // Default article
+    } else {
+        return $scheme;
+    }
+}
+
 // Custom Meta Box for the post editor
 if ( is_admin() ) {
 	add_action( 'load-post.php', 'call_BuildMetaBox' );
@@ -1413,11 +1424,13 @@ class BuildMetaBox {
 		// Make user input safe
 		$sanitize_css = str_replace(array('<','>'), array('%3C','%3E'), $_POST['m20t1_css_field']);
 		$sanitize_scheme = htmlspecialchars($_POST['m20t1_schema_field']);
+		$sanitize_article = htmlspecialchars($_POST['m20t1_article_field']);
         $sanitize_videolink = htmlspecialchars($_POST['m20t1_video_field']);
 
 		// Update the meta field
 		update_post_meta( $post_id, 'Page_CSS', $sanitize_css );
         update_post_meta( $post_id, 'Page_Scheme', $sanitize_scheme );
+        update_post_meta( $post_id, 'Page_Article', $sanitize_article );
         update_post_meta( $post_id, 'Page_Video', $sanitize_videolink );
 	}
 
@@ -1430,6 +1443,7 @@ class BuildMetaBox {
 		// Use get_post_meta to retrieve an existing value from the database
 		$pageCSS = get_post_meta( $post->ID, 'Page_CSS', true );
         $pageScheme = get_post_meta( $post->ID, 'Page_Scheme', true );
+        $pageArticle = get_post_meta( $post->ID, 'Page_Article', true );
         $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
         $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
 
@@ -1450,6 +1464,17 @@ class BuildMetaBox {
             <?php } ?>
         </select>
         <script>document.getElementById('m20t1_schema_field').selectedIndex = <?php echo array_search($pageScheme, $schemaArr); ?>;</script>
+        <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
+		</label></div>
+        <select id="m20t1_article_field" name="m20t1_article_field" style="margin-bottom:8px">
+            <?php 
+            $articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
+            foreach ($articleArr as $value) { ?>
+                <option value="<?=$value; ?>"><?=$value; ?></option>
+            <?php } ?>
+        </select>
+        <script>document.getElementById('m20t1_article_field').selectedIndex = <?php echo array_search($pageArticle, $articleArr); ?>;</script>
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
@@ -1458,7 +1483,6 @@ class BuildMetaBox {
 			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>
 		</label></div>
         <?php
-        //$articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
         // Future Options: Select Menu, Select capability, Select industry
         // Contact number
         // Organization Type

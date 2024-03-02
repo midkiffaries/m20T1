@@ -1381,7 +1381,7 @@ class BuildMetaBox {
 
 	public function add_meta_box( $post_type ) {
         // Post types that get the meta box
-		$post_types = array( 'post', 'page', 'portfolio', 'attachment' );
+		$post_types = array( 'post', 'page', 'attachment', _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ) );
 
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(

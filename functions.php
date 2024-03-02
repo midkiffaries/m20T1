@@ -1454,10 +1454,12 @@ class BuildMetaBox {
 
 		// Display the form
 		?>
+        <?php if ($post->post_type != 'post') : // Only display on pages ?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+        
         <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
 		</label></div>
@@ -1469,6 +1471,9 @@ class BuildMetaBox {
             <?php } ?>
         </select>
         <script>document.getElementById('m20t1_schema_field').selectedIndex = <?php echo array_search($pageScheme, $schemaArr); ?>;</script>
+        <?php endif; ?>
+        
+        <?php if ($post->post_type == 'post') : // Only display on posts ?>
         <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
 		</label></div>
@@ -1480,10 +1485,13 @@ class BuildMetaBox {
             <?php } ?>
         </select>
         <script>document.getElementById('m20t1_article_field').selectedIndex = <?php echo array_search($pageArticle, $articleArr); ?>;</script>
+        <?php endif; ?>
+        
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">        
+        
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>
 		</label></div>

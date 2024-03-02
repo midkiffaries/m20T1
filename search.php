@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-search" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+<main class="page-main page-search" id="main-content" itemscope itemtype="https://schema.org/SearchResultsPage" itemprop="mainEntity">
     <div class="page-content width-side" role="feed">
 
     <?php if (have_posts() && get_search_query()) : // Search results ?>
@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <section class="search-results" itemscope itemtype="https://schema.org/SearchResultsPage">
+    <section class="search-results">
 
     <?php while (have_posts()) : the_post(); // List posts and pages ?>
         <article class="post-<?php the_ID(); ?> post type-post status-publish format-standard hentry" id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">

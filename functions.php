@@ -371,7 +371,7 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['ttf|tte']    = 'font/ttf|application/x-font-ttf'; // TrueType font
     $mimes['woff|woff2'] = 'font/woff2|application/octet-stream|font/x-woff2'; // WOFF2 font
     $mimes['glb|gltf']   = 'model/gltf+json|model/gltf-binary'; // glTF WebGL model
-    $mimes['avif']       = 'image/avif'; // Advanced image type
+    //$mimes['avif']       = 'image/avif'; // Advanced image type
     return $mimes;
 }, 1, 1);
 

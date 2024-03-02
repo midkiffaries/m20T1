@@ -1173,6 +1173,7 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', '404_image' );
         register_setting( 'm20t1-settings-group', '404_text' );
         register_setting( 'm20t1-settings-group', 'search_image' );
+        register_setting( 'm20t1-settings-group', 'contact_phone' );
         register_setting( 'm20t1-settings-group', 'social_image' );
         register_setting( 'm20t1-settings-group', 'blank_image' );
         register_setting( 'm20t1-settings-group', 'head_metadata' );
@@ -1196,7 +1197,7 @@ function m20T1_settings_page() {
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
         <h2>Site Settings</h2>
-        <p>Adjust the site representation, the abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
+        <p>Adjust the site representation for <a href="https://schema.org" target="_blank">schema.org</a>, the abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="short_title">Short Site Title</label></th>
@@ -1210,16 +1211,20 @@ function m20T1_settings_page() {
                 </select></td>
             </tr>
             <tr valign="top">
+                <th scope="row"><label for="contact_phone">Contact Phone Number</label></th>
+                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-5555" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone'); ?>"></td>
+            </tr>
+            <tr valign="top">
                 <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
-                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
+                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="excerpt_length">Default Excerpt Length</label></th>
-                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="decimal" value="<?=get_option('excerpt_length'); ?>"> words</td>
+                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('excerpt_length'); ?>"> words</td>
             </tr>
         </table>
         <h2>404 Error and Search Page</h2>
-        <p>Set the image and the text of the 404 page and the 'No results' image on the search page .</p>
+        <p>Set the image and the text of the 404 page and the 'No results' image on the search page.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
@@ -1283,7 +1288,7 @@ function m20T1_settings_page() {
         const inputNum = document.getElementsByTagName("input"), l = inputNum.length;
         for (let i = 0; i < l; i++) {
             const inputAttrib = inputNum[i].getAttribute("type");
-            if (inputAttrib === "number") {
+            if (inputAttrib === "number" || inputAttrib === "tel") {
                 inputNum[i].onkeypress = function () {
                     return event.charCode >= 40 && event.charCode <= 57;
                 }

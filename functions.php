@@ -95,16 +95,6 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );
-
-    // Setting a Custom Field for the widgets slug
-    if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
-        add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
-	}
-
-    // Setting a Custom Field for the page CSS style
-    if (empty(get_post_meta( get_the_ID(), 'Page_CSS', true ))) {
-        add_post_meta( get_the_ID(), 'Page_CSS', '', true );
-    }
 });
 
 // Enable styles and scripts
@@ -676,7 +666,7 @@ function get_child_pages( $id, $thumbnail ) {
             <div class="child-card" id="child-card-<?=$child->ID; ?>">
                 <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
                     <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium')); ?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
-                    <div class="child-card__title"><?=$child->post_title; ?></div>
+                    <div class="child-card__title" role="caption" itemprop="name"><?=$child->post_title; ?></div>
                     <div class="child-card__text"><?=$child->post_excerpt; ?></div>
                 </a>
             </div>
@@ -722,6 +712,31 @@ function post_separator() {
     return '<span class="entry-separator">' . POST_SEPARATOR . '</span>';
 }
 
+// Allow only certain HTML tags in the <head> metadata for user generated content
+function allow_html_metadata( $html ) {
+    return strip_tags($html, '<meta><script><noscript><link><style><iframe>');
+}
+
+// Allow only certain HTML tags for user generated content
+function allow_html_tags( $html ) {
+    return strip_tags($html, '<style><script><noscript><iframe><div>');
+}
+
+// Allow only certain HTML tags for user generated content
+function clean_html( $html ) {
+    return strip_tags($html, '<b><strong><i><em><a><span><abbr>');
+}
+
+
+//////////////////////////////////
+// Attachment/Image Page Functions
+//////////////////////////////////
+
+// Get the full file path on the server from the file's URI
+function get_filepath( $fileurl ) {
+    return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
+}
+
 // Append the proper size units to a numerical file size 
 function file_units( $filesize ) {
     $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB');
@@ -741,26 +756,6 @@ function image_metadata( $filename ) {
     } else {
         return "File: document – Size: " . $filesize;
     }
-}
-
-// Get the full file path on the server from the file's URI
-function get_filepath( $fileurl ) {
-    return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
-}
-
-// Allow only certain HTML tags in the <head> metadata for user generated content
-function allow_html_metadata( $html ) {
-    return strip_tags($html, '<meta><script><noscript><link><style><iframe>');
-}
-
-// Allow only certain HTML tags for user generated content
-function allow_html_tags( $html ) {
-    return strip_tags($html, '<style><script><noscript><iframe><div>');
-}
-
-// Allow only certain HTML tags for user generated content
-function clean_html( $html ) {
-    return strip_tags($html, '<b><strong><i><em><a><span><abbr>');
 }
 
 
@@ -1380,8 +1375,8 @@ class BuildMetaBox {
 	}
 
 	public function add_meta_box( $post_type ) {
-        // Post types that get the meta box
-		$post_types = array( 'post', 'page', 'attachment', _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ) );
+        // Post types that get the meta box -> attachment
+		$post_types = array( 'post', 'page', _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ) );
 
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
@@ -1473,7 +1468,7 @@ class BuildMetaBox {
         <script>document.getElementById('m20t1_schema_field').selectedIndex = <?php echo array_search($pageScheme, $schemaArr); ?>;</script>
         <?php endif; ?>
         
-        <?php if ($post->post_type == 'post') : // Only display on posts ?>
+        <?php //if ($post->post_type == 'post') : // Only display on posts ?>
         <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
 		</label></div>
@@ -1485,7 +1480,7 @@ class BuildMetaBox {
             <?php } ?>
         </select>
         <script>document.getElementById('m20t1_article_field').selectedIndex = <?php echo array_search($pageArticle, $articleArr); ?>;</script>
-        <?php endif; ?>
+        <?php //endif; ?>
         
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
@@ -1499,5 +1494,11 @@ class BuildMetaBox {
         // Future Options: Select Menu, Select capability, Select industry
         // Contact number
         // Organization Type
+        // Widgets_Slug selector (?)
+        
+        // Setting a Custom Field for the widgets slug
+        //if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
+        //    add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
+	    //}
     }
 }

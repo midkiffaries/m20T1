@@ -1015,7 +1015,7 @@ function blog_post_share() {
     // Social sharing buttons HTML
     ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?=$social_links['twitter']; ?>" class="twitter-share" aria-label="Share on Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
+        <li><a href="<?=$social_links['twitter']; ?>" class="twitter-share" aria-label="Share on X/Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
         <li><a href="<?=$social_links['facebook']; ?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?=$social_links['linkedin']; ?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?=$social_links['pinterest']; ?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>

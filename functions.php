@@ -4,7 +4,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Visual error reporting
-//error_reporting(0);
+error_reporting(0);
 
 // Define the start time for the page loading timer
 define( 'PAGE_LOAD_START', microtime(TRUE) );
@@ -189,7 +189,15 @@ add_action( 'init', function(){
             'item_link_description'  => _x( 'A link to a '.ADDITIONAL_POST_TYPE, '' ),
             'uri_slug'               => _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ),
         ),
+        'rewrite' => array( 
+            'slug' => rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), 
+        ),
         'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
+        'menu_position'      => 20, // Below Pages
+        'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
+        'taxonomies'         => array( 'category' ), // category, post_tag
+        'capability_type'    => 'page',
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
@@ -197,17 +205,9 @@ add_action( 'init', function(){
         'show_in_menu'       => true,
         'show_in_admin_bar'  => true,
         'query_var'          => true,
-        'rewrite' => array( 
-            'slug' => rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), 
-        ),
-        'capability_type'    => 'page',
         'exclude_from_search'=> false,
         'has_archive'        => true,
         'hierarchical'       => true,
-        'menu_position'      => 20,
-        'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
-        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
-        'taxonomies'         => array( 'category' ), // category, post_tag
         'can_export'         => true,
         'map_meta_cap'       => true,
         'show_in_rest'       => true

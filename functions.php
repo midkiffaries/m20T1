@@ -1203,11 +1203,25 @@ function m20T1_settings_page() {
                 <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation'); ?>">
                     <option value="Person">Person</option>
                     <option value="Organization">Organization</option>
+                </select>
+                <select id="site_business" name="site_business" value="<?=get_option('site_business'); ?>">
+                <?php 
+                $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
+                foreach ($businessArr as $value) { ?>
+                    <option value="<?=$value; ?>"><?=$value; ?></option>
+                <?php } ?>
                 </select></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="contact_phone">Contact Phone Number</label></th>
-                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-5555" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone'); ?>"></td>
+                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-5555" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone'); ?>">
+                <select id="site_business" name="site_business" value="<?=get_option('site_business'); ?>">
+                <?php 
+                $contactArr = ['customer support', 'technical support', 'billing support', 'sales', 'emergency'];
+                foreach ($contactArr as $value) { ?>
+                    <option value="<?=$value; ?>"><?=$value; ?></option>
+                <?php } ?>
+                </select></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
@@ -1492,8 +1506,6 @@ class BuildMetaBox {
 		</label></div>
         <?php
         // Future Options: Select Menu, Select capability, Select industry
-        // Contact number
-        // Organization Type
         // Widgets_Slug selector (?)
         
         // Setting a Custom Field for the widgets slug

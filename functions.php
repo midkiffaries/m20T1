@@ -1482,7 +1482,6 @@ class BuildMetaBox {
         <script>document.getElementById('m20t1_schema_field').selectedIndex = <?php echo array_search($pageScheme, $schemaArr); ?>;</script>
         <?php endif; ?>
         
-        <?php //if ($post->post_type == 'post') : // Only display on posts ?>
         <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
 		</label></div>
@@ -1494,7 +1493,6 @@ class BuildMetaBox {
             <?php } ?>
         </select>
         <script>document.getElementById('m20t1_article_field').selectedIndex = <?php echo array_search($pageArticle, $articleArr); ?>;</script>
-        <?php //endif; ?>
         
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>

@@ -195,8 +195,8 @@ add_action( 'init', function(){
         'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
         'menu_position'      => 20, // Below Pages
         'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
-        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ),
-        'taxonomies'         => array( 'category' ), // category, post_tag
+        'supports'           => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ],
+        'taxonomies'         => [ 'category' ], // category, post_tag
         'capability_type'    => 'page',
         'public'             => true,
         'publicly_queryable' => true,
@@ -511,7 +511,7 @@ add_action( 'manage_pages_custom_column', 'add_column_views' );
 // Register the sidebar widgets 
 add_action( 'widgets_init', function(){
     // Primary Sidebar - Full blog page
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'primary',
         'name'          => __( 'Primary Sidebar Widgets', 'm20T1' ),
         'description'   => __( 'Blog listing page.' ),
@@ -519,9 +519,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Secondary Sidebar - Archive Pages
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'secondary',
         'name'          => __( 'Secondary Sidebar Widgets', 'm20T1' ),
         'description'   => __( 'Archive pages sidebar widgets.' ),
@@ -529,9 +529,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Tertiary Sidebar - Search Results
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'tertiary',
         'name'          => __( 'Tertiary Sidebar Widgets', 'm20T1' ),
         'description'   => __( 'Search results page sidebar widgets.' ),
@@ -539,9 +539,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Quaternary Sidebar - Portfolio
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'quaternary',
         'name'          => __( 'Quaternary Sidebar Widgets', 'm20T1' ),
         'description'   => __( 'Alternative page sidebar.' ),
@@ -549,9 +549,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Single Post Widgets
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'singlepost',
         'name'          => __( 'Single Post Widgets', 'm20T1' ),
         'description'   => __( 'Widgets below a single blog post.' ),
@@ -559,9 +559,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Front page Widgets
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'frontpage',
         'name'          => __( 'Front Page Widgets', 'm20T1' ),
         'description'   => __( 'Widgets on the bottom of the front page and landing pages.' ),
@@ -569,9 +569,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Page Widgets
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'singlepage',
         'name'          => __( 'Page Widgets', 'm20T1' ),
         'description'   => __( 'Widgets below the contents on a single web page and attachment pages.' ),
@@ -579,9 +579,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
-    ));
+    ]);
     // Page Header Widgets
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'header',
         'name'          => __( 'Header Widgets', 'm20T1' ),
         'description'   => __( 'The page header widgets.' ),
@@ -589,9 +589,9 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
         'before_title'  => '<p class="widget-title">',
         'after_title'   => '</p>',
-    ));
+    ]);
     // Page Footer Widgets
-    register_sidebar(array(
+    register_sidebar([
         'id'            => 'footer',
         'name'          => __( 'Footer Widgets', 'm20T1' ),
         'description'   => __( 'The page footer widgets.' ),
@@ -599,7 +599,7 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</nav>',
         'before_title'  => '<p class="widget-title">',
         'after_title'   => '</p>',
-    ));
+    ]);
 });
 
 // Get 'Widgets_Slug' Custom Field which changes the sidebar selection
@@ -620,7 +620,7 @@ function selectSidebarCustomField( $id, $default ) {
 
 // Display the menu/navigation links as a <ul> list
 function menu_nav_list( $menu, $id ) {
-    wp_nav_menu(array(
+    wp_nav_menu([
         'menu'            => $menu,
         'container'       => 'nav',
         'container_class' => 'nav-'.$id,
@@ -635,7 +635,7 @@ function menu_nav_list( $menu, $id ) {
         'item_spacing'    => 'preserve',
         'depth'           => 0,
         'walker'          => ''
-    ));
+    ]);
 }
 
 
@@ -645,7 +645,7 @@ function menu_nav_list( $menu, $id ) {
 
 // Display page title and excerpt from child pages of current page
 function get_child_pages( $id, $thumbnail ) {
-    $page_children = get_pages(array(
+    $page_children = get_pages([
         'sort_order'     => 'ASC',
         'sort_column'    => 'menu_order, post_title',
         'post_type'      => 'page',
@@ -653,7 +653,7 @@ function get_child_pages( $id, $thumbnail ) {
         'posts_per_page' => -1,
         'exclude'        => 0,
         'child_of'       => $id,
-    ));
+    ]);
 
     // Display section header
     if ($page_children) : ?>
@@ -739,7 +739,7 @@ function get_filepath( $fileurl ) {
 
 // Append the proper size units to a numerical file size 
 function file_units( $filesize ) {
-    $filesizeunits = array(' Bytes', ' KB', ' MB', ' GB', ' TB');
+    $filesizeunits = [' Bytes', ' KB', ' MB', ' GB', ' TB'];
 	if ($filesize) {
         return round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 1) . $filesizeunits[$i];
     } else {
@@ -998,14 +998,14 @@ function get_page_class() {
 
 // List social sharing links on each blog post
 function blog_post_share() {
-    $social_links = array( // Social media links
+    $social_links = [ // Social media links
         'facebook'  => "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink()),
         'twitter'   => "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink()),
         'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . rawurlencode(get_the_title()) . "&summary=" . rawurlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
         'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(SEO_Image(get_the_id())) . "&description=" . rawurlencode(get_the_excerpt()),
         'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),
         'email'     => "mailto:?subject=" . rawurlencode(get_the_title()) . "&body=" . rawurlencode(get_the_title()) . " | " . esc_url(get_the_permalink()),
-    );
+    ];
 
     // Social sharing buttons HTML
     ?>
@@ -1068,14 +1068,14 @@ function user_level( $level ) {
 
 // Add additional contact methods and information to user profiles
 add_filter( 'user_contactmethods', function(){
-    return array(
+    return [
         'jobtitle'  => 'Job Title',
         'linkedin'  => 'LinkedIn URL',
         'facebook'  => 'Facebook URL',
-        'twitter'   => 'Twitter/X URL',
+        'twitter'   => 'X/Twitter URL',
         'pinterest' => 'Pinterest URL',
         'city'      => 'City/State/Co',
-    );
+    ];
 });
 
 // Add additional section to the user profiles
@@ -1333,7 +1333,7 @@ function m20T1_settings_page() {
 // Get 'Page_CSS' Custom Field which adds custom page styling
 function custom_page_css( $id ) {
     $css = get_post_meta( $id, 'Page_CSS', true );
-    $css = str_replace(array('<','>'), array('%3C','%3E'), $css); // make HTML safe
+    $css = str_replace(['<','>'], ['%3C','%3E'], $css); // make HTML safe
     $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
     $css = preg_replace('/;}/', '}', $css); // Remove new lines
 
@@ -1436,7 +1436,7 @@ class BuildMetaBox {
 		}
 		
 		// Make user input safe
-		$sanitize_css = str_replace(array('<','>'), array('%3C','%3E'), $_POST['m20t1_css_field']);
+		$sanitize_css = str_replace(['<','>'], ['%3C','%3E'], $_POST['m20t1_css_field']);
 		$sanitize_scheme = htmlspecialchars($_POST['m20t1_schema_field']);
 		$sanitize_article = htmlspecialchars($_POST['m20t1_article_field']);
         $sanitize_videolink = htmlspecialchars($_POST['m20t1_video_field']);

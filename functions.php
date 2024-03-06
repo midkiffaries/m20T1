@@ -920,8 +920,8 @@ function get_file_extension( $path ) {
 
 // Get proper attachment image or use a document placeholder
 function attachment_page_image( $id ) {
-    $image_ext = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'ico', 'avif');
-    $video_ext = array('mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2');
+    $image_ext = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'ico', 'avif'];
+    $video_ext = ['mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2'];
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));
 
@@ -1510,5 +1510,6 @@ class BuildMetaBox {
         //if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
         //    add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 	    //}
+        // replace some of the array() with []
     }
 }

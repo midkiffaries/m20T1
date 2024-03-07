@@ -79,17 +79,17 @@ add_action( 'after_setup_theme', function(){
     add_editor_style( 'editor-style.css' );
 
     // Custom background and header support
-    add_theme_support( 'custom-header', array( 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true, ) );
-    add_theme_support( 'custom-background', array( 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll', ) );
+    add_theme_support( 'custom-header', [ 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true ] );
+    add_theme_support( 'custom-background', [ 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll' ] );
 
     // Custom Logo Support
-    add_theme_support( 'custom-logo', array( 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => array( 'site-title', 'site-description' ), ) );
+    add_theme_support( 'custom-logo', [ 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
     
     // Add HTML5 Support
-    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+    add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
     
     // Set the different post formats that the author can select
-    //add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ) );
+    //add_theme_support( 'post-formats', [ 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ] );
     
     // Set the Navigation Widgets
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
@@ -100,12 +100,12 @@ add_action( 'after_setup_theme', function(){
 // Enable styles and scripts
 add_action( 'wp_enqueue_scripts', function(){    
     // Add Javascript to the bottom of the page body
-    wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", array(), THEME_VERSION, true );
+    wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
 
     // Add stylesheets to the HEAD metadata
-    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", array(), '2.0', 'all' );
-    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", array(), THEME_VERSION, 'all' );
-    wp_enqueue_style( 'base-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );
+    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", [], '2.0', 'all' );
+    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", [], THEME_VERSION, 'all' );
+    wp_enqueue_style( 'base-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
     //wp_enqueue_style( 'dashicons' ); // Dashicons [class="dashicons dashicons-google"] 
 
     // Remove post comments reply
@@ -152,8 +152,8 @@ add_action( 'init', function(){
     add_filter( 'widget_text', 'do_shortcode' );
 
     // Add a custom post type to the editor
-    register_post_type( ADDITIONAL_POST_TYPE, array(
-        'labels' => array(
+    register_post_type( ADDITIONAL_POST_TYPE, [
+        'labels' => [
             'name'                   => _x( ADDITIONAL_POST_TYPE.'s', '' ),
             'singular_name'          => _x( ADDITIONAL_POST_TYPE, '' ),
             'menu_name'              => _x( ADDITIONAL_POST_TYPE.'s', '' ),
@@ -188,10 +188,10 @@ add_action( 'init', function(){
             'item_link'              => _x( ADDITIONAL_POST_TYPE.' link', '' ),
             'item_link_description'  => _x( 'A link to a '.ADDITIONAL_POST_TYPE, '' ),
             'uri_slug'               => _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ),
-        ),
-        'rewrite' => array( 
+        ],
+        'rewrite' => [ 
             'slug' => rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), 
-        ),
+        ],
         'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
         'menu_position'      => 20, // Below Pages
         'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
@@ -211,12 +211,12 @@ add_action( 'init', function(){
         'can_export'         => true,
         'map_meta_cap'       => true,
         'show_in_rest'       => true
-    ));
+    ]);
 });
 
 // Add custom post type to the dashboard "At a Glance" card
 add_action( 'dashboard_glance_items', function(){
-    $post_types = get_post_types( array( '_builtin' => false ), 'objects' );
+    $post_types = get_post_types( [ '_builtin' => false ], 'objects' );
     foreach ( $post_types as $post_type ) {
         $num_posts = wp_count_posts( $post_type->name );
         $num = number_format_i18n( $num_posts->publish );
@@ -341,7 +341,7 @@ add_filter( 'excerpt_more', function(){
 // Add custom message to login screen
 add_filter( 'login_message', function(){
 ?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, array('srcset' => '', 'style' => 'width:80%')); ?></div>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:80%']); ?></div>
 <?php
 });
 
@@ -389,7 +389,7 @@ add_filter( 'wp_check_filetype_and_ext', function($types, $file, $filename, $mim
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){
     if (has_custom_logo()) { // Use image logo
-        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, array('class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image', 'fetchpriority' => 'high') ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, ['class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image', 'fetchpriority' => 'high'] ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
     } else { // No logo, use site title
         return '<span itemprop="name headline">' . get_bloginfo('name') . '</span>';
     }
@@ -928,7 +928,7 @@ function attachment_page_image( $id ) {
     // Check if attachment matches the extension images array
     foreach ($image_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
-            return '<a href="' . wp_get_attachment_url(get_the_ID()) . '" title="Enlarge image" aria-title="Enlarge image" itemprop="url">'. wp_get_attachment_image($id, 'large', 0, array('loading' => '', 'itemprop' => 'image', 'fetchpriority' => 'high')) . '</a>';
+            return '<a href="' . wp_get_attachment_url(get_the_ID()) . '" title="Enlarge image" aria-title="Enlarge image" itemprop="url">'. wp_get_attachment_image($id, 'large', 0, ['loading' => '', 'itemprop' => 'image', 'fetchpriority' => 'high']) . '</a>';
         }
     }
 
@@ -1130,7 +1130,7 @@ add_filter( 'manage_users_custom_column', function($output, $column_id, $user_id
 
 // Allow the Last Login columns to be sortable
 add_filter( 'manage_users_sortable_columns', function($columns){
-	return wp_parse_args( array('last_login' => 'last_login'), $columns );
+	return wp_parse_args( ['last_login' => 'last_login'], $columns );
 });
 
 add_action( 'pre_get_users', function($query){
@@ -1384,19 +1384,19 @@ function call_BuildMetaBox() {
 class BuildMetaBox {
 
 	public function __construct() {
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
-		add_action( 'save_post', array( $this, 'save' ) );
+		add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
+		add_action( 'save_post', [ $this, 'save' ] );
 	}
 
 	public function add_meta_box( $post_type ) {
         // Post types that get the meta box -> attachment
-		$post_types = array( 'post', 'page', _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ) );
+		$post_types = [ 'post', 'page', _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ) ];
 
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'm20t1_meta_box',
 				__( 'Advanced Options', 'textdomain' ), // meta box title
-				array( $this, 'render_meta_box_content' ),
+				[ $this, 'render_meta_box_content' ],
 				$post_type,
 				'advanced',
 				'high'
@@ -1510,6 +1510,5 @@ class BuildMetaBox {
         //if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
         //    add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 	    //}
-        // replace some of the array() with []
     }
 }

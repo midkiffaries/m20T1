@@ -40,6 +40,9 @@ define( 'ADDITIONAL_POST_TYPE_SUBTITLE', 'The work I have done professionally' )
 // Additional post type page ID and URI slug
 define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path(rawurlencode(strtolower(ADDITIONAL_POST_TYPE[0]))) );
 
+define( 'ADDITIONAL_POST_TYPE_01', [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ] );
+
+
 
 /////////////////////////////
 // WordPress Settings

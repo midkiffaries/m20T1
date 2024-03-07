@@ -5,7 +5,7 @@
 * Added a new Advanced Options meta box to the post/page editor to edit the post's specific CSS. This replaces the custom fields option.
 * Added basic Schema.org page type selector to the Advanced Options meta box and to the Theme Settings page.
 * Changed the additional post type mechanism to make it easier to make more than one post type - still hard coded though.
-* Support for WordPress 6.5. 
+* Support for WordPress 6.5.
 * Bug fixes and code cleanup.
 
 ### 1.6.5 Live (December 2, 2023)

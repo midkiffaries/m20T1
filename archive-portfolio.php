@@ -5,13 +5,13 @@
     <div class="page-content width-full" role="feed">
     
     <?php if (have_posts()) : // Has portfolio items ?>
-    
+        <?php $postType = get_post_type_object(get_post_type()); ?>
+
     <?php if (ADDITIONAL_POST_TYPE_PAGE_ID) : // If portfolio page exists ?>
         <section class="porfolio-page-title" itemprop="name headline">
             <?=GetPageTitle(ADDITIONAL_POST_TYPE_PAGE_ID); // Get portfolio page title and content ?>
         </section>
     <?php else : // Use default page settings ?>
-        <?php $postType = get_post_type_object(get_post_type()); ?>
         <section class="portfolio-header" id="portfolio-page">
             <div class="portfolio-header-container">
                 <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name); ?></h1>

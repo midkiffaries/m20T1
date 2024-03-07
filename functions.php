@@ -32,13 +32,13 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 
 // Title of the additional post type
-define( 'ADDITIONAL_POST_TYPE', 'Portfolio' );
+define( 'ADDITIONAL_POST_TYPE', [ 'Portfolio' ] );
 // Additional post type icon, reference: https://developer.wordpress.org/resource/dashicons/
 define( 'ADDITIONAL_POST_TYPE_ICON', 'dashicons-portfolio' );
 // Additional post type default description/subtitle
 define( 'ADDITIONAL_POST_TYPE_SUBTITLE', 'The work I have done professionally' );
 // Additional post type page ID and URI slug
-define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path(rawurlencode(strtolower(ADDITIONAL_POST_TYPE))) );
+define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path(rawurlencode(strtolower(ADDITIONAL_POST_TYPE[0]))) );
 
 
 /////////////////////////////
@@ -151,67 +151,70 @@ add_action( 'init', function(){
     // Enable the use of shortcodes in text widgets.
     add_filter( 'widget_text', 'do_shortcode' );
 
-    // Add a custom post type to the editor
-    register_post_type( ADDITIONAL_POST_TYPE, [
-        'labels' => [
-            'name'                   => _x( ADDITIONAL_POST_TYPE.'s', '' ),
-            'singular_name'          => _x( ADDITIONAL_POST_TYPE, '' ),
-            'menu_name'              => _x( ADDITIONAL_POST_TYPE.'s', '' ),
-            'name_admin_bar'         => _x( ADDITIONAL_POST_TYPE, '' ),
-            'add_new'                => __( 'Add New' ),
-            'add_new_item'           => __( 'Add New '.ADDITIONAL_POST_TYPE ),
-            'new_item'               => __( 'New '.ADDITIONAL_POST_TYPE ),
-            'edit_item'              => __( 'Edit '.ADDITIONAL_POST_TYPE ),
-            'view_item'              => __( 'View '.ADDITIONAL_POST_TYPE ),
-            'view_items'             => __( 'View '.ADDITIONAL_POST_TYPE.'s' ),
-            'all_items'              => __( 'All '.ADDITIONAL_POST_TYPE.'s' ),
-            'search_items'           => __( 'Search '.ADDITIONAL_POST_TYPE ),
-            'parent_item_colon'      => __( 'Parent '.ADDITIONAL_POST_TYPE.':' ),
-            'not_found'              => __( 'No '.ADDITIONAL_POST_TYPE.'s found.' ),
-            'not_found_in_trash'     => __( 'No '.ADDITIONAL_POST_TYPE.'s found in Trash.' ),
-            'featured_image'         => _x( 'Featured Image', '' ),
-            'set_featured_image'     => _x( 'Set cover image', '' ),
-            'remove_featured_image'  => _x( 'Remove cover image', '' ),
-            'use_featured_image'     => _x( 'Use as cover image', '' ),
-            'archives'               => _x( ADDITIONAL_POST_TYPE.' archives', '' ),
-            'attributes'             => _x( ADDITIONAL_POST_TYPE.' attributes', '' ),
-            'insert_into_item'       => _x( 'Insert into '.ADDITIONAL_POST_TYPE,'' ),
-            'uploaded_to_this_item'  => _x( 'Uploaded to this '.ADDITIONAL_POST_TYPE, '' ),
-            'filter_items_list'      => _x( 'Filter '.ADDITIONAL_POST_TYPE.' list', '' ),
-            'items_list_navigation'  => _x( ADDITIONAL_POST_TYPE.' list navigation', '' ),
-            'items_list'             => _x( ADDITIONAL_POST_TYPE.' list', '' ),
-            'item_published'         => _x( ADDITIONAL_POST_TYPE.' published', '' ),
-            'item_published_privately'=>_x( ADDITIONAL_POST_TYPE.' published privately', '' ),
-            'item_updated'           => _x( ADDITIONAL_POST_TYPE.' updated', '' ),
-            'item_reverted_to_draft' => _x( ADDITIONAL_POST_TYPE.' reverted to draft', '' ),
-            'item_scheduled'         => _x( ADDITIONAL_POST_TYPE.' scheduled', '' ),
-            'item_link'              => _x( ADDITIONAL_POST_TYPE.' link', '' ),
-            'item_link_description'  => _x( 'A link to a '.ADDITIONAL_POST_TYPE, '' ),
-            'uri_slug'               => _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ),
-        ],
-        'rewrite' => [ 
-            'slug' => rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), 
-        ],
-        'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
-        'menu_position'      => 20, // Below Pages
-        'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
-        'supports'           => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ],
-        'taxonomies'         => [ 'category' ], // category, post_tag
-        'capability_type'    => 'page',
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_nav_menus'  => true,
-        'show_in_menu'       => true,
-        'show_in_admin_bar'  => true,
-        'query_var'          => true,
-        'exclude_from_search'=> false,
-        'has_archive'        => true,
-        'hierarchical'       => true,
-        'can_export'         => true,
-        'map_meta_cap'       => true,
-        'show_in_rest'       => true
-    ]);
+    // new
+    foreach (ADDITIONAL_POST_TYPE as $type) {
+        // Add a custom post type to the editor
+        register_post_type( $type, [
+            'labels' => [
+                'name'                   => _x( $type.'s', '' ),
+                'singular_name'          => _x( $type, '' ),
+                'menu_name'              => _x( $type.'s', '' ),
+                'name_admin_bar'         => _x( $type, '' ),
+                'add_new'                => __( 'Add New' ),
+                'add_new_item'           => __( 'Add New '.$type ),
+                'new_item'               => __( 'New '.$type ),
+                'edit_item'              => __( 'Edit '.$type ),
+                'view_item'              => __( 'View '.$type ),
+                'view_items'             => __( 'View '.$type.'s' ),
+                'all_items'              => __( 'All '.$type.'s' ),
+                'search_items'           => __( 'Search '.$type ),
+                'parent_item_colon'      => __( 'Parent '.$type.':' ),
+                'not_found'              => __( 'No '.$type.'s found.' ),
+                'not_found_in_trash'     => __( 'No '.$type.'s found in Trash.' ),
+                'featured_image'         => _x( 'Featured Image', '' ),
+                'set_featured_image'     => _x( 'Set cover image', '' ),
+                'remove_featured_image'  => _x( 'Remove cover image', '' ),
+                'use_featured_image'     => _x( 'Use as cover image', '' ),
+                'archives'               => _x( $type.' archives', '' ),
+                'attributes'             => _x( $type.' attributes', '' ),
+                'insert_into_item'       => _x( 'Insert into '.$type,'' ),
+                'uploaded_to_this_item'  => _x( 'Uploaded to this '.$type, '' ),
+                'filter_items_list'      => _x( 'Filter '.$type.' list', '' ),
+                'items_list_navigation'  => _x( $type.' list navigation', '' ),
+                'items_list'             => _x( $type.' list', '' ),
+                'item_published'         => _x( $type.' published', '' ),
+                'item_published_privately'=>_x( $type.' published privately', '' ),
+                'item_updated'           => _x( $type.' updated', '' ),
+                'item_reverted_to_draft' => _x( $type.' reverted to draft', '' ),
+                'item_scheduled'         => _x( $type.' scheduled', '' ),
+                'item_link'              => _x( $type.' link', '' ),
+                'item_link_description'  => _x( 'A link to a '.$type, '' ),
+                'uri_slug'               => _x( rawurlencode(strtolower($type)), '' ),
+            ],
+            'rewrite' => [ 
+                'slug' => rawurlencode(strtolower($type)), 
+            ],
+            'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
+            'menu_position'      => 20, // Below Pages
+            'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
+            'supports'           => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ],
+            'taxonomies'         => [ 'category' ], // category, post_tag
+            'capability_type'    => 'page',
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_nav_menus'  => true,
+            'show_in_menu'       => true,
+            'show_in_admin_bar'  => true,
+            'query_var'          => true,
+            'exclude_from_search'=> false,
+            'has_archive'        => true,
+            'hierarchical'       => true,
+            'can_export'         => true,
+            'map_meta_cap'       => true,
+            'show_in_rest'       => true
+        ]);
+    }
 });
 
 // Add custom post type to the dashboard "At a Glance" card

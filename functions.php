@@ -1447,12 +1447,14 @@ class BuildMetaBox {
 		$sanitize_scheme = htmlspecialchars($_POST['m20t1_schema_field']);
 		$sanitize_article = htmlspecialchars($_POST['m20t1_article_field']);
         $sanitize_videolink = htmlspecialchars($_POST['m20t1_video_field']);
+        $sanitize_subtitle = clean_html($_POST['m20t1_subtitle_field']);
 
 		// Update the meta field
 		update_post_meta( $post_id, 'Page_CSS', $sanitize_css );
         update_post_meta( $post_id, 'Page_Scheme', $sanitize_scheme );
         update_post_meta( $post_id, 'Page_Article', $sanitize_article );
         update_post_meta( $post_id, 'Page_Video', $sanitize_videolink );
+        update_post_meta( $post_id, 'Page_Subtitle', $sanitize_subtitle );
 	}
 
 	// Display the meta box in the post editor
@@ -1467,6 +1469,7 @@ class BuildMetaBox {
         $pageArticle = get_post_meta( $post->ID, 'Page_Article', true );
         $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
         $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
+        $pageSubtitle = get_post_meta( $post->ID, 'Page_Subtitle', true );
 
 		// Display the form
 		?>
@@ -1475,6 +1478,11 @@ class BuildMetaBox {
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+
+        <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
+			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
+		</label></div>
+        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="on" autocorrect="on" placeholder="Subtitle..." style="width:100%;margin-bottom:8px" maxlength="255" value="<?=$pageSubtitle; ?>">
         
         <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
@@ -1504,7 +1512,7 @@ class BuildMetaBox {
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
-        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">        
+        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>

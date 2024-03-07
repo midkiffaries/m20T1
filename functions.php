@@ -31,17 +31,11 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 // SEO text excerpt length default
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 
-// Title of the additional post type
-define( 'ADDITIONAL_POST_TYPE', [ 'Portfolio' ] );
-// Additional post type icon, reference: https://developer.wordpress.org/resource/dashicons/
-define( 'ADDITIONAL_POST_TYPE_ICON', 'dashicons-portfolio' );
-// Additional post type default description/subtitle
-define( 'ADDITIONAL_POST_TYPE_SUBTITLE', 'The work I have done professionally' );
-// Additional post type page ID and URI slug
-define( 'ADDITIONAL_POST_TYPE_PAGE_ID', get_page_by_path(rawurlencode(strtolower(ADDITIONAL_POST_TYPE[0]))) );
-
-define( 'ADDITIONAL_POST_TYPE_01', [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ] );
-
+// Dashicons: https://developer.wordpress.org/resource/dashicons/
+// Add additional post types: [ title, dashicons icon, subtitle ]
+define( 'ADDITIONAL_POST_TYPE', [ 
+    [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ],
+]);
 
 
 /////////////////////////////
@@ -154,52 +148,53 @@ add_action( 'init', function(){
     // Enable the use of shortcodes in text widgets.
     add_filter( 'widget_text', 'do_shortcode' );
 
-    // new
-    foreach (ADDITIONAL_POST_TYPE as $type) {
+    // Cycle through the ADDITIONAL_POST_TYPE array
+    foreach (ADDITIONAL_POST_TYPE as [$type, $icon, $subtitle]) {
         // Add a custom post type to the editor
         register_post_type( $type, [
             'labels' => [
-                'name'                   => _x( $type.'s', '' ),
+                'name'                   => _x( "{$type}s", '' ),
                 'singular_name'          => _x( $type, '' ),
-                'menu_name'              => _x( $type.'s', '' ),
+                'menu_name'              => _x( "{$type}s", '' ),
                 'name_admin_bar'         => _x( $type, '' ),
-                'add_new'                => __( 'Add New' ),
-                'add_new_item'           => __( 'Add New '.$type ),
-                'new_item'               => __( 'New '.$type ),
-                'edit_item'              => __( 'Edit '.$type ),
-                'view_item'              => __( 'View '.$type ),
-                'view_items'             => __( 'View '.$type.'s' ),
-                'all_items'              => __( 'All '.$type.'s' ),
-                'search_items'           => __( 'Search '.$type ),
-                'parent_item_colon'      => __( 'Parent '.$type.':' ),
-                'not_found'              => __( 'No '.$type.'s found.' ),
-                'not_found_in_trash'     => __( 'No '.$type.'s found in Trash.' ),
-                'featured_image'         => _x( 'Featured Image', '' ),
-                'set_featured_image'     => _x( 'Set cover image', '' ),
-                'remove_featured_image'  => _x( 'Remove cover image', '' ),
-                'use_featured_image'     => _x( 'Use as cover image', '' ),
-                'archives'               => _x( $type.' archives', '' ),
-                'attributes'             => _x( $type.' attributes', '' ),
-                'insert_into_item'       => _x( 'Insert into '.$type,'' ),
-                'uploaded_to_this_item'  => _x( 'Uploaded to this '.$type, '' ),
-                'filter_items_list'      => _x( 'Filter '.$type.' list', '' ),
-                'items_list_navigation'  => _x( $type.' list navigation', '' ),
-                'items_list'             => _x( $type.' list', '' ),
-                'item_published'         => _x( $type.' published', '' ),
-                'item_published_privately'=>_x( $type.' published privately', '' ),
-                'item_updated'           => _x( $type.' updated', '' ),
-                'item_reverted_to_draft' => _x( $type.' reverted to draft', '' ),
-                'item_scheduled'         => _x( $type.' scheduled', '' ),
-                'item_link'              => _x( $type.' link', '' ),
-                'item_link_description'  => _x( 'A link to a '.$type, '' ),
+                'add_new'                => __( "Add New" ),
+                'add_new_item'           => __( "Add New {$type}" ),
+                'new_item'               => __( "New {$type}" ),
+                'edit_item'              => __( "Edit {$type}" ),
+                'view_item'              => __( "View {$type}" ),
+                'view_items'             => __( "View {$type}s" ),
+                'all_items'              => __( "All {$type}s" ),
+                'search_items'           => __( "Search {$type}" ),
+                'parent_item_colon'      => __( "Parent {$type}:" ),
+                'not_found'              => __( "No {$type}s found." ),
+                'not_found_in_trash'     => __( "No {$type}s found in Trash." ),
+                'featured_image'         => _x( "Featured Image", '' ),
+                'set_featured_image'     => _x( "Set cover image", '' ),
+                'remove_featured_image'  => _x( "Remove cover image", '' ),
+                'use_featured_image'     => _x( "Use as cover image", '' ),
+                'archives'               => _x( "{$type} archives", '' ),
+                'attributes'             => _x( "{$type} attributes", '' ),
+                'insert_into_item'       => _x( "Insert into {$type}",'' ),
+                'uploaded_to_this_item'  => _x( "Uploaded to this {$type}", '' ),
+                'filter_items_list'      => _x( "Filter {$type} list", '' ),
+                'items_list_navigation'  => _x( "{$type} list navigation", '' ),
+                'items_list'             => _x( "{$type} list", '' ),
+                'item_published'         => _x( "{$type} published", '' ),
+                'item_published_privately'=>_x( "{$type} published privately", '' ),
+                'item_updated'           => _x( "{$type} updated", '' ),
+                'item_reverted_to_draft' => _x( "{$type} reverted to draft", '' ),
+                'item_scheduled'         => _x( "{$type} scheduled", '' ),
+                'item_link'              => _x( "{$type} link", '' ),
+                'item_link_description'  => _x( "A link to a {$type}", '' ),
                 'uri_slug'               => _x( rawurlencode(strtolower($type)), '' ),
             ],
             'rewrite' => [ 
-                'slug' => rawurlencode(strtolower($type)), 
+                'slug' => rawurlencode(strtolower($type))
             ],
-            'description'        => ADDITIONAL_POST_TYPE_SUBTITLE,
-            'menu_position'      => 20, // Below Pages
-            'menu_icon'          => ADDITIONAL_POST_TYPE_ICON,
+            'menu_position'      => 20, // Below 'Pages'
+            'description'        => $subtitle,
+            'menu_icon'          => $icon,
+            'full_path'          => get_page_by_path(rawurlencode(strtolower($type))),
             'supports'           => [ 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'page-attributes', 'custom-fields' ],
             'taxonomies'         => [ 'category' ], // category, post_tag
             'capability_type'    => 'page',
@@ -227,8 +222,10 @@ add_action( 'dashboard_glance_items', function(){
         $num_posts = wp_count_posts( $post_type->name );
         $num = number_format_i18n( $num_posts->publish );
         $text = _n( $post_type->labels->singular_name, $post_type->labels->singular_name, $num_posts->publish );
-        if ( current_user_can( 'edit_posts' ) && $text == ADDITIONAL_POST_TYPE ) {
-            echo '<li class="'.$post_type->capability_type.'-count-X"><a href="edit.php?post_type=' . $post_type->name . '" class="cust-post"><span class="dashicons '.$post_type->menu_icon.'" style="padding-right:5px"></span>' . $num . ' ' . $text . 's</a><style>.cust-post:before{content:" " !important}</style></li>';
+        foreach (ADDITIONAL_POST_TYPE as [$type]) {
+            if ( current_user_can( 'edit_posts' ) && $text == $type ) {
+                echo '<li class="' . $post_type->capability_type . '-count-X"><a href="edit.php?post_type=' . $post_type->name . '" class="cust-post"><span class="dashicons ' . $post_type->menu_icon . '" style="padding-right:5px"></span>' . $num . ' ' . $text . 's</a><style>.cust-post:before{content:" " !important}</style></li>';
+            }
         }
     }
 });
@@ -305,7 +302,6 @@ add_action('wp_dashboard_setup', function(){
         <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
         <li><code>old-photo</code> - Ages an image</li>
     </ul>
-    <p>Create a <i>Page</i> with the slug <b><?=strtolower(ADDITIONAL_POST_TYPE); ?></b> to customize that landing page.</p>
     <?php
     }
 });
@@ -758,9 +754,9 @@ function image_metadata( $filename ) {
     $filesize = file_units(wp_filesize(get_filepath($filename)));
     if (@is_array(getimagesize($filename))) {
         list($width, $height, $type, $attr) = getimagesize($filename);
-        return "File: " . image_type_to_mime_type($type) . " – Dimensions: " . $width . "x" . $height . "px – Size: " . $filesize;
+        return "File: " . image_type_to_mime_type($type) . " – Dimensions: {$width}x{$height}px – Size: {$filesize}";
     } else {
-        return "File: document – Size: " . $filesize;
+        return "File: document – Size: {$filesize}";
     }
 }
 
@@ -958,7 +954,6 @@ function attachment_page_image( $id ) {
 // Blog post user comment HTML and formatting for each comment
 function custom_comment_style( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
-
     // Visitor comment HTML
     ?>
 	<li <?=comment_class(); ?> id="comment-<?=comment_ID() ?>" itemprop="comment" role="comment">
@@ -1395,8 +1390,14 @@ class BuildMetaBox {
 	}
 
 	public function add_meta_box( $post_type ) {
+
         // Post types that get the meta box -> attachment
-		$post_types = [ 'post', 'page', _x( rawurlencode(strtolower(ADDITIONAL_POST_TYPE)), '' ) ];
+		$post_types = [ 'post', 'page' ];
+
+        // Add additional post types to the array
+        foreach (ADDITIONAL_POST_TYPE as [$type]) {
+            $post_types[] = _x( rawurlencode(strtolower($type)), '' );
+        }
 
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(

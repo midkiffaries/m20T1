@@ -1512,11 +1512,15 @@ class BuildMetaBox {
 			<?php _e( 'Post Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
 		</label></div>
         <?php
-        // Future Options: Select Menu, Select capability, Select industry, Select Widgets_Slug
-        
-        // Setting a Custom Field for the widgets slug
-        //if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
-        //    add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
-	    //}
     }
 }
+
+/*
+Future Options: Select Menu, Select capability, Select industry, Select Widgets_Slug, sort search results
+
+//Setting a Custom Field for the widgets slug
+if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
+    add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
+}
+
+*/

@@ -233,43 +233,43 @@ add_action( 'dashboard_glance_items', function(){
 // Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){
 ?>
-<meta name="title" content="<?=bloginfo('name'); ?>">
+<meta name="title" content="<?=bloginfo('name');?>">
 <meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
-<meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>">
-<link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url())); ?>">
-<link rel="pingback" href="<?=bloginfo('pingback_url'); ?>">
-<link rel="Siteuri" href="<?=home_url(); ?>/" id="SiteURI">
-<meta name="application-name" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left')); ?>">
-<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left')); ?>">
+<meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
+<link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url()));?>">
+<link rel="pingback" href="<?=bloginfo('pingback_url');?>">
+<link rel="Siteuri" href="<?=home_url();?>/" id="SiteURI">
+<meta name="application-name" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left'));?>">
+<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left'));?>">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="description" content="<?=SEO_Excerpt(get_the_id()); ?>">
+<meta name="description" content="<?=SEO_Excerpt(get_the_id());?>">
 <meta name="format-detection" content="telephone=no">
-<link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico"); ?>" sizes="any">
-<link rel="icon" href="<?=esc_url(home_url() . "/favicon.svg"); ?>" type="image/svg+xml">
-<link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/apple-touch-icon.png"); ?>">
-<link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest"); ?>">
-<meta property="og:locale" content="<?=get_bloginfo('language'); ?>">
+<link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico");?>" sizes="any">
+<link rel="icon" href="<?=esc_url(home_url() . "/favicon.svg");?>" type="image/svg+xml">
+<link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/apple-touch-icon.png");?>">
+<link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest");?>">
+<meta property="og:locale" content="<?=get_bloginfo('language');?>">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="<?=bloginfo('name'); ?>">
-<meta property="og:url" content="<?=the_permalink(); ?>">
-<meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta property="og:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
-<meta property="og:image" content="<?=SEO_Image(get_the_id()); ?>">
-<meta property="og:image:type" content="image/<?=get_file_extension(SEO_Image(get_the_id())); ?>">
-<meta property="article:publisher" content="<?=get_the_author_meta('facebook', get_post_field ('post_author', get_the_ID())); ?>">
-<meta property="article:published_time" content="<?=get_the_date('c'); ?>">
-<meta property="article:modified_time" content="<?=get_the_modified_date('c'); ?>">
+<meta property="og:site_name" content="<?=bloginfo('name');?>">
+<meta property="og:url" content="<?=the_permalink();?>">
+<meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name');?>">
+<meta property="og:description" content="<?=SEO_Excerpt(get_the_id());?>">
+<meta property="og:image" content="<?=SEO_Image(get_the_id());?>">
+<meta property="og:image:type" content="image/<?=get_file_extension(SEO_Image(get_the_id()));?>">
+<meta property="article:publisher" content="<?=get_the_author_meta('facebook', get_post_field ('post_author', get_the_ID()));?>">
+<meta property="article:published_time" content="<?=get_the_date('c');?>">
+<meta property="article:modified_time" content="<?=get_the_modified_date('c');?>">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/'); ?>">
-<meta name="twitter:url" content="<?=the_permalink(); ?>">
-<meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name'); ?>">
-<meta name="twitter:description" content="<?=SEO_Excerpt(get_the_id()); ?>">
-<meta name="twitter:image" content="<?=SEO_Image(get_the_id()); ?>">
+<meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/');?>">
+<meta name="twitter:url" content="<?=the_permalink();?>">
+<meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name');?>">
+<meta name="twitter:description" content="<?=SEO_Excerpt(get_the_id());?>">
+<meta name="twitter:image" content="<?=SEO_Image(get_the_id());?>">
 <meta name="twitter:label1" content="Written by">
-<meta name="twitter:data1" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID())); ?>">
+<meta name="twitter:data1" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <meta name="twitter:label2" content="Est. reading time">
-<meta name="twitter:data2" content="<?=reading_time(); ?>">
+<meta name="twitter:data2" content="<?=reading_time();?>">
 <?=allow_html_metadata(get_option('head_metadata')); // Post user metadata ?>
 <?php schemaJSONData(); // Post Schema JSON ?>
 <?php
@@ -316,7 +316,7 @@ add_action( 'wp_body_open', function(){
 add_action( 'wp_footer', function(){
 ?>
 <template id="Search-Modal">
-    <h3 class="search-title" itemprop="name">Search <?=bloginfo('name'); ?></h3>
+    <h3 class="search-title" itemprop="name">Search <?=bloginfo('name');?></h3>
     <?=get_search_form('search-modal'); // Load searchform.php ?>
 </template>
 
@@ -343,14 +343,14 @@ add_filter( 'excerpt_more', function(){
 // Add custom message to login screen
 add_filter( 'login_message', function(){
 ?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:80%']); ?></div>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:80%']);?></div>
 <?php
 });
 
 // Change the WordPress editor's footer text
 add_filter( 'admin_footer_text', function(){
 ?>
-<i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 <?=THEME_VERSION; ?></a>.</i>
+<i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 <?=THEME_VERSION;?></a>.</i>
 <?php
 });
 
@@ -665,11 +665,11 @@ function get_child_pages( $id, $thumbnail ) {
     <div class="child-block">
         <?php // Loop to create each card
         foreach ($page_children as $child) { // Display all the child pages ?>
-            <div class="child-card" id="child-card-<?=$child->ID; ?>">
-                <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID)); ?>" rel="nofollow">
-                    <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium')); ?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
-                    <div class="child-card__title" role="caption" itemprop="name"><?=$child->post_title; ?></div>
-                    <div class="child-card__text"><?=$child->post_excerpt; ?></div>
+            <div class="child-card" id="child-card-<?=$child->ID;?>">
+                <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID));?>" rel="nofollow">
+                    <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium'));?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
+                    <div class="child-card__title" role="caption" itemprop="name"><?=$child->post_title;?></div>
+                    <div class="child-card__text"><?=$child->post_excerpt;?></div>
                 </a>
             </div>
         <?php } ?>
@@ -885,10 +885,10 @@ function Header_Hero( $id ) {
 
     // Header Hero HTML
     ?>
-        <div class="header-hero-image header-<?=$className; ?>" style="<?=$featuredImage; ?>" role="img" aria-labelledby="header-hero-caption">
+        <div class="header-hero-image header-<?=$className;?>" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
-            <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle; ?></div>
+            <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle;?></div>
         </div>
     <?php
 }
@@ -956,12 +956,12 @@ function custom_comment_style( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
     // Visitor comment HTML
     ?>
-	<li <?=comment_class(); ?> id="comment-<?=comment_ID() ?>" itemprop="comment" role="comment">
+	<li <?=comment_class();?> id="comment-<?=comment_ID() ?>" itemprop="comment" role="comment">
         <div class="comment-content">
 			<header class="comment-header">
                 <span class="comment-avatar hidden">
                     <figure class="alignleft" aria-label="Authors Avatar" itemprop="image">
-                        <?=get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+                        <?=get_avatar( get_the_author_meta( 'ID' ), 48 );?>
                     </figure>
                 </span>
                 <span class="comment-author" rel="author" itemprop="author"><?php printf(__('%s'), get_comment_author()); ?></span>
@@ -969,13 +969,13 @@ function custom_comment_style( $comment, $args, $depth ) {
                     <a href="<?=esc_url(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment">#</a> 
                     <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time>
                 </span>
-                <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'textdomain' ), '', '' ); ?></span> 
+                <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'textdomain' ), '', '' );?></span> 
 			</header>
             <?php if ($comment->comment_approved == '0') : ?>
                 <div class="comment-moderation"><?php _e('⚠️ Your comment is awaiting moderation.'); ?></div>
             <?php endif; ?>
-            <div class="comment-text" itemprop="text"><?=comment_text(); ?></div>
-            <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'textdomain' ), '', '' ); ?></div>
+            <div class="comment-text" itemprop="text"><?=comment_text();?></div>
+            <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'textdomain' ), '', '' );?></div>
         </div>
     </li>
     <?php
@@ -1011,12 +1011,12 @@ function blog_post_share() {
     // Social sharing buttons HTML
     ?>
     <ul role="list" class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?=$social_links['twitter']; ?>" class="twitter-share" aria-label="Share on X/Twitter" rel="noopener noreferrer" target="_blank">Tweet</a></li>
-        <li><a href="<?=$social_links['facebook']; ?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['linkedin']; ?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['pinterest']; ?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>
-        <li><a href="<?=$social_links['reddit']; ?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['email']; ?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank">Email</a></li>
+        <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="Share on X/Twitter" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>
+        <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
+        <li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank">Email</a></li>
     </ul>
     <?php
 }
@@ -1030,9 +1030,9 @@ function blog_post_share() {
 function schemaJSONData() {
 ?>
 <script type="application/ld+json" id="schema-graph">
-[{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=home_url(); ?>#website","headline":"<?=bloginfo('name'); ?>","name":"<?=bloginfo('name'); ?>","alternateName":"<?=addslashes(get_option('short_title')); ?>","description":"<?=addslashes(get_bloginfo('description')); ?>","publisher":{"@id": "<?=home_url(); ?>#<?=get_option('site_representation'); ?>"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"<?=home_url(); ?>?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"<?=get_bloginfo('language'); ?>","url":"<?=home_url(); ?>"},
-{"@type":"<?=get_option('site_representation'); ?>","@id":"<?=home_url(); ?>#<?=get_option('site_representation'); ?>","name":"<?=bloginfo('name'); ?>","url":"<?=home_url(); ?>"},
-{"@context":"https://schema.org/","@graph":[<?php schemaNavigation('primary'); ?>
+[{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=home_url();?>#website","headline":"<?=bloginfo('name');?>","name":"<?=bloginfo('name');?>","alternateName":"<?=addslashes(get_option('short_title'));?>","description":"<?=addslashes(get_bloginfo('description'));?>","publisher":{"@id": "<?=home_url();?>#<?=get_option('site_representation');?>"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"<?=home_url();?>?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"<?=get_bloginfo('language');?>","url":"<?=home_url();?>"},
+{"@type":"<?=get_option('site_representation');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>"},
+{"@context":"https://schema.org/","@graph":[<?php schemaNavigation('primary');?>
 <?php schemaNavigation('secondary'); ?>
 <?php schemaNavigation('tertiary'); ?>
 {}]}];
@@ -1047,7 +1047,7 @@ function schemaNavigation( $menu_name ) {
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		
 		foreach ($menuItems as $MenuItem) { // Get each item in the menu ?>
-            {"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"<?=esc_url(home_url()); ?>#Main Navigation","name":"<?=$MenuItem->title; ?>","url":"<?=$MenuItem->url; ?>"}, 
+            {"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"<?=esc_url(home_url());?>#Main Navigation","name":"<?=$MenuItem->title;?>","url":"<?=$MenuItem->url;?>"}, 
         <?php }
 	}
 }
@@ -1197,40 +1197,40 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="short_title">Short Site Title</label></th>
-                <td><input type="text" name="short_title" id="short_title" placeholder="<?=bloginfo('name'); ?>" maxlength="18" value="<?=get_option('short_title'); ?>"> (max 18 characters)</td>
+                <td><input type="text" name="short_title" id="short_title" placeholder="<?=bloginfo('name');?>" maxlength="18" value="<?=get_option('short_title');?>"> (max 18 characters)</td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="site_representation">Site Representation</label></th>
-                <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation'); ?>">
+                <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation');?>">
                     <option value="Person">Person</option>
                     <option value="Organization">Organization</option>
                 </select>
-                <select id="site_business" name="site_business" value="<?=get_option('site_business'); ?>">
+                <select id="site_business" name="site_business" value="<?=get_option('site_business');?>">
                 <?php 
                 $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
                 foreach ($businessArr as $value) { ?>
-                    <option value="<?=$value; ?>"><?=$value; ?></option>
+                    <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
                 </select></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="contact_phone">Contact Phone Number</label></th>
-                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-5555" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone'); ?>">
-                <select id="site_business" name="site_business" value="<?=get_option('site_business'); ?>">
+                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-5555" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone');?>">
+                <select id="site_business" name="site_business" value="<?=get_option('site_business');?>">
                 <?php 
                 $contactArr = ['customer support', 'technical support', 'billing support', 'sales', 'emergency'];
                 foreach ($contactArr as $value) { ?>
-                    <option value="<?=$value; ?>"><?=$value; ?></option>
+                    <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
                 </select></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
-                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('alt_excerpt_length'); ?>"> words</td>
+                <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH;?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('alt_excerpt_length');?>"> words</td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="excerpt_length">Default Excerpt Length</label></th>
-                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH; ?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('excerpt_length'); ?>"> words</td>
+                <td><input type="number" name="excerpt_length" id="excerpt_length" placeholder="<?=EXCERPT_LENGTH;?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('excerpt_length');?>"> words</td>
             </tr>
         </table>
         <h2>404 Error and Search Page</h2>
@@ -1238,15 +1238,15 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="404_text">404 Error Page HTML</label></th>
-                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(clean_html(get_option('404_text'))); ?></textarea><small>Allowed HTML tags: <b>&lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;</b></small></td>
+                <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(clean_html(get_option('404_text')));?></textarea><small>Allowed HTML tags: <b>&lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image')); ?>"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image'));?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Image (URL)</label></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image')); ?>"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"></td>
             </tr>
         </table>
         <h2>Default and Fallback Images</h2>
@@ -1254,11 +1254,11 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="social_image">Site Image Fallback (URL)</label></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image')); ?>"></td>
+                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image'));?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Featured Image Fallback (URL)</label></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image')); ?>"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image'));?>"></td>
             </tr>
         </table>
         <h2>Main Contact Form</h2>
@@ -1266,7 +1266,7 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="contact_shortcode">Contact Form Shortcode</label></th>
-                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=sanitize_text_field(get_option('contact_shortcode')); ?></textarea> <small>Allowed HTML tags: <b>&lt;form&gt; &lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
+                <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=sanitize_text_field(get_option('contact_shortcode'));?></textarea> <small>Allowed HTML tags: <b>&lt;form&gt; &lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
             </tr>
         </table>
         <h2>Additional Metadata and Scripts</h2>
@@ -1274,15 +1274,15 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label> <br><small>These scripts will be placed inside the &lt;head&gt; tag.</small></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata'))); ?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata')));?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label> <br><small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html'))); ?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label> <br><small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html'))); ?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
         </table>
         <?php submit_button(); ?>
@@ -1315,7 +1315,7 @@ function m20T1_settings_page() {
             }
         }
         for (let i, j = 0; i = document.getElementById('site_representation').options[j]; j++) {
-            if (i.value == '<?=get_option('site_representation'); ?>') {
+            if (i.value == '<?=get_option('site_representation');?>') {
                 document.getElementById('site_representation').selectedIndex = j;
                 break;
             }
@@ -1477,12 +1477,12 @@ class BuildMetaBox {
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
-		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS..." ><?=$pageCSS;?></textarea>
 
         <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Subtitle (b, i, a, span)', 'textdomain' ); ?>
+			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
 		</label></div>
-        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (255 char max)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle; ?>">
+        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (255 char max, &lt;b&gt;, &lt;i&gt;, &lt;a&gt;, &lt;span&gt;)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
         
         <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
@@ -1491,10 +1491,10 @@ class BuildMetaBox {
             <?php 
             $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'FAQPage', 'QAPage', 'SearchResultsPage', 'CheckoutPage', 'MedicalWebPage'];
             foreach ($schemaArr as $value) { ?>
-                <option value="<?=$value; ?>"><?=$value; ?></option>
+                <option value="<?=$value;?>"><?=$value;?></option>
             <?php } ?>
         </select>
-        <script>document.getElementById('m20t1_schema_field').selectedIndex = <?php echo array_search($pageScheme, $schemaArr); ?>;</script>
+        <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
         <?php endif; ?>
         
         <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
@@ -1504,22 +1504,21 @@ class BuildMetaBox {
             <?php 
             $articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
             foreach ($articleArr as $value) { ?>
-                <option value="<?=$value; ?>"><?=$value; ?></option>
+                <option value="<?=$value;?>"><?=$value;?></option>
             <?php } ?>
         </select>
-        <script>document.getElementById('m20t1_article_field').selectedIndex = <?php echo array_search($pageArticle, $articleArr); ?>;</script>
+        <script>document.getElementById('m20t1_article_field').selectedIndex = <?=array_search($pageArticle, $articleArr);?>;</script>
         
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
-        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo; ?>">
+        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>
+			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
 		</label></div>
         <?php
-        // Future Options: Select Menu, Select capability, Select industry
-        // Widgets_Slug selector (?)
+        // Future Options: Select Menu, Select capability, Select industry, Select Widgets_Slug
         
         // Setting a Custom Field for the widgets slug
         //if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {

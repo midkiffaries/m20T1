@@ -1441,20 +1441,13 @@ class BuildMetaBox {
 				return $post_id;
 			}
 		}
-		
-		// Make user input safe
-		$sanitize_css = str_replace(['<','>'], ['%3C','%3E'], $_POST['m20t1_css_field']);
-		$sanitize_scheme = htmlspecialchars($_POST['m20t1_schema_field']);
-		$sanitize_article = htmlspecialchars($_POST['m20t1_article_field']);
-        $sanitize_videolink = htmlspecialchars($_POST['m20t1_video_field']);
-        $sanitize_subtitle = clean_html($_POST['m20t1_subtitle_field']);
 
 		// Update the meta field
-		update_post_meta( $post_id, 'Page_CSS', $sanitize_css );
-        update_post_meta( $post_id, 'Page_Scheme', $sanitize_scheme );
-        update_post_meta( $post_id, 'Page_Article', $sanitize_article );
-        update_post_meta( $post_id, 'Page_Video', $sanitize_videolink );
-        update_post_meta( $post_id, 'Page_Subtitle', $sanitize_subtitle );
+		update_post_meta( $post_id, 'Page_CSS', str_replace(['<','>'], ['%3C','%3E'], $_POST['m20t1_css_field']) );
+        update_post_meta( $post_id, 'Page_Scheme', htmlspecialchars($_POST['m20t1_schema_field']) );
+        update_post_meta( $post_id, 'Page_Article', htmlspecialchars($_POST['m20t1_article_field']) );
+        update_post_meta( $post_id, 'Page_Video', esc_url(htmlspecialchars($_POST['m20t1_video_field'])) );
+        update_post_meta( $post_id, 'Page_Subtitle', clean_html($_POST['m20t1_subtitle_field']) );
 	}
 
 	// Display the meta box in the post editor
@@ -1484,30 +1477,32 @@ class BuildMetaBox {
 		</label></div>
         <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (255 char max, &lt;b&gt;, &lt;i&gt;, &lt;a&gt;, &lt;span&gt;)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
         
-        <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
-		</label></div>
-        <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:8px">
-            <?php 
-            $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'FAQPage', 'QAPage', 'SearchResultsPage', 'CheckoutPage', 'MedicalWebPage'];
-            foreach ($schemaArr as $value) { ?>
-                <option value="<?=$value;?>"><?=$value;?></option>
-            <?php } ?>
-        </select>
-        <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
-        <?php endif; ?>
+        <div style="display:grid;grid-template-columns:20% auto;gap:10px;">        
+            <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
+                <?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
+            </label>
+            <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:8px;display:block">
+                <?php 
+                $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'FAQPage', 'QAPage', 'SearchResultsPage', 'CheckoutPage', 'MedicalWebPage'];
+                foreach ($schemaArr as $value) { ?>
+                    <option value="<?=$value;?>"><?=$value;?></option>
+                <?php } ?>
+            </select></div>
+            <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
+            <?php endif; ?>
         
-        <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
-		</label></div>
-        <select id="m20t1_article_field" name="m20t1_article_field" style="margin-bottom:8px">
-            <?php 
-            $articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
-            foreach ($articleArr as $value) { ?>
-                <option value="<?=$value;?>"><?=$value;?></option>
-            <?php } ?>
-        </select>
-        <script>document.getElementById('m20t1_article_field').selectedIndex = <?=array_search($pageArticle, $articleArr);?>;</script>
+            <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
+                <?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
+            </label>
+            <select id="m20t1_article_field" name="m20t1_article_field" style="margin-bottom:8px;display:block">
+                <?php 
+                $articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
+                foreach ($articleArr as $value) { ?>
+                    <option value="<?=$value;?>"><?=$value;?></option>
+                <?php } ?>
+            </select></div>
+            <script>document.getElementById('m20t1_article_field').selectedIndex = <?=array_search($pageArticle, $articleArr);?>;</script>
+        </div>
         
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
@@ -1515,7 +1510,7 @@ class BuildMetaBox {
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
+			<?php _e( 'Post Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
 		</label></div>
         <?php
         // Future Options: Select Menu, Select capability, Select industry, Select Widgets_Slug

@@ -1,35 +1,36 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php $pageKind = "portfolio"; ?>
 <?php get_header(); ?>
 
-<main class="page-main page-portfolio" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+<main class="page-main page-<?=$pageKind;?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content width-full" role="feed">
     
-    <?php if (have_posts()) : // Has portfolio items ?>
+    <?php if (have_posts()) : // Has post items ?>
         <?php $postType = get_post_type_object(get_post_type()); ?>
 
-    <?php if ('Portfolio') : // If portfolio page exists ?>
+    <?php if ($pageKind) : // If post type exists ?>
         <section class="porfolio-page-title" itemprop="name headline">
-            <?=GetPageTitle(get_page_by_path(rawurlencode(strtolower('Portfolio')))); // Get portfolio page title and content ?>
+            <?=GetPageTitle(get_page_by_path(rawurlencode(strtolower($pageKind)))); // Get page title and content ?>
         </section>
     <?php else : // Use default page settings ?>
-        <section class="portfolio-header" id="portfolio-page">
-            <div class="portfolio-header-container">
+        <section class="<?=$pageKind;?>-header" id="<?=$pageKind;?>-page">
+            <div class="<?=$pageKind;?>-header-container">
                 <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name);?></h1>
                 <div class="subtitle" itemprop="about"><?=esc_html($postType->description);?></div>
             </div>
         </section>
     <?php endif; ?>
 
-    <article class="portfolio-page" itemscope itemtype="https://www.schema.org/CreativeWork">
+    <article class="<?=$pageKind;?>-page" itemscope itemtype="https://www.schema.org/CreativeWork">
 
-    <?php while (have_posts()) : the_post(); // Display portfolio items ?>
+    <?php while (have_posts()) : the_post(); // Display pages ?>
     <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
-            <div class="portfolio-container">
-                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="portfolio-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true);?>">
-                    <div class="portfolio-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky portfolio item ?>Featured Item<?php endif; ?>&nbsp;</div>
-                    <div class="portfolio-info">
-                        <h2 class="portfolio-title" id="<?=$post->post_name;?>" itemprop="name"><?=the_title();?></h2>
-                        <div class="portfolio-author">By <?php the_author(); ?></div>
+            <div class="<?=$pageKind;?>-container">
+                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="<?=$pageKind;?>-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true);?>">
+                    <div class="<?=$pageKind;?>-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post item ?>Featured Item<?php endif; ?>&nbsp;</div>
+                    <div class="<?=$pageKind;?>-info">
+                        <h2 class="<?=$pageKind;?>-title" id="<?=$post->post_name;?>" itemprop="name"><?=the_title();?></h2>
+                        <div class="<?=$pageKind;?>-author">By <?php the_author(); ?></div>
                     </div>
                 </a>
             </div>
@@ -48,7 +49,7 @@
 
     <?php else : // If no results ?>
 
-    <article class="portfolio-page" itemscope itemtype="https://www.schema.org/CreativeWork">
+    <article class="<?=$pageKind;?>-page" itemscope itemtype="https://www.schema.org/CreativeWork">
         <div <?php post_class();?>>
             <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name);?> is empty</h1>
             <div class="subtitle">There seems to be nothing here.</div>
@@ -67,7 +68,7 @@
 
     </div>
     
-    <aside id="sidebar-portfolio" class="page-sidebar portfolio-widgets width-full clearfix">
+    <aside id="sidebar-<?=$pageKind;?>" class="page-sidebar <?=$pageKind;?>-widgets width-full clearfix">
         <?php dynamic_sidebar( 'quaternary' ); // Quaternary Sidebar ?>
     </aside>
 

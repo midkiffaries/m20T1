@@ -330,7 +330,7 @@ add_action( 'wp_footer', function(){
     echo allow_html_tags(get_option('body_bottom_html')); // Post user HTML
 });
 
-// Increase the JPEG compression when modifing images
+// Increase the JPEG compression when loading in or modifing images
 add_filter( 'jpeg_quality', function(){
     return 78;
 });

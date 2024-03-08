@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-blogpost <?=get_page_class(); ?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID()); ?>" itemprop="mainEntity">
+<main class="page-main page-blogpost <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">
     <div class="page-content width-full">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); // Single post ?>
@@ -11,16 +11,16 @@
             <header class="single-entry-header">
                 <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="single-entry-sticky">Featured Article</div><?php endif; ?>
                 <div class="single-entry-category" itemprop="articleSection"><?php the_category(' '); ?></div>
-                <h1 class="single-entry-title" id="<?=$post->post_name; ?>" itemprop="name headline"><?php the_title(); ?></h1>
+                <h1 class="single-entry-title" id="<?=$post->post_name;?>" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
-                    <span class="single-entry-author"><?=post_separator(); ?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                    <span class="single-entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
+                    <span class="single-entry-author"><?=post_separator();?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) );?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="single-entry-read-time"><?=post_separator();?> <?=reading_time();?></span>
                 </div>
             </header>
             <div class="the-content single-entry-content" itemprop="text articleBody">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
-                <?=custom_page_css(get_the_ID()); ?>
+                <?=custom_page_css(get_the_ID());?>
             </div>
             <div class="entry-last-updated">
                 <?php display_last_updated(); ?>

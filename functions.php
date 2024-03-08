@@ -31,9 +31,9 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 // SEO text excerpt length default
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 
-// Dashicons: https://developer.wordpress.org/resource/dashicons/
-// Add additional post types: [ title, dashicons icon, subtitle ]
+// Set the additional post types with a new line for each type
 define( 'ADDITIONAL_POST_TYPE', [ 
+    /* [ 'title', 'dashicon https://developer.wordpress.org/resource/dashicons/', 'subtitle' ], */
     [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ],
 ]);
 
@@ -1480,9 +1480,9 @@ class BuildMetaBox {
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS..." ><?=$pageCSS; ?></textarea>
 
         <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
+			<?php _e( 'Page Subtitle (b, i, a, span)', 'textdomain' ); ?>
 		</label></div>
-        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="on" autocorrect="on" placeholder="Subtitle..." style="width:100%;margin-bottom:8px" maxlength="255" value="<?=$pageSubtitle; ?>">
+        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (255 char max)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle; ?>">
         
         <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
@@ -1512,7 +1512,7 @@ class BuildMetaBox {
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
 		</label></div>
-        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" maxlength="120" value="<?=$pageVideo; ?>">
+        <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME"); ?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo; ?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Views: ', 'textdomain' ); ?><b><?=$pageViews; ?></b>

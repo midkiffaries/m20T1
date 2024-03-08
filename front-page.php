@@ -2,12 +2,12 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main-wide page-landing-page <?=get_page_class(); ?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+<main class="page-main-wide page-landing-page <?=get_page_class(); ?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">
     <div class="page-content width-max">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
 
-        <article <?php post_class(); ?> id="<?=$post->post_name; ?>" itemscope itemtype="https://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="<?=$post->post_name;?>">
             <div>
                 <h1 class="page-title hidden" itemprop="name headline" aria-hidden="true"><?php the_title(); ?></h1>
                 <div class="the-content" itemprop="text articleBody">

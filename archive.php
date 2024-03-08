@@ -31,24 +31,24 @@
     </section>
 
     <?php if (is_author()) : // Display Author Page for when showing by author ?>
-    <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>" itemscope itemtype="https://schema.org/Person">
+    <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : '';?>" itemscope itemtype="https://schema.org/Person">
         <div class="author-container">
             <div class="author-avatar">
                 <figure class="alignleft" itemprop="image">
-                    <?=get_avatar(get_the_author_meta('ID'), 128); ?>
+                    <?=get_avatar(get_the_author_meta('ID'), 128);?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><span itemprop="jobTitle"><?=($curauth->jobtitle) ? wp_strip_all_tags($curauth->jobtitle) : user_level(get_the_author_meta( 'user_level' )); ?></span> – <span itemprop="homeLocation"><?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Planet Earth'); ?></span> – <span><?=number_format_i18n(get_the_author_posts()); ?> Posts</span></p>
+            <p class="author-bio-meta"><span itemprop="jobTitle"><?=($curauth->jobtitle) ? wp_strip_all_tags($curauth->jobtitle) : user_level(get_the_author_meta( 'user_level' ));?></span> – <span itemprop="homeLocation"><?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Planet Earth');?></span> – <span><?=number_format_i18n(get_the_author_posts());?> Posts</span></p>
             <p class="author-bio-about" itemprop="description">
-                <?=nl2br($curauth->description); ?>
-                <p class="author-bio-lastlogin"><?="Last seen " . users_last_login() . " ago"; ?></p>
+                <?=nl2br($curauth->description);?>
+                <p class="author-bio-lastlogin"><?="Last seen " . users_last_login() . " ago";?></p>
             </p>
             <p class="author-bio-contact">
-                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin); ?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
-                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter); ?>" rel="author" itemprop="sameAs">Twitter</a> | <?php endif; ?>
-                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook); ?>" rel="author" itemprop="sameAs">Facebook</a> | <?php endif; ?>
-                <?php if ($curauth->pinterest) : ?><a href="<?=esc_url($curauth->pinterest); ?>" rel="author" itemprop="sameAs">Pinterest</a> | <?php endif; ?>
-                <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url); ?>" rel="author" itemprop="url">Website</a><?php endif; ?>
+                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin);?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
+                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter);?>" rel="author" itemprop="sameAs">X/Twitter</a> | <?php endif; ?>
+                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook);?>" rel="author" itemprop="sameAs">Facebook</a> | <?php endif; ?>
+                <?php if ($curauth->pinterest) : ?><a href="<?=esc_url($curauth->pinterest);?>" rel="author" itemprop="sameAs">Pinterest</a> | <?php endif; ?>
+                <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url);?>" rel="author" itemprop="url">Website</a><?php endif; ?>
             </p>
         </div>
         <hr size="5">
@@ -58,18 +58,18 @@
     <section class="archive-page">
 
     <?php while (have_posts()) : the_post(); // Display blog posts ?>
-        <article <?php post_class(); ?> id="post-<?=the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
+        <article <?php post_class(); ?> id="post-<?=the_ID();?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
-                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true); ?>">
+                <a href="<?=esc_url(the_permalink());?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true);?>">
                     <div class="entry-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
                 </a>
                 <header class="entry-header">
-                    <div class="entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?=the_date(); ?></time></div>
-                    <h2 class="entry-title" id="<?=$post->post_name; ?>" itemprop="name"><a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url"><?=the_title(); ?></a></h2>
+                    <div class="entry-date"><time datetime="<?=get_the_date('c');?>" itemprop="datePublished"><?=the_date();?></time></div>
+                    <h2 class="entry-title" id="<?=$post->post_name;?>" itemprop="name"><a href="<?=esc_url(the_permalink());?>" rel="bookmark" itemprop="url"><?=the_title();?></a></h2>
                     <div class="entry-metadata">
-                        <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
-                        <span class="entry-read-time"><?=post_separator(); ?> <?=reading_time(); ?></span>
-                        <span class="entry-comments" itemprop="commentCount"><?=post_separator(); ?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
+                        <span class="entry-author">Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) );?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                        <span class="entry-read-time"><?=post_separator();?> <?=reading_time();?></span>
+                        <span class="entry-comments" itemprop="commentCount"><?=post_separator();?> <a href="<?=esc_url(the_permalink()); ?>#Comments" rel="bookmark"><?=comments_number('No Comments', 'One Comment', '% Comments');?></a></span>
                     </div>
                 </header>
                 <div class="the-content content-excerpt" itemprop="description articleBody">
@@ -86,7 +86,7 @@
     <section class="blog-pagination" aria-label="Archive Pagination">
         <div class="pagination-container">
             <nav class="blog-post-nav">
-                <?=blog_post_pagination('Posts'); // Post navigation links ?>
+                <?=blog_post_pagination('Posts'); // Post navigation links?>
             </nav>
         </div>
     </section>

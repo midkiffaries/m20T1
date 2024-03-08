@@ -8,7 +8,7 @@
 <?php wp_head(); // WordPress generated meta data and scripts ?>
 </head>
 
-<body <?php body_class(); // Add classes to the body tag ?> itemscope itemtype="http://schema.org/<?=custom_page_scheme(get_the_ID()); ?>">
+<body <?php body_class(); // Add classes to the body tag ?> itemscope itemtype="http://schema.org/<?=custom_page_scheme(get_the_ID());?>">
 
 <?php wp_body_open(); // WordPress body includes ?>
 
@@ -18,7 +18,7 @@
         <div class="header-menubar">
             <div class="header-title">
                 <p class="header-logo" itemprop="name headline">
-                    <a href="<?=home_url(); ?>" rel="home" itemprop="url"><?=get_custom_logo(); ?></a>
+                    <a href="<?=home_url();?>" rel="home" itemprop="url"><?=get_custom_logo();?></a>
                 </p>
                 <div class="header-breadcrumbs"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
             </div>

@@ -14,8 +14,8 @@
     <?php else : // Use default page settings ?>
         <section class="portfolio-header" id="portfolio-page">
             <div class="portfolio-header-container">
-                <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name); ?></h1>
-                <div class="subtitle" itemprop="about"><?=esc_html($postType->description); ?></div>
+                <h1 class="page-title" itemprop="name headline"><?=esc_html($postType->labels->singular_name);?></h1>
+                <div class="subtitle" itemprop="about"><?=esc_html($postType->description);?></div>
             </div>
         </section>
     <?php endif; ?>
@@ -25,10 +25,10 @@
     <?php while (have_posts()) : the_post(); // Display portfolio items ?>
     <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
             <div class="portfolio-container">
-                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="portfolio-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true); ?>">
+                <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="portfolio-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true);?>">
                     <div class="portfolio-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky portfolio item ?>Featured Item<?php endif; ?>&nbsp;</div>
                     <div class="portfolio-info">
-                        <h2 class="portfolio-title" id="<?=$post->post_name; ?>" itemprop="name"><?=the_title(); ?></h2>
+                        <h2 class="portfolio-title" id="<?=$post->post_name;?>" itemprop="name"><?=the_title();?></h2>
                         <div class="portfolio-author">By <?php the_author(); ?></div>
                     </div>
                 </a>
@@ -49,15 +49,15 @@
     <?php else : // If no results ?>
 
     <article class="portfolio-page" itemscope itemtype="https://www.schema.org/CreativeWork">
-        <div <?php post_class(); ?>>
-            <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name); ?> is empty</h1>
+        <div <?php post_class();?>>
+            <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name);?> is empty</h1>
             <div class="subtitle">There seems to be nothing here.</div>
             <div class="the-content">
                 <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
                 <?php get_search_form('archive'); // Search Form ?>
                 <p>&nbsp;</p>
                 <div class="page-search-image aligncenter">
-                    <?=SEARCH_ERROR_IMAGE; ?>
+                    <?=SEARCH_ERROR_IMAGE;?>
                 </div>
             </div>
         </div>

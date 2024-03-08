@@ -1466,7 +1466,7 @@ class BuildMetaBox {
 
 		// Display the form
 		?>
-        <?php if ($post->post_type != 'post') : // Only display on pages ?>
+        <?php if ($post->post_type != 'post') : // Don't display on posts ?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>

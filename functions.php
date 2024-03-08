@@ -330,6 +330,11 @@ add_action( 'wp_footer', function(){
     echo allow_html_tags(get_option('body_bottom_html')); // Post user HTML
 });
 
+// Increase the JPEG compression when modifing images
+add_filter( 'jpeg_quality', function(){
+    return 78;
+});
+
 // Set the excerpt length
 add_filter( 'excerpt_length', function(){
     return get_option('excerpt_length') ? get_option('excerpt_length') : EXCERPT_LENGTH; // Number of Words
@@ -1511,6 +1516,7 @@ class BuildMetaBox {
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Post Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
 		</label></div>
+
         <?php
     }
 }

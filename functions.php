@@ -1518,7 +1518,12 @@ class BuildMetaBox {
 		</label></div>
 
         <?php
-        echo wp_nav_menu();
+        //$locations = get_nav_menu_locations();
+        //$menu = wp_get_nav_menu_object( $locations['registered-menu-location-slug'] );
+        //echo '<div class="footer-menu__title">' . wp_kses_post( $menu->name ) . '</div>';
+
+        //echo wp_get_nav_menu_name( 0 );
+
     }
 }
 

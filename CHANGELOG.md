@@ -2,9 +2,10 @@
 
 ### 1.7.0 Live (March 30, 2024)
 
-* Added a new Advanced Options meta box to the post/page editor to edit the post's specific CSS. This replaces the custom fields option.
+* Added a new Advanced Options meta box to the post/page editor to edit the post's specific CSS. This replaces the Custom Fields option.
 * Added basic Schema.org page type selector to the Advanced Options meta box and to the Theme Settings page.
 * Changed the additional post type mechanism to make it easier to make more than one post type - still hard coded though.
+* Updated the Twitter icon.
 * Support for WordPress 6.5.
 * Bug fixes and code cleanup.
 

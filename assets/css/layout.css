@@ -18,11 +18,11 @@ Base WordPress Page Styling
 	--featured-img-bg-over: rgba(255,255,255,0.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='78mm' height='78mm' viewBox='0 0 78 78'><g fill-opacity='.04'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>") repeat 0 0;
 
 	--facebook-color: #3b5998;
-	--twitter-color: #1da1f2;
+	--twitter-color: #14171a;
 	--linkedin-color: #0077b5;
 	--pinterest-color: #e60023;
 	--reddit-color: #ff4500;
-	--email-color: #ffb700;
+	--email-color: #fba805;
 }
 
 /* Print-friendly */
@@ -40,7 +40,7 @@ Icon Fonts Styling
 
 @font-face {
 	font-family: 'icomoon';
-	src: url('../fonts/icomoon.woff2?xc0ne7') format('woff2');
+	src: url('../fonts/icomoon.woff2?n3b0pt') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;

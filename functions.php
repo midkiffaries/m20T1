@@ -1481,7 +1481,7 @@ class BuildMetaBox {
 		</label></div>
         <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (255 char max, &lt;b&gt;, &lt;i&gt;, &lt;a&gt;, &lt;span&gt;)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
         
-        <div class="components-base-control__cols" style="display:grid;grid-template-columns:20% auto;gap:10px;">        
+        <div class="components-base-control__cols">        
             <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
                 <?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
             </label>
@@ -1517,6 +1517,16 @@ class BuildMetaBox {
 			<?php _e( 'Post Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
 		</label></div>
 
+        <style>
+        @media(min-width:700px) {
+            .components-base-control__cols {
+                display:grid;
+                grid-template-columns:auto auto;
+                gap:10px;
+            }            
+        }
+        </style>
+
         <?php
         //$locations = get_nav_menu_locations();
         //$menu = wp_get_nav_menu_object( $locations['registered-menu-location-slug'] );
@@ -1534,5 +1544,4 @@ Future Options: Select Menu, Select capability, Select industry, Select Widgets_
 if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
     add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 }
-
 */

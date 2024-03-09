@@ -1543,3 +1543,16 @@ if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
     add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 }
 */
+
+/*
+function changeSearchSort( $orderby, $query ) {
+    global $wpdb;
+
+    if(!is_admin() && is_search()) {
+        $orderby = $wpdb->prefix . "posts.post_date ASC";
+    }
+    return $orderby;
+}
+
+add_filter('posts_orderby','changeSearchSort',10,2);
+*/

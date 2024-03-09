@@ -1531,16 +1531,14 @@ class BuildMetaBox {
         //$locations = get_nav_menu_locations();
         //$menu = wp_get_nav_menu_object( $locations['registered-menu-location-slug'] );
         //echo '<div class="footer-menu__title">' . wp_kses_post( $menu->name ) . '</div>';
-
         //echo wp_get_nav_menu_name( 0 );
-
     }
 }
 
 /*
 Future Options: Select Menu, Select capability, Select industry, Select Widgets_Slug, sort search results
 
-//Setting a Custom Field for the widgets slug
+// Setting a Custom Field for the widgets slug
 if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
     add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
 }

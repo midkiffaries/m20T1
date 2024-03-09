@@ -1518,6 +1518,7 @@ class BuildMetaBox {
 		</label></div>
 
         <?php
+        echo wp_nav_menu();
     }
 }
 

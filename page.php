@@ -9,6 +9,7 @@
         <article <?php post_class(); ?> id="<?=$post->post_name;?>">
             <div class="post-container">
                 <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
+                <!--p class="page-subtitle" itemprop="subtitle"><?=get_post_meta( $id, 'Page_Subtitle', true );?></p-->
                 <div class="the-content" itemprop="text articleBody">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                     <?=custom_page_css(get_the_ID());?>

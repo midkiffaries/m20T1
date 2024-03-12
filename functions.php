@@ -335,9 +335,9 @@ add_filter( 'jpeg_quality', function(){
     return 78; // 1-100
 });
 
-// Set the excerpt length
+// Set the excerpt word length
 add_filter( 'excerpt_length', function(){
-    return get_option('excerpt_length') ? get_option('excerpt_length') : EXCERPT_LENGTH; // Number of Words
+    return get_option('excerpt_length') ? get_option('excerpt_length') : EXCERPT_LENGTH;
 });
 
 // Add a 'Continue Reading' link to excerpts

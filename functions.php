@@ -1173,7 +1173,6 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', '404_image' );
         register_setting( 'm20t1-settings-group', '404_text' );
         register_setting( 'm20t1-settings-group', 'search_image' );
-        register_setting( 'm20t1-settings-group', 'contact_phone' );
         register_setting( 'm20t1-settings-group', 'social_image' );
         register_setting( 'm20t1-settings-group', 'blank_image' );
         register_setting( 'm20t1-settings-group', 'head_metadata' );
@@ -1182,7 +1181,10 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'alt_excerpt_length' );
         register_setting( 'm20t1-settings-group', 'excerpt_length' );
         register_setting( 'm20t1-settings-group', 'site_representation' );
+        register_setting( 'm20t1-settings-group', 'site_business' );
         register_setting( 'm20t1-settings-group', 'short_title' );
+        register_setting( 'm20t1-settings-group', 'contact_phone' );
+        register_setting( 'm20t1-settings-group', 'phone_type' );
         register_setting( 'm20t1-settings-group', 'contact_shortcode' );
     });
 });
@@ -1196,8 +1198,8 @@ function m20T1_settings_page() {
     <form method="post" action="options.php" novalidate="novalidate">
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
-        <h2>Site Settings</h2>
-        <p>Adjust the site representation for <a href="https://schema.org" target="_blank">schema.org</a>, the abbreviated site title and the length of the excerpt text seen on the blog post list.</p>
+        <h2>Schema Settings</h2>
+        <p>Adjust the site representation for <a href="https://schema.org" target="_blank">schema.org</a> and the abbreviated site title.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="short_title">Short Site Title</label></th>
@@ -1219,15 +1221,19 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="contact_phone">Contact Phone Number</label></th>
-                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-5555" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone');?>">
-                <select id="site_business" name="site_business" value="<?=get_option('site_business');?>">
+                <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-0000" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone');?>">
+                <select id="phone_type" name="phone_type" value="<?=get_option('phone_type');?>">
                 <?php 
-                $contactArr = ['customer support', 'technical support', 'billing support', 'sales', 'emergency'];
-                foreach ($contactArr as $value) { ?>
+                $phoneArr = ['sales', 'customer support', 'technical support', 'billing support', 'emergency'];
+                foreach ($phoneArr as $value) { ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
                 </select></td>
             </tr>
+        </table>
+        <h2>Presentation Settings</h2>
+        <p>Adjust the length of the excerpt text seen on the blog post list.</p>
+        <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="alt_excerpt_length">Blog Posts Excerpt Length</label></th>
                 <td><input type="number" name="alt_excerpt_length" id="alt_excerpt_length" placeholder="<?=SHORT_TEXT_LENGTH;?>" min="0" max="300" step="1" maxlength="3" inputmode="numeric" value="<?=get_option('alt_excerpt_length');?>"> words</td>

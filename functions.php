@@ -1529,10 +1529,9 @@ class BuildMetaBox {
                 display:grid;
                 grid-template-columns:auto auto;
                 gap:10px;
-            }            
+            }
         }
         </style>
-
         <?php
     }
 }

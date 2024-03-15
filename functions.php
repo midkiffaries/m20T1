@@ -1474,9 +1474,8 @@ class BuildMetaBox {
         $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
         $pageSubtitle = get_post_meta( $post->ID, 'Page_Subtitle', true );
 
-		// Display the form
+		// Generate the meta box HTML
 		?>
-        <?php //if ($post->post_type != 'post') : // Don't display on posts ?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
 		</label></div>
@@ -1499,7 +1498,6 @@ class BuildMetaBox {
                 <?php } ?>
             </select></div>
             <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
-        <?php //endif; ?>
         
             <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
                 <?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>

@@ -1207,28 +1207,34 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="site_representation">Site Representation</label></th>
-                <td><select id="site_representation" name="site_representation" value="<?=get_option('site_representation');?>">
-                    <option value="Person">Person</option>
-                    <option value="Organization">Organization</option>
-                </select>
-                <select id="site_business" name="site_business" value="<?=get_option('site_business');?>">
+                <td><select id="site_representation" name="site_representation">
                 <?php 
-                $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
+                $repArr = ['Person', 'Organization'];
+                foreach ($repArr as $value) { ?>
+                    <option value="<?=$value;?>"><?=$value;?></option>
+                <?php } ?>
+                </select>
+                <script>document.getElementById('site_representation').selectedIndex = <?=array_search(get_option('site_representation'), $repArr);?>;</script>
+                <select id="site_business" name="site_business">
+                <?php 
+                $businessArr = ['Person', 'Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
                 foreach ($businessArr as $value) { ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
                 </select></td>
+                <script>document.getElementById('site_business').selectedIndex = <?=array_search(get_option('site_business'), $businessArr);?>;</script>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="contact_phone">Contact Phone Number</label></th>
                 <td><input type="tel" name="contact_phone" id="contact_phone" placeholder="1-555-555-0000" maxlength="15" inputmode="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?=get_option('contact_phone');?>">
-                <select id="phone_type" name="phone_type" value="<?=get_option('phone_type');?>">
+                <select id="phone_type" name="phone_type">
                 <?php 
                 $phoneArr = ['sales', 'customer support', 'technical support', 'billing support', 'emergency'];
                 foreach ($phoneArr as $value) { ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
                 </select></td>
+                <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>
             </tr>
         </table>
         <h2>Presentation Settings</h2>
@@ -1322,12 +1328,6 @@ function m20T1_settings_page() {
                 if (this.value.length > this.maxLength && this.maxLength > 0) {
                     this.value = this.value.slice(0,this.maxLength);
                 }
-            }
-        }
-        for (let i, j = 0; i = document.getElementById('site_representation').options[j]; j++) {
-            if (i.value == '<?=get_option('site_representation');?>') {
-                document.getElementById('site_representation').selectedIndex = j;
-                break;
             }
         }
     })();

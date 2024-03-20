@@ -1458,6 +1458,7 @@ class BuildMetaBox {
         update_post_meta( $post_id, 'Page_Article', htmlspecialchars($_POST['m20t1_article_field']) );
         update_post_meta( $post_id, 'Page_Video', esc_url(htmlspecialchars($_POST['m20t1_video_field'])) );
         update_post_meta( $post_id, 'Page_Subtitle', clean_html($_POST['m20t1_subtitle_field']) );
+        //update_post_meta( $post_id, 'Widgets_Slug', clean_html($_POST['m20t1_widgets_field']) );
 	}
 
 	// Display the meta box in the post editor
@@ -1467,12 +1468,13 @@ class BuildMetaBox {
 		wp_nonce_field( 'm20t1_meta_box', 'm20t1_meta_box_nonce' );
 
 		// Use get_post_meta to retrieve an existing value from the database
+        $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
 		$pageCSS = get_post_meta( $post->ID, 'Page_CSS', true );
         $pageScheme = get_post_meta( $post->ID, 'Page_Scheme', true );
         $pageArticle = get_post_meta( $post->ID, 'Page_Article', true );
         $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
-        $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
         $pageSubtitle = get_post_meta( $post->ID, 'Page_Subtitle', true );
+        //$pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
 
 		// Generate the meta box HTML
 		?>
@@ -1535,15 +1537,12 @@ class BuildMetaBox {
 }
 
 /*
-
 $locations = get_nav_menu_locations();
 $menu = wp_get_nav_menu_object( $locations['registered-menu-location-slug'] );
 echo '<div class="footer-menu__title">' . wp_kses_post( $menu->name ) . '</div>';
 echo wp_get_nav_menu_name( 0 );
 
 NOTES
-
-Future Options: Select Menu, Select capability, Select industry, Select Widgets_Slug, sort search results
 
 // Setting a Custom Field for the widgets slug
 if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
@@ -1560,6 +1559,12 @@ function changeSearchSort( $orderby, $query ) {
     }
     return $orderby;
 }
+add_filter( 'posts_orderby', 'changeSearchSort',10,2);
 
-add_filter('posts_orderby','changeSearchSort',10,2);
+
+$menu_location = 'header';
+$menu_locations = get_nav_menu_locations();
+$menu_object = (isset($menu_locations[$menu_location]) ? wp_get_nav_menu_object($menu_locations[$menu_location]) : null);
+$menu_name = (isset($menu_object->name) ? $menu_object->name : '');
+echo esc_html($menu_name);
 */

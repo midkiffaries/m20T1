@@ -659,6 +659,10 @@ Global Page Styling
 	filter: none;
 }
 
+.page-header .menu-item-sub {
+	display: none;
+}
+
 /* Page Footer */
 .page-footer {
 	background-color: var(--footer-bg-color);

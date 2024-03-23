@@ -285,6 +285,10 @@ Site Header
 	margin: 0.9em;
 }
 
+.menu-item-sub {
+	font-size: 0.6rem;
+}
+
 .header-secondary-navigation {
 	display: none;
 }

@@ -627,20 +627,24 @@ function selectSidebarCustomField( $id, $default ) {
 // Display the menu/navigation links as a <ul> list
 function menu_nav_list( $menu, $id ) {
     wp_nav_menu([
-        'menu'            => $menu,
-        'container'       => 'nav',
-        'container_class' => 'nav-'.$id,
-        'container_id'    => $id,
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul role="list" aria-label="'.$menu.'">%3$s</ul>',
-        'item_spacing'    => 'preserve',
-        'depth'           => 0,
-        'walker'          => ''
+        'menu'                 => $menu,
+        'container'            => 'nav',
+        'container_class'      => 'nav-'.$id,
+        'container_id'         => $id,
+        'container_aria_label' => $menu,
+        'menu_class'           => 'menu',
+        'menu_id'              => '',
+        'echo'                 => true,
+        'fallback_cb'          => 'wp_page_menu',
+        'before'               => '',
+        'after'                => '',
+        'link_before'          => '',
+        'link_after'           => '',
+        'items_wrap'           => '<ul id="%1$s" class="%2$s" role="list">%3$s</ul>',
+        'item_spacing'         => 'preserve',
+        'depth'                => 0,
+        'walker'               => '',
+        'theme_location'       => '',
     ]);
 }
 
@@ -1474,7 +1478,7 @@ class BuildMetaBox {
         $pageArticle = get_post_meta( $post->ID, 'Page_Article', true );
         $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
         $pageSubtitle = get_post_meta( $post->ID, 'Page_Subtitle', true );
-        //$pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
+        $pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
 
 		// Generate the meta box HTML
 		?>
@@ -1535,36 +1539,3 @@ class BuildMetaBox {
         <?php
     }
 }
-
-/*
-$locations = get_nav_menu_locations();
-$menu = wp_get_nav_menu_object( $locations['registered-menu-location-slug'] );
-echo '<div class="footer-menu__title">' . wp_kses_post( $menu->name ) . '</div>';
-echo wp_get_nav_menu_name( 0 );
-
-NOTES
-
-// Setting a Custom Field for the widgets slug
-if (empty(get_post_meta( get_the_ID(), 'Widgets_Slug', true ))) {
-    add_post_meta( get_the_ID(), 'Widgets_Slug', '', true );
-}
-*/
-
-/*
-function changeSearchSort( $orderby, $query ) {
-    global $wpdb;
-
-    if(!is_admin() && is_search()) {
-        $orderby = $wpdb->prefix . "posts.post_date ASC";
-    }
-    return $orderby;
-}
-add_filter( 'posts_orderby', 'changeSearchSort',10,2);
-
-
-$menu_location = 'header';
-$menu_locations = get_nav_menu_locations();
-$menu_object = (isset($menu_locations[$menu_location]) ? wp_get_nav_menu_object($menu_locations[$menu_location]) : null);
-$menu_name = (isset($menu_object->name) ? $menu_object->name : '');
-echo esc_html($menu_name);
-*/

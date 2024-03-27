@@ -31,8 +31,8 @@ Theme Variables
 	--page-background: #fdfdfd;
 	--body-link-color: var(--brand-color);
 
-	--button-base-color: var(--brand-color);
 	--button-text-color: #fff;
+	--button-base-color: var(--brand-color);
 
 	--header-link-color: #000;
 	--comment-background: rgba(0,0,0,0.05);

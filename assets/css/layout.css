@@ -550,10 +550,12 @@ Blog Post Styling - index/archives/search
 }
 
 .entry-sticky {
-	font-size: 2.6rem;
-	transform: rotate(-12deg);
+	font-size: 2.1rem;
+	line-height: 1;
+	transform: rotate(-11deg) translateY(12px);
 	transform-origin: 0 0;
 	padding: 0 6px;
+	font-weight: 900;
 	text-shadow: 1px 1px 0 #000;
 }
 
@@ -564,16 +566,23 @@ Blog Post Styling - index/archives/search
 	margin-left: 4px;
 }
 
+.post-container {
+	display: grid;
+	column-gap: 15px;
+	grid-template-columns: 250px auto;
+}
+
+
 /* Entry Featured Image as a background element */
 .entry-thumbnail {
     width: 250px;
     height: 250px;
 	border-radius: 0.3rem;
-    float: left;
+	display: block;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
     background-size: 160%;
-    margin: 0 1.5em 3em 0;
+    margin: 0;
     background-color: var(--brand-color-dark);
     background-image: var(--featured-img-bg);
 	transition: all 0.4s ease-in-out;
@@ -1132,6 +1141,10 @@ Specific Page Styling
 .search-results .hentry {
 	margin: 0 !important;
 	padding: 0.7em !important;
+}
+
+.search-results .post-container {
+	display: block;
 }
 
 .search-results .entry-type {

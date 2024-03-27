@@ -1,5 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
-<?php $pageKind = "portfolio"; ?>
+<?php $pageKind = esc_attr("portfolio"); ?>
 <?php get_header(); ?>
 
 <main class="page-main page-<?=$pageKind;?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
@@ -21,10 +21,10 @@
         </section>
     <?php endif; ?>
 
-    <article class="<?=$pageKind;?>-page" itemscope itemtype="https://www.schema.org/CreativeWork">
+    <section class="post-container" role="feed" itemscope itemtype="https://www.schema.org/CreativeWork">
 
     <?php while (have_posts()) : the_post(); // Display pages ?>
-    <div <?php post_class(); ?> id="post-<?=the_ID(); ?>">
+        <article <?php post_class(); ?> id="post-<?=the_ID(); ?>">
             <div class="<?=$pageKind;?>-container">
                 <a href="<?=esc_url(the_permalink()); ?>" rel="bookmark" itemprop="url" class="<?=$pageKind;?>-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'medium', true);?>">
                     <div class="<?=$pageKind;?>-sticky"><?php if(is_sticky( get_the_ID() )) : // If sticky post item ?>Featured Item<?php endif; ?>&nbsp;</div>
@@ -34,10 +34,10 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </article>
     <?php endwhile; ?>
 
-    </article>
+    </section>
 
     <section class="blog-pagination" aria-label="Portfolio Pagination">
         <div class="pagination-container">

@@ -534,7 +534,7 @@ Single Blog Post Styling (single)
 Blog Post Styling - index/archives/search
 ************************************/
 
-.blog-roll .sticky {
+.blog .sticky {
 	background-color: #eee;
 	padding: 0.8em;
 	border-radius: 0.3em;
@@ -566,10 +566,17 @@ Blog Post Styling - index/archives/search
 	margin-left: 4px;
 }
 
-.post-container {
+.blog .post-container,
+.archive .post-container {
 	display: grid;
 	column-gap: 15px;
 	grid-template-columns: 250px auto;
+}
+
+@media (max-width: 849px) {
+	.post-container {
+		grid-template-columns: auto !important;
+	}
 }
 
 
@@ -775,10 +782,10 @@ Entry Social Sharing Styling
 Portfolio Page Styling
 ************************************/
 
-.portfolio-page {
+.page-portfolio .post-container {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	gap: 1em;
+	gap: 0.25em;
 }
 
 /* Entry Featured Image as a background element */
@@ -856,7 +863,7 @@ Portfolio Page Styling
 }
 
 @media (max-width: 1249px) {
-	.portfolio-page {
+	.page-portfolio .post-container {
 		grid-template-columns: auto auto;
 	}
 	.portfolio-thumbnail {
@@ -865,7 +872,7 @@ Portfolio Page Styling
 }
 
 @media (max-width: 849px) {
-	.portfolio-page {
+	.page-portfolio .post-container {
 		grid-template-columns: auto;
 	}
 	.portfolio-thumbnail {
@@ -1141,10 +1148,6 @@ Specific Page Styling
 .search-results .hentry {
 	margin: 0 !important;
 	padding: 0.7em !important;
-}
-
-.search-results .post-container {
-	display: block;
 }
 
 .search-results .entry-type {

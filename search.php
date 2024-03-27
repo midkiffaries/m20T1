@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <section class="search-results">
+    <section class="search-results" role="feed">
 
     <?php while (have_posts()) : the_post(); // List posts and pages ?>
         <article class="post-<?php the_ID(); ?> post type-post status-publish format-standard hentry" id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">

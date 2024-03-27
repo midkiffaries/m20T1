@@ -10,7 +10,7 @@
 
     <?php if (have_posts()) : // If posts exist ?>
 
-    <section class="blog-roll" role="feed">
+    <section class="blog-container" role="feed">
 
     <?php while (have_posts()) : the_post(); // List all the posts ?>
         <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">

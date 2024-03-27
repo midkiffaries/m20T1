@@ -27,9 +27,11 @@ Theme Variables
 	--quaternary-color: #bada55;
 	--highlight-color: rgba(55,161,255,0.7);
 
-	--header-link-color: #000;
-	--body-link-color: var(--brand-color);
+	--text-color: #111;
 	--page-background: #fdfdfd;
+	--body-link-color: var(--brand-color);
+
+	--header-link-color: #000;
 	--comment-background: rgba(0,0,0,0.05);
 
 	--footer-bg-color: #212121;

@@ -31,21 +31,14 @@ Theme Variables
 	--page-background: #fdfdfd;
 	--body-link-color: var(--brand-color);
 
+	--button-base-color: var(--brand-color);
+	--button-text-color: #fff;
+
 	--header-link-color: #000;
 	--comment-background: rgba(0,0,0,0.05);
 
 	--footer-bg-color: #212121;
 	--footer-bg-image: linear-gradient(135deg, rgba(234,234,234,0.06) 0%, rgba(234,234,234,0.06) 50%,rgba(169,169,169,0.06) 50%, rgba(169,169,169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
-
-	--body-top-background: linear-gradient(0deg, rgba(254,254,254,1) 8%, rgba(254,254,254,0.3) 66%), 
-						linear-gradient(45deg, rgba(254,254,254,1) 25%, rgba(254,254,254,0) 80%),
-						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10mm' height='10mm' viewBox='0 0 78 78'><g fill-opacity='.1'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>");
-	--body-bottom-background: linear-gradient(0deg, rgba(254,254,254,0.6) 5%, rgba(254,254,254,1) 100%), 
-						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' clip-rule='evenodd' viewBox='0 0 571.3 1152.8'><clipPath id='a'><path d='M0 0h571.3v1152.8H0z'/></clipPath><g fill='none' stroke='lightgrey' stroke-linecap='butt' stroke-width='12' clip-path='url(%23a)'><path d='M285.6 0 0 576.4l285.6 576.4L569 576.4zM0 0h571.3M0 1152.8h571.3M0 576.4h571.3'/></g></svg>");
-	--portfolio-view-background: url("../../uploads/2023/07/portfolio-view-more-badge.svg");
-
-	--button-base-color: var(--brand-color);
-	--button-text-color: #fff;
 
 	--font-primary: 'Montserrat', sans-serif;
 	--font-secondary: 'Permanent Marker', sans-serif;
@@ -57,6 +50,13 @@ Theme Variables
 
 	accent-color: var(--brand-color);
 	caret-color: var(--brand-color);
+
+	--body-top-background: linear-gradient(0deg, rgba(254,254,254,1) 8%, rgba(254,254,254,0.3) 66%), 
+						linear-gradient(45deg, rgba(254,254,254,1) 25%, rgba(254,254,254,0) 80%),
+						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10mm' height='10mm' viewBox='0 0 78 78'><g fill-opacity='.1'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>");
+	--body-bottom-background: linear-gradient(0deg, rgba(254,254,254,0.6) 5%, rgba(254,254,254,1) 100%), 
+						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' clip-rule='evenodd' viewBox='0 0 571.3 1152.8'><clipPath id='a'><path d='M0 0h571.3v1152.8H0z'/></clipPath><g fill='none' stroke='lightgrey' stroke-linecap='butt' stroke-width='12' clip-path='url(%23a)'><path d='M285.6 0 0 576.4l285.6 576.4L569 576.4zM0 0h571.3M0 1152.8h571.3M0 576.4h571.3'/></g></svg>");
+	--portfolio-view-background: url("../../uploads/2023/07/portfolio-view-more-badge.svg");
 }
 
 /* Print-friendly */

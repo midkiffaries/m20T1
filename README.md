@@ -18,28 +18,27 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/blob/c30b7d20c3ab426311dea8624b8ea740a002bb31/screenshot.png" alt="Screenshot" width="300" align="right" />
 
-- Compatible with WordPress 6.4+
+- Compatible with WordPress 6.5+
 - Theme requires PHP 8.0+
 - Built with extensive technical SEO implementation and social media sharing in mind
-- Schema.org structured micro data autonomously generated
+- Schema.org structured micro data autonomously generated for each page
 - Built in image lightbox, via nested <code>figure</code> <code>a</code> <code>img</code>
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
 - Custom admin settings page to allow for the inclusion of additional metadata in the header, as well as content settings to the 404, search error page and post excerpt length: <b>Appearance -> Theme Settings</b>
-- Widget support on on all pages with customizations
-- Widget support in the site header and footer
+- Widget support on on all pages including the site header and footer
 - Unique <i>front-page.php</i>, <i>404.php</i> and <i>attachment.php (image)</i> pages
 - Featured image support for use as the hero/header image on posts and pages with a fallback image
 - Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
 - Support for <b>dark mode</b> page styling via a built in switch
-- Built in support for an <b>additional post type</b>, default set as "Portfolio"
-- Built in blog post read time in minutes
+- Built in support for <b>additional post types</b>, default set as "Portfolio" (Hardcoded)
+- Built in blog post read time in minutes and page load time.
 - Enabled <b>SVG</b> support, <b>GLB</b> models and iCal/vCard files upload to media library
 - Support for <i>@print</i> for the entire site
 
 ## Todo List
 - Make adjustments to <code>layout.css</code> and move the page layout to CSS Grid
 - Include search results sorting (asc/desc)
-- Seperating more of my personallized styling from the CSS
+- Seperating my personallized styling from the CSS
 
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section.

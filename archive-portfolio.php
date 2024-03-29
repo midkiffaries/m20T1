@@ -2,7 +2,7 @@
 <?php $pageKind = esc_attr("portfolio"); ?>
 <?php get_header(); ?>
 
-<main class="page-main page-<?=$pageKind;?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+<main class="page-main archive-<?=$pageKind;?> " id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content width-full" role="feed">
     
     <?php if (have_posts()) : // Has post items ?>

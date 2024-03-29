@@ -780,7 +780,7 @@ Entry Social Sharing Styling
 Portfolio Page Styling
 ************************************/
 
-.page-portfolio .post-container {
+.archive-portfolio .post-container {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
 	gap: 0.25em;
@@ -861,7 +861,7 @@ Portfolio Page Styling
 }
 
 @media (max-width: 1249px) {
-	.page-portfolio .post-container {
+	.archive-portfolio .post-container {
 		grid-template-columns: auto auto;
 	}
 	.portfolio-thumbnail {
@@ -870,7 +870,7 @@ Portfolio Page Styling
 }
 
 @media (max-width: 849px) {
-	.page-portfolio .post-container {
+	.archive-portfolio .post-container {
 		grid-template-columns: auto;
 	}
 	.portfolio-thumbnail {

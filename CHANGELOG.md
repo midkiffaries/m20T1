@@ -6,7 +6,8 @@
 * Added basic Schema.org page type selector to the Advanced Options meta box and to the Theme Settings page.
 * Changed the additional post type mechanism to make it easier to make more than one post type - still hard coded.
 * Increased the JPEG image compression when the media library creates images.
-* Changed the Twitter icon to the X.
+* Changed the Twitter icon to the X thing.
+* Added options to sort search results.
 * Menu item descriptions are available.
 * Support for WordPress 6.5.
 * Bug fixes and code cleanup.

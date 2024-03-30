@@ -14,7 +14,7 @@
             <div style="text-align:center;margin:-1em 2em 0;">
                 <form method="get" onchange="this.submit()">
                 <input type="hidden" name="s" value="<?=esc_attr($_GET['s']);?>">
-                    <label><b style="text-transform:uppercase">Sort</b></label>
+                    <label><b>SORT</b></label>
                     <select id="SortSearch" name="order">
                         <option value="desc">Newest</option>
                         <option value="asc">Oldest</option>

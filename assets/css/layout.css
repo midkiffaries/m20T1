@@ -1143,6 +1143,12 @@ Specific Page Styling
 	width: calc(100% - 5em);
 }
 
+/* Search sort field */
+.search-sorting {
+	text-align: center;
+	margin:-1em 2em 0;
+}
+
 .search-results .hentry {
 	margin: 0 !important;
 	padding: 0.7em !important;

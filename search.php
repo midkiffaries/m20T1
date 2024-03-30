@@ -1,6 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
+
 <main class="page-main page-search" id="main-content" itemscope itemtype="https://schema.org/SearchResultsPage" itemprop="mainEntity">
     <div class="page-content width-side" role="feed">
 
@@ -10,6 +11,23 @@
         <div>
             <h1 class="page-title" itemprop="name headline">Your search netted <b><?=SearchCount(esc_attr($s));?></b> result(s)</h1>
             <?php get_search_form('search'); // Search form ?>
+            <div style="text-align:center;margin:-1em 2em 0;">
+                <form method="get" onchange="this.submit()">
+                <input type="hidden" name="s" value="<?=esc_attr($_GET['s']);?>">
+                    <label><b style="text-transform:uppercase">Sort</b></label>
+                    <select id="SortSearch" name="order">
+                        <option value="desc">Newest</option>
+                        <option value="asc">Oldest</option>
+                    </select>
+                    <script>document.getElementById('SortSearch').selectedIndex = <?=array_search(esc_attr($_GET['order']),['desc','asc']);?></script>
+                    <select id="SortType" name="orderby">
+                        <option value="title">Title</option>
+                        <option value="type">Type</option>
+                        <option value="author">Author</option>
+                    </select>
+                    <script>document.getElementById('SortType').selectedIndex = <?=array_search(esc_attr($_GET['orderby']),['title','type','author']);?></script>
+                </form>
+            </div>
         </div>
     </section>
 

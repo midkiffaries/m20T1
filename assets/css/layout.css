@@ -1066,7 +1066,7 @@ Specific Page Styling
 
 /* Archive Page - Author Bio block */
 .archive-author-bio {
-	margin: 0 1em 3em;
+	margin: 0 1em 2em;
 }
 
 .archive-author-bio .author-bio-meta {
@@ -1082,22 +1082,25 @@ Specific Page Styling
 .author-container {
 	margin-top: 1em;
 	min-height: 10em;
+	display: grid;
+	grid-template-columns: 144px auto;
+}
+
+@media (max-width: 849px) {
+	.author-container {
+		grid-template-columns: auto;
+	}
 }
 
 .author-container p {
 	margin: 3px 0;
 }
 
-.author-avatar {
-	float: left;
-	margin-right: 0.6rem;
-}
-
 .author-avatar figure img {
 	border: 1px solid #fff;
 	border-radius: 0.5em;
 	box-shadow: 0 7px 7px -6px rgba(0,0,0,0.7), 0 5px 10px -2px rgba(0,0,0,0.1);
-	margin-bottom: 1.5em;
+	margin-bottom: 0.5em;
 }
 
 .author-bio-lastlogin {

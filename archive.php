@@ -34,22 +34,24 @@
     <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : '';?>" itemscope itemtype="https://schema.org/Person">
         <div class="author-container">
             <div class="author-avatar">
-                <figure class="alignleft" itemprop="image">
+                <figure itemprop="image">
                     <?=get_avatar(get_the_author_meta('ID'), 128);?>
                 </figure>
             </div>
-            <p class="author-bio-meta"><span itemprop="jobTitle"><?=($curauth->jobtitle) ? wp_strip_all_tags($curauth->jobtitle) : user_level(get_the_author_meta( 'user_level' ));?></span> – <span itemprop="homeLocation"><?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Planet Earth');?></span> – <span><?=number_format_i18n(get_the_author_posts());?> Posts</span></p>
-            <p class="author-bio-about" itemprop="description">
-                <?=nl2br($curauth->description);?>
-                <p class="author-bio-lastlogin"><?="Last seen " . users_last_login() . " ago";?></p>
-            </p>
-            <p class="author-bio-contact">
-                <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin);?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
-                <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter);?>" rel="author" itemprop="sameAs">X/Twitter</a> | <?php endif; ?>
-                <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook);?>" rel="author" itemprop="sameAs">Facebook</a> | <?php endif; ?>
-                <?php if ($curauth->pinterest) : ?><a href="<?=esc_url($curauth->pinterest);?>" rel="author" itemprop="sameAs">Pinterest</a> | <?php endif; ?>
-                <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url);?>" rel="author" itemprop="url">Website</a><?php endif; ?>
-            </p>
+            <div class="author-content">
+                <p class="author-bio-meta"><span itemprop="jobTitle"><?=($curauth->jobtitle) ? wp_strip_all_tags($curauth->jobtitle) : user_level(get_the_author_meta( 'user_level' ));?></span> – <span itemprop="homeLocation"><?=(($curauth->city) ? wp_strip_all_tags($curauth->city) : 'Planet Earth');?></span> – <span><?=number_format_i18n(get_the_author_posts());?> Posts</span></p>
+                <p class="author-bio-about" itemprop="description">
+                    <?=nl2br($curauth->description);?>
+                    <p class="author-bio-lastlogin"><?="Last seen " . users_last_login() . " ago";?></p>
+                </p>
+                <p class="author-bio-contact">
+                    <?php if ($curauth->linkedin) : ?><a href="<?=esc_url($curauth->linkedin);?>" rel="author" itemprop="sameAs">LinkedIn</a> | <?php endif; ?>
+                    <?php if ($curauth->twitter) : ?><a href="<?=esc_url($curauth->twitter);?>" rel="author" itemprop="sameAs">X/Twitter</a> | <?php endif; ?>
+                    <?php if ($curauth->facebook) : ?><a href="<?=esc_url($curauth->facebook);?>" rel="author" itemprop="sameAs">Facebook</a> | <?php endif; ?>
+                    <?php if ($curauth->pinterest) : ?><a href="<?=esc_url($curauth->pinterest);?>" rel="author" itemprop="sameAs">Pinterest</a> | <?php endif; ?>
+                    <?php if ($curauth->user_url) : ?><a href="<?=esc_url($curauth->user_url);?>" rel="author" itemprop="url">Website</a><?php endif; ?>
+                </p>
+            </div>
         </div>
         <hr size="5">
     </section>

@@ -33,7 +33,7 @@ define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 
 // Set the additional post types with a new line for each type
 define( 'ADDITIONAL_POST_TYPE', [ 
-    /* [ 'title', 'dashicon https://developer.wordpress.org/resource/dashicons/', 'subtitle' ], */
+    /* [ 'Title (singular)', 'dashicon (https://developer.wordpress.org/resource/dashicons/)', 'Subtitle' ], */
     [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ],
 ]);
 

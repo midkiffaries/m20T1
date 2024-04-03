@@ -499,6 +499,11 @@ Single Blog Post Styling (single)
 }
 
 /* Post author info */
+.author-bio-container {
+	display: grid;
+	grid-template-columns: 80px auto;
+}
+
 .single-author-bio {
 	padding: 1rem 1.2rem;
 }
@@ -1081,7 +1086,7 @@ Specific Page Styling
 
 .author-container {
 	margin-top: 1em;
-	min-height: 10em;
+	min-height: 8em;
 	display: grid;
 	grid-template-columns: 144px auto;
 }

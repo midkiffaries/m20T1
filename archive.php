@@ -34,7 +34,7 @@
     <section class="archive-author-bio <?=get_option( 'show_avatars' ) ? 'show-avatars' : '';?>" itemscope itemtype="https://schema.org/Person">
         <div class="author-container">
             <div class="author-avatar">
-                <figure itemprop="image">
+                <figure aria-label="Authors Avatar" itemprop="image">
                     <?=get_avatar(get_the_author_meta('ID'), 128);?>
                 </figure>
             </div>

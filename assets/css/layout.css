@@ -499,26 +499,30 @@ Single Blog Post Styling (single)
 }
 
 /* Post author info */
+.single-author-bio {
+	padding: 1rem 1.2rem;
+}
+
 .author-bio-container {
 	display: grid;
 	grid-template-columns: 80px auto;
 }
 
-.single-author-bio {
-	padding: 1rem 1.2rem;
+.author-bio-avatar img {
+	border-radius: 4px;
 }
 
-.single-author-bio .author-bio-name {
+.author-bio-name {
 	font-size: 1.4rem;
 	margin: -2px 0 0;
 }
 
-.single-author-bio .author-bio-name small {
+.author-bio-name small {
 	font-size: 1rem;
 	opacity: 0.5;
 }
 
-.single-author-bio .author-bio-about {
+.author-bio-about {
 	margin: 0;
 }
 

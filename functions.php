@@ -157,7 +157,7 @@ add_action( 'init', function(){
                 'singular_name'          => _x( $type, '' ),
                 'menu_name'              => _x( "{$type}s", '' ),
                 'name_admin_bar'         => _x( $type, '' ),
-                'add_new'                => __( "Add New" ),
+                'add_new'                => __( "Add New {$type}" ),
                 'add_new_item'           => __( "Add New {$type}" ),
                 'new_item'               => __( "New {$type}" ),
                 'edit_item'              => __( "Edit {$type}" ),

@@ -46,7 +46,7 @@
             <p>Media and images may be subject to copyright. <a href="https://www.copyright.gov/" rel="noopener noreferrer" target="_blank">Learn More</a></p>
         </section>
 
-        <aside id="page-widgets" class="page-sidebar attachment-widgets width-full" role="complementary">
+        <aside id="page-widgets" class="page-sidebar attachment-widgets width-full">
             <?php dynamic_sidebar( 'singlepage' ); // Page Sidebar ?>
         </aside>
 

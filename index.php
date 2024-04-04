@@ -63,7 +63,7 @@
 
     </div>
 
-    <aside id="sidebar-blog" class="page-sidebar blogroll-widgets" role="complementary">
+    <aside id="sidebar-blog" class="page-sidebar blogroll-widgets">
         <div class="accordion" role="tablist" aria-label="Accordion">
             <button role="tab">Additional Information</button>
             <section role="tabpanel">

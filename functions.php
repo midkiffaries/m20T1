@@ -640,7 +640,7 @@ function menu_nav_list( $menu, $id ) {
         'after'                => '',
         'link_before'          => '',
         'link_after'           => '',
-        'items_wrap'           => '<ul id="%1$s" class="%2$s" role="list">%3$s</ul>',
+        'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
         'item_spacing'         => 'preserve',
         'depth'                => 0,
         'walker'               => new Menu_With_Description,
@@ -1022,7 +1022,7 @@ function blog_post_pagination( $type ) {
 
 // Show the blog post tags as a list
 function blog_post_tags() {
-    return the_tags('<ul role="list"><li rel="tag" itemprop="keywords">', '</li><li rel="tag" itemprop="keywords">', '</li></ul>');
+    return the_tags('<ul><li rel="tag" itemprop="keywords">', '</li><li rel="tag" itemprop="keywords">', '</li></ul>');
 }
 
 // Create a unique body main page class for all pages "page-{slug}"
@@ -1043,7 +1043,7 @@ function blog_post_share() {
 
     // Social sharing buttons HTML
     ?>
-    <ul role="list" class="post-social-share" aria-label="Share on social media">
+    <ul class="post-social-share" aria-label="Share on social media">
         <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="Share on X/Twitter" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
         <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>

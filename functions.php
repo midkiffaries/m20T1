@@ -164,7 +164,7 @@ add_action( 'init', function(){
                 'view_item'              => __( "View {$type}" ),
                 'view_items'             => __( "View {$type}s" ),
                 'all_items'              => __( "All {$type}s" ),
-                'search_items'           => __( "Search {$type}" ),
+                'search_items'           => __( "Search {$type}s" ),
                 'parent_item_colon'      => __( "Parent {$type}:" ),
                 'not_found'              => __( "No {$type}s found." ),
                 'not_found_in_trash'     => __( "No {$type}s found in Trash." ),

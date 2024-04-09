@@ -61,12 +61,7 @@ Main Site Layout
 ************************/
 
 /* Page main body layout */
-/*
-.body-container {
-	background-color: #fefefe;
-	position: relative;
-}
-*/
+
 .page-main {
 	min-height: 30em;
 	width: var(--page-width);
@@ -1702,7 +1697,7 @@ Contact Modal Styling
 
 .dialog-email .contact_success {
 	transform: translate(1em,-18em);
-	width: calc(92%);
+	width: 92%;
 	color: #090;
 	text-align: center;
 	border: 2px solid #090;

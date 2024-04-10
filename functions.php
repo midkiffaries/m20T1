@@ -1064,7 +1064,7 @@ function schemaJSONData() {
 ?>
 <script type="application/ld+json" id="schema-graph">
 [{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=home_url();?>#website","headline":"<?=bloginfo('name');?>","name":"<?=bloginfo('name');?>","alternateName":"<?=addslashes(get_option('short_title'));?>","description":"<?=addslashes(get_bloginfo('description'));?>","publisher":{"@id": "<?=home_url();?>#<?=get_option('site_business');?>"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"<?=home_url();?>?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"<?=get_bloginfo('language');?>","url":"<?=home_url();?>"},
-{"@type":"<?=get_option('site_business');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>","contactPoint":{"@type":"ContactPoint","contactType":"<?=addslashes(get_option('phone_type'));?>","telephone":"<?=addslashes(get_option('contact_phone'));?>","url":"<?=home_url();?>/contact/"}},
+{"@context":"https://schema.org/","@type":"<?=get_option('site_business');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>","contactPoint":{"@type":"ContactPoint","contactType":"<?=addslashes(get_option('phone_type'));?>","telephone":"<?=addslashes(get_option('contact_phone'));?>","url":"<?=home_url();?>/contact/"}},
 {"@context":"https://schema.org/","@graph":[<?php schemaNavigation('primary');?>
 <?php schemaNavigation('secondary'); ?>
 <?php schemaNavigation('tertiary'); ?>

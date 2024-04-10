@@ -1063,8 +1063,8 @@ function blog_post_share() {
 function schemaJSONData() {
 ?>
 <script type="application/ld+json" id="schema-graph">
-[{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=home_url();?>#website","headline":"<?=bloginfo('name');?>","name":"<?=bloginfo('name');?>","alternateName":"<?=addslashes(get_option('short_title'));?>","description":"<?=addslashes(get_bloginfo('description'));?>","publisher":{"@id": "<?=home_url();?>#<?=get_option('site_representation');?>"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"<?=home_url();?>?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"<?=get_bloginfo('language');?>","url":"<?=home_url();?>"},
-{"@type":"<?=get_option('site_representation');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>","contactPoint":{"@type":"ContactPoint","contactType":"<?=addslashes(get_option('phone_type'));?>","telephone":"<?=addslashes(get_option('contact_phone'));?>","url":"<?=home_url();?>/contact/"}},
+[{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=home_url();?>#website","headline":"<?=bloginfo('name');?>","name":"<?=bloginfo('name');?>","alternateName":"<?=addslashes(get_option('short_title'));?>","description":"<?=addslashes(get_bloginfo('description'));?>","publisher":{"@id": "<?=home_url();?>#<?=get_option('site_business');?>"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"<?=home_url();?>?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"<?=get_bloginfo('language');?>","url":"<?=home_url();?>"},
+{"@type":"<?=get_option('site_business');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>","contactPoint":{"@type":"ContactPoint","contactType":"<?=addslashes(get_option('phone_type'));?>","telephone":"<?=addslashes(get_option('contact_phone'));?>","url":"<?=home_url();?>/contact/"}},
 {"@context":"https://schema.org/","@graph":[<?php schemaNavigation('primary');?>
 <?php schemaNavigation('secondary'); ?>
 <?php schemaNavigation('tertiary'); ?>
@@ -1214,6 +1214,7 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'short_title' );
         register_setting( 'm20t1-settings-group', 'contact_phone' );
         register_setting( 'm20t1-settings-group', 'phone_type' );
+        register_setting( 'm20t1-settings-group', 'same_as_url' );
         register_setting( 'm20t1-settings-group', 'contact_shortcode' );
     });
 });
@@ -1246,7 +1247,7 @@ function m20T1_settings_page() {
                 <script>document.getElementById('site_representation').selectedIndex = <?=array_search(get_option('site_representation'), $repArr);?>;</script>
                 <select id="site_business" name="site_business">
                 <?php 
-                $businessArr = ['Person', 'Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
+                $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
                 foreach ($businessArr as $value) { ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
@@ -1264,6 +1265,10 @@ function m20T1_settings_page() {
                 <?php } ?>
                 </select></td>
                 <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="sameas_url">URLs of Other Sites (social media, etc.)</label></th>
+                <td><input type="text" name="sameas_url" id="sameas_url" placeholder="Comma separated URLs" maxlength="300" value="<?=get_option('same_as_url');?>"></td>
             </tr>
         </table>
         <h2>Presentation Settings</h2>

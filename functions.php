@@ -1247,7 +1247,7 @@ function m20T1_settings_page() {
                 <script>document.getElementById('site_representation').selectedIndex = <?=array_search(get_option('site_representation'), $repArr);?>;</script>
                 <select id="site_business" name="site_business">
                 <?php 
-                $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'PerformingGroup', 'SportsOrganization'];
+                $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'NGO', 'PerformingGroup', 'SportsOrganization', 'WorkersUnion'];
                 foreach ($businessArr as $value) { ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
                 <?php } ?>
@@ -1267,8 +1267,8 @@ function m20T1_settings_page() {
                 <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="sameas_url">URLs of Other Sites (social media, etc.)</label></th>
-                <td><input type="text" name="sameas_url" id="sameas_url" placeholder="Comma separated URLs" maxlength="300" value="<?=get_option('same_as_url');?>"></td>
+                <th scope="row"><label for="same_as_url">Social Profile URLs</label></th>
+                <td><textarea name="same_as_url" id="same_as_url" placeholder="Comma separated URLs (eg. https://www.facebook/userProfile/)"><?=get_option('same_as_url');?></textarea></td>
             </tr>
         </table>
         <h2>Presentation Settings</h2>

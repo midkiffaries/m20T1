@@ -270,9 +270,9 @@ add_action( 'wp_head', function(){
 <meta name="twitter:data1" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <meta name="twitter:label2" content="Est. reading time">
 <meta name="twitter:data2" content="<?=reading_time();?>">
-<?=allow_html_metadata(get_option('head_metadata')); // Post user metadata ?>
-<?php schemaJSONData(); // Post Schema JSON ?>
-<?php
+<?php 
+echo allow_html_metadata(get_option('head_metadata')); // Post user metadata
+schemaJSONData(); // Post Schema JSON
 });
 
 // Settings for the Admin floating toolbar and WordPress dashboard and editor
@@ -696,7 +696,7 @@ function get_child_pages( $id, $thumbnail ) {
 
     <div class="child-block">
         <?php // Loop to create each card
-        foreach ($page_children as $child) { // Display all the child pages ?>
+        foreach ($page_children as $child) : // Display all the child pages ?>
             <div class="child-card" id="child-card-<?=$child->ID;?>">
                 <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID));?>" rel="nofollow">
                     <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium'));?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
@@ -704,7 +704,7 @@ function get_child_pages( $id, $thumbnail ) {
                     <div class="child-card__text"><?=$child->post_excerpt;?></div>
                 </a>
             </div>
-        <?php } ?>
+        <?php endforeach; ?>
     </div><?php
 }
 
@@ -1061,10 +1061,11 @@ function blog_post_share() {
 
 // Schema.org JSON structured microdata script for the navigation and WebSite data
 function schemaJSONData() {
+    foreach (explode(',', get_option('same_as_url')) as $sa) $sameAsArray .= "\"".trim($sa)."\",";
 ?>
 <script type="application/ld+json" id="schema-graph">
 [{"@context":"https://schema.org/","@type":"WebSite","@id":"<?=home_url();?>#website","headline":"<?=bloginfo('name');?>","name":"<?=bloginfo('name');?>","alternateName":"<?=addslashes(get_option('short_title'));?>","description":"<?=addslashes(get_bloginfo('description'));?>","publisher":{"@id": "<?=home_url();?>#<?=get_option('site_business');?>"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"<?=home_url();?>?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"<?=get_bloginfo('language');?>","url":"<?=home_url();?>"},
-{"@context":"https://schema.org/","@type":"<?=get_option('site_business');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>","sameAs":[<?=get_option('same_as_url');?>],"contactPoint":{"@type":"ContactPoint","contactType":"<?=addslashes(get_option('phone_type'));?>","telephone":"<?=addslashes(get_option('contact_phone'));?>","url":"<?=home_url();?>/contact/"}},
+{"@context":"https://schema.org/","@type":"<?=get_option('site_business');?>","@id":"<?=home_url();?>#<?=get_option('site_representation');?>","name":"<?=bloginfo('name');?>","url":"<?=home_url();?>","sameAs":[<?=rtrim($sameAsArray,",");?>],"contactPoint":{"@type":"ContactPoint","contactType":"<?=addslashes(get_option('phone_type'));?>","telephone":"<?=addslashes(get_option('contact_phone'));?>","url":"<?=home_url();?>/contact/"}},
 {"@context":"https://schema.org/","@graph":[<?php schemaNavigation('primary');?>
 <?php schemaNavigation('secondary'); ?>
 <?php schemaNavigation('tertiary'); ?>
@@ -1079,9 +1080,9 @@ function schemaNavigation( $menu_name ) {
 		$menu = get_term($locations[$menu_name], 'nav_menu');
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		
-		foreach ($menuItems as $MenuItem) { // Get each item in the menu ?>
+		foreach ($menuItems as $MenuItem) : // Get each item in the menu ?>
             {"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"<?=esc_url(home_url());?>#Main Navigation","name":"<?=$MenuItem->title;?>","url":"<?=$MenuItem->url;?>"}, 
-        <?php }
+        <?php endforeach;
 	}
 }
 
@@ -1240,17 +1241,17 @@ function m20T1_settings_page() {
                 <td><select id="site_representation" name="site_representation">
                 <?php 
                 $repArr = ['Person', 'Organization'];
-                foreach ($repArr as $value) { ?>
+                foreach ($repArr as $value) : ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
-                <?php } ?>
+                <?php endforeach; ?>
                 </select>
                 <script>document.getElementById('site_representation').selectedIndex = <?=array_search(get_option('site_representation'), $repArr);?>;</script>
                 <select id="site_business" name="site_business">
                 <?php 
                 $businessArr = ['Consortium', 'Corporation', 'EducationalOrganization', 'School', 'GovernmentOrganization', 'LibrarySystem', 'MedicalOrganization', 'NewsMediaOrganization', 'NGO', 'PerformingGroup', 'SportsOrganization', 'WorkersUnion'];
-                foreach ($businessArr as $value) { ?>
+                foreach ($businessArr as $value) : ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
-                <?php } ?>
+                <?php endforeach; ?>
                 </select></td>
                 <script>document.getElementById('site_business').selectedIndex = <?=array_search(get_option('site_business'), $businessArr);?>;</script>
             </tr>
@@ -1260,9 +1261,9 @@ function m20T1_settings_page() {
                 <select id="phone_type" name="phone_type">
                 <?php 
                 $phoneArr = ['sales', 'customer support', 'technical support', 'billing support', 'emergency'];
-                foreach ($phoneArr as $value) { ?>
+                foreach ($phoneArr as $value) : ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
-                <?php } ?>
+                <?php endforeach; ?>
                 </select></td>
                 <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>
             </tr>
@@ -1529,9 +1530,9 @@ class BuildMetaBox {
             <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:8px;display:block">
                 <?php 
                 $schemaArr = ['WebPage', 'ItemPage', 'AboutPage', 'ContactPage', 'ProfilePage', 'CollectionPage', 'FAQPage', 'QAPage', 'SearchResultsPage', 'CheckoutPage', 'MedicalWebPage'];
-                foreach ($schemaArr as $value) { ?>
+                foreach ($schemaArr as $value) : ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
-                <?php } ?>
+                <?php endforeach; ?>
             </select></div>
             <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
         
@@ -1541,9 +1542,9 @@ class BuildMetaBox {
             <select id="m20t1_article_field" name="m20t1_article_field" style="margin-bottom:8px;display:block">
                 <?php 
                 $articleArr = ['Article', 'BlogPosting', 'SocialMediaPosting', 'NewsArticle', 'AdvertiserContentArticle', 'SatiricalArticle', 'ScholarlyArticle', 'TechArticle', 'Report', 'None'];
-                foreach ($articleArr as $value) { ?>
+                foreach ($articleArr as $value) : ?>
                     <option value="<?=$value;?>"><?=$value;?></option>
-                <?php } ?>
+                <?php endforeach; ?>
             </select></div>
             <script>document.getElementById('m20t1_article_field').selectedIndex = <?=array_search($pageArticle, $articleArr);?>;</script>
         </div>

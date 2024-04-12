@@ -1,8 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.1 Live (April 10, 2024)
+### 1.7.1 Live (April 12, 2024)
 
-* Bug fixes and code cleanup.
+* Bug fixes with the CSS.
+* Adjustments and additions to the schema presentation.
 
 ### 1.7.0 Live (March 30, 2024)
 

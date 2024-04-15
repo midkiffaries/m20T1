@@ -2,7 +2,7 @@
 
 ### 1.7.2 Live (April 30, 2024)
 
-* 
+* Main body layout has been switch to CSS grid.
 
 ### 1.7.1 Live (April 12, 2024)
 

@@ -69,19 +69,19 @@ Main Site Layout
 
 .width-side {
 	padding: 0.5em;
-	
 	display: grid;
 	grid-template-columns: auto var(--sidebar-width);
 	gap: 10px;
 }
 
 .width-full {
-	width: 100%;
+	width: var(--page-width);
 	float: none;
 	padding: 0.8rem;
 }
 
 .width-max {
+	width: 100%;
 	padding: 0;
 }
 

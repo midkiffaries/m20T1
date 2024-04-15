@@ -61,26 +61,27 @@ Main Site Layout
 ************************/
 
 /* Page main body layout */
-
 .page-main {
 	min-height: 30em;
 	width: var(--page-width);
 	margin: 0 auto;
 }
 
-.page-content.width-side {
-	width: calc(100% - var(--sidebar-width));
-	float: left;
+.width-side {
 	padding: 0.5em;
+	
+	display: grid;
+	grid-template-columns: auto var(--sidebar-width);
+	gap: 10px;
 }
 
-.page-content.width-full {
+.width-full {
 	width: 100%;
 	float: none;
 	padding: 0.8rem;
 }
 
-.page-content.width-max {
+.width-max {
 	padding: 0;
 }
 
@@ -92,9 +93,8 @@ Main Site Layout
 }
 
 @media (max-width: 849px) {
-	.page-content.width-side {
-		float: none !important;
-		width: 100% !important;
+	.width-side {
+		grid-template-columns: auto;
 		padding: 0 0.8em;
 	}
 
@@ -105,15 +105,8 @@ Main Site Layout
 
 /* Sidebar Layout */
 .page-sidebar {
-	width: var(--sidebar-width);
 	padding: 0.8em;
 	margin-top: 1em;
-	float: right;
-}
-
-.page-sidebar.width-full {
-	width: 100%;
-	float: none;
 }
 
 

@@ -1,8 +1,8 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-image <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content width-full">
+<main class="page-main page-image width-full <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+    <div class="page-content">
 
     <?php while ( have_posts() ) : the_post(); // Display selected media ?>
 

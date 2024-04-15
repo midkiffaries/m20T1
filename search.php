@@ -2,8 +2,8 @@
 <?php get_header(); ?>
 
 
-<main class="page-main page-search" id="main-content" itemscope itemtype="https://schema.org/SearchResultsPage" itemprop="mainEntity">
-    <div class="page-content width-side" role="feed">
+<main class="page-main page-search width-side" id="main-content" itemscope itemtype="https://schema.org/SearchResultsPage" itemprop="mainEntity">
+    <div class="page-content" role="feed">
 
     <?php if (have_posts() && get_search_query()) : // Search results ?>
 

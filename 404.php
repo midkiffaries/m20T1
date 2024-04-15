@@ -1,8 +1,8 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-error" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content width-full">
+<main class="page-main page-error width-full" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+    <div class="page-content">
 
     <article class="page-404 page type-page not-found status-publish" id="page-404" itemscope itemtype="https://schema.org/NewsArticle">
         <div class="page-404-container">

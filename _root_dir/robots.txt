@@ -1,12 +1,11 @@
 # https://www.robotstxt.org/robotstxt.html
 Sitemap: /sitemap.xml
 
+# WordPress
 User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 Allow: /wp-admin/load-scripts.php
 Allow: /wp-admin/load-styles.php
-
-User-agent: *
 Disallow: /search
 Disallow: /?s=

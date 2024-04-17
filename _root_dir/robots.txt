@@ -2,12 +2,11 @@
 Sitemap: /sitemap.xml
 
 User-agent: *
-Allow: /
-Disallow: /cgi-bin/
-Disallow: /tmp/
 Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
 Allow: /wp-admin/admin-ajax.php
 Allow: /wp-admin/load-scripts.php
 Allow: /wp-admin/load-styles.php
+
+User-agent: *
+Disallow: /search
+Disallow: /?s=

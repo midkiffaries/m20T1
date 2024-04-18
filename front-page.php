@@ -30,6 +30,7 @@
     </aside>
 
     <div class="page-last-updated hidden">
+        <time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time>
         <?php display_last_updated() ?>
     </div>
 </main>

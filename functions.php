@@ -316,7 +316,7 @@ add_action( 'wp_body_open', function(){
 add_action( 'wp_footer', function(){
 ?>
 <template id="Search-Modal">
-    <h3 class="search-title" itemprop="name">Search <?=bloginfo('name');?></h3>
+    <h3 class="search-title">Search <?=bloginfo('name');?></h3>
     <?=get_search_form('search-modal'); // Load searchform.php ?>
 </template>
 
@@ -700,7 +700,7 @@ function get_child_pages( $id, $thumbnail ) {
             <div class="child-card" id="child-card-<?=$child->ID;?>">
                 <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID));?>" rel="nofollow">
                     <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium'));?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
-                    <div class="child-card__title" role="caption" itemprop="name"><?=$child->post_title;?></div>
+                    <div class="child-card__title" role="caption"><?=$child->post_title;?></div>
                     <div class="child-card__text"><?=$child->post_excerpt;?></div>
                 </a>
             </div>

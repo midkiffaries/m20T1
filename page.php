@@ -10,7 +10,7 @@
             <div class="post-container">
                 <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
                 <!--p class="page-subtitle subtitle"><?=get_post_meta( $id, 'Page_Subtitle', true );?></p-->
-                <div class="the-content" itemprop="text articleBody">
+                <div class="the-content" itemprop="text articleBody description">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                     <?=custom_page_css(get_the_ID());?>
                 </div>

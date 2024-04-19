@@ -21,11 +21,12 @@
                     </select>
                     <script>document.getElementById('SortSearch').selectedIndex = <?=array_search(esc_attr($_GET['order']),['desc','asc']);?></script>
                     <select id="SortType" name="orderby">
+                        <option value="date">Date</option>
                         <option value="title">Title</option>
                         <option value="type">Type</option>
                         <option value="author">Author</option>
                     </select>
-                    <script>document.getElementById('SortType').selectedIndex = <?=array_search(esc_attr($_GET['orderby']),['title','type','author']);?></script>
+                    <script>document.getElementById('SortType').selectedIndex = <?=array_search(esc_attr($_GET['orderby']),['date','title','type','author']);?></script>
                 </form>
             </search>
         </div>

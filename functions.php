@@ -665,7 +665,7 @@ class Menu_With_Description extends Walker_Nav_Menu {
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        $item_output .= '<br><span class="menu-item-sub">' . $item->description . '</span>';
+        $item_output .= ' <span class="menu-item-sub">' . $item->description . '</span>';
         $item_output .= '</a>';
         $item_output .= $args->after;
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -716,7 +716,7 @@ function get_child_pages( $id, $thumbnail ) {
 // Get the number of times this keyword comes up in search queries
 function SearchCount( $query ) {
     $count = 0;
-    if ($query == null) $query = '%XZT89%11321X$';
+    if ($query == null) $query = '%XZT89%11321X$'; // Catch blank to show 0
     $search = new WP_Query("s=$query & showposts=-1");
     if ($search->have_posts()) {
         while ($search->have_posts()) {

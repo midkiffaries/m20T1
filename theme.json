@@ -28,6 +28,9 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+			"defaultDuotone": true,
+			"defaultPalette": true,
+			"defaultGradients": true,
 			"palette": [
 				{
 					"color": "#ffffff",
@@ -111,14 +114,7 @@
 					"name": "6"
 				}
 			],
-			"units": [
-				"%",
-				"px",
-				"em",
-				"rem",
-				"vh",
-				"vw"
-			]
+			"units": ["%", "px", "em", "rem", "vh", "vw"]
 		},
 		"typography": {
 			"dropCap": true,
@@ -126,18 +122,18 @@
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
-					"name": "System Font",
+					"name": "System Sans",
 					"slug": "system-font"
-				},
-				{
-					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, Roboto Mono, Liberation Mono, monospace",
-					"name": "System Mono",
-					"slug": "system-mono"
 				},
 				{
 					"fontFamily": "Georgia, Droid Serif, Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
 					"name": "System Serif",
 					"slug": "system-serif"
+				},
+				{
+					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, Roboto Mono, Liberation Mono, monospace",
+					"name": "System Mono",
+					"slug": "system-mono"
 				}
 			],
 			"fontSizes": [

@@ -4,24 +4,17 @@
 	"customTemplates": [
 		{
 			"name": "blank",
-			"postTypes": [
-				"page",
-				"post"
-			],
+			"postTypes": ["page", "post"],
 			"title": "Blank"
 		},
 		{
 			"name": "blog-alternative",
-			"postTypes": [
-				"page"
-			],
+			"postTypes": ["page"],
 			"title": "Blog (Alternative)"
 		},
 		{
 			"name": "404",
-			"postTypes": [
-				"page"
-			],
+			"postTypes": ["page"],
 			"title": "404"
 		}
 	],

@@ -2,7 +2,8 @@
 <?php get_header(); ?>
 
 <main class="page-main page-blog-posts width-side" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content XXXwidth-side">
+    
+    <div class="page-content">
 
     <section class="blog-page-title" itemprop="name headline">
         <?=GetPageTitle(get_option('page_for_posts')); // Get blog page title and content ?>

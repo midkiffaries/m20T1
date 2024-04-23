@@ -4,6 +4,7 @@
 <?php get_header(); ?>
 
 <main class="page-main width-full page-<?=$pageKind;?> <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">
+    
     <div class="page-content">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -37,6 +38,7 @@
         </aside>
 
     </div>
+    
 </main>
 
 <?php get_footer(); ?>

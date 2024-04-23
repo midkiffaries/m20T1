@@ -3,6 +3,7 @@
 <?php get_header(); ?>
 
 <main class="page-main page-product width-full <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+    
     <div class="page-content">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -30,6 +31,7 @@
         </aside>
 
     </div>
+    
 </main>
 
 <?php get_footer(); ?>

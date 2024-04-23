@@ -3,7 +3,8 @@
 <?php get_header(); ?>
 
 <main class="page-main width-full archive-<?=$pageKind;?> " id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
-    <div class="page-content" role="feed">
+    
+    <div class="page-content">
     
     <?php if (have_posts()) : // Has post items ?>
         <?php $postType = get_post_type_object(get_post_type()); ?>

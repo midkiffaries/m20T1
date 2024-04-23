@@ -3,6 +3,7 @@
 <?php get_header(); ?>
 
 <main class="page-main-wide width-max page-landing-page <?=get_page_class(); ?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">
+    
     <div class="page-content">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?> 
@@ -33,6 +34,7 @@
         <time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time>
         <?php display_last_updated() ?>
     </div>
+
 </main>
 
 <?php get_footer(); ?>

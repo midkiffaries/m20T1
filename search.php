@@ -3,7 +3,8 @@
 
 
 <main class="page-main page-search width-side" id="main-content" itemscope itemtype="https://schema.org/SearchResultsPage" itemprop="mainEntity">
-    <div class="page-content" role="feed">
+    
+    <div class="page-content">
 
     <?php if (have_posts() && get_search_query()) : // Search results ?>
 

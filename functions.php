@@ -960,7 +960,7 @@ function get_file_extension( $path ) {
 
 // Get proper attachment image or use a document placeholder
 function attachment_page_image( $id ) {
-    $image_ext = ['jpg', 'jpeg', 'png', 'jp2', 'gif', 'webp', 'ico', 'avif'];
+    $image_ext = ['jpg', 'jpeg', 'jp2', 'png', 'gif', 'webp', 'ico', 'heic', 'avif'];
     $video_ext = ['mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2'];
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));

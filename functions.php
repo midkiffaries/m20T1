@@ -695,8 +695,7 @@ function get_child_pages( $id, $thumbnail ) {
     <?php endif; ?>
 
     <div class="child-block">
-        <?php // Loop to create each card ?>
-        <?php foreach ($page_children as $child) : // Display all the child pages ?>
+        <?php foreach ($page_children as $child) : // Loop and display all the child cards ?>
             <div class="child-card" id="child-card-<?=$child->ID;?>">
                 <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID));?>" rel="nofollow">
                     <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium'));?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>

@@ -663,7 +663,7 @@ class Menu_With_Description extends Walker_Nav_Menu {
         $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
         $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
         $item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
+        $item_output .= '<a '. $attributes .'>';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
         $item_output .= ' <span class="menu-item-sub">' . $item->description . '</span>';
         $item_output .= '</a>';
@@ -688,15 +688,15 @@ function get_child_pages( $id, $thumbnail ) {
         'exclude'        => 0,
         'child_of'       => $id,
     ]);
+    ?>
 
-    // Display section header
-    if ($page_children) : ?>
+    <?php if ($page_children) : // Display section header ?>
         <h2 class="child-title">Related Pages</h2>
     <?php endif; ?>
 
     <div class="child-block">
-        <?php // Loop to create each card
-        foreach ($page_children as $child) : // Display all the child pages ?>
+        <?php // Loop to create each card ?>
+        <?php foreach ($page_children as $child) : // Display all the child pages ?>
             <div class="child-card" id="child-card-<?=$child->ID;?>">
                 <a class="child-card__link" href="<?=esc_url(get_permalink($child->ID));?>" rel="nofollow">
                     <div class="child-card__image"><img src="<?=esc_url(get_the_post_thumbnail_url($child->ID, 'medium'));?>" loading="lazy" decoding="async" alt="" fetchpriority="low"></div>
@@ -705,7 +705,8 @@ function get_child_pages( $id, $thumbnail ) {
                 </a>
             </div>
         <?php endforeach; ?>
-    </div><?php
+    </div>
+    <?php
 }
 
 

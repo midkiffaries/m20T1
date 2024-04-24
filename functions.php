@@ -931,6 +931,11 @@ function Header_Hero( $id ) {
 // WordPress Blog Post Functions
 //////////////////////////////////
 
+// Check if client is a mobile device
+function isMobileDevice() { 
+    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]); 
+}
+
 // Display the date of the last entry update
 function display_last_updated() {
     ?><p><?php 
@@ -955,7 +960,7 @@ function get_file_extension( $path ) {
 
 // Get proper attachment image or use a document placeholder
 function attachment_page_image( $id ) {
-    $image_ext = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'ico', 'avif'];
+    $image_ext = ['jpg', 'jpeg', 'png', 'jp2', 'gif', 'webp', 'ico', 'avif'];
     $video_ext = ['mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2'];
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));

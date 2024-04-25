@@ -900,10 +900,10 @@ function Header_Hero( $id ) {
     } elseif ( is_page() ) { // Single Page header (Use featured image)
         $className = "single-page";
         $hasFeaturedImage = true;
-    } elseif ( is_single() ) { // Single blog post or portfolio (Use featured image)
+    } elseif ( is_single() ) { // Single blog post or single portfolio (Use featured image)
         $className = "single-post";
         $hasFeaturedImage = true;
-    } else { // Blog Page, portfolio page, search page and archives header (No header image)
+    } else { // Blog Page, portfolios page, search page and archives header (No header image)
         $className = "noimage";
         $hasFeaturedImage = false;
     }
@@ -911,7 +911,8 @@ function Header_Hero( $id ) {
     // Get the featured image and image caption if exists or fallback to blank image
     if ($hasFeaturedImage) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
-        $attachmentTitle = '<a href="'. home_url() . '/?p='.get_post_thumbnail_id($id).'" itemprop="url">' . wp_get_attachment_caption(get_post_thumbnail_id($id)) . '</a>';
+        $featuredCap = wp_get_attachment_caption(get_post_thumbnail_id($id)) ? wp_get_attachment_caption(get_post_thumbnail_id($id)) : "View featured image";
+        $attachmentTitle = '<a href="' . home_url() . '/?p=' . get_post_thumbnail_id($id) . '" itemprop="url">' . $featuredCap . '</a>';
     } else {
         $attachmentTitle = '';
     }
@@ -925,6 +926,7 @@ function Header_Hero( $id ) {
         </div>
     <?php
 }
+// ^^^ Rework to include <video> and fallbacks and new image display
 
 
 //////////////////////////////////

@@ -144,6 +144,14 @@ Site Header
 	height: 2.5em;
 }
 
+.header-hero-video {
+	width: 100%;
+	height: 100%;
+	position:a bsolute;
+	top: 0;
+	pointer-events: none;
+}
+
 .header-hero-caption {
 	right: 16px; 
 	bottom: 5px; 

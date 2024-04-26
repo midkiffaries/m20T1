@@ -917,10 +917,18 @@ function Header_Hero( $id ) {
         $attachmentTitle = '';
     }
 
+    // Check if hero video has a valid URL
+    $videoUrl = get_post_meta( get_the_id(), 'Page_Video', true );
+    if (filter_var($videoUrl, FILTER_VALIDATE_URL)) {
+        $videoTag = '<video class="header-hero-video" autoplay muted loop><source src="'.$videoUrl.'" type="video/mp4"></video>';
+    } else {
+        $videoTag = '';
+    }
+
     // Header Hero HTML
     ?>
         <div class="header-hero-image header-<?=$className;?>" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
-            <video class="header-hero-video" style="width:100%;height:100%;position:absolute;top:0;cursor-events:none" autoplay muted loop><source src="<?=get_post_meta( get_the_id(), 'Page_Video', true );?>" type="video/mp4"></video>
+            <?=$videoTag;?>
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
             <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle;?></div>

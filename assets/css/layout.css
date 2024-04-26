@@ -150,6 +150,12 @@ Site Header
 	position:a bsolute;
 	top: 0;
 	pointer-events: none;
+	animation: VidFadeIn 1s;
+}
+
+@keyframes VidFadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 .header-hero-caption {

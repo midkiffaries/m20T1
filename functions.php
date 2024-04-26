@@ -789,7 +789,7 @@ function image_metadata( $filename ) {
         list($width, $height, $type, $attr) = getimagesize($filename);
         return "File: " . image_type_to_mime_type($type) . " – Dimensions: {$width}x{$height}px – Size: {$filesize}";
     } else {
-        return "File: document – Size: {$filesize}";
+        return "File: " . mime_content_type(get_filepath($filename)) . " – Size: {$filesize}";
     }
 }
 
@@ -920,7 +920,7 @@ function Header_Hero( $id ) {
     // Check if hero video has a valid URL
     $videoUrl = get_post_meta( get_the_id(), 'Page_Video', true );
     if (filter_var($videoUrl, FILTER_VALIDATE_URL)) {
-        $videoTag = '<video class="header-hero-video" autoplay muted loop><source src="'.$videoUrl.'" type="video/mp4"></video>';
+        $videoTag = '<video class="header-hero-video" autoplay muted loop><source src="'.$videoUrl.'" type="'.mime_content_type($videoUrl).'"></video>';
     } else {
         $videoTag = '';
     }

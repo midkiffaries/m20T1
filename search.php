@@ -20,6 +20,7 @@
                         <option value="desc">Newest</option>
                         <option value="asc">Oldest</option>
                     </select>
+                    <label><b>BY</b></label>
                     <script>document.getElementById('SortSearch').selectedIndex = <?=array_search(esc_attr($_GET['order']),['desc','asc']);?></script>
                     <select id="SortType" name="orderby">
                         <option value="date">Date</option>

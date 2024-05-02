@@ -33,7 +33,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Built in support for <b>additional post types</b>, default set as "Portfolio" (hardcoded)
 - Built in blog post read time in minutes and page load time.
 - Enabled <b>SVG</b> support, <b>GLB</b> models and iCal/vCard files upload to media library
-- Support for <i>@print</i> for the entire site
+- Support for <i>@print</i> for all the pages
 
 ## Todo List
 - Seperating my personallized styling from the CSS

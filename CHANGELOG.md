@@ -2,7 +2,7 @@
 
 ### 1.7.2 Live (May 1, 2024)
 
-* Main body layout has been switch to CSS grid.
+* The main body layout has been switched to CSS grid.
 * Videos can be used in the header/hero image slot.
 * Adjustments and bug fixes.
 

@@ -1,7 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-
 <main class="page-main page-search width-side" id="main-content" itemscope itemtype="https://schema.org/SearchResultsPage" itemprop="mainEntity">
     
     <div class="page-content">

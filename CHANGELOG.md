@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.2 Live (May 2, 2024)
+### 1.7.2 Live (May 1, 2024)
 
 * Main body layout has been switch to CSS grid.
 * Videos can be used in the header/hero image slot.

@@ -36,7 +36,6 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Support for <i>@print</i> for the entire site
 
 ## Todo List
-- Make adjustments to <code>layout.css</code> and move the page layout to CSS Grid
 - Seperating my personallized styling from the CSS
 
 ## How to use this theme

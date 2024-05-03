@@ -1,5 +1,10 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.7.3 Live (May 20, 2024)
+
+* Moved a few things around.
+* Optimizations and adjustments.
+
 ### 1.7.2 Live (May 1, 2024)
 
 * The main body layout has been switched to CSS grid.

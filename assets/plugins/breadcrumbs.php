@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @param  array $args Arguments to pass to Breadcrumb_Trail.
  * @return void
  */
-function breadcrumb_trail( $args = array() ) {
+function breadcrumb_trail( $args = [] ) {
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
@@ -59,7 +59,7 @@ class Breadcrumb_Trail {
 	 * @access public
 	 * @var    array
 	 */
-	public $items = array();
+	public $items = [];
 
 	/**
 	 * Arguments used to build the breadcrumb trail.
@@ -68,7 +68,7 @@ class Breadcrumb_Trail {
 	 * @access public
 	 * @var    array
 	 */
-	public $args = array();
+	public $args = [];
 
 	/**
 	 * Array of text labels.
@@ -77,7 +77,7 @@ class Breadcrumb_Trail {
 	 * @access public
 	 * @var    array
 	 */
-	public $labels = array();
+	public $labels = [];
 
 	/**
 	 * Array of post types (key) and taxonomies (value) to use for single post views.
@@ -86,7 +86,7 @@ class Breadcrumb_Trail {
 	 * @access public
 	 * @var    array
 	 */
-	public $post_taxonomy = array();
+	public $post_taxonomy = [];
 
 	/* ====== Magic Methods ====== */
 
@@ -125,9 +125,9 @@ class Breadcrumb_Trail {
 	 * }
 	 * @return void
 	 */
-	public function __construct( $args = array() ) {
+	public function __construct( $args = [] ) {
 
-		$defaults = array(
+		$defaults = [
 			'container'       => 'nav',
 			'before'          => '',
 			'after'           => '',
@@ -138,10 +138,10 @@ class Breadcrumb_Trail {
 			'network'         => false,
 			'show_title'      => true,
 			'show_browse'     => true,
-			'labels'          => array(),
-			'post_taxonomy'   => array(),
+			'labels'          => [],
+			'post_taxonomy'   => [],
 			'echo'            => true
-		);
+		];
 
 		// Parse the arguments with the deaults.
 		$this->args = apply_filters( 'breadcrumb_trail_args', wp_parse_args( $args, $defaults ) );
@@ -263,7 +263,7 @@ class Breadcrumb_Trail {
 	 */
 	protected function set_labels() {
 
-		$defaults = array(
+		$defaults = [
 			'browse'              => esc_html__( 'Browse:',                               'breadcrumb-trail' ),
 			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'breadcrumb-trail' ),
 			'home'                => esc_html__( 'Home',                                  'breadcrumb-trail' ),
@@ -286,7 +286,7 @@ class Breadcrumb_Trail {
 			'archive_day'         => '%s',
 			'archive_month'       => '%s',
 			'archive_year'        => '%s',
-		);
+		];
 
 		$this->labels = apply_filters( 'breadcrumb_trail_labels', wp_parse_args( $this->args['labels'], $defaults ) );
 	}
@@ -301,7 +301,7 @@ class Breadcrumb_Trail {
 	 */
 	protected function set_post_taxonomy() {
 
-		$defaults = array();
+		$defaults = [];
 
 		// If post permalink is set to `%postname%`, use the `category` taxonomy.
 		if ( '%postname%' === trim( get_option( 'permalink_structure' ), '/' ) )
@@ -825,7 +825,7 @@ class Breadcrumb_Trail {
 
 		// Add the week item.
 		if ( is_paged() )
-			$this->items[] = esc_url( get_archives_link( add_query_arg( array( 'm' => get_the_time( 'Y' ), 'w' => get_the_time( 'W' ) ), home_url() ), $week, false ) );
+			$this->items[] = esc_url( get_archives_link( add_query_arg( [ 'm' => get_the_time( 'Y' ), 'w' => get_the_time( 'W' ) ], home_url() ), $week, false ) );
 
 		elseif ( true === $this->args['show_title'] )
 			$this->items[] = $week;
@@ -937,7 +937,7 @@ class Breadcrumb_Trail {
 	 * @return void
 	 */
 	protected function add_post_parents( $post_id ) {
-		$parents = array();
+		$parents = [];
 
 		while ( $post_id ) {
 
@@ -1035,9 +1035,9 @@ class Breadcrumb_Trail {
 	 */
 	protected function get_post_types_by_slug( $slug ) {
 
-		$return = array();
+		$return = [];
 
-		$post_types = get_post_types( array(), 'objects' );
+		$post_types = get_post_types( [], 'objects' );
 
 		foreach ( $post_types as $type ) {
 
@@ -1157,7 +1157,7 @@ class Breadcrumb_Trail {
 	function add_term_parents( $term_id, $taxonomy ) {
 
 		// Set up some default arrays.
-		$parents = array();
+		$parents = [];
 
 		// While there is a parent ID, add the parent term link to the $parents array.
 		while ( $term_id ) {

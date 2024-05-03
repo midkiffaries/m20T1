@@ -113,7 +113,7 @@
                     } else if ( is_date() ) { // By date
                         printf("There are no posts from that date");
                     } else if ( is_author() ) { // By author
-                        printf("%s has no posts", $curauth->display_name);
+                        printf("There are no posts by %s", $curauth->display_name);
                     } else { // No posts found
                         printf("No posts found");
                     }

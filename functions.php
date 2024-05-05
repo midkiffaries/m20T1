@@ -1283,7 +1283,7 @@ function m20T1_settings_page() {
                 <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="same_as_url">Social Profile URLs</label></th>
+                <th scope="row"><label for="same_as_url">Social Profiles URLs</label></th>
                 <td><textarea name="same_as_url" id="same_as_url" placeholder="Comma separated URLs (eg. https://www.facebook/userProfile/)"><?=get_option('same_as_url');?></textarea></td>
             </tr>
         </table>
@@ -1308,23 +1308,23 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image (URL)</label></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image'));?>"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image'));?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Image (URL)</label></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"></td>
             </tr>
         </table>
         <h2>Default and Fallback Images</h2>
         <p>Set the fallback image for the social media sharing metadata and featured image.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
-                <th scope="row"><label for="social_image">Site Image Fallback (URL)</label></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image'));?>"></td>
+                <th scope="row"><label for="social_image">Social Image Fallback (URL)</label></th>
+                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image'));?>"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Featured Image Fallback (URL)</label></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image'));?>"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image'));?>"></td>
             </tr>
         </table>
         <h2>Main Contact Form</h2>
@@ -1335,8 +1335,8 @@ function m20T1_settings_page() {
                 <td><textarea name="contact_shortcode" id="contact_shortcode" class="code" placeholder="[shortcode]" rows="2" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=sanitize_text_field(get_option('contact_shortcode'));?></textarea> <small>Allowed HTML tags: <b>&lt;form&gt; &lt;input&gt; &lt;textarea&gt; &lt;button&gt; &lt;p&gt; &lt;label&gt;</b></small></td>
             </tr>
         </table>
-        <h2>Additional Metadata and Scripts</h2>
-        <p>For inserting Google Analytics, fonts, scripts and other metadata into the header and footer.</p>
+        <h2>Additional Global Metadata and Scripts</h2>
+        <p>For inserting 3rd-party analytics, 3rd-party fonts, external scripts and other metadata into the site header and footer.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label> <br><small>These scripts will be placed inside the &lt;head&gt; tag.</small></th>

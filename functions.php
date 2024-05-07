@@ -1315,7 +1315,7 @@ function m20T1_settings_page() {
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"> <img src="<?=esc_attr(get_option('search_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
             </tr>
         </table>
-        <h2>Default and Fallback Images</h2>
+        <h2>Placeholder and Fallback Images</h2>
         <p>Set the fallback image for the social media sharing metadata and featured image.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">

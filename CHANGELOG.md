@@ -2,7 +2,7 @@
 
 ### 1.7.3 Live (May 7, 2024)
 
-* Image previews in the Theme Settings page.
+* Added image previews in the Theme Settings page.
 * Removal of some of my personal branding.
 * Overall optimizations, bug fixes and adjustments.
 

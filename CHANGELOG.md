@@ -1,10 +1,10 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.3 Live (May 20, 2024)
+### 1.7.3 Live (May 7, 2024)
 
-* Moved a few things around.
-* More personal branding removal.
-* Optimizations and adjustments.
+* Image previews in the Theme Settings page.
+* Removal of some of my personal branding.
+* Overall optimizations, bug fixes and adjustments.
 
 ### 1.7.2 Live (May 1, 2024)
 

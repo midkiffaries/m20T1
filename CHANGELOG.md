@@ -3,6 +3,7 @@
 ### 1.7.3 Live (May 20, 2024)
 
 * Moved a few things around.
+* More personal branding removal.
 * Optimizations and adjustments.
 
 ### 1.7.2 Live (May 1, 2024)

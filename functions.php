@@ -1277,7 +1277,7 @@ function m20T1_settings_page() {
                 <?php 
                 $phoneArr = ['sales', 'customer support', 'technical support', 'billing support', 'emergency'];
                 foreach ($phoneArr as $value) : ?>
-                    <option value="<?=$value;?>"><?=$value;?></option>
+                    <option value="<?=$value;?>"><?=ucwords($value);?></option>
                 <?php endforeach; ?>
                 </select></td>
                 <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>

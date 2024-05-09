@@ -713,6 +713,23 @@ function get_child_pages( $id, $thumbnail ) {
 // Specialized Functions
 /////////////////////////////
 
+// Shortcode implementation for displaying additional post types in the editor
+// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1"]
+add_shortcode('list-posts', function( $atts, $content = null ){
+    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0], $atts));
+    query_posts(['orderby' => esc_html( $atts['date'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
+
+    if (have_posts()) { // List each item
+        while (have_posts()) : the_post();
+            if ($atts['thumbnail']) $thumbnail = get_the_post_thumbnail($post_id, 'medium');
+            $return_string .= '<li><a href="'.get_permalink().'">'.$thumbnail.get_the_title().'</a><span>'.get_the_excerpt().'</span></li>';
+        endwhile;
+    }
+
+    wp_reset_query();
+    return "<ul class='list-posts-".esc_html( $atts['post_type'] )."'>".$return_string."</ul>";
+});
+
 // Get the number of times this keyword comes up in search queries
 function SearchCount( $query ) {
     $count = 0;
@@ -794,9 +811,9 @@ function image_metadata( $filename ) {
 }
 
 
-/////////////////////////////
-// SEO and Header Functions
-/////////////////////////////
+////////////////////////////////////
+// SEO and Header Metadata Functions
+////////////////////////////////////
 
 // Swaps certain special characters with words for SEO purposes
 function SEO_CharSwap( $string ) {
@@ -843,9 +860,9 @@ function SEO_Image( $id ) {
 }
 
 
-/////////////////////////////
-// Featured Image Fallbacks
-/////////////////////////////
+///////////////////////////////////
+// Featured and Hero/Header Images
+///////////////////////////////////
 
 // Get the post/page featured image url or use fallback if none available ($size = thumbnail, medium, medium_large, large, full)
 function FeaturedImageURL( $id, $size, $isBackground ) {
@@ -1590,20 +1607,3 @@ class BuildMetaBox {
         <?php
     }
 }
-
-
-// Shortcode implementation for displaying additional post types in the editor
-// [recent-posts posts="5" post_type="portfolio" order="asc" orderby="title"]
-add_shortcode('recent-posts', function($atts, $content = null){
-    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title'], $atts));
-    query_posts(['orderby' => esc_html( $atts['date'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
-
-    if (have_posts()) {
-        while (have_posts()) : the_post();
-            $return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
-        endwhile;
-    }
-
-    wp_reset_query();
-    return "<ul>{$return_string}</ul>";
-});

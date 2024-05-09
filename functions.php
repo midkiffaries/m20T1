@@ -731,11 +731,7 @@ function get_filepath( $fileurl ) {
 // Append the proper size units to a numerical file size 
 function file_units( $filesize ) {
     $filesizeunits = [' Bytes', ' KB', ' MB', ' GB', ' TB'];
-	if ($filesize) {
-        return round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 1) . $filesizeunits[$i];
-    } else {
-        return 'N/A';
-    }
+    return $filesize ? round($filesize/pow(1024, ($i = floor(log($filesize, 1024)))), 1) . $filesizeunits[$i] : 'N/A';
 }
 
 // Get the the image information and file size

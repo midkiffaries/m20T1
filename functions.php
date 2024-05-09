@@ -668,15 +668,16 @@ function get_child_pages( $id, $thumbnail ) {
 /////////////////////////////
 
 // Shortcode implementation for displaying additional post types in the editor
-// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1"]
+// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1"]
 add_shortcode('list-posts', function( $atts, $content = null ){
-    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0], $atts));
+    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0], $atts));
     query_posts(['orderby' => esc_html( $atts['date'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
 
     if (have_posts()) { // List each item
         while (have_posts()) : the_post();
-            if ($atts['thumbnail']) $thumbnail = get_the_post_thumbnail($post_id, 'medium');
-            $return_string .= '<li><a href="'.get_permalink().'">'.$thumbnail.'<span class="list-posts-title">'.get_the_title().'</span></a><span class="list-posts-text">'.get_the_excerpt().'</span></li>';
+            $atts['thumbnail'] ? $thumbnail = get_the_post_thumbnail($post_id, 'medium') : $thumbnail = '';
+            $atts['excerpt'] ? $excerpt = get_the_excerpt() : $excerpt = '';
+            $return_string .= '<li><a href="'.get_permalink().'">'.$thumbnail.'<span class="list-posts-title">'.get_the_title().'</span></a><span class="list-posts-text">'.$excerpt.'</span></li>';
         endwhile;
     }
 
@@ -1119,7 +1120,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
         <li><code>old-photo</code> - Ages an image</li>
     </ul>
-    <p>Shortcode: <code>[list-posts posts="20" post_type="portfolio" order="asc" orderby="title" thumbnail="1"]</code></p>
+    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1"]</code></p>
     <?php
     }
 });

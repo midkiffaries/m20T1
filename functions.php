@@ -299,20 +299,6 @@ add_filter( 'excerpt_more', function(){
     return '<span class="entry-read-more" aria-label="Read more">'.MORE_TEXT.'</span>';
 });
 
-// Add custom message to login screen
-add_filter( 'login_message', function(){
-?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:80%']);?></div>
-<?php
-});
-
-// Change the WordPress editor's footer text
-add_filter( 'admin_footer_text', function(){
-?>
-<i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 <?=THEME_VERSION;?></a>.</i>
-<?php
-});
-
 // Add addition file types uploadable to the Media Library
 add_filter( 'upload_mimes', function($mimes){
     $mimes['svg|svgz']   = 'image/svg+xml'; // SVG image
@@ -668,16 +654,14 @@ function get_child_pages( $id, $thumbnail ) {
 /////////////////////////////
 
 // Shortcode implementation for displaying additional post types in the editor
-// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1"]
+// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category=""]
 add_shortcode('list-posts', function( $atts, $content = null ){
-    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0], $atts));
+    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'category' => ''], $atts));
     query_posts(['orderby' => esc_html( $atts['orderby'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
 
     if (have_posts()) { // List each item
         while (have_posts()) : the_post();
-            $atts['thumbnail'] ? $thumbnail = get_the_post_thumbnail($post_id, 'medium') : $thumbnail = '';
-            $atts['excerpt'] ? $excerpt = get_the_excerpt() : $excerpt = '';
-            $return_string .= '<li><a href="'.get_permalink().'">'.$thumbnail.'<span class="list-posts-title">'.get_the_title().'</span></a><span class="list-posts-text">'.$excerpt.'</span></li>';
+            $return_string .= '<li><a href="'.get_permalink().'">'.($atts['thumbnail'] ? get_the_post_thumbnail($post_id, 'medium') : '').'<span class="list-posts-title">'.get_the_title().'</span></a><span class="list-posts-text">'.($atts['excerpt'] ? get_the_excerpt() : '').'</span></li>';
         endwhile;
     }
 
@@ -1078,6 +1062,20 @@ function schemaNavigation( $menu_name ) {
 // Admin: Dashboard and global settings
 /////////////////////////////////////////////////
 
+// Add custom message to login screen
+add_filter( 'login_message', function(){
+?>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:80%']);?></div>
+<?php
+});
+
+// Change the WordPress editor's footer text
+add_filter( 'admin_footer_text', function(){
+?>
+<i><a href="https://www.wordpress.org/" target="_blank">WordPress</a> theme brought to you with 💙 by <a href="https://github.com/midkiffaries/m20T1" target="_blank">m20T1 <?=THEME_VERSION;?></a>.</i>
+<?php
+});
+
 // Add custom post type to the dashboard "At a Glance" card
 add_action( 'dashboard_glance_items', function(){
     $post_types = get_post_types( [ '_builtin' => false ], 'objects' );
@@ -1120,7 +1118,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
         <li><code>old-photo</code> - Ages an image</li>
     </ul>
-    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1"]</code></p>
+    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category=""]</code></p>
     <?php
     }
 });
@@ -1230,7 +1228,7 @@ function users_last_login() {
 
 
 /////////////////////////////////////////////////
-// Admin: Additional Setting Page
+// Admin: Theme Additional Settings Page
 /////////////////////////////////////////////////
 
 // Create new menu under the Appearance section
@@ -1601,7 +1599,6 @@ class BuildMetaBox {
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Post Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
 		</label></div>
-
         <style>
         @media(min-width:700px) {
             .components-base-control__cols {

@@ -215,21 +215,6 @@ add_action( 'init', function(){
     }
 });
 
-// Add custom post type to the dashboard "At a Glance" card
-add_action( 'dashboard_glance_items', function(){
-    $post_types = get_post_types( [ '_builtin' => false ], 'objects' );
-    foreach ( $post_types as $post_type ) {
-        $num_posts = wp_count_posts( $post_type->name );
-        $num = number_format_i18n( $num_posts->publish );
-        $text = _n( $post_type->labels->singular_name, $post_type->labels->singular_name, $num_posts->publish );
-        foreach (ADDITIONAL_POST_TYPE as [$type]) {
-            if ( current_user_can( 'edit_posts' ) && $text == $type ) {
-                echo '<li class="' . $post_type->capability_type . '-count-X"><a href="edit.php?post_type=' . $post_type->name . '" class="cust-post"><span class="dashicons ' . $post_type->menu_icon . '" style="padding-right:5px"></span>' . $num . ' ' . $text . 's</a><style>.cust-post:before{content:" " !important}</style></li>';
-            }
-        }
-    }
-});
-
 // Append HTML metadata to the page head tag
 add_action( 'wp_head', function(){
 ?>
@@ -273,37 +258,6 @@ add_action( 'wp_head', function(){
 <?php 
 echo allow_html_metadata(get_option('head_metadata')); // Post user metadata
 schemaJSONData(); // Post Schema JSON
-});
-
-// Settings for the Admin floating toolbar and WordPress dashboard and editor
-add_action( 'admin_head', function(){
-?>
-<style type="text/css">
-.wp-admin .column-post_views {width:3em}
-.wp-admin .column-thumbnail {width:7em}
-.wp-admin .media-icon .attachment-60x60 {min-width:60px}
-.wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
-.wp-admin .user-url-wrap input.code {font-family:inherit}
-</style>
-<?php
-});
-
-// Add a panel to the dashboard with additional theme info
-add_action('wp_dashboard_setup', function(){
-    wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
-    function custom_dashboard_text() {
-    ?>
-    <p>List of built-in CSS classes to use in the editor:</p>
-    <ul>
-        <li><code>subtitle</code> - Defines the page subtitle</li>
-        <li><code>alignjustify</code> - Justifies a text block</li>
-        <li><code>hidden</code> - Hides a block from view</li>
-        <li><code>fancy-border</code> - Adds a fancy border</li>
-        <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
-        <li><code>old-photo</code> - Ages an image</li>
-    </ul>
-    <?php
-    }
 });
 
 // Append to the top of the page body tag
@@ -1117,6 +1071,58 @@ function schemaNavigation( $menu_name ) {
         <?php endforeach;
 	}
 }
+
+
+/////////////////////////////////////////////////
+// Admin: Dashboard and global settings
+/////////////////////////////////////////////////
+
+// Add custom post type to the dashboard "At a Glance" card
+add_action( 'dashboard_glance_items', function(){
+    $post_types = get_post_types( [ '_builtin' => false ], 'objects' );
+    foreach ( $post_types as $post_type ) {
+        $num_posts = wp_count_posts( $post_type->name );
+        $num = number_format_i18n( $num_posts->publish );
+        $text = _n( $post_type->labels->singular_name, $post_type->labels->singular_name, $num_posts->publish );
+        foreach (ADDITIONAL_POST_TYPE as [$type]) {
+            if ( current_user_can( 'edit_posts' ) && $text == $type ) {
+                echo '<li class="'.$post_type->capability_type.'-count-X"><a href="edit.php?post_type='.$post_type->name.'" class="cust-post"><span class="dashicons '.$post_type->menu_icon.'" style="padding-right:5px"></span>'.$num.' '.$text.'s</a><style>.cust-post:before{content:"" !important;margin-left:-5px}</style></li>';
+            }
+        }
+    }
+});
+
+// Settings for the Admin floating toolbar and WordPress dashboard and editor
+add_action( 'admin_head', function(){
+?>
+<style type="text/css">
+.wp-admin .column-post_views {width:3em}
+.wp-admin .column-thumbnail {width:7em}
+.wp-admin .media-icon .attachment-60x60 {min-width:60px}
+.wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
+.wp-admin .user-url-wrap input.code {font-family:inherit}
+</style>
+<?php
+});
+
+// Add a panel to the dashboard with additional theme info
+add_action('wp_dashboard_setup', function(){
+    wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
+    function custom_dashboard_text() {
+    ?>
+    <p>List of built-in CSS classes to use in the editor:</p>
+    <ul>
+        <li><code>subtitle</code> - Defines the page subtitle</li>
+        <li><code>alignjustify</code> - Justifies a text block</li>
+        <li><code>hidden</code> - Hides a block from view</li>
+        <li><code>fancy-border</code> - Adds a fancy border</li>
+        <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
+        <li><code>old-photo</code> - Ages an image</li>
+    </ul>
+    <p>Shortcode: <code>[list-posts posts="20" post_type="portfolio" order="asc" orderby="title" thumbnail="1"]</code></p>
+    <?php
+    }
+});
 
 
 /////////////////////////////////////////////////

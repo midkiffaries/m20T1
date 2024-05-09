@@ -2,6 +2,7 @@
 
 ### 1.7.4 Live (May 20, 2024)
 
+* Shortcode implementation for listing all post types.
 * Bug fixes and QoL improvements.
 
 ### 1.7.3 Live (May 7, 2024)

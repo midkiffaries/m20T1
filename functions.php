@@ -659,8 +659,8 @@ add_shortcode('list-posts', function( $atts, $content = null ){
     extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'category' => ''], $atts));
     query_posts(['orderby' => esc_html( $atts['orderby'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
 
-    if (have_posts()) { // List each item
-        while (have_posts()) : the_post();
+    if (have_posts()) { 
+        while (have_posts()) : the_post(); // List each item
             $return_string .= '<li><a href="'.get_permalink().'">'.($atts['thumbnail'] ? get_the_post_thumbnail($post_id, 'medium') : '').'<span class="list-posts-title">'.get_the_title().'</span></a><span class="list-posts-text">'.($atts['excerpt'] ? get_the_excerpt() : '').'</span></li>';
         endwhile;
     }

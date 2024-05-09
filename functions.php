@@ -1590,3 +1590,20 @@ class BuildMetaBox {
         <?php
     }
 }
+
+
+// Shortcode implementation for displaying additional post types in the editor
+// [recent-posts posts="5" post_type="portfolio" order="asc" orderby="title"]
+add_shortcode('recent-posts', function($atts, $content = null){
+    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title'], $atts));
+    query_posts(['orderby' => esc_html( $atts['date'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
+
+    if (have_posts()) {
+        while (have_posts()) : the_post();
+            $return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+        endwhile;
+    }
+
+    wp_reset_query();
+    return "<ul>{$return_string}</ul>";
+});

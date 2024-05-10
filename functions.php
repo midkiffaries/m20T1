@@ -1318,7 +1318,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Placeholder and Fallback Images</h2>
-        <p>Set the fallback image for the social media sharing metadata and featured image.</p>
+        <p>Set the fallback image for the social media sharing metadata and featured image. Check the presentation at <a href="https://metatags.io/?url=<?=esc_url(home_url());?>" target="_blank">metatags.io</a>.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Image Fallback URL</label> <br><small>1000x500px <i>jpeg/png</i></small></th>

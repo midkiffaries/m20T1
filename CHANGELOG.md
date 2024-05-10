@@ -2,7 +2,7 @@
 
 ### 1.7.4 Live (May 20, 2024)
 
-* Shortcode implementation for listing all post types.
+* Shortcode implementation for listing all post types: [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category=""]
 * Bug fixes and QoL improvements.
 
 ### 1.7.3 Live (May 7, 2024)

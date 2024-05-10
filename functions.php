@@ -1338,7 +1338,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Additional Global Metadata and Scripts</h2>
-        <p>For inserting 3rd-party analytics, 3rd-party fonts, external scripts and other metadata into the site header and footer.</p>
+        <p>For inserting 3rd-party analytics, external fonts and scripts, and other metadata into the site header and footer.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label> <br><small>These scripts will be placed inside the &lt;head&gt; tag.</small></th>

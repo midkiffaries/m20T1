@@ -1049,7 +1049,7 @@ function schemaNavigation( $menu_name ) {
 // Add custom message to login screen
 add_filter( 'login_message', function(){
 ?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:80%']);?></div>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:70%']);?></div>
 <?php
 });
 

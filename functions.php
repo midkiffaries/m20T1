@@ -664,7 +664,7 @@ add_shortcode('list-posts', function( $atts, $content = null ){
 // Get the number of times this keyword comes up in search queries
 function SearchCount( $query ) {
     $count = 0;
-    if ($query == null) $query = '%XZT89%11321X$'; // Catch blank to show 0
+    if ($query == null) $query = '%XZT89%11321X$'; // Catch blank to show 0 results
     $search = new WP_Query("s=$query & showposts=-1");
     if ($search->have_posts()) {
         while ($search->have_posts()) {

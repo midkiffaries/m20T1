@@ -1309,11 +1309,11 @@ function m20T1_settings_page() {
                 <td><textarea name="404_text" id="404_text" class="code" placeholder="That page must have been deleted or is otherwise inaccessable." rows="3" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(clean_html(get_option('404_text')));?></textarea><small>Allowed HTML tags: <b>&lt;b&gt; &lt;strong&gt; &lt;i&gt; &lt;em&gt; &lt;a&gt; &lt;span&gt; &lt;abbr&gt;</b></small></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="404_image">404 Error Page Image URL</label> <br><small>500x500px <i>any</i></small></th>
+                <th scope="row"><label for="404_image">404 Error Page Image URL</label> <br><small>500x500px <i>Type: all</i></small></th>
                 <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image'));?>"> <img src="<?=esc_attr(get_option('404_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="search_image">Search Page Image URL</label> <br><small>500x500px <i>any</i></small></th>
+                <th scope="row"><label for="search_image">Search Page Image URL</label> <br><small>500x500px <i>Type: all</i></small></th>
                 <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"> <img src="<?=esc_attr(get_option('search_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
             </tr>
         </table>
@@ -1321,11 +1321,11 @@ function m20T1_settings_page() {
         <p>Set the fallback image for the social media sharing metadata and featured image. Check the presentation at <a href="https://metatags.io/?url=<?=esc_url(home_url());?>" target="_blank">metatags.io</a>.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
-                <th scope="row"><label for="social_image">Social Image Fallback URL</label> <br><small>1000x500px <i>jpeg/png</i></small></th>
+                <th scope="row"><label for="social_image">Social Image Fallback URL</label> <br><small>1000x500px <i>Type: jpeg/png</i></small></th>
                 <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image'));?>"> <img src="<?=esc_attr(get_option('social_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="blank_image">Featured Image Fallback URL</label> <br><small>600x600px <i>any</i></small></th>
+                <th scope="row"><label for="blank_image">Featured Image Fallback URL</label> <br><small>600x600px <i>Type: all</i></small></th>
                 <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME.JPG");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image'));?>"> <img src="<?=esc_attr(get_option('blank_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
             </tr>
         </table>

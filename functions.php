@@ -412,11 +412,7 @@ add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
 // Get the number of page views
 function get_page_views() {
     $count = get_post_meta( get_the_ID(), 'post_views_count', true );
-    if ($count < 1) {
-        return 0;
-    } else {
-        return $count;
-    }
+    return ($count < 1) ? 0 : $count;
 }
 
 // Set the page view counter
@@ -552,11 +548,7 @@ add_action( 'widgets_init', function(){
 // SLUGS: primary, secondary, tertiary, quaternary, singlepost, frontpage, singlepage, singlepagesidebar, portfoliopage, header, footer
 function selectSidebarCustomField( $id, $default ) {
     $key = get_post_meta( $id, 'Widgets_Slug', true );
-    if (empty($key)) {
-        return $default; // Default widgets
-    } else {
-        return sanitize_text_field($key);
-    }
+    return empty($key) ? $default : sanitize_text_field($key);
 }
 
 
@@ -833,11 +825,7 @@ function GetFirstImage() {
     ob_end_clean();
     $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
     $first_image = $matches[1][0];
-    if (empty($first_image)) {
-        return false;
-    } else {
-        return $first_image;
-    }
+    return empty($first_image) ? false : $first_image;
 }
 
 // Display the header/hero image from the featured image
@@ -1215,11 +1203,7 @@ add_action( 'pre_get_users', function($query){
 // Display the User's last login time relative to the current time
 function users_last_login() {
     $last_login = get_the_author_meta('last_login');
-    if ( empty($last_login) ) {
-        return false;
-    } else {
-        return human_time_diff($last_login);
-    }
+    return empty($last_login) ? false : human_time_diff($last_login);
 }
 
 
@@ -1421,11 +1405,7 @@ function custom_page_css( $id ) {
     $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
     $css = preg_replace('/;}/', '}', $css); // Remove new lines
 
-    if (empty($css)) {
-        return NULL;
-    } else {
-        return '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
-    }
+    return empty($css) ? NULL : '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
 }
 
 // Get 'Page_Scheme' Custom Field for the page schema.org in the body tag
@@ -1446,12 +1426,7 @@ function custom_page_scheme( $id ) {
 // Get 'Page_Article' Custom Field for the page schema.org in the main tag on single.php
 function custom_page_article( $id ) {
     $scheme = get_post_meta( $id, 'Page_Article', true );
-
-    if (empty($scheme)) {
-        return "Article"; // Default article
-    } else {
-        return $scheme;
-    }
+    return empty($scheme) ? "Article" : $scheme;
 }
 
 // Custom Meta Box for the post editor

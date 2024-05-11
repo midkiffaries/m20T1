@@ -653,7 +653,7 @@ add_shortcode('list-posts', function( $atts, $content = null ){
 
     if (have_posts()) { 
         while (have_posts()) : the_post(); // List each item
-            $return_string .= '<li><a href="'.get_permalink().'">'.($atts['thumbnail'] ? get_the_post_thumbnail($post_id, 'medium') : '').'<span class="block-list-posts-title">'.get_the_title().'</span></a> <time datetime="'.get_the_date('c').'" class="block-list-posts-date">'.get_the_date().'</time> <div class="block-list-posts-text">'.($atts['excerpt'] ? get_the_excerpt() : '').'</div></li>';
+            $return_string .= '<li class="block-list-posts_item"><div class="block-list-posts_image"><a href="'.get_permalink().'" aria-label="'.get_the_title().'">'.($atts['thumbnail'] ? get_the_post_thumbnail($post_id, 'medium') : '').'</a></div><a href="'.get_permalink().'" class="block-list-posts_title">'.get_the_title().'</a> <time datetime="'.get_the_date('c').'" class="block-list-posts_date">'.get_the_date().'</time><div class="block-list-posts_excerpt">'.($atts['excerpt'] ? get_the_excerpt() : '').'</div></li>';
         endwhile;
     }
 

@@ -646,22 +646,22 @@ function get_child_pages( $id, $thumbnail ) {
 /////////////////////////////
 
 // Shortcode implementation for displaying additional post types in the editor
-// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id=""]
+// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]
 add_shortcode('list-posts', function( $atts, $content = null ){
-    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'category' => '', 'id' => ''], $atts));
+    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'category' => '', 'id' => '', 'class' => ''], $atts));
     query_posts(['orderby' => esc_html( $atts['orderby'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'showposts' => $posts]);
 
     if (have_posts()) { 
         while (have_posts()) : the_post(); // List each item
-            $return_string .= '<li><a href="'.get_permalink().'">'.($atts['thumbnail'] ? get_the_post_thumbnail($post_id, 'medium') : '').'<span class="list-posts-title">'.get_the_title().'</span></a><span class="list-posts-text">'.($atts['excerpt'] ? get_the_excerpt() : '').'</span></li>';
+            $return_string .= '<li><a href="'.get_permalink().'">'.($atts['thumbnail'] ? get_the_post_thumbnail($post_id, 'medium') : '').'<span class="block-list-posts-title">'.get_the_title().'</span></a> <time datetime="'.get_the_date('c').'" class="block-list-posts-date">'.get_the_date().'</time> <div class="block-list-posts-text">'.($atts['excerpt'] ? get_the_excerpt() : '').'</div></li>';
         endwhile;
     }
 
     wp_reset_query();
-    return "<ul class='list-posts-".esc_html( $atts['post_type'] )."'>".$return_string."</ul>";
+    return "<ul class='block-list-posts ".esc_html( $atts['class'] )."'>".$return_string."</ul>";
 });
 
-// Get the number of times this keyword comes up in search queries
+// Get the number of posts/pages this keyword comes up in on search queries
 function SearchCount( $query ) {
     $count = 0;
     if ($query == null) $query = '%XZT89%11321X$'; // Catch blank to show 0 results
@@ -1102,7 +1102,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
         <li><code>old-photo</code> - Ages an image</li>
     </ul>
-    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category=""]</code></p>
+    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]</code></p>
     <?php
     }
 });

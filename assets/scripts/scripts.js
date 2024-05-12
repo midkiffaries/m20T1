@@ -63,11 +63,11 @@ document.addEventListener("keyup", (e) => {
         st = document.createElement("style");
 	
 	// Get locally saved moode
-	if (currentTheme == 'dark') document.body.classList.toggle("dark-mode");
-	else if (currentTheme == 'light') document.body.classList.toggle("light-mode");
+	if (currentTheme == 'dark') document.body.classList.toggle('dark-mode');
+	else if (currentTheme == 'light') document.body.classList.toggle('light-mode');
 	
 	// Set initial button title
-	buttonText = (document.body.classList.contains('dark-mode')) ? 'light':'dark';
+	buttonText = (document.body.classList.contains('dark-mode')) ? 'light' : 'dark';
 	modeButton.setAttribute("title", `Switch to ${buttonText} mode`);
 	
     // Append the light switch button style [class="light-switch"]
@@ -94,11 +94,11 @@ document.addEventListener("keyup", (e) => {
 		} else {
         */
 			document.body.classList.toggle("dark-mode");
-			theme = document.body.classList.contains("dark-mode") ? "dark":"light";
+			theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
 		//}
 		
 		// Set button title
-		buttonText = (document.body.classList.contains('dark-mode')) ? 'light':'dark';
+		buttonText = (document.body.classList.contains('dark-mode')) ? 'light' : 'dark';
 		modeButton.setAttribute("title", `Switch to ${buttonText} mode`);
 		
 		// Store last used state
@@ -117,11 +117,8 @@ document.addEventListener("keyup", (e) => {
         a.addEventListener("click", function() {
             this.classList.toggle("active");
             const panel = this.nextSibling.nextSibling;
-            if (this.classList.contains("active")) {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            } else {
-                panel.style.maxHeight = 0;
-            }
+            if (this.classList.contains("active")) panel.style.maxHeight = panel.scrollHeight + "px";
+            else panel.style.maxHeight = 0;
         });
         if (window.outerWidth < 849 && a.classList.contains("active")) {
             a.classList.remove("active");
@@ -358,8 +355,7 @@ document.addEventListener("keyup", (e) => {
 // Checks the position of the window focus
 document.addEventListener("scroll", function() {
     const el = document.getElementById("ScrollToTop");
-    if (window.pageYOffset > 500) el.classList.add("scActive");
-    else el.classList.remove("scActive");
+    window.pageYOffset > 500 ? el.classList.add("scActive") : el.classList.remove("scActive");
 },true);
 
 // Creates floating scroll to top button
@@ -370,7 +366,8 @@ document.addEventListener("scroll", function() {
     sc.setAttribute("id", "ScrollToTop");
     sc.setAttribute("class", "scroll-to-top-float");
     sc.setAttribute("role", "button");
-    sc.setAttribute("onclick", "smoothScroll(0,100)");
+    //sc.setAttribute("onclick", "smoothScroll(0,100)");
+    sc.setAttribute("onclick", "scrollToTop()");
     document.body.appendChild(sc);
 	
 	// Button styling
@@ -417,24 +414,12 @@ document.addEventListener("scroll", function() {
 	document.body.appendChild(st);
 })();
 
-// Smooth scrolling to the Top of the page
-function smoothScroll(loc, duration) {
-    let el, 
-        diff, 
-        perTick;
-    
-    // Check if the client is Safari
-    if (document.body.scrollTop > 0) el = document.body; // Yes Safari
-    else el = document.documentElement; // No Safari
-    
-    // Travel back to the top
-	if (duration < 0) return;
-	diff = loc - el.scrollTop;
-    perTick = diff / duration * 2;
-    setTimeout(() => {
-        el.scrollTop += perTick;
-        smoothScroll(loc, duration - 2);
-    }, 10);
+// Smooth scrolling back to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
 }
 
 /**************************
@@ -859,18 +844,3 @@ function closeModals(c) {
 function isLinkAnImage(v) {
     return ['jpg','jpeg','jp2','png','webp','gif','heic','avif'].includes(v.split('.').pop()) ? true : false;
 }
-
-// Disable/enable 'style.css'
-/*
-(() => {
-    const styleSwitch = document.getElementById("style-switch");
-    const stylesheet = document.getElementById("base-style-css");
-    stylesheet.disabled = true;
-
-    styleSwitch.addEventListener("click", () => {
-        stylesheet.disabled = !stylesheet.disabled;
-        const buttonText = stylesheet.disabled ? "Enable" : "Disable";
-        styleSwitch.innerText = buttonText;
-    });
-})();
-*/

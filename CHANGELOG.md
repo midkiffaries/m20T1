@@ -1,8 +1,10 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.4 Live (May 20, 2024)
+### 1.7.4 Live (May 12, 2024)
 
-* Shortcode implementation for listing all post types: [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category=""]
+* Shortcode implementation for listing all post types: 
+[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]
+* JavaScript clean up.
 * Bug fixes and QoL improvements.
 
 ### 1.7.3 Live (May 7, 2024)

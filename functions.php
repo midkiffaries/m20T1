@@ -1247,7 +1247,7 @@ function m20T1_settings_page() {
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
         <h2>Schema Settings</h2>
-        <p>Adjust the schema site representation for <a href="https://validator.schema.org/#url=<?=esc_url(home_url());?>" target="_blank">schema.org</a>.</p>
+        <p>Adjust the schema site representation for <a href="https://validator.schema.org/#url=<?=esc_url(home_url());?>" target="_blank">Schema.org</a>.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="short_title">Short Site Title</label></th>
@@ -1318,7 +1318,7 @@ function m20T1_settings_page() {
             </tr>
         </table>
         <h2>Placeholder and Fallback Images</h2>
-        <p>Set the fallback image for the social media sharing metadata and featured image. Check the presentation at <a href="https://metatags.io/?url=<?=esc_url(home_url());?>" target="_blank">metatags.io</a>.</p>
+        <p>Set the fallback image for the social media sharing metadata and featured image. Check the presentation at <a href="https://metatags.io/?url=<?=esc_url(home_url());?>" target="_blank">MetaTags.io</a>.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Image Fallback URL</label> <br><small>1000x500px <i>Type: jpeg/png</i></small></th>

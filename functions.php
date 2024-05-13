@@ -1247,7 +1247,7 @@ function m20T1_settings_page() {
         <?php settings_fields( 'm20t1-settings-group' ); ?>
         <?php do_settings_sections( 'm20t1-settings-group' ); ?>
         <h2>Schema Settings</h2>
-        <p>Adjust the site representation for <a href="https://schema.org" target="_blank">schema.org</a> and the abbreviated site title.</p>
+        <p>Adjust the site representation for <a href="https://validator.schema.org/#url=<?=esc_url(home_url());?>" target="_blank">schema.org</a> and the abbreviated site title.</p>
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="short_title">Short Site Title</label></th>

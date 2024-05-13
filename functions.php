@@ -1285,7 +1285,7 @@ function m20T1_settings_page() {
                 <script>document.getElementById('phone_type').selectedIndex = <?=array_search(get_option('phone_type'), $phoneArr);?>;</script>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="same_as_url">Social Profiles URLs</label></th>
+                <th scope="row"><label for="same_as_url">Social Profiles URLs</label> <br><small>Comma separated</small></th>
                 <td><textarea name="same_as_url" id="same_as_url" placeholder="Comma separated URLs (eg. https://www.facebook/userProfile/)"><?=get_option('same_as_url');?></textarea></td>
             </tr>
         </table>

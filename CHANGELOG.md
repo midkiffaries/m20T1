@@ -1,5 +1,10 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.7.5 Live (May 30, 2024)
+
+* Added additional filtering options to the media library.
+* Bug fixes and QoL improvements.
+
 ### 1.7.4 Live (May 12, 2024)
 
 * Shortcode implementation for listing all post types: 

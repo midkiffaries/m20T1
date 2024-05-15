@@ -1590,12 +1590,12 @@ add_action( 'restrict_manage_posts', function(){
 
     $author   = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING );
     $selected = (int)$author > 0 ? $author : '-1';
-    $args = array(
-        'show_option_none'   => 'All authors',
-        'name'               => 'author',
-        'selected'           => $selected
-    );
-    wp_dropdown_users( $args );
+    $args = [
+        'show_option_none' => 'All authors',
+        'name'             => 'author',
+        'selected'         => $selected
+    ];
+    wp_dropdown_users($args);
 });
 
 add_action( 'pre_get_posts', function($query){

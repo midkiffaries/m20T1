@@ -1582,3 +1582,26 @@ class BuildMetaBox {
         <?php
     }
 }
+
+// Add a filter by Author select list to the Media Library
+add_action( 'restrict_manage_posts', function(){
+    $scr = get_current_screen();
+    if ( $scr->base !== 'upload' ) return;
+
+    $author   = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING );
+    $selected = (int)$author > 0 ? $author : '-1';
+    $args = array(
+        'show_option_none'   => 'All authors',
+        'name'               => 'author',
+        'selected'           => $selected
+    );
+    wp_dropdown_users( $args );
+});
+
+add_action( 'pre_get_posts', function($query){
+    if ( is_admin() && $query->is_main_query() ) {
+        if (isset($_GET['author']) && $_GET['author'] == -1) {
+            $query->set('author', '');
+        }
+    }
+});

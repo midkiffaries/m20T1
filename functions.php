@@ -971,8 +971,8 @@ function custom_comment_style( $comment, $args, $depth ) {
 
 // Pagination on the index/archive/search pages
 function blog_post_pagination( $type ) {
-    previous_posts_link("&#x276E; Previous " . get_option('posts_per_page') . " {$type}", 0); // << Left Side
-    next_posts_link("Next " . get_option('posts_per_page') . " {$type} &#x276F;", 0); // Right Side >>
+    previous_posts_link("&#x276E; Next " . get_option('posts_per_page') . " {$type}", 0); // << Left Side
+    next_posts_link("Previous " . get_option('posts_per_page') . " {$type} &#x276F;", 0); // Right Side >>
 }
 
 // Show the blog post tags as a list

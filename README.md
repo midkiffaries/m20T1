@@ -10,7 +10,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/midkiffaries/m20T1)
 [![CodeFactor](https://www.codefactor.io/repository/github/midkiffaries/m20t1/badge)](https://www.codefactor.io/repository/github/midkiffaries/m20t1)
 
-This is simply a <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
+This is a light-weight, versatile <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
 The intention of this theme is to be minimally reliant on 3rd party plugins while providing the same features that most popular plugins would provide. It does this by relying on the built-in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 
 Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m20T1 Theme Screenshots and additional information</a>

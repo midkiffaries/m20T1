@@ -352,100 +352,6 @@ add_filter( 'wp_calculate_image_sizes', function( string $sizes, array $size, $i
 }, 10, 3 );
 
 
-//////////////////////////////////////
-// Additional columns for the editor
-//////////////////////////////////////
-
-// Add Featured Image column
-function AddImageColumn( $columns ) {
-    $columns['thumbnail'] = __('Image');
-    return $columns;
-}
-
-// Add Featured Image column values
-function AddImageValue( $column_name, $post_id ) {
-	if ( $column_name == 'thumbnail' ) {
-		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
-		if ( $post_thumbnail_id ) {
-			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
-            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="async" itemprop="image" alt="" fetchpriority="auto">';
-		} else {
-            echo __('—');
-        }
-	}
-}
-
-// Add Image Column to Posts
-add_filter( 'manage_posts_columns', 'AddImageColumn' );
-add_action( 'manage_posts_custom_column', 'AddImageValue', 10, 2 );
-
-// Add Image Column to Pages
-add_filter( 'manage_pages_columns', 'AddImageColumn' );
-add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
-
-// Add SEO Excerpt column
-function AddExcerptColumn( $columns ) {
-    $columns['seo_excerpt'] = __('SEO Excerpt');
-    return $columns;
-}
-
-// Add SEO Excerpt column values
-function AddExcerptValue( $column_name, $post_id ) {
-    if ( $column_name == 'seo_excerpt') {
-        if ( $post_id ) {
-            echo SEO_Excerpt($post_id);
-        } else {
-            echo __('—');
-        }
-    }
-}
-
-// Add SEO Excerpt Column to Posts
-add_filter( 'manage_posts_columns', 'AddExcerptColumn' );
-add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
-
-// Add SEO Excerpt Column to Pages
-add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
-add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
-
-// Add a page view count column to the posts and pages sections
-// Get the number of page views
-function get_page_views() {
-    $count = get_post_meta( get_the_ID(), 'post_views_count', true );
-    return ($count < 1) ? 0 : $count;
-}
-
-// Set the page view counter
-function set_page_views() {
-    $key = 'post_views_count';
-    $post_id = get_the_ID();
-    $count = (int) get_post_meta( $post_id, $key, true );
-    $count++;
-    update_post_meta( $post_id, $key, $count );
-}
-
-// Add the page views column header
-function add_column_header_views( $column ) {
-    $column['post_views'] = 'Views';
-    return $column;
-}
-
-// Add the page views column content
-function add_column_views( $column ) {
-    if ( $column === 'post_views') {
-        echo get_page_views();
-    }
-}
-
-// Add Views Column to Posts
-add_filter( 'manage_posts_columns', 'add_column_header_views' );
-add_action( 'manage_posts_custom_column', 'add_column_views' );
-
-// Add Views Column to Pages
-add_filter( 'manage_pages_columns', 'add_column_header_views' );
-add_action( 'manage_pages_custom_column', 'add_column_views' );
-
-
 /////////////////////////////
 // Sidebar and Widgets
 /////////////////////////////
@@ -1043,7 +949,7 @@ function schemaNavigation( $menu_name ) {
 
 
 /////////////////////////////////////////////////
-// Admin: Dashboard and global settings
+// Admin: Dashboard and global admin settings
 /////////////////////////////////////////////////
 
 // Add custom message to login screen
@@ -1104,6 +1010,128 @@ add_action('wp_dashboard_setup', function(){
     </ul>
     <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]</code></p>
     <?php
+    }
+});
+
+
+/////////////////////////////////////////////////
+// Admin: Additional columns for the post list
+/////////////////////////////////////////////////
+
+// Add Featured Image column
+function AddImageColumn( $columns ) {
+    $columns['thumbnail'] = __('Image');
+    return $columns;
+}
+
+// Add Featured Image column values
+function AddImageValue( $column_name, $post_id ) {
+	if ( $column_name == 'thumbnail' ) {
+		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+		if ( $post_thumbnail_id ) {
+			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
+            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="async" itemprop="image" alt="" fetchpriority="auto">';
+		} else {
+            echo __('—');
+        }
+	}
+}
+
+// Add Image Column to Posts
+add_filter( 'manage_posts_columns', 'AddImageColumn' );
+add_action( 'manage_posts_custom_column', 'AddImageValue', 10, 2 );
+
+// Add Image Column to Pages
+add_filter( 'manage_pages_columns', 'AddImageColumn' );
+add_action( 'manage_pages_custom_column', 'AddImageValue', 10, 2 );
+
+// Add SEO Excerpt column
+function AddExcerptColumn( $columns ) {
+    $columns['seo_excerpt'] = __('SEO Excerpt');
+    return $columns;
+}
+
+// Add SEO Excerpt column values
+function AddExcerptValue( $column_name, $post_id ) {
+    if ( $column_name == 'seo_excerpt') {
+        if ( $post_id ) {
+            echo SEO_Excerpt($post_id);
+        } else {
+            echo __('—');
+        }
+    }
+}
+
+// Add SEO Excerpt Column to Posts
+add_filter( 'manage_posts_columns', 'AddExcerptColumn' );
+add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
+
+// Add SEO Excerpt Column to Pages
+add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
+add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
+
+// Add a page view count column to the posts and pages sections
+// Get the number of page views
+function get_page_views() {
+    $count = get_post_meta( get_the_ID(), 'post_views_count', true );
+    return ($count < 1) ? 0 : $count;
+}
+
+// Set the page view counter
+function set_page_views() {
+    $key = 'post_views_count';
+    $post_id = get_the_ID();
+    $count = (int) get_post_meta( $post_id, $key, true );
+    $count++;
+    update_post_meta( $post_id, $key, $count );
+}
+
+// Add the page views column header
+function add_column_header_views( $column ) {
+    $column['post_views'] = 'Views';
+    return $column;
+}
+
+// Add the page views column content
+function add_column_views( $column ) {
+    if ( $column === 'post_views') {
+        echo get_page_views();
+    }
+}
+
+// Add Views Column to Posts
+add_filter( 'manage_posts_columns', 'add_column_header_views' );
+add_action( 'manage_posts_custom_column', 'add_column_views' );
+
+// Add Views Column to Pages
+add_filter( 'manage_pages_columns', 'add_column_header_views' );
+add_action( 'manage_pages_custom_column', 'add_column_views' );
+
+
+/////////////////////////////////////////////////
+// Admin: Media Library additions
+/////////////////////////////////////////////////
+
+// Add a filter by Author select list to the Media Library
+add_action( 'restrict_manage_posts', function(){
+    $scr = get_current_screen();
+    if ( $scr->base !== 'upload' ) return;
+
+    $author   = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING );
+    $selected = (int)$author > 0 ? $author : '-1';
+    $args = [
+        'show_option_none' => 'All authors',
+        'name'             => 'author',
+        'selected'         => $selected
+    ];
+    wp_dropdown_users($args);
+});
+
+add_action( 'pre_get_posts', function($query){
+    if ( is_admin() && $query->is_main_query() ) {
+        if (isset($_GET['author']) && $_GET['author'] == -1) {
+            $query->set('author', '');
+        }
     }
 });
 
@@ -1395,7 +1423,7 @@ function m20T1_settings_page() {
 
 
 /////////////////////////////////////////////////
-// Admin: Advanced Options Meta Box
+// Admin: Editor Advanced Options Meta Box
 /////////////////////////////////////////////////
 
 // Get 'Page_CSS' Custom Field which adds custom page styling
@@ -1582,26 +1610,3 @@ class BuildMetaBox {
         <?php
     }
 }
-
-// Add a filter by Author select list to the Media Library
-add_action( 'restrict_manage_posts', function(){
-    $scr = get_current_screen();
-    if ( $scr->base !== 'upload' ) return;
-
-    $author   = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING );
-    $selected = (int)$author > 0 ? $author : '-1';
-    $args = [
-        'show_option_none' => 'All authors',
-        'name'             => 'author',
-        'selected'         => $selected
-    ];
-    wp_dropdown_users($args);
-});
-
-add_action( 'pre_get_posts', function($query){
-    if ( is_admin() && $query->is_main_query() ) {
-        if (isset($_GET['author']) && $_GET['author'] == -1) {
-            $query->set('author', '');
-        }
-    }
-});

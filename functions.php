@@ -1127,7 +1127,7 @@ add_action( 'restrict_manage_posts', function(){
     wp_dropdown_users($args);
 });
 
-// Allow media filtering
+// Allow media filtering by author
 add_action( 'pre_get_posts', function($query){
     if ( is_admin() && $query->is_main_query() ) {
         if (isset($_GET['author']) && $_GET['author'] == -1) {

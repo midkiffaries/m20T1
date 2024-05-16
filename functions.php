@@ -1117,7 +1117,7 @@ add_action( 'restrict_manage_posts', function(){
     $scr = get_current_screen();
     if ( $scr->base !== 'upload' ) return;
 
-    $author   = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING );
+    $author = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING );
     $selected = (int)$author > 0 ? $author : '-1';
     $args = [
         'show_option_none' => 'All authors',
@@ -1142,6 +1142,7 @@ add_filter( 'post_mime_types', function($post_mime_types){
     $post_mime_types['image/svg+xml'] = [ __( 'Vector Images' ), __( 'Manage SVG Images' ), _n_noop( 'SVG <span class="count">(%s)</span>', 'SVGs <span class="count">(%s)</span>' ) ];
 	return $post_mime_types;
 });
+
 
 
 /////////////////////////////////////////////////

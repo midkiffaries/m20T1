@@ -1,9 +1,8 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.5 Live (May 30, 2024)
+### 1.7.5 Live (May 20, 2024)
 
-* Added additional filtering options to the Media Library.
-* Media library filtering for SVG and GLB files.
+* Media library filtering for SVG and GLB files as well as by author and category.
 * Bug fixes and QoL improvements.
 
 ### 1.7.4 Live (May 12, 2024)

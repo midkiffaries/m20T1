@@ -2,7 +2,7 @@
 
 ### 1.7.5 Live (May 30, 2024)
 
-* Added additional filtering options to the media library.
+* Added additional filtering options to the Media Library.
 * Media library filtering for SVG and GLB files.
 * Bug fixes and QoL improvements.
 

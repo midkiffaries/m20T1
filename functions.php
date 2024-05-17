@@ -1112,6 +1112,21 @@ add_action( 'manage_pages_custom_column', 'add_column_views' );
 // Admin: Media Library additions
 /////////////////////////////////////////////////
 
+// Add a filter by Category select list to the Media Library
+add_action( 'restrict_manage_posts', function(){
+    $scr = get_current_screen();
+    if ( $scr->base !== 'upload' ) return;
+
+    $category = filter_input(INPUT_GET, 'cat', FILTER_SANITIZE_STRING );
+    $selected = (int)$category > 0 ? $category : '-1';
+    $args = [
+        'show_option_none' => 'All Categories',
+        'name'             => 'cat',
+        'selected'         => $category
+    ];
+    wp_dropdown_categories($args);
+});
+
 // Add a filter by Author select list to the Media Library
 add_action( 'restrict_manage_posts', function(){
     $scr = get_current_screen();

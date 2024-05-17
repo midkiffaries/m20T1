@@ -1618,8 +1618,9 @@ class BuildMetaBox {
 		</label></div>
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
-        <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Post Views: ', 'textdomain' ); ?><b><?=$pageViews;?></b>
+        <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj"><b>Page Stats: </b>
+			<?php _e( 'Post Views ', 'textdomain' ); ?><b><?=$pageViews;?></b> | 
+            <?php _e( 'Excerpt Length ', 'textdomain' ); ?><b><?=strlen(get_the_excerpt());?></b> chars
 		</label></div>
         <style>
         @media(min-width:700px) {

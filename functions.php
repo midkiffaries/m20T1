@@ -895,7 +895,7 @@ function get_page_class() {
 function blog_post_share() {
     $social_links = [ // Social media links
         'facebook'  => "https://www.facebook.com/sharer/sharer.php?u=" . esc_url(get_the_permalink()),
-        'twitter'   => "https://twitter.com/intent/tweet?text=" . esc_url(get_the_permalink()),
+        'twitter'   => "https://x.com/intent/post?text=" . esc_url(get_the_permalink()),
         'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . rawurlencode(get_the_title()) . "&summary=" . rawurlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
         'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(SEO_Image(get_the_id())) . "&description=" . rawurlencode(get_the_excerpt()),
         'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),

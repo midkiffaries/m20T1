@@ -35,6 +35,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Built in support for <b>additional post types</b>, default set as "Portfolio" (hardcoded in <i>functions.php</i>)
 - Built in blog post read time in minutes and page load time.
 - Enabled <b>SVG</b> support, <b>GLB</b> 3D models, <b>WOFF2</b> fonts and iCal/vCard file upload to the media library
+- Built in shortcode post list function: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class="test"]</code>
 - Support for <i>@print</i> for all the pages
 
 ## Todo List

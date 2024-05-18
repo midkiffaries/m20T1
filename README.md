@@ -31,6 +31,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
 - Support for <b>dark mode</b> page styling via a built in switch
 - Additional filtering options in the Media Library: category, author, SVG, GLB and fonts
+- Basic filtering on the search results page
 - Built in support for <b>additional post types</b>, default set as "Portfolio" (hardcoded in <i>functions.php</i>)
 - Built in blog post read time in minutes and page load time.
 - Enabled <b>SVG</b> support, <b>GLB</b> models, <b>WOFF2</b> fonts and iCal/vCard files upload to media library

@@ -305,7 +305,6 @@ add_filter( 'upload_mimes', function($mimes){
     $mimes['txt|md']     = 'text/plain'; // TXT document
     $mimes['vcard|vcf']  = 'text/vcard'; // vCard data
     $mimes['ics|ical']   = 'text/calendar'; // iCalendar data
-    $mimes['ttf|tte']    = 'font/ttf|application/x-font-ttf'; // TrueType font
     $mimes['woff|woff2'] = 'font/woff2|application/octet-stream|font/x-woff2'; // WOFF2 font
     $mimes['glb|gltf']   = 'model/gltf+json|model/gltf-binary'; // glTF WebGL model
     return $mimes;
@@ -320,10 +319,6 @@ add_filter( 'wp_check_filetype_and_ext', function($types, $file, $filename, $mim
     if ( false !== strpos( $filename, '.txt' ) ) {
         $types['ext']  = 'txt|md';
         $types['type'] = 'text/plain';
-    }
-    if ( false !== strpos( $filename, '.ttf' ) ) {
-        $types['ext']  = 'ttf';
-        $types['type'] = 'font/ttf|application/x-font-ttf';
     }
     if ( false !== strpos( $filename, '.woff2' ) ) {
         $types['ext']  = 'woff2';
@@ -783,9 +778,9 @@ function Header_Hero( $id ) {
 }
 
 
-//////////////////////////////////
-// WordPress Blog Post Functions
-//////////////////////////////////
+////////////////////////////////////////
+// WordPress Front-end Global Functions
+////////////////////////////////////////
 
 // Check if client is a mobile device
 function isMobileDevice() { 
@@ -1153,8 +1148,9 @@ add_action( 'pre_get_posts', function($query){
 
 // Add additional filters for other media types
 add_filter( 'post_mime_types', function($post_mime_types){
-	$post_mime_types['model/gltf-binary'] = [ __( '3D Models' ), __( 'Manage 3D Models' ), _n_noop( 'GLB <span class="count">(%s)</span>', 'GLBs <span class="count">(%s)</span>' ) ];
-    $post_mime_types['image/svg+xml'] = [ __( 'Vector Images' ), __( 'Manage SVG Images' ), _n_noop( 'SVG <span class="count">(%s)</span>', 'SVGs <span class="count">(%s)</span>' ) ];
+    $post_mime_types['font/woff2'] = [ __( 'Fonts' ), __( 'Manage Fonts' ), _n_noop( 'WOFF2 <span class="count">(%s)</span>', 'WOFF2s <span class="count">(%s)</span>' ) ];
+    $post_mime_types['image/svg+xml'] = [ __( 'SVG Images' ), __( 'Manage SVG Images' ), _n_noop( 'SVG <span class="count">(%s)</span>', 'SVGs <span class="count">(%s)</span>' ) ];
+    $post_mime_types['model/gltf-binary'] = [ __( '3D Models' ), __( 'Manage 3D Models' ), _n_noop( 'GLB <span class="count">(%s)</span>', 'GLBs <span class="count">(%s)</span>' ) ];
 	return $post_mime_types;
 });
 

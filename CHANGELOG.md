@@ -2,7 +2,7 @@
 
 ### 1.7.5 Live (May 18, 2024)
 
-* Media library filtering for SVG and GLB files as well as by author and category.
+* Media library: Added filtering for SVG and GLB files as well as by author and category.
 * Bug fixes and QoL improvements.
 
 ### 1.7.4 Live (May 12, 2024)

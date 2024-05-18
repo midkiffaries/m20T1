@@ -30,9 +30,10 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Featured image support for use as the hero/header image on posts and pages with a fallback image
 - Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
 - Support for <b>dark mode</b> page styling via a built in switch
-- Built in support for <b>additional post types</b>, default set as "Portfolio" (hardcoded in functions.php)
+- Additional filtering options in the Media Library: category, author, SVG, GLB and fonts
+- Built in support for <b>additional post types</b>, default set as "Portfolio" (hardcoded in <i>functions.php</i>)
 - Built in blog post read time in minutes and page load time.
-- Enabled <b>SVG</b> support, <b>GLB</b> models and iCal/vCard files upload to media library
+- Enabled <b>SVG</b> support, <b>GLB</b> models, <b>WOFF2</b> fonts and iCal/vCard files upload to media library
 - Support for <i>@print</i> for all the pages
 
 ## Todo List

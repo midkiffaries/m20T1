@@ -811,7 +811,7 @@ function get_file_extension( $path ) {
 
 // Get proper attachment image or use a document placeholder
 function attachment_page_image( $id ) {
-    $image_ext = ['jpg', 'jpeg', 'jp2', 'png', 'gif', 'webp', 'ico', 'heic', 'avif'];
+    $image_ext = ['jpg', 'jpeg', 'jp2', 'png', 'gif', 'webp', 'ico', 'heif', 'avif'];
     $video_ext = ['mp3', 'ogg', 'mp4', 'm4v', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'ogv', '3gp', '3g2'];
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));
@@ -1614,9 +1614,9 @@ class BuildMetaBox {
 		</label></div>
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
-        <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj"><b>Page Stats: </b>
-			<?php _e( 'Post Views ', 'textdomain' ); ?><b><?=$pageViews;?></b> | 
-            <?php _e( 'Excerpt Length ', 'textdomain' ); ?><b><?=strlen(get_the_excerpt());?></b> chars
+        <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj"><b>Post Stats: </b>
+			<?php _e( 'Views', 'textdomain' ); ?> <b><?=$pageViews;?></b> | 
+            <?php _e( 'Excerpt Length', 'textdomain' ); ?> <b><?=strlen(get_the_excerpt());?></b> chars
 		</label></div>
         <style>
         @media(min-width:700px) {

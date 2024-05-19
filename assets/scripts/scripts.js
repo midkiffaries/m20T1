@@ -842,5 +842,5 @@ function closeModals(c) {
 
 // Check if href link is of a specific image type
 function isLinkAnImage(v) {
-    return ['jpg','jpeg','jp2','png','webp','gif','heic','avif'].includes(v.split('.').pop()) ? true : false;
+    return ['jpg','jpeg','jp2','png','webp','gif','heif','avif'].includes(v.split('.').pop()) ? true : false;
 }

@@ -269,7 +269,7 @@ document.addEventListener("keyup", (e) => {
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
             pr = par[i].getAttribute("data-rate");
-            posy =- (window.pageYOffset / pr);
+            posy = posy + (window.scrollY / 100);
             par[i].style.backgroundPosition = `50% ${posy}%`;
         }
     }, true);
@@ -285,7 +285,7 @@ document.addEventListener("keyup", (e) => {
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
             pr = par[i].getAttribute("data-rate");
-            posy =- (window.pageYOffset / pr);
+            posy =- (window.scrollY / pr);
             par[i].style.transform = `translateY(${posy}px)`;
         }
     }, true);

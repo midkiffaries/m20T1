@@ -768,7 +768,7 @@ function Header_Hero( $id ) {
 
     // Header Hero HTML
     ?>
-        <div class="header-hero-image header-<?=$className;?>" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
+        <div class="header-hero-image header-<?=$className;?> " style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
             <?=$videoTag;?>
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>

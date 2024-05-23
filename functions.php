@@ -36,6 +36,7 @@ define( 'ADDITIONAL_POST_TYPE', [
     /* [ 'Title (singular)', 'dashicons-portfolio (https://developer.wordpress.org/resource/dashicons/)', 'Subtitle' ], */
     [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ],
 ]);
+// Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type
 
 
 /////////////////////////////

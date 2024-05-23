@@ -735,13 +735,13 @@ function Header_Hero( $id ) {
     if ( is_front_page() ) { // Front-page header (No header image)
         $className = "homepage";
         $hasFeaturedImage = false;
-    } elseif ( is_attachment() || is_404() ) { // Attachment and 404 page headers (No header image)
+    } else if ( is_attachment() || is_404() ) { // Attachment and 404 page headers (No header image)
         $className = "noimage";
         $hasFeaturedImage = false;
-    } elseif ( is_page() ) { // Single Page header (Use featured image)
+    } else if ( is_page() ) { // Single Page header (Use featured image)
         $className = "single-page";
         $hasFeaturedImage = true;
-    } elseif ( is_single() ) { // Single blog post or single portfolio (Use featured image)
+    } else if ( is_single() ) { // Single blog post or single portfolio (Use featured image)
         $className = "single-post";
         $hasFeaturedImage = true;
     } else { // Blog Page, portfolios page, search page and archives header (No header image)
@@ -768,8 +768,9 @@ function Header_Hero( $id ) {
 
     // Header Hero HTML
     ?>
-        <div class="header-hero-image header-<?=$className;?> " style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
+        <div class="header-hero-container header-<?=$className;?>">
             <?=$videoTag;?>
+            <div class="header-hero-image" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
             <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle;?></div>

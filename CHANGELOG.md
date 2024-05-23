@@ -2,7 +2,8 @@
 
 ### 1.7.6 Live (May 30, 2024)
 
-* More personal branding removed.
+* Adjustments to the header hero HTML.
+* Removed more personal branding.
 * Bug fixes and improvements.
 
 ### 1.7.5 Live (May 17, 2024)

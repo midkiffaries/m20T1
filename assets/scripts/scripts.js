@@ -277,7 +277,7 @@ document.addEventListener("keyup", (e) => {
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            posy = (-window.scrollY + getElOffsetY(par[i])) / 100;
+            posy = (-window.scrollY + getElOffsetY(par[i])) / 50;
             par[i].style.backgroundRepeat = 'repeat';
             par[i].style.backgroundAttachment = 'scroll';
             par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;

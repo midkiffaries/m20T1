@@ -267,9 +267,9 @@ document.addEventListener("keyup", (e) => {
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            posy = (window.scrollY / 25) + 50;
+            posy = (-window.scrollY / 25) + 50;
             par[i].style.backgroundPosition = `50% ${posy}%`;
-            //posy = window.scrollY / 2;
+            //posy = -window.scrollY / 2;
             //par[i].style.transform = `translateY(${posy}px)`;
         }
     }, true);

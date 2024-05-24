@@ -274,17 +274,23 @@ document.addEventListener("keyup", (e) => {
     }, true);
 })();
 
-// Parallaxing backgrounds, use class="bg-parallax"
+// Parallaxing backgrounds, use class="el-parallax"
 (() => {
-    let par = document.getElementsByClassName("obj-parallax"), 
+    let par = document.getElementsByClassName("el-parallax"), 
         l = par.length,
-        posy = 50;
+        preScrollPos = 0,
+        scrollPos = 0,
+        rate = 0.25,
+        max = 12,
+        posy = 0;
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            posy = -window.scrollY / 2;
-            par[i].style.willChange = 'transform';
-            par[i].style.transform = `translateY(${posy}px)`;
+            scrollPos = window.scrollY;
+            (scrollPos > preScrollPos) ? posy += rate : posy -= rate;
+            preScrollPos = scrollPos;
+            if (posy < max && posy > -max) par[i].style.transform = `translateY(${posy.toFixed(2)}%)`;
+            console.log(posy);
         }
     }, true);
 })();

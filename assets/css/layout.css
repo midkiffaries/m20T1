@@ -362,7 +362,6 @@ Site Header
 		z-index: 100;
 	}
 	.pull-menu-left {
-		will-change: transition;
 		background-color: rgba(255,255,255,0.97);
 		position: fixed;
 		left: -200em;
@@ -372,6 +371,7 @@ Site Header
 	}
 	.pull-menu-left.menu-show {
 		left: 0;
+		will-change: transition;
 		transition: left 0.3s ease-in-out;
 	}
 }

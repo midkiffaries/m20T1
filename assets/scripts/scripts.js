@@ -264,7 +264,6 @@ document.addEventListener("keyup", (e) => {
     const par = document.getElementsByClassName("hero-parallax");
     document.addEventListener("scroll", function() {
         let posy = (-window.scrollY / 25) + 50;
-        par[0].style.willChange = 'background';
         par[0].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
     }, true);
 })();

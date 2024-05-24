@@ -206,12 +206,13 @@ document.addEventListener("keyup", (e) => {
         for (let i = 0; i < l; i++) {
             posy = (-window.scrollY / 25) + 50;
             par[i].style.willChange = 'background';
-            par[i].style.backgroundPosition = `50% ${posy}%`;
+            par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
         }
     }, true);
 })();
 
 // Parallaxing backgrounds, use class="el-parallax"
+/*
 (() => {
     let par = document.getElementsByClassName("el-parallax"), 
         l = par.length,
@@ -223,14 +224,20 @@ document.addEventListener("keyup", (e) => {
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
+            preScrollPos = getOffset(par[i]);
             scrollPos = window.scrollY;
             (scrollPos > preScrollPos) ? posy += rate : posy -= rate;
             preScrollPos = scrollPos;
             if (posy < max && posy > -max) par[i].style.transform = `translateY(${posy.toFixed(2)}%)`;
-            console.log(posy);
         }
     }, true);
 })();
+
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top + window.scrollY;
+}
+*/
 
 // Hamburger button and menu animation
 (() => {

@@ -108,6 +108,11 @@ Main Site Layout
 	margin-top: 1em;
 }
 
+/* Sidebar Accordion */
+.accordion > button {
+	display: none;
+}
+
 
 /*********************************** 
 Site Header

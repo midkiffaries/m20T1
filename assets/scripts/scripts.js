@@ -106,6 +106,69 @@ document.addEventListener("keyup", (e) => {
 	}	
 })();
 
+// Sidebar Accordion Element for mobile
+(() => {
+    const ac = document.getElementsByClassName("accordion"),
+        st = document.createElement("style"),
+        l = ac.length;
+
+    for (let i = 0; i < l; i++) {
+        const a = ac[i].firstChild.nextSibling;
+        a.addEventListener("click", function() {
+            this.classList.toggle("active");
+            const panel = this.nextSibling.nextSibling;
+            if (this.classList.contains("active")) panel.style.maxHeight = panel.scrollHeight + "px";
+            else panel.style.maxHeight = 0;
+        });
+        if (window.outerWidth < 849 && a.classList.contains("active")) {
+            a.classList.remove("active");
+        }
+    }
+
+    // Append stylesheet if "accordion" exists
+    if (l) {
+        st.textContent = (`
+        .accordion > button {
+            color: inherit;
+            width: 100%;
+            background: none;
+            border: 2px solid #888;
+            font-size: 1.25em;
+            line-height: 1;
+            padding: .55em;
+        }
+        .accordion > button:hover {
+            font-weight: bold;
+        }
+        .accordion > button::before {
+            content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
+            margin: 0 .5em 0 0;
+            display: inline-block;
+            transition: transform .4s ease-in-out 0s;
+            transform-origin: 8px 8px;
+        }
+        .accordion > button.active::before {
+            transform: rotate(135deg);
+        }
+        .accordion > section {
+            overflow: hidden;
+            transition: max-height .25s ease-out;
+        }
+        @media (max-width: 849px) {
+            .accordion > button {
+                display: block;
+                margin-bottom: 1em;
+            }
+            .accordion > section {
+                max-height: 0;
+                margin-bottom: 2em;
+            }
+        }
+        `);
+        document.body.appendChild(st);
+    }
+})();
+
 // Embedded YouTube video iframe automatic lazy loading
 (() => {
     const youtube = document.getElementsByClassName("embed-youtube"),
@@ -196,48 +259,37 @@ document.addEventListener("keyup", (e) => {
     }
 })();
 
-// Parallaxing backgrounds, use class="bg-parallax"
+// Parallaxing Hero header background
 (() => {
-    let par = document.getElementsByClassName("bg-parallax"), 
+    const par = document.getElementsByClassName("hero-parallax");
+    document.addEventListener("scroll", function() {
+        let posy = (-window.scrollY / 25) + 50;
+        par[0].style.willChange = 'background';
+        par[0].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
+    }, true);
+})();
+
+// Parallaxing backgrounds, element has class="has-parallax"
+(() => {
+    let par = document.getElementsByClassName("has-parallax"), 
         l = par.length,
-        posy = 50;
+        posy = 0;
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            posy = (-window.scrollY / 25) + 50;
+            posy = (-window.scrollY + getElOffsetY(par[i])) / 100;
             par[i].style.willChange = 'background';
+            par[i].style.backgroundRepeat = 'repeat';
+            par[i].style.backgroundAttachment = 'none';
             par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
         }
     }, true);
 })();
 
-// Parallaxing backgrounds, use class="el-parallax"
-/*
-(() => {
-    let par = document.getElementsByClassName("el-parallax"), 
-        l = par.length,
-        preScrollPos = 0,
-        scrollPos = 0,
-        rate = 0.25,
-        max = 12,
-        posy = 0;
-    
-    document.addEventListener("scroll", function() {
-        for (let i = 0; i < l; i++) {
-            preScrollPos = getOffset(par[i]);
-            scrollPos = window.scrollY;
-            (scrollPos > preScrollPos) ? posy += rate : posy -= rate;
-            preScrollPos = scrollPos;
-            if (posy < max && posy > -max) par[i].style.transform = `translateY(${posy.toFixed(2)}%)`;
-        }
-    }, true);
-})();
-
-function getOffset(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top + window.scrollY;
+// Get element offset
+function getElOffsetY(el) {
+    return el.getBoundingClientRect().top + window.scrollY;
 }
-*/
 
 // Hamburger button and menu animation
 (() => {

@@ -362,7 +362,7 @@ Site Header
 		z-index: 100;
 	}
 	.pull-menu-left {
-		will-change: auto;
+		will-change: transition;
 		background-color: rgba(255,255,255,0.97);
 		position: fixed;
 		left: -200em;
@@ -1585,26 +1585,6 @@ Child Page Section
 	}
 }
 
-/************************ 
-Special Custom Features
-*************************/
-
-/* Parallax effect */
-.bg-parallax {
-    will-change: auto;
-}
-
-.element-parallax {
-	top: 0;
-	left: 0;
-    position: absolute;
-    will-change: auto;
-}
-
-/* Sidebar Accordion */
-.accordion > button {
-	display: none;
-}
 
 /************************ 
 Breadcrumbs Plugin Style

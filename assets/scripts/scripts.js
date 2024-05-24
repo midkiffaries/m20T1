@@ -268,9 +268,23 @@ document.addEventListener("keyup", (e) => {
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
             posy = (-window.scrollY / 25) + 50;
+            par[i].style.willChange = 'background';
             par[i].style.backgroundPosition = `50% ${posy}%`;
-            //posy = -window.scrollY / 2;
-            //par[i].style.transform = `translateY(${posy}px)`;
+        }
+    }, true);
+})();
+
+// Parallaxing backgrounds, use class="bg-parallax"
+(() => {
+    let par = document.getElementsByClassName("obj-parallax"), 
+        l = par.length,
+        posy = 50;
+    
+    document.addEventListener("scroll", function() {
+        for (let i = 0; i < l; i++) {
+            posy = -window.scrollY / 2;
+            par[i].style.willChange = 'transform';
+            par[i].style.transform = `translateY(${posy}px)`;
         }
     }, true);
 })();

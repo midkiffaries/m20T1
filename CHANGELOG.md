@@ -2,7 +2,7 @@
 
 ### 1.7.6 Live (May 30, 2024)
 
-* Rewrote parallaxing background feature.
+* Rewrote parallaxing background feature for the page header and .has-parallax.
 * Adjustments to the header hero HTML.
 * Removed more personal branding.
 * Bug fixes and improvements.

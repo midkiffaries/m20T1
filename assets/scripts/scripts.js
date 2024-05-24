@@ -106,69 +106,6 @@ document.addEventListener("keyup", (e) => {
 	}	
 })();
 
-// Accordion Style Element, use class="accordion"
-(() => {
-    const ac = document.getElementsByClassName("accordion"),
-        st = document.createElement("style"),
-        l = ac.length;
-
-    for (let i = 0; i < l; i++) {
-        const a = ac[i].firstChild.nextSibling;
-        a.addEventListener("click", function() {
-            this.classList.toggle("active");
-            const panel = this.nextSibling.nextSibling;
-            if (this.classList.contains("active")) panel.style.maxHeight = panel.scrollHeight + "px";
-            else panel.style.maxHeight = 0;
-        });
-        if (window.outerWidth < 849 && a.classList.contains("active")) {
-            a.classList.remove("active");
-        }
-    }
-
-    // Append stylesheet if "accordion" exists
-    if (l) {
-        st.textContent = (`
-        .accordion > button {
-            color: inherit;
-            width: 100%;
-            background: none;
-            border: 2px solid #888;
-            font-size: 1.25em;
-            line-height: 1;
-            padding: .55em;
-        }
-        .accordion > button:hover {
-            font-weight: bold;
-        }
-        .accordion > button::before {
-            content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
-            margin: 0 .5em 0 0;
-            display: inline-block;
-            transition: transform .4s ease-in-out 0s;
-            transform-origin: 8px 8px;
-        }
-        .accordion > button.active::before {
-            transform: rotate(135deg);
-        }
-        .accordion > section {
-            overflow: hidden;
-            transition: max-height .25s ease-out;
-        }
-        @media (max-width: 849px) {
-            .accordion > button {
-                display: block;
-                margin-bottom: 1em;
-            }
-            .accordion > section {
-                max-height: 0;
-                margin-bottom: 2em;
-            }
-        }
-        `);
-        document.body.appendChild(st);
-    }
-})();
-
 // Embedded YouTube video iframe automatic lazy loading
 (() => {
     const youtube = document.getElementsByClassName("embed-youtube"),

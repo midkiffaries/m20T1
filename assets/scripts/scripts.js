@@ -259,34 +259,18 @@ document.addEventListener("keyup", (e) => {
     }
 })();
 
-// Parallaxing backgrounds, use class="bg-parallax" and data-rate="10"
+// Parallaxing backgrounds, use class="bg-parallax"
 (() => {
     let par = document.getElementsByClassName("bg-parallax"), 
         l = par.length,
-        posy = 50, 
-        pr = 10;
-
-    document.addEventListener("scroll", function() {
-        for (let i = 0; i < l; i++) {
-            pr = par[i].getAttribute("data-rate");
-            posy = posy + (window.scrollY / 100);
-            par[i].style.backgroundPosition = `50% ${posy}%`;
-        }
-    }, true);
-})();
-
-// Parallaxing elements, use class="element-parallax" and data-rate="12"
-(() => {
-    let par = document.getElementsByClassName("element-parallax"), 
-        l = par.length,
-        posy = 0, 
-        pr = 12;
+        posy = 50;
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            pr = par[i].getAttribute("data-rate");
-            posy =- (window.scrollY / pr);
-            par[i].style.transform = `translateY(${posy}px)`;
+            posy = (window.scrollY / 25) + 50;
+            par[i].style.backgroundPosition = `50% ${posy}%`;
+            //posy = window.scrollY / 2;
+            //par[i].style.transform = `translateY(${posy}px)`;
         }
     }, true);
 })();

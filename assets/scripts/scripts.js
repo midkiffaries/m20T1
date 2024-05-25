@@ -259,7 +259,7 @@ document.addEventListener("keyup", (e) => {
     }
 })();
 
-// Parallaxing Hero header background
+// Parallaxing hero header background
 (() => {
     const par = document.getElementsByClassName("hero-parallax");
     document.addEventListener("scroll", function() {
@@ -268,17 +268,16 @@ document.addEventListener("keyup", (e) => {
     }, true);
 })();
 
-// Parallaxing backgrounds, element has class="has-parallax"
+// Improve WordPress parallaxing backgrounds, any element with class="has-parallax"
 (() => {
-    let par = document.getElementsByClassName("has-parallax"), 
-        l = par.length,
-        posy = 0;
+    const par = document.getElementsByClassName("has-parallax"), 
+        l = par.length;
     
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            posy = (-window.scrollY + getElOffsetY(par[i])) / 50;
+            let posy = (-window.scrollY + getElOffsetY(par[i])) / 40;
             par[i].style.backgroundRepeat = 'repeat';
-            par[i].style.backgroundAttachment = 'scroll';
+            par[i].style.backgroundAttachment = 'scroll !important';
             par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
         }
     }, true);

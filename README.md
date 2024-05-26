@@ -16,7 +16,7 @@ The intention of this theme is to be minimally reliant on 3rd party plugins whil
 Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m20T1 Theme Screenshots and additional information</a>
 
 ## Features
-<img src="https://github.com/midkiffaries/m20T1/assets/19917696/1a192dbf-9468-49c1-8908-52a43bf00e5f" alt="Screenshot" width="300" align="right" />
+<img src="https://github.com/midkiffaries/m20T1/assets/19917696/012a850d-dce2-46ab-adb8-c7aff033fe13" alt="Screenshot" width="300" align="right" />
 
 - Compatible with WordPress 6.5+
 - Theme requires PHP 8.0+
@@ -39,6 +39,8 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Built in shortcode post list function: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class="test"]</code>
 
 ## Todo List
+<img src="https://github.com/midkiffaries/m20T1/assets/19917696/57ae6991-b599-44fd-96f1-bd456f2b1cc4" alt="Screenshot" width="300" align="right" />
+
 - Seperating my personallized styling from style.css
 - QoL enhancements to editor's textarea elements
 - Keyphrase document query for SEO purposes

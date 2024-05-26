@@ -10,7 +10,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/midkiffaries/m20T1)
 [![CodeFactor](https://www.codefactor.io/repository/github/midkiffaries/m20t1/badge)](https://www.codefactor.io/repository/github/midkiffaries/m20t1)
 
-<img src="https://github.com/midkiffaries/m20T1/assets/19917696/299e1864-95e7-4304-ae40-a88fc9f0d2c1" alt="Screenshot" width="300" align="right" />
+<img src="https://github.com/midkiffaries/m20T1/assets/19917696/66c00a43-0a34-46d7-a25e-ef0491c50a52" alt="Screenshot" width="300" align="right" />
 
 This is a light-weight, feature-rich <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website.
 The intention of this theme is to be minimally reliant on 3rd party plugins while providing the same features that most popular plugins would provide. It does this by relying on the built-in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.

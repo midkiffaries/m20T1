@@ -270,12 +270,10 @@ document.addEventListener("keyup", (e) => {
 
 // Improve WordPress parallaxing backgrounds, any element with class="has-parallax"
 (() => {
-    const par = document.getElementsByClassName("has-parallax"), 
-        l = par.length;
-    
+    const par = document.getElementsByClassName("has-parallax"), l = par.length;
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            let posy = (-window.scrollY + getElOffsetY(par[i])) / 40;
+            let posy = (-window.scrollY + getElOffsetY(par[i])) / 30;
             par[i].style.backgroundRepeat = 'repeat';
             par[i].style.backgroundAttachment = 'scroll !important';
             par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
@@ -283,7 +281,7 @@ document.addEventListener("keyup", (e) => {
     },true);
 })();
 
-// Get element offset
+// Get an element's Y position on the page
 function getElOffsetY(el) {
     return el.getBoundingClientRect().top + window.scrollY;
 }

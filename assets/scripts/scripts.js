@@ -264,7 +264,7 @@ document.addEventListener("keyup", (e) => {
     const par = document.getElementsByClassName("hero-parallax");
     document.addEventListener("scroll", function() {
         let posy = (-window.scrollY / 25) + 50;
-        par[0].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
+        par[0].style.backgroundPosition = `50% ${posy.toFixed(1)}%`;
     },true);
 })();
 
@@ -275,8 +275,8 @@ document.addEventListener("keyup", (e) => {
         for (let i = 0; i < l; i++) {
             let posy = (-window.scrollY + getElOffsetY(par[i])) / 70;
             par[i].style.backgroundRepeat = 'repeat';
-            par[i].style.backgroundAttachment = 'scroll !important';
-            par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;
+            par[i].style.backgroundAttachment = 'scroll';
+            par[i].style.backgroundPosition = `50% ${posy.toFixed(1)}%`;
         }
     },true);
 })();

@@ -1414,9 +1414,6 @@ function m20T1_settings_page() {
             margin: 5px 5px 0;
             border-radius: 4px;
         }
-        textarea {
-            tab-size: 4;
-        }
     </style>
     <script>
     (() => {

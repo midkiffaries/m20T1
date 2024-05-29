@@ -273,7 +273,7 @@ document.addEventListener("keyup", (e) => {
     const par = document.getElementsByClassName("has-parallax"), l = par.length;
     document.addEventListener("scroll", function() {
         for (let i = 0; i < l; i++) {
-            let posy = (-window.scrollY + getElOffsetY(par[i])) / 45;
+            let posy = (-window.scrollY + getElOffsetY(par[i])) / 70;
             par[i].style.backgroundRepeat = 'repeat';
             par[i].style.backgroundAttachment = 'scroll !important';
             par[i].style.backgroundPosition = `50% ${posy.toFixed(2)}%`;

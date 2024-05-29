@@ -1391,15 +1391,15 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label> <br><small>These scripts will be placed inside the &lt;head&gt; tag.</small></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata')));?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code xeditor" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata')));?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label> <br><small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code xeditor" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label> <br><small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code xeditor" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
         </table>
         <?php submit_button(); ?>
@@ -1413,6 +1413,9 @@ function m20T1_settings_page() {
             width: 200px;
             margin: 5px 5px 0;
             border-radius: 4px;
+        }
+        textarea {
+            tab-size: 4;
         }
     </style>
     <script>
@@ -1437,6 +1440,51 @@ function m20T1_settings_page() {
             }
         }
     })();
+
+    (() => {
+        const keymap = {
+            "<": { value: "<>", pos: 1 },
+            "(": { value: "()", pos: 1 },
+            "[": { value: "[]", pos: 1 },
+            "{": { value: "{}", pos: 1 }
+        };
+        const snipmap = {
+            "3#": "### ",
+            "4#": "#### ",
+            "5#": "##### ",
+            "6#": "###### "
+        };
+        const textbox = document.getElementsByTagName("textarea"), l = textbox.length;
+        for (let i = 0; i < l; i++) {
+            textbox[i].addEventListener("keydown", function () {
+                if (keymap[event.key]) {
+                    event.preventDefault();
+                    const pos = textbox[i].selectionStart;
+                    textbox[i].value = textbox[i].value.slice(0, pos) + keymap[event.key].value + textbox[i].value.slice(textbox[i].selectionEnd);
+                    textbox[i].selectionStart = textbox[i].selectionEnd = pos + keymap[event.key].pos;
+                }
+                if (event.key === "Tab") {
+                    const word = getWord(textbox[i].value, textbox[i].selectionStart);
+                    if (word && snipmap[word]) {
+                        event.preventDefault();
+                        const pos = textbox[i].selectionStart;
+                        textbox[i].value = textbox[i].value.slice(0, pos - word.length) + snipmap[word] + textbox[i].value.slice(textbox[i].selectionEnd);
+                        textbox[i].selectionStart = textbox[i].selectionEnd = pos + (snipmap[word].length - 1);
+                    } else {
+                        event.preventDefault();
+                        const pos = textbox[i].selectionStart;
+                        textbox[i].value = textbox[i].value.slice(0, pos) + "	" + textbox[i].value.slice(textbox[i].selectionEnd);
+                        textbox[i].selectionStart = textbox[i].selectionEnd = pos + 1;
+                    }
+                }
+            });
+        }
+    })();
+    function getWord(text, caretPos) {
+        let preText = text.substring(0, caretPos),
+            split = preText.split(/\s/);
+        return split[split.length - 1].trim();
+    }
     </script>
 </div>
 <?php 
@@ -1628,6 +1676,9 @@ class BuildMetaBox {
                 gap:10px;
             }
         }
+        textarea {
+            tab-size: 4;
+        }
         </style>
         <script>
         (() => {
@@ -1638,6 +1689,47 @@ class BuildMetaBox {
                 }
             }
         })();
+
+        (() => {
+            const keymap = {
+                "(": { value: "()", pos: 1 },
+                "{": { value: "{}", pos: 1 }
+            };
+            const snipmap = {
+                "3#": "### ",
+                "4#": "#### ",
+                "5#": "##### ",
+                "6#": "###### "
+            };
+            const textbox = document.getElementById("m20t1_css_field");
+            textbox.addEventListener("keydown", function () {
+                if (keymap[event.key]) {
+                    event.preventDefault();
+                    const pos = textbox.selectionStart;
+                    textbox.value = textbox.value.slice(0, pos) + keymap[event.key].value + textbox.value.slice(textbox.selectionEnd);
+                    textbox.selectionStart = textbox.selectionEnd = pos + keymap[event.key].pos;
+                }
+                if (event.key === "Tab") {
+                    const word = getWord(textbox.value, textbox.selectionStart);
+                    if (word && snipmap[word]) {
+                        event.preventDefault();
+                        const pos = textbox.selectionStart;
+                        textbox.value = textbox.value.slice(0, pos - word.length) + snipmap[word] + textbox.value.slice(textbox.selectionEnd);
+                        textbox.selectionStart = textbox.selectionEnd = pos + (snipmap[word].length - 1);
+                    } else {
+                        event.preventDefault();
+                        const pos = textbox.selectionStart;
+                        textbox.value = textbox.value.slice(0, pos) + "	" + textbox.value.slice(textbox.selectionEnd);
+                        textbox.selectionStart = textbox.selectionEnd = pos + 1;
+                    }
+                }
+            });
+        })();
+        function getWord(text, caretPos) {
+            let preText = text.substring(0, caretPos),
+                split = preText.split(/\s/);
+            return split[split.length - 1].trim();
+        }
         </script>
         <?php
     }

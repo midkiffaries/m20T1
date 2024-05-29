@@ -1444,15 +1444,8 @@ function m20T1_settings_page() {
     (() => {
         const keymap = {
             "<": { value: "<>", pos: 1 },
-            "(": { value: "()", pos: 1 },
-            "[": { value: "[]", pos: 1 },
-            "{": { value: "{}", pos: 1 }
-        };
-        const snipmap = {
-            "3#": "### ",
-            "4#": "#### ",
-            "5#": "##### ",
-            "6#": "###### "
+            '"': { value: '""', pos: 1 },
+            "[": { value: "[]", pos: 1 }
         };
         const textbox = document.getElementsByTagName("textarea"), l = textbox.length;
         for (let i = 0; i < l; i++) {
@@ -1463,28 +1456,9 @@ function m20T1_settings_page() {
                     textbox[i].value = textbox[i].value.slice(0, pos) + keymap[event.key].value + textbox[i].value.slice(textbox[i].selectionEnd);
                     textbox[i].selectionStart = textbox[i].selectionEnd = pos + keymap[event.key].pos;
                 }
-                if (event.key === "Tab") {
-                    const word = getWord(textbox[i].value, textbox[i].selectionStart);
-                    if (word && snipmap[word]) {
-                        event.preventDefault();
-                        const pos = textbox[i].selectionStart;
-                        textbox[i].value = textbox[i].value.slice(0, pos - word.length) + snipmap[word] + textbox[i].value.slice(textbox[i].selectionEnd);
-                        textbox[i].selectionStart = textbox[i].selectionEnd = pos + (snipmap[word].length - 1);
-                    } else {
-                        event.preventDefault();
-                        const pos = textbox[i].selectionStart;
-                        textbox[i].value = textbox[i].value.slice(0, pos) + "	" + textbox[i].value.slice(textbox[i].selectionEnd);
-                        textbox[i].selectionStart = textbox[i].selectionEnd = pos + 1;
-                    }
-                }
             });
         }
     })();
-    function getWord(text, caretPos) {
-        let preText = text.substring(0, caretPos),
-            split = preText.split(/\s/);
-        return split[split.length - 1].trim();
-    }
     </script>
 </div>
 <?php 

@@ -1629,6 +1629,16 @@ class BuildMetaBox {
             }
         }
         </style>
+        <script>
+        (() => {
+            const inputNum = document.getElementById("m20t1_video_field");
+            if (inputNum.getAttribute("type") === "url") {
+                inputNum.onkeypress = function () {
+                    return event.charCode >= 33 && event.charCode <= 122;
+                }
+            }
+        })();
+        </script>
         <?php
     }
 }

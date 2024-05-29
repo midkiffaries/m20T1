@@ -4,6 +4,7 @@
 
 * Rewrote parallaxing background feature for the page header and .has-parallax.
 * Adjustments to the header hero HTML.
+* Improvements to entering code into text boxes.
 * Removed more personal branding.
 * Bug fixes and improvements.
 

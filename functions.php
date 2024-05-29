@@ -1605,7 +1605,7 @@ class BuildMetaBox {
         <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
 		</label></div>
-        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (255 char max, &lt;b&gt;, &lt;i&gt;, &lt;a&gt;, &lt;span&gt;)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
+        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (&lt;b&gt;, &lt;i&gt;, &lt;span&gt; allowed)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
         
         <div class="components-base-control__cols">        
             <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">

@@ -14,7 +14,7 @@
 
 This is a light-weight, feature-rich <a href="https://wordpress.org/">WordPress</a> theme that I created from scratch, that I use on my own website. The intention of this theme is to be minimally reliant on 3rd party plugins while providing the same features that most popular plugins would provide. It does this by relying on the built-in WordPress automation and features. This theme is built to be easy to work with from a coding standpoint.
 
-Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m20T1 Theme Screenshots and additional information</a>
+Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m20T1 theme screenshots and additional information</a>
 
 ## Features
 <img src="https://github.com/midkiffaries/m20T1/assets/19917696/57ae6991-b599-44fd-96f1-bd456f2b1cc4" alt="Screenshot" width="300" align="right" />

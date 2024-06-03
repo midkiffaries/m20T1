@@ -53,7 +53,7 @@
     <article class="<?=$pageKind;?>-page">
         <div <?php post_class();?>>
             <h1 class="page-title"><?=esc_html($postType->labels->singular_name);?> is empty</h1>
-            <div class="subtitle">There seems to be nothing here.</div>
+            <p class="subtitle">This doesn't seem to exist...</p>
             <div class="the-content">
                 <p>Would you like to try a search to find what you are looking for?</p>
                 <?php get_search_form('archive'); // Search Form ?>

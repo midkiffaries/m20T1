@@ -107,18 +107,17 @@
                     <h1 class="page-title" itemprop="name">
                     <?php 
                     if ( is_category() ) { // By category
-                        printf("There are no posts under %s category", single_cat_title('', false));
+                        printf("%s Category Not Found", single_cat_title('', false));
                     } else if ( is_tag() ) { // By tag
-                        printf("There are no posts under <b>#</b>%s tag", single_tag_title());
-                    } else if ( is_date() ) { // By date
-                        printf("There are no posts from that date");
+                        printf("<b>#</b>%s Tag Not Found", single_tag_title());
                     } else if ( is_author() ) { // By author
-                        printf("There are no posts by %s", $curauth->display_name);
+                        printf("Posts by %s Not Found", $curauth->display_name);
                     } else { // No posts found
                         printf("No posts found");
                     }
                     ?>
                     </h1>
+                    <p class="subtitle" itemprop="about">Posts with this topic do not seem to exist...</p>
                     <div class="the-content">
                         <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
                         <?php get_search_form('archive'); // Search Form ?>

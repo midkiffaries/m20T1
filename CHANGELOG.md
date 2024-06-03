@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.7.7 Live (June 20, 2024)
+
+* Bug fixes and code cleanup.
+
 ### 1.7.6 Live (June 1, 2024)
 
 * Rewrote parallaxing background feature for the page header and overrides WordPress's ".has-parallax" call.

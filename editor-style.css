@@ -265,8 +265,7 @@ input {
 }
 
 select:not([multiple]):not([size]) {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+	appearance: none;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	padding-right: 1.4em;

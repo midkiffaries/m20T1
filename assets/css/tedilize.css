@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /********************************************
-Tedilize 2.0 - Normalization and Base Styling 
+Tedilize 2.1 - Normalization and Base Styling 
 *********************************************/
 
 *,
@@ -23,7 +23,6 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	touch-action: manipulation;
-	-moz-tab-size: 4;
 	tab-size: 4;
 	font-family:
 		system-ui,
@@ -375,11 +374,7 @@ dialog {
 	left: 0;
 	right: 0;
 	top: 0;
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
 	width: fit-content;
-	height: -webkit-fit-content;
-	height: -moz-fit-content;
 	height: fit-content;
 	margin: auto;
 	display: block;
@@ -453,8 +448,7 @@ textarea {
 }
 
 select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+	appearance: none;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	cursor: pointer;
@@ -475,7 +469,6 @@ button,
 	background-color: #eee;
 	overflow: visible;
 	cursor: pointer;
-	-webkit-appearance: none;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -488,7 +481,7 @@ button,
 	font-size: inherit;
 	margin: 0;
 	accent-color: currentColor;
-	width: 1rem;
+	width: 1.1rem;
 	height: 1rem;
 }
 
@@ -496,7 +489,6 @@ textarea {
 	overflow: auto;
 	resize: vertical;
 	vertical-align: middle;
-	-webkit-appearance: none;
 	overscroll-behavior-y: contain;
 }
 
@@ -549,7 +541,7 @@ legend + * {
 /* Input Number */
 
 [type='number'] {
-	-moz-appearance: textfield;
+	appearance: textfield;
 }
 
 :out-of-range {
@@ -557,17 +549,17 @@ legend + * {
 }
 
 ::-webkit-inner-spin-button {
-	-webkit-appearance: none;
+	appearance: none;
 }
 
 /* Input Search */
 
 [type='search'] {
-	-webkit-appearance: textfield;
+	appearance: textfield;
 }
 
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+	appearance: none;
 }
 
 /* Input File Upload */
@@ -577,14 +569,14 @@ legend + * {
 }
 
 ::-webkit-file-upload-button {
-	-webkit-appearance: button;
+	appearance: button;
 	font: inherit;
 }
 
 /* Input Range */
 
 [type='range'] {
-	-webkit-appearance: none;
+	appearance: none;
 	height: 1.8em;
 	width: 9em;
 	vertical-align: middle;
@@ -607,7 +599,7 @@ legend + * {
 }
 
 ::-webkit-slider-thumb {
-	-webkit-appearance: none;
+	appearance: none;
 	margin-top: -0.35em;
 	width: 1.15em;
 	height: 1.15em;
@@ -617,7 +609,7 @@ legend + * {
 }
 
 ::-moz-range-thumb {
-	-moz-appearance: none;
+	appearance: none;
 	width: 1em;
 	height: 1em;
 	border-radius: 50%;
@@ -780,7 +772,6 @@ Responsive elements
 	img,
 	pre,
 	nav,
-	menu,
 	svg,
 	iframe,
 	blockquote,

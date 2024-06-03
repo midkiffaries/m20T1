@@ -67,17 +67,7 @@
         <?php comments_template(); // Display the comments for this post ?>
     </section>
 
-    <?php endwhile; else : // If post doesn't exist ?>
-
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
-        <div class="post-container">
-            <h1 class="single-entry-title" itemprop="name headline">Not Found</h1>
-            <p itemprop="text">Sorry, no posts matched your criteria. Try and search for it?</p>
-            <?php get_search_form('post'); // Search Form ?>
-        </div>
-    </article>
-
-    <?php endif; ?>
+    <?php endwhile; endif; ?>
 
     </div>
 

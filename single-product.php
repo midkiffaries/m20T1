@@ -23,12 +23,11 @@
             <?php display_last_updated(); ?>
         </div>
 
-    <?php endwhile; endif; ?>
-
         <aside id="page-widgets" class="page-sidebar product-widgets width-full">
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepage') ); // Select from 'Widgets_Slug' custom field ?>
-
         </aside>
+
+        <?php endwhile; endif; ?>
 
     </div>
     

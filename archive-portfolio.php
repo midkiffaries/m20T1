@@ -50,12 +50,12 @@
 
     <?php else : // If no results ?>
 
-    <article class="<?=$pageKind;?>-page" itemscope itemtype="https://www.schema.org/CreativeWork">
+    <article class="<?=$pageKind;?>-page">
         <div <?php post_class();?>>
-            <h1 class="page-title" itemprop="name"><?=esc_html($postType->labels->singular_name);?> is empty</h1>
+            <h1 class="page-title"><?=esc_html($postType->labels->singular_name);?> is empty</h1>
             <div class="subtitle">There seems to be nothing here.</div>
             <div class="the-content">
-                <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
+                <p>Would you like to try a search to find what you are looking for?</p>
                 <?php get_search_form('archive'); // Search Form ?>
             </div>
         </div>

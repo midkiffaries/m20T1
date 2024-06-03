@@ -52,10 +52,10 @@
 
     <?php else : // No page exists ?>
 
-    <article class="blog-roll" itemscope itemtype="https://schema.org/NewsArticle">
+    <article class="blog-roll">
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-            <h2 class="entry-title" itemprop="name">Not Found</h2>
-            <p itemprop="text">Sorry, but you are looking for something that isn't here for some reason.</p>
+            <h2 class="entry-title">Not Found</h2>
+            <p>Sorry, but you are looking for something that isn't here for some reason.</p>
             <?php my_search_form('Main'); // Search Form ?>
         </div>
     </article>

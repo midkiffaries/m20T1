@@ -72,7 +72,7 @@
 
     <section class="search-page-form" id="search-page">
         <div>
-            <h1 class="page-title" itemprop="name headline">Your search netted <strong><?=SearchCount(esc_attr($s));?></strong> result(s)</h1>
+            <h1 class="page-title" itemprop="name headline">Your search netted <strong>0</strong> results</h1>
             <?php get_search_form('search'); // Search form ?>
         </div>
     </section>

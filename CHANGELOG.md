@@ -3,6 +3,7 @@
 ### 1.7.7 Live (June 20, 2024)
 
 * Bug fixes and code cleanup.
+* Removal of some unnecessary -webkit- and -moz- prefixes.
 
 ### 1.7.6 Live (June 1, 2024)
 

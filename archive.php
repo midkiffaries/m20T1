@@ -122,10 +122,6 @@
                     <div class="the-content">
                         <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
                         <?php get_search_form('archive'); // Search Form ?>
-                        <p>&nbsp;</p>
-                        <div class="page-search-image aligncenter">
-                            <?=SEARCH_ERROR_IMAGE; ?>
-                        </div>
                     </div>
                 </div>
             </section>

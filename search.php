@@ -11,9 +11,10 @@
         <div>
             <h1 class="page-title" itemprop="name headline">Your search netted <b><?=SearchCount(esc_attr($s));?></b> result(s)</h1>
             <?php get_search_form('search'); // Search form ?>
+            
             <search class="search-sorting" aria-label="Search Sorting">
                 <form method="get" onchange="this.submit()">
-                <input type="hidden" name="s" value="<?=esc_attr($_GET['s']);?>">
+                    <input type="hidden" name="s" value="<?=esc_attr($_GET['s']);?>">
                     <label><b>SORT</b></label>
                     <select id="SortSearch" name="order">
                         <option value="desc">Newest</option>

@@ -1359,11 +1359,11 @@ function m20T1_settings_page() {
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="404_image">404 Error Page Image URL</label> <br><small>500x500px <i>Type: all</i></small></th>
-                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/filename.jpg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image'));?>"> <img src="<?=esc_attr(get_option('404_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
+                <td><input type="url" name="404_image" id="404_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/filename.jpg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('404_image'));?>"> <img src="<?=esc_attr(get_option('404_image'));?>" alt="" class="form-image" loading="lazy" decoding="async" fetchpriority="auto"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="search_image">Search Page Image URL</label> <br><small>500x500px <i>Type: all</i></small></th>
-                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/filename.jpg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"> <img src="<?=esc_attr(get_option('search_image'));?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
+                <td><input type="url" name="search_image" id="search_image" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/filename.jpg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('search_image'));?>"> <img src="<?=esc_attr(get_option('search_image'));?>" alt="" class="form-image" loading="lazy" decoding="async" fetchpriority="auto"></td>
             </tr>
         </table>
         <h2>Placeholder and Fallback Images</h2>
@@ -1371,11 +1371,11 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="social_image">Social Image Fallback URL</label> <br><small>1000x500px <i>Type: jpeg/png</i></small></th>
-                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/social-share.jpg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image'));?>"> <img src="<?=get_option('social_image') ? esc_attr(get_option('social_image')) : esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/social-share.jpg");?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
+                <td><input type="url" name="social_image" id="social_image" placeholder="<?=esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/social-share.jpg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('social_image'));?>"> <img src="<?=get_option('social_image') ? esc_attr(get_option('social_image')) : esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/social-share.jpg");?>" alt="" class="form-image" loading="lazy" decoding="async" fetchpriority="auto"></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="blank_image">Featured Image Fallback URL</label> <br><small>600x600px <i>Type: all</i></small></th>
-                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/featured-blank.svg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image'));?>"> <img src="<?=get_option('blank_image') ? esc_attr(get_option('blank_image')) : esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/featured-blank.svg");?>" alt="" class="form-image" loading="lazy" decoding="async"></td>
+                <td><input type="url" name="blank_image" id="blank_image" placeholder="<?=esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/featured-blank.svg");?>" spellcheck="false" autocapitalize="none" autocorrect="off" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?=esc_attr(get_option('blank_image'));?>"> <img src="<?=get_option('blank_image') ? esc_attr(get_option('blank_image')) : esc_url(home_url() . "/wp-content/themes/m20t1/assets/images/featured-blank.svg");?>" alt="" class="form-image" loading="lazy" decoding="async" fetchpriority="auto"></td>
             </tr>
         </table>
         <h2>Main Contact Form</h2>

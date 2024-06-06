@@ -828,7 +828,7 @@ function attachment_page_image( $id ) {
     // Check if attachment matches the extension video array
     foreach ($video_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
-            return '<video preload="auto" controls width="570" style="box-shadow:0 1px 6px 0 rgba(0,0,0,0.7)"><source src="' . wp_get_attachment_url(get_the_ID()) . '" type="' . mime_content_type(wp_get_attachment_url(get_the_ID())) . '"></video>';
+            return '<video preload="auto" controls playsinline style="width:95%;box-shadow:0 1px 6px 0 rgba(0,0,0,0.7)"><source src="' . wp_get_attachment_url(get_the_ID()) . '" type="' . mime_content_type(wp_get_attachment_url(get_the_ID())) . '"></video>';
         }
     }
 

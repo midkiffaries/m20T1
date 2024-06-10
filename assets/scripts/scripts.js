@@ -176,20 +176,21 @@ document.addEventListener("keyup", (e) => {
         l = youtube.length;
 
     for (let i = 0; i < l; i++) {
-        const source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`,
-            image = new Image();
+        const image = new Image();
 
-        image.src = source;
+        image.src = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`;
         image.alt = "Load YouTube video";
         image.decoding = "async";
         image.fetchpriority = "low";
+        image.loading = "lazy";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
 
         youtube[i].addEventListener("click", function() {
             const iframe = document.createElement("iframe");
             iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute("allow", "accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
+            iframe.setAttribute("allow", "accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share");
             iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
             iframe.setAttribute("loading", "lazy");
             iframe.setAttribute("role", "presentation");
             iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?feature=oembed`);

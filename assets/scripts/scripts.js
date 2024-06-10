@@ -178,7 +178,7 @@ document.addEventListener("keyup", (e) => {
     for (let i = 0; i < l; i++) {
         const image = new Image();
 
-        image.src = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`;
+        image.src = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`; // alt: sddefault, hqdefault, maxresdefault
         image.alt = "Load YouTube video";
         image.decoding = "async";
         image.fetchpriority = "low";

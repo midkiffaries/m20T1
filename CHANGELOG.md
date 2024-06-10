@@ -3,7 +3,7 @@
 ### 1.7.7 Live (June 20, 2024)
 
 * Support for Wordpress 6.5.4.
-* Removal of some unnecessary -webkit- and -moz- prefixes from style sheets.
+* Removal of some unnecessary -webkit- and -moz- prefixes from stylesheets.
 * Bug fixes and code cleanup.
 
 ### 1.7.6 Live (June 1, 2024)

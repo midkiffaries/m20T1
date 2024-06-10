@@ -180,7 +180,7 @@ document.addEventListener("keyup", (e) => {
 
         image.src = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`; // alt: sddefault, hqdefault, maxresdefault
         image.alt = "Load YouTube video";
-        image.decoding = "async";
+        image.decoding = "defer";
         image.fetchpriority = "low";
         image.loading = "lazy";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));

@@ -1,5 +1,8 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.7.8 Live (July 30, 2024)
+
+
 ### 1.7.7 Live (June 18, 2024)
 
 * Support for Wordpress 6.5.4.

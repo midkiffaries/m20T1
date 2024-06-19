@@ -15,8 +15,9 @@
                 <div class="<?=$pageKind;?>-name" itemprop="articleSection"><a href="<?=home_url() . "/" . esc_html($postType->labels->uri_slug) . "/"; ?>"><?=get_post_type();?></a></div>
                 <div class="<?=$pageKind;?>-view-all"><a href="<?=home_url() . "/" . esc_html($postType->labels->uri_slug) . "/"; ?>">View all <?=esc_html($postType->labels->name);?></a></div>
                 <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
-                <div class="the-content" itemprop="text description">
+                <div class="the-content" itemprop="text articleBody description" id="TheContent">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
+
                     <?=custom_page_css(get_the_ID());?>
                 </div>
             </div>

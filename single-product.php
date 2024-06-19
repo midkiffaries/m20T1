@@ -12,7 +12,7 @@
             <div class="post-container">
                 <div class="product-title" itemprop="articleSection"><a href="<?=home_url() . "/" . get_post_type() . "/";?>">Shop</a></div>
                 <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
-                <div class="the-content" itemprop="text description">
+                <div class="the-content" itemprop="text articleBody description">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                     
                     <?=custom_page_css(get_the_ID()); ?>

@@ -15,11 +15,11 @@
                 <h1 class="single-entry-title" id="<?=$post->post_name;?>" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 
-                    <span class="single-entry-author"><?=post_separator();?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) );?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
+                    <span class="single-entry-author"><?=post_separator();?> Written By <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) );?>" itemprop="author" rel="author" id="TheAuthor"><?php the_author(); ?></a></span>
                     <span class="single-entry-read-time"><?=post_separator();?> <?=reading_time();?></span>
                 </div>
             </header>
-            <div class="the-content single-entry-content" itemprop="text articleBody">
+            <div class="the-content single-entry-content" itemprop="text articleBody" id="TheContent">
                 <?php the_content("<p>Continue Reading &raquo;</p>"); ?>
                 <?=custom_page_css(get_the_ID());?>
             </div>

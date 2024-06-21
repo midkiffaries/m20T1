@@ -5,9 +5,13 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+			"background": true,
+			"custom": true,
+			"customDuotone": true,
+			"customGradient": true,
 			"defaultDuotone": true,
-			"defaultPalette": true,
 			"defaultGradients": true,
+			"defaultPalette": true,
 			"palette": [
 				{
 					"color": "#ffffff",
@@ -103,17 +107,27 @@
 			"width": true
 		},
 		"shadow": {
-			"defaultPresets": true,
+			"defaultPresets": false,
 			"presets": [
 				{
-					"name": "Standard",
-					"slug": "standard",
+					"name": "Natural",
+					"slug": "natural",
 					"shadow": "0px 4px 8px -2px rgba(0,0,0,0.8)"
 				},
 				{
-					"name": "Fancy Primary",
-					"slug": "fancyprimary",
-					"shadow": "7px 7px 0 0 #888, -9px -9px 0 0 var(--wp--preset--color--primary)"
+					"name": "Crisp",
+					"slug": "crisp",
+					"shadow": "6px 6px 0px rgba(0,0,0,0.5)"
+				},
+				{
+					"name": "Outlined",
+					"slug": "outlined",
+					"shadow": "6px 6px 0 -3px rgba(255,255,255,1), 6px 6px var(--wp--preset--color--primary)"
+				},
+				{
+					"name": "Fancy",
+					"slug": "fancy",
+					"shadow": "7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary)"
 				}
 			]
 		},

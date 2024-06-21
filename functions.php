@@ -1001,8 +1001,6 @@ add_action('wp_dashboard_setup', function(){
         <li><code>subtitle</code> - Defines the page subtitle</li>
         <li><code>alignjustify</code> - Justifies a text block</li>
         <li><code>hidden</code> - Hides a block from view</li>
-        <li><code>fancy-border</code> - Adds a fancy border</li>
-        <li><code>add-drop-shadow</code> - Adds a drop shadow</li>
         <li><code>old-photo</code> - Ages an image</li>
     </ul>
     <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]</code></p>

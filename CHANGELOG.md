@@ -2,6 +2,8 @@
 
 ### 1.7.8 Live (July 30, 2024)
 
+* Support for Wordpress 6.6.0.
+* Improvements and additions to theme.json in the way of shadows.
 
 ### 1.7.7 Live (June 18, 2024)
 

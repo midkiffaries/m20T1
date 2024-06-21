@@ -59,6 +59,9 @@
 			"contentSize": "1060px",
 			"wideSize": "1200px"
 		},
+		"dimensions": {
+			"minHeight": true
+		},
 		"spacing": {
 			"spacingScale": {
 				"steps": 1

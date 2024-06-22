@@ -399,6 +399,15 @@ a img[style="box-shadow:var(--wp--preset--shadow--natural)"]:active {
 	transform: scale(0.99);
 }
 
+a img[style="box-shadow:var(--wp--preset--shadow--fancy)"]:hover {
+	transform: scale(1.01);
+	box-shadow: 13px 13px 0 0 #888, -12px -12px 0 0 var(--brand-color-pale) !important;
+}
+
+a img[style="box-shadow:var(--wp--preset--shadow--fancy)"]:active {
+	transform: scale(0.99);
+}
+
 /* Body content links */
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {
 	color: var(--brand-color);

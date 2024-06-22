@@ -1453,7 +1453,7 @@ function m20T1_settings_page() {
             });
         }
     })();
-    </script>
+    </scrip>
 </div>
 <?php 
 }

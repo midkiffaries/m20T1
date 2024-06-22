@@ -342,8 +342,17 @@ WordPress Gutenburg Content Styling
 
 /* Images, Figures and Galleries */
 .the-content figure a img {
-	transition: all 0.3s ease-in-out;
-	border-radius: 2px;
+	transition: all 0.3s ease-out;
+}
+
+.the-content figure a img:hover {
+	filter: brightness(1.02);
+	transform: scale(1.01);
+}
+
+.the-content figure a img:active {
+	filter: brightness(0.95);
+	transform: scale(0.99);
 }
 
 .the-content figure figcaption {
@@ -388,24 +397,8 @@ Custom Gutenburg Styling
 ***********************************/
 
 /* Box and image shadows */
-a img[style="box-shadow:var(--wp--preset--shadow--natural)"]:hover {
-	filter: brightness(1.03);
-	transform: scale(1.01);
-	box-shadow: 0px 4px 16px -2px rgba(0,0,0,0.7) !important;
-}
-
-a img[style="box-shadow:var(--wp--preset--shadow--natural)"]:active {
-	filter: brightness(0.95);
-	transform: scale(0.99);
-}
-
 a img[style="box-shadow:var(--wp--preset--shadow--fancy)"]:hover {
-	transform: scale(1.01);
 	box-shadow: 13px 13px 0 0 #888, -12px -12px 0 0 var(--brand-color-pale) !important;
-}
-
-a img[style="box-shadow:var(--wp--preset--shadow--fancy)"]:active {
-	transform: scale(0.99);
 }
 
 /* Body content links */

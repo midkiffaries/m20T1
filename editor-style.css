@@ -330,7 +330,3 @@ select:not([multiple]):not([size]) {
 .hidden {
 	opacity: 0.3;
 }
-
-.old-photo img {
-	filter: sepia(45%) blur(0.02em) saturate(0.7) contrast(1.5) brightness(1.05);
-}

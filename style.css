@@ -346,7 +346,7 @@ WordPress Gutenburg Content Styling
 }
 
 .the-content figure a img:hover {
-	filter: brightness(1.02);
+	filter: brightness(1.03);
 	transform: scale(1.01);
 }
 
@@ -396,8 +396,9 @@ WordPress Gutenburg Content Styling
 Custom Gutenburg Styling
 ***********************************/
 
-/* Box and image shadows */
-a img[style="box-shadow:var(--wp--preset--shadow--fancy)"]:hover {
+/* Image Fancy shadow hover */
+.fancy-hover a[href] img:hover,
+.the-content a img[style="Xbox-shadow:var(--wp--preset--shadow--fancy)"]:hover {
 	box-shadow: 13px 13px 0 0 #888, -12px -12px 0 0 var(--brand-color-pale) !important;
 }
 

@@ -177,10 +177,6 @@ blockquote p::after {
 	font-size: 1.2rem;
 }
 
-blockquote cite {
-	margin-left: 0.5em;
-}
-
 /* Headings */
 h1,
 h2,

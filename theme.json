@@ -55,6 +55,7 @@
 				}
 			]
 		},
+		"custom": {},
 		"layout": {
 			"contentSize": "1060px",
 			"wideSize": "1200px"

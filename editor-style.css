@@ -107,10 +107,7 @@ figure {
 
 figcaption {
 	color: #666;
-	text-align: center;
 	padding: 0.6em 0.2em;
-	line-height: 1.15;
-	font-size: 0.9rem;
 }
 
 /* Monospace elements */
@@ -181,7 +178,6 @@ blockquote p::after {
 }
 
 blockquote cite {
-	font-size: smaller;
 	margin-left: 0.5em;
 }
 

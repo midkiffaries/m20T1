@@ -586,6 +586,19 @@
 					"lineHeight": "1.4"
 				}
 			},
+			"caption": {
+				"typography": {
+					"fontSize": "0.9rem",
+					"textAlign": "center",
+					"lineHeight": "1.15"
+				}
+			},
+			"cite": {
+				"typography": {
+					"fontSize": "smaller",
+					"lineHeight": "1.15"
+				}
+			},
 			"link": {
 				"color": {
 					"text": "var(--wp--preset--color--contrast)"

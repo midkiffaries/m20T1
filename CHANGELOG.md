@@ -1,9 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.8 Live (July 30, 2024)
+### 1.7.8 Live (July 20, 2024)
 
 * Support for Wordpress 6.6.0.
-* Improvements and additions to theme.json in the way of shadows.
+* Improvements and additions to theme.json in the way of shadows and removal of them from the stylesheets.
 
 ### 1.7.7 Live (June 18, 2024)
 

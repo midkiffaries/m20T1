@@ -121,7 +121,7 @@
 				{
 					"name": "Crisp",
 					"slug": "crisp",
-					"shadow": "6px 6px 0px rgba(0,0,0,0.5)"
+					"shadow": "6px 6px 0px rgba(0,0,0,0.3)"
 				},
 				{
 					"name": "Outlined",

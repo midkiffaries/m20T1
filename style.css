@@ -369,7 +369,7 @@ WordPress Gutenburg Content Styling
 	margin-bottom: 2em !important;
 }
 
-.the-content .wp-block-gallery .wp-block-image img[src] {
+.the-content .wp-block-gallery .wp-block-image a img[src] {
 	box-shadow: none;
 	border: 3px solid var(--brand-color-dark);
 	transition: all 0.2s ease-in-out;

@@ -341,21 +341,23 @@ WordPress Gutenburg Content Styling
 }
 
 /* Images, Figures and Galleries */
-.the-content figure a img {
-	transition: all 0.3s ease-out;
+.the-content .wp-block-image a img {
+	transition: all 0.25s ease-out;
 }
 
-.the-content figure a img:hover {
-	filter: brightness(1.03);
-	transform: scale(1.01);
+.the-content .wp-block-image a img:hover {
+	filter: brightness(1.1);
+	transform: scale(1.03);
+	outline: 3px solid var(--brand-color);
+	outline-offset: -1px;
 }
 
-.the-content figure a img:active {
+.the-content .wp-block-image a img:active {
 	filter: brightness(0.95);
 	transform: scale(0.99);
 }
 
-.the-content figure figcaption {
+.the-content .wp-block-image figcaption {
 	padding-top: 4px;
 }
 
@@ -363,18 +365,19 @@ WordPress Gutenburg Content Styling
 	margin-bottom: 2em !important;
 }
 
-.the-content .wp-block-gallery figure img[src] {
+.the-content .wp-block-gallery .wp-block-image img[src] {
 	box-shadow: none;
 	border: 3px solid var(--brand-color-dark);
 	transition: all 0.2s ease-in-out;
 }
 
-.the-content .wp-block-gallery figure a img[src]:hover {
+.the-content .wp-block-gallery .wp-block-image a img[src]:hover {
 	transform: scale(1.01);
 	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.2);
+	outline: none;
 }
 
-.the-content .wp-block-gallery figcaption {
+.the-content .wp-block-gallery .wp-block-image figcaption {
 	background: none !important;
 	color: #666 !important;
 	font-weight: 500;

@@ -352,6 +352,10 @@ WordPress Gutenburg Content Styling
 	outline-offset: -1px;
 }
 
+.the-content .wp-block-image a img[src$='.svg']:hover {
+	outline: none !important;
+}
+
 .the-content .wp-block-image a img:active {
 	filter: brightness(0.95);
 	transform: scale(0.99);

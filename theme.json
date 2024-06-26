@@ -55,7 +55,10 @@
 				}
 			]
 		},
-		"custom": {},
+		"custom": {
+			"fruit": "apple",
+			"lineHeight": "2.4em"
+		},
 		"layout": {
 			"contentSize": "1060px",
 			"wideSize": "1200px"

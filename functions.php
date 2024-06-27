@@ -1591,13 +1591,6 @@ class BuildMetaBox {
         $pageKeyphrase = get_post_meta( $post->ID, 'Page_Keyphrase', true );
         //$pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
 
-        // Keyphrase fallback
-        //if ($pageKeyphrase) {
-        //    $pageKeyphraseCount = substr_count(strtolower(strip_tags(get_the_content())), strtolower($pageKeyphrase));
-        //} else {
-        //    $pageKeyphraseCount = 0;
-        //}
-
         $pageKeyphraseCount = $pageKeyphrase ? substr_count(strtolower(strip_tags(get_the_content())), strtolower($pageKeyphrase)) : 0;
 		
         // Generate the meta box HTML

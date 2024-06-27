@@ -1571,6 +1571,7 @@ class BuildMetaBox {
         update_post_meta( $post_id, 'Page_Article', htmlspecialchars($_POST['m20t1_article_field']) );
         update_post_meta( $post_id, 'Page_Video', esc_url(htmlspecialchars($_POST['m20t1_video_field'])) );
         update_post_meta( $post_id, 'Page_Subtitle', clean_html($_POST['m20t1_subtitle_field']) );
+        update_post_meta( $post_id, 'Page_Keyphrase', clean_html($_POST['m20t1_keyphrase_field']) );
         //update_post_meta( $post_id, 'Widgets_Slug', clean_html($_POST['m20t1_widgets_field']) );
 	}
 
@@ -1588,8 +1589,14 @@ class BuildMetaBox {
         $pageVideo = get_post_meta( $post->ID, 'Page_Video', true );
         $pageSubtitle = get_post_meta( $post->ID, 'Page_Subtitle', true );
         $pageKeyphrase = get_post_meta( $post->ID, 'Page_Keyphrase', true );
-        $pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
-        $pageKeyphraseCount = 0;
+        //$pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
+
+        //$l = strlen($pageKeyphrase);
+        //$c = strtolower(strip_tags(get_the_content()));
+        //for ($i = 0; $i < strlen($c); $i++) {
+        //    $cycle = strpos($c, $pageKeyphrase, $i);
+        //}
+        $pageKeyphraseCount = $i;
 
 		// Generate the meta box HTML
 		?>
@@ -1607,7 +1614,7 @@ class BuildMetaBox {
 			<?php _e( 'SEO Keyphrase', 'textdomain' ); ?>
             (Count: <b id="m20t1_keyphrase_count"><?=$pageKeyphraseCount;?></b>)
 		</label></div>
-        <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase related to the content (3-8 times)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageKeyphrase;?>">
+        <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase related to the content (3-8 times)" maxlength="255" style="width:100%;margin-bottom:8px;text-transform:lowercase" value="<?=$pageKeyphrase;?>">
 
         <div class="components-base-control__cols">        
             <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">

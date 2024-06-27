@@ -303,11 +303,6 @@ iframe {
 	margin: 0;
 }
 
-img[src$='.gif'] {
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
-}
-
 a img {
 	object-fit: contain;
 }

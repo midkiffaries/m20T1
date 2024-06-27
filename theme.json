@@ -116,12 +116,17 @@
 				{
 					"name": "Natural",
 					"slug": "natural",
-					"shadow": "0px 4px 8px -2px rgba(0,0,0,0.8)"
+					"shadow": "0 4px 8px -2px rgba(0,0,0,0.8)"
+				},
+				{
+					"name": "Inset",
+					"slug": "inset",
+					"shadow": "3px 3px 7px -1px rgba(0,0,0,0.5) inset"
 				},
 				{
 					"name": "Crisp",
 					"slug": "crisp",
-					"shadow": "6px 6px 0px rgba(0,0,0,0.3)"
+					"shadow": "6px 6px 0 rgba(0,0,0,0.3)"
 				},
 				{
 					"name": "Outlined",

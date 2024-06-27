@@ -1596,7 +1596,7 @@ class BuildMetaBox {
         //for ($i = 0; $i < strlen($c); $i++) {
         //    $cycle = strpos($c, $pageKeyphrase, $i);
         //}
-        $pageKeyphraseCount = $i;
+        $pageKeyphraseCount = 0;
 
 		// Generate the meta box HTML
 		?>
@@ -1612,9 +1612,9 @@ class BuildMetaBox {
 
         <div class="components-base-control__field"><label for="m20t1_keyphrase_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'SEO Keyphrase', 'textdomain' ); ?>
-            (Count: <b id="m20t1_keyphrase_count"><?=$pageKeyphraseCount;?></b>)
+            (Count: <b id="m20t1_keyphrase_count" title="Count should be 1 for every 100 words"><?=$pageKeyphraseCount;?></b>)
 		</label></div>
-        <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase related to the content (3-8 times)" maxlength="255" style="width:100%;margin-bottom:8px;text-transform:lowercase" value="<?=$pageKeyphrase;?>">
+        <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase related to the content" maxlength="255" style="width:100%;margin-bottom:8px;text-transform:lowercase" value="<?=$pageKeyphrase;?>">
 
         <div class="components-base-control__cols">        
             <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">

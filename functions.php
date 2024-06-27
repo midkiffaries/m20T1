@@ -1591,9 +1591,13 @@ class BuildMetaBox {
         $pageKeyphrase = get_post_meta( $post->ID, 'Page_Keyphrase', true );
         //$pageWidgets = get_post_meta( $post->ID, 'Widgets_Slug', true );
 
-        $pageKeyphraseCount = substr_count(strtolower(strip_tags(get_the_content())), strtolower($pageKeyphrase));
-
-		// Generate the meta box HTML
+        if ($pageKeyphrase) {
+            $pageKeyphraseCount = substr_count(strtolower(strip_tags(get_the_content())), strtolower($pageKeyphrase));
+        } else {
+            $pageKeyphraseCount = 0;
+        }
+		
+        // Generate the meta box HTML
 		?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
@@ -1607,9 +1611,9 @@ class BuildMetaBox {
 
         <div class="components-base-control__field"><label for="m20t1_keyphrase_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'SEO Keyphrase', 'textdomain' ); ?>
-            (Count: <b id="m20t1_keyphrase_count" title="Count should be 1 for every 100 words"><?=$pageKeyphraseCount;?></b>)
+            (Count: <b id="m20t1_keyphrase_count" title="Count should be 1 for every 100 words on the page."><?=$pageKeyphraseCount;?></b>)
 		</label></div>
-        <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase related to the content" maxlength="255" style="width:100%;margin-bottom:8px;text-transform:lowercase" value="<?=$pageKeyphrase;?>">
+        <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase that appears in the content" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageKeyphrase;?>">
 
         <div class="components-base-control__cols">        
             <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">

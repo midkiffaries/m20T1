@@ -16,8 +16,6 @@ body {
 	color: var(--text-color);
 	font-size: 1.2rem;
 	line-height: 1.7;
-	width: 1101px;
-	margin: 0 auto;
 	padding: 0;
 	font-family: 
 		system-ui,
@@ -31,8 +29,13 @@ body {
 		'Noto Color Emoji';
 }
 
+.editor-styles-wrapper .is-root-container {
+	max-width: 1051px;
+	margin: 0 auto;
+}
+
 @media (max-width: 1100px) {
-	body {
+	.editor-styles-wrapper .is-root-container {
 		width: 95vw;
 	}
 }

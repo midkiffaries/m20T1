@@ -121,7 +121,7 @@
 				{
 					"name": "Inset",
 					"slug": "inset",
-					"shadow": "3px 3px 7px -1px rgba(0,0,0,0.5) inset"
+					"shadow": "inset 3px 3px 7px -1px rgba(0,0,0,0.5)"
 				},
 				{
 					"name": "Crisp",
@@ -157,6 +157,11 @@
 					"fontFamily": "Georgia, Droid Serif, Times, serif",
 					"name": "System Serif",
 					"slug": "system-serif"
+				},
+				{
+					"fontFamily": "cursive",
+					"name": "System Cursive",
+					"slug": "system-cursive"
 				},
 				{
 					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, Roboto Mono, Liberation Mono, monospace",

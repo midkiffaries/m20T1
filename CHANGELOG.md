@@ -5,6 +5,7 @@
 * Support for Wordpress 6.6.0.
 * Added SEO Keyphrase and count to the Advanced Options panel.
 * Improvements and additions to theme.json in the way of shadows and removal of them from the stylesheets.
+* Bug fixes and code cleanup.
 
 ### 1.7.7 Live (June 18, 2024)
 

@@ -119,9 +119,9 @@
 					"shadow": "0 4px 8px -2px rgba(0,0,0,0.8)"
 				},
 				{
-					"name": "Inset",
-					"slug": "inset",
-					"shadow": "inset 3px 3px 7px -1px rgba(0,0,0,0.5)"
+					"name": "Soft",
+					"slug": "soft",
+					"shadow": "4px 8px 24px -8px rgba(66,68,90,0.85)"
 				},
 				{
 					"name": "Crisp",
@@ -131,22 +131,32 @@
 				{
 					"name": "Outlined",
 					"slug": "outlined",
-					"shadow": "6px 6px 0 -3px rgba(255,255,255,1), 6px 6px var(--wp--preset--color--primary)"
+					"shadow": "6px 6px 0 -3px #fff, 6px 6px var(--wp--preset--color--primary)"
 				},
 				{
 					"name": "Fancy",
 					"slug": "fancy",
 					"shadow": "7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary)"
+				},
+				{
+					"name": "Inset",
+					"slug": "inset",
+					"shadow": "inset 3px 3px 7px -1px rgba(0,0,0,0.5)"
 				}
 			]
 		},
 		"typography": {
-			"dropCap": true,
 			"fluid": true,
-			"textTransform": true,
-			"letterSpacing": true,
-			"fontWeight": true,
+			"customFontSize": true,
+			"dropCap": true,
 			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": true,
+			"textColumns": true,
+			"textDecoration": true,
+			"textTransform": true,
+			"writingMode": true,
 			"fontFamilies": [
 				{
 					"fontFamily": "system-ui, -apple-system, Segoe UI, Roboto, Liberation Sans, sans-serif",
@@ -172,7 +182,7 @@
 			"fontSizes": [
 				{
 					"fluid": {
-						"min": "0.875rem",
+						"min": "0.8rem",
 						"max": "1rem"
 					},
 					"size": "1rem",
@@ -182,38 +192,37 @@
 				{
 					"fluid": {
 						"min": "1rem",
-						"max": "1.125rem"
+						"max": "1.2rem"
 					},
-					"size": "1.125rem",
+					"size": "1.2rem",
 					"name": "Medium",
 					"slug": "medium"
 				},
 				{
 					"fluid": {
-						"min": "1.75rem",
-						"max": "1.875rem"
+						"min": "1.6rem",
+						"max": "1.8rem"
 					},
-					"size": "1.75rem",
+					"size": "1.6rem",
 					"name": "Large",
 					"slug": "large"
 				},
 				{
 					"fluid": false,
-					"size": "2.25rem",
+					"size": "2.2rem",
 					"name": "Extra Large",
 					"slug": "x-large"
 				},
 				{
 					"fluid": {
 						"min": "4rem",
-						"max": "10rem"
+						"max": "5rem"
 					},
-					"size": "10rem",
+					"size": "4rem",
 					"name": "Extra Extra Large",
 					"slug": "xx-large"
 				}
-			],
-			"writingMode": true
+			]
 		},
 		"useRootPaddingAwareAlignments": true,
 		"blocks": {}

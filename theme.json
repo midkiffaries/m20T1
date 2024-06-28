@@ -10,8 +10,10 @@
 			"customDuotone": true,
 			"customGradient": true,
 			"defaultDuotone": true,
-			"defaultGradients": true,
+			"defaultGradients": false,
 			"defaultPalette": true,
+			"link": true,
+			"text": true,
 			"palette": [
 				{
 					"color": "#40A5FF",
@@ -42,6 +44,28 @@
 					"color": "#bada55",
 					"name": "Quaternary",
 					"slug": "quaternary"
+				}
+			],
+			"gradients": [
+				{
+					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(90deg, #83bbf7, #3b68f7)",
+					"name": "A gradient with the brand colors",
+					"slug": "brandGradient"
+				},
+				{
+					"gradient": "linear-gradient(0deg, #205380, #03000f)",
+					"name": "A dark brand color gradient",
+					"slug": "branddarkGradient"
+				},
+				{
+					"gradient": "linear-gradient(135deg, #697e9b, #bbcce8)",
+					"name": "A blueish grey gradient",
+					"slug": "greyGradient"
+				},
+				{
+					"gradient": "linear-gradient(0deg, #03000f, #596c75)",
+					"name": "A dark gradient",
+					"slug": "darkGradient"
 				}
 			]
 		},

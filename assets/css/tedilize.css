@@ -249,7 +249,7 @@ pre {
 	direction: ltr;
 	unicode-bidi: bidi-override;
 	white-space: pre-wrap;
-	font-size: 1em;
+	font-size: inherit;
 	font-family:
 		SFMono-Regular,
 		Menlo,
@@ -272,7 +272,6 @@ pre {
 	display: block;
 	word-break: break-all;
 	line-height: 1.4;
-	font-size: 0.9rem;
 }
 
 pre code {

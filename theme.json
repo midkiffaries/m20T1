@@ -69,7 +69,9 @@
 				}
 			]
 		},
-		"custom": {},
+		"custom": {
+			"userFont": "Montserrat"
+		},
 		"layout": {
 			"contentSize": "1060px",
 			"wideSize": "1200px"
@@ -178,7 +180,7 @@
 			"writingMode": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "system-ui, -apple-system, Segoe UI, Roboto, Liberation Sans, sans-serif",
+					"fontFamily": "var(--wp--custom--user-font), system-ui, -apple-system, Segoe UI, Roboto, Liberation Sans, sans-serif",
 					"name": "System Sans",
 					"slug": "system-font"
 				},
@@ -186,11 +188,6 @@
 					"fontFamily": "Georgia, Droid Serif, Times, serif",
 					"name": "System Serif",
 					"slug": "system-serif"
-				},
-				{
-					"fontFamily": "cursive",
-					"name": "System Cursive",
-					"slug": "system-cursive"
 				},
 				{
 					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, Roboto Mono, Liberation Mono, monospace",
@@ -247,6 +244,10 @@
 		"blocks": {}
 	},
 	"styles": {
+		"color": {
+			"background": "#fdfdfd",
+			"text": "#111"
+		},
 		"blocks": {
 			"core/navigation": {
 				"elements": {
@@ -547,10 +548,6 @@
 				}
 			}
 		},
-		"color": {
-			"background": "var(--wp--preset--color--white)",
-			"text": "var(--wp--preset--color--black)"
-		},
 		"elements": {
 			"button": {
 				"border": {
@@ -684,7 +681,7 @@
 			}
 		},
 		"typography": {
-			"XfontFamily": "var(--wp--preset--font-family--system-font)",
+			"fontFamily": "var(--wp--preset--font-family--system-font)",
 			"lineHeight": "1.15"
 		}
 	},

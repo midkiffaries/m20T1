@@ -630,7 +630,7 @@
 			},
 			"heading": {
 				"typography": {
-					"fontWeight": "500",
+					"fontWeight": "600",
 					"lineHeight": "1.15"
 				}
 			},
@@ -686,9 +686,8 @@
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--system-font)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
-			"fontStyle": "normal",
-			"fontWeight": "400",
-			"lineHeight": "1.6"
+			"lineHeight": "1.7",
+			"fontWeight": "400"
 		}
 	},
 	"customTemplates": [

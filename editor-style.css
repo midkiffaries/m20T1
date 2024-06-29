@@ -11,10 +11,18 @@ WordPress Guetenburg Editor Style
 
 body {
 	background-color: #fdfdfd;
+	font-size: 1.2rem;
+	line-height: 1.7;
+	font-family: 
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		'Liberation Sans',
+		sans-serif;
 }
 
 .editor-styles-wrapper .is-root-container {
-	xline-height: 1.7;
 	max-width: 1051px;
 	margin: 0 auto;
 }

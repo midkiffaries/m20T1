@@ -684,10 +684,8 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--system-font)",
-			"fontSize": "var(--wp--preset--font-size--medium)",
-			"lineHeight": "1.7",
-			"fontWeight": "400"
+			"XfontFamily": "var(--wp--preset--font-family--system-font)",
+			"lineHeight": "1.15"
 		}
 	},
 	"customTemplates": [

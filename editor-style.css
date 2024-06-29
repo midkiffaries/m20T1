@@ -9,21 +9,10 @@ WordPress Guetenburg Editor Style
 	accent-color: var(--link-color);
 }
 
-body {
-	font-size: 1.2rem;
-	line-height: 1.7;
-	font-family: 
-		system-ui,
-		-apple-system,
-		'Segoe UI',
-		Roboto,
-		'Liberation Sans',
-		sans-serif;
-}
-
 .editor-styles-wrapper .is-root-container {
 	max-width: 1051px;
 	margin: 0 auto;
+	font-size: 1.2rem;
 }
 
 @media (max-width: 1100px) {

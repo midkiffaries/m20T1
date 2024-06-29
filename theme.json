@@ -677,7 +677,7 @@
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--system-font)",
-			"lineHeight": "1.15"
+			"lineHeight": "1.7"
 		}
 	},
 	"customTemplates": [

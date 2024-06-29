@@ -66,6 +66,11 @@
 					"gradient": "linear-gradient(0deg, #03000f, #596c75)",
 					"name": "A dark gradient",
 					"slug": "darkGradient"
+				},
+				{
+					"gradient": "linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
+					"name": "A light gradient",
+					"slug": "lightGradient"
 				}
 			]
 		},

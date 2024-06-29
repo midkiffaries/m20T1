@@ -6,30 +6,15 @@ WordPress Guetenburg Editor Style
 :root {
 	--link-color: #40A5FF;
 	--marker-color: #e65100;
-	--text-color: #111;
-	--page-background: #fdfdfd;
 	accent-color: var(--link-color);
 }
 
 body {
-	background-color: var(--page-background);
-	color: var(--text-color);
-	font-size: 1.2rem;
-	line-height: 1.7;
-	padding: 0;
-	font-family: 
-		system-ui,
-		-apple-system,
-		'Segoe UI',
-		Roboto,
-		'Liberation Sans',
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji',
-		'Noto Color Emoji';
+	background-color: #fdfdfd;
 }
 
 .editor-styles-wrapper .is-root-container {
+	line-height: 1.7;
 	max-width: 1051px;
 	margin: 0 auto;
 }

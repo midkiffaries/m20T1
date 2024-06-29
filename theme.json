@@ -559,7 +559,13 @@
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--black)",
+						"background": "var(--wp--preset--color--primary-pale)",
+						"text": "var(--wp--preset--color--black)"
+					}
+				},
+				":active": {
+					"color": {
+						"background": "var(--wp--preset--color--primary-dark)",
 						"text": "var(--wp--preset--color--white)"
 					}
 				},
@@ -567,17 +573,6 @@
 					"color": {
 						"background": "var(--wp--preset--color--black)",
 						"text": "var(--wp--preset--color--white)"
-					}
-				},
-				":active": {
-					"color": {
-						"background": "var(--wp--preset--color--secondary)",
-						"text": "var(--wp--preset--color--white)"
-					}
-				},
-				":visited": {
-					"color": {
-						"text": "var(--wp--preset--color--black)"
 					}
 				}
 			},

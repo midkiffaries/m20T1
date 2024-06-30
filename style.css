@@ -282,15 +282,15 @@ WordPress Gutenburg Content Styling
 }
 
 .the-content h4 {
-	font-weight: auto;
+	font-weight: 600;
 }
 
 .the-content h5 {
-	font-weight: auto;
+	font-weight: 600;
 }
 
 .the-content h6 {
-	font-weight: auto;
+	font-weight: 700;
 }
 
 .the-content p {

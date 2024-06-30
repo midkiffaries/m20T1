@@ -1,7 +1,7 @@
 @charset "UTF-8";
-/********************************************
-Tedilize 2.1 - Normalization and Base Styling 
-*********************************************/
+/************************************************************
+Tedilize 2.WPG - Normalization and Base Styling for WordPress
+************************************************************/
 
 *,
 *::before,
@@ -119,17 +119,11 @@ sup {
 }
 
 mark {
-	background-color: #ff3;
-	padding: 0.1em;
+	padding: 0 0.1em;
 }
 
 small {
 	font-size: 80%;
-}
-
-ins {
-	-webkit-text-decoration: underline dashed currentColor;
-	text-decoration: underline dashed currentColor;
 }
 
 abbr[title] {

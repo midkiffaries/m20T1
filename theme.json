@@ -613,7 +613,7 @@
 				"typography": {
 					"fontSize": "1.25rem",
 					"lineHeight": "1.15",
-					"fontWeight": "600",
+					"fontWeight": "700",
 					"textTransform": "uppercase"
 				}
 			},

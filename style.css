@@ -268,38 +268,14 @@ Sticky/Featured article highlight
 WordPress Gutenburg Content Styling
 ************************************/
 
-.the-content h1 { /* Page Title */
-	color: var(--secondary-color);
-}
-
 .the-content h2:not(.subtitle):not(.has-text-align-center) {
 	font-weight: 600;
 	margin-top: 0.8em;
 }
 
-.the-content h3 {
-	font-weight: 500;
-}
-
-.the-content h4 {
-	font-weight: 600;
-}
-
-.the-content h5 {
-	font-weight: 600;
-}
-
-.the-content h6 {
-	font-weight: 700;
-}
-
 .the-content p {
 	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
 	line-height: var(--p-line-height);
-}
-
-.the-content p code {
-	font-size: inherit;
 }
 
 .the-content li:not(.wp-social-link) {

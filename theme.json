@@ -185,17 +185,17 @@
 			"writingMode": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "var(--wp--custom--user-font), system-ui, -apple-system, Segoe UI, Roboto, Liberation Sans, sans-serif",
+					"fontFamily": "var(--wp--custom--user-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
 					"name": "System Sans",
 					"slug": "system-font"
 				},
 				{
-					"fontFamily": "Georgia, Droid Serif, Times, serif",
+					"fontFamily": "Georgia, 'Droid Serif', Times, serif",
 					"name": "System Serif",
 					"slug": "system-serif"
 				},
 				{
-					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, Roboto Mono, Liberation Mono, monospace",
+					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, 'Roboto Mono', 'Liberation Mono', monospace",
 					"name": "System Mono",
 					"slug": "system-mono"
 				}
@@ -711,21 +711,6 @@
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
-		},
-		{
-			"area": "uncategorized",
-			"name": "comments",
-			"title": "Comments"
-		},
-		{
-			"area": "uncategorized",
-			"name": "post-meta",
-			"title": "Post Meta"
-		},
-		{
-			"area": "uncategorized",
-			"name": "sidebar",
-			"title": "Sidebar"
 		}
 	],
 	"patterns": []

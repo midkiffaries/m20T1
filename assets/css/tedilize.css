@@ -46,8 +46,6 @@ Document
 *********************/
 
 body {
-	background-color: #fefefe;
-	color: #111;
 	font-size: 1rem;
 	line-height: 1.5;
 	margin: 0;
@@ -149,34 +147,6 @@ h6 {
 	page-break-after: avoid;
 	page-break-inside: avoid;
 }
-
-h1 {
-	font-size: 2.5rem;
-}
-
-h2 {
-	font-size: 2.1rem;
-}
-
-h3 {
-	font-size: 1.75rem;
-	font-weight: bolder;
-}
-
-h4 {
-	font-size: 1.5rem;
-}
-
-h5 {
-	font-size: 1.25rem;
-	font-weight: bold;
-}
-
-h6 {
-	font-size: 1.1rem;
-	font-weight: bolder;
-}
-
 
 /*********************
 Tables

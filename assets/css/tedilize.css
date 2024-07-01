@@ -403,7 +403,6 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-	background-color: #eee;
 	overflow: visible;
 	cursor: pointer;
 	-webkit-touch-callout: none;

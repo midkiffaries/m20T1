@@ -24,16 +24,6 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	touch-action: manipulation;
 	tab-size: 4;
-	font-family:
-		system-ui,
-		-apple-system,
-		'Segoe UI',
-		Roboto,
-		'Liberation Sans',
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji',
-		'Noto Color Emoji';
 }
 
 html:focus-within {
@@ -46,22 +36,12 @@ Document
 *********************/
 
 body {
-	font-size: 1rem;
-	line-height: 1.5;
 	margin: 0;
 	min-height: 100%;
 }
 
 hr {
-	margin: 1rem 0;
-	color: inherit;
-	background-color: currentColor;
-	border: 0;
 	clear: both;
-}
-
-hr:not([size]) {
-	height: 1px;
 }
 
 blockquote {

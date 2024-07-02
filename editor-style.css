@@ -242,7 +242,7 @@ select:not([multiple]):not([size]) {
 
 .subtitle {
 	font-size: 1.5rem;
-	margin: 0.4em 0.2em 0;
+	margin: 0.4em 0.2em 0 0;
 	line-height: 1.15;
 }
 

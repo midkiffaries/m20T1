@@ -260,7 +260,7 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
-		"css": ".alignjustify{text-align:justify};.old-photo img{filter:sepia(45%) blur(0.02em) saturate(0.7) contrast(1.5) brightness(1.05)}",
+		"css": ".alignjustify{text-align:justify}",
 		"color": {
 			"background": "#fdfdfd",
 			"text": "#111"

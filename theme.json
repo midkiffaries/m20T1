@@ -49,40 +49,40 @@
 			"gradients": [
 				{
 					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(90deg, #83bbf7, #3b68f7)",
-					"name": "A gradient with the brand colors",
+					"name": "Gradient with the brand colors",
 					"slug": "brandGradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #205380, #03000f)",
-					"name": "A dark brand color gradient",
+					"name": "Dark brand color gradient",
 					"slug": "branddarkGradient"
 				},
 				{
 					"gradient": "linear-gradient(135deg, #697e9b, #bbcce8)",
-					"name": "A blueish grey gradient",
+					"name": "Blueish grey gradient",
 					"slug": "greyGradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #03000f, #596c75)",
-					"name": "A dark gradient",
+					"name": "Dark gradient",
 					"slug": "darkGradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
-					"name": "A light gradient",
+					"name": "Light grey gradient",
 					"slug": "lightGradient"
 				}
 			],
 			"duotone": [
 				{
 					"colors": ["#111111", "#ffffff"],
-					"slug": "duotone-1",
-					"name": "Black and white"
+					"name": "Black and white",
+					"slug": "duotone-1"
 				},
 				{
 					"colors": ["#222222", "#DCC0A6"],
-					"slug": "duotone-2",
-					"name": "Black and sandstone"
+					"name": "Black and sandstone",
+					"slug": "duotone-2"
 				}
 			]
 		},

@@ -269,7 +269,6 @@ WordPress Gutenburg Content Styling
 ************************************/
 
 .the-content h2:not(.subtitle):not(.has-text-align-center) {
-	font-weight: 600;
 	margin-top: 0.8em;
 }
 

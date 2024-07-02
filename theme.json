@@ -260,7 +260,7 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
-		"css": ".alignjustify{text-align:justify}",
+		"css": ".alignjustify{text-align:justify} p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:5rem}",
 		"color": {
 			"background": "#fdfdfd",
 			"text": "#111"

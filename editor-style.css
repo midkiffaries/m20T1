@@ -245,17 +245,12 @@ select:not([multiple]):not([size]) {
 	bottom: -2px !important;
 }
 
-/* Additional Classes */
 .subtitle {
 	color: #666;
 	font-size: 1.5rem;
 	margin: 0.4em 0.2em 0;
 	padding-left: 0.5em;
 	line-height: 1;
-}
-
-.alignjustify {
-	text-align: justify;
 }
 
 .hidden {

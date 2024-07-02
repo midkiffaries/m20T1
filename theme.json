@@ -9,9 +9,9 @@
 			"custom": true,
 			"customDuotone": true,
 			"customGradient": true,
-			"defaultDuotone": true,
-			"defaultGradients": false,
 			"defaultPalette": true,
+			"defaultDuotone": false,
+			"defaultGradients": false,
 			"link": true,
 			"text": true,
 			"palette": [
@@ -72,6 +72,18 @@
 					"name": "A light gradient",
 					"slug": "lightGradient"
 				}
+			],
+			"duotone": [
+				{
+					"colors": ["#111111", "#ffffff"],
+					"slug": "duotone-1",
+					"name": "Black and white"
+				},
+				{
+					"colors": ["#222222", "#DCC0A6"],
+					"slug": "duotone-2",
+					"name": "Black and sandstone"
+				}
 			]
 		},
 		"custom": {
@@ -86,38 +98,38 @@
 		},
 		"spacing": {
 			"spacingScale": {
-				"steps": 1
+				"steps": 0
 			},
 			"spacingSizes": [
 				{
-					"size": "clamp(1.5rem, 5vw, 2rem)",
-					"slug": "30",
-					"name": "1"
+					"name": "1",
+					"size": "1rem",
+					"slug": "10"
 				},
 				{
-					"size": "clamp(1.8rem, 1.8rem + ((1vw - 0.48rem) * 2.885), 3rem)",
-					"slug": "40",
-					"name": "2"
+					"name": "2",
+					"size": "min(1.5rem, 2vw)",
+					"slug": "20"
 				},
 				{
-					"size": "clamp(2.5rem, 8vw, 4.5rem)",
-					"slug": "50",
-					"name": "3"
+					"name": "3",
+					"size": "min(2.5rem, 3vw)",
+					"slug": "30"
 				},
 				{
-					"size": "clamp(3.75rem, 10vw, 7rem)",
-					"slug": "60",
-					"name": "4"
+					"name": "4",
+					"size": "min(4rem, 5vw)",
+					"slug": "40"
 				},
 				{
-					"size": "clamp(5rem, 5.25rem + ((1vw - 0.48rem) * 9.096), 8rem)",
-					"slug": "70",
-					"name": "5"
+					"name": "5",
+					"size": "min(6.5rem, 8vw)",
+					"slug": "50"
 				},
 				{
-					"size": "clamp(7rem, 14vw, 11rem)",
-					"slug": "80",
-					"name": "6"
+					"name": "6",
+					"size": "min(10.5rem, 13vw)",
+					"slug": "60"
 				}
 			],
 			"units": ["%", "px", "em", "rem", "vh", "vw"]
@@ -190,7 +202,7 @@
 					"slug": "system-font"
 				},
 				{
-					"fontFamily": "Georgia, 'Droid Serif', Times, serif",
+					"fontFamily": "Georgia, 'Droid Serif', Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
 					"name": "System Serif",
 					"slug": "system-serif"
 				},
@@ -245,10 +257,10 @@
 				}
 			]
 		},
-		"useRootPaddingAwareAlignments": true,
-		"blocks": {}
+		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"css": ".alignjustify{text-align:justify};.old-photo img{filter:sepia(45%) blur(0.02em) saturate(0.7) contrast(1.5) brightness(1.05)}",
 		"color": {
 			"background": "#fdfdfd",
 			"text": "#111"
@@ -279,6 +291,11 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
+			"core/avatar": {
+				"border": {
+					"radius": "8px"
 				}
 			},
 			"core/post-author": {

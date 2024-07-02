@@ -4,6 +4,7 @@
 
 * Support for Wordpress 6.6.0.
 * Added SEO Keyphrase and count to the Advanced Options panel.
+* Removal of some of font and color values from tedilize.css.
 * Improvements and additions to theme.json in the way of shadows and removal of them from the stylesheets.
 * Bug fixes and code cleanup.
 

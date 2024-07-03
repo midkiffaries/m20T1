@@ -998,13 +998,9 @@ add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
     ?>
-    <p>List of built-in CSS classes to use in the editor:</p>
-    <ul>
-        <li><code>subtitle</code> - Defines the page subtitle</li>
-        <li><code>alignjustify</code> - Justifies a text block</li>
-        <li><code>hidden</code> - Hides a block from view</li>
-    </ul>
-    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
+    <p>Additional custom theme settings are under <em>Appearance</em>.</p>
+    <h3>Post List Shortcode Sample</h3>
+    <p></p><code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
     <?php
     }
 });

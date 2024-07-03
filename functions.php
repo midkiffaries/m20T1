@@ -550,10 +550,10 @@ function get_child_pages( $id, $thumbnail ) {
 /////////////////////////////
 
 // Shortcode implementation for displaying additional post types in the editor
-// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]
+// [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]
 add_shortcode('list-posts', function( $atts, $content = null ){
-    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'category' => '', 'id' => '', 'class' => ''], $atts));
-    query_posts(['orderby' => esc_html( $atts['orderby'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'category_name' => esc_html( $atts['category'] ), 'showposts' => $posts]);
+    extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'post_status' => 'publish', 'category' => '', 'id' => '', 'class' => ''], $atts));
+    query_posts(['orderby' => esc_html( $atts['orderby'] ), 'order' => esc_html( $atts['order'] ), 'post_type' => esc_html( $atts['post_type'] ), 'post_status' => esc_html( $atts['post_status'] ), 'category_name' => esc_html( $atts['category'] ), 'showposts' => $posts]);
 
     if (have_posts()) { 
         while (have_posts()) : the_post(); // List each item
@@ -1004,7 +1004,7 @@ add_action('wp_dashboard_setup', function(){
         <li><code>alignjustify</code> - Justifies a text block</li>
         <li><code>hidden</code> - Hides a block from view</li>
     </ul>
-    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" category="" id="" class=""]</code></p>
+    <p>Shortcode: <code>[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
     <?php
     }
 });

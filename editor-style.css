@@ -226,7 +226,6 @@ select:not([multiple]):not([size]) {
 
 .wp-block-gallery.has-nested-images .wp-block-image figcaption {
 	background: none !important;
-	color: #666 !important;
 	margin-bottom: -1.9em;
 	height: 1rem;
 	overflow: hidden !important;

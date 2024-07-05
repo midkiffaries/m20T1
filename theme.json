@@ -9,7 +9,7 @@
 			"custom": true,
 			"customDuotone": true,
 			"customGradient": true,
-			"defaultPalette": true,
+			"defaultPalette": false,
 			"defaultDuotone": false,
 			"defaultGradients": false,
 			"link": true,
@@ -44,6 +44,36 @@
 					"color": "#bada55",
 					"name": "Quaternary",
 					"slug": "quaternary"
+				},
+				{
+					"color": "#000000",
+					"name": "Black",
+					"slug": "black"
+				},
+				{
+					"color": "#ffffff",
+					"name": "White",
+					"slug": "white"
+				},
+				{
+					"color": "#ABB8C3",
+					"name": "Bluish gray",
+					"slug": "bluish-gray"
+				},
+				{
+					"color": "#C70000",
+					"name": "Red",
+					"slug": "red"
+				},
+				{
+					"color": "#03c600",
+					"name": "Green",
+					"slug": "green"
+				},
+				{
+					"color": "#0078ff",
+					"name": "Blue",
+					"slug": "blue"
 				}
 			],
 			"gradients": [

@@ -12,7 +12,6 @@ WordPress Guetenburg Editor Style
 .editor-styles-wrapper .is-root-container {
 	max-width: 1051px;
 	margin: 0 auto;
-	font-size: 1.2rem;
 }
 
 @media (max-width: 1100px) {
@@ -23,6 +22,7 @@ WordPress Guetenburg Editor Style
 
 /* Block elements */
 p {
+	font-size: 1.2rem;
     margin-bottom: 0.75rem;
 	orphans: 3;
 	widows: 3;

@@ -3,9 +3,9 @@
 ### 1.7.8 Live (July 20, 2024)
 
 * Support for Wordpress 6.6.0.
-* Added SEO Keyphrase and count to the Advanced Options panel.
-* Removal of some of font and color values from tedilize.css.
-* Improvements and additions to theme.json in the way of shadows and removal of them from the stylesheets.
+* Added SEO Keyphrase and phrase count to the Advanced Options panel.
+* Removal of some font and color values from tedilize.css.
+* Improvements and additions to theme.json in the way of shadows, duotone, fonts, etc.
 * Bug fixes and code cleanup.
 
 ### 1.7.7 Live (June 18, 2024)

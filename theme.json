@@ -80,9 +80,14 @@
 					"slug": "duotone-1"
 				},
 				{
-					"colors": ["#222222", "#DCC0A6"],
-					"name": "Black and sandstone",
+					"colors": ["#36200C", "#DCC0A6"],
+					"name": "Western",
 					"slug": "duotone-2"
+				},
+				{
+					"colors": ["#E3DFDF", "#4F2E24"],
+					"name": "Negative Film",
+					"slug": "duotone-3"
 				}
 			]
 		},

@@ -76,17 +76,17 @@
 			"duotone": [
 				{
 					"colors": ["#111111", "#ffffff"],
-					"name": "Black and white",
+					"name": "Monochrome",
 					"slug": "duotone-1"
 				},
 				{
 					"colors": ["#36200C", "#DCC0A6"],
-					"name": "Western",
+					"name": "Sepia",
 					"slug": "duotone-2"
 				},
 				{
 					"colors": ["#E3DFDF", "#4F2E24"],
-					"name": "Negative Film",
+					"name": "Negative",
 					"slug": "duotone-3"
 				}
 			]

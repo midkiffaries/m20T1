@@ -69,27 +69,27 @@
 				{
 					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(90deg, #83bbf7, #3b68f7)",
 					"name": "Gradient with the brand colors",
-					"slug": "brandGradient"
+					"slug": "brandgradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #205380, #03000f)",
 					"name": "Dark brand color gradient",
-					"slug": "branddarkGradient"
+					"slug": "branddarkgradient"
 				},
 				{
 					"gradient": "linear-gradient(135deg, #697e9b, #bbcce8)",
 					"name": "Blueish grey gradient",
-					"slug": "greyGradient"
+					"slug": "greygradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #03000f, #596c75)",
 					"name": "Dark gradient",
-					"slug": "darkGradient"
+					"slug": "darkgradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
 					"name": "Light grey gradient",
-					"slug": "lightGradient"
+					"slug": "lightgradient"
 				}
 			],
 			"duotone": [

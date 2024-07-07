@@ -65,7 +65,7 @@
             <div class="post-container">
                 <div class="post-container-image">
                     <a href="<?=esc_url(the_permalink());?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true);?>">
-                        <div class="entry-sticky" style="transform:rotate(-9deg) translateY(30px)"><?php if (is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div>
+                        <!--div class="entry-sticky" style="transform:rotate(-9deg) translateY(30px)"><?php if (is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div-->
                     </a>
                 </div>
                 <div class="post-container-content">

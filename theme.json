@@ -4,6 +4,7 @@
 	"version": 2,
 	"settings": {
 		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
 		"custom": {
 			"userFont": "Montserrat"
 		},
@@ -276,8 +277,7 @@
 					"slug": "xx-large"
 				}
 			]
-		},
-		"useRootPaddingAwareAlignments": true
+		}
 	},
 	"styles": {
 		"css": ".alignjustify{text-align:justify} p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:5rem}",

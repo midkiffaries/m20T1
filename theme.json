@@ -83,9 +83,9 @@
 					"slug": "branddarkgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #03000f, #596c75)",
-					"name": "Dark gradient",
-					"slug": "darkgradient"
+					"gradient": "linear-gradient(0deg, #e65100, #e6c400)",
+					"name": "Secondary color gradient",
+					"slug": "secondarygradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #697e9b, #bbcce8)",
@@ -93,7 +93,7 @@
 					"slug": "greygradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
+					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
 					"name": "Light grey gradient",
 					"slug": "lightgradient"
 				}

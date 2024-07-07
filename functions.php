@@ -998,6 +998,7 @@ add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
     ?>
+    <p>Classes: <code>alignjustify</code>, <code>subtitle</code>, <code>hidden</code></p>
     <!--p>Additional <a href="/wp-admin/themes.php?page=<?php //get_filepath();?>/wp-content/themes/m20T1/functions.php">custom theme settings</a> are under <em>Appearance</em>.</p-->
     <p>Additional custom theme settings are under <em>Appearance</em>.</p>
     <h3>Post List Shortcode Sample</h3>

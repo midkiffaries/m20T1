@@ -299,16 +299,6 @@ WordPress Gutenburg Content Styling
 	font-style: italic;
 }
 
-.the-content blockquote p::before {
-	content: '“';
-	font-size: 1.2rem;
-}
-
-.the-content blockquote p::after {
-	content: '”';
-	font-size: 1.2rem;
-}
-
 .the-content blockquote cite {
 	font-size: smaller;
 	font-style: normal;

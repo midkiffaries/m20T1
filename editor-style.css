@@ -102,7 +102,6 @@ kbd,
 samp,
 pre {
 	direction: ltr;
-	unicode-bidi: bidi-override;
 	white-space: pre-wrap;
 }
 
@@ -143,16 +142,6 @@ blockquote p {
 	margin: 0.2em 0;
 }
 
-blockquote p::before {
-	content: '“';
-	font-size: 1.2rem;
-}
-
-blockquote p::after {
-	content: '”';
-	font-size: 1.2rem;
-}
-
 /* Headings */
 h1,
 h2,
@@ -174,13 +163,7 @@ th {
 	padding: 0.15em 0.5em;
 	line-height: 1.15;
 	text-align: inherit;
-	text-overflow: ellipsis;
 	vertical-align: text-top;
-	font-variant-numeric: tabular-nums;
-}
-
-caption {
-	padding: 0.5rem;
 }
 
 /* Form elements */
@@ -192,7 +175,6 @@ input {
 
 select:not([multiple]):not([size]) {
 	appearance: none;
-	text-overflow: ellipsis;
 	overflow: hidden;
 	padding-right: 1.4em;
 	background-position: 100% 50%;
@@ -233,18 +215,4 @@ select:not([multiple]):not([size]) {
 
 .wp-block-gallery figure {
 	border: 3px solid var(--link-color);
-}
-
-.wp-block-gallery figure figcaption {
-	bottom: -2px !important;
-}
-
-.subtitle {
-	font-size: 1.5rem;
-	margin: 0.4em 0.2em 0 0;
-	line-height: 1.15;
-}
-
-.hidden {
-	opacity: 0.3;
 }

@@ -19,17 +19,17 @@ Theme Variables
 ************************************/
 
 :root {
-	--brand-color: #40A5FF;
-	--brand-color-pale: #8CC9FF;
-	--brand-color-dark: #205380;
-	--secondary-color: #e65100;
-	--tertiary-color: #ffd726;
-	--quaternary-color: #bada55;
-	--highlight-color: rgba(55,161,255,0.7);
+	--brand-color: var(--wp--preset--color--primary);
+	--brand-color-pale: var(--wp--preset--color--primary-pale);
+	--brand-color-dark: var(--wp--preset--color--primary-dark);
+	--secondary-color: var(--wp--preset--color--secondary);
+	--tertiary-color: var(--wp--preset--color--tertiary);
+	--quaternary-color: var(--wp--preset--color--quaternary);
 
 	accent-color: var(--brand-color);
 	caret-color: var(--brand-color);
 
+	--highlight-color: rgba(55,161,255,0.7);
 	--text-color: #111;
 	--page-background: #fdfdfd;
 	--body-link-color: var(--brand-color);
@@ -43,13 +43,13 @@ Theme Variables
 	--footer-bg-color: #212121;
 	--footer-bg-image: linear-gradient(135deg, rgba(234,234,234,0.06) 0%, rgba(234,234,234,0.06) 50%,rgba(169,169,169,0.06) 50%, rgba(169,169,169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
 
-	--font-primary: 'Montserrat', sans-serif;
-	--font-secondary: 'Permanent Marker', sans-serif;
-	--font-tertiary: 'Georgia', serif;
-	--font-mono: 'Courier New', Courier, monospace;
+	--font-primary: var(--wp--preset--font-family--system-font);
+	--font-secondary: 'Permanent Marker', var(--wp--preset--font-family--system-font);
+	--font-tertiary: var(--wp--preset--font-family--system-serif);
+	--font-mono: var(--wp--preset--font-family--system-mono);
 
-	--p-font-size: 1.2rem;
-	--p-line-height: 1.7;
+	--p-font-size: var(--wp--preset--font-size--medium);
+	/*--p-line-height: 1.7;*/
 
 	--featured-img-bg: linear-gradient(135deg, rgba(6, 6, 6, 0.01) 0%, rgba(6, 6, 6, 0.01) 1%,rgba(131, 131, 131, 0.01) 1%, rgba(131, 131, 131, 0.01) 14%,rgba(250, 250, 250, 0.01) 14%, rgba(250, 250, 250, 0.01) 26%,rgba(30, 30, 30, 0.01) 26%, rgba(30, 30, 30, 0.01) 62%,rgba(117, 117, 117, 0.01) 62%, rgba(117, 117, 117, 0.01) 66%,rgba(248, 248, 248, 0.01) 66%, rgba(248, 248, 248, 0.01) 76%,rgba(39, 39, 39, 0.01) 76%, rgba(39, 39, 39, 0.01) 100%),linear-gradient(135deg, rgba(57, 57, 57, 0.06) 0%, rgba(57, 57, 57, 0.06) 4%,rgba(227, 227, 227, 0.06) 4%, rgba(227, 227, 227, 0.06) 26%,rgba(67, 67, 67, 0.06) 26%, rgba(67, 67, 67, 0.06) 27%,rgba(126, 126, 126, 0.06) 27%, rgba(126, 126, 126, 0.06) 39%,rgba(103, 103, 103, 0.06) 39%, rgba(103, 103, 103, 0.06) 72%,rgba(16, 16, 16, 0.06) 72%, rgba(16, 16, 16, 0.06) 76%,rgba(21, 21, 21, 0.06) 76%, rgba(21, 21, 21, 0.06) 88%,rgba(69, 69, 69, 0.06) 88%, rgba(69, 69, 69, 0.06) 100%),linear-gradient(135deg, rgba(156, 156, 156, 0.05) 0%, rgba(156, 156, 156, 0.05) 12%,rgba(54, 54, 54, 0.05) 12%, rgba(54, 54, 54, 0.05) 48%,rgba(169, 169, 169, 0.05) 48%, rgba(169, 169, 169, 0.05) 59%,rgba(104, 104, 104, 0.05) 59%, rgba(104, 104, 104, 0.05) 62%,rgba(165, 165, 165, 0.05) 62%, rgba(165, 165, 165, 0.05) 68%,rgba(124, 124, 124, 0.05) 68%, rgba(124, 124, 124, 0.05) 77%,rgba(189, 189, 189, 0.05) 77%, rgba(189, 189, 189, 0.05) 85%,rgba(173, 173, 173, 0.05) 85%, rgba(173, 173, 173, 0.05) 100%),linear-gradient(135deg, rgba(182, 182, 182, 0.07) 0%, rgba(182, 182, 182, 0.07) 22%,rgba(122, 122, 122, 0.07) 22%, rgba(122, 122, 122, 0.07) 28%,rgba(62, 62, 62, 0.07) 28%, rgba(62, 62, 62, 0.07) 44%,rgba(89, 89, 89, 0.07) 44%, rgba(89, 89, 89, 0.07) 61%,rgba(110, 110, 110, 0.07) 61%, rgba(110, 110, 110, 0.07) 83%,rgba(185, 185, 185, 0.07) 83%, rgba(185, 185, 185, 0.07) 86%,rgba(192, 192, 192, 0.07) 86%, rgba(192, 192, 192, 0.07) 100%),linear-gradient(135deg, rgba(8, 8, 8, 0.06) 0%, rgba(8, 8, 8, 0.06) 54%,rgba(48, 48, 48, 0.06) 54%, rgba(48, 48, 48, 0.06) 57%,rgba(245, 245, 245, 0.06) 57%, rgba(245, 245, 245, 0.06) 86%,rgba(12, 12, 12, 0.06) 86%, rgba(12, 12, 12, 0.06) 94%,rgba(225, 225, 225, 0.06) 94%, rgba(225, 225, 225, 0.06) 100%),linear-gradient(135deg, rgb(32,83,128) 0%,rgb(64,165,255) 80%,rgb(32,83,128) 100%);
 	--featured-img-bg-over: rgba(255,255,255,0.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='78mm' height='78mm' viewBox='0 0 78 78'><g fill-opacity='.04'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>") repeat 0 0;
@@ -95,16 +95,6 @@ body {
 /* Use the secondary font */
 .font-secondary {
 	font-family: var(--font-secondary);
-}
-
-/* Use the tertiary font */
-.font-tertiary {
-	font-family: var(--font-tertiary);
-}
-
-/* Use the monospace font */
-.font-monospace {
-	font-family: var(--font-mono);
 }
 
 /* Special Links with Icons */
@@ -189,7 +179,7 @@ Typography for the page title and subtitle
 .portfolio-name {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-family: var(--font-mono);
+	font-family: 'Courier New', Courier, var(--font-mono);
 }
 
 .portfolio-name a:hover {

@@ -68,7 +68,7 @@
 			],
 			"gradients": [
 				{
-					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(90deg, #83bbf7, #3b68f7)",
+					"gradient": "linear-gradient(90deg, #40a5ff, #69b7ff, #8cc9ff)",
 					"name": "Gradient with the brand colors",
 					"slug": "brandgradient"
 				},
@@ -78,24 +78,29 @@
 					"slug": "brandblackgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #205380, #03000f)",
+					"gradient": "linear-gradient(0deg, #205380, #202a44, #03000f)",
 					"name": "Dark brand color gradient",
 					"slug": "branddarkgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #e65100, #e6c400)",
+					"gradient": "linear-gradient(0deg, #e65100, #eb8e00, #e6c400)",
 					"name": "Secondary color gradient",
 					"slug": "secondarygradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #697e9b, #bbcce8)",
+					"gradient": "linear-gradient(0deg, #697e9b, #91a4c1, #bbcce8)",
 					"name": "Blueish grey gradient",
 					"slug": "greygradient"
 				},
 				{
-					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
+					"gradient": "linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
 					"name": "Light grey gradient",
 					"slug": "lightgradient"
+				},
+				{
+					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px,transparent 2px, transparent 4px), linear-gradient(90deg, #83bbf7, #4a95fc, #3b68f7)",
+					"name": "Custom gradient with the brand colors and strips",
+					"slug": "customgradient"
 				}
 			],
 			"duotone": [

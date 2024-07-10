@@ -171,7 +171,7 @@ Typography for the page title and subtitle
 .portfolio-name {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-family: 'Courier New', Courier, var(--font-mono);
+	font-family: 'Courier New', Courier, monospace;
 }
 
 .portfolio-name a:hover {

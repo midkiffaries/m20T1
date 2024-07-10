@@ -7,7 +7,7 @@ Base WordPress Page Styling
 :root {
     /* color-scheme: light dark; */
 
-	--page-width: var(--wp--style--global--wide-size);
+	--page-width: 1250px;
 	--sidebar-width: 15em;
 	--header-height: 15em;
 	--header-height-mobile: 14em;

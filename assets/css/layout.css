@@ -6,8 +6,9 @@ Base WordPress Page Styling
 /* Variables */
 :root {
     /* color-scheme: light dark; */
-    --sidebar-width: 15em;
-	--page-width: 1250px;
+
+	--page-width: var(--wp--style--global--wide-size);
+	--sidebar-width: 15em;
 	--header-height: 15em;
 	--header-height-mobile: 14em;
 	--darkmode-bg-color: #161616;

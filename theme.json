@@ -11,7 +11,7 @@
 		},
 		"layout": {
 			"contentSize": "1060px",
-			"wideSize": "1200px"
+			"wideSize": "1250px"
 		},
 		"dimensions": {
 			"minHeight": true
@@ -32,7 +32,7 @@
 			"customGradient": true,
 			"defaultPalette": true,
 			"defaultDuotone": false,
-			"defaultGradients": false,
+			"defaultGradients": true,
 			"link": true,
 			"text": true,
 			"palette": [

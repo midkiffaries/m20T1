@@ -6,8 +6,8 @@
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
 		"custom": {
-			"primaryFont": "Montserrat",
-			"secondaryFont": "Permanent Marker"
+			"primaryFont": "'Montserrat'",
+			"secondaryFont": "'Permanent Marker'"
 		},
 		"layout": {
 			"contentSize": "1060px",

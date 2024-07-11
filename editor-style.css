@@ -4,9 +4,7 @@ WordPress Guetenburg Editor Style
 *********************************************/
 
 :root {
-	--link-color: var(--wp--preset--color--primary);
-	--marker-color: var(--wp--preset--color--secondary);
-	accent-color: var(--link-color);
+	accent-color: var(--wp--preset--color--primary);
 }
 
 .editor-styles-wrapper .is-root-container {
@@ -32,12 +30,12 @@ ol {
 }
 
 li::marker {
-	color: var(--marker-color);
+	color: var(--wp--preset--color--secondary);
 }
 
 /* Inline elements */
 a:not(.wp-block-button__link) {
-	color: var(--link-color);
+	color: var(--wp--preset--color--primary);
 }
 
 a img {
@@ -118,7 +116,7 @@ kbd {
 /* Blockquotes */
 blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
-	border-left: 6px solid var(--link-color);
+	border-left: 6px solid var(--wp--preset--color--primary);
 }
 
 /* Headings */
@@ -165,7 +163,7 @@ select:not([multiple]):not([size]) {
 /* Footnotes Block */
 .wp-block-footnotes li a,
 .fn a {
-	color: var(--marker-color); 
+	color: var(--wp--preset--color--secondary); 
 	padding: 0 1px;
 }
 
@@ -193,5 +191,5 @@ select:not([multiple]):not([size]) {
 }
 
 .wp-block-gallery figure {
-	border: 3px solid var(--link-color);
+	border: 3px solid var(--wp--preset--color--primary);
 }

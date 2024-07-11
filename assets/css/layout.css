@@ -1087,7 +1087,7 @@ Specific Page Styling
 
 .page-archive .post {
 	margin: 0;
-	padding: 0.7em;
+	padding: 0.7em 0;
 }
 
 /* Archive Page - Author Bio block */

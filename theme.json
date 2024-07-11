@@ -27,15 +27,17 @@
 			"width": true
 		},
 		"color": {
+			"link": true,
+			"text": true,
 			"background": true,
+			"button": true,
+			"heading": true,
 			"custom": true,
 			"customDuotone": true,
 			"customGradient": true,
 			"defaultPalette": true,
 			"defaultDuotone": false,
 			"defaultGradients": true,
-			"link": true,
-			"text": true,
 			"palette": [
 				{
 					"color": "#40A5FF",

@@ -9,11 +9,6 @@ WordPress Guetenburg Editor Style
 }
 
 /* Block elements */
-p {
-	font-size: var(--wp--preset--font-size--medium);
-    margin-bottom: 0.75rem;
-}
-
 li::marker {
 	color: var(--wp--preset--color--secondary);
 }
@@ -43,10 +38,6 @@ sup {
 figure {
 	margin: 0 0 0.1rem;
 	display: inline-block;
-}
-
-figcaption {
-	padding: 0.3em 0.2em;
 }
 
 svg:not(:root) {
@@ -80,16 +71,6 @@ kbd {
 blockquote:not(.is-style-plain) {
 	padding-left: 0.7em;
 	border-left: 6px solid var(--wp--preset--color--primary);
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 0.5rem;
 }
 
 /* Tables */

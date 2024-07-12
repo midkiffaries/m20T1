@@ -346,12 +346,22 @@
 			"heading": {
 				"typography": {
 					"lineHeight": "1.15"
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "0.5rem"
+					}
 				}
 			},
 			"caption": {
 				"typography": {
 					"fontSize": "0.9rem",
 					"lineHeight": "1.15"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.3em"
+					}
 				}
 			},
 			"cite": {
@@ -425,9 +435,19 @@
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--system-font)",
 			"lineHeight": "1.7",
-			"fontSize": "1rem"
+			"fontSize": "var(--wp--preset--font-size--medium)"
 		},
 		"blocks": {
+			"core/paragraph": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "0.75rem"
+					}
+				}
+			},
 			"core/navigation": {
 				"elements": {
 					"link": {

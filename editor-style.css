@@ -3,19 +3,9 @@
 WordPress Guetenburg Editor Style
 *********************************************/
 
-:root {
-	accent-color: var(--wp--preset--color--primary);
-}
-
 .editor-styles-wrapper .is-root-container {
 	max-width: var(--wp--style--global--content-size);
 	margin: 0 auto;
-}
-
-@media (max-width: 1100px) {
-	.editor-styles-wrapper .is-root-container {
-		width: 95vw;
-	}
 }
 
 /* Block elements */
@@ -24,20 +14,11 @@ p {
     margin-bottom: 0.75rem;
 }
 
-ul,
-ol {
-	padding-left: 2rem;
-}
-
 li::marker {
 	color: var(--wp--preset--color--secondary);
 }
 
 /* Inline elements */
-a:not(.wp-block-button__link) {
-	color: var(--wp--preset--color--primary);
-}
-
 a img {
 	object-fit: contain;
 }
@@ -58,16 +39,6 @@ sup {
 	position: relative;
 }
 
-small {
-	font-size: 80%;
-}
-
-abbr[title] {
-	-webkit-text-decoration: underline dotted currentColor;
-	text-decoration: underline dotted currentColor;
-	border-bottom: none;
-}
-
 /* Images and Figures */
 figure {
 	margin: 0 0 0.1rem;
@@ -82,17 +53,9 @@ svg:not(:root) {
 	height: auto;
 	max-width: 100%;
 	overflow: hidden;
-	vertical-align: middle;
 }
 
 /* Monospace elements */
-code,
-kbd,
-pre {
-	direction: ltr;
-	white-space: pre-wrap;
-}
-
 pre {
 	word-break: break-all;
 	font-size: 1rem;

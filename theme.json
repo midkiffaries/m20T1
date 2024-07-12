@@ -77,7 +77,7 @@
 					"slug": "brandgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #40A5FF 0%, #23558a 20%, #021125 45%)",
+					"gradient": "linear-gradient(0deg, #40A5FF, #23558a, #021125)",
 					"name": "Brand color and black gradient",
 					"slug": "brandblackgradient"
 				},

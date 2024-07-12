@@ -76,6 +76,7 @@ Theme Variables
     text-shadow: none;
 }
 
+/* Global values */
 * {
 	accent-color: var(--wp--preset--color--primary);
 	caret-color: var(--wp--preset--color--primary);

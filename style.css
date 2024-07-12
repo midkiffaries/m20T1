@@ -29,9 +29,6 @@ Theme Variables
 	*/
 	--highlight-color: rgba(55,161,255,0.7);
 
-	accent-color: var(--wp--preset--color--primary);
-	caret-color: var(--wp--preset--color--primary);
-
 	--text-color: #111;
 	--page-background: #fdfdfd;
 	/*--Xbody-link-color: var(--wp--preset--color--primary);*/
@@ -77,6 +74,11 @@ Theme Variables
 ::selection {
     background-color: var(--highlight-color);
     text-shadow: none;
+}
+
+* {
+	accent-color: var(--wp--preset--color--primary);
+	caret-color: var(--wp--preset--color--primary);
 }
 
 

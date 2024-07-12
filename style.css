@@ -87,12 +87,6 @@ Theme Variables
 Global Font Declarations
 ************************************/
 
-body {
-	text-rendering: auto;
-	font-weight: 400;
-	font-display: swap;
-}
-
 /* Special Links with Icons */
 /* .the-content [href$=".pdf"]::before */
 .icon-document::before {

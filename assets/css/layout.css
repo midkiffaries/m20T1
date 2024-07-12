@@ -61,6 +61,12 @@ Icon Fonts Styling
 Main Site Layout
 ************************/
 
+body {
+	text-rendering: auto;
+	font-weight: 400;
+	font-display: swap;
+}
+
 /* Page main body layout */
 .page-main {
 	min-height: 30em;

@@ -1,11 +1,11 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.7.8 Live (July 20, 2024)
+### 1.7.8 Live (July 30, 2024)
 
 * Support for Wordpress 6.6.0.
 * Added SEO Keyphrase and phrase count to the Advanced Options panel.
 * Removal of some font and color values from tedilize.css.
-* Better utilization of theme.json in relation to the stylesheets.
+* Removal of the editor-style.css and better utilization of theme.json in relation to the stylesheets.
 * Improvements and additions to theme.json in the way of shadows, duotone, fonts, etc.
 * Bug fixes and code cleanup.
 

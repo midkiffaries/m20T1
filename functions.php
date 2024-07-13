@@ -228,6 +228,19 @@ add_action( 'init', function(){
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);
+    register_block_style( 'core/image', [ // Fancy image varient
+        'name'  => 'fancy',
+        'label' => __( 'Fancy', 'm20t1' ),
+        'inline_style' => '.wp-block-image.is-style-fancy img {
+            xtransition: all 0.2s ease-in-out;
+            box-shadow: 0 0 0 1px #fff, 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary);
+            border-radius: 1px;
+        }
+        .wp-block-image.is-style-fancy a img:hover {
+            box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
+        }
+        '
+    ]);
 });
 
 // Append HTML metadata to the page head tag

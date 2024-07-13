@@ -221,6 +221,7 @@ add_action( 'init', function(){
     register_block_style( 'core/image', [ // Hand-Drawn image style
         'name'  => 'hand-drawn',
         'label' => __( 'Hand-Drawn', 'm20t1' ),
+        //'is_default' => true,
         'inline_style' => '.wp-block-image.is-style-hand-drawn img {
             border: 2px solid currentColor;
             overflow: hidden;
@@ -231,6 +232,7 @@ add_action( 'init', function(){
     register_block_style( 'core/image', [ // Fancy image style
         'name'  => 'fancy',
         'label' => __( 'Fancy', 'm20t1' ),
+        //'is_default' => true,
         'inline_style' => '.wp-block-image.is-style-fancy img {
             box-shadow: 0 0 0 1px #fff, 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary);
             border-radius: 1px;

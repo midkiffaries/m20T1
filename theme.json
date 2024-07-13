@@ -448,6 +448,53 @@
 					}
 				}
 			},
+			"core/image": {
+				"css": "display:inline-block"
+			},
+			"core/table": {
+				"css": "border-collapse:collapse;text-indent:0"
+			},
+			"core/footnotes": {
+				"typography": {
+					"fontSize": "0.9rem",
+					"lineHeight": "1.15"
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "2px"
+					},
+					"margin": {
+						"left": "1em"
+					}
+				}
+			},
+			"core/gallery": {
+				"spacing": {
+					"margin": {
+						"bottom": "2.5em !important"
+					}
+				},
+				"elements": {
+					"link": {
+						"border": {
+							"width": "3px",
+							"color": "var(--wp--preset--color--primary-dark)",
+							"style": "solid"
+						}
+					},
+					"caption": {
+						"color": {
+							"text": "#666 !important"
+						},
+						"spacing": {
+							"margin": {
+								"bottom": "-1.9em !important"
+							}
+						},
+						"css": "height:1rem;overflow:hidden;background:none !important"
+					}
+				}
+			},
 			"core/navigation": {
 				"elements": {
 					"link": {

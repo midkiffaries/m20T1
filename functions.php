@@ -216,6 +216,18 @@ add_action( 'init', function(){
             'show_in_rest'       => true
         ]);
     }
+
+    // Register Custom Block Styles
+    register_block_style( 'core/image', [ // Hand-Drawn image varient
+        'name'  => 'hand-drawn',
+        'label' => __( 'Hand-Drawn', 'm20t1' ),
+        'inline_style' => '.wp-block-image.is-style-hand-drawn img {
+            border: 2px solid currentColor;
+            overflow: hidden;
+            box-shadow: 0 4px  10px 0 rgba( 0, 0, 0, 0.3 );
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+        }'
+    ]);
 });
 
 // Append HTML metadata to the page head tag

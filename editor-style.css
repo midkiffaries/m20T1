@@ -8,12 +8,6 @@ WordPress Guetenburg Editor Style
 	margin: 0 auto;
 }
 
-/* Block elements */
-/*
-Xli::marker {
-	color: var(--wp--preset--color--secondary);
-}
-*/
 /* Inline elements */
 a img {
 	object-fit: contain;
@@ -36,12 +30,6 @@ sup {
 }
 
 /* Images and Figures */
-/*
-figure {
-	margin: 0 0 0.1rem;
-	display: inline-block;
-}
-*/
 svg:not(:root) {
 	height: auto;
 	max-width: 100%;
@@ -49,12 +37,6 @@ svg:not(:root) {
 }
 
 /* Monospace elements */
-/*
-pre {
-	word-break: break-all;
-	font-size: 1rem;
-}
-*/
 pre code {
 	font-size: inherit;
 	color: inherit;
@@ -70,19 +52,7 @@ kbd {
 	white-space: nowrap;
 }
 
-/* Blockquotes */
-blockquote:not(.is-style-plain) {
-	padding-left: 0.7em;
-	border-left: 6px solid var(--wp--preset--color--primary);
-}
-
 /* Tables */
-/*
-table {
-	border-collapse: collapse;
-	text-indent: 0;
-}
-
 td,
 th {
 	padding: 0.15em 0.5em;
@@ -90,7 +60,7 @@ th {
 	text-align: inherit;
 	vertical-align: text-top;
 }
-*/
+
 /* Form elements */
 textarea,
 input {
@@ -107,40 +77,3 @@ select:not([multiple]):not([size]) {
 	background-repeat: no-repeat;
 	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='dimgray'/></svg>");
 }
-
-/* Footnotes Block */
-/*
-.wp-block-footnotes li a,
-.fn a {
-	color: var(--wp--preset--color--secondary); 
-	padding: 0 1px;
-}
-
-.wp-block-footnotes li {
-	font-size: 0.9em;
-	margin-left: 1em;
-	line-height: 1.1;
-}
-
-.wp-block-footnotes li::marker {
-	font-size: initial;
-	color: initial;
-}
-*/
-/* Block Gallery */
-/*
-.wp-block-gallery {
-	margin-bottom: 2.5em;
-}
-
-.wp-block-gallery.has-nested-images .wp-block-image figcaption {
-	background: none !important;
-	margin-bottom: -1.9em;
-	height: 1rem;
-	overflow: hidden !important;
-}
-
-.wp-block-gallery figure {
-	border: 3px solid var(--wp--preset--color--primary);
-}
-*/

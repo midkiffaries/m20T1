@@ -217,8 +217,8 @@ add_action( 'init', function(){
         ]);
     }
 
-    // Register Custom Block Styles
-    register_block_style( 'core/image', [ // Hand-Drawn image varient
+    // Register Custom Block Styles for the Editor
+    register_block_style( 'core/image', [ // Hand-Drawn image style
         'name'  => 'hand-drawn',
         'label' => __( 'Hand-Drawn', 'm20t1' ),
         'inline_style' => '.wp-block-image.is-style-hand-drawn img {
@@ -228,7 +228,7 @@ add_action( 'init', function(){
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);
-    register_block_style( 'core/image', [ // Fancy image varient
+    register_block_style( 'core/image', [ // Fancy image style
         'name'  => 'fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'inline_style' => '.wp-block-image.is-style-fancy img {
@@ -238,8 +238,7 @@ add_action( 'init', function(){
         }
         .wp-block-image.is-style-fancy a img:hover {
             box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
-        }
-        '
+        }'
     ]);
 });
 
@@ -511,7 +510,7 @@ function menu_nav_list( $menu, $id ) {
 
 // Activate descriptions for each nav menu item
 class Menu_With_Description extends Walker_Nav_Menu {
-    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+    function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
         global $wp_query;
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
         $class_names = $value = '';

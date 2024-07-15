@@ -529,8 +529,8 @@ button:focus,
 }
 
 .is-style-outline a[href] {
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
 
 

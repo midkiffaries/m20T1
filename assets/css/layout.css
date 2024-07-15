@@ -7,10 +7,10 @@ Base WordPress Page Styling
 :root {
     /* color-scheme: light dark; */
 	
-	--page-width: 1250px;
+	/* --page-width: 1250px;
 	--sidebar-width: 15em;
 	--header-height: 15em;
-	--header-height-mobile: 14em;
+	--header-height-mobile: 14em; */
 
 	--icon-search: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='416' height='488'><path d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/></svg>");
 	--icon-mail: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='512'><path d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/></svg>");
@@ -23,14 +23,6 @@ Base WordPress Page Styling
 	--pinterest-color: #e60023;
 	--reddit-color: #ff4500;
 	--email-color: #fba805;
-}
-
-/* Print-friendly */
-@media print {
-	:root {
-		--page-width: 99%;
-		--sidebar-width: 11em;
-	}
 }
 
 
@@ -70,19 +62,19 @@ body {
 /* Page main body layout */
 .page-main {
 	min-height: 30em;
-	width: var(--page-width);
+	width: var(--wp--style--global--wide-size);
 	margin: 0 auto;
 }
 
 .width-side {
 	padding: 0.5em;
 	display: grid;
-	grid-template-columns: auto var(--sidebar-width);
+	grid-template-columns: auto var(--wp--custom--sidebar-size);
 	gap: 10px;
 }
 
 .width-full {
-	width: var(--page-width);
+	width: var(--wp--style--global--wide-size);
 	float: none;
 	padding: 0.8rem;
 }
@@ -202,7 +194,7 @@ Site Header
 .header-single-page,
 .header-single-post,
 .header-blog {
-	height: var(--header-height);
+	height: var(--wp--custom--header-height);
 	overflow: hidden;
 	position: relative;
 	background-color: #555;
@@ -215,7 +207,7 @@ Site Header
 .header-single-post .header-hero-overlay,
 .header-blog .header-hero-overlay {
 	width: 100%;
-	height: var(--header-height);
+	height: var(--wp--custom--header-height);
 	background: var(--featured-img-bg-over);
 	background-size: 14px 14px;
 	-webkit-backdrop-filter: saturate(120%);
@@ -229,7 +221,7 @@ Site Header
 	position: absolute;
 	background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 32%);
 	width: 100%;
-	height: var(--header-height);
+	height: var(--wp--custom--header-height);
 }
 
 /* WordPress Admin bar adjustments */
@@ -321,7 +313,7 @@ Site Header
 	.header-single-page,
 	.header-single-post,
 	.header-blog {
-		height: var(--header-height-mobile);
+		height: var(--wp--custom--header-mobile-height);
 	}
 	.header-logo {
 		margin: 0.6em 0.4em;
@@ -389,18 +381,6 @@ Site Header
 	}
 }
 
-/* Print-friendly */
-@media print {
-	.header-menubar {
-		position: relative;
-	}
-	.header-hero-container,
-	.header-content,
-	.single-entry-sticky {
-		display: none;
-	}
-}
-
 
 /*********************************** 
 Site Footer
@@ -412,7 +392,7 @@ Site Footer
 }
 
 .footer-widgets {
-	width: var(--page-width);
+	width: var(--wp--style--global--wide-size);
 	padding: 2em 1em 0;
 	margin: 0 auto;
 }
@@ -429,7 +409,7 @@ Site Footer
 	margin: 0 auto 2em;
 	padding: 0.8em;
 	clear: both;
-	width: var(--page-width);
+	width: var(--wp--style--global--wide-size);
 }
 
 .footer-rule {
@@ -1750,4 +1730,20 @@ Search Modal Styling
 	font-size: 1.4em;
 	border-color: transparent;
 	border-radius: 0 6px 6px 0;
+}
+
+/* Print-friendly formating */
+@media print {
+	.header-menubar {
+		position: relative;
+	}
+	.header-hero-container,
+	.header-content,
+	.single-entry-sticky {
+		display: none;
+	}
+	.page-main,
+	.page-sidebar {
+		width: 99%;
+	}
 }

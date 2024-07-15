@@ -7,6 +7,9 @@
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
 		"custom": {
+			"sidebarSize": "15em",
+			"headerHeight": "15em",
+			"headerMobileHeight": "14em",
 			"primaryFont": "'Montserrat'",
 			"secondaryFont": "'Permanent Marker'"
 		},

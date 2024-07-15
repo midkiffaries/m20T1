@@ -241,6 +241,24 @@ add_action( 'init', function(){
             box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
         }'
     ]);
+    register_block_style( 'core/separator', [ // Fancy separator style
+        'name'  => 'theme-hr',
+        'label' => __( 'Fancy', 'm20t1' ),
+        //'is_default' => true,
+        'inline_style' => ''
+    ]);
+    register_block_style( 'core/button', [ // Fancy button style
+        'name'  => 'theme-button',
+        'label' => __( 'Fancy', 'm20t1' ),
+        //'is_default' => true,
+        'inline_style' => ''
+    ]);
+    register_block_style( 'core/gallery', [ // Fancy Galery style
+        'name'  => 'theme-gallery',
+        'label' => __( 'Theme Gallery', 'm20t1' ),
+        //'is_default' => true,
+        'inline_style' => ''
+    ]);
 });
 
 // Append HTML metadata to the page head tag

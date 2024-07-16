@@ -1725,6 +1725,7 @@ Search Modal Styling
 	font-size: 1.4em;
 	border-color: transparent;
 	border-radius: 0 6px 6px 0;
+	vertical-align: bottom;
 }
 
 /* Print-friendly formating */

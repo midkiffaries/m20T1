@@ -10,6 +10,7 @@
 			"sidebarSize": "15em",
 			"headerHeight": "15em",
 			"headerMobileHeight": "14em",
+			"highlightColor": "rgba(55,161,255,0.7)",
 			"primaryFont": "'Montserrat'",
 			"secondaryFont": "'Permanent Marker'"
 		},

@@ -242,7 +242,7 @@
 					"slug": "system-font"
 				},
 				{
-					"fontFamily": "Georgia, 'Droid Serif', Times, serif",
+					"fontFamily": "Georgia, 'Droid Serif', Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
 					"name": "System Serif",
 					"slug": "system-serif"
 				},

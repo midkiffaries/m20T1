@@ -254,6 +254,7 @@ WordPress Gutenburg Content Styling
 
 .the-content p {
 	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
+	line-height: 1.7;
 }
 
 .the-content li:not(.wp-social-link) {
@@ -399,10 +400,6 @@ Sidebar and Widgets Styling
 	font-size: 1em;
 }
 
-.page-sidebar a {
-	line-height: 1.2;
-}
-
 .page-sidebar ul {
 	padding-left: 1.5rem;
 }
@@ -439,6 +436,7 @@ Sidebar and Widgets Styling
 .page-sidebar a[href] {
 	text-decoration: none;
 	transition: color 0.25s;
+	line-height: 1.2;
 }
 
 .page-sidebar a[href]:hover {

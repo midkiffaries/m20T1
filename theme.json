@@ -439,7 +439,7 @@
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--system-font)",
-			"lineHeight": "1.7",
+			"lineHeight": "1.5",
 			"fontSize": "var(--wp--preset--font-size--medium)"
 		},
 		"blocks": {

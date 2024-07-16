@@ -379,7 +379,7 @@ document.addEventListener("scroll", function() {
 		height: 40px;
         border: 1px solid #fff;
 		border-radius: .2em;
-		font-size: 2em;
+		font-size: 1.5em;
 		cursor: pointer;
 		transition: all .25s ease-in-out 0s;
 		will-change: transform;

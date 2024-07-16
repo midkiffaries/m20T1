@@ -257,6 +257,10 @@ WordPress Gutenburg Content Styling
 	line-height: 1.7;
 }
 
+.content-excerpt p {
+	line-height: 1.6;
+}
+
 .the-content li:not(.wp-social-link) {
 	font-size: clamp(0.5rem, 0.5rem + 2vw, var(--p-font-size));
 	line-height: 1.5;

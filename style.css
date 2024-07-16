@@ -624,12 +624,13 @@ Global Page Styling
 }
 
 /* Footer Widgets */
-.footer-widgets  .widget_nav_menu a {
+.footer-widgets .widget_nav_menu a {
+	color: #fff;
 	font-size: var(--wp--preset--font-size--medium);
 	text-decoration: none;
 }
 
-.footer-widgets  .widget_nav_menu a:hover {
+.footer-widgets .widget_nav_menu a:hover {
 	text-decoration: underline;
 	text-decoration-color: #aaa;
 }

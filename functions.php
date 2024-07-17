@@ -35,12 +35,63 @@ define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 define( 'ADDITIONAL_POST_TYPE', [ 
     /* [ 'Title (singular)', 'dashicons-portfolio (https://developer.wordpress.org/resource/dashicons/)', 'Subtitle' ], */
     [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ],
+    // Note: Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type slug
 ]);
-// Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type
+
+// Register Custom Block Styles for the Editor
+add_action( 'init', function(){
+    // Hand-Drawn image style
+    register_block_style( 'core/image', [ 
+        'name'  => 'hand-drawn',
+        'label' => __( 'Hand-Drawn', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.wp-block-image.is-style-hand-drawn img {
+            border: 2px solid currentColor;
+            overflow: hidden;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3 );
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+        }'
+    ]);
+    // Fancy image style
+    register_block_style( 'core/image', [ 
+        'name'  => 'fancy',
+        'label' => __( 'Fancy', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.wp-block-image.is-style-fancy img {
+            box-shadow: 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary);
+            border: 1px solid #fff;
+            border-radius: 1px;
+        }
+        .wp-block-image.is-style-fancy a img:hover {
+            box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
+        }'
+    ]);
+    // Fancy separator style
+    register_block_style( 'core/separator', [ 
+        'name'  => 'theme-hr',
+        'label' => __( 'Fancy', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => ''
+    ]);
+    // Fancy button style
+    register_block_style( 'core/button', [ 
+        'name'  => 'theme-button',
+        'label' => __( 'Fancy', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => ''
+    ]);
+    // Fancy Galery style
+    register_block_style( 'core/gallery', [ 
+        'name'  => 'theme-gallery',
+        'label' => __( 'Theme Gallery', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => ''
+    ]);
+});
 
 
 /////////////////////////////
-// WordPress Settings
+// WordPress Setup
 /////////////////////////////
 
 // Get the version of m20T1 from style.css
@@ -216,49 +267,6 @@ add_action( 'init', function(){
             'show_in_rest'       => true
         ]);
     }
-
-    // Register Custom Block Styles for the Editor
-    register_block_style( 'core/image', [ // Hand-Drawn image style
-        'name'  => 'hand-drawn',
-        'label' => __( 'Hand-Drawn', 'm20t1' ),
-        //'is_default' => true,
-        'inline_style' => '.wp-block-image.is-style-hand-drawn img {
-            border: 2px solid currentColor;
-            overflow: hidden;
-            box-shadow: 0 4px  10px 0 rgba( 0, 0, 0, 0.3 );
-            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
-        }'
-    ]);
-    register_block_style( 'core/image', [ // Fancy image style
-        'name'  => 'fancy',
-        'label' => __( 'Fancy', 'm20t1' ),
-        //'is_default' => true,
-        'inline_style' => '.wp-block-image.is-style-fancy img {
-            box-shadow: 0 0 0 1px #fff, 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary);
-            border-radius: 1px;
-        }
-        .wp-block-image.is-style-fancy a img:hover {
-            box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
-        }'
-    ]);
-    register_block_style( 'core/separator', [ // Fancy separator style
-        'name'  => 'theme-hr',
-        'label' => __( 'Fancy', 'm20t1' ),
-        //'is_default' => true,
-        'inline_style' => ''
-    ]);
-    register_block_style( 'core/button', [ // Fancy button style
-        'name'  => 'theme-button',
-        'label' => __( 'Fancy', 'm20t1' ),
-        //'is_default' => true,
-        'inline_style' => ''
-    ]);
-    register_block_style( 'core/gallery', [ // Fancy Galery style
-        'name'  => 'theme-gallery',
-        'label' => __( 'Theme Gallery', 'm20t1' ),
-        //'is_default' => true,
-        'inline_style' => ''
-    ]);
 });
 
 // Append HTML metadata to the page head tag

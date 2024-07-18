@@ -86,7 +86,10 @@ add_action( 'init', function(){
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-gallery-1 {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5em;
+        }
+        .is-style-gallery-1 .wp-block-image {
+            margin-bottom: 1em !important;
         }
         .is-style-gallery-1 .wp-block-image img {
             border: 4px solid var(--wp--preset--color--primary-dark);
@@ -94,7 +97,6 @@ add_action( 'init', function(){
         .is-style-gallery-1 .wp-block-image a img:hover {
             border: 4px solid var(--wp--preset--color--primary);
             box-shadow: 5px 5px 0 0 #888;
-            hei
         }
         .is-style-gallery-1 .wp-block-image a img:active {
             box-shadow: none;

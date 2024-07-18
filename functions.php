@@ -71,7 +71,12 @@ add_action( 'init', function(){
         'name'  => 'theme-hr',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => ''
+        'inline_style' => 'hr.is-style-theme-hr {
+            border-top: 5px solid #ddd;
+            color: #ddd;
+            border-radius: 3px;
+            width: 100% !important;
+        }'
     ]);
     // Fancy button style
     register_block_style( 'core/button', [ 

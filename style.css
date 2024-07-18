@@ -272,12 +272,6 @@ WordPress Gutenburg Content Styling
 .the-content .wp-block-image a img:hover {
 	filter: brightness(1.1);
 	transform: scale(1.03);
-	outline: 3px solid var(--wp--preset--color--primary);
-	outline-offset: -1px;
-}
-
-.the-content .wp-block-image a img[src$='.svg']:hover {
-	outline: none !important;
 }
 
 .the-content .wp-block-image a img:active {
@@ -289,33 +283,8 @@ WordPress Gutenburg Content Styling
 	padding-top: 4px;
 }
 
-.the-content .wp-block-gallery {
-	margin-bottom: 2em !important;
-}
-
-.the-content .wp-block-gallery .wp-block-image a img[src] {
-	box-shadow: none;
-	border: 3px solid var(--wp--preset--color--primary-dark);
-	transition: all 0.2s ease-in-out;
-}
-
-.the-content .wp-block-gallery .wp-block-image a img[src]:hover {
-	transform: scale(1.01);
-	box-shadow: 4px 4px 0 0 rgba(0,0,0,0.2);
-	outline: none;
-}
-
 .the-content .wp-block-gallery .wp-block-image figcaption {
 	background: none !important;
-	color: #666 !important;
-	font-weight: 500;
-	margin-bottom: -1.9em !important;
-	overflow: hidden !important;
-}
-
-.the-content figure.alignright,
-.the-content figure.alignleft {
-	margin: 0.3rem 1.1rem 0.6rem;
 }
 
 .the-content figure.aligncenter {

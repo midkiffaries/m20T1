@@ -304,7 +304,7 @@
 		}
 	},
 	"styles": {
-		"css": ".is-root-container{max-width:var(--wp--style--global--content-size);margin:0 auto;}.subtitle,td,th{line-height:1.15}.alignjustify{text-align:justify}p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:5rem}.subtitle{font-size:1.5rem;margin:.4em .2em 0 0;padding:0}a img{object-fit:contain}b,strong{font-weight:bolder}mark{padding:0 .1em}sub,sup{font-size:75%;line-height:0;position:relative}pre code{font-size:inherit;color:inherit;word-break:normal;display:inline-block}kbd{background-color:#ddd;padding:.1rem .4rem;border-radius:.2rem;border-bottom:1px solid #aaa;white-space:nowrap}td,th{text-align:inherit;vertical-align:text-top}figcaption{display:block !important}",
+		"css": ".is-root-container{max-width:var(--wp--style--global--content-size);margin:0 auto;}.subtitle,td,th{line-height:1.15}.alignjustify{text-align:justify}p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:5rem}.subtitle{font-size:1.5rem;margin:.4em .2em 0 0;padding:0}a img{object-fit:contain}b,strong{font-weight:bolder}mark{padding:0 .1em}sub,sup{font-size:75%;line-height:0;position:relative}pre code{font-size:inherit;color:inherit;word-break:normal;display:inline-block}kbd{background-color:#ddd;padding:.1rem .4rem;border-radius:.2rem;border-bottom:1px solid #aaa;white-space:nowrap}td,th{text-align:inherit;vertical-align:text-top}figcaption{display:block !important}table{border-collapse:collapse;text-indent:0}",
 		"color": {
 			"background": "#fdfdfd",
 			"text": "#111"
@@ -457,9 +457,6 @@
 			"core/image": {
 				"css": "display:inline-block"
 			},
-			"core/table": {
-				"css": "border-collapse:collapse;text-indent:0"
-			},
 			"core/footnotes": {
 				"typography": {
 					"fontSize": "0.9rem",
@@ -475,29 +472,9 @@
 				}
 			},
 			"core/gallery": {
-				"spacing": {
-					"margin": {
-						"bottom": "2.5em !important"
-					}
-				},
 				"elements": {
-					"link": {
-						"border": {
-							"width": "2px",
-							"color": "var(--wp--preset--color--primary-dark)",
-							"style": "solid"
-						}
-					},
 					"caption": {
-						"color": {
-							"text": "#888 !important"
-						},
-						"spacing": {
-							"margin": {
-								"bottom": "-1.9em !important"
-							}
-						},
-						"css": "height:1rem;overflow:hidden;background:none !important"
+						"css": "height:1.4rem"
 					}
 				}
 			},

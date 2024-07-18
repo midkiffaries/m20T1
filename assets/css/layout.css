@@ -1016,10 +1016,6 @@ figure > a img[srcset] {
 	filter: brightness(0.95);
 }
 
-.page-content figcaption {
-	opacity: 0.8;
-}
-
 .wp-block-embed iframe {
 	height: 280px;
 }
@@ -1463,8 +1459,12 @@ body.dark-mode,
 	filter: brightness(0.9) contrast(1.2);
 }
 
+.dark-mode figcaption {
+	color: #ccc !important;
+}
+
 .dark-mode a[href] {
-	color: #fff;
+	color: #fff !important;
 }
 
 .dark-mode header a[href] {

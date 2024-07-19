@@ -42,7 +42,7 @@ define( 'ADDITIONAL_POST_TYPE', [
 add_action( 'init', function(){
     // Hand-Drawn image style
     register_block_style( 'core/image', [ 
-        'name'  => 'hand-drawn',
+        'name'  => 'img-hand-drawn',
         'label' => __( 'Hand-Drawn', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.wp-block-image.is-style-hand-drawn img {
@@ -54,7 +54,7 @@ add_action( 'init', function(){
     ]);
     // Fancy image style
     register_block_style( 'core/image', [ 
-        'name'  => 'fancy',
+        'name'  => 'img-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.wp-block-image.is-style-fancy img {
@@ -68,7 +68,7 @@ add_action( 'init', function(){
     ]);
     // Fancy separator style
     register_block_style( 'core/separator', [ 
-        'name'  => 'theme-hr',
+        'name'  => 'hr-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
         'inline_style' => 'hr.is-style-theme-hr {
@@ -78,17 +78,24 @@ add_action( 'init', function(){
             width: 100% !important;
         }'
     ]);
-    // Fancy button style
+    // Theme button style
     register_block_style( 'core/button', [ 
-        'name'  => 'theme-button',
-        'label' => __( 'Fancy', 'm20t1' ),
+        'name'  => 'button-theme',
+        'label' => __( 'Theme', 'm20t1' ),
         'is_default' => false,
         'inline_style' => ''
     ]);
-    // Fancy Galery style
+    // 3D button style
+    register_block_style( 'core/button', [ 
+        'name'  => 'button-3d',
+        'label' => __( '3-D', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => ''
+    ]);
+    // Fancy gallery style
     register_block_style( 'core/gallery', [ 
         'name'  => 'gallery-1',
-        'label' => __( 'Fancy', 'm20t1' ),
+        'label' => __( 'Theme', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-gallery-1 {
             margin-bottom: 1.5em;

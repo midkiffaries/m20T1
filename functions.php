@@ -66,6 +66,58 @@ add_action( 'init', function(){
             box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
         }'
     ]);
+    // Book image style
+    register_block_style( 'core/image', [ 
+        'name'  => 'img-book',
+        'label' => __( 'Book', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.wp-block-image.is-style-img-book {
+            --book-width: 250px;
+            --book-height: 200px;
+            position: relative;
+            transform: perspective(75em) rotateY(-30deg);
+            height: var(--book-height);
+            width: var(--book-width);
+            transition: all 0.5s ease-in-out;
+            margin: 1em 0.5em;
+        }
+        .wp-block-image.is-style-img-book:hover {
+            transform: perspective(75em) rotateY(0deg);
+            filter: brightness(1.05);
+            box-shadow: 0 6px 10px -1px rgba(0,0,0,0.2);
+        }
+        .wp-block-image.is-style-img-book img {
+            height: 100%;
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 3px 0 3px 0 rgba(0,0,0,0.4);
+            transition: all 0.5s ease;
+        }
+        .wp-block-image.is-style-img-book:hover img {
+            border-radius: 4px;
+        }
+        .wp-block-image.is-style-img-book::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 12px;
+            left: 1px;
+            width: calc(var(--book-width) + 12px);
+            height: calc(var(--book-height) - 26px);
+            background-color: #eee;
+            z-index: -1;
+            border-radius: 1px;
+            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px rgba(0,0,0,0.1);
+            transform: perspective(100em) rotateY(-25deg);
+            transition: all 0.5s ease;
+        }
+        .wp-block-image.is-style-img-book:hover::after {
+            transform: perspective(75em) rotateY(0deg);
+            width: calc(var(--book-width) - 10%);
+            box-shadow: none;
+            left: 8px;
+        }'
+    ]);
     // Fancy separator style
     register_block_style( 'core/separator', [ 
         'name'  => 'hr-fancy',

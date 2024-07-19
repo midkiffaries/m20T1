@@ -1067,7 +1067,7 @@ add_action( 'admin_head', function(){
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
 .wp-admin .user-url-wrap input.code {font-family:inherit}
 .wp-admin .type-model img, .wp-admin .thumbnail-model img {display:none !important}
-.wp-admin .type-model, .wp-admin .thumbnail-model {background: transparent url('data:image/svg+xml,<svg height="1024" viewBox="0 0 1024 1024" width="1024" xmlns="http://www.w3.org/2000/svg"><path d="m494.464 96.192-427.584 184.224 428 182.784 432.416-183.2zm17.536 390.016v441.6l415.84-197.408v-420.832zm-447.84 244.192 417.248 197.408v-441.6l-417.248-176.64z" fill="gray"/></svg>') no-repeat 50% 40%;background-size:50%;)}
+.wp-admin .type-model, .wp-admin .thumbnail-model {background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><path fill="gray" d="M494 96 67 280l428 183 432-183zm18 390v442l416-198V310zM64 730l417 198V486L64 310z"/></svg>') no-repeat 50% 40%;background-size:50%;}
 </style>
 <?php
 });

@@ -149,10 +149,6 @@ add_action( 'after_setup_theme', function(){
     // Add excerpt support to pages
     add_post_type_support( 'page', 'excerpt' );
 
-    // Custom WordPress editor styling
-    add_theme_support( 'editor-styles' );
-    add_editor_style( 'editor-style.css' );
-
     // Custom background and header support
     add_theme_support( 'custom-header', [ 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true ] );
     add_theme_support( 'custom-background', [ 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll' ] );
@@ -191,7 +187,7 @@ add_action( 'wp_enqueue_scripts', function(){
     // Remove WordPress block library CSS
     wp_dequeue_style( 'wp-block-library-theme' );
     //wp_dequeue_style( 'wp-block-library' );
-    //wp_dequeue_style( 'wc-block-style' ); // WooCommerce block
+    wp_dequeue_style( 'wc-block-style' ); // WooCommerce block
 });
 
 // Enable or disable WordPress features on initialize

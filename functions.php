@@ -45,7 +45,7 @@ add_action( 'init', function(){
         'name'  => 'img-hand-drawn',
         'label' => __( 'Hand-Drawn', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.wp-block-image.is-style-hand-drawn img {
+        'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
             border: 2px solid currentColor;
             overflow: hidden;
             box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3 );
@@ -57,12 +57,12 @@ add_action( 'init', function(){
         'name'  => 'img-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.wp-block-image.is-style-fancy img {
+        'inline_style' => '.wp-block-image.is-style-img-fancy img {
             box-shadow: 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary);
             border: 1px solid #fff;
             border-radius: 1px;
         }
-        .wp-block-image.is-style-fancy a img:hover {
+        .wp-block-image.is-style-img-fancy a img:hover {
             box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
         }'
     ]);
@@ -71,7 +71,7 @@ add_action( 'init', function(){
         'name'  => 'hr-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => 'hr.is-style-theme-hr {
+        'inline_style' => 'hr.is-style-hr-fancy {
             border-top: 5px solid #ddd;
             color: #ddd;
             border-radius: 3px;

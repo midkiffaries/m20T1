@@ -232,17 +232,12 @@
 			"writingMode": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "var(--wp--custom--primary-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
-					"name": "Primary Font",
-					"slug": "primary-font"
-				},
-				{
 					"fontFamily": "var(--wp--custom--secondary-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
 					"name": "Secondary Font",
 					"slug": "secondary-font"
 				},
 				{
-					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
+					"fontFamily": "var(--wp--custom--primary-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
 					"name": "System Sans",
 					"slug": "system-font"
 				},

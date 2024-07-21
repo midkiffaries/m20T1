@@ -69,7 +69,7 @@ add_action( 'init', function(){
     // Book image style
     register_block_style( 'core/image', [ 
         'name'  => 'img-book',
-        'label' => __( 'Book', 'm20t1' ),
+        'label' => __( 'Bookify', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.wp-block-image.is-style-img-book {
             --book-width: 250px;

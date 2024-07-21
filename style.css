@@ -19,10 +19,6 @@ Theme Variables
 ************************************/
 
 :root {
-	--button-text-color: #fff;
-	--header-link-color: #000;
-	--comment-background: rgba(0,0,0,0.05);
-
 	--footer-bg-color: #212121;
 	--footer-bg-image: linear-gradient(135deg, rgba(234,234,234,0.06) 0%, rgba(234,234,234,0.06) 50%,rgba(169,169,169,0.06) 50%, rgba(169,169,169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
 
@@ -34,27 +30,6 @@ Theme Variables
 	--body-bottom-background: linear-gradient(0deg, rgba(254,254,254,0.6) 5%, rgba(254,254,254,1) 100%), 
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' clip-rule='evenodd' viewBox='0 0 571.3 1152.8'><clipPath id='a'><path d='M0 0h571.3v1152.8H0z'/></clipPath><g fill='none' stroke='lightgrey' stroke-linecap='butt' stroke-width='12' clip-path='url(%23a)'><path d='M285.6 0 0 576.4l285.6 576.4L569 576.4zM0 0h571.3M0 1152.8h571.3M0 576.4h571.3'/></g></svg>");
 	--portfolio-view-background: url("../../uploads/2023/07/portfolio-view-more-badge.svg");
-}
-
-/* Print-friendly */
-@media print {
-	:root {
-		--button-text-color: #333;
-		--body-top-background: none;
-		--body-bottom-background: none;
-	}
-}
-
-/* Text Selection */
-::selection {
-    background-color: var(--wp--custom--highlight-color);
-    text-shadow: none;
-}
-
-/* Global values */
-* {
-	accent-color: var(--wp--preset--color--primary);
-	caret-color: var(--wp--preset--color--primary);
 }
 
 
@@ -439,40 +414,39 @@ select:focus {
 
 /* Buttons */
 button,
-.is-style-fill,
+.wp-block-button,
+[type="button"],
 [type="submit"],
 [type="reset"] {
-	color: var(--button-text-color);
-	background-color: var(--wp--preset--color--primary);
-	border-width: 2px;
-	border-color: transparent;
 	transition: filter 0.5s;
 }
 
-button:hover,
+/* Dialog Modal buttons */
+.dialog-content [type="submit"],
+.dialog-content button {
+	color: #fff;
+	background-color: var(--wp--preset--color--primary);
+	border-width: 2px;
+	border-color: transparent;
+}
+
 .is-style-fill:hover,
-[type="submit"]:hover,
-[type="reset"]:hover {
+.dialog-content [type="submit"]:hover,
+.dialog-content button:hover {
 	filter: brightness(1.2);
 }
 
-button:active,
 .is-style-fill:active,
-[type="submit"]:active,
-[type="reset"]:active {
+.dialog-content [type="submit"]:active,
+.dialog-content button:active {
 	filter: brightness(0.8);
 }
 
-button:focus,
 .is-style-fill:focus,
-[type="submit"]:focus,
-[type="reset"]:focus {
+.dialog-content [type="submit"]:focus,
+.dialog-content button:focus {
 	outline: none;
 	border-color: var(--wp--preset--color--primary-dark);
-}
-
-.is-style-fill a[href] {
-	color: var(--button-text-color);
 }
 
 .is-style-outline a[href] {
@@ -633,13 +607,12 @@ Global Page Styling
 
 /* Comments section */
 .list-comments .comment {
-	background: var(--comment-background);
+	background: rgba(0,0,0,0.05);
 }
 
 /* Blog Post Metadata links */
 .entry-header a[href],
 .single-entry-header a[href] {
-	color: var(--header-link-color);
 	transition: color 0.25s;
 	text-decoration: none;
 }
@@ -769,22 +742,6 @@ Buttons and Social Links
 	filter: brightness(95%);
 }
 
-/* Learn more buttons */
-.learn-more-button .is-style-outline a {
-	transition: all 0.2s ease-in-out;
-	text-transform: uppercase;
-}
-
-.learn-more-button .is-style-outline a:hover {
-	background-color: var(--wp--preset--color--secondary) !important;
-	border-color: var(--wp--preset--color--secondary) !important;
-	color: #fff !important;
-}
-
-.learn-more-button .is-style-outline a:active {
-	filter: brightness(80%);
-}
-
 /* Add additional brand icons for social links */
 .the-content .wp-block-social-link a {
 	line-height: 1.8;
@@ -814,6 +771,7 @@ Buttons and Social Links
 }
 
 /* CSS 3D book effect */
+/*
 .bookify {
 	--book-width: 250px;
 	--book-height: 200px;
@@ -865,7 +823,7 @@ Buttons and Social Links
 	box-shadow: none;
 	left: 8px;
 }
-
+*/
 /* Print friendly styling */
 @media print {
 	.page-title,

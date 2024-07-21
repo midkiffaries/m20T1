@@ -18,6 +18,15 @@ Base WordPress Page Styling
 	--pinterest-color: #e60023;
 	--reddit-color: #ff4500;
 	--email-color: #fba805;
+
+	accent-color: var(--wp--preset--color--primary);
+	caret-color: var(--wp--preset--color--primary);
+}
+
+/* Text Selection */
+::selection {
+    background-color: var(--wp--custom--highlight-color);
+    text-shadow: none;
 }
 
 

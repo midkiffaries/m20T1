@@ -429,19 +429,19 @@ button,
 	border-color: transparent;
 }
 
-.is-style-fill:hover,
+.wp-block-button:hover,
 .dialog-content [type="submit"]:hover,
 .dialog-content button:hover {
 	filter: brightness(1.2);
 }
 
-.is-style-fill:active,
+.wp-block-button:active,
 .dialog-content [type="submit"]:active,
 .dialog-content button:active {
 	filter: brightness(0.8);
 }
 
-.is-style-fill:focus,
+.wp-block-button:focus,
 .dialog-content [type="submit"]:focus,
 .dialog-content button:focus {
 	outline: none;

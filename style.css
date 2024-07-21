@@ -412,7 +412,7 @@ select:focus {
 	border-color: var(--wp--preset--color--primary);
 }
 
-/* Buttons */
+/* Deafult Buttons */
 button,
 .wp-block-button,
 [type="button"],
@@ -421,7 +421,6 @@ button,
 	transition: filter 0.5s;
 }
 
-/* Dialog Modal buttons */
 .dialog-content [type="submit"],
 .dialog-content button {
 	color: #fff;

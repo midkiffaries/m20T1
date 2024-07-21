@@ -215,6 +215,11 @@
 					"name": "Inset",
 					"slug": "inset",
 					"shadow": "inset 2px 3px 7px -1px rgba(0,0,0,0.5)"
+				},
+				{
+					"name": "Steps",
+					"slug": "steps",
+					"shadow": "rgba(0,0,0,0.35) 3px 3px, rgba(0,0,0,0.3) 6px 6px, rgba(0,0,0,0.2) 9px 9px, rgba(0,0,0,0.1) 12px 12px, rgba(0,0,0,0.05) 16px 16px"
 				}
 			]
 		},

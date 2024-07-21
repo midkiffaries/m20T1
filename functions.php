@@ -140,13 +140,13 @@ add_action( 'init', function(){
     // 3D button style
     register_block_style( 'core/button', [ 
         'name'  => 'button-3d',
-        'label' => __( '3-D', 'm20t1' ),
+        'label' => __( 'Raised', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-button-3d a, .is-style-button-3d div {
             box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 7px 13px -3px rgba(0,0,0,0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
         }
         .is-style-button-3d a:active {
-            box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 4px 8px 0px rgba(0,0,0,0.3), inset 0 3px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 2px 5px 0 rgba(0,0,0,0.3), inset 0 3px 4px rgba(0,0,0,0.2);
         }'
     ]);
     // Fancy gallery style

@@ -23,7 +23,7 @@
 			"aspectRatio": true
 		},
 		"position": {
-			"sticky": true
+			"sticky": false
 		},
 		"border": {
 			"color": true,

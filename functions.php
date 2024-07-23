@@ -83,15 +83,16 @@ add_action( 'init', function(){
         }
         .wp-block-image.is-style-img-book:hover {
             transform: perspective(75em) rotateY(0deg);
-            filter: brightness(1.05);
+            filter: brightness(1.08);
             box-shadow: 0 6px 10px -1px rgba(0,0,0,0.2);
         }
         .wp-block-image.is-style-img-book img {
-            height: 100%;
-            width: 100%;
+            width: var(--book-width);
+            height: var(--book-height);
             border-radius: 6px;
             box-shadow: 3px 0 3px 0 rgba(0,0,0,0.4);
             transition: all 0.5s ease;
+            object-fit: cover;
         }
         .wp-block-image.is-style-img-book:hover img {
             border-radius: 4px;

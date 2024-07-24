@@ -63,6 +63,7 @@ body {
 	font-display: swap;
 	color: #111;
 	background-color: #fdfdfd;
+	font-optical-sizing: auto;
 }
 
 /* Page main body layout */

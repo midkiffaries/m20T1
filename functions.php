@@ -131,13 +131,6 @@ add_action( 'init', function(){
             width: 100% !important;
         }'
     ]);
-    // Theme button style
-    register_block_style( 'core/button', [ 
-        'name'  => 'button-theme',
-        'label' => __( 'Theme', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => ''
-    ]);
     // 3D button style
     register_block_style( 'core/button', [ 
         'name'  => 'button-3d',

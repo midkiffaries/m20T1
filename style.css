@@ -432,13 +432,13 @@ button,
 .wp-block-button:hover,
 .dialog-content [type="submit"]:hover,
 .dialog-content button:hover {
-	filter: brightness(1.2);
+	filter: brightness(1.15);
 }
 
 .wp-block-button:active,
 .dialog-content [type="submit"]:active,
 .dialog-content button:active {
-	filter: brightness(0.8);
+	filter: brightness(0.96);
 }
 
 .wp-block-button:focus,

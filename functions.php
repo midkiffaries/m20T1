@@ -149,8 +149,7 @@ add_action( 'init', function(){
         'label' => __( 'w/ Arrow', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-button-arrow a::after {
-            Xfont-family: "icomoon" !important;
-            Xcontent: "\e90e";
+            font-family: "dashicons" !important;
             content: "\f345";
             padding-right: 2px;
             font-size: 1rem;

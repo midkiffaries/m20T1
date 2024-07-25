@@ -205,21 +205,10 @@ Site Header
 	height: var(--wp--custom--header-height);
 	overflow: hidden;
 	position: relative;
-	background-color: #555;
+	background-color: #aaa;
 	background-position: 50% 50%;
-	background-size: 104% 104%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 150% 150%;
+	background-size: 100%;
 	background-image: var(--featured-img-bg);
-}
-
-.header-single-page:has(.header-hero-image:not([style^="background"])),
-.header-single-post:has(.header-hero-image:not([style^="background"])) {
-	animation: head-grad 15s ease infinite !important;
-}
-
-@keyframes head-grad {
-	0% {background-position: 0% 50%;}
-	50% {background-position: 100% 50%;}
-	100% {background-position: 0% 50%;}
 }
 
 .header-single-page .header-hero-overlay,

@@ -2,12 +2,13 @@
 
 ### 1.8.0 Live (July 30, 2024)
 
-* Support for Wordpress 6.6.0.
+* Support for Wordpress 6.6.1.
 * Added SEO Keyphrase and phrase count to the Advanced Options panel.
 * Trimmed down font and color values from tedilize.css to avoid redundancies.
 * Removal of the editor-style.css and better utilization of theme.json in relation to the stylesheets.
 * Improvements and additions to theme.json in the way of shadows, duotone, fonts, etc.
 * Custom block styles for image, gallery, buttons, seperators.
+* Added a subtle animation to the default hero header
 * Bug fixes and code cleanup.
 
 ### 1.7.7 Live (June 18, 2024)

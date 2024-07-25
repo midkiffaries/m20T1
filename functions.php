@@ -153,6 +153,7 @@ add_action( 'init', function(){
             content: "\f345";
             font-size: 1.4rem;
             vertical-align: -4px;
+            padding-left: 1px;
         }'
     ]);
     // Fancy gallery style

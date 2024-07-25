@@ -143,6 +143,19 @@ add_action( 'init', function(){
             box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 2px 5px 0 rgba(0,0,0,0.3), inset 0 3px 4px rgba(0,0,0,0.2);
         }'
     ]);
+    // 3D button style
+    register_block_style( 'core/button', [ 
+        'name'  => 'button-arrow',
+        'label' => __( 'w/ Arrow', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-button-arrow a::after {
+            Xfont-family: "icomoon" !important;
+            Xcontent: "\e90e";
+            content: "\f345";
+            padding-right: 2px;
+            font-size: 1rem;
+        }'
+    ]);
     // Fancy gallery style
     register_block_style( 'core/gallery', [ 
         'name'  => 'gallery-1',
@@ -926,7 +939,7 @@ function isMobileDevice() {
 function display_last_updated() {
     ?><p><?php 
     if (get_the_modified_date('Y-m-d') > get_the_date('Y-m-d')) {
-        printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'textdomain' ), get_the_modified_date() ); 
+        printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'm20t1' ), get_the_modified_date() ); 
     }
     ?></p><?php
 }
@@ -993,13 +1006,13 @@ function custom_comment_style( $comment, $args, $depth ) {
                     <a href="<?=esc_url(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment">#</a> 
                     <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time>
                 </span>
-                <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'textdomain' ), '', '' );?></span> 
+                <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'm20t1' ), '', '' );?></span> 
 			</header>
             <?php if ($comment->comment_approved == '0') : ?>
                 <div class="comment-moderation"><?php _e('⚠️ Your comment is awaiting moderation.'); ?></div>
             <?php endif; ?>
             <div class="comment-text" itemprop="text"><?=comment_text();?></div>
-            <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'textdomain' ), '', '' );?></div>
+            <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'm20t1' ), '', '' );?></div>
         </div>
     </li>
     <?php
@@ -1657,7 +1670,7 @@ class BuildMetaBox {
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'm20t1_meta_box',
-				__( 'Advanced Options', 'textdomain' ), // meta box title
+				__( 'Advanced Options', 'm20t1' ), // meta box title
 				[ $this, 'render_meta_box_content' ],
 				$post_type,
 				'advanced',
@@ -1728,24 +1741,24 @@ class BuildMetaBox {
         // Generate the meta box HTML
 		?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Custom CSS Styling', 'textdomain' ); ?>
+			<?php _e( 'Custom CSS Styling', 'm20t1' ); ?>
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS styling  .red {color: #f00;}" ><?=$pageCSS;?></textarea>
 
         <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Page Subtitle', 'textdomain' ); ?>
+			<?php _e( 'Page Subtitle', 'm20t1' ); ?>
 		</label></div>
         <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (&lt;b&gt;, &lt;i&gt;, &lt;span&gt; allowed)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
 
         <div class="components-base-control__field"><label for="m20t1_keyphrase_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'SEO Keyphrase', 'textdomain' ); ?>
+			<?php _e( 'SEO Keyphrase', 'm20t1' ); ?>
             (Count: <b id="m20t1_keyphrase_count" title="Count should be 1 for every 100 words on the page."><?=$pageKeyphraseCount;?> of <?=ceil(str_word_count(wp_strip_all_tags(get_the_content())) / 120);?></b>)
 		</label></div>
         <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase that appears in the content" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageKeyphrase;?>">
 
         <div class="components-base-control__cols">        
             <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
-                <?php _e( 'Page Type (Schema.org)', 'textdomain' ); ?>
+                <?php _e( 'Page Type (Schema.org)', 'm20t1' ); ?>
             </label>
             <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:8px;display:block">
                 <?php 
@@ -1757,7 +1770,7 @@ class BuildMetaBox {
             <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
         
             <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
-                <?php _e( 'Article Type (Schema.org)', 'textdomain' ); ?>
+                <?php _e( 'Article Type (Schema.org)', 'm20t1' ); ?>
             </label>
             <select id="m20t1_article_field" name="m20t1_article_field" style="margin-bottom:8px;display:block">
                 <?php 
@@ -1770,13 +1783,13 @@ class BuildMetaBox {
         </div>
         
         <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Featured Video Link', 'textdomain' ); ?>
+			<?php _e( 'Featured Video Link', 'm20t1' ); ?>
 		</label></div>
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj"><b>Post Stats: </b>
-			<?php _e( 'Views', 'textdomain' ); ?> <b><?=$pageViews;?></b> | 
-            <?php _e( 'Excerpt Length', 'textdomain' ); ?> <b><?=strlen(get_the_excerpt());?></b> chars
+			<?php _e( 'Views', 'm20t1' ); ?> <b><?=$pageViews;?></b> | 
+            <?php _e( 'Excerpt Length', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b> chars
 		</label></div>
         <style>
         @media(min-width:700px) {

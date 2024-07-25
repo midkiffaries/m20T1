@@ -207,9 +207,13 @@ Site Header
 	position: relative;
 	background-color: #555;
 	background-position: 50% 50%;
-	background-size: 104% 110%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 150% 150%;
+	background-size: 104% 104%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 150% 150%;
 	background-image: var(--featured-img-bg);
-	animation: head-grad 15s ease infinite;
+}
+
+.header-single-page:has(.header-hero-image:not([style^="background"])),
+.header-single-post:has(.header-hero-image:not([style^="background"])) {
+	animation: head-grad 15s ease infinite !important;
 }
 
 @keyframes head-grad {

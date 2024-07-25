@@ -207,7 +207,7 @@ Site Header
 	position: relative;
 	background-color: #555;
 	background-position: 50% 50%;
-	background-size: 104% 110%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 200% 200%;
+	background-size: 104% 110%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 150% 150%;
 	background-image: var(--featured-img-bg);
 	animation: head-grad 15s ease infinite;
 }

@@ -148,11 +148,11 @@ add_action( 'init', function(){
         'name'  => 'button-arrow',
         'label' => __( 'w/ Arrow', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-button-arrow a::after {
+        'inline_style' => '.is-style-button-arrow a::after, .is-style-button-arrow div::after {
             font-family: "dashicons" !important;
             content: "\f345";
-            padding-right: 2px;
-            font-size: 1rem;
+            font-size: 1.4rem;
+            vertical-align: -4px;
         }'
     ]);
     // Fancy gallery style
@@ -1019,8 +1019,8 @@ function custom_comment_style( $comment, $args, $depth ) {
 
 // Pagination on the index/archive/search pages
 function blog_post_pagination( $type ) {
-    previous_posts_link("&#x276E; Next " . get_option('posts_per_page') . " {$type}", 0); // << Left Side
-    next_posts_link("Previous " . get_option('posts_per_page') . " {$type} &#x276F;", 0); // Right Side >>
+    previous_posts_link("<span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}", 0); // << Left Side
+    next_posts_link("Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span>", 0); // Right Side >>
 }
 
 // Show the blog post tags as a list

@@ -52,8 +52,7 @@ Theme Variables
 Global Font Declarations
 ************************************/
 
-/* Special Links with Icons */
-/* .the-content [href$=".pdf"]::before */
+/* .the-content [href$=".pdf"]::before, */
 .icon-document::before {
 	font-family: 'icomoon' !important;
 	content: "\e907"; /* document */
@@ -61,19 +60,33 @@ Global Font Declarations
 	font-size: 1rem;
 }
 
-/* .the-content [href^="mailto:"]::before */
+/* .the-content [href^="mailto:"]::before, */
 .icon-mail::before {
 	font-family: 'icomoon' !important;
 	content: "\e903"; /* envelope */
     padding-right: 1px;
 }
 
-/* .the-content [href^="tel:"]::before */
+/* .the-content [href^="tel:"]::before, */
 .icon-phone::before {
     font-family: 'icomoon' !important;
 	content: "\e942"; /* phone */
     padding-right: 1px;
     font-size: 0.9rem;
+}
+
+.icon-arrow-right::before {
+    font-family: 'icomoon' !important;
+	content: "\e90e"; /* arrow */
+    font-size: 1.6rem;
+	vertical-align: -4px;
+}
+
+.icon-arrow-left::before {
+    font-family: 'icomoon' !important;
+	content: "\e90d"; /* arrow */
+    font-size: 1.6rem;
+	vertical-align: -4px;
 }
 
 

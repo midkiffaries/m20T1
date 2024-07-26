@@ -57,13 +57,13 @@ add_action( 'init', function(){
         'name'  => 'img-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.wp-block-image.is-style-img-fancy img {
-            box-shadow: 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary);
+        'inline_style' => '.is-style-img-fancy img {
+            box-shadow: 7px 7px 0 0 #888f, -8px -8px 0 0 var(--wp--preset--color--primary);
             border: 1px solid #fff;
             border-radius: 1px;
         }
-        .wp-block-image.is-style-img-fancy a img:hover {
-            box-shadow: 0 0 0 1px #fff, 10px 10px 0 0 #888, -10px -10px 0 0 var(--wp--preset--color--primary);
+        .is-style-img-fancy a[href] img:hover {
+            box-shadow: 12px 12px 0 0 #888c, -12px -12px 0 0 var(--wp--preset--color--primary);
         }'
     ]);
     // Book image style
@@ -71,7 +71,7 @@ add_action( 'init', function(){
         'name'  => 'img-book',
         'label' => __( 'Book', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.wp-block-image.is-style-img-book {
+        'inline_style' => '.is-style-img-book {
             --book-width: 250px;
             --book-height: 200px;
             position: relative;
@@ -81,12 +81,12 @@ add_action( 'init', function(){
             transition: all 0.5s ease-in-out;
             margin: 1em 0.5em;
         }
-        .wp-block-image.is-style-img-book:hover {
+        .is-style-img-book:hover {
             transform: perspective(75em) rotateY(0deg);
             filter: brightness(1.08);
             box-shadow: 0 6px 10px -1px rgba(0,0,0,0.2);
         }
-        .wp-block-image.is-style-img-book img {
+        .is-style-img-book img {
             width: var(--book-width);
             height: var(--book-height);
             border-radius: 6px;
@@ -94,10 +94,10 @@ add_action( 'init', function(){
             transition: all 0.5s ease;
             object-fit: cover;
         }
-        .wp-block-image.is-style-img-book:hover img {
+        .is-style-img-book:hover img {
             border-radius: 4px;
         }
-        .wp-block-image.is-style-img-book::after {
+        .is-style-img-book::after {
             content: " ";
             display: block;
             position: absolute;
@@ -112,7 +112,7 @@ add_action( 'init', function(){
             transform: perspective(100em) rotateY(-25deg);
             transition: all 0.5s ease;
         }
-        .wp-block-image.is-style-img-book:hover::after {
+        .is-style-img-book:hover::after {
             transform: perspective(75em) rotateY(0deg);
             width: calc(var(--book-width) - 10%);
             box-shadow: none;

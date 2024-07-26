@@ -46,7 +46,7 @@ add_action( 'init', function(){
         'label' => __( 'Light Shadow', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-text-shadow-light {
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }'
     ]);
     // Paragraph with hard shadow style

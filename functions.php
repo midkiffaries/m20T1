@@ -67,6 +67,33 @@ add_action( 'init', function(){
             text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
         }'
     ]);
+    // Heading with embelishment style
+    register_block_style( 'core/heading', [ 
+        'name'  => 'header-embelish',
+        'label' => __( 'Embelishment', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-header-embelish::before {
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: var(--wp--preset--color--primary);
+            content: " ";
+            z-index: 0;
+            opacity: 0.4;
+            margin: -20px 0 0 -15px;
+        }'
+    ]);
+    // List with no bullets style
+    register_block_style( 'core/list', [ 
+        'name'  => 'list-plain',
+        'label' => __( 'No Bullets', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-list-plain {
+            list-style: none;
+            padding-left: 5px;
+        }'
+    ]);
     // Fancy image style
     register_block_style( 'core/image', [ 
         'name'  => 'img-fancy',

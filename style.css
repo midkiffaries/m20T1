@@ -315,28 +315,6 @@ Custom Gutenburg Styling
 	color: var(--wp--preset--color--primary-dark);
 }
 
-.the-content .text-embellish-box::before {
-	display: block;
-	position: absolute;
-	width: 80px;
-	height: 80px;
-	background-color: var(--wp--preset--color--primary);
-	content: " ";
-	z-index: -1;
-	opacity: 0.4;
-	margin: -20px 0 0 -15px;
-}
-
-.the-content .text-embellish-line::before {
-	display: block;
-	position: absolute;
-	width: 80px;
-	height: 3px;
-	background-color: var(--wp--preset--color--secondary);
-	content: " ";
-	margin-top: 1.3em;
-}
-
 
 /************************************
 Sidebar and Widgets Styling

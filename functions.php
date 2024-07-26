@@ -40,18 +40,6 @@ define( 'ADDITIONAL_POST_TYPE', [
 
 // Register Custom Block Styles for the Editor
 add_action( 'init', function(){
-    // Hand-Drawn image style
-    register_block_style( 'core/image', [ 
-        'name'  => 'img-hand-drawn',
-        'label' => __( 'Hand-Drawn', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
-            border: 2px solid currentColor;
-            overflow: hidden;
-            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3 );
-            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
-        }'
-    ]);
     // Fancy image style
     register_block_style( 'core/image', [ 
         'name'  => 'img-fancy',
@@ -66,10 +54,22 @@ add_action( 'init', function(){
             box-shadow: 12px 12px 0 0 #888c, -12px -12px 0 0 var(--wp--preset--color--primary);
         }'
     ]);
+    // Hand-Drawn image style
+    register_block_style( 'core/image', [ 
+        'name'  => 'img-hand-drawn',
+        'label' => __( 'Hand-Drawn', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
+            border: 2px solid currentColor;
+            overflow: hidden;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3 );
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+        }'
+    ]);
     // Book image style
     register_block_style( 'core/image', [ 
         'name'  => 'img-book',
-        'label' => __( 'Book', 'm20t1' ),
+        'label' => __( 'Book LS', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-book {
             --book-width: 250px;

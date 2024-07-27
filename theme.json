@@ -474,6 +474,18 @@
 					}
 				}
 			},
+			"core/list": {
+				"variations": {
+					"list-plain": {
+						"css": "list-style:none",
+						"spacing": {
+							"padding": {
+								"left": "5px"
+							}
+						}
+					}
+				}
+			},
 			"core/image": {
 				"css": "display:inline-block"
 			},

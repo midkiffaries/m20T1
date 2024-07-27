@@ -80,11 +80,7 @@ add_action( 'init', function(){
     register_block_style( 'core/list', [
         'name'  => 'list-plain',
         'label' => __( 'No Bullets', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-list-plain {
-            list-style: none;
-            padding-left: 5px;
-        }'
+        'is_default' => false
     ]);
     // Fancy image style
     register_block_style( 'core/image', [

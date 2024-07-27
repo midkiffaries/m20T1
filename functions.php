@@ -45,28 +45,19 @@ add_action( 'init', function(){
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-light',
         'label' => __( 'Light Shadow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-text-shadow-light {
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }'
+        'is_default' => false
     ]);
     // Paragraph with hard shadow style
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-text-shadow-hard {
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-        }'
+        'is_default' => false
     ]);
     // Heading with hard shadow style
     register_block_style( 'core/heading', [
         'name'  => 'header-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-header-shadow-hard {
-            text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
-        }'
+        'is_default' => false
     ]);
     // Heading with embelishment style
     register_block_style( 'core/heading', [

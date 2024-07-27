@@ -10,7 +10,7 @@
 			"sidebarSize": "15em",
 			"headerHeight": "15em",
 			"headerMobileHeight": "14em",
-			"highlightColor": "rgba(55,161,255,0.7)",
+			"highlightColor": "#37a1ffaa",
 			"primaryFont": "'Montserrat'",
 			"secondaryFont": "'Permanent Marker'"
 		},
@@ -450,12 +450,27 @@
 		},
 		"blocks": {
 			"core/paragraph": {
+				"variations": {
+					"text-shadow-light": {
+						"css": "text-shadow:1px 1px 3px #0003"
+					},
+					"text-shadow-hard": {
+						"css": "text-shadow:1px 1px 1px #0008"
+					}
+				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)"
 				},
 				"spacing": {
 					"margin": {
 						"bottom": "0.75rem"
+					}
+				}
+			},
+			"core/heading": {
+				"variations": {
+					"header-shadow-hard": {
+						"css": "text-shadow:2px 2px 0 #0004"
 					}
 				}
 			},

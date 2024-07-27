@@ -94,15 +94,6 @@ add_action( 'init', function(){
             padding-left: 5px;
         }'
     ]);
-    // Quote fancy style
-    register_block_style( 'core/quote', [
-        'name'  => 'quote-fancy',
-        'label' => __( 'Fancy', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-quote-fancy {
-
-        }'
-    ]);
     // Fancy image style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',

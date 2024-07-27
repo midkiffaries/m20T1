@@ -522,7 +522,8 @@
 					"cite": {
 						"typography": {
 							"fontSize": "var(--wp--preset--font-size--small)",
-							"fontStyle": "normal"
+							"fontStyle": "normal",
+							"textTransform": "uppercase"
 						}
 					}
 				},
@@ -541,7 +542,16 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)",
-					"lineHeight": "1.2"
+					"lineHeight": "1.2",
+					"fontStyle": "italic"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"textTransform": "uppercase",
+							"fontStyle": "normal"
+						}
+					}
 				}
 			}
 		}

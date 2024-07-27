@@ -250,23 +250,6 @@ WordPress Gutenburg Content Styling
 	line-height: 1;
 }
 
-/* Blockquotes */
-.the-content blockquote:not(.is-style-plain) {
-	padding-left: 0.7em;
-	border-left: 6px solid var(--wp--preset--color--tertiary);
-}
-
-.the-content blockquote p {
-	margin: 0.2em 0;
-	font-style: italic;
-}
-
-.the-content blockquote cite {
-	font-size: smaller;
-	font-style: normal;
-	margin-left: 0.5em;
-}
-
 /* Images, Figures and Galleries */
 .the-content .wp-block-image a img {
 	transition: all 0.25s ease-out;

@@ -245,9 +245,13 @@ add_action( 'init', function(){
         'is_default' => false,
         'inline_style' => '.is-style-button-3d a, .is-style-button-3d div {
             box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 7px 13px -3px rgba(0,0,0,0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .is-style-button-3d a:hover {
+            text-decoration: none !important;
         }
         .is-style-button-3d a:active {
-            box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 2px 5px 0 rgba(0,0,0,0.3), inset 0 3px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 2px 0 rgba(0,0,0,0.1), inset 0 3px 4px rgba(0,0,0,0.2);
         }'
     ]);
     // 3D button style
@@ -335,7 +339,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'custom-logo', [ 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
     
     // Add HTML5 Support
-    add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
+    add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ] );
     
     // Set the different post formats that the author can select
     //add_theme_support( 'post-formats', [ 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ] );

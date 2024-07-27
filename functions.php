@@ -39,6 +39,7 @@ define( 'ADDITIONAL_POST_TYPE', [
 ]);
 
 // Register Custom Block Styles for the Editor
+// https://developer.wordpress.org/news/2024/06/21/styling-sections-nested-elements-and-more-with-block-style-variations-in-wordpress-6-6/
 add_action( 'init', function(){
     // Paragraph with a light shadow style
     register_block_style( 'core/paragraph', [

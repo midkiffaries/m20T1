@@ -189,7 +189,7 @@ Site Header
 .header-hero-caption a {
 	color: #fff;
 	text-decoration: none;
-	transition: background 0.5s;
+	transition: background 0.5s ease;
 	padding: 1px 6px;
 	border-radius: 6px;
 }

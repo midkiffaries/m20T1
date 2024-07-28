@@ -35,7 +35,7 @@ Theme Variables
 	--portfolio-view-background: url("../../uploads/2023/07/portfolio-view-more-badge.svg");
 }
 
-/* Animate header background image */
+/* Animate header background image if there is no featured image */
 .header-single-page:has(.header-hero-image:not([style^="background"])),
 .header-single-post:has(.header-hero-image:not([style^="background"])) {
 	background-size: 104% 104%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 150% 150%;

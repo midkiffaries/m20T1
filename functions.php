@@ -61,8 +61,8 @@ add_action( 'init', function(){
     ]);
     // Paragraph: Light text shadow
     register_block_style( 'core/paragraph', [
-        'name'  => 'text-shadow-light',
-        'label' => __( 'Light Shadow', 'm20t1' ),
+        'name'  => 'text-shadow-soft',
+        'label' => __( 'Soft Shadow', 'm20t1' ),
         'is_default' => false
     ]);
     // Paragraph: Hard text shadow
@@ -88,16 +88,22 @@ add_action( 'init', function(){
             margin: -20px 0 0 -15px;
         }'
     ]);
+    // Heading: Soft text shadow
+    register_block_style( 'core/heading', [
+        'name'  => 'header-shadow-soft',
+        'label' => __( 'Soft Shadow', 'm20t1' ),
+        'is_default' => false
+    ]);
     // Heading: Hard text shadow
     register_block_style( 'core/heading', [
         'name'  => 'header-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
-    // Heading: Soft text shadow
+    // Heading: Outline text
     register_block_style( 'core/heading', [
-        'name'  => 'header-shadow-soft',
-        'label' => __( 'Soft Shadow', 'm20t1' ),
+        'name'  => 'header-text-outline',
+        'label' => __( 'Outline', 'm20t1' ),
         'is_default' => false
     ]);
     // Image: Fancy style

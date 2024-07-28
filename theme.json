@@ -421,7 +421,7 @@
 		"blocks": {
 			"core/paragraph": {
 				"variations": {
-					"text-shadow-light": {
+					"text-shadow-soft": {
 						"css": "text-shadow:1px 1px 3px #0003"
 					},
 					"text-shadow-hard": {
@@ -459,11 +459,14 @@
 			},
 			"core/heading": {
 				"variations": {
+					"header-shadow-soft": {
+						"css": "text-shadow:1px 1px 4px #0004"
+					},
 					"header-shadow-hard": {
 						"css": "text-shadow:2px 2px 0 #0004"
 					},
-					"header-shadow-soft": {
-						"css": "text-shadow:1px 1px 4px #0004"
+					"header-text-outline": {
+						"css": "padding:0.5rem 0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;"
 					}
 				}
 			},

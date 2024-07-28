@@ -53,6 +53,12 @@ add_action( 'init', function(){
         'label' => __( 'No Bullets', 'm20t1' ),
         'is_default' => false
     ]);
+    // Paragraph subtitle
+    register_block_style( 'core/paragraph', [
+        'name'  => 'text-subtitle',
+        'label' => __( 'Subtitle', 'm20t1' ),
+        'is_default' => false
+    ]);
     // Paragraph with a light shadow style
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-light',

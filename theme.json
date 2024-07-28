@@ -426,6 +426,26 @@
 					},
 					"text-shadow-hard": {
 						"css": "text-shadow:1px 1px 1px #0008"
+					},
+					"text-subtitle": {
+						"color": {
+							"text": "#444"
+						},
+						"typography": {
+							"fontSize": "1.5rem !important",
+							"fontWeight": "600",
+							"lineHeight": "1",
+							"letterSpacing": "-1px",
+							"fontFamily": "var(--wp--preset--font-family--secondary-font)"
+						},
+						"spacing": {
+							"margin": {
+								"top": "0.6em",
+								"bottom": "0.6em",
+								"left": "0.1em",
+								"right": "0.1em"
+							}
+						}
 					}
 				},
 				"typography": {

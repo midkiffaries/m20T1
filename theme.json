@@ -461,6 +461,9 @@
 				"variations": {
 					"header-shadow-hard": {
 						"css": "text-shadow:2px 2px 0 #0004"
+					},
+					"header-shadow-soft": {
+						"css": "text-shadow:1px 1px 4px #0004"
 					}
 				}
 			},

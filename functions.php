@@ -41,43 +41,37 @@ define( 'ADDITIONAL_POST_TYPE', [
 // Register Custom Block Styles for the Editor
 // https://developer.wordpress.org/news/2024/06/21/styling-sections-nested-elements-and-more-with-block-style-variations-in-wordpress-6-6/
 add_action( 'init', function(){
-    // Fancy separator style
+    // Separator: Fancy
     register_block_style( 'core/separator', [
         'name'  => 'hr-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false
     ]);
-    // List with no bullets style
+    // List: No bullets
     register_block_style( 'core/list', [
         'name'  => 'list-plain',
         'label' => __( 'No Bullets', 'm20t1' ),
         'is_default' => false
     ]);
-    // Paragraph subtitle
+    // Paragraph: Subtitle
     register_block_style( 'core/paragraph', [
         'name'  => 'text-subtitle',
         'label' => __( 'Subtitle', 'm20t1' ),
         'is_default' => false
     ]);
-    // Paragraph with a light shadow style
+    // Paragraph: Light text shadow
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-light',
         'label' => __( 'Light Shadow', 'm20t1' ),
         'is_default' => false
     ]);
-    // Paragraph with hard shadow style
+    // Paragraph: Hard text shadow
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
-    // Heading with hard shadow style
-    register_block_style( 'core/heading', [
-        'name'  => 'header-shadow-hard',
-        'label' => __( 'Hard Shadow', 'm20t1' ),
-        'is_default' => false
-    ]);
-    // Heading with embelishment style
+    // Heading: Embelishment
     register_block_style( 'core/heading', [
         'name'  => 'header-embelish',
         'label' => __( 'Embelishment', 'm20t1' ),
@@ -94,7 +88,19 @@ add_action( 'init', function(){
             margin: -20px 0 0 -15px;
         }'
     ]);
-    // Fancy image style
+    // Heading: Hard text shadow
+    register_block_style( 'core/heading', [
+        'name'  => 'header-shadow-hard',
+        'label' => __( 'Hard Shadow', 'm20t1' ),
+        'is_default' => false
+    ]);
+    // Heading: Soft text shadow
+    register_block_style( 'core/heading', [
+        'name'  => 'header-shadow-soft',
+        'label' => __( 'Soft Shadow', 'm20t1' ),
+        'is_default' => false
+    ]);
+    // Image: Fancy style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
@@ -108,7 +114,7 @@ add_action( 'init', function(){
             box-shadow: 12px 12px 0 0 #888c, -12px -12px 0 0 var(--wp--preset--color--primary);
         }'
     ]);
-    // Hand-Drawn image style
+    // Image: Hand-Drawn
     register_block_style( 'core/image', [
         'name'  => 'img-hand-drawn',
         'label' => __( 'Hand-Drawn', 'm20t1' ),
@@ -120,7 +126,7 @@ add_action( 'init', function(){
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);
-    // Book landscape image style
+    // Image: Book landscape
     register_block_style( 'core/image', [
         'name'  => 'img-book',
         'label' => __( 'Book L', 'm20t1' ),
@@ -173,7 +179,7 @@ add_action( 'init', function(){
             left: 8px;
         }'
     ]);
-    // Book portrait image style
+    // Image: Book portrait
     register_block_style( 'core/image', [
         'name'  => 'img-book-portrait',
         'label' => __( 'Book P', 'm20t1' ),
@@ -226,7 +232,7 @@ add_action( 'init', function(){
             left: 8px;
         }'
     ]);
-    // 3D button style
+    // Button: 3D style
     register_block_style( 'core/button', [
         'name'  => 'button-3d',
         'label' => __( 'Raised', 'm20t1' ),
@@ -242,7 +248,7 @@ add_action( 'init', function(){
             box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 2px 0 rgba(0,0,0,0.1), inset 0 3px 4px rgba(0,0,0,0.2);
         }'
     ]);
-    // 3D button style
+    // Button: w/ Arrow style
     register_block_style( 'core/button', [
         'name'  => 'button-arrow',
         'label' => __( 'w/ Arrow', 'm20t1' ),
@@ -255,7 +261,7 @@ add_action( 'init', function(){
             padding-left: 1px;
         }'
     ]);
-    // Fancy gallery style
+    // Gallery: Fancy style
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-1',
         'label' => __( 'Theme', 'm20t1' ),

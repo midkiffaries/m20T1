@@ -1,7 +1,7 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.5/theme.json",
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"description": "https://developer.wordpress.org/themes/global-settings-and-styles/introduction-to-theme-json/",
-	"version": 2,
+	"version": 3,
 	"title": "M20T1",
 	"settings": {
 		"appearanceTools": true,
@@ -141,41 +141,10 @@
 			]
 		},
 		"spacing": {
-			"spacingScale": {
-				"steps": 0
-			},
-			"spacingSizes": [
-				{
-					"name": "1",
-					"slug": "10",
-					"size": "1rem"
-				},
-				{
-					"name": "2",
-					"slug": "20",
-					"size": "min(1.5rem, 2vw)"
-				},
-				{
-					"name": "3",
-					"slug": "30",
-					"size": "min(2.5rem, 3vw)"
-				},
-				{
-					"name": "4",
-					"slug": "40",
-					"size": "min(4rem, 5vw)"
-				},
-				{
-					"name": "5",
-					"slug": "50",
-					"size": "min(6.5rem, 8vw)"
-				},
-				{
-					"name": "6",
-					"slug": "60",
-					"size": "min(10.5rem, 13vw)"
-				}
-			],
+			"defaultSpacingSizes": true,
+			"customSpacingSize": true,
+			"margin": true,
+			"padding": true,
 			"units": ["%", "px", "em", "rem", "vh", "vw"]
 		},
 		"shadow": {

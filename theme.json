@@ -489,6 +489,24 @@
 			"core/image": {
 				"css": "display:inline-block"
 			},
+			"core/separator": {
+				"variations": {
+					"hr-fancy": {
+						"css": "width:100% !important",
+						"color": {
+							"text": "#ddd"
+						},
+						"border": {
+							"top": {
+								"color": "#ddd",
+								"style": "solid",
+								"width": "5px"
+							},
+							"radius": "3px"
+						}
+					}
+				}
+			},
 			"core/footnotes": {
 				"typography": {
 					"fontSize": "0.9rem",

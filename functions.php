@@ -41,6 +41,18 @@ define( 'ADDITIONAL_POST_TYPE', [
 // Register Custom Block Styles for the Editor
 // https://developer.wordpress.org/news/2024/06/21/styling-sections-nested-elements-and-more-with-block-style-variations-in-wordpress-6-6/
 add_action( 'init', function(){
+    // Fancy separator style
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-fancy',
+        'label' => __( 'Fancy', 'm20t1' ),
+        'is_default' => false
+    ]);
+    // List with no bullets style
+    register_block_style( 'core/list', [
+        'name'  => 'list-plain',
+        'label' => __( 'No Bullets', 'm20t1' ),
+        'is_default' => false
+    ]);
     // Paragraph with a light shadow style
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-light',
@@ -75,12 +87,6 @@ add_action( 'init', function(){
             opacity: 0.4;
             margin: -20px 0 0 -15px;
         }'
-    ]);
-    // List with no bullets style
-    register_block_style( 'core/list', [
-        'name'  => 'list-plain',
-        'label' => __( 'No Bullets', 'm20t1' ),
-        'is_default' => false
     ]);
     // Fancy image style
     register_block_style( 'core/image', [
@@ -212,18 +218,6 @@ add_action( 'init', function(){
             width: calc(var(--book-width) - 10%);
             box-shadow: none;
             left: 8px;
-        }'
-    ]);
-    // Fancy separator style
-    register_block_style( 'core/separator', [
-        'name'  => 'hr-fancy',
-        'label' => __( 'Fancy', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => 'hr.is-style-hr-fancy {
-            border-top: 5px solid #ddd;
-            color: #ddd;
-            border-radius: 3px;
-            width: 100% !important;
         }'
     ]);
     // 3D button style

@@ -3,6 +3,7 @@
 	"description": "https://developer.wordpress.org/themes/global-settings-and-styles/introduction-to-theme-json/",
 	"version": 3,
 	"title": "M20T1",
+	"slug": "M20T1",
 	"settings": {
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,

@@ -12,6 +12,8 @@
 			"headerHeight": "15em",
 			"headerMobileHeight": "14em",
 			"highlightColor": "#37a1ffaa",
+			"pageBackground": "#fdfdfd",
+			"pageTextColor": "#111",
 			"primaryFont": "'Montserrat'",
 			"secondaryFont": "'Permanent Marker'"
 		},
@@ -172,6 +174,11 @@
 					"shadow": "6px 6px 0 rgba(0,0,0,0.3)"
 				},
 				{
+					"name": "Outline",
+					"slug": "outline",
+					"shadow": "10px 10px 0px -3px var(--wp--custom--page-background), 10px 10px 0 0 #000"
+				},
+				{
 					"name": "Fancy",
 					"slug": "fancy",
 					"shadow": "0 0 0 1px #fff, 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary)"
@@ -281,8 +288,8 @@
 	"styles": {
 		"css": ".is-root-container{max-width:var(--wp--style--global--content-size);margin:0 auto;}.subtitle,td,th{line-height:1.15}.alignjustify{text-align:justify}p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:5rem}.subtitle{font-size:1.5rem;margin:.4em .2em 0 0;padding:0}a img{object-fit:contain}b,strong{font-weight:bolder}mark{padding:0 .1em}sub,sup{font-size:75%;line-height:0;position:relative}pre code{font-size:inherit;color:inherit;word-break:normal;display:inline-block}kbd{background-color:#ddd;padding:.1rem .4rem;border-radius:.2rem;border-bottom:1px solid #aaa;white-space:nowrap}td,th{text-align:inherit;vertical-align:text-top}figcaption{display:block !important}table{border-collapse:collapse;text-indent:0}",
 		"color": {
-			"background": "#fdfdfd",
-			"text": "#111"
+			"background": "var(--wp--custom--page-background)",
+			"text": "var(--wp--custom--page-text-color)"
 		},
 		"elements": {
 			"h1": {

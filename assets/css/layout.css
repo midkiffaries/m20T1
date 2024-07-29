@@ -61,8 +61,8 @@ body {
 	text-rendering: auto;
 	font-weight: 400;
 	font-display: swap;
-	color: #111;
-	background-color: #fdfdfd;
+	color: var(--wp--custom--page-text-color);
+	background-color: var(--wp--custom--page-background);
 	font-optical-sizing: auto;
 }
 

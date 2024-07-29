@@ -260,8 +260,8 @@ add_action( 'init', function(){
         'label' => __( 'w/ Arrow', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-button-arrow a::after, .is-style-button-arrow div::after {
-            font-family: "dashicons" !important;
-            content: "\f345";
+            font-family: "icomoon" !important;
+            content: "\e90e";
             font-size: 1.4rem;
             vertical-align: -4px;
             padding-left: 1px;

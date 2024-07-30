@@ -197,12 +197,13 @@ add_action( 'init', function(){
             transform: perspective(75em) rotateY(-30deg);
             height: var(--book-height);
             width: var(--book-width);
+            filter: brightness(0.95);
             transition: all 0.5s ease-in-out;
             margin: 1em 0.5em;
         }
         .is-style-img-book-portrait:hover {
             transform: perspective(75em) rotateY(0deg);
-            filter: brightness(1.08);
+            filter: brightness(1.09);
             box-shadow: 0 6px 10px -1px rgba(0,0,0,0.2);
         }
         .is-style-img-book-portrait img {

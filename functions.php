@@ -310,6 +310,9 @@ add_action( 'init', function(){
         .is-style-posts-theme img {
             border-radius:8px;
         }
+        .is-style-posts-theme img:hover {
+            outline: 1px solid var(--wp--preset--color--primary);
+        }
         .is-style-posts-theme time {
             color: #666;
         }
@@ -323,6 +326,7 @@ add_action( 'init', function(){
         }
         .is-style-posts-theme .wp-block-latest-posts__post-title:hover {
             text-decoration: underline !important;
+            text-decoration-color: var(--wp--preset--color--primary) !important;
             color: var(--wp--preset--color--primary) !important;
         }'
     ]);

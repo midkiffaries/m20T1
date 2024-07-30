@@ -98,17 +98,6 @@ body {
 	}
 }
 
-@media (max-width: 849px) {
-	.width-side {
-		grid-template-columns: auto;
-		padding: 0 0.8em;
-	}
-
-	.page-sidebar {
-		width: 100% !important;
-	}
-}
-
 /* Sidebar Layout */
 .page-sidebar {
 	padding: 0.8em;
@@ -118,6 +107,18 @@ body {
 /* Sidebar Accordion */
 .accordion > button {
 	display: none;
+}
+
+@media (max-width: 849px) {
+	.width-side {
+		grid-template-columns: auto;
+		padding: 0 0.8em;
+	}
+
+	.page-sidebar {
+		width: 100% !important;
+		padding: 0;
+	}
 }
 
 

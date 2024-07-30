@@ -300,8 +300,10 @@ add_action( 'init', function(){
         'name'  => 'posts-theme',
         'label' => __( 'Theme', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-posts-theme div {
+        'inline_style' => '.is-style-posts-theme {
+            max-width: var(--wp--style--global--wide-size);
             margin: 0 auto;
+            padding: 0 !important;
             font-size: 1rem;
         }
         .is-style-posts-theme img {
@@ -321,11 +323,6 @@ add_action( 'init', function(){
         .is-style-posts-theme .wp-block-latest-posts__post-title:hover {
             text-decoration: underline !important;
             color: var(--wp--preset--color--primary) !important;
-        }
-        @media (max-width: 1250px) {
-            .is-style-posts-theme {
-                margin: 0 0.8em;
-            }
         }'
     ]);
 });

@@ -309,14 +309,6 @@ Sidebar and Widgets Styling
 	font-weight: 700;
 }
 
-.page-sidebar {
-	font-size: 1em;
-}
-
-.page-sidebar ul {
-	padding-left: 1.5rem;
-}
-
 .singlepost-widgets {
 	font-size: inherit;
 }

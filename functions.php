@@ -295,6 +295,39 @@ add_action( 'init', function(){
             margin-bottom: -2rem !important;
         }'
     ]);
+    // Latest Posts: Theme style
+    register_block_style( 'core/latest-posts', [
+        'name'  => 'posts-theme',
+        'label' => __( 'Theme', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-posts-theme div {
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+        .is-style-posts-theme img {
+            border-radius:8px;
+        }
+        .is-style-posts-theme time {
+            color: #666;
+        }
+        .is-style-posts-theme .wp-block-latest-posts__post-title {
+            display:block;
+            line-height:1.2;
+            height: 2.5em;
+            font-weight: 600;
+            overflow-y: hidden;
+            text-decoration: none !important;
+        }
+        .is-style-posts-theme .wp-block-latest-posts__post-title:hover {
+            text-decoration: underline !important;
+            color: var(--wp--preset--color--primary) !important;
+        }
+        @media (max-width: 1250px) {
+            .is-style-posts-theme {
+                margin: 0 0.8em;
+            }
+        }'
+    ]);
 });
 
 

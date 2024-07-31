@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.0 Live (July 30, 2024)
+### 1.8.0 Live (August 1, 2024)
 
 * Support for Wordpress 6.6.1.
 * Added SEO Keyphrase and phrase count to the Advanced Options panel.

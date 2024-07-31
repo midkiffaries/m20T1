@@ -112,7 +112,7 @@ add_action( 'init', function(){
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-fancy {
-            margin: 0 0 10px 15px;
+            margin: 5px 15px 10px 15px;
         }
         .is-style-img-fancy img {
             box-shadow: 7px 7px 0 0 #888f, -8px -8px 0 0 var(--wp--preset--color--primary);

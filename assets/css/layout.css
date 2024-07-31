@@ -657,6 +657,10 @@ Blog Post Styling - index/archives/search
 	font-style: italic;
 }
 
+.content-excerpt p {
+	font-size: 1.25rem !important;
+}
+
 .the-content {
 	min-height: 10em;
 }

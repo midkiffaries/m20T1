@@ -269,18 +269,9 @@
 				},
 				{
 					"fluid": false,
-					"size": "2.2rem",
+					"size": "2.1rem",
 					"name": "Extra Large",
 					"slug": "x-large"
-				},
-				{
-					"fluid": {
-						"min": "4rem",
-						"max": "5rem"
-					},
-					"size": "4rem",
-					"name": "Extra Extra Large",
-					"slug": "xx-large"
 				}
 			]
 		}

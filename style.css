@@ -694,34 +694,6 @@ Page Background embellishments
 Buttons and Social Links
 ************************************/
 
-/* Related posts buttons */
-.related-posts-button {
-	margin-top: -1.5em;
-}
-
-.related-posts-button div {
-	border-radius: 0.5em;
-}
-
-.related-posts-button div a {
-	background: transparent;
-	color: initial;
-	border-bottom: 2px solid transparent;
-	font-weight: 600;
-	transition: all 0.5s ease-out !important;
-	text-transform: uppercase;
-}
-
-.related-posts-button div a:hover {
-	color: #fff !important;
-	background-color: var(--wp--preset--color--secondary);
-	border-bottom-color: rgba(0,0,0,0.4);
-}
-
-.related-posts-button div a:active {
-	filter: brightness(95%);
-}
-
 /* Add additional brand icons for social links */
 .the-content .wp-block-social-link a {
 	line-height: 1.8;

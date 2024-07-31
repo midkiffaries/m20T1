@@ -111,7 +111,10 @@ add_action( 'init', function(){
         'name'  => 'img-fancy',
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-img-fancy img {
+        'inline_style' => '.is-style-img-fancy {
+            margin: 0 0 10px 15px;
+        }
+        .is-style-img-fancy img {
             box-shadow: 7px 7px 0 0 #888f, -8px -8px 0 0 var(--wp--preset--color--primary);
             border: 1px solid #fff;
             border-radius: 1px;
@@ -305,7 +308,6 @@ add_action( 'init', function(){
             max-width: var(--wp--style--global--wide-size);
             margin: 0 auto;
             padding: 0 !important;
-            font-size: 1rem;
         }
         .is-style-posts-theme img {
             border-radius:8px;
@@ -328,6 +330,9 @@ add_action( 'init', function(){
             text-decoration: underline !important;
             text-decoration-color: var(--wp--preset--color--primary) !important;
             color: var(--wp--preset--color--primary) !important;
+        }
+        .is-style-posts-theme .wp-block-latest-posts__post-excerpt {
+            font-size: 1rem;
         }'
     ]);
 });

@@ -100,10 +100,10 @@ add_action( 'init', function(){
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
-    // Heading: Outline text
+    // Heading: Text Fill
     register_block_style( 'core/heading', [
-        'name'  => 'header-text-outline',
-        'label' => __( 'Outline', 'm20t1' ),
+        'name'  => 'header-text-fill',
+        'label' => __( 'Text-Fill', 'm20t1' ),
         'is_default' => false
     ]);
     // Image: Fancy style

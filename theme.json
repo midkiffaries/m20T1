@@ -464,7 +464,7 @@
 					"header-shadow-hard": {
 						"css": "text-shadow:2px 2px 0 #0004"
 					},
-					"header-text-outline": {
+					"header-text-fill": {
 						"css": "padding:0.5rem 0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;"
 					}
 				}

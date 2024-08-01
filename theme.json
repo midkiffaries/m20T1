@@ -116,14 +116,14 @@
 					"slug": "orangegradient"
 				},
 				{
-					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px), linear-gradient(45deg, #83bbf7, #4a95fc, #3b68f7)",
-					"name": "Custom gradient with the brand colors and strips",
-					"slug": "customgradient"
-				},
-				{
 					"gradient": "linear-gradient(0deg, #f9f9f9 0%, #0066ff 30%, #000f26 50%, #ffffff 50%, #ff7400 80%, #662e00 100%)",
 					"name": "Sunset gradient",
 					"slug": "sunsetgradient"
+				},
+				{
+					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px), linear-gradient(45deg, #83bbf7, #4a95fc, #3b68f7)",
+					"name": "Custom gradient with the brand colors and strips",
+					"slug": "customgradient"
 				}
 			],
 			"duotone": [

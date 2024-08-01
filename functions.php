@@ -263,12 +263,18 @@ add_action( 'init', function(){
         'name'  => 'button-arrow',
         'label' => __( 'w/ Arrow', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-button-arrow a::after, .is-style-button-arrow div::after {
+        'inline_style' => '.is-style-button-arrow a::after {
             font-family: "icomoon" !important;
             content: "\e90e";
-            font-size: 1.4rem;
+            font-size: 1.7rem;
             vertical-align: -4px;
             padding-left: 1px;
+        }
+        .is-style-button-arrow div::after { /* For the Editor */
+            font-family: "dashicons" !important;
+            vertical-align: -4px;
+            padding-left: 1px;
+            content: "\f345";
         }'
     ]);
     // Gallery: Fancy style

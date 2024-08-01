@@ -257,7 +257,7 @@ WordPress Gutenburg Content Styling
 
 .the-content .wp-block-image a img:hover {
 	filter: brightness(1.1);
-	transform: scale(1.03);
+	transform: scale(1.01);
 }
 
 .the-content .wp-block-image a img:active {

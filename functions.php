@@ -138,7 +138,7 @@ add_action( 'init', function(){
     // Image: Book landscape
     register_block_style( 'core/image', [
         'name'  => 'img-book',
-        'label' => __( 'Book L', 'm20t1' ),
+        'label' => __( 'Book Lndscpe', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-book {
             --book-width: 250px;
@@ -191,7 +191,7 @@ add_action( 'init', function(){
     // Image: Book portrait
     register_block_style( 'core/image', [
         'name'  => 'img-book-portrait',
-        'label' => __( 'Book P', 'm20t1' ),
+        'label' => __( 'Book Portrait', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-book-portrait {
             --book-width: 200px;

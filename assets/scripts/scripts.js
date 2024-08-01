@@ -444,7 +444,7 @@ function scrollToTop() {
 				dialog.setAttribute('role', 'dialog');
 				dialog.setAttribute('rel', 'lightbox');
 				dialog.setAttribute('open', 'open');
-                dialog.setAttribute('onclick', "closeModals('lightbox-image')");
+                //dialog.setAttribute('onclick', "closeModals('lightbox-image')");
 
 				// Dialog close button
 				headerDiv.setAttribute('class', 'lightbox-header');
@@ -453,7 +453,7 @@ function scrollToTop() {
 				// Dialog body
 				innerDiv.setAttribute('class', 'lightbox-content');
 				innerDiv.innerHTML = (`
-				<div class="lightbox-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image" decoding="async" loading="lazy" fetchpriority="high"></div>
+				<div class="lightbox-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image" decoding="async" loading="auto" fetchpriority="high"></div>
 				<h2 class="lightbox-body-header" itemprop="name">${imgName}</h2>
 				<p class="lightbox-body-info" itemprop="description">${imgAlt}</p>
 				<p class="lightbox-body-download"><a href="${this.href}">Download this image</a></p>

@@ -1016,10 +1016,6 @@ body:not(.post-type-archive-portfolio):not(.search-results):not(.error404) .curr
 Figures and Galleries
 ************************/
 
-figure > a[href] img[srcset] {
-	xcursor: zoom-in;
-}
-
 .wp-block-gallery figure > a[href] img,
 .wp-block-image > a[href$=".jpg"] img,
 .wp-block-image > a[href$=".png"] img,

@@ -7,7 +7,7 @@
 * Trimmed down font and color values from tedilize.css to avoid redundancies.
 * Removal of the editor-style.css and better utilization of theme.json in relation to the stylesheets.
 * Improvements and additions to theme.json in the way of shadows, duotone, fonts, etc.
-* Custom block styles for image, gallery, buttons, seperators.
+* Custom block styles for image, gallery, buttons, separators.
 * Added a subtle animation to the default hero header
 * Bug fixes and code cleanup.
 

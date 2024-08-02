@@ -290,7 +290,7 @@ add_action( 'init', function(){
         }
         .is-style-gallery-1 .wp-block-image img {
             border: 4px solid var(--wp--preset--color--primary-dark);
-        }   
+        }
         .is-style-gallery-1 .wp-block-image a img:hover {
             border: 4px solid var(--wp--preset--color--primary);
             box-shadow: 5px 5px 0 0 #888;

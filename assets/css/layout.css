@@ -1016,7 +1016,14 @@ body:not(.post-type-archive-portfolio):not(.search-results):not(.error404) .curr
 Figures and Galleries
 ************************/
 
-figure > a img[srcset] {
+figure > a[href] img[srcset] {
+	xcursor: zoom-in;
+}
+
+.wp-block-gallery figure > a[href] img,
+.wp-block-image > a[href$=".jpg"] img,
+.wp-block-image > a[href$=".png"] img,
+.wp-block-image > a[href$=".heif"] img {
 	cursor: zoom-in;
 }
 
@@ -1024,11 +1031,11 @@ figure > a img[srcset] {
     transition: filter 0.5s ease-in-out;
 }
 
-.page-content figure > a:hover img {
+.page-content figure > a[href]:hover img {
 	filter: brightness(1.05);
 }
 
-.page-content figure > a:active img {
+.page-content figure > a[href]:active img {
 	filter: brightness(0.95);
 }
 

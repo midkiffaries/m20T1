@@ -100,6 +100,12 @@ add_action( 'init', function(){
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
+    // Heading: Underline
+    register_block_style( 'core/heading', [
+        'name'  => 'header-underline',
+        'label' => __( 'Underline', 'm20t1' ),
+        'is_default' => false
+    ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [
         'name'  => 'header-text-fill',

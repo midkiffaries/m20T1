@@ -479,6 +479,9 @@
 					"header-shadow-hard": {
 						"css": "text-shadow:2px 2px 0 #0004"
 					},
+					"header-underline": {
+						"css": "border-bottom:2px solid #ddd;padding-bottom:3px"
+					},
 					"header-text-fill": {
 						"css": "padding:0.5rem 0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;"
 					}

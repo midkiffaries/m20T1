@@ -545,7 +545,7 @@ add_action( 'wp_head', function(){
 <link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/apple-touch-icon.png");?>">
 <link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest");?>">
 <meta property="og:locale" content="<?=get_bloginfo('language');?>">
-<meta property="og:type" content="website">
+<meta property="og:type" content="<?=(is_front_page()) ? "website" : "article";?>">
 <meta property="og:site_name" content="<?=bloginfo('name');?>">
 <meta property="og:url" content="<?=the_permalink();?>">
 <meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name');?>">

@@ -47,6 +47,16 @@ add_action( 'init', function(){
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false
     ]);
+    // List: Checkmarks
+    register_block_style( 'core/list', [
+        'name'  => 'list-checkmarks',
+        'label' => __( 'Checkmarks', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-list-checkmarks li {
+            padding-inline: 0.5ch;
+            margin-inline-end: 1ch;
+        }'
+    ]);
     // List: No bullets
     register_block_style( 'core/list', [
         'name'  => 'list-plain',
@@ -70,15 +80,6 @@ add_action( 'init', function(){
         'name'  => 'text-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
-    ]);
-    // List: Checkmarks
-    register_block_style( 'core/list', [
-        'name'  => 'list-checkmarks',
-        'label' => __( 'Checkmarks', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-list-checkmarks li {
-            padding-inline: 0.5ch;
-        }'
     ]);
     // Heading: Embelishment
     register_block_style( 'core/heading', [

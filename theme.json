@@ -496,6 +496,9 @@
 								"left": "5px"
 							}
 						}
+					},
+					"list-checkmarks": {
+						"css": "list-style-type:'\\2713'"
 					}
 				}
 			},

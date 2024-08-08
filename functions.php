@@ -71,6 +71,15 @@ add_action( 'init', function(){
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
+    // List: Checkmarks
+    register_block_style( 'core/list', [
+        'name'  => 'list-checkmarks',
+        'label' => __( 'Checkmarks', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-list-checkmarks li {
+            padding-inline: 0.5ch;
+        }'
+    ]);
     // Heading: Embelishment
     register_block_style( 'core/heading', [
         'name'  => 'header-embelish',

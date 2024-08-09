@@ -142,7 +142,7 @@ add_action( 'init', function(){
     // Image: Hand-Drawn
     register_block_style( 'core/image', [
         'name'  => 'img-hand-drawn',
-        'label' => __( 'Hand-Drawn', 'm20t1' ),
+        'label' => __( 'Hand Drawn', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
             border: 2px solid currentColor;
@@ -257,6 +257,12 @@ add_action( 'init', function(){
             box-shadow: none;
             left: 8px;
         }'
+    ]);
+    // Image: Filter Shadow Style
+    register_block_style( 'core/image', [
+        'name'  => 'img-filter-shadow',
+        'label' => __( 'Shadow Alpha', 'm20t1' ),
+        'is_default' => false
     ]);
     // Button: 3D style
     register_block_style( 'core/button', [

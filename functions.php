@@ -280,7 +280,7 @@ add_action( 'init', function(){
             text-decoration: none !important;
         }
         .is-style-button-3d a:active {
-            box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 2px 0 rgba(0,0,0,0.1), inset 0 3px 4px rgba(0,0,0,0.2);
+            box-shadow: inset 2px 3px 7px -1px rgba(0,0,0,0.5);    
         }'
     ]);
     // Button: w/ Arrow style
@@ -300,6 +300,17 @@ add_action( 'init', function(){
             vertical-align: -4px;
             padding-left: 1px;
             content: "\f345";
+        }'
+    ]);
+    // Button: Hard Shadow style
+    register_block_style( 'core/button', [
+        'name'  => 'button-shadow',
+        'label' => __( 'Hard Shadow', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-button-shadow a, .is-style-button-shadow div {
+            border: 3px solid #000;
+            box-shadow: 0 4px 0 0 #000;
+            border-radius: 25px;
         }'
     ]);
     // Gallery: Fancy style

@@ -258,10 +258,10 @@ add_action( 'init', function(){
             left: 8px;
         }'
     ]);
-    // Image: Filter Shadow Style
+    // Image: Filter Alpha Shadow Style
     register_block_style( 'core/image', [
         'name'  => 'img-filter-shadow',
-        'label' => __( 'Shadow Alpha', 'm20t1' ),
+        'label' => __( 'Alpha Shadow', 'm20t1' ),
         'is_default' => false
     ]);
     // Button: 3D style

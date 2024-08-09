@@ -262,7 +262,10 @@ add_action( 'init', function(){
     register_block_style( 'core/image', [
         'name'  => 'img-filter-shadow',
         'label' => __( 'Alpha Shadow', 'm20t1' ),
-        'is_default' => false
+        'is_default' => false,
+        'inline_style' => '.is-style-img-filter-shadow img {
+            filter: drop-shadow(1px 1px 3px #000a);
+        }'
     ]);
     // Button: 3D style
     register_block_style( 'core/button', [

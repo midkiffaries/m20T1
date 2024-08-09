@@ -503,12 +503,7 @@
 				}
 			},
 			"core/image": {
-				"css": "display:inline-block",
-				"variations": {
-					"img-filter-shadow": {
-						"css": "filter: drop-shadow(1px 1px 3px #000a)"
-					}
-				}
+				"css": "display:inline-block"
 			},
 			"core/separator": {
 				"variations": {

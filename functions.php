@@ -151,6 +151,25 @@ add_action( 'init', function(){
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);
+    // Image: Filter Alpha Shadow Style
+    register_block_style( 'core/image', [
+        'name'  => 'img-filter-shadow',
+        'label' => __( 'Alpha Shadow', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-img-filter-shadow img {
+            filter: drop-shadow(1px 1px 3px #000a);
+        }'
+    ]);
+    // Image: Hard Black Border Style
+    register_block_style( 'core/image', [
+        'name'  => 'img-hard-border',
+        'label' => __( 'Hard Border', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-img-hard-border img {
+            border: 8px solid #000;
+            border-radius: 2em;
+        }'
+    ]);
     // Image: Book landscape
     register_block_style( 'core/image', [
         'name'  => 'img-book',
@@ -258,16 +277,7 @@ add_action( 'init', function(){
             left: 8px;
         }'
     ]);
-    // Image: Filter Alpha Shadow Style
-    register_block_style( 'core/image', [
-        'name'  => 'img-filter-shadow',
-        'label' => __( 'Alpha Shadow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-img-filter-shadow img {
-            filter: drop-shadow(1px 1px 3px #000a);
-        }'
-    ]);
-    // Button: 3D style
+    // Button: 3D Raised Style
     register_block_style( 'core/button', [
         'name'  => 'button-3d',
         'label' => __( 'Raised', 'm20t1' ),
@@ -283,7 +293,7 @@ add_action( 'init', function(){
             box-shadow: inset 2px 3px 7px -1px rgba(0,0,0,0.5);    
         }'
     ]);
-    // Button: w/ Arrow style
+    // Button: w/ Arrow Style
     register_block_style( 'core/button', [
         'name'  => 'button-arrow',
         'label' => __( 'w/ Arrow', 'm20t1' ),
@@ -302,15 +312,15 @@ add_action( 'init', function(){
             content: "\f345";
         }'
     ]);
-    // Button: Hard Shadow style
+    // Button: Hard Shadow Style
     register_block_style( 'core/button', [
-        'name'  => 'button-shadow',
-        'label' => __( 'Hard Shadow', 'm20t1' ),
+        'name'  => 'button-border',
+        'label' => __( 'Hard Border', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-button-shadow a, .is-style-button-shadow div {
-            border: 3px solid #000;
+        'inline_style' => '.is-style-button-border a, .is-style-button-border div {
+            border: 4px solid #000;
             box-shadow: 0 4px 0 0 #000;
-            border-radius: 25px;
+            border-radius: 1.2rem;
         }'
     ]);
     // Gallery: Fancy style

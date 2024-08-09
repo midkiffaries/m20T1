@@ -506,7 +506,7 @@
 				"css": "display:inline-block",
 				"variations": {
 					"img-filter-shadow": {
-						"css": "filter: drop-shadow(2px 2px 1px #000c)"
+						"css": "filter: drop-shadow(1px 1px 3px #000a)"
 					}
 				}
 			},

@@ -989,7 +989,7 @@ img.wp-smiley, img.emoji {
 /* Drop caps */
 .has-drop-cap:not(:focus):first-letter {
 	font-weight: 700;
-	font-size: 5rem;
+	font-size: 450%;
 }
 
 /* Seperator */

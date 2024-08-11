@@ -1153,7 +1153,12 @@ Specific Page Styling
 }
 
 .page-search .search-container input {
-	font-size: 1.4em;
+	font-size: 1.3em;
+}
+
+.page-search .search-submit {
+	background-color: var(--wp--preset--color--primary);
+	border: 2px solid var(--wp--preset--color--primary);
 }
 
 /* Search Submit button */

@@ -1291,6 +1291,7 @@ Specific Page Styling
 
 .page-404 p {
 	font-size: 1.5rem;
+	font-weight: 500;
 }
 
 .page-404 .search-input {

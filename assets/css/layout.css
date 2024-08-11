@@ -1284,14 +1284,22 @@ Specific Page Styling
 
 /* 404 Error Page */
 .page-404 {
-	font-size: 1.5em;
 	text-align: center;
 	margin-top: 3em;
-	min-height: 25em;
+	min-height: 40rem;
+}
+
+.page-404 p {
+	font-size: 1.5rem;
 }
 
 .page-404 .search-input {
 	width: calc(100% - 10em);
+}
+
+.page-404 .search-submit {
+	background-color: var(--wp--preset--color--primary);
+	border: 2px solid var(--wp--preset--color--primary);
 }
 
 /* Page last updated section */

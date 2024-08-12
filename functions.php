@@ -285,6 +285,7 @@ add_action( 'init', function(){
         'inline_style' => '.is-style-button-3d a, .is-style-button-3d div {
             box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 7px 13px -3px rgba(0,0,0,0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
             border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
         }
         .is-style-button-3d a:hover {
             text-decoration: none !important;

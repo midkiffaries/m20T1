@@ -147,7 +147,7 @@ add_action( 'init', function(){
         'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
             border: 2px solid currentColor;
             overflow: hidden;
-            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3 );
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);

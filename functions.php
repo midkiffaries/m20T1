@@ -6,12 +6,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Visual error reporting
 error_reporting(0);
 
-// Define the start time for the page loading timer
-define( 'PAGE_LOAD_START', microtime(TRUE) );
-
 /////////////////////////////
 // Includes and Plugins
 /////////////////////////////
+
+// Define the start time for the page loading timer
+define( 'PAGE_LOAD_START', microtime(TRUE) );
 
 // Breadcrumb trail plugin
 include_once 'assets/plugins/breadcrumbs.php';

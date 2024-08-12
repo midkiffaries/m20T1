@@ -24,12 +24,12 @@ include_once 'assets/plugins/breadcrumbs.php';
 define( 'POST_SEPARATOR', '–' );
 // Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
-// Maximum excerpt length default
-define( 'EXCERPT_LENGTH', 90 ); // Number of words
-// Shorten length of the content default - Post listing
-define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 // SEO text excerpt length default
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
+// Default: Maximum excerpt length default
+define( 'EXCERPT_LENGTH', 90 ); // Number of words
+// Default: Shorten length of the content for the blog posts listings
+define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 
 // Set the additional post types with a new line for each type
 define( 'ADDITIONAL_POST_TYPE', [ 

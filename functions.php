@@ -324,10 +324,10 @@ add_action( 'init', function(){
             border-radius: 1.2rem;
         }'
     ]);
-    // Gallery: Fancy style
+    // Gallery: Theme style
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-1',
-        'label' => __( 'Theme', 'm20t1' ),
+        'label' => __( 'Heavy Border', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-gallery-1 {
             margin-bottom: 1.5em;
@@ -346,6 +346,35 @@ add_action( 'init', function(){
             box-shadow: none;
         }
         .is-style-gallery-1 figcaption {
+            background: none !important;
+            color: #666 !important;
+            font-weight: 600;
+            margin-bottom: -2rem !important;
+        }'
+    ]);
+    // Gallery: Drop Shadow style
+    register_block_style( 'core/gallery', [
+        'name'  => 'gallery-2',
+        'label' => __( 'Drop Shadow', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-gallery-2 {
+            margin-bottom: 1.5em;
+        }
+        .is-style-gallery-2 .wp-block-image {
+            margin-bottom: 1em !important;
+        }
+        .is-style-gallery-2 .wp-block-image img {
+            box-shadow: 0 4px 8px -2px rgba(0,0,0,0.8);
+            border-radius: 3px;
+        }
+        .is-style-gallery-2 .wp-block-image a img:hover {
+            box-shadow: 0 8px 20px -1px rgba(0,0,0,0.5);
+            transform: scale(1.05, 1.05) !important;
+        }
+        .is-style-gallery-2 .wp-block-image a img:active {
+            box-shadow: 0 3px 6px -2px rgba(0,0,0,0.8);
+        }
+        .is-style-gallery-2 figcaption {
             background: none !important;
             color: #666 !important;
             font-weight: 600;

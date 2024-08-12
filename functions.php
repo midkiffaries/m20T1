@@ -364,7 +364,7 @@ add_action( 'init', function(){
             margin-bottom: 1em !important;
         }
         .is-style-gallery-2 .wp-block-image img {
-            box-shadow: 0 4px 8px -2px rgba(0,0,0,0.8);
+            box-shadow: 0 3px 8px -2px rgba(0,0,0,0.8);
             border-radius: 3px;
         }
         .is-style-gallery-2 .wp-block-image a img:hover {
@@ -372,7 +372,7 @@ add_action( 'init', function(){
             transform: scale(1.05, 1.05) !important;
         }
         .is-style-gallery-2 .wp-block-image a img:active {
-            box-shadow: 0 3px 6px -2px rgba(0,0,0,0.8);
+            box-shadow: 0 3px 6px -2px rgba(0,0,0,0.7);
         }
         .is-style-gallery-2 figcaption {
             background: none !important;

@@ -252,7 +252,7 @@ WordPress Gutenburg Content Styling
 
 /* Images, Figures and Galleries */
 .the-content .wp-block-image a img {
-	transition: all 0.3s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
 .the-content .wp-block-image a img:hover {

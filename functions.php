@@ -652,6 +652,10 @@ add_action( 'wp_footer', function(){
 <template id="Search-Modal">
     <h3 class="search-title">Search <?=bloginfo('name');?></h3>
     <?=get_search_form('search-modal'); // Load searchform.php ?>
+    <div class="search-categories">
+        <h4>Post Categories</h4>
+        <?=wp_list_categories(['orderby' => 'name', 'show_count' => false, 'title_li' => '']); ?>
+    </div>
 </template>
 
 <template id="Contact-Modal">

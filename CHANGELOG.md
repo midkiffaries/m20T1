@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.1 Live (August 12, 2024)
+### 1.8.1 Live (August 16, 2024)
 
 * Bug fixes and adjustments.
 

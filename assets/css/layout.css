@@ -1764,6 +1764,16 @@ Search Modal Styling
 	vertical-align: bottom;
 }
 
+.dialog-search .search-categories {
+	margin: 2em 1em;
+}
+
+.dialog-search .search-categories li {
+	list-style: none;
+	display: inline-block;
+	margin: auto 5px;
+}
+
 /* Print-friendly formating */
 @media print {
 	.header-menubar {

@@ -11,7 +11,7 @@
 		'comment_notes_before' => '',
 		'comment_notes_after' => '',
 		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '</label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..."></textarea></p>',
-	], 5 ); // post_id number ?>
+	], 5 ); // post_id number and enable comments ?>
 	<style>
 		.email-block .comment-form {
 			background: none;

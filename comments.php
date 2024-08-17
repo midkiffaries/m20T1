@@ -80,7 +80,7 @@
         <?php do_action('comment_form', $post->ID); ?>
 
     </form>
+    <?php endif; ?>
 </section>
-<?php endif; ?>
 
 <?php endif; ?>

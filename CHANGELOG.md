@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.2 Live (August 30, 2024)
+
+* Added a janky fallback for the contact form shortcode mechanism.
+
 ### 1.8.1 Live (August 16, 2024)
 
 * Bug fixes and adjustments.

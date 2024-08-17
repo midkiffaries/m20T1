@@ -2,7 +2,8 @@
 
 ### 1.8.2 Live (August 30, 2024)
 
-* Added a janky fallback for the contact form shortcode mechanism.
+* Because the PHP mail() function is disabled by most web hosts and because I wanted to avoid getting plugins for it, I came up with a janky fallback for the contact form shortcode mechanism. This uses the Comments funtion
+
 
 ### 1.8.1 Live (August 16, 2024)
 

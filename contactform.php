@@ -10,7 +10,7 @@
 		'title_reply' => __( '<h3>Send me a message</h3>', 'm20t1' ),
 		'comment_notes_before' => '',
 		'comment_notes_after' => '',
-		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '</label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..."></textarea></p>',
+		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '<span class="required">*</span></label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..." required></textarea></p>',
 	], 5 ); // post id number / open comments on post ?>
 	<style>
 		.email-block .comment-form {

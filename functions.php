@@ -1291,7 +1291,7 @@ function blog_post_share() {
         <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Pinterest" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Reddit" rel="noopener noreferrer" target="_blank"></a></li>
-        <li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank"></a></li>
+        <!--li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank"></a></li-->
     </ul>
     <?php
 }

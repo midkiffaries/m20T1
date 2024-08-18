@@ -794,7 +794,7 @@ Entry Social Sharing Styling
 }
 
 .post-social-share .twitter-share:hover {
-    outline-color: var(--twitter-color);
+    outline-color: #333;
 }
 
 .post-social-share .twitter-share::before {

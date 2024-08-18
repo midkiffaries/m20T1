@@ -458,7 +458,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'custom-background', [ 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll' ] );
 
     // Custom Logo Support
-    add_theme_support( 'custom-logo', [ 'height' => 96, 'width' => 628, 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
+    add_theme_support( 'custom-logo', [ 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
     
     // Add HTML5 Support
     add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ] );
@@ -1285,12 +1285,13 @@ function blog_post_share() {
     // Social sharing buttons HTML
     ?>
     <ul class="post-social-share" aria-label="Share on social media">
-        <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="Share on X/Twitter" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank">Pin It</a></li>
-        <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank">Share</a></li>
-        <li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank">Email</a></li>
+        <li class="post-social-share-title">Share on:</li>
+        <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="X/Twitter" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Facebook" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Pinterest" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Reddit" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank"></a></li>
     </ul>
     <?php
 }

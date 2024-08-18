@@ -512,6 +512,13 @@ Single Blog Post Styling (single)
 	min-height: 12em;
 }
 
+@media (max-width: 849px) {
+	.single-entry-metadata,
+	.single-entry-sticky {
+		font-size: 0.9em;
+	}
+}
+
 /* Post author info */
 .single-author-bio {
 	padding: 1rem 1.2rem;
@@ -538,18 +545,6 @@ Single Blog Post Styling (single)
 
 .author-bio-about {
 	margin: 0;
-}
-
-@media (max-width: 849px) {
-	.single-entry-metadata,
-	.single-entry-sticky {
-		font-size: 0.9em;
-	}
-
-	.entry-share {
-		float: left !important;
-		margin-top: 1.4em;
-	}
 }
 
 
@@ -725,16 +720,43 @@ Entry Social Sharing Styling
 	margin: 6px 1px;
 }
 
+@media (max-width: 749px) {
+	.entry-tags {
+		float: none;
+	}
+	.entry-share {
+		float: left;
+		margin-top: 1.4em;
+	}
+	.post-social-share li a {
+		padding: 6px 8px 4px;
+		min-width: 3em;
+	}
+}
+
 /* Entry Social Sharing Links */
+
+.post-social-share-title {
+	font-size: 0.9rem;
+}
 
 .post-social-share li a {
 	text-decoration: none;
-	color: #fff;
-	padding: 6px 8px;
-	border-radius: 5px;
 	display: inline-block;
+	color: #fff;
+	padding: 0 8px;
+	border-radius: 5px;
 	box-shadow: 0 0 0 0 #666;
+	min-width: 1.8em;
+	text-align: center;
 	transition: all 0.3s cubic-bezier(.14,.7,.87,.54) !important;
+}
+
+@media (max-width: 1000px) {
+	.post-social-share li a {
+		padding: 6px 8px 4px;
+		min-width: 3em;
+	}
 }
 
 .post-social-share li a:hover {
@@ -748,9 +770,8 @@ Entry Social Sharing Styling
 
 .post-social-share li a::before {
 	font-family: 'icomoon' !important;
-	padding-right: 3px;
+	font-size: 1.4rem;
 	vertical-align: -2px;
-	font-size: 1.2em;
 }
 
 .post-social-share .facebook-share {

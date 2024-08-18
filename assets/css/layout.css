@@ -718,7 +718,7 @@ Entry Social Sharing Styling
 
 .entry-share ul li {
 	display: inline-block;
-	margin: 6px 1px;
+	margin: 6px 3px;
 }
 
 @media (max-width: 749px) {
@@ -750,7 +750,9 @@ Entry Social Sharing Styling
 	box-shadow: 0 0 0 0 #666;
 	min-width: 1.8em;
 	text-align: center;
-	transition: all 0.3s cubic-bezier(.14,.7,.87,.54) !important;
+	transition: all 0.2s ease-in !important;
+	outline: 2px solid transparent;
+	outline-offset: 0;
 }
 
 @media (max-width: 1000px) {
@@ -761,8 +763,8 @@ Entry Social Sharing Styling
 }
 
 .post-social-share li a:hover {
-	transform: scale(1.15);
-	box-shadow: 3px 3px 1px 0 rgba(0,0,0,0.2);
+	outline: 2px solid #0000;
+	outline-offset: 2px;
 }
 
 .post-social-share li a:active {
@@ -779,12 +781,20 @@ Entry Social Sharing Styling
     background-color: var(--facebook-color);
 }
 
+.post-social-share .facebook-share:hover {
+    outline-color: var(--facebook-color);
+}
+
 .post-social-share .facebook-share::before {
 	content: "\e90b";
 }
 
 .post-social-share .twitter-share {
     background-color: var(--twitter-color);
+}
+
+.post-social-share .twitter-share:hover {
+    outline-color: var(--twitter-color);
 }
 
 .post-social-share .twitter-share::before {
@@ -795,12 +805,20 @@ Entry Social Sharing Styling
     background-color: var(--linkedin-color);
 }
 
+.post-social-share .linkedin-share:hover {
+    outline-color: var(--linkedin-color);
+}
+
 .post-social-share .linkedin-share::before {
 	content: "\e905";
 }
 
 .post-social-share .pinterest-share {
     background-color: var(--pinterest-color);
+}
+
+.post-social-share .pinterest-share:hover {
+    outline-color: var(--pinterest-color);
 }
 
 .post-social-share .pinterest-share::before {
@@ -811,12 +829,20 @@ Entry Social Sharing Styling
     background-color: var(--reddit-color);
 }
 
+.post-social-share .reddit-share:hover {
+    outline-color: var(--reddit-color);
+}
+
 .post-social-share .reddit-share::before {
 	content: "\e901";
 }
 
 .post-social-share .email-share {
     background-color: var(--email-color);
+}
+
+.post-social-share .email-share:hover {
+    outline-color: var(--email-color);
 }
 
 .post-social-share .email-share::before {

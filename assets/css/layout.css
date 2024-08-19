@@ -787,6 +787,8 @@ Entry Social Sharing Styling
 
 .post-social-share .facebook-share::before {
 	content: "\e90b";
+	font-size: 1.6rem;
+	vertical-align: -3px;
 }
 
 .post-social-share .twitter-share {

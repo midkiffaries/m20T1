@@ -24,7 +24,9 @@
 		},
 		"dimensions": {
 			"minHeight": true,
-			"aspectRatio": true
+			"aspectRatio": true,
+			"defaultAspectRatios": true,
+			"aspectRatios": []
 		},
 		"position": {
 			"sticky": false

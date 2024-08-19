@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.2 Live (August 30, 2024)
+### 1.8.2 Live (August 18, 2024)
 
 * Because the PHP mail() function is disabled by most web hosts and because I wanted to avoid getting plugins for running a contact form, I came up with a janky fallback for the contact form shortcode mechanism. This uses the same mechanism as the comment function.
 * Reworked the social sharing links.

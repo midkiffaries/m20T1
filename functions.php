@@ -519,8 +519,8 @@ add_action( 'init', function(){
     //add_filter( 'wp_resource_hints', 'disable_emojis', 10, 2 );
 
     // Remove RSS feed links
+    //remove_action( 'wp_head', 'feed_links', 2 );
     remove_action( 'wp_head', 'feed_links_extra', 3 );
-    remove_action( 'wp_head', 'feed_links', 2 );
 
     // Remove version number from the generator for security
     remove_action( 'wp_head', 'wp_generator' );

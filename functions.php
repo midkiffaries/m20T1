@@ -482,17 +482,24 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", [], THEME_VERSION, 'all' );
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
 
-    // Enable Dashicons
-    //wp_enqueue_style( 'dashicons' ); // Dashicons [class="dashicons dashicons-google"] 
-
     // Remove post comments reply
     wp_dequeue_script( 'comment-reply' );
 
     // Remove WordPress block library CSS
-    wp_dequeue_style( 'wp-block-library-theme' );
-    //wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wc-block-style' ); // WooCommerce block
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_deregister_style( 'wp-block-library-theme' );
+    //wp_dequeue_style( 'wp-block-library' );
+    //wp_deregister_style( 'wp-block-library' );
 });
+
+// Dashicons - Dashicons [class="dashicons dashicons-google"] 
+add_action( 'wp_print_styles', function(){
+    if (!is_admin_bar_showing() && !is_customize_preview()) {
+        wp_dequeue_style( 'dashicons' );
+        wp_deregister_style( 'dashicons' );
+    }
+}, 100);
 
 // Enable or disable WordPress features on initialize
 add_action( 'init', function(){

@@ -1681,14 +1681,14 @@ Breadcrumbs Plugin Style
 	display: inline-block;
 }
 
+.breadcrumbs .trail-items li a:hover {
+	text-decoration: none;
+}
+
 .breadcrumbs .trail-items li:first-of-type::before {
 	font-family: 'icomoon' !important;
 	content: "\e904";
 	padding-right: 3px;
-}
-
-.breadcrumbs .trail-items li:last-of-type::after {
-	display: none;
 }
 
 .breadcrumbs .trail-items li::after {
@@ -1696,8 +1696,16 @@ Breadcrumbs Plugin Style
 	padding: 0 0.4em;
 }
 
-.breadcrumbs .trail-items li a:hover {
-	text-decoration: none;
+.breadcrumbs .trail-items li:last-of-type::after {
+	display: none;
+}
+
+.breadcrumbs .trail-end span span {
+	display: none;
+}
+
+.breadcrumbs .trail-end span::after {
+	content: "...";
 }
 
 

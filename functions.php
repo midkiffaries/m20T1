@@ -663,6 +663,11 @@ add_action( 'wp_footer', function(){
         <h4>Post Categories</h4>
         <?=wp_list_categories(['orderby' => 'name', 'show_count' => false, 'title_li' => '']); ?>
     </div>
+    <style>
+    .dialog-search .dialog-content {
+		transform: none;
+	}
+    </style>
 </template>
 
 <template id="Contact-Modal">

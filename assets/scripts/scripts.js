@@ -745,7 +745,7 @@ function HtmlModal(c, v) {
 		background-color: rgba(240,240,240,.85);
 		border: none;
 		opacity: 0;
-		transition: opacity .15s ease-in-out 0s;
+		transition: opacity .2s ease-in-out 0s;
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
 	}
@@ -763,8 +763,8 @@ function HtmlModal(c, v) {
 		padding: 1em;
 		background-color: #fdfdfd;
 		box-shadow: 0px 10px 14px -7px rgba(0,0,0,.7), 5px 5px 16px 5px rgba(0,0,0,0);
-		transform: scale(.8);
-		transition: transform .15s ease-in-out 0s;
+		transform: scale(.8) translateY(-100px);
+		transition: transform .25s ease-in-out 0s;
         overflow-y: scroll;
 	}
 	.dialog-close-button {

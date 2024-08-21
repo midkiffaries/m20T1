@@ -1490,8 +1490,12 @@ Page Pagination Section
 	margin: auto 12px;
 }
 
-.single-blog-post-nav div span {
-	font-size: 85%;
+.single-blog-post-nav div a {
+	font-size: 0.9rem;
+}
+
+.single-blog-post-nav div a span {
+	font-size: 1.2rem;
 	display: block;
 	margin: 0;
 	font-weight: 800;

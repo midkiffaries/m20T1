@@ -417,6 +417,34 @@ add_action( 'init', function(){
             font-size: 1rem;
         }'
     ]);
+    // Media & Text Block: Theme style
+    register_block_style( 'core/media-text', [
+        'name'  => 'media-text-full',
+        'label' => __( 'Full Image', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-media-text-full {
+            display: block;
+            position: relative;
+            border-radius: 10px;
+        }
+        .is-style-media-text-full figure {
+            width: 100%;
+            object-fit: cover;
+        }
+        .is-style-media-text-full figure img {
+            height: 20em;
+            border-radius: 10px;
+        }
+        .is-style-media-text-full div {
+            position: absolute;
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+            top: 0;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            border-radius: 10px;
+        }'
+    ]);
 });
 
 // Add additional features to block editor elements

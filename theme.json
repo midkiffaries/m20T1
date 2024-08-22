@@ -515,6 +515,13 @@
 					}
 				}
 			},
+			"core/media-text": {
+				"variations": {
+					"media-text-full": {
+						"css": ""
+					}
+				}
+			},
 			"core/footnotes": {
 				"typography": {
 					"fontSize": "0.9rem",

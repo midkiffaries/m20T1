@@ -1704,12 +1704,8 @@ Breadcrumbs Plugin Style
 	display: none;
 }
 
-.breadcrumbs .trail-end span::after {
-	content: "...";
-}
 
-
-/************************ 
+/************************
 Contact Modal Styling
 *************************/
 

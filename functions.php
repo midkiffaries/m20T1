@@ -419,6 +419,16 @@ add_action( 'init', function(){
     ]);
 });
 
+// Add additional features to block editor elements
+add_filter( 'register_block_type_args', function( $args, $block_type ) {
+    // Media & Text block
+	if ( 'core/media-text' === $block_type ) {
+		$args['supports']['filter']['duotone'] = true; // Add duotone filter
+        $args['supports']['shadow'] = true; // Add drop shadow
+	}
+	return $args;
+}, 10, 2 );
+
 
 /////////////////////////////
 // WordPress Setup

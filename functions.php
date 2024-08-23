@@ -977,7 +977,7 @@ function get_child_pages( $id, $thumbnail ) {
 // Specialized Functions
 /////////////////////////////
 
-// Shortcode implementation for displaying additional post types in the editor
+// Shortcode implementation for displaying additional post types in the editor -- https://www.smashingmagazine.com/2012/05/wordpress-shortcodes-complete-guide/
 // [list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]
 add_shortcode('list-posts', function( $atts, $content = null ){
     extract(shortcode_atts(['posts' => 1, 'post_type' => 'portfolio', 'order' => 'desc', 'orderby' => 'title', 'thumbnail' => 0, 'excerpt' => 0, 'post_status' => 'publish', 'category' => '', 'id' => '', 'class' => ''], $atts));

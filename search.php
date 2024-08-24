@@ -10,7 +10,7 @@
     <section class="search-page-form" id="search-page">
         <div>
             <h1 class="page-title" itemprop="name headline">Your search netted <b><?=SearchCount(esc_attr($s));?></b> result(s)</h1>
-            <?php get_search_form('search'); // Search form ?>
+            <?php get_search_form(['search-page']); // Search form ?>
             
             <search class="search-sorting" aria-label="Search Sorting">
                 <form method="get" onchange="this.submit()">

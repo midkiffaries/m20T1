@@ -697,7 +697,7 @@ add_action( 'wp_footer', function(){
 ?>
 <template id="Search-Modal">
     <h3 class="search-title">Search <?=bloginfo('name');?></h3>
-    <?=get_search_form('search-modal'); // Load searchform.php ?>
+    <?=get_search_form(['search-modal']); // Load searchform.php ?>
     <div class="search-categories">
         <h4>Post Categories</h4>
         <?=wp_list_categories(['orderby' => 'name', 'show_count' => false, 'title_li' => '']); ?>
@@ -787,8 +787,8 @@ add_action( 'widgets_init', function(){
     // Primary Sidebar - Full blog page
     register_sidebar([
         'id'            => 'primary',
-        'name'          => __( 'Primary Sidebar Widgets', 'm20T1' ),
-        'description'   => __( 'Blog listing page.' ),
+        'name'          => __( 'Blog Sidebar', 'm20T1' ),
+        'description'   => __( 'Blog listing page widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
@@ -797,7 +797,7 @@ add_action( 'widgets_init', function(){
     // Secondary Sidebar - Archive Pages
     register_sidebar([
         'id'            => 'secondary',
-        'name'          => __( 'Secondary Sidebar Widgets', 'm20T1' ),
+        'name'          => __( 'Archive Sidebar', 'm20T1' ),
         'description'   => __( 'Archive pages sidebar widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -807,18 +807,8 @@ add_action( 'widgets_init', function(){
     // Tertiary Sidebar - Search Results
     register_sidebar([
         'id'            => 'tertiary',
-        'name'          => __( 'Tertiary Sidebar Widgets', 'm20T1' ),
+        'name'          => __( 'Search Results Sidebar', 'm20T1' ),
         'description'   => __( 'Search results page sidebar widgets.' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ]);
-    // Quaternary Sidebar - Portfolio
-    register_sidebar([
-        'id'            => 'quaternary',
-        'name'          => __( 'Quaternary Sidebar Widgets', 'm20T1' ),
-        'description'   => __( 'Alternative page sidebar.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',

@@ -151,6 +151,15 @@ add_action( 'init', function(){
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);
+    // Image: Old photo style
+    register_block_style( 'core/image', [
+        'name'  => 'img-old',
+        'label' => __( 'Old Photo', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-img-old img {
+            filter: sepia(45%) blur(0.02em) saturate(0.9) contrast(1.4) brightness(1.04) !important;
+        }'
+    ]);
     // Image: Filter Alpha Shadow Style
     register_block_style( 'core/image', [
         'name'  => 'img-filter-shadow',
@@ -158,16 +167,6 @@ add_action( 'init', function(){
         'is_default' => false,
         'inline_style' => '.is-style-img-filter-shadow img {
             filter: drop-shadow(1px 1px 3px #000a);
-        }'
-    ]);
-    // Image: Hard Black Border Style
-    register_block_style( 'core/image', [
-        'name'  => 'img-hard-border',
-        'label' => __( 'Hard Border', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-img-hard-border img {
-            border: 8px solid #000;
-            border-radius: 2em;
         }'
     ]);
     // Image: Book landscape

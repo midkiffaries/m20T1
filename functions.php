@@ -788,7 +788,7 @@ add_action( 'widgets_init', function(){
     register_sidebar([
         'id'            => 'primary',
         'name'          => __( 'Blog Sidebar', 'm20T1' ),
-        'description'   => __( 'Blog listing page widgets.' ),
+        'description'   => __( 'Blog page sidebar widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
@@ -807,7 +807,7 @@ add_action( 'widgets_init', function(){
     // Tertiary Sidebar - Search Results
     register_sidebar([
         'id'            => 'tertiary',
-        'name'          => __( 'Search Results Sidebar', 'm20T1' ),
+        'name'          => __( 'Search Page Sidebar', 'm20T1' ),
         'description'   => __( 'Search results page sidebar widgets.' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',

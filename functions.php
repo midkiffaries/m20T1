@@ -157,7 +157,7 @@ add_action( 'init', function(){
         'label' => __( 'Old Photo', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-old img {
-            filter: sepia(45%) blur(0.02em) saturate(0.9) contrast(1.4) brightness(1.04) !important;
+            filter: sepia(45%) blur(0.02em) saturate(0.8) contrast(1.4) brightness(1.04) !important;
         }'
     ]);
     // Image: Filter Alpha Shadow Style

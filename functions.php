@@ -416,7 +416,7 @@ add_action( 'init', function(){
             font-size: 1rem;
         }'
     ]);
-    // Media & Text Block: Theme style
+    // Media & Text Block: Image full width style
     register_block_style( 'core/media-text', [
         'name'  => 'media-text-full',
         'label' => __( 'Full Image', 'm20t1' ),
@@ -442,6 +442,33 @@ add_action( 'init', function(){
             width: 100%;
             color: #fff;
             border-radius: 10px;
+        }'
+    ]);
+    // Media & Text Block: Text overlap style
+    register_block_style( 'core/media-text', [
+        'name'  => 'media-text-overlap',
+        'label' => __( 'Overlap', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-media-text-overlap {
+            transform: translateX(-20px);
+        }
+        .is-style-media-text-overlap figure {
+            margin-right: 130px;
+        }
+        .is-style-media-text-overlap figure img {
+            border-radius: 14px;
+        }
+        .is-style-media-text-overlap div {
+            background-color: #eee3;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid #ddd7;
+            border-radius: 14px;
+            height: 92%;
+            transform: translateX(-40px);
+        }
+        .is-style-media-text-overlap.has-media-on-the-right div {
+            transform: translateX(40px);
         }'
     ]);
 });

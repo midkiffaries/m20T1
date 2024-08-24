@@ -3,6 +3,7 @@
 ### 1.8.3 Live (August 30, 2024)
 
 * Improvements to the search mechanism.
+* Relabelling the widgets.
 * Bug fixes.
 
 ### 1.8.2 Live (August 18, 2024)

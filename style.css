@@ -429,11 +429,6 @@ button,
 	border-color: var(--wp--preset--color--primary-dark);
 }
 
-.is-style-outline a[href] {
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-}
-
 
 /************************************
 Blog Post Styling

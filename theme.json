@@ -536,6 +536,17 @@
 					}
 				}
 			},
+			"core/button": {
+				"variations": {
+					"outline": {
+						"css": "backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);"
+					},
+					"fill": {
+						"css": ""
+					}
+
+				}
+			},
 			"core/gallery": {
 				"elements": {
 					"caption": {

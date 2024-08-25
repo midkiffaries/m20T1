@@ -81,7 +81,6 @@ body {
 }
 
 .width-full {
-	width: var(--wp--style--global--wide-size);
 	float: none;
 	padding: 0.8rem;
 }

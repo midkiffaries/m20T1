@@ -1348,7 +1348,8 @@ function blog_post_share() {
     // Social sharing buttons HTML
     ?>
     <ul class="post-social-share" aria-label="Share on social media">
-        <li class="post-social-share-title" onclick="SharePost()" role="button">Share on:</li>
+        <!--li class="post-social-share-title" role="button">Share on:</li-->
+        <li><a href="/" class="browser-share Can-Share" aria-label="Use the browsers sharing" rel="noopener noreferrer">Share</a></li>
         <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="X/Twitter" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Facebook" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>
@@ -1357,9 +1358,10 @@ function blog_post_share() {
         <!--li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank"></a></li-->
     </ul>
     <script>
-        function SharePost() { // Share post through browser's API
-            const socialData = {title:"<?=get_the_title();?>", text:"<?=get_the_excerpt();?>", url:"<?=esc_url(get_the_permalink());?>"};
-            if (navigator.canShare(socialData)) navigator.share(socialData);
+        document.querySelector(".Can-Share").onclick = () => { // Share post through browser's API
+            const data = {title:"<?=get_the_title();?>", text:"<?=get_the_excerpt();?>", url:"<?=esc_url(get_the_permalink());?>"};
+            if (navigator.canShare(data)) navigator.share(data);
+            return false;
         }
     </script>
     <?php

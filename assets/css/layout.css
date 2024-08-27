@@ -18,6 +18,7 @@ Base WordPress Page Styling
 	--pinterest-color: #e60023;
 	--reddit-color: #ff4500;
 	--email-color: #fba805;
+	--browser-color: #59626a;
 
 	accent-color: var(--wp--preset--color--primary);
 	caret-color: var(--wp--preset--color--primary);
@@ -736,10 +737,6 @@ Entry Social Sharing Styling
 
 /* Entry Social Sharing Links */
 
-.post-social-share-title {
-	font-size: 0.9rem;
-}
-
 .post-social-share li a {
 	text-decoration: none;
 	display: inline-block;
@@ -774,6 +771,14 @@ Entry Social Sharing Styling
 	font-family: 'icomoon' !important;
 	font-size: 1.4rem;
 	vertical-align: -2px;
+}
+
+.post-social-share .browser-share {
+    background-color: var(--browser-color);
+}
+
+.post-social-share .browser-share:hover {
+    outline-color: var(--browser-color);
 }
 
 .post-social-share .facebook-share {

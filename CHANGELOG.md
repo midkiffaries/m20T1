@@ -4,6 +4,7 @@
 
 * Improvements to the search mechanism code.
 * Relabelling the widgets.
+* More reworking the social sharing links.
 * Bug fixes.
 
 ### 1.8.2 Live (August 18, 2024)

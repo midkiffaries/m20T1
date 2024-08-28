@@ -1348,8 +1348,8 @@ function blog_post_share() {
     // Social sharing buttons HTML
     ?>
     <ul class="post-social-share" aria-label="Share on social media">
-        <!--li class="post-social-share-title" role="button">Share on:</li-->
-        <li><a href="/" class="browser-share Can-Share" aria-label="Use the browsers sharing" rel="noopener noreferrer">Share</a></li>
+        <li class="hidden">Share on:</li>
+        <li><span role="button" class="browser-share Can-Share" aria-label="Use the browsers sharing">Share</span></li>
         <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="X/Twitter" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Facebook" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>

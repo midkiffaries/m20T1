@@ -737,7 +737,8 @@ Entry Social Sharing Styling
 
 /* Entry Social Sharing Links */
 
-.post-social-share li a {
+.post-social-share li a,
+.browser-share  {
 	text-decoration: none;
 	display: inline-block;
 	color: #fff;
@@ -752,22 +753,26 @@ Entry Social Sharing Styling
 }
 
 @media (max-width: 1000px) {
-	.post-social-share li a {
+	.post-social-share li a,
+	.browser-share  {
 		padding: 6px 8px 4px;
 		min-width: 3em;
 	}
 }
 
-.post-social-share li a:hover {
+.post-social-share li a:hover,
+.browser-share:hover {
 	outline: 2px solid #0000;
 	outline-offset: 2px;
 }
 
-.post-social-share li a:active {
+.post-social-share li a:active,
+.browser-share:active {
 	transform: scale(0.95);
 }
 
-.post-social-share li a::before {
+.post-social-share li a::before,
+.browser-share::before {
 	font-family: 'icomoon' !important;
 	font-size: 1.4rem;
 	vertical-align: -2px;
@@ -775,6 +780,7 @@ Entry Social Sharing Styling
 
 .post-social-share .browser-share {
     background-color: var(--browser-color);
+	cursor: pointer;
 }
 
 .post-social-share .browser-share:hover {

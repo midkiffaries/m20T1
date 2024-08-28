@@ -1358,10 +1358,13 @@ function blog_post_share() {
         <!--li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank"></a></li-->
     </ul>
     <script>
-        document.querySelector(".Can-Share").onclick = () => { // Share post through browser's API
-            const data = {title:"<?=get_the_title();?>", text:"<?=get_the_excerpt();?>", url:"<?=esc_url(get_the_permalink());?>"};
-            if (navigator.canShare(data)) navigator.share(data);
-            return false;
+        if (navigator.canShare) { // Supports canShare
+            document.querySelector(".Can-Share").onclick = () => {
+                const data = {title:"<?=get_the_title();?>", text:"<?=get_the_excerpt();?>", url:"<?=esc_url(get_the_permalink());?>"};
+                if (navigator.canShare(data)) navigator.share(data);
+            }
+        } else { // Does not support canShare
+            document.getElementsByClassName("Can-Share")[0].style.display = "none";
         }
     </script>
     <?php

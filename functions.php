@@ -676,8 +676,8 @@ add_action( 'wp_head', function(){
 <link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url()));?>">
 <link rel="pingback" href="<?=bloginfo('pingback_url');?>">
 <link rel="Siteuri" href="<?=home_url();?>/" id="SiteURI">
-<meta name="application-name" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left'));?>">
-<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name'); SEO_CharSwap(wp_title('|', true, 'left'));?>">
+<meta name="application-name" content="<?=bloginfo('name');?>">
+<meta name="apple-mobile-web-app-title" content="<?=bloginfo('name');?>">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="description" content="<?=SEO_Excerpt(get_the_id());?>">
@@ -690,7 +690,7 @@ add_action( 'wp_head', function(){
 <meta property="og:type" content="<?=(is_front_page()) ? "website" : "article";?>">
 <meta property="og:site_name" content="<?=bloginfo('name');?>">
 <meta property="og:url" content="<?=the_permalink();?>">
-<meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name');?>">
+<meta property="og:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right'));?><?=bloginfo('name');?>">
 <meta property="og:description" content="<?=SEO_Excerpt(get_the_id());?>">
 <meta property="og:image" content="<?=SEO_Image(get_the_id());?>">
 <meta property="og:image:type" content="image/<?=get_file_extension(SEO_Image(get_the_id()));?>">
@@ -700,7 +700,7 @@ add_action( 'wp_head', function(){
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/');?>">
 <meta name="twitter:url" content="<?=the_permalink();?>">
-<meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right')); bloginfo('name');?>">
+<meta name="twitter:title" content="<?=SEO_CharSwap(wp_title('|', true, 'right'));?><?=bloginfo('name');?>">
 <meta name="twitter:description" content="<?=SEO_Excerpt(get_the_id());?>">
 <meta name="twitter:image" content="<?=SEO_Image(get_the_id());?>">
 <meta name="twitter:label1" content="Written by">

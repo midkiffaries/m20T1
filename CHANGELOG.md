@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.3 Live (August 30, 2024)
+### 1.8.3 Live (August 28, 2024)
 
 * Improvements to the search mechanism code.
 * Relabelling the backend widgets.

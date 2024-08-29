@@ -3,8 +3,8 @@
 ### 1.8.3 Live (August 28, 2024)
 
 * Improvements to the search mechanism code.
-* Relabelling the backend widgets.
-* More reworking the social sharing links.
+* Relabeling the backend widgets.
+* More reworking of the social sharing links.
 * Bug fixes.
 
 ### 1.8.2 Live (August 18, 2024)

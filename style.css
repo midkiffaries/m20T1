@@ -283,18 +283,31 @@ WordPress Gutenburg Content Styling
 Custom Gutenburg Styling
 ***********************************/
 
-/* Body content links */
+/* Page content links */
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {
-	color: var(--wp--preset--color--primary);
 	transition: color 0.25s;
 }
 
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):hover {
+	filter: brightness(1.08);
+}
+
+.the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):active {
+	filter: brightness(0.95);
+}
+
+/* Post content links */
+.post .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {
+	color: var(--wp--preset--color--primary);
+	transition: color 0.25s;
+}
+
+.post .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):hover {
 	color: var(--wp--preset--color--primary-pale);
 	text-decoration-color: var(--wp--preset--color--primary-dark);
 }
 
-.the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):active {
+.post .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):active {
 	color: var(--wp--preset--color--primary-dark);
 }
 

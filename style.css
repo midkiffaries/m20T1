@@ -348,6 +348,7 @@ Sidebar and Widgets Styling
 
 .page-sidebar .widget_recent_entries ul li {
 	margin-bottom: 10px;
+	line-height: 1.15;
 }
 
 /* Sidebar links */

@@ -304,6 +304,7 @@ Custom Gutenburg Styling
 
 .post .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):hover {
 	color: var(--wp--preset--color--primary-pale);
+	text-decoration: underline;
 	text-decoration-color: var(--wp--preset--color--primary-dark);
 }
 

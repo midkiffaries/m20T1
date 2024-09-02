@@ -384,26 +384,15 @@
 				}
 			},
 			"link": {
-				"color": {
-					"text": "var(--wp--preset--color--black)"
-				},
-				"typography": {
-					"textDecoration": "underline"
-				},
-				":hover": {
+				":link": {
+					"color": {
+						"text": "inherit"
+					},
 					"typography": {
 						"textDecoration": "underline"
 					}
 				},
-				":focus": {
-					"typography": {
-						"textDecoration": "underline dashed"
-					}
-				},
-				":active": {
-					"color": {
-						"text": "var(--wp--preset--color--secondary)"
-					},
+				":hover": {
 					"typography": {
 						"textDecoration": "none"
 					}

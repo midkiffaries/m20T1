@@ -424,7 +424,7 @@
 					},
 					"text-subtitle": {
 						"color": {
-							"text": "#444"
+							"text": "#555"
 						},
 						"typography": {
 							"fontSize": "1.5rem !important",

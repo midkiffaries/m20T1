@@ -960,9 +960,9 @@ add_action( 'wp_nav_menu_item_custom_fields', function( $item_id, $item ) {
 	<p class="description description-wide">
         <label for="menu_img_url-<?=$item_id;?>"><?php _e( "Display Thumbnail", 'menu_img_url' ); ?></label><br>
         <input type="hidden" class="nav-menu-id" value="<?=$item_id;?>">    
-        <input type="radio" id="menu_img_no-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" value="false">
+        <input type="radio" id="menu_img_no-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" value="0">
         <label for="menu_img_no-<?=$item_id;?>">No</label> &nbsp;
-        <input type="radio" id="menu_img_yes-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" value="true">
+        <input type="radio" id="menu_img_yes-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" value="1">
         <label for="menu_img_yes-<?=$item_id;?>">Yes</label>
     </p>
 	<?php

@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.4 Live (September 16, 2024)
+
+* Improvements to the menu item properties.
+
 ### 1.8.3 Live (August 28, 2024)
 
 * Improvements to the search mechanism code.

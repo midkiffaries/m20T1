@@ -944,8 +944,9 @@ class Menu_With_Description extends Walker_Nav_Menu {
         $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
         $item_output = $args->before;
         $item_output .= '<a '. $attributes .'>';
+        $item_output .= ! empty( $item->menu_img_url ) ? ' <img src="' . esc_url(get_the_post_thumbnail_url(url_to_postid($item->url), 'thumbnail')) . '" class="menu-item-image" alt="" loading="lazy" decoding="async" fetchpriority="low">' : '';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        $item_output .= ' <span class="menu-item-sub">' . $item->description . '</span>';
+        $item_output .= ! empty( $item->description ) ? ' <span class="menu-item-sub">' . $item->description . '</span>' : '';
         $item_output .= '</a>';
         $item_output .= $args->after;
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -957,10 +958,12 @@ add_action( 'wp_nav_menu_item_custom_fields', function( $item_id, $item ) {
 	$menu_img_url = get_post_meta( $item_id, 'menu_img_url', true );
 	?>
 	<p class="description description-wide">
-        <label for="menu_img_url-<?=$item_id;?>"><?php _e( "Image URL", 'menu_img_url' ); ?><br>
-            <input type="hidden" class="nav-menu-id" value="<?=$item_id;?>">
-            <input type="url" name="menu_img_url[<?=$item_id;?>]" id="menu_img_url-<?=$item_id;?>" style="width:100%" value="<?=esc_attr( $menu_img_url );?>" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" inputmode="url">
-        </label>
+        <label for="menu_img_url-<?=$item_id;?>"><?php _e( "Display Thumbnail", 'menu_img_url' ); ?></label><br>
+        <input type="hidden" class="nav-menu-id" value="<?=$item_id;?>">    
+        <input type="radio" id="menu_img_no-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" value="false">
+        <label for="menu_img_no-<?=$item_id;?>">No</label> &nbsp;
+        <input type="radio" id="menu_img_yes-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" value="true">
+        <label for="menu_img_yes-<?=$item_id;?>">Yes</label>
     </p>
 	<?php
 }, 10, 2 );

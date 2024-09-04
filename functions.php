@@ -952,6 +952,29 @@ class Menu_With_Description extends Walker_Nav_Menu {
     }
 }
 
+// Add a Custom Field to each menu item
+add_action( 'wp_nav_menu_item_custom_fields', function( $item_id, $item ) {
+	$menu_img_url = get_post_meta( $item_id, 'menu_img_url', true );
+	?>
+	<p class="description description-wide">
+        <label for="menu_img_url-<?=$item_id;?>"><?php _e( "Image URL", 'menu_img_url' ); ?><br>
+            <input type="hidden" class="nav-menu-id" value="<?=$item_id;?>">
+            <input type="url" name="menu_img_url[<?=$item_id;?>]" id="menu_img_url-<?=$item_id;?>" style="width:100%" value="<?=esc_attr( $menu_img_url );?>" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" inputmode="url">
+        </label>
+    </p>
+	<?php
+}, 10, 2 );
+
+// Update a Custom Field to each menu item
+add_action( 'wp_update_nav_menu_item', function( $menu_id, $menu_item_db_id ) {
+	if ( isset( $_POST['menu_img_url'][$menu_item_db_id]  ) ) {
+		$sanitized_data = sanitize_text_field( $_POST['menu_img_url'][$menu_item_db_id] );
+		update_post_meta( $menu_item_db_id, 'menu_img_url', $sanitized_data );
+	} else {
+		delete_post_meta( $menu_item_db_id, 'menu_img_url' );
+	}
+}, 10, 2 );
+
 
 /////////////////////////////
 // Child Pages Functions

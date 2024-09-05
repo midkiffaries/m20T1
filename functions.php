@@ -944,7 +944,7 @@ class Menu_With_Description extends Walker_Nav_Menu {
         $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
         $item_output = $args->before;
         $item_output .= '<a '. $attributes .'>';
-        $item_output .= ! empty( $item->menu_thumbnail ) ? ' <img src="' . esc_url(get_the_post_thumbnail_url(url_to_postid($item->url), 'thumbnail')) . '" class="menu-item-image" alt="" loading="lazy" decoding="async" fetchpriority="low">' : '';
+        $item_output .= ! empty( $item->menu_thumbnail ) ? ' <img src="' . esc_url(get_the_post_thumbnail_url(url_to_postid($item->url), 'thumbnail')) . '" class="menu-item-image" alt="" loading="lazy" decoding="async" fetchpriority="auto">' : '';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
         $item_output .= ! empty( $item->description ) ? ' <span class="menu-item-sub">' . $item->description . '</span>' : '';
         $item_output .= '</a>';

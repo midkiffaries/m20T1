@@ -957,8 +957,8 @@ class Menu_With_Description extends Walker_Nav_Menu {
 add_action( 'wp_nav_menu_item_custom_fields', function( $item_id, $item ) {
 	$menu_img = get_post_meta( $item_id, 'menu_thumbnail', true );
 	?>
-	<p class="description">
-        <label for="menu_thumbnail-<?=$item_id;?>"><?php _e( "Display Thumbnail", 'menu_thumbnail' ); ?></label><br>
+	<p class="description" style="margin-bottom:10px">
+        <label for="menu_thumbnail-<?=$item_id;?>"><?php _e( "Display Thumbnail", 'menu_thumbnail' ); ?></label> &nbsp;
         <input type="hidden" class="nav-menu-id" value="<?=$item_id;?>">    
         <input type="radio" id="menu_img_no-<?=$item_id;?>" name="menu_thumbnail[<?=$item_id;?>]" value="0">
         <label for="menu_img_no-<?=$item_id;?>">No</label> &nbsp;

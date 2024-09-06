@@ -315,6 +315,11 @@ Site Header
 	font-size: 0.6rem;
 }
 
+.menu-item-image {
+	width: 32px;
+	margin: 5px;
+}
+
 .header-secondary-navigation {
 	display: none;
 }

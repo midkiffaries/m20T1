@@ -2,7 +2,8 @@
 
 ### 1.8.4 Live (September 16, 2024)
 
-* Improvements and an addition of thumbnail display on menu items.
+* The addition of thumbnail display option on menu items.
+* Overall improvements.
 
 ### 1.8.3 Live (August 28, 2024)
 

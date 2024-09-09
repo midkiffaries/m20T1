@@ -122,6 +122,34 @@ add_action( 'init', function(){
         'label' => __( 'Text-Fill', 'm20t1' ),
         'is_default' => false
     ]);
+    // Embed: Youtube Frame style
+    register_block_style( 'core/embed', [
+        'name'  => 'embed-youtube',
+        'label' => __( 'Frame', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-embed-youtube iframe,
+        .is-style-embed-youtube video,
+        .is-style-embed-youtube img {
+            border: 3px solid #f00;
+            box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 4px 2px rgba(0,0,0,0.1), 0 8px 4px rgba(0,0,0,0.1), 0 16px 8px rgba(0,0,0,0.1);
+        }
+        .is-style-embed-youtube img {
+            border-radius: 3px;
+        }'
+    ]);
+    // Video Embed: Shadow style
+    register_block_style( 'core/video', [
+        'name'  => 'video-shadow',
+        'label' => __( 'Shadow', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-video-shadow video,
+        .is-style-video-shadow img {
+            box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 4px 2px rgba(0,0,0,0.1), 0 8px 4px rgba(0,0,0,0.1), 0 16px 8px rgba(0,0,0,0.1);
+        }
+        .is-style-video-shadow img {
+            border-radius: 3px;
+        }'
+    ]);
     // Image: Fancy style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',

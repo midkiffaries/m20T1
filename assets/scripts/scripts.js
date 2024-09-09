@@ -214,7 +214,7 @@ document.addEventListener("keyup", (e) => {
             cursor: pointer;
         }
         .embed-youtube:hover {
-            outline: 4px solid rgba(255,30,30);
+            outline: 4px solid #f00;
         }
         .embed-youtube img {
             width: 100%;
@@ -223,16 +223,15 @@ document.addEventListener("keyup", (e) => {
         .embed-youtube .play-button {
             width: 6em;
             height: 4em;
-            background: rgba(50,50,50,.4);
-            box-shadow: 0 0 .9em rgba(0,0,0,.9);
+            background: #2228;
+            box-shadow: 0 0 8px 0 #000c;
             z-index: 1;
-            opacity: .8;
             border-radius: .8em;
             transition: background .5s;
         }
         .embed-youtube:hover .play-button {
             opacity: 1;   
-            background: rgba(255,30,30,.7);
+            background: #f00c;
         }
         .embed-youtube .play-button::before {
             content: "";
@@ -385,16 +384,16 @@ document.addEventListener("scroll", function() {
 		will-change: transform;
 		background: no-repeat center center / 1em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>");
-		background-color: rgba(0,0,0,.3);
+		background-color: #0005;
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
 	}
 	.scroll-to-top-float:hover {
-		background-color: rgba(0,0,0,.5); 
+		background-color: #0008; 
 		transform: scale(1.1);
 	}
 	.scroll-to-top-float:active {
-		background-color: rgba(0,0,0,.7);
+		background-color: #0009;
 	}
 	.scroll-to-top-float.scActive {
 		visibility: visible;
@@ -468,7 +467,7 @@ function scrollToTop() {
 				.lightbox-image {
 					width: 100vw;
 					height: 100vh;
-					background-color: rgba(30,30,30,.94);
+					background-color: #111e;
 					border: none;
 					opacity: 0;
                     overflow-y: scroll;
@@ -498,7 +497,7 @@ function scrollToTop() {
                     min-height: 10em;
                     min-width: 10em;
                     transform: all .5s ease-in-out;
-                    box-shadow: 0 1px 6px 1px rgba(0,0,0,.3);
+                    box-shadow: 0 1px 6px 1px #0003;
                     background: no-repeat center center / 5em;
                     background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 128 128'><g><path fill='white' d='M64 10a54 54 0 00-54 54H0a64 64 0 01128 0h-10a54 54 0 00-54-54z'/><CanimateTransform attributeName='transform' dur='2s' from='0 64 64' repeatCount='indefinite' to='360 64 64' type='rotate'/></g></svg>");
                 }
@@ -527,7 +526,7 @@ function scrollToTop() {
 				}
 				.dialog-close-button:hover {
 					opacity: .9;
-					filter: drop-shadow(0 0 5px rgba(220,220,220,.8));
+					filter: drop-shadow(0 0 5px #eeed);
 				}
 				.dialog-close-button:focus:hover {
 					filter: none;
@@ -653,7 +652,7 @@ function ConfirmModal(text, action) {
         border: none;
         width: 100vw;
         height: 100%;
-        background-color: rgba(255,255,255,.6);
+        background-color: #fff9;
         opacity: 0;
         transition: opacity .16s ease-in-out 0s;
         -webkit-backdrop-filter: grayscale(40%);
@@ -665,7 +664,7 @@ function ConfirmModal(text, action) {
         padding: 1em;    
         transform: translate(0, -100%);
         background-color: #fff;
-        box-shadow: 0 14px 14px -7px rgba(0,0,0,.8), 5px 5px 18px 5px rgba(0,0,0,0);
+        box-shadow: 0 14px 14px -7px #000c, 5px 5px 18px 5px #0000;
         border: 1px solid #eee;
         text-align: right;
         overscroll-behavior-y: contain;
@@ -742,7 +741,7 @@ function HtmlModal(c, v) {
 		width: 100vw;
 		height: 100vh;
         overflow: hidden;
-		background-color: rgba(240,240,240,.85);
+		background-color: #eeee;
 		border: none;
 		opacity: 0;
 		transition: opacity .2s ease-in-out 0s;
@@ -762,7 +761,7 @@ function HtmlModal(c, v) {
 		margin: 1vh auto 0 auto;
 		padding: 1em;
 		background-color: #fdfdfd;
-		box-shadow: 0px 10px 14px -7px rgba(0,0,0,.7), 5px 5px 16px 5px rgba(0,0,0,0);
+		box-shadow: 0px 10px 14px -7px #000b, 5px 5px 16px 5px #0000;
 		transform: scale(.8) translateY(-100px);
 		transition: transform .25s ease-in-out 0s;
         overflow-y: scroll;
@@ -775,13 +774,13 @@ function HtmlModal(c, v) {
 		right: 0;
 		top: 0;
 		border: none;
-		filter: drop-shadow(1px 1px 2px rgba(0,0,0,.3));
+		filter: drop-shadow(1px 1px 2px #0004);
 		background: transparent no-repeat center center / 1.5em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/></svg>");
 	}
     .dialog-close-button:hover {
         background-color: transparent;
-        filter: invert() drop-shadow(0 0 10px rgba(0,0,0,.3));
+        filter: invert() drop-shadow(0 0 10px #0004);
     }
     .dialog-close-button:focus:hover {
         filter: none;

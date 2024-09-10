@@ -153,7 +153,7 @@ add_action( 'init', function(){
     // Image: Fancy style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',
-        'label' => __( 'Fancy', 'm20t1' ),
+        'label' => __( 'Framed', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-fancy {
             margin: 5px 15px 10px 15px;
@@ -181,10 +181,10 @@ add_action( 'init', function(){
     ]);
     // Image: Old photo style
     register_block_style( 'core/image', [
-        'name'  => 'img-old',
-        'label' => __( 'Old Photo', 'm20t1' ),
+        'name'  => 'img-polaroid',
+        'label' => __( 'Polaroid', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-img-old img {
+        'inline_style' => '.is-style-img-polaroid img {
             filter: sepia(45%) blur(0.02em) saturate(0.8) contrast(1.4) brightness(1.04) !important;
         }'
     ]);

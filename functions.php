@@ -123,7 +123,6 @@ add_action( 'init', function(){
         'is_default' => false
     ]);
     // Embed: Youtube Frame style
-    /*
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',
         'label' => __( 'Frame', 'm20t1' ),
@@ -138,7 +137,6 @@ add_action( 'init', function(){
             border-radius: 3px;
         }'
     ]);
-    */
     // Video Embed: Shadow style
     register_block_style( 'core/video', [
         'name'  => 'video-shadow',

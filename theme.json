@@ -179,12 +179,12 @@
 				{
 					"name": "Soft",
 					"slug": "soft",
-					"shadow": "0 2px 1px #0001, 0 4px 2px #0001, 0 8px 4px #0001, 0 16px 8px #0001, 0 32px 16px rgba(0,0,0,0.09)"
+					"shadow": "0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 16px 8px #0002, 0 32px 16px #0001"
 				},
 				{
 					"name": "Tight",
 					"slug": "tight",
-					"shadow": "0 2px 3px #0001, 0 2px 2px #0004"
+					"shadow": "0 2px 3px #0002, 0 2px 2px #0004"
 				},
 				{
 					"name": "Crisp",

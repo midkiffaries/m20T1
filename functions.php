@@ -123,6 +123,7 @@ add_action( 'init', function(){
         'is_default' => false
     ]);
     // Embed: Youtube Frame style
+    /*
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',
         'label' => __( 'Frame', 'm20t1' ),
@@ -131,12 +132,13 @@ add_action( 'init', function(){
         .is-style-embed-youtube video,
         .is-style-embed-youtube img {
             border: 3px solid #f00;
-            box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 4px 2px rgba(0,0,0,0.1), 0 8px 4px rgba(0,0,0,0.1), 0 16px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 16px 8px #0002;
         }
         .is-style-embed-youtube img {
             border-radius: 3px;
         }'
     ]);
+    */
     // Video Embed: Shadow style
     register_block_style( 'core/video', [
         'name'  => 'video-shadow',
@@ -144,9 +146,18 @@ add_action( 'init', function(){
         'is_default' => false,
         'inline_style' => '.is-style-video-shadow video,
         .is-style-video-shadow img {
-            box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 4px 2px rgba(0,0,0,0.1), 0 8px 4px rgba(0,0,0,0.1), 0 16px 8px rgba(0,0,0,0.1);
-        }
-        .is-style-video-shadow img {
+            box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 16px 8px #0002;
+            border-radius: 8px;
+        }'
+    ]);
+    // Video Embed: Glow style
+    register_block_style( 'core/video', [
+        'name'  => 'video-glow',
+        'label' => __( 'White Glow', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-video-shadow video,
+        .is-style-video-glow img {
+            box-shadow: 0 0 8px 0 #fff6;
             border-radius: 3px;
         }'
     ]);
@@ -175,7 +186,7 @@ add_action( 'init', function(){
         'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
             border: 2px solid currentColor;
             overflow: hidden;
-            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px 0 #0004;
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
         }'
     ]);
@@ -215,13 +226,13 @@ add_action( 'init', function(){
         .is-style-img-book:hover {
             transform: perspective(75em) rotateY(0deg);
             filter: brightness(1.08);
-            box-shadow: 0 6px 10px -1px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 10px -1px #0002;
         }
         .is-style-img-book img {
             width: var(--book-width);
             height: var(--book-height);
             border-radius: 6px;
-            box-shadow: 3px 0 3px 0 rgba(0,0,0,0.4);
+            box-shadow: 3px 0 3px 0 #0008;
             transition: all 0.5s ease;
             object-fit: cover;
         }
@@ -239,7 +250,7 @@ add_action( 'init', function(){
             background-color: #eee;
             z-index: -1;
             border-radius: 1px;
-            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px rgba(0,0,0,0.1);
+            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
             transform: perspective(100em) rotateY(-25deg);
             transition: all 0.5s ease;
         }
@@ -269,13 +280,13 @@ add_action( 'init', function(){
         .is-style-img-book-portrait:hover {
             transform: perspective(75em) rotateY(0deg);
             filter: brightness(1.09);
-            box-shadow: 0 6px 10px -1px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 10px -1px #0005;
         }
         .is-style-img-book-portrait img {
             width: var(--book-width);
             height: var(--book-height);
             border-radius: 6px;
-            box-shadow: 3px 0 3px 0 rgba(0,0,0,0.4);
+            box-shadow: 3px 0 3px 0 #0007;
             transition: all 0.5s ease;
             object-fit: cover;
         }
@@ -293,7 +304,7 @@ add_action( 'init', function(){
             background-color: #eee;
             z-index: -1;
             border-radius: 1px;
-            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px rgba(0,0,0,0.1);
+            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
             transform: perspective(100em) rotateY(-25deg);
             transition: all 0.5s ease;
         }
@@ -310,15 +321,15 @@ add_action( 'init', function(){
         'label' => __( 'Raised', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-button-3d a, .is-style-button-3d div {
-            box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 7px 13px -3px rgba(0,0,0,0.3), inset 0 -3px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px #0007, 0 7px 13px -3px #0006, inset 0 -3px 0 #0004;
             border-radius: 5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 2px #0007;
         }
         .is-style-button-3d a:hover {
             text-decoration: none !important;
         }
         .is-style-button-3d a:active {
-            box-shadow: inset 2px 3px 7px -1px rgba(0,0,0,0.5);    
+            box-shadow: inset 2px 3px 7px -1px #0008;    
         }'
     ]);
     // Button: w/ Arrow Style
@@ -391,15 +402,15 @@ add_action( 'init', function(){
             margin-bottom: 1em !important;
         }
         .is-style-gallery-2 .wp-block-image img {
-            box-shadow: 0 3px 8px -2px rgba(0,0,0,0.8);
+            box-shadow: 0 3px 8px -2px #000c;
             border-radius: 3px;
         }
         .is-style-gallery-2 .wp-block-image a img:hover {
-            box-shadow: 0 8px 20px -1px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 20px -1px #0008;
             transform: scale(1.05, 1.05) !important;
         }
         .is-style-gallery-2 .wp-block-image a img:active {
-            box-shadow: 0 3px 6px -2px rgba(0,0,0,0.7);
+            box-shadow: 0 3px 6px -2px #0007;
         }
         .is-style-gallery-2 figcaption {
             background: none !important;
@@ -464,7 +475,7 @@ add_action( 'init', function(){
         }
         .is-style-media-text-full div {
             position: absolute;
-            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+            background: linear-gradient(90deg, #0001 0%, #0000 50%);
             top: 0;
             height: 100%;
             width: 100%;
@@ -1329,7 +1340,7 @@ function attachment_page_image( $id ) {
     // Check if attachment matches the extension video array
     foreach ($video_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
-            return '<video preload="auto" controls playsinline style="width:95%;box-shadow:0 1px 6px 0 rgba(0,0,0,0.7)"><source src="' . wp_get_attachment_url(get_the_ID()) . '" type="' . mime_content_type(wp_get_attachment_url(get_the_ID())) . '"></video>';
+            return '<video preload="auto" controls playsinline style="width:95%;box-shadow:0 1px 6px 0 #000c"><source src="' . wp_get_attachment_url(get_the_ID()) . '" type="' . mime_content_type(wp_get_attachment_url(get_the_ID())) . '"></video>';
         }
     }
 

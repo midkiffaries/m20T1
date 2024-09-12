@@ -174,22 +174,22 @@
 				{
 					"name": "Natural",
 					"slug": "natural",
-					"shadow": "0 4px 8px -2px rgba(0,0,0,0.8)"
+					"shadow": "0 4px 8px -2px #000d"
 				},
 				{
 					"name": "Soft",
 					"slug": "soft",
-					"shadow": "0 2px 1px rgba(0,0,0,0.1), 0 4px 2px rgba(0,0,0,0.1), 0 8px 4px rgba(0,0,0,0.1), 0 16px 8px rgba(0,0,0,0.1), 0 32px 16px rgba(0,0,0,0.09)"
+					"shadow": "0 2px 1px #0001, 0 4px 2px #0001, 0 8px 4px #0001, 0 16px 8px #0001, 0 32px 16px rgba(0,0,0,0.09)"
 				},
 				{
 					"name": "Tight",
 					"slug": "tight",
-					"shadow": "0 2px 3px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.3)"
+					"shadow": "0 2px 3px #0001, 0 2px 2px #0004"
 				},
 				{
 					"name": "Crisp",
 					"slug": "crisp",
-					"shadow": "6px 6px 0 rgba(0,0,0,0.3)"
+					"shadow": "6px 6px 0 #0004"
 				},
 				{
 					"name": "Outline",

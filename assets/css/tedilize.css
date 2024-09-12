@@ -19,7 +19,7 @@ Tedilize 2.WPG - Normalization and Base Styling for WordPress
 
 html {
 	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: #0000;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	touch-action: manipulation;
@@ -283,7 +283,7 @@ Interactive elements
 
 a {
 	color: inherit;
-	-webkit-tap-highlight-color: rgba(220,220,220,0.4);
+	-webkit-tap-highlight-color: #9997;
 }
 
 a::before,

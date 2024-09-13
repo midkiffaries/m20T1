@@ -1089,13 +1089,18 @@ Figures and Galleries
 	filter: brightness(0.95);
 }
 
-.wp-block-embed iframe {
-	height: 280px;
-}
-
 .wp-block-image figcaption {
 	padding: 0;
 	font-size: 0.9rem;
+}
+
+.wp-block-embed iframe {
+	min-height: 280px;
+}
+
+.wp-block-video,
+.wp-block-embed {
+	width: 100%;
 }
 
 .blocks-gallery-item__caption {

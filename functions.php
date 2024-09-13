@@ -153,7 +153,7 @@ add_action( 'init', function(){
         'name'  => 'video-glow',
         'label' => __( 'White Glow', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-video-shadow video,
+        'inline_style' => '.is-style-video-glow video,
         .is-style-video-glow img {
             box-shadow: 0 0 8px 0 #fff6;
             border-radius: 3px;

@@ -3,7 +3,8 @@
 ### 1.8.4 Live (September 16, 2024)
 
 * The addition of thumbnail display option on individual menu items.
-* Overall improvements.
+* Support for WordPress 6.6.2.
+* Overall coding improvements.
 
 ### 1.8.3 Live (August 28, 2024)
 

@@ -4,7 +4,7 @@
 
 * The addition of thumbnail (post's featured image) display option on individual menu items.
 * Support for WordPress 6.6.2.
-* Overall coding improvements.
+* Overall improvements and bug fixes.
 
 ### 1.8.3 Live (August 28, 2024)
 

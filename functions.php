@@ -141,13 +141,11 @@ add_action( 'init', function(){
         'is_default' => false,
         'inline_style' => '.is-style-embed-thumbnail {
             min-height: 170px !important;
-            width: 480px !important;
+            min-width: 450px !important;
             margin: 0 5px 10px 5px;
         }
         .is-style-embed-thumbnail iframe,
-        .is-style-embed-thumbnail video,
-        .is-style-embed-thumbnail img {
-            height: 100%;
+        .is-style-embed-thumbnail video {
             border: 3px solid #f00;
             box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 12px 8px #0002;
         }'

@@ -140,14 +140,14 @@ add_action( 'init', function(){
         'label' => __( 'Thumbnail', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-embed-thumbnail {
-            height: 170px !important;
-            width: auto !important;
-            aspect-ratio: 21 / 9;
-            margin-bottom: 15px;
+            min-height: 170px !important;
+            width: 480px !important;
+            margin: 0 5px 10px 5px;
         }
         .is-style-embed-thumbnail iframe,
         .is-style-embed-thumbnail video,
         .is-style-embed-thumbnail img {
+            height: 100%;
             border: 3px solid #f00;
             box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 12px 8px #0002;
         }'

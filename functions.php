@@ -364,7 +364,7 @@ add_action( 'init', function(){
         'label' => __( 'Heavy Border', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-gallery-1 .wp-block-image {
-            margin-bottom: 1em !important;
+            margin-bottom: 1.2em !important;
         }
         .is-style-gallery-1 .wp-block-image img {
             border: 4px solid var(--wp--preset--color--primary-dark);
@@ -380,7 +380,7 @@ add_action( 'init', function(){
             background: none !important;
             color: #666 !important;
             font-weight: 600;
-            margin-bottom: -2rem !important;
+            margin-bottom: -1.7rem !important;
         }'
     ]);
     // Gallery: Drop Shadow style

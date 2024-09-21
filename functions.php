@@ -132,9 +132,24 @@ add_action( 'init', function(){
         .is-style-embed-youtube img {
             border: 3px solid #f00;
             box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 16px 8px #0002;
+        }'
+    ]);
+    // Embed: Youtube Thumbnail style
+    register_block_style( 'core/embed', [
+        'name'  => 'embed-thumbnail',
+        'label' => __( 'Thumbnail', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-embed-thumbnail {
+            height: 170px !important;
+            width: auto !important;
+            aspect-ratio: 21 / 9;
+            margin-bottom: 15px;
         }
-        .is-style-embed-youtube img {
-            border-radius: 3px;
+        .is-style-embed-thumbnail iframe,
+        .is-style-embed-thumbnail video,
+        .is-style-embed-thumbnail img {
+            border: 3px solid #f00;
+            box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 12px 8px #0002;
         }'
     ]);
     // Video Embed: Shadow style

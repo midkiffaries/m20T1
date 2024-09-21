@@ -484,7 +484,12 @@
 				}
 			},
 			"core/image": {
-				"css": "display:inline-block"
+				"css": "display:inline-block",
+				"variations": {
+					"img-fancy": {
+						"css": "margin:5px 20px 10px 20px"
+					}
+				}
 			},
 			"core/separator": {
 				"variations": {
@@ -507,7 +512,7 @@
 			"core/media-text": {
 				"variations": {
 					"media-text-full": {
-						"css": ""
+						"css": "display:block;position:relative;border-radius:10px;"
 					}
 				}
 			},
@@ -540,6 +545,22 @@
 				"elements": {
 					"caption": {
 						"css": "height:1.4rem"
+					}
+				},
+				"variations": {
+					"gallery-1": {
+						"spacing": {
+							"margin": {
+								"bottom": "1.5em"
+							}
+						}
+					},
+					"gallery-2": {
+						"spacing": {
+							"margin": {
+								"bottom": "1.5em"
+							}
+						}
 					}
 				}
 			},

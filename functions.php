@@ -164,10 +164,7 @@ add_action( 'init', function(){
         'name'  => 'img-fancy',
         'label' => __( 'Framed', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-img-fancy {
-            margin: 5px 20px 10px 20px !important;
-        }
-        .is-style-img-fancy img {
+        'inline_style' => '.is-style-img-fancy img {
             box-shadow: 7px 7px 0 0 #888f, -8px -8px 0 0 var(--wp--preset--color--primary);
             border: 1px solid #fff;
             border-radius: 1px;
@@ -366,10 +363,7 @@ add_action( 'init', function(){
         'name'  => 'gallery-1',
         'label' => __( 'Heavy Border', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-gallery-1 {
-            margin-bottom: 1.5em;
-        }
-        .is-style-gallery-1 .wp-block-image {
+        'inline_style' => '.is-style-gallery-1 .wp-block-image {
             margin-bottom: 1em !important;
         }
         .is-style-gallery-1 .wp-block-image img {
@@ -394,10 +388,7 @@ add_action( 'init', function(){
         'name'  => 'gallery-2',
         'label' => __( 'Drop Shadow', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-gallery-2 {
-            margin-bottom: 1.5em;
-        }
-        .is-style-gallery-2 .wp-block-image {
+        'inline_style' => '.is-style-gallery-2 .wp-block-image {
             margin-bottom: 1em !important;
         }
         .is-style-gallery-2 .wp-block-image img {
@@ -459,12 +450,7 @@ add_action( 'init', function(){
         'name'  => 'media-text-full',
         'label' => __( 'Full Image', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-media-text-full {
-            display: block;
-            position: relative;
-            border-radius: 10px;
-        }
-        .is-style-media-text-full figure {
+        'inline_style' => '.is-style-media-text-full figure {
             width: 100%;
             object-fit: cover;
         }

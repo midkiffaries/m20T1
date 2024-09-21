@@ -165,7 +165,7 @@ add_action( 'init', function(){
         'label' => __( 'Framed', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-fancy {
-            margin: 5px 15px 10px 15px;
+            margin: 5px 20px 10px 20px !important;
         }
         .is-style-img-fancy img {
             box-shadow: 7px 7px 0 0 #888f, -8px -8px 0 0 var(--wp--preset--color--primary);
@@ -186,6 +186,7 @@ add_action( 'init', function(){
             overflow: hidden;
             box-shadow: 0 4px 10px 0 #0004;
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+            transform: rotate(3deg);
         }'
     ]);
     // Image: Old photo style
@@ -194,7 +195,7 @@ add_action( 'init', function(){
         'label' => __( 'Polaroid', 'm20t1' ),
         'is_default' => false,
         'inline_style' => '.is-style-img-polaroid img {
-            filter: sepia(45%) blur(0.02em) saturate(0.8) contrast(1.4) brightness(1.04) !important;
+            filter: sepia(40%) blur(0.01em) saturate(0.8) contrast(1.4) brightness(1.04) !important;
         }'
     ]);
     // Image: Filter Alpha Shadow Style

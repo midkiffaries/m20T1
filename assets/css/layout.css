@@ -1096,6 +1096,7 @@ Figures and Galleries
 
 .wp-block-embed iframe {
 	min-height: 280px;
+	width: 100%;
 }
 
 .wp-block-video,

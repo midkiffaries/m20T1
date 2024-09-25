@@ -118,7 +118,7 @@
 					"slug": "sunsetgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #efccfc 12%, #de00ff 20%, #5400c1 50%, #e8f9ff 51%, #00d4ff 66%, #0086d6 80%, #0065a2 90%)",
+					"gradient": "linear-gradient(0deg, #ffffff 0%, #efccfc 10%, #de00ff 20%, #5400c1 50%, #e8f9ff 51%, #00d4ff 66%, #0086d6 80%, #0065a2 90%)",
 					"name": "Chrome gradient",
 					"slug": "chromegradient"
 				},

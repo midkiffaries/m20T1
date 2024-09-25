@@ -98,7 +98,7 @@
 					"slug": "branddarkgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #e65100, #eb8e00, #e6c400)",
+					"gradient": "linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%)",
 					"name": "Secondary color gradient",
 					"slug": "secondarygradient"
 				},
@@ -111,11 +111,6 @@
 					"gradient": "linear-gradient(0deg, #d8daed, #dfe9f3, #f0f5f7)",
 					"name": "Light grey gradient",
 					"slug": "lightgradient"
-				},
-				{
-					"gradient": "linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%)",
-					"name": "Orange gradient",
-					"slug": "orangegradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #f9f9f9 0%, #0066ff 30%, #000f26 50%, #ffffff 50%, #ff7400 80%, #662e00 100%)",

@@ -1331,7 +1331,7 @@ function attachment_page_image( $id ) {
     // Check if attachment matches the extension images array
     foreach ($image_ext as $ext) {
         if (strpos($fileExt, $ext) !== FALSE) {
-            return '<a href="' . wp_get_attachment_url(get_the_ID()) . '" title="Enlarge image" aria-title="Enlarge image" itemprop="url">'. wp_get_attachment_image($id, 'large', 0, ['loading' => '', 'decoding' => 'async', 'itemprop' => 'image', 'fetchpriority' => 'high']) . '</a>';
+            return '<a href="' . wp_get_attachment_url(get_the_ID()) . '" title="Enlarge image" aria-title="Enlarge image" itemprop="url" style="cursor:zoom-in">'. wp_get_attachment_image($id, 'large', 0, ['loading' => '', 'decoding' => 'async', 'itemprop' => 'image', 'fetchpriority' => 'high']) . '</a>';
         }
     }
 

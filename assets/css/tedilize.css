@@ -660,10 +660,6 @@ Responsive elements
 		min-height: -webkit-fill-available;
 	}
 
-	a img {
-		cursor: pointer;
-	}
-
 	[aria-label]:hover::after {
 		visibility: hidden;
 	}
@@ -684,6 +680,10 @@ Responsive elements
 		width: 100% !important;
 		float: none !important;
 		position: relative;
+	}
+	
+	a img {
+		cursor: pointer;
 	}
 }
 

@@ -54,12 +54,20 @@
                 </div>
                 <div class="author-bio-content">
                     <h3 class="author-bio-name" itemprop="name" ><a href="<?php printf("%s/author/%s", home_url(), get_the_author_meta( 'user_nicename' )); ?>" rel="author" aria-label="See more posts by this author." itemprop="url"><?=get_the_author_meta( 'display_name' ); ?></a> <small itemprop="jobTitle"><?=(get_the_author_meta( 'jobtitle' )) ? wp_strip_all_tags(get_the_author_meta( 'jobtitle' )) : user_level(get_the_author_meta( 'user_level' )); ?></small></h3>
-                    <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' )); ?></p>
+                    <p class="author-bio-about" itemprop="description"><?=shorten_the_content(get_the_author_meta( 'user_description' ));?></p>
                 </div>
             </div>
         </section>
 
         <section class="widget widget_block" aria-label="Page Widgets">
+            <h2 class="wp-block-heading has-primary-dark-color has-text-color">Related Posts</h2>
+            <div id="block-21" class="widget widget_block widget_recent_entries">
+                <?php 
+                $categories = get_the_category();
+                echo do_blocks('<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":true,"excerptLength":35,"displayPostDate":true,"postLayout":"grid","displayFeaturedImage":true,"featuredImageSizeSlug":"thumbnail","featuredImageSizeWidth":64,"featuredImageAlign":"left","categories":"'.$categories[0]->term_id.'","className":"wp-block-latest-posts__list is-grid columns-3 has-dates homepage-recent-posts is-style-posts-theme wp-block-latest-posts"} /-->');
+                ?>
+            </div>
+
             <?php dynamic_sidebar( selectSidebarCustomField(get_the_ID(), 'singlepost') ); // Select from 'Widgets_Slug' custom field ?>
         </section>
     </aside>

@@ -447,6 +447,9 @@ add_action( 'init', function(){
             margin: 0 auto;
             padding: 0 !important;
         }
+        .is-style-posts-theme .wp-block-latest-posts__featured-image a:empty {
+            display: none;
+        }
         .is-style-posts-theme img {
             border-radius:8px;
         }

@@ -422,6 +422,21 @@ add_action( 'init', function(){
             margin-bottom: -2rem !important;
         }'
     ]);
+    // Gallery: No border style
+    register_block_style( 'core/gallery', [
+        'name'  => 'gallery-3',
+        'label' => __( 'No Border', 'm20t1' ),
+        'is_default' => false,
+        'inline_style' => '.is-style-gallery-3 .wp-block-image {
+            margin-bottom: 1.2em !important;
+        }
+        .is-style-gallery-3 figcaption {
+            background: none !important;
+            color: #666 !important;
+            font-weight: 600;
+            margin-bottom: -1.7rem !important;
+        }'
+    ]);
     // Latest Posts: Theme style
     register_block_style( 'core/latest-posts', [
         'name'  => 'posts-theme',

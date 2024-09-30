@@ -1,9 +1,10 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.4 Live (September 30, 2024)
+### 1.8.4 Live (October 10, 2024)
 
-* The addition of thumbnail (post's featured image) display option on individual menu items.
 * Support for WordPress 6.6.2.
+* The addition of thumbnail (post's featured image) display option on individual menu items.
+* Added related posts to single.php based on the post's selected catagory.
 * Overall improvements and bug fixes.
 
 ### 1.8.3 Live (August 28, 2024)

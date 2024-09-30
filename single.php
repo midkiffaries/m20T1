@@ -61,7 +61,7 @@
 
         <section class="widget widget_block" aria-label="Page Widgets">
             <h2 class="wp-block-heading has-primary-dark-color has-text-color">Related Posts</h2>
-            <div id="block-21" class="widget widget_block widget_recent_entries">
+            <div id="block-22A" class="widget widget_block widget_recent_entries">
                 <?php 
                 $categories = get_the_category();
                 echo do_blocks('<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":true,"excerptLength":35,"displayPostDate":true,"postLayout":"grid","displayFeaturedImage":true,"featuredImageSizeSlug":"thumbnail","featuredImageSizeWidth":64,"featuredImageAlign":"left","categories":"'.$categories[0]->term_id.'","className":"wp-block-latest-posts__list is-grid columns-3 has-dates homepage-recent-posts is-style-posts-theme wp-block-latest-posts"} /-->');

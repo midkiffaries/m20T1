@@ -460,6 +460,9 @@
 					},
 					"header-text-fill": {
 						"css": "padding:0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;line-height:0.85"
+					},
+					"header-embelish": {
+						"css": "&::before {display:block; position:absolute; width:80px; height:80px; background-color:var(--wp--preset--color--primary); content:' '; z-index:0; opacity:0.4; margin:-20px 0 0 -15px }"
 					}
 				}
 			},
@@ -474,7 +477,7 @@
 						}
 					},
 					"list-checkmarks": {
-						"css": "list-style-type:'\\2713'"
+						"css": "& {list-style-type:'\\2713'} & li {padding-inline:0.5ch; margin-inline-end:1ch}"
 					}
 				}
 			},
@@ -563,6 +566,26 @@
 								"bottom": "1.5em"
 							}
 						}
+					}
+				}
+			},
+			"core/embed": {
+				"variations": {
+					"embed-youtube": {
+						"css": "& iframe, video, img { border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002 }"
+					},
+					"embed-thumbnail": {
+						"css": "& { min-height:170px; min-width:450px; margin:0 5px 10px 5px } iframe, video { border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 12px 8px #0002 }"
+					}
+				}
+			},
+			"core/video": {
+				"variations": {
+					"video-shadow": {
+						"css": "& video, img { box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002; border-radius:8px }"
+					},
+					"video-glow": {
+						"css": "& video, img { box-shadow:0 0 8px 1px #fff6; border-radius:3px }"
 					}
 				}
 			},

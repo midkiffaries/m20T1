@@ -51,11 +51,7 @@ add_action( 'init', function(){
     register_block_style( 'core/list', [
         'name'  => 'list-checkmarks',
         'label' => __( 'Checkmarks', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-list-checkmarks li {
-            padding-inline: 0.5ch;
-            margin-inline-end: 1ch;
-        }'
+        'is_default' => false
     ]);
     // List: No bullets
     register_block_style( 'core/list', [
@@ -85,18 +81,7 @@ add_action( 'init', function(){
     register_block_style( 'core/heading', [
         'name'  => 'header-embelish',
         'label' => __( 'Embelishment', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-header-embelish::before {
-            display: block;
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-color: var(--wp--preset--color--primary);
-            content: " ";
-            z-index: 0;
-            opacity: 0.4;
-            margin: -20px 0 0 -15px;
-        }'
+        'is_default' => false
     ]);
     // Heading: Soft text shadow
     register_block_style( 'core/heading', [
@@ -126,51 +111,25 @@ add_action( 'init', function(){
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',
         'label' => __( 'Frame', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-embed-youtube iframe,
-        .is-style-embed-youtube video,
-        .is-style-embed-youtube img {
-            border: 3px solid #f00;
-            box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 16px 8px #0002;
-        }'
+        'is_default' => false
     ]);
     // Embed: Youtube Thumbnail style
     register_block_style( 'core/embed', [
         'name'  => 'embed-thumbnail',
         'label' => __( 'Thumbnail', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-embed-thumbnail {
-            min-height: 170px !important;
-            min-width: 450px !important;
-            margin: 0 5px 10px 5px;
-        }
-        .is-style-embed-thumbnail iframe,
-        .is-style-embed-thumbnail video {
-            border: 3px solid #f00;
-            box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 12px 8px #0002;
-        }'
+        'is_default' => false
     ]);
     // Video Embed: Shadow style
     register_block_style( 'core/video', [
         'name'  => 'video-shadow',
         'label' => __( 'Shadow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-video-shadow video,
-        .is-style-video-shadow img {
-            box-shadow: 0 2px 1px #0002, 0 4px 2px #0002, 0 8px 4px #0002, 0 16px 8px #0002;
-            border-radius: 8px;
-        }'
+        'is_default' => false
     ]);
     // Video Embed: Glow style
     register_block_style( 'core/video', [
         'name'  => 'video-glow',
         'label' => __( 'White Glow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-video-glow video,
-        .is-style-video-glow img {
-            box-shadow: 0 0 8px 0 #fff6;
-            border-radius: 3px;
-        }'
+        'is_default' => false
     ]);
     // Image: Fancy style
     register_block_style( 'core/image', [

@@ -53,6 +53,12 @@ add_action( 'init', function(){
         'label' => __( 'Checkmarks', 'm20t1' ),
         'is_default' => false
     ]);
+    // List: Squares
+    register_block_style( 'core/list', [
+        'name'  => 'list-squares',
+        'label' => __( 'Squares', 'm20t1' ),
+        'is_default' => false
+    ]);
     // List: No bullets
     register_block_style( 'core/list', [
         'name'  => 'list-plain',

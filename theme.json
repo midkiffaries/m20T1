@@ -478,6 +478,9 @@
 					},
 					"list-checkmarks": {
 						"css": "& {list-style-type:'\\2713'} & li {padding-inline:0.5ch; margin-inline-end:1ch}"
+					},
+					"list-squares": {
+						"css": "list-style:square"
 					}
 				}
 			},

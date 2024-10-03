@@ -466,6 +466,13 @@
 					}
 				}
 			},
+			"core/table": {
+				"variations": {
+					"table-blank": {
+						"css": "& td, th {border: none !important}"
+					}
+				}
+			},
 			"core/list": {
 				"variations": {
 					"list-plain": {

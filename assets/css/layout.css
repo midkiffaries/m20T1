@@ -1417,6 +1417,12 @@ Comments Section
 	font-weight: bold;
 }
 
+.comment-avatar figure {
+	width: 48px;
+	height: 48px;
+	background-color: #ddd;
+}
+
 .comment-metadata {
 	color: #666;
 }

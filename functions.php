@@ -1351,12 +1351,11 @@ function attachment_page_image( $id ) {
     }
 }
 
-// Blog post user comment HTML and formatting for each comment
+// List blog post user comments
 function custom_comment_style( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
-    // Visitor comment HTML
     ?>
-	<li <?=comment_class();?> id="comment-<?=comment_ID() ?>" itemprop="comment" role="comment">
+	<li <?=comment_class();?> id="comment-<?=comment_ID(); ?>" itemprop="comment" role="comment">
         <div class="comment-content">
 			<header class="comment-header">
                 <span class="comment-avatar hidden">
@@ -1366,13 +1365,13 @@ function custom_comment_style( $comment, $args, $depth ) {
                 </span>
                 <span class="comment-author" rel="author" itemprop="author"><?php printf(__('%s'), get_comment_author()); ?></span>
                 <span class="comment-metadata">
-                    <a href="<?=esc_url(get_comment_link($comment->comment_ID)) ?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment">#</a> 
+                    <a href="<?=esc_url(get_comment_link($comment->comment_ID));?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment">#</a> 
                     <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time>
                 </span>
                 <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'm20t1' ), '', '' );?></span> 
 			</header>
             <?php if ($comment->comment_approved == '0') : ?>
-                <div class="comment-moderation"><?php _e('⚠️ Your comment is awaiting moderation.'); ?></div>
+                <div class="comment-moderation"><?php _e('⚠️ Your comment is awaiting moderation.');?></div>
             <?php endif; ?>
             <div class="comment-text" itemprop="text"><?=comment_text();?></div>
             <div class="comment-edit"><?=edit_comment_link( __( 'Edit Comment', 'm20t1' ), '', '' );?></div>

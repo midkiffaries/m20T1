@@ -47,10 +47,10 @@ add_action( 'init', function(){
         'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false
     ]);
-    // Table: Blank
+    // Table: Theme
     register_block_style( 'core/table', [
-        'name'  => 'table-fancy',
-        'label' => __( 'Fancy', 'm20t1' ),
+        'name'  => 'table-theme',
+        'label' => __( 'Theme', 'm20t1' ),
         'is_default' => false
     ]);
     // List: Checkmarks

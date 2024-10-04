@@ -3,8 +3,8 @@
 ### 1.8.4 Live (October 10, 2024)
 
 * Support for WordPress 6.6.2.
-* The addition of thumbnail (post's featured image) display option on individual menu items.
-* Added related posts to single.php based on the post's selected catagory.
+* Menu Items: The addition of displaying the page's thumbnail on individual menu items that defaults to the page's featured image with an alt option available.
+* Added related posts to single.php based on the post's first selected catagory.
 * Removed the root_dir folder and its contents as it was unecessary for this.
 * Overall improvements and bug fixes.
 

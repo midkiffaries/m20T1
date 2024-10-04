@@ -468,8 +468,8 @@
 			},
 			"core/table": {
 				"variations": {
-					"table-blank": {
-						"css": "& td, th {border: none !important}"
+					"table-fancy": {
+						"css": "& thead, tfoot {background-color:var(--wp--preset--color--primary)} & td {background-color:#fff1} & tbody tr:nth-child(even) {background-color:#ccc5}"
 					}
 				}
 			},

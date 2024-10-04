@@ -49,8 +49,8 @@ add_action( 'init', function(){
     ]);
     // Table: Blank
     register_block_style( 'core/table', [
-        'name'  => 'table-blank',
-        'label' => __( 'Blank', 'm20t1' ),
+        'name'  => 'table-fancy',
+        'label' => __( 'Fancy', 'm20t1' ),
         'is_default' => false
     ]);
     // List: Checkmarks

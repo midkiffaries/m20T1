@@ -1375,29 +1375,27 @@ function blog_post_share() {
         'linkedin'  => "https://www.linkedin.com/shareArticle?mini=true&url=" . esc_url(get_the_permalink()) . "&title=" . rawurlencode(get_the_title()) . "&summary=" . rawurlencode(get_the_excerpt()) . "&source=" . urlencode(get_bloginfo('name')),
         'pinterest' => "https://pinterest.com/pin/create/button/?url=" . esc_url(get_the_permalink()) . "&media=" . urlencode(SEO_Image(get_the_id())) . "&description=" . rawurlencode(get_the_excerpt()),
         'reddit'    => "https://www.reddit.com/submit?url=" . esc_url(get_the_permalink()),
-        'email'     => "mailto:?subject=" . rawurlencode(get_the_title()) . "&body=" . rawurlencode(get_the_title()) . " | " . esc_url(get_the_permalink()),
     ];
 
     // Social sharing buttons HTML
     ?>
     <ul class="post-social-share" aria-label="Share on social media">
         <li class="hidden">Share on:</li>
-        <li><span role="button" class="browser-share Can-Share" aria-label="Use the browsers sharing">Share</span></li>
+        <li><span role="button" class="browser-share M20-Can-Share" aria-label="Use the browsers sharing form">Share</span></li>
         <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="X/Twitter" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Facebook" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Pinterest" rel="noopener noreferrer" target="_blank"></a></li>
         <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Reddit" rel="noopener noreferrer" target="_blank"></a></li>
-        <!--li><a href="<?=$social_links['email'];?>" class="email-share" aria-label="Email this post" rel="noopener noreferrer" target="_blank"></a></li-->
     </ul>
     <script>
         if (navigator.canShare) { // Supports canShare
-            document.querySelector(".Can-Share").onclick = () => {
+            document.querySelector(".M20-Can-Share").onclick = () => {
                 const data = {title:"<?=get_the_title();?>", text:"<?=get_the_excerpt();?>", url:"<?=esc_url(get_the_permalink());?>"};
                 if (navigator.canShare(data)) navigator.share(data);
             }
         } else { // Does not support canShare
-            document.getElementsByClassName("Can-Share")[0].style.display = "none";
+            document.getElementsByClassName("M20-Can-Share")[0].style.display = "none";
         }
     </script>
     <?php

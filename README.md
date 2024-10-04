@@ -42,6 +42,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 ## Todo List
 <img src="https://github.com/midkiffaries/m20T1/assets/19917696/012a850d-dce2-46ab-adb8-c7aff033fe13" alt="Screenshot" width="300" align="right" />
 
+- Consolidate the styling
 - Seperating my personallized styling from style.css
 - QoL enhancements to editor's textarea elements
 - Create a seperate panel in the editor for SEO and post statistics

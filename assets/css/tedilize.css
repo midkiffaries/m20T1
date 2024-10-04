@@ -136,7 +136,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	text-indent: 0;
-	width: 100%;
+	max-width: 100%;
 }
 
 td,

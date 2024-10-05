@@ -2,11 +2,11 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
-<main class="page-main page-product width-full <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+<main class="page-main page-product width-full <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">
     
     <div class="page-content">
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); // Single Post ?>
 
         <article <?php post_class(); ?> id="<?=$post->post_name;?>" name="<?=$post->post_name;?>" itemscope itemtype="https://schema.org/Product">
             <div class="post-container">
@@ -21,6 +21,7 @@
         </article>
 
         <div class="page-last-updated">
+            <time datetime="<?=get_the_date('c');?>" itemprop="datePublished"><?php the_date(); ?></time>
             <?php display_last_updated(); ?>
         </div>
 

@@ -1,12 +1,12 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.4 Live (October 10, 2024)
+### 1.8.4 Live (October 5, 2024)
 
 * Support for WordPress 6.6.2.
 * Menu Items: The addition of displaying the page's thumbnail on individual menu items that defaults to the page's featured image with an alt option available.
-* Added related posts to single.php based on the post's first selected catagory.
-* Removed the root_dir folder and its contents as it was unecessary for this.
-* Overall improvements and bug fixes.
+* Added related posts to single.php based on the post's selected catagories.
+* Removed the root_dir folder and its contents as it was unecessary for sharing this.
+* Moved some things around with some overall improvements and bug fixes.
 
 ### 1.8.3 Live (August 28, 2024)
 

@@ -1425,6 +1425,10 @@ Comments Section
 	background: #ccc var(--icon-avatar) no-repeat 50% 50%;
 }
 
+.comment-avatar figure img {
+	border-radius: 6px;
+}
+
 .comment-metadata {
 	color: #666;
 }

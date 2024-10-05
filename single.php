@@ -61,7 +61,7 @@
 
         <section class="widget widget_block" aria-label="Page Widgets">
             <?php $categories = get_the_category(); ?>
-            <?php foreach($categories as $category) : // Display other post of the same categories ?>
+            <?php foreach($categories as $category) : // Display other post of the same categories as the main post ?>
                 <h2 class="wp-block-heading has-primary-dark-color has-text-color">Posts in <a href="<?=esc_url(home_url() . "/category/" . $category->slug);?>"><?=$category->name;?></a></h2>
                 <div id="block-22A" class="widget widget_block widget_recent_entries">
                     <?=do_blocks('<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":true,"excerptLength":35,"displayPostDate":true,"postLayout":"grid","displayFeaturedImage":true,"featuredImageSizeSlug":"thumbnail","featuredImageSizeWidth":64,"featuredImageAlign":"left","categories":"'.$category->term_id.'","className":"wp-block-latest-posts__list is-grid columns-3 has-dates homepage-recent-posts is-style-posts-theme wp-block-latest-posts"} /-->');?>

@@ -633,9 +633,13 @@ Global Page Styling
 }
 
 /* Single Blog Post */
-.single-entry-category a {
+.single-entry-category {
 	font-family: var(--wp--preset--font-family--secondary-font);
 	font-size: 1.4rem;
+	color: #666;
+}
+
+.single-entry-category a {
 	color: #444;
 	line-height: 1;
 }

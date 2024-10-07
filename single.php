@@ -11,7 +11,7 @@
         <div class="post-container">
             <header class="single-entry-header">
                 <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="single-entry-sticky">Featured Article</div><?php endif; ?>
-                <div class="single-entry-category" itemprop="articleSection"><?php the_category(' '); ?></div>
+                <div class="single-entry-category" itemprop="articleSection"><?php the_category(' – '); ?></div>
                 <h1 class="single-entry-title" id="<?=$post->post_name;?>" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">
                     <span class="single-entry-date"><time datetime="<?=get_the_date('c'); ?>" itemprop="datePublished"><?php the_date(); ?></time></span> 

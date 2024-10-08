@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.5 Live (October 30, 2024)
+
+* Adjustments to the portfolio mechanism
+
 ### 1.8.4 Live (October 5, 2024)
 
 * Support for WordPress 6.6.2.

@@ -33,8 +33,8 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 
 // Set the additional post types with a new line for each type
 define( 'ADDITIONAL_POST_TYPE', [ 
-    /* [ 'Title (singular)', 'dashicons-portfolio (https://developer.wordpress.org/resource/dashicons/)', 'Subtitle' ], */
-    [ 'Portfolio', 'dashicons-portfolio', 'The work I have done professionally' ],
+    /* [ 'Title (singular)', Title (plural)', 'dashicons-portfolio (https://developer.wordpress.org/resource/dashicons/)', 'Subtitle' ], */
+    [ 'Portfolio', 'Portfolios', 'dashicons-portfolio', 'The work I have done professionally' ],
     // Note: Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type slug
 ]);
 
@@ -626,25 +626,25 @@ add_action( 'init', function(){
     add_filter( 'widget_text', 'do_shortcode' );
 
     // Cycle through the ADDITIONAL_POST_TYPE array
-    foreach (ADDITIONAL_POST_TYPE as [$type, $icon, $subtitle]) {
+    foreach (ADDITIONAL_POST_TYPE as [$type, $type_plural, $icon, $subtitle]) {
         // Add a custom post type to the editor
         register_post_type( $type, [
             'labels' => [
-                'name'                   => _x( "{$type}s", 'm20t1' ),
+                'name'                   => _x( $type_plural, 'm20t1' ),
                 'singular_name'          => _x( $type, 'm20t1' ),
-                'menu_name'              => _x( "{$type}s", 'm20t1' ),
+                'menu_name'              => _x( $type_plural, 'm20t1' ),
                 'name_admin_bar'         => _x( $type, 'm20t1' ),
                 'add_new'                => __( "Add New {$type}" ),
                 'add_new_item'           => __( "Add New {$type}" ),
                 'new_item'               => __( "New {$type}" ),
                 'edit_item'              => __( "Edit {$type}" ),
                 'view_item'              => __( "View {$type}" ),
-                'view_items'             => __( "View {$type}s" ),
-                'all_items'              => __( "All {$type}s" ),
-                'search_items'           => __( "Search {$type}s" ),
+                'view_items'             => __( "View {$$type_plural}" ),
+                'all_items'              => __( "All {$$type_plural}" ),
+                'search_items'           => __( "Search {$$type_plural}" ),
                 'parent_item_colon'      => __( "Parent {$type}:" ),
-                'not_found'              => __( "No {$type}s found." ),
-                'not_found_in_trash'     => __( "No {$type}s found in Trash." ),
+                'not_found'              => __( "No {$$type_plural} found." ),
+                'not_found_in_trash'     => __( "No {$$type_plural} found in Trash." ),
                 'featured_image'         => _x( "Featured Image", 'm20t1' ),
                 'set_featured_image'     => _x( "Set cover image", 'm20t1' ),
                 'remove_featured_image'  => _x( "Remove cover image", 'm20t1' ),

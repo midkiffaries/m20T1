@@ -1380,13 +1380,12 @@ function blog_post_share() {
     // Social sharing buttons HTML
     ?>
     <ul class="post-social-share" aria-label="Share on social media">
-        <li class="hidden">Share on:</li>
         <li><span role="button" class="browser-share M20-Can-Share" aria-label="Use the browsers sharing form">Share</span></li>
-        <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="X/Twitter" rel="noopener noreferrer" target="_blank"></a></li>
-        <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Facebook" rel="noopener noreferrer" target="_blank"></a></li>
-        <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>
-        <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Pinterest" rel="noopener noreferrer" target="_blank"></a></li>
-        <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Reddit" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['twitter'];?>" class="twitter-share" aria-label="Share on X/Twitter" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['facebook'];?>" class="facebook-share" aria-label="Share on Facebook" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['linkedin'];?>" class="linkedin-share" aria-label="Share on LinkedIn" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['pinterest'];?>" class="pinterest-share" aria-label="Share on Pinterest" rel="noopener noreferrer" target="_blank"></a></li>
+        <li><a href="<?=$social_links['reddit'];?>" class="reddit-share" aria-label="Share on Reddit" rel="noopener noreferrer" target="_blank"></a></li>
     </ul>
     <script>
         if (navigator.canShare) { // Supports canShare

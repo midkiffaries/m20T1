@@ -72,3 +72,19 @@
 </main>
 
 <?php get_footer(); ?>
+
+<?php 
+/*
+add_action( 'pre_get_posts', function( $query ) {
+
+    if ( !$query->is_main_query() ){
+        return;
+    }
+
+    $posts_per_page = get_option( 'posts_per_page' );
+
+    if ( is_front_page() ) {
+        $query->set( 'posts_per_page', $posts_per_page + 1 );
+        return;
+    }
+});

@@ -660,7 +660,7 @@ Blog Post Styling - index/archives/search
 }
 
 .content-excerpt p {
-	font-size: 1.25rem !important;
+	font-size: 1.25rem;
 }
 
 .the-content {
@@ -738,6 +738,12 @@ Entry Social Sharing Styling
 	.post-social-share li a {
 		padding: 6px 8px 4px;
 		min-width: 3em;
+	}
+	.content-excerpt p {
+		font-size: 1rem !important;
+	}
+	.the-content {
+		min-height: 1rem;
 	}
 }
 

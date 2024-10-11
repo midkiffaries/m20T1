@@ -22,9 +22,9 @@ include_once 'assets/plugins/breadcrumbs.php';
 
 // Inline separator that appears in the post/page metadata
 define( 'POST_SEPARATOR', '–' );
-// Read more excerpt at the text ending
+// Default: Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
-// SEO text excerpt length default
+// Default: SEO text excerpt length default
 define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
 // Default: Maximum excerpt length default
 define( 'EXCERPT_LENGTH', 90 ); // Number of words
@@ -689,6 +689,12 @@ add_action( 'init', function(){
             'map_meta_cap'       => true,
             'show_in_rest'       => true
         ]);
+
+        // Display a different number of posts on this landing page
+        //add_filter( 'pre_get_posts', function(){
+        //    $limit = (get_post_field( 'post_name' ) == $type) ? 2 : get_option('posts_per_page');
+        //    set_query_var('posts_per_archive_page', $limit);
+        //});
     }
 });
 

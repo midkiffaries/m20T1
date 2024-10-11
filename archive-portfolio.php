@@ -2,20 +2,6 @@
 <?php $pageKind = esc_attr("portfolio"); ?>
 <?php get_header(); ?>
 
-<?php 
-
-function limit_posts_per_home_page() 
-{
-    $first_page_limit = 1;
-    $limit = get_option('posts_per_page');
-
-    set_query_var('posts_per_archive_page', $limit);
-    set_query_var('posts_per_page', $limit);
-}
-add_filter('pre_get_posts', 'limit_posts_per_home_page');
-
-?>
-
 <main class="page-main width-full archive-<?=$pageKind;?> " id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     
     <div class="page-content">

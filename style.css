@@ -611,16 +611,6 @@ Global Page Styling
 	text-decoration: none;
 }
 
-.entry-header a[href]:active,
-.single-entry-header a[href]:active {
-	color: var(--wp--preset--color--primary-dark);
-}
-
-.entry-header .entry-title a[href]:visited,
-.single-entry-header .entry-title a[href]:visited {
-	color: var(--wp--preset--color--primary-pale) !important;
-}
-
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
 	color: var(--wp--preset--color--primary);
@@ -628,6 +618,16 @@ Global Page Styling
 	text-decoration-color: var(--wp--preset--color--primary);
 }
 
+.entry-header a[href]:active,
+.single-entry-header a[href]:active {
+	color: var(--wp--preset--color--primary-dark);
+}
+/*
+.entry-header .entry-title a[href]:visited,
+.single-entry-header .entry-title a[href]:visited {
+	color: var(--wp--preset--color--primary-pale) !important;
+}
+*/
 /* Add embellishment to last <p> in article */
 .single-entry-content p:last-of-type::after {
 	font-family: 'icomoon' !important;

@@ -188,6 +188,10 @@ add_action( 'init', function(){
             border: 4px solid #000;
             box-shadow: 0 4px 0 0 #000;
             border-radius: 1.2rem;
+            transition: transform 0.6s cubic-bezier(.15,1.55,.74,.07);
+        }
+        .is-style-button-border a:hover {
+            transform: scale(1.1);
         }'
     ]);
     // Image: Fancy style

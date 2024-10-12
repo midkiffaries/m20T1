@@ -409,8 +409,8 @@ select:focus {
 }
 
 /* Deafult Buttons */
-button,
 .wp-block-button,
+button,
 [type="button"],
 [type="submit"],
 [type="reset"] {
@@ -611,16 +611,21 @@ Global Page Styling
 	text-decoration: none;
 }
 
+.entry-header a[href]:active,
+.single-entry-header a[href]:active {
+	color: var(--wp--preset--color--primary-dark);
+}
+
+.entry-header .entry-title a[href]:visited,
+.single-entry-header .entry-title a[href]:visited {
+	color: var(--wp--preset--color--primary-pale) !important;
+}
+
 .entry-header a[href]:hover,
 .single-entry-header a[href]:hover {
 	color: var(--wp--preset--color--primary);
 	text-decoration: underline;
 	text-decoration-color: var(--wp--preset--color--primary);
-}
-
-.entry-header a[href]:active,
-.single-entry-header a[href]:active {
-	color: var(--wp--preset--color--primary-dark);
 }
 
 /* Add embellishment to last <p> in article */
@@ -709,7 +714,7 @@ Page Background embellishments
 
 
 /************************************
-Buttons and Social Links
+Social Links
 ************************************/
 
 /* Add additional brand icons for social links */

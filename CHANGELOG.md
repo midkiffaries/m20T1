@@ -1,8 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.5 Live (October 30, 2024)
+### 1.8.5 Live (October 31, 2024)
 
 * Added plural title option to porfolio to help with clarity.
+* Bug fixes and adjustments.
 
 ### 1.8.4 Live (October 5, 2024)
 

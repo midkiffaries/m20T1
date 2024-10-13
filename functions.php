@@ -53,6 +53,12 @@ add_action( 'init', function(){
         'label' => __( 'Theme', 'm20t1' ),
         'is_default' => false
     ]);
+    // List: Color Bullets
+    register_block_style( 'core/list', [
+        'name'  => 'list-color',
+        'label' => __( 'Color Bullets', 'm20t1' ),
+        'is_default' => false
+    ]);
     // List: Checkmarks
     register_block_style( 'core/list', [
         'name'  => 'list-checkmarks',
@@ -218,7 +224,6 @@ add_action( 'init', function(){
             overflow: hidden;
             box-shadow: 0 4px 10px 0 #0004;
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
-            transform: rotate(3deg);
         }'
     ]);
     // Image: Old photo style
@@ -508,7 +513,7 @@ add_filter( 'register_block_type_args', function( $args, $block_type ) {
     // Media & Text block
 	if ( 'core/media-text' === $block_type ) {
 		$args['supports']['filter']['duotone'] = true; // Add duotone filter
-        $args['supports']['shadow'] = true; // Add drop shadow
+        $args['supports']['shadow'] = true; // Add box shadow
 	}
 	return $args;
 }, 10, 2 );
@@ -708,7 +713,6 @@ add_action( 'wp_head', function(){
 <meta name="title" content="<?=bloginfo('name');?>">
 <meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
 <meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
-<link rel="canonical" href="<?=the_permalink();?>">
 <link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url()));?>">
 <link rel="pingback" href="<?=bloginfo('pingback_url');?>">
 <link rel="Siteuri" href="<?=home_url();?>/" id="SiteURI">

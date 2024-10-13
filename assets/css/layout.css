@@ -27,7 +27,7 @@ Base WordPress Page Styling
 
 /* Text Selection */
 ::selection {
-    background-color: var(--wp--custom--highlight-color);
+    background-color: var(--wp--preset--color--highlight);
     text-shadow: none;
 }
 
@@ -63,8 +63,8 @@ body {
 	text-rendering: auto;
 	font-weight: 400;
 	font-display: swap;
-	color: var(--wp--custom--page-text-color);
-	background-color: var(--wp--custom--page-background);
+	color: var(--wp--preset--color--contrast);
+	background-color: var(--wp--preset--color--base);
 	font-optical-sizing: auto;
 }
 
@@ -1030,12 +1030,6 @@ img.wp-smiley, img.emoji {
 }
 
 /* Footnotes */
-.wp-block-footnotes li a,
-.fn a {
-	color: #f90 !important;
-	padding: 0 1px !important;
-}
-
 .wp-block-footnotes li {
 	font-size: 1em !important;
 	margin-left: 1em !important;

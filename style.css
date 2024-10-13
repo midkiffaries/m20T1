@@ -245,7 +245,6 @@ WordPress Gutenburg Content Styling
 }
 
 .the-content li::marker {
-	color: var(--wp--custom--marker-color);
 	font-size: 1.5rem;
 	line-height: 1;
 }

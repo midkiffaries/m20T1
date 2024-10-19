@@ -205,7 +205,7 @@
 				{
 					"name": "Fancy",
 					"slug": "fancy",
-					"shadow": "0 0 0 1px #fff, 7px 7px 0 0 #888, -8px -8px 0 0 var(--wp--preset--color--primary)"
+					"shadow": "-9px -9px 0 0 var(--wp--preset--color--primary)"
 				},
 				{
 					"name": "Steps",

@@ -1870,3 +1870,12 @@ Search Modal Styling
 		width: 99%;
 	}
 }
+
+
+
+/* Overrides */
+.wp-block-gallery.has-nested-images:not([class^="is-style-"]) figure.wp-block-image:has(figcaption):before {
+	backdrop-filter: none;
+	-webkit-mask-image: none;
+	mask-image: none;
+}

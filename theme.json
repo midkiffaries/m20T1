@@ -470,10 +470,10 @@
 						"css": "border-bottom:2px solid #ddd;padding-bottom:3px"
 					},
 					"header-text-fill": {
-						"css": "padding:0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;line-height:0.85"
+						"css": "padding:0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;line-height:1.1"
 					},
 					"header-embelish": {
-						"css": "&::before {display:block;position:absolute;width:80px;height:80px;background-color:var(--wp--preset--color--primary);content:' ';z-index:0;opacity:0.4;margin:-20px 0 0 -15px}"
+						"css": "&::before {content:''; width:80px; height:80px; margin:-20px -10px -50px -10px; display:block; background-color:var(--wp--preset--color--primary-pale); box-shadow:-4px -4px 0 0 var(--wp--preset--color--primary-dark)}"
 					}
 				}
 			},

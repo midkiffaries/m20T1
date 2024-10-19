@@ -461,22 +461,23 @@ add_action( 'init', function(){
         'name'  => 'media-text-full',
         'label' => __( 'Full Image', 'm20t1' ),
         'is_default' => false,
-        'inline_style' => '.is-style-media-text-full figure {
-            width: 100%;
-            object-fit: cover;
+        'inline_style' => '.is-style-media-text-full {
+            position: relative;
+            max-height: 24em;
+            overflow: hidden;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
         }
-        .is-style-media-text-full figure img {
-            height: 20em;
-            border-radius: 10px;
+        .is-style-media-text-full figure {
+            width: 100%;
         }
         .is-style-media-text-full div {
             position: absolute;
-            background: linear-gradient(90deg, #0001 0%, #0000 50%);
-            top: 0;
-            height: 100%;
-            width: 100%;
-            color: #fff;
-            border-radius: 10px;
+            text-align: center;
+        }
+        .is-style-media-text-full p {
+            border-radius: 12px;
         }'
     ]);
     // Media & Text Block: Text overlap style

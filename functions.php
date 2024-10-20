@@ -38,7 +38,7 @@ define( 'ADDITIONAL_POST_TYPE', [
     // Note: Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type slug
 ]);
 
-// Register Custom Block Styles for the Editor
+// Register custom block styles for the Editor that correlate to block variations in theme.json
 // https://developer.wordpress.org/news/2024/06/21/styling-sections-nested-elements-and-more-with-block-style-variations-in-wordpress-6-6/
 add_action( 'init', function(){
     // Separator: Fancy

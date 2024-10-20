@@ -210,7 +210,9 @@ Sticky/Featured article highlight
 
 .entry-sticky {
 	color: var(--wp--preset--color--tertiary);
-	background-size: 40px;
+	transform: rotate(-10deg) translate(-10px, 20px);
+	transform-origin: 0 0;
+	text-shadow: 2px 2px 0 #000;
 }
 
 .blog .sticky {

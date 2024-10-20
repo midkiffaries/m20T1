@@ -10,7 +10,7 @@
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <div class="post-container">
             <header class="single-entry-header">
-                <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="single-entry-sticky">Featured Article</div><?php endif; ?>
+                <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="single-entry-sticky">Featured</div><?php endif; ?>
                 <div class="single-entry-category" itemprop="articleSection"><?php the_category(' – '); ?></div>
                 <h1 class="single-entry-title" id="<?=$post->post_name;?>" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="single-entry-metadata">

@@ -18,7 +18,7 @@
             <div class="post-container">
                 <div class="post-container-image">
                     <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true);?>">
-                        <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky" aria-label="Featured Article" title="Featured Article">✮</div><?php endif; ?>
+                        <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured</div><?php endif; ?>
                     </a>
                 </div>
                 <div class="post-container-content">

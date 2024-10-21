@@ -95,10 +95,10 @@ add_action( 'init', function(){
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
-    // Heading: Embelishment
+    // Heading: Underline
     register_block_style( 'core/heading', [
-        'name'  => 'header-embelish',
-        'label' => __( 'Embelishment', 'm20t1' ),
+        'name'  => 'header-underline',
+        'label' => __( 'Underline', 'm20t1' ),
         'is_default' => false
     ]);
     // Heading: Soft text shadow
@@ -113,10 +113,16 @@ add_action( 'init', function(){
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
-    // Heading: Underline
+    // Heading: Embelishment
     register_block_style( 'core/heading', [
-        'name'  => 'header-underline',
-        'label' => __( 'Underline', 'm20t1' ),
+        'name'  => 'header-embelish',
+        'label' => __( 'Embelishment', 'm20t1' ),
+        'is_default' => false
+    ]);
+    // Heading: Brushstroke
+    register_block_style( 'core/heading', [
+        'name'  => 'header-brush',
+        'label' => __( 'Brushstroke', 'm20t1' ),
         'is_default' => false
     ]);
     // Heading: Text Fill

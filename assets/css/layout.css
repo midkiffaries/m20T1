@@ -990,6 +990,24 @@ img.wp-smiley, img.emoji {
 	padding: 0 !important;
 }
 
+/* Wordpress Overrides */
+.wp-block-gallery.is-style-default figure.wp-block-image figcaption {
+	padding: 0;
+	font-weight: 700;
+}
+
+.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before {
+	backdrop-filter: none;
+	-webkit-mask-image: none;
+	mask-image: none;
+}
+
+.wp-block-gallery:not(.is-style-default) figure.wp-block-image figcaption {
+	font-size: initial;
+	text-shadow: none;
+	overflow: visible;
+}
+
 /* WordPress Editor Classes */
 .alignright {
 	float: right;
@@ -1865,13 +1883,4 @@ Search Modal Styling
 	.page-sidebar {
 		width: 99%;
 	}
-}
-
-
-
-/* Overrides */
-.wp-block-gallery.has-nested-images:not([class^="is-style-"]) figure.wp-block-image:has(figcaption):before {
-	backdrop-filter: none;
-	-webkit-mask-image: none;
-	mask-image: none;
 }

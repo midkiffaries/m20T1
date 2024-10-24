@@ -270,11 +270,6 @@ WordPress Gutenburg Content Styling
 	padding-top: 4px;
 }
 
-.the-content .wp-block-gallery .wp-block-image figcaption {
-	background: none !important;
-	font-weight: 500 !important;
-}
-
 .the-content figure.aligncenter {
 	margin: 0.2rem auto;
 }

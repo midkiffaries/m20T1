@@ -48,6 +48,7 @@ blockquote {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	margin: 0 0 1rem;
+	text-wrap: pretty;
 }
 
 address {
@@ -56,6 +57,7 @@ address {
 }
 
 p {
+	text-wrap: pretty;
 	orphans: 3;
 	widows: 3;
 }
@@ -126,6 +128,7 @@ h6 {
 	margin: 1.2rem auto 0.5rem;
 	page-break-after: avoid;
 	page-break-inside: avoid;
+	text-wrap: pretty;
 }
 
 /*********************
@@ -256,6 +259,7 @@ figure {
 
 figcaption {
 	text-align: center;
+	text-wrap: pretty;
 	padding: 0.6em 0.2em;
 	line-height: 1.2;
 }
@@ -283,6 +287,7 @@ Interactive elements
 
 a {
 	color: inherit;
+	text-underline-offset: 0.1em;
 	-webkit-tap-highlight-color: #9997;
 }
 

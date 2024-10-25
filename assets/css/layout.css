@@ -977,6 +977,15 @@ Portfolio Page Styling
 WordPress Generated Components
 *****************************/
 
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
+.more-link {
+	display: block;
+}
+
 /* Emoji Styling */
 img.wp-smiley, img.emoji {
 	display: inline !important;

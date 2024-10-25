@@ -24,8 +24,8 @@
         </article>
 
         <div class="page-last-updated">
-            <time datetime="<?=get_the_date('c');?>" itemprop="datePublished"><?php the_date(); ?></time>
-            <?php display_last_updated(); ?>
+            <time datetime="<?=get_the_date('c');?>" itemprop="datePublished" class="hidden"><?php the_date(); ?></time>
+            <?=display_last_updated();?>
         </div>
 
         <aside id="page-widgets" class="page-sidebar <?=$pageKind;?>-widgets width-full">

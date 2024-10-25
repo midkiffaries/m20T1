@@ -25,7 +25,7 @@
                 <?=custom_page_css(get_the_ID());?>
             </div>
             <div class="entry-last-updated">
-                <?php display_last_updated(); ?>
+                <?=display_last_updated();?>
             </div>
             <footer class="single-entry-footer">
                 <div class="entry-tags"><?php blog_post_tags(); ?></div>

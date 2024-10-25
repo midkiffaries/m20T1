@@ -22,7 +22,7 @@
 
         <div class="page-last-updated">
             <time datetime="<?=get_the_date('c');?>" itemprop="datePublished"><?php the_date(); ?></time>
-            <?php display_last_updated(); ?>
+            <?=display_last_updated();?>
         </div>
 
         <aside id="page-widgets" class="page-sidebar product-widgets width-full">

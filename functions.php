@@ -1321,11 +1321,9 @@ function isMobileDevice() {
 
 // Display the date of the last entry update
 function display_last_updated() {
-    ?><p><?php 
     if (get_the_modified_date('Y-m-d') > get_the_date('Y-m-d')) {
-        printf( __( 'Updated: <time itemprop="dateModified">%s</time>', 'm20t1' ), get_the_modified_date() ); 
+        return 'Updated: <time itemprop="dateModified" datetime="' . get_the_modified_date('c') . '">' . get_the_modified_date() . '</time>';
     }
-    ?></p><?php
 }
 
 // Get a blog post's reading time

@@ -125,6 +125,12 @@ add_action( 'init', function(){
         'label' => __( 'Brushstroke', 'm20t1' ),
         'is_default' => false
     ]);
+    // Heading: Page Title
+    register_block_style( 'core/heading', [
+        'name'  => 'header-title',
+        'label' => __( 'Page Title', 'm20t1' ),
+        'is_default' => false
+    ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [
         'name'  => 'header-text-fill',

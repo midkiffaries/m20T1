@@ -433,9 +433,9 @@
 							"text": "#555"
 						},
 						"typography": {
-							"fontSize": "1.5rem !important",
+							"fontSize": "1.5rem",
 							"fontWeight": "600",
-							"lineHeight": "1",
+							"lineHeight": "1.1 !important",
 							"letterSpacing": "-1px",
 							"fontFamily": "var:preset|font-family|secondary-font"
 						},
@@ -468,6 +468,9 @@
 					},
 					"header-underline": {
 						"css": "border-bottom:2px solid #ddd;padding-bottom:3px"
+					},
+					"header-title": {
+						"css": "color:var(--wp--preset--color--secondary);font-weight:700;letter-spacing:-0.1rem"
 					},
 					"header-text-fill": {
 						"css": "padding:0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;line-height:1.1"

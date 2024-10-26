@@ -96,6 +96,7 @@ Typography for the page title and subtitle
 
 /* Page and Post title */
 .page-title,
+.is-style-header-title,
 .blog-page-title h1,
 .porfolio-page-title h1,
 .single-entry-title {
@@ -111,6 +112,13 @@ Typography for the page title and subtitle
 	padding-bottom: 4px;
 }
 
+.page-title a:hover,
+.is-style-header-title a:hover {
+	background-color: var(--wp--preset--color--secondary);
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
 /* Blog post title */
 .single-entry-title {
 	font-size: 3.4rem;
@@ -118,6 +126,7 @@ Typography for the page title and subtitle
 
 @media (max-width: 849px) {
 	.page-title,
+	.is-style-header-title,
 	.page-image .page-title,
 	.single-entry-title,
 	.blog-page-title h1,

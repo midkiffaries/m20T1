@@ -4,6 +4,7 @@
 
 * Supports WordPress 6.7.0.
 * Added plural title option to porfolio to help with clarity.
+* Added media credit to the attachment details page.
 * Bug fixes and styling adjustments.
 
 ### 1.8.4 Live (October 5, 2024)

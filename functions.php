@@ -1153,6 +1153,29 @@ function clean_html( $html ) {
 // Attachment/Image Page Functions
 //////////////////////////////////
 
+// Add additional metadata to the attachment details
+add_filter("attachment_fields_to_edit", function( $form_fields, $post ) {
+    $form_fields["credit_text"] = [ // Add image credit field
+        "label" => __("Credits"),
+        "input" => "text",
+        "value" => esc_attr( get_post_meta($post->ID, "_credit_text", true) ),
+    ];
+    return $form_fields;
+}, null, 2);
+
+// Save additional metadata to the attachment details
+add_filter("attachment_fields_to_save", function( $post, $attachment ) {
+    if ( isset( $attachment['credit_text'] ) )
+        update_post_meta( $post['ID'], '_credit_text', esc_attr($attachment['credit_text']) );
+    return $post;
+}, null , 2);
+
+// Get the credit text
+function get_credit_text() {
+    $attachment_fields = get_post_custom( get_the_ID() );
+    return ( isset($attachment_fields['_credit_text'][0]) && !empty($attachment_fields['_credit_text'][0]) ) ? esc_attr($attachment_fields['_credit_text'][0]) : get_bloginfo('name');    
+}
+
 // Get the full file path on the server from the file's URI
 function get_filepath( $fileurl ) {
     return realpath($_SERVER['DOCUMENT_ROOT'] . parse_url($fileurl, PHP_URL_PATH));
@@ -1500,7 +1523,7 @@ add_action( 'admin_head', function(){
 .wp-admin .media-icon .attachment-60x60 {min-width:60px}
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
 .wp-admin .user-url-wrap input.code {font-family:inherit}
-.wp-admin .type-model img, .wp-admin .thumbnail-model img {display:none !important}
+.wp-admin .type-model img, .wp-admin .thumbnail-model img, .wp-admin .attachment-compat .required-field-message {display:none !important}
 .wp-admin .type-model, .wp-admin .thumbnail-model {background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><path fill="gray" d="M494 96 67 280l428 183 432-183zm18 390v442l416-198V310zM64 730l417 198V486L64 310z"/></svg>') no-repeat 50% 40%;background-size:50%;}
 </style>
 <?php

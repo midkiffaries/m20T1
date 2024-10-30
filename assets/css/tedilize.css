@@ -168,6 +168,10 @@ ol {
 	page-break-before: avoid;
 }
 
+li:empty {
+	display: none;
+}
+
 dt {
 	font-weight: bolder;
 }

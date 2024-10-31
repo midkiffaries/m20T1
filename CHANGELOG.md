@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.5 Live (October 31, 2024)
+### 1.8.5 Live (October 31, 2024) 🎃 Happy Halloween!
 
 * Supports WordPress 6.7.0.
 * Added plural title option to porfolio to help with clarity.

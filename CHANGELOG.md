@@ -3,7 +3,7 @@
 ### 1.8.5 Live (October 31, 2024) 🎃 Happy Halloween!
 
 * Supports WordPress 6.7.0.
-* Added plural title option to porfolio to help with clarity.
+* Added plural title option to portfolio to help with clarity.
 * Added media credit to the attachment details page.
 * Bug fixes and styling adjustments.
 

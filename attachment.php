@@ -22,7 +22,7 @@
                     <span class="image-date">Uploaded on <time datetime="<?=get_the_date('c');?>" itemprop="datePublished"><?php the_date(); ?></time></span>
                     <span class="image-author">by <a href="<?=get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) );?>" itemprop="author" rel="author"><?php the_author(); ?></a></span>
                     <br>
-                    <span class="image-credit">Credit: <b><?=get_credit_text();?></b></span>
+                    <span class="image-credit">Credit: <b><?=get_credit_text(get_the_ID()) ? get_credit_text(get_the_ID()) : get_bloginfo('name');?></b></span>
                     <br>
                     <span class="image-category">Category: <b><?php the_category(' '); ?></b></span>
                     <br>

@@ -1171,9 +1171,9 @@ add_filter("attachment_fields_to_save", function( $post, $attachment ) {
 }, null , 2);
 
 // Get the credit text
-function get_credit_text() {
-    $attachment_fields = get_post_custom( get_the_ID() );
-    return ( isset($attachment_fields['_credit_text'][0]) && !empty($attachment_fields['_credit_text'][0]) ) ? esc_attr($attachment_fields['_credit_text'][0]) : get_bloginfo('name');    
+function get_credit_text($id) {
+    $attachment_fields = get_post_custom($id);
+    return ( isset($attachment_fields['_credit_text'][0]) && !empty($attachment_fields['_credit_text'][0]) ) ? esc_attr($attachment_fields['_credit_text'][0]) : "";    
 }
 
 // Get the full file path on the server from the file's URI
@@ -1312,8 +1312,9 @@ function Header_Hero( $id ) {
     // Get the featured image and image caption if exists or fallback to blank image
     if ($hasFeaturedImage && get_post_thumbnail_id($id)) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
-        $featuredCap = wp_get_attachment_caption(get_post_thumbnail_id($id)) ? wp_get_attachment_caption(get_post_thumbnail_id($id)) : "View featured image";
-        $attachmentTitle = '<a href="' . home_url() . '/?p=' . get_post_thumbnail_id($id) . '" itemprop="url">' . $featuredCap . '</a>';
+        $featuredCap = wp_get_attachment_caption(get_post_thumbnail_id($id)) ? wp_get_attachment_caption(get_post_thumbnail_id($id)) : "View this image";
+        $featuredCred = get_credit_text(get_post_thumbnail_id($id)) ? " – " . get_credit_text(get_post_thumbnail_id($id)) : "";
+        $attachmentTitle = '<a href="' . home_url() . '/?p=' . get_post_thumbnail_id($id) . '" itemprop="url">' . $featuredCap . $featuredCred . '</a>';
     } else {
         $attachmentTitle = '';
     }

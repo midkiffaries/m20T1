@@ -1344,11 +1344,6 @@ function Header_Hero( $id ) {
 // WordPress Front-end Global Functions
 ////////////////////////////////////////
 
-// Check if client is a mobile device
-function isMobileDevice() { 
-    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]); 
-}
-
 // Display the date of the last entry update
 function display_last_updated() {
     if (get_the_modified_date('Y-m-d') > get_the_date('Y-m-d')) {

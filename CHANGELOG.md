@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.6 Live (November 25, 2024)
+
+* Code cleanup and bug fixes.
+
 ### 1.8.5 Live (October 31, 2024) 🎃 Happy Halloween!
 
 * Supports WordPress 6.7.0.

@@ -41,10 +41,16 @@ define( 'ADDITIONAL_POST_TYPE', [
 // Register custom block styles for the Editor that correlate to block variations in theme.json
 // https://developer.wordpress.org/news/2024/06/21/styling-sections-nested-elements-and-more-with-block-style-variations-in-wordpress-6-6/
 add_action( 'init', function(){
-    // Separator: Fancy
+    // Separator: Gradient Fade
     register_block_style( 'core/separator', [
-        'name'  => 'hr-fancy',
-        'label' => __( 'Fancy', 'm20t1' ),
+        'name'  => 'hr-gradient',
+        'label' => __( 'Gradient Fade', 'm20t1' ),
+        'is_default' => false
+    ]);
+    // Separator: Fancy Embelishment
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-embelish',
+        'label' => __( 'Embelishment', 'm20t1' ),
         'is_default' => false
     ]);
     // Table: Theme
@@ -123,6 +129,12 @@ add_action( 'init', function(){
     register_block_style( 'core/heading', [
         'name'  => 'header-brush',
         'label' => __( 'Brushstroke', 'm20t1' ),
+        'is_default' => false
+    ]);
+    // Heading: Black Outline
+    register_block_style( 'core/heading', [
+        'name'  => 'header-outline',
+        'label' => __( 'Black Outline', 'm20t1' ),
         'is_default' => false
     ]);
     // Heading: Page Title

@@ -1027,13 +1027,15 @@ img.wp-smiley, img.emoji {
 	margin-right: 0.5rem;
 }
 
-.aligncenter {
+.aligncenter,
+.has-text-align-center {
 	text-align: center;
 	margin: auto;
 	text-wrap: balance;
 }
 
-.alignjustify {
+.alignjustify,
+.has-text-align-justify {
 	text-align: justify;
 }
 

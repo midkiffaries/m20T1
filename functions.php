@@ -1823,6 +1823,7 @@ add_action('admin_menu', function(){
         register_setting( 'm20t1-settings-group', 'phone_type' );
         register_setting( 'm20t1-settings-group', 'same_as_url' );
         register_setting( 'm20t1-settings-group', 'contact_shortcode' );
+        register_setting( 'm20t1-settings-group', 'website_notes' );
     });
 });
 
@@ -1931,17 +1932,26 @@ function m20T1_settings_page() {
         <table class="form-table" role="presentation">
             <tr valign="top">
                 <th scope="row"><label for="head_metadata">Header <abbr>HTML</abbr></label> <br><small>These scripts will be placed inside the &lt;head&gt; tag.</small></th>
-                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata')));?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="head_metadata" id="head_metadata" class="code" placeholder="Enter HTML code..." rows="9" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_metadata(get_option('head_metadata')));?></textarea> <small>Allowed HTML tags: <b>&lt;meta&gt; &lt;script&gt; &lt;link&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_top_html">Body <abbr>HTML</abbr></label> <br><small>These scripts will be placed below the opening of the &lt;body&gt; tag.</small></th>
-                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="body_top_html" id="body_top_html" class="code" placeholder="Enter HTML code..." rows="6" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_top_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="body_bottom_html">Footer <abbr>HTML</abbr></label> <br><small>These scripts will be placed above the closing of the &lt;body&gt; tag.</small></th>
-                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="10" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
+                <td><textarea name="body_bottom_html" id="body_bottom_html" class="code" placeholder="Enter HTML code..." rows="6" wrap="soft" spellcheck="false" autocapitalize="none" autocorrect="off"><?=esc_attr(allow_html_tags(get_option('body_bottom_html')));?></textarea> <small>Allowed HTML tags: <b>&lt;div&gt; &lt;script&gt; &lt;style&gt; &lt;noscript&gt; &lt;iframe&gt;</b></small></td>
             </tr>
         </table>
+        <h2>Website Notes</h2>
+        <p>Internal notes for the handling of the website. This is not viewable or accessable on the website itself.</p>
+        <table class="form-table" role="presentation">
+            <tr valign="top">
+                <th scope="row"><label for="head_metadata">Notes</label> <br><small>Only visible here.</small></th>
+                <td><textarea name="website_notes" id="website_notes" placeholder="Leave your notes..." rows="10" wrap="soft" spellcheck="true" autocapitalize="none" autocorrect="on"><?=esc_attr(wp_strip_all_tags(get_option('website_notes')));?></textarea> <small>HTML tags are disabled.</small></td>
+            </tr>
+        </table>
+
         <?php submit_button(); ?>
     </form>
     <style type="text/css">
@@ -1977,26 +1987,36 @@ function m20T1_settings_page() {
             }
         }
     })();
-
     (() => {
-        const keymap = {
-            "<": { value: "<>", pos: 1 },
-            '"': { value: '""', pos: 1 },
-            "[": { value: "[]", pos: 1 }
+        const snipmap = {
+            "3#": "### ",
+            "4#": "#### ",
+            "5#": "##### ",
+            "6#": "###### "
         };
-        const textbox = document.getElementsByTagName("textarea"), l = textbox.length;
-        for (let i = 0; i < l; i++) {
-            textbox[i].addEventListener("keydown", function () {
-                if (keymap[event.key]) {
+        const textbox = document.getElementById("website_notes");
+        textbox.addEventListener("keydown", function () {
+            if (event.key === "Tab") {
+                const word = getWord(textbox.value, textbox.selectionStart);
+                if (word && snipmap[word]) {
                     event.preventDefault();
-                    const pos = textbox[i].selectionStart;
-                    textbox[i].value = textbox[i].value.slice(0, pos) + keymap[event.key].value + textbox[i].value.slice(textbox[i].selectionEnd);
-                    textbox[i].selectionStart = textbox[i].selectionEnd = pos + keymap[event.key].pos;
+                    const pos = textbox.selectionStart;
+                    textbox.value = textbox.value.slice(0, pos - word.length) + snipmap[word] + textbox.value.slice(textbox.selectionEnd);
+                    textbox.selectionStart = textbox.selectionEnd = pos + (snipmap[word].length - 1);
+                } else {
+                    event.preventDefault();
+                    const pos = textbox.selectionStart;
+                    textbox.value = textbox.value.slice(0, pos) + "	" + textbox.value.slice(textbox.selectionEnd);
+                    textbox.selectionStart = textbox.selectionEnd = pos + 1;
                 }
-            });
+            }
+        });
+        function getWord(text, caretPos) {
+            let preText = text.substring(0, caretPos), split = preText.split(/\s/);
+            return split[split.length - 1].trim();
         }
     })();
-    </scrip>
+    </script>
 </div>
 <?php 
 }
@@ -2245,12 +2265,11 @@ class BuildMetaBox {
                     }
                 }
             });
+            function getWord(text, caretPos) {
+                let preText = text.substring(0, caretPos), split = preText.split(/\s/);
+                return split[split.length - 1].trim();
+            }
         })();
-        function getWord(text, caretPos) {
-            let preText = text.substring(0, caretPos),
-                split = preText.split(/\s/);
-            return split[split.length - 1].trim();
-        }
         </script>
         <?php
     }

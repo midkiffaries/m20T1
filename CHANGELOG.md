@@ -2,8 +2,9 @@
 
 ### 1.8.6 Live (November 25, 2024)
 
+* Added a Site Notes textarea to the Theme settings. I find this sort of thing pretty useful.
 * More block style additions.
-* Better media credit handling.
+* Improved media credit handling.
 * Code cleanup and bug fixes.
 
 ### 1.8.5 Live (October 31, 2024) 🎃 Happy Halloween!

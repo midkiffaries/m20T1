@@ -531,11 +531,14 @@
 			},
 			"core/separator": {
 				"variations": {
+					"hr-double": {
+						"css": "width:100% !important; border:0; border-top:5px double var(--wp--preset--color--primary-dark)"
+					},
 					"hr-gradient": {
 						"css": "width:100% !important; border:0; height:2px; background-image:linear-gradient(to right,#0000,#444c,#0000)"
 					},
-					"hr-embelish": {
-						"css": "& {width:100% !important; padding:0; border:0; border-top:3px double var(--wp--preset--color--primary-dark); color:var(--wp--preset--color--primary-dark); text-align:center}"
+					"hr-stripes": {
+						"css": "width:100% !important; border:0; background-size:1em; height:1em; background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>')"
 					}
 				}
 			},

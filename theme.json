@@ -483,6 +483,9 @@
 					},
 					"header-outline": {
 						"css": "color:var(--wp--preset--color--primary);text-shadow:1px 0px 0px #000,1px 1px 0px #000,2px 2px 0px #000,3px 3px 0px #000,3px 3px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000"
+					},
+					"header-stripes": {
+						"css": "display:flex; &::before {background-repeat:space repeat; background-size:1em; content:''; flex-grow:1} &::after {background-repeat:space repeat; background-size:1em; content:''; flex-grow:1} &:not(.has-text-align-right, .has-text-align-center)::before {flex-grow:0} &:is(.has-text-align-right)::after {flex-grow:0}"
 					}
 				}
 			},

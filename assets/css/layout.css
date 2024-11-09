@@ -1018,6 +1018,10 @@ img.wp-smiley, img.emoji {
 }
 
 /* WordPress Editor Classes */
+.the-content h2:not(.subtitle):not(.has-text-align-center):not(.has-text-align-right) {
+	margin-top: 0.8em;
+}
+
 .alignright {
 	float: right;
 }

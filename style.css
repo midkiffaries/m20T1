@@ -237,10 +237,6 @@ Sticky/Featured article highlight
 WordPress Gutenburg Content Styling
 ************************************/
 
-.the-content h2:not(.subtitle):not(.has-text-align-center) {
-	margin-top: 0.8em;
-}
-
 .the-content p {
 	font-size: var(--wp--preset--font-size--medium);
 	line-height: 1.7;

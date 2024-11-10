@@ -225,7 +225,7 @@ add_action( 'init', function(){
             vertical-align: -4px;
             padding-left: 1px;
         }
-        .is-style-button-arrow div::after { /* For the Editor */
+        .is-style-button-arrow div::after {
             font-family: "dashicons" !important;
             vertical-align: -4px;
             padding-left: 1px;

@@ -428,6 +428,9 @@
 					"text-shadow-hard": {
 						"css": "text-shadow:1px 1px 1px #0008"
 					},
+					"text-outline": {
+						"css": "text-shadow:1px 0px 0 #000,-1px 0px 0 #000,0px 1px 0 #000,0px -1px 0 #000"
+					},
 					"text-subtitle": {
 						"color": {
 							"text": "#555"
@@ -521,6 +524,7 @@
 				"css": "display:inline-block",
 				"variations": {
 					"img-fancy": {
+						"css": "& img {box-shadow:7px 7px 0 0 #888f,-8px -8px 0 0 var(--wp--preset--color--primary); border:1px solid #fff; border-radius:1px; & a[href] img:hover {box-shadow:12px 12px 0 0 #888c,-12px -12px 0 0 var(--wp--preset--color--primary) !important}}",
 						"spacing": {
 							"margin": {
 								"top": "5px",
@@ -529,6 +533,15 @@
 								"right": "20px"
 							}
 						}
+					},
+					"img-polaroid": {
+						"css": "& img {filter:sepia(40%) blur(0.01em) saturate(0.8) contrast(1.4) brightness(1.04) !important}"
+					},
+					"img-filter-shadow": {
+						"css": "& img {filter:drop-shadow(1px 1px 3px #000a)}"
+					},
+					"img-hand-drawn": {
+						"css": "& img {border:2px solid currentColor; overflow:hidden; box-shadow:0 4px 10px 0 #0004; border-radius:255px 15px 225px 15px/15px 225px 15px 255px !important}"
 					}
 				}
 			},
@@ -572,7 +585,7 @@
 			"core/button": {
 				"variations": {
 					"outline": {
-						"css": "-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);"
+						"css": "-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)"
 					}
 				}
 			},

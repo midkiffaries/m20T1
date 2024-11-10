@@ -112,6 +112,12 @@ add_action( 'init', function(){
         'label' => __( 'Hard Shadow', 'm20t1' ),
         'is_default' => false
     ]);
+    // Paragraph: Text Outline
+    register_block_style( 'core/paragraph', [
+        'name'  => 'text-outline',
+        'label' => __( 'Outline', 'm20t1' ),
+        'is_default' => false
+    ]);
     // Heading: Underline
     register_block_style( 'core/heading', [
         'name'  => 'header-underline',
@@ -190,7 +196,7 @@ add_action( 'init', function(){
         'label' => __( 'White Glow', 'm20t1' ),
         'is_default' => false
     ]);
-// Button: 3D Raised Style
+    // Button: 3D Raised Style
     register_block_style( 'core/button', [
         'name'  => 'button-3d',
         'label' => __( 'Raised', 'm20t1' ),
@@ -199,12 +205,12 @@ add_action( 'init', function(){
             box-shadow: 0 2px 4px #0007, 0 7px 13px -3px #0006, inset 0 -3px 0 #0004;
             border-radius: 5px;
             text-shadow: 1px 1px 2px #0007;
-        }
-        .is-style-button-3d a:hover {
-            text-decoration: none !important;
-        }
-        .is-style-button-3d a:active {
-            box-shadow: inset 2px 3px 7px -1px #0008;
+            & a:hover {
+                text-decoration: none !important;
+            }
+            & a:active {
+                box-shadow: inset 2px 3px 7px -1px #0008;
+            }
         }'
     ]);
     // Button: w/ Arrow Style
@@ -236,54 +242,34 @@ add_action( 'init', function(){
             box-shadow: 0 4px 0 0 #000;
             border-radius: 1.2rem;
             transition: transform 0.6s cubic-bezier(.15,1.55,.74,.07);
-        }
-        .is-style-button-border a:hover {
-            transform: scale(1.1);
+            & a:hover {
+                transform: scale(1.1);
+            }
         }'
     ]);
     // Image: Fancy style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',
         'label' => __( 'Framed', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-img-fancy img {
-            box-shadow: 7px 7px 0 0 #888f, -8px -8px 0 0 var(--wp--preset--color--primary);
-            border: 1px solid #fff;
-            border-radius: 1px;
-        }
-        .is-style-img-fancy a[href] img:hover {
-            box-shadow: 12px 12px 0 0 #888c, -12px -12px 0 0 var(--wp--preset--color--primary);
-        }'
+        'is_default' => false
     ]);
     // Image: Hand-Drawn
     register_block_style( 'core/image', [
         'name'  => 'img-hand-drawn',
         'label' => __( 'Hand Drawn', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.wp-block-image.is-style-img-hand-drawn img {
-            border: 2px solid currentColor;
-            overflow: hidden;
-            box-shadow: 0 4px 10px 0 #0004;
-            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
-        }'
+        'is_default' => false
     ]);
     // Image: Old photo style
     register_block_style( 'core/image', [
         'name'  => 'img-polaroid',
         'label' => __( 'Polaroid', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-img-polaroid img {
-            filter: sepia(40%) blur(0.01em) saturate(0.8) contrast(1.4) brightness(1.04) !important;
-        }'
+        'is_default' => false
     ]);
     // Image: Filter Alpha Shadow Style
     register_block_style( 'core/image', [
         'name'  => 'img-filter-shadow',
         'label' => __( 'Alpha Shadow', 'm20t1' ),
-        'is_default' => false,
-        'inline_style' => '.is-style-img-filter-shadow img {
-            filter: drop-shadow(1px 1px 3px #000a);
-        }'
+        'is_default' => false
     ]);
     // Image: Book landscape
     register_block_style( 'core/image', [
@@ -299,43 +285,43 @@ add_action( 'init', function(){
             width: var(--book-width);
             transition: all 0.5s ease-in-out;
             margin: 1em 0.5em;
-        }
-        .is-style-img-book:hover {
-            transform: perspective(75em) rotateY(0deg);
-            filter: brightness(1.08);
-            box-shadow: 0 6px 10px -1px #0002;
-        }
-        .is-style-img-book img {
-            width: var(--book-width);
-            height: var(--book-height);
-            border-radius: 6px;
-            box-shadow: 3px 0 3px 0 #0008;
-            transition: all 0.5s ease;
-            object-fit: cover;
-        }
-        .is-style-img-book:hover img {
-            border-radius: 4px;
-        }
-        .is-style-img-book::after {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 12px;
-            left: 1px;
-            width: calc(var(--book-width) + 12px);
-            height: calc(var(--book-height) - 26px);
-            background-color: #eee;
-            z-index: -1;
-            border-radius: 1px;
-            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
-            transform: perspective(100em) rotateY(-25deg);
-            transition: all 0.5s ease;
-        }
-        .is-style-img-book:hover::after {
-            transform: perspective(75em) rotateY(0deg);
-            width: calc(var(--book-width) - 10%);
-            box-shadow: none;
-            left: 8px;
+            &:hover {
+                transform: perspective(75em) rotateY(0deg);
+                filter: brightness(1.08);
+                box-shadow: 0 6px 10px -1px #0002;
+            }
+            & img {
+                width: var(--book-width);
+                height: var(--book-height);
+                border-radius: 6px;
+                box-shadow: 3px 0 3px 0 #0008;
+                transition: all 0.5s ease;
+                object-fit: cover;
+            }
+            &:hover img {
+                border-radius: 4px;
+            }
+            &::after {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 12px;
+                left: 1px;
+                width: calc(var(--book-width) + 12px);
+                height: calc(var(--book-height) - 26px);
+                background-color: #eee;
+                z-index: -1;
+                border-radius: 1px;
+                box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
+                transform: perspective(100em) rotateY(-25deg);
+                transition: all 0.5s ease;
+            }
+            &:hover::after {
+                transform: perspective(75em) rotateY(0deg);
+                width: calc(var(--book-width) - 10%);
+                box-shadow: none;
+                left: 8px;
+            }
         }'
     ]);
     // Image: Book portrait
@@ -353,43 +339,43 @@ add_action( 'init', function(){
             filter: brightness(0.95);
             transition: all 0.5s ease-in-out;
             margin: 1em 0.5em;
-        }
-        .is-style-img-book-portrait:hover {
-            transform: perspective(75em) rotateY(0deg);
-            filter: brightness(1.09);
-            box-shadow: 0 6px 10px -1px #0005;
-        }
-        .is-style-img-book-portrait img {
-            width: var(--book-width);
-            height: var(--book-height);
-            border-radius: 6px;
-            box-shadow: 3px 0 3px 0 #0007;
-            transition: all 0.5s ease;
-            object-fit: cover;
-        }
-        .is-style-img-book-portrait:hover img {
-            border-radius: 4px;
-        }
-        .is-style-img-book-portrait::after {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 12px;
-            left: 1px;
-            width: calc(var(--book-width) + 12px);
-            height: calc(var(--book-height) - 26px);
-            background-color: #eee;
-            z-index: -1;
-            border-radius: 1px;
-            box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
-            transform: perspective(100em) rotateY(-25deg);
-            transition: all 0.5s ease;
-        }
-        .is-style-img-book-portrait:hover::after {
-            transform: perspective(75em) rotateY(0deg);
-            width: calc(var(--book-width) - 10%);
-            box-shadow: none;
-            left: 8px;
+            &:hover {
+                transform: perspective(75em) rotateY(0deg);
+                filter: brightness(1.09);
+                box-shadow: 0 6px 10px -1px #0005;
+            }
+            & img {
+                width: var(--book-width);
+                height: var(--book-height);
+                border-radius: 6px;
+                box-shadow: 3px 0 3px 0 #0007;
+                transition: all 0.5s ease;
+                object-fit: cover;
+            }
+            &:hover img {
+                border-radius: 4px;
+            }
+            &::after {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 12px;
+                left: 1px;
+                width: calc(var(--book-width) + 12px);
+                height: calc(var(--book-height) - 26px);
+                background-color: #eee;
+                z-index: -1;
+                border-radius: 1px;
+                box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
+                transform: perspective(100em) rotateY(-25deg);
+                transition: all 0.5s ease;
+            }
+            &:hover::after {
+                transform: perspective(75em) rotateY(0deg);
+                width: calc(var(--book-width) - 10%);
+                box-shadow: none;
+                left: 8px;
+            }
         }'
     ]);
     // Gallery: Theme style

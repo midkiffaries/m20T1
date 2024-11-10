@@ -205,12 +205,12 @@ add_action( 'init', function(){
             box-shadow: 0 2px 4px #0007, 0 7px 13px -3px #0006, inset 0 -3px 0 #0004;
             border-radius: 5px;
             text-shadow: 1px 1px 2px #0007;
-            & a:hover {
-                text-decoration: none !important;
-            }
-            & a:active {
-                box-shadow: inset 2px 3px 7px -1px #0008;
-            }
+        }
+        .is-style-button-3d a:hover {
+            text-decoration: none !important;
+        }
+        .is-style-button-3d a:active {
+            box-shadow: inset 2px 3px 7px -1px #0008;
         }'
     ]);
     // Button: w/ Arrow Style

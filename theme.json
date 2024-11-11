@@ -554,7 +554,10 @@
 						"css": "width:100% !important; border:0; height:2px; background-image:linear-gradient(to right,#0000,#444c,#0000)"
 					},
 					"hr-stripes": {
-						"css": "width:100% !important; border:0; background-size:1em; height:1em; background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>')"
+						"css": "width:100% !important; border:0; background-size:1em; height:1em; background-repeat:repeat-x; background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>')"
+					},
+					"hr-jagged": {
+						"css": "width:100% !important; border:0; background-size:3em; height:2em; background-repeat:repeat-x; background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 26.3 14.9\"><path d=\"M0 0v5.3l13.2 9.6 13.1-9.6V0l-13 9.4z\" fill=\"black\"/><path fill=\"%2340A5FF\" d=\"M0 .3v3.4l13.2 9.6 13.1-9.6V.3l-13 9.4z\"/></svg>')"
 					}
 				}
 			},

@@ -526,7 +526,7 @@ define( 'THEME_VERSION', wp_get_theme()->get('Version') );
 
 // Enable WordPress features and register menus
 add_action( 'after_setup_theme', function(){
-    // Additional Theme Support
+    // Add additional theme support
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'custom-line-height' );
@@ -537,10 +537,10 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'align-wide' );
     add_theme_support( 'wp-block-styles' );
 
-    // Set featured image size
+    // Set featured image thumbnail size
     the_post_thumbnail( 'medium' );
 
-    // Additional image sizes
+    // Add additional image sizes
     add_image_size( 'thumbnail-large', 300, 300, true ); // 300x300 Cropped
 
     // Add excerpt support to pages

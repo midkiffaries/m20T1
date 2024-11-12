@@ -50,116 +50,97 @@ add_action( 'init', function(){
     // Separator: Gradient Fade
     register_block_style( 'core/separator', [
         'name'  => 'hr-gradient',
-        'label' => __( 'Gradient Fade', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Gradient Fade', 'm20t1' )
     ]);
     // Separator: Angled Stripes
     register_block_style( 'core/separator', [
         'name'  => 'hr-stripes',
-        'label' => __( 'Stripes', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Stripes', 'm20t1' )
     ]);
     // Separator: Jagged
     register_block_style( 'core/separator', [
         'name'  => 'hr-jagged',
-        'label' => __( 'Jagged', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Jagged', 'm20t1' )
     ]);
     // Table: Theme
     register_block_style( 'core/table', [
         'name'  => 'table-theme',
-        'label' => __( 'Theme', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Theme', 'm20t1' )
     ]);
     // List: Color Bullets
     register_block_style( 'core/list', [
         'name'  => 'list-color',
-        'label' => __( 'Color Bullets', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Color Bullets', 'm20t1' )
     ]);
     // List: Checkmarks
     register_block_style( 'core/list', [
         'name'  => 'list-checkmarks',
-        'label' => __( 'Checkmarks', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Checkmarks', 'm20t1' )
     ]);
     // List: Squares
     register_block_style( 'core/list', [
         'name'  => 'list-squares',
-        'label' => __( 'Squares', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Squares', 'm20t1' )
     ]);
     // List: No bullets
     register_block_style( 'core/list', [
         'name'  => 'list-plain',
-        'label' => __( 'No Bullets', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'No Bullets', 'm20t1' )
     ]);
     // Paragraph: Subtitle
     register_block_style( 'core/paragraph', [
         'name'  => 'text-subtitle',
-        'label' => __( 'Subtitle', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Subtitle', 'm20t1' )
     ]);
     // Paragraph: Light text shadow
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-soft',
-        'label' => __( 'Soft Shadow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Soft Shadow', 'm20t1' )
     ]);
     // Paragraph: Hard text shadow
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-hard',
-        'label' => __( 'Hard Shadow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Hard Shadow', 'm20t1' )
     ]);
     // Paragraph: Text Outline
     register_block_style( 'core/paragraph', [
         'name'  => 'text-outline',
-        'label' => __( 'Outline', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Outline', 'm20t1' )
     ]);
     // Heading: Underline
     register_block_style( 'core/heading', [
         'name'  => 'header-underline',
-        'label' => __( 'Underline', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Underline', 'm20t1' )
     ]);
     // Heading: Soft text shadow
     register_block_style( 'core/heading', [
         'name'  => 'header-shadow-soft',
-        'label' => __( 'Soft Shadow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Soft Shadow', 'm20t1' )
     ]);
     // Heading: Hard text shadow
     register_block_style( 'core/heading', [
         'name'  => 'header-shadow-hard',
-        'label' => __( 'Hard Shadow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Hard Shadow', 'm20t1' )
     ]);
     // Heading: Embelishment
     register_block_style( 'core/heading', [
         'name'  => 'header-embelish',
-        'label' => __( 'Embelishment', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Embelishment', 'm20t1' )
     ]);
     // Heading: Brushstroke
     register_block_style( 'core/heading', [
         'name'  => 'header-brush',
-        'label' => __( 'Brushstroke', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Brushstroke', 'm20t1' )
     ]);
     // Heading: Black Outline
     register_block_style( 'core/heading', [
         'name'  => 'header-outline',
-        'label' => __( 'Black Outline', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Black Outline', 'm20t1' )
     ]);
     // Heading: Stripes
     register_block_style( 'core/heading', [
         'name'  => 'header-stripes',
         'label' => __( 'Stripes', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-header-stripes::after, .is-style-header-stripes::before {
             background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");
             height:1em;
@@ -169,44 +150,37 @@ add_action( 'init', function(){
     // Heading: Page Title
     register_block_style( 'core/heading', [
         'name'  => 'header-title',
-        'label' => __( 'Page Title', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Page Title', 'm20t1' )
     ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [
         'name'  => 'header-text-fill',
-        'label' => __( 'Text-Fill', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Text-Fill', 'm20t1' )
     ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',
-        'label' => __( 'Frame', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Frame', 'm20t1' )
     ]);
     // Embed: Youtube Thumbnail style
     register_block_style( 'core/embed', [
         'name'  => 'embed-thumbnail',
-        'label' => __( 'Thumbnail', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Thumbnail', 'm20t1' )
     ]);
     // Video Embed: Shadow style
     register_block_style( 'core/video', [
         'name'  => 'video-shadow',
-        'label' => __( 'Shadow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Shadow', 'm20t1' )
     ]);
     // Video Embed: Glow style
     register_block_style( 'core/video', [
         'name'  => 'video-glow',
-        'label' => __( 'White Glow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'White Glow', 'm20t1' )
     ]);
     // Button: 3D Raised Style
     register_block_style( 'core/button', [
         'name'  => 'button-3d',
         'label' => __( 'Raised', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-button-3d a, .is-style-button-3d div {
             box-shadow: 0 2px 4px #0007, 0 7px 13px -3px #0006, inset 0 -3px 0 #0004;
             border-radius: 5px;
@@ -223,7 +197,6 @@ add_action( 'init', function(){
     register_block_style( 'core/button', [
         'name'  => 'button-arrow',
         'label' => __( 'w/ Arrow', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-button-arrow a::after {
             font-family: "icomoon" !important;
             content: "\e90e";
@@ -242,7 +215,6 @@ add_action( 'init', function(){
     register_block_style( 'core/button', [
         'name'  => 'button-border',
         'label' => __( 'Hard Border', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-button-border a, .is-style-button-border div {
             border: 4px solid #000;
             box-shadow: 0 4px 0 0 #000;
@@ -256,32 +228,27 @@ add_action( 'init', function(){
     // Image: Fancy style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',
-        'label' => __( 'Framed', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Framed', 'm20t1' )
     ]);
     // Image: Hand-Drawn
     register_block_style( 'core/image', [
         'name'  => 'img-hand-drawn',
-        'label' => __( 'Hand Drawn', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Hand Drawn', 'm20t1' )
     ]);
     // Image: Old photo style
     register_block_style( 'core/image', [
         'name'  => 'img-polaroid',
-        'label' => __( 'Polaroid', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Polaroid', 'm20t1' )
     ]);
     // Image: Filter Alpha Shadow Style
     register_block_style( 'core/image', [
         'name'  => 'img-filter-shadow',
-        'label' => __( 'Alpha Shadow', 'm20t1' ),
-        'is_default' => false
+        'label' => __( 'Alpha Shadow', 'm20t1' )
     ]);
     // Image: Book landscape
     register_block_style( 'core/image', [
         'name'  => 'img-book',
         'label' => __( 'Book Lndscpe', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-img-book {
             --book-width: 250px;
             --book-height: 200px;
@@ -334,7 +301,6 @@ add_action( 'init', function(){
     register_block_style( 'core/image', [
         'name'  => 'img-book-portrait',
         'label' => __( 'Book Portrait', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-img-book-portrait {
             --book-width: 200px;
             --book-height: 250px;
@@ -388,7 +354,6 @@ add_action( 'init', function(){
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-1',
         'label' => __( 'Heavy Border', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-gallery-1 .wp-block-image {
             margin-bottom: 1.2em !important;
         }
@@ -413,7 +378,6 @@ add_action( 'init', function(){
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-2',
         'label' => __( 'Drop Shadow', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-gallery-2 .wp-block-image {
             margin-bottom: 1em !important;
         }
@@ -439,7 +403,6 @@ add_action( 'init', function(){
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-3',
         'label' => __( 'No Border', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-gallery-3 .wp-block-image {
             margin-bottom: 1.2em !important;
         }
@@ -454,7 +417,6 @@ add_action( 'init', function(){
     register_block_style( 'core/latest-posts', [
         'name'  => 'posts-theme',
         'label' => __( 'Theme', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-posts-theme {
             max-width: var(--wp--style--global--wide-size);
             margin: 0 auto;
@@ -493,7 +455,6 @@ add_action( 'init', function(){
     register_block_style( 'core/media-text', [
         'name'  => 'media-text-full',
         'label' => __( 'Full Image', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-media-text-full {
             position: relative;
             max-height: 24em;
@@ -517,7 +478,6 @@ add_action( 'init', function(){
     register_block_style( 'core/media-text', [
         'name'  => 'media-text-overlap',
         'label' => __( 'Overlap', 'm20t1' ),
-        'is_default' => false,
         'inline_style' => '.is-style-media-text-overlap {
             transform: translateX(-20px);
         }

@@ -708,7 +708,7 @@ add_action( 'wp_head', function(){
 <meta name="title" content="<?=bloginfo('name');?>">
 <meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
 <meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
-<link rel="canonical" href="<?=the_permalink();?>">
+<link rel="canonical" href="<?=esc_url((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>">
 <link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url()));?>">
 <link rel="pingback" href="<?=bloginfo('pingback_url');?>">
 <link rel="Siteuri" href="<?=home_url();?>/" id="SiteURI">

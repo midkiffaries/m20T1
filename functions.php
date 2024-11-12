@@ -609,7 +609,6 @@ add_action( 'init', function(){
     remove_action( 'wp_head', 'wp_site_icon', 99 );
 
     // Remove WordPress Emojis
-    remove_action( 'wp_head', 'rel_canonical' );
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -626,7 +625,10 @@ add_action( 'init', function(){
     // Remove version number from the generator for security
     remove_action( 'wp_head', 'wp_generator' );
 
-    // Enable the use of shortcodes in text widgets.
+    // Remove canonical (use custom instead)
+    remove_action( 'wp_head', 'rel_canonical' );
+
+    // Enable the use of shortcodes in text widgets
     add_filter( 'widget_text', 'do_shortcode' );
 
     // Cycle through the ADDITIONAL_POST_TYPE array
@@ -669,9 +671,7 @@ add_action( 'init', function(){
                 'item_link_description'  => _x( "A link to a {$type}", 'm20t1' ),
                 'uri_slug'               => _x( rawurlencode(strtolower($type)), 'm20t1' ),
             ],
-            'rewrite' => [ 
-                'slug' => rawurlencode(strtolower($type))
-            ],
+            'rewrite'            => [ 'slug' => rawurlencode(strtolower($type)) ],
             'menu_position'      => 20, // Below 'Pages'
             'description'        => $subtitle,
             'menu_icon'          => $icon,

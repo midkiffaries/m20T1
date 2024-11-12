@@ -550,7 +550,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'custom-header', [ 'default-color' => 'fefefe', 'default-image' => '', 'width' => 300, 'height' => 60, 'flex-height' => true, 'flex-width' => true, 'default-text-color' => '', 'header-text' => true, 'uploads' => true ] );
     add_theme_support( 'custom-background', [ 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll' ] );
 
-    // Custom Logo Support
+    // Custom logo support
     add_theme_support( 'custom-logo', [ 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
     
     // Add HTML5 Support
@@ -559,7 +559,7 @@ add_action( 'after_setup_theme', function(){
     // Set the different post formats that the author can select
     //add_theme_support( 'post-formats', [ 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ] );
     
-    // Set the Navigation Widgets
+    // Set the site navigation menus
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );
     register_nav_menu( 'secondary', __( 'Secondary Navigation', 'm20T1' ) );
     register_nav_menu( 'tertiary', __( 'Tertiary Navigation', 'm20T1' ) );

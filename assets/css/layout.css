@@ -1215,7 +1215,7 @@ Specific Page Styling
 .author-avatar figure img {
 	border: 1px solid #fff;
 	border-radius: 0.5em;
-	box-shadow: 0 7px 7px -6px #fffb, 0 5px 10px -2px #0002;
+	box-shadow: 4px 4px 0 0 #666;
 	margin-bottom: 0.5em;
 }
 

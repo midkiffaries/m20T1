@@ -54,7 +54,7 @@
                 </p>
             </div>
         </div>
-        <hr size="5">
+        <hr style="border-top:2px solid #0009">
     </section>
     <?php endif; ?>
 

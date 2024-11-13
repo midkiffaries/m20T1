@@ -467,7 +467,7 @@
 						"css": "text-shadow:1px 1px 4px #0004"
 					},
 					"header-shadow-hard": {
-						"css": "text-shadow:2px 2px #0004"
+						"css": "text-shadow:2px 2px #0008"
 					},
 					"header-underline": {
 						"css": "border-bottom:2px solid #ddd;padding-bottom:3px"

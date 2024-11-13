@@ -562,63 +562,6 @@ legend + * {
 	border: 2px solid #aaa;
 }
 
-/* Meter */
-
-meter {
-	height: 1.5em;
-	border: 1px solid #bbb;
-}
-
-::-webkit-meter-bar {
-	border-radius: 0;
-	height: 1.35em;
-}
-
-::-webkit-meter-optimum-value {
-	background: green;
-}
-
-:-moz-meter-optimum::-moz-meter-bar {
-	background: green;
-}
-
-::-webkit-meter-suboptimum-value {
-	background: gold;
-}
-
-:-moz-meter-sub-optimum::-moz-meter-bar {
-	background: gold;
-}
-
-::-webkit-meter-even-less-good-value {
-	background: red;
-}
-
-:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-	background: red;
-}
-
-/* Progress */
-
-progress {
-	display: inline-block;
-	border: 1px solid #bbb;
-	vertical-align: baseline;
-	height: 1.2em;
-}
-
-::-webkit-progress-bar {
-	background-color: #eee;
-}
-
-::-webkit-progress-value {
-	background-color: currentColor
-}
-
-::-moz-progress-bar {
-	background-color: currentColor;
-}
-
 
 /*********************
 Firefox Hacks
@@ -647,7 +590,7 @@ Responsive elements
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
 	*,
 	*::before,
 	*::after {

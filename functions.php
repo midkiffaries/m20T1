@@ -102,10 +102,15 @@ add_action( 'init', function(){
         'name'  => 'text-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' )
     ]);
-    // Paragraph: Text Outline
+    // Paragraph: Outline text
     register_block_style( 'core/paragraph', [
         'name'  => 'text-outline',
         'label' => __( 'Outline', 'm20t1' )
+    ]);
+    // Paragraph: Justify text
+    register_block_style( 'core/paragraph', [
+        'name'  => 'text-justify',
+        'label' => __( 'Justify', 'm20t1' )
     ]);
     // Heading: Underline
     register_block_style( 'core/heading', [

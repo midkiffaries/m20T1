@@ -1107,18 +1107,6 @@ Figures and Galleries
 	cursor: zoom-in;
 }
 
-.page-content figure > a img {
-    transition: filter 0.5s ease-in-out;
-}
-
-.page-content figure > a[href]:hover img {
-	filter: brightness(1.05);
-}
-
-.page-content figure > a[href]:active img {
-	filter: brightness(0.95);
-}
-
 .wp-block-image figcaption {
 	padding: 0;
 	font-size: 0.9rem;

@@ -87,10 +87,10 @@ add_action( 'init', function(){
         'name'  => 'list-plain',
         'label' => __( 'No Bullets', 'm20t1' )
     ]);
-    // Paragraph: Subtitle
+    // Paragraph: Justify text
     register_block_style( 'core/paragraph', [
-        'name'  => 'text-subtitle',
-        'label' => __( 'Subtitle', 'm20t1' )
+        'name'  => 'text-justify',
+        'label' => __( 'Justify', 'm20t1' )
     ]);
     // Paragraph: Light text shadow
     register_block_style( 'core/paragraph', [
@@ -102,15 +102,15 @@ add_action( 'init', function(){
         'name'  => 'text-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' )
     ]);
+    // Paragraph: Subtitle
+    register_block_style( 'core/paragraph', [
+        'name'  => 'text-subtitle',
+        'label' => __( 'Subtitle', 'm20t1' )
+    ]);
     // Paragraph: Outline text
     register_block_style( 'core/paragraph', [
         'name'  => 'text-outline',
         'label' => __( 'Outline', 'm20t1' )
-    ]);
-    // Paragraph: Justify text
-    register_block_style( 'core/paragraph', [
-        'name'  => 'text-justify',
-        'label' => __( 'Justify', 'm20t1' )
     ]);
     // Heading: Underline
     register_block_style( 'core/heading', [
@@ -210,10 +210,11 @@ add_action( 'init', function(){
             padding-left: 1px;
         }
         .is-style-button-arrow div::after {
-            font-family: "dashicons" !important;
-            vertical-align: -4px;
-            padding-left: 1px;
+            /* font-family: "dashicons" !important;
             content: "\f345";
+            vertical-align: -4px; */
+            content: ">";
+            padding-left: 9px;
         }'
     ]);
     // Button: Hard Shadow Style

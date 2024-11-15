@@ -459,12 +459,15 @@ Site Footer
 	}
 	.footer-notice {
 		width: 100%;
-		margin-bottom: 3em;
+		margin-bottom: 5em;
 		font-size: 0.85rem;
 	}
 }
 
 @media (max-width: 800px) {
+	.footer-widgets {
+		text-align: center;
+	}
 	.footer-copyright,
 	.footer-footnote {
 		width: 100%;

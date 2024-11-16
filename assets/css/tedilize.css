@@ -621,7 +621,8 @@ Responsive elements
 	footer,
 	aside,
 	iframe,
-	table {
+	table,
+	form {
 		width: 100% !important;
 		float: none !important;
 		position: relative;

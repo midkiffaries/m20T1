@@ -1003,6 +1003,11 @@ img.wp-smiley, img.emoji {
 }
 
 /* Wordpress Overrides */
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
 .wp-block-gallery.is-style-default figure.wp-block-image figcaption {
 	padding: 0;
 	font-weight: 700;
@@ -1018,6 +1023,18 @@ img.wp-smiley, img.emoji {
 	font-size: initial;
 	text-shadow: none;
 	overflow: visible;
+}
+
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
 }
 
 /* WordPress Editor Classes */

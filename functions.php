@@ -1,4 +1,4 @@
-<?php // Custom PHP WordPress functions and settings
+<?php // m20T1 functions and settings for WordPress
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -561,9 +561,9 @@ add_action( 'after_setup_theme', function(){
     
     // Add HTML5 Support
     add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ] );
-    
+
     // Set the different post formats that the author can select
-    //add_theme_support( 'post-formats', [ 'aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status' ] );
+    //add_theme_support( 'post-formats', [ 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ] );
     
     // Set the site navigation menus
     register_nav_menu( 'primary', __( 'Primary Navigation', 'm20T1' ) );

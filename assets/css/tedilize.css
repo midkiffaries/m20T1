@@ -45,7 +45,6 @@ hr {
 }
 
 blockquote {
-	-webkit-hyphens: auto;
 	hyphens: auto;
 	margin: 0 0 1rem;
 	text-wrap: pretty;
@@ -126,8 +125,6 @@ h5,
 h6 {
 	line-height: 1;
 	margin: 1.2rem auto 0.5rem;
-	page-break-after: avoid;
-	page-break-inside: avoid;
 	text-wrap: pretty;
 }
 
@@ -140,6 +137,10 @@ table {
 	border-spacing: 0;
 	text-indent: 0;
 	max-width: 100%;
+}
+
+thead {
+	display: table-header-group;
 }
 
 td,
@@ -165,7 +166,6 @@ List elements
 ul,
 ol {
 	padding-left: 2rem;
-	page-break-before: avoid;
 }
 
 li:empty {
@@ -221,6 +221,8 @@ pre {
 	display: block;
 	word-break: break-all;
 	line-height: 1.4;
+	overflow-x: auto;
+	white-space: pre-wrap !important;
 }
 
 pre code {
@@ -641,12 +643,6 @@ Responsive elements
 		text-shadow: none;
 	}
 
-	hr,
-	mark {
-		-webkit-print-color-adjust: exact;
-		print-color-adjust: exact;
-	}
-
 	table,
 	img,
 	pre,
@@ -660,19 +656,8 @@ Responsive elements
 	address,
 	select,
 	textarea {
-		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
 		break-inside: avoid;
 		max-width: 100%;
-	}
-
-	thead {
-		display: table-header-group;
-	}
-
-	pre {
-		overflow-x: auto;
-		white-space: pre-wrap !important;
 	}
 
 	abbr[title]::after {
@@ -682,6 +667,5 @@ Responsive elements
 	a[href] {
 		background: transparent;
 		text-decoration: underline;
-		page-break-inside: avoid;
 	}
 }

@@ -636,13 +636,6 @@ Responsive elements
 @media print {
 	@page { margin: 2cm; }
 
-	*,
-	*::before,
-	*::after {
-		color: #111;
-		text-shadow: none;
-	}
-
 	table,
 	img,
 	pre,
@@ -658,10 +651,6 @@ Responsive elements
 	textarea {
 		break-inside: avoid;
 		max-width: 100%;
-	}
-
-	abbr[title]::after {
-		content: " (" attr(title) ")";
 	}
 
 	a[href] {

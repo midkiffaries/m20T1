@@ -134,7 +134,7 @@
 					"slug": "chromegradient"
 				},
 				{
-					"gradient": "repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px), linear-gradient(45deg, #83bbf7, #4a95fc, #3b68f7)",
+					"gradient": "repeating-linear-gradient(135deg, #00000008 0px, #00000008 2px, transparent 2px, transparent 4px), linear-gradient(45deg, #83bbf7, #4a95fc, #3b68f7)",
 					"name": "Custom gradient with the brand colors and stripes",
 					"slug": "customgradient"
 				}

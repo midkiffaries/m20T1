@@ -20,16 +20,16 @@ Theme Variables
 
 :root {
 	--footer-bg-color: #212121;
-	--footer-bg-image: linear-gradient(135deg, rgba(234,234,234,0.06) 0%, rgba(234,234,234,0.06) 50%,rgba(169,169,169,0.06) 50%, rgba(169,169,169,0.06) 100%),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
+	--footer-bg-image: linear-gradient(135deg, #eaeaea0f 0%, #eaeaea0f 50%,#a9a9a90f 50%, #a9a9a90f 100%),linear-gradient(90deg, #141414,#141414);
 
-	--featured-img-bg-color: linear-gradient(135deg, rgb(32,83,128) 0%,rgb(64,165,255) 82%,rgb(32,83,128) 100%);
-	--featured-img-bg: linear-gradient(135deg, rgba(6,6,6,0.01) 0%, rgba(6,6,6,0.01) 1%,rgba(131,131,131,0.01) 1%, rgba(131,131,131,0.01) 14%,rgba(250,250,250,0.01) 14%, rgba(250,250,250,0.01) 26%,rgba(30,30,30,0.01) 26%, rgba(30,30,30,0.01) 62%,rgba(117,117,117,0.01) 62%, rgba(117,117,117,0.01) 66%,rgba(248,248,248,0.01) 66%, rgba(248,248,248,0.01) 76%,rgba(39,39,39,0.01) 76%, rgba(39,39,39,0.01) 100%),linear-gradient(135deg, rgba(57,57,57,0.06) 0%, rgba(57,57,57,0.06) 4%,rgba(227,227,227,0.06) 4%, rgba(227,227,227,0.06) 26%,rgba(67,67,67,0.06) 26%, rgba(67,67,67,0.06) 27%,rgba(126,126,126,0.06) 27%, rgba(126,126,126,0.06) 39%,rgba(103,103,103,0.06) 39%, rgba(103,103,103,0.06) 72%,rgba(16,16,16,0.06) 72%, rgba(16,16,16,0.06) 76%,rgba(21,21,21,0.06) 76%, rgba(21,21,21,0.06) 88%,rgba(69,69,69,0.06) 88%, rgba(69,69,69,0.06) 100%),linear-gradient(135deg, rgba(156,156,156,0.05) 0%, rgba(156,156,156,0.05) 12%,rgba(54,54,54,0.05) 12%, rgba(54,54,54,0.05) 48%,rgba(169,169,169,0.05) 48%, rgba(169,169,169,0.05) 59%,rgba(104,104,104,0.05) 59%, rgba(104,104,104,0.05) 62%,rgba(165,165,165,0.05) 62%, rgba(165,165,165,0.05) 68%,rgba(124, 124, 124, 0.05) 68%, rgba(124, 124, 124, 0.05) 77%,rgba(189, 189, 189, 0.05) 77%, rgba(189, 189, 189, 0.05) 85%,rgba(173, 173, 173, 0.05) 85%, rgba(173, 173, 173, 0.05) 100%),linear-gradient(135deg, rgba(182, 182, 182, 0.07) 0%, rgba(182, 182, 182, 0.07) 22%,rgba(122, 122, 122, 0.07) 22%, rgba(122, 122, 122, 0.07) 28%,rgba(62, 62, 62, 0.07) 28%, rgba(62, 62, 62, 0.07) 44%,rgba(89, 89, 89, 0.07) 44%, rgba(89, 89, 89, 0.07) 61%,rgba(110, 110, 110, 0.07) 61%, rgba(110, 110, 110, 0.07) 83%,rgba(185, 185, 185, 0.07) 83%, rgba(185, 185, 185, 0.07) 86%,rgba(192, 192, 192, 0.07) 86%, rgba(192, 192, 192, 0.07) 100%),linear-gradient(135deg, rgba(8, 8, 8, 0.06) 0%, rgba(8, 8, 8, 0.06) 54%,rgba(48, 48, 48, 0.06) 54%, rgba(48, 48, 48, 0.06) 57%,rgba(245, 245, 245, 0.06) 57%, rgba(245, 245, 245, 0.06) 86%,rgba(12, 12, 12, 0.06) 86%, rgba(12, 12, 12, 0.06) 94%,rgba(225, 225, 225, 0.06) 94%, rgba(225, 225, 225, 0.06) 100%), var(--featured-img-bg-color);
+	--featured-img-bg-color: linear-gradient(135deg, #205380 0%,#40a5ff 82%,#205380 100%);
+	--featured-img-bg: linear-gradient(135deg, #06060603 0%, #06060603 1%,#83838303 1%, #83838303 14%,#fafafa03 14%, #fafafa03 26%,#1e1e1e03 26%, #1e1e1e03 62%,#75757503 62%, #75757503 66%,#f8f8f803 66%, #f8f8f803 76%,#27272703 76%, #27272703 100%),linear-gradient(135deg, #3939390f 0%, #3939390f 4%,#e3e3e30f 4%, #e3e3e30f 26%,#4343430f 26%, #4343430f 27%,#7e7e7e0f 27%, #7e7e7e0f 39%,#6767670f 39%, #6767670f 72%,#1010100f 72%, #1010100f 76%,#1515150f 76%, #1515150f 88%,#4545450f 88%, #4545450f 100%),linear-gradient(135deg, #9c9c9c0d 0%, #9c9c9c0d 12%,#3636360d 12%, #3636360d 48%,#a9a9a90d 48%, #a9a9a90d 59%,#6868680d 59%, #6868680d 62%,#a5a5a50d 62%, #a5a5a50d 68%,#7c7c7c0d 68%, #7c7c7c0d 77%,#bdbdbd0d 77%, #bdbdbd0d 85%,#adadad0d 85%, #adadad0d 100%),linear-gradient(135deg, #b6b6b612 0%, #b6b6b612 22%,#7a7a7a12 22%, #7a7a7a12 28%,#3e3e3e12 28%, #3e3e3e12 44%,#59595912 44%, #59595912 61%,#6e6e6e12 61%, #6e6e6e12 83%,#b9b9b912 83%, #b9b9b912 86%,#c0c0c012 86%, #c0c0c012 100%),linear-gradient(135deg, #0808080f 0%, #0808080f 54%,#3030300f 54%, #3030300f 57%,#f5f5f50f 57%, #f5f5f50f 86%,#0c0c0c0f 86%, #0c0c0c0f 94%,#e1e1e10f 94%, #e1e1e10f 100%), var(--featured-img-bg-color);
 	--featured-img-bg-over: #fff1 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='78mm' height='78mm' viewBox='0 0 78 78'><g fill-opacity='.04'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>") repeat 0 0;
 	
-	--body-top-background: linear-gradient(0deg, rgba(254,254,254,1) 8%, rgba(254,254,254,0.3) 66%), 
-						linear-gradient(45deg, rgba(254,254,254,1) 25%, rgba(254,254,254,0) 80%),
+	--body-top-background: linear-gradient(0deg, #fefefe 8%, #fefefe4d 66%), 
+						linear-gradient(45deg, #fefefe 25%, #fefefe00 80%),
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10mm' height='10mm' viewBox='0 0 78 78'><g fill-opacity='.1'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>");
-	--body-bottom-background: linear-gradient(0deg, rgba(254,254,254,0.6) 5%, rgba(254,254,254,1) 100%), 
+	--body-bottom-background: linear-gradient(0deg, #fefefe99 5%, #fefefe 100%), 
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' clip-rule='evenodd' viewBox='0 0 571.3 1152.8'><clipPath id='a'><path d='M0 0h571.3v1152.8H0z'/></clipPath><g fill='none' stroke='lightgrey' stroke-linecap='butt' stroke-width='12' clip-path='url(%23a)'><path d='M285.6 0 0 576.4l285.6 576.4L569 576.4zM0 0h571.3M0 1152.8h571.3M0 576.4h571.3'/></g></svg>");
 	
 	--portfolio-view-background: url("../../uploads/2023/07/portfolio-view-more-badge.svg");
@@ -225,7 +225,7 @@ Sticky/Featured article highlight
 }
 
 .blog .sticky {
-	background-image: radial-gradient(circle at 47% 98%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 53% 90%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 17% 34%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 85% 36%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%,transparent 3%, transparent 100%),radial-gradient(circle at 22% 21%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 99% 30%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 82% 84%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 62% 49%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 85% 14%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 89% 22%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 37% 65%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 57% 27%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 95% 91%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 85% 34%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 7% 65%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 69% 41%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 33% 2%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 57% 84%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 80% 86%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 45%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 5%,transparent 5%, transparent 100%),linear-gradient(45deg, rgb(64,165,255),rgb(17,67,111));
+	background-image: radial-gradient(circle at 47% 98%, #ffffff05 0%, #ffffff05 3%,transparent 3%, transparent 100%),radial-gradient(circle at 53% 90%, #ffffff05 0%, #ffffff05 3%,transparent 3%, transparent 100%),radial-gradient(circle at 17% 34%, #ffffff08 0%, #ffffff08 3%,transparent 3%, transparent 100%),radial-gradient(circle at 85% 36%, #ffffff08 0%, #ffffff08 3%,transparent 3%, transparent 100%),radial-gradient(circle at 22% 21%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 99% 30%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 82% 84%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 62% 49%, #ffffff05 0%, #ffffff05 7%,transparent 7%, transparent 100%),radial-gradient(circle at 85% 14%, #ffffff05 0%, #ffffff05 7%,transparent 7%, transparent 100%),radial-gradient(circle at 89% 22%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 37% 65%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 57% 27%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 95% 91%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 85% 34%, #ffffff05 0%, #ffffff05 5%,transparent 5%, transparent 100%),radial-gradient(circle at 7% 65%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 69% 41%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 33% 2%, #ffffff03 0%, #ffffff03 5%,transparent 5%, transparent 100%),radial-gradient(circle at 57% 84%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 80% 86%, #ffffff03 0%, #ffffff03 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 45%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),linear-gradient(45deg, #40a5ff,#11436f);
 	color: #fff;
 }
 
@@ -258,7 +258,7 @@ WordPress Gutenburg Content Styling
 
 /* Images, Figures and Galleries */
 .the-content .wp-block-image a img {
-	transition: all 0.4s ease-in-out;
+	transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
 .the-content .wp-block-image a img:hover {
@@ -286,7 +286,7 @@ Custom Gutenburg Styling
 
 /* Page content links */
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {
-	transition: color 0.25s;
+	transition: color 0.25s, filter 0.25s;
 }
 
 .the-content a[href]:not(.wp-block-button__link):not(.wp-block-social-link-anchor):hover {
@@ -386,7 +386,7 @@ Form Element Styling
 textarea,
 select {
 	border-width: 2px;
-	transition: all 0.4s;
+	transition: border-color 0.4s, box-shadow 0.4s;
 }
 
 [type="search"]:hover,
@@ -470,7 +470,7 @@ Blog Post Styling
 
 .single-author-bio {
 	outline: 3px dashed var(--wp--preset--color--primary-dark);
-	border: 1px solid rgba(0,0,0,0.08);
+	border: 1px solid #00000014;
 	background-image: repeating-linear-gradient(135deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(45deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, hsla(0,0%,100%,0),hsla(0,0%,100%,0));
 }
 

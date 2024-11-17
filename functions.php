@@ -2064,7 +2064,7 @@ class BuildMetaBox {
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'm20t1_meta_box',
-				__( 'Advanced Options', 'm20t1' ), // meta box title
+				__( 'm20T1 Options', 'm20t1' ), // meta box title
 				[ $this, 'render_meta_box_content' ],
 				$post_type,
 				'advanced',
@@ -2186,15 +2186,19 @@ class BuildMetaBox {
             <?php _e( 'Excerpt Length', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b> chars
 		</label></div>
         <style>
-        @media(min-width:700px) {
-            .components-base-control__cols {
-                display:grid;
-                grid-template-columns:auto auto;
-                gap:10px;
-            }
+        .components-base-control__cols {
+            display:grid;
+            grid-template-columns:auto auto;
+            gap:10px;
         }
-        textarea {
-            tab-size: 4;
+        .metabox-location-side .components-base-control__cols {
+            display:block;
+        }
+        .metabox-location-side .components-base-control__cols select {
+            width:calc(100% - 40px);
+        }
+        .mceEditor {
+            tab-size:4;
         }
         </style>
         <script>

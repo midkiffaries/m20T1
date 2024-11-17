@@ -2064,7 +2064,7 @@ class BuildMetaBox {
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'm20t1_meta_box',
-				__( 'm20T1 Options', 'm20t1' ), // meta box title
+				__( 'Advanced Options', 'm20t1' ), // meta box title
 				[ $this, 'render_meta_box_content' ],
 				$post_type,
 				'advanced',

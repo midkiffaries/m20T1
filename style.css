@@ -31,8 +31,6 @@ Theme Variables
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10mm' height='10mm' viewBox='0 0 78 78'><g fill-opacity='.1'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>");
 	--body-bottom-background: linear-gradient(0deg, #fefefe99 5%, #fefefe 100%), 
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' clip-rule='evenodd' viewBox='0 0 571.3 1152.8'><clipPath id='a'><path d='M0 0h571.3v1152.8H0z'/></clipPath><g fill='none' stroke='lightgrey' stroke-linecap='butt' stroke-width='12' clip-path='url(%23a)'><path d='M285.6 0 0 576.4l285.6 576.4L569 576.4zM0 0h571.3M0 1152.8h571.3M0 576.4h571.3'/></g></svg>");
-	
-	--portfolio-view-background: url("../../uploads/2023/07/portfolio-view-more-badge.svg");
 }
 
 /* Animate header background image if there is no featured image */
@@ -159,53 +157,18 @@ Typography for the page title and subtitle
 	font-family: 'Courier New', Courier, monospace;
 }
 
+.portfolio-name a::before {
+	font-family: 'icomoon';
+	content: "\e90d";
+	vertical-align: -3px;
+	margin-left: -14px;
+}
+
 .portfolio-name a:hover {
 	color: var(--wp--preset--color--primary);
 	text-decoration: underline;
 }
 
-/* Portfolio page 'view all' badge */
-.portfolio-view-all {
-	width: 142px;
-	height: 142px;
-	background-position: 50% 50%;
-	background-size: contain;
-	background-image: var(--portfolio-view-background);
-	text-align: center;
-	transition: all 0.2s cubic-bezier(.14,.7,.87,.54);
-	transform: scale(1) rotate(18deg);
-	filter: drop-shadow(3px 3px 0 #0003);
-}
-
-.portfolio-view-all:hover {
-	transform: scale(1.1) rotate(2deg);
-	filter: drop-shadow(3px 5px 2px #0002);
-}
-
-.portfolio-view-all:active {
-	transform: scale(0.94);
-}
-
-.portfolio-view-all a {
-	display: block;
-	padding: 3.45em 5px;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #fff;
-	text-shadow: 2px 0 0 #d77a3c;
-	text-decoration: none;
-}
-
-@media (max-width: 800px) {
-	.portfolio-view-all {
-		top: -1em;
-		right: -1em;
-		transform: scale(0.6) rotate(18deg);
-	}
-	.portfolio-view-all:hover {
-		transform: scale(0.7);
-	}
-}
 
 /************************************
 Sticky/Featured article highlight

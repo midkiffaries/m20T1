@@ -13,7 +13,6 @@
             <div class="post-container">
                 <?php $postType = get_post_type_object(get_post_type()); ?>
                 <div class="<?=$pageKind;?>-name" itemprop="articleSection"><a href="<?=home_url() . "/" . esc_html($postType->labels->uri_slug) . "/"; ?>"><?=get_post_type();?></a></div>
-                <div class="<?=$pageKind;?>-view-all"><a href="<?=home_url() . "/" . esc_html($postType->labels->uri_slug) . "/"; ?>">View all</a></div>
                 <h1 class="page-title" itemprop="name headline"><?php the_title(); ?></h1>
                 <div class="the-content" itemprop="text articleBody description" id="TheContent">
                     <?php the_content("<p>Continue Reading &raquo;</p>"); ?>

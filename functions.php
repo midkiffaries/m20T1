@@ -708,10 +708,19 @@ add_action( 'init', function(){
     }
 });
 
-// Append HTML metadata to the page head tag
+// Append HTML metadata to the TOP of the page <head> tag
+function m20t1_head() {
+?>
+<meta charset="<?=bloginfo('charset');?>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name="title" content="<?=bloginfo('name');?>">
+<?php
+}
+
+// Append HTML metadata to the BOTTOM of the page <head> tag
 add_action( 'wp_head', function(){
 ?>
-<meta name="title" content="<?=bloginfo('name');?>">
 <meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
 <meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <link rel="canonical" href="<?=esc_url((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>">
@@ -749,9 +758,9 @@ add_action( 'wp_head', function(){
 <meta name="twitter:data1" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <meta name="twitter:label2" content="Est. reading time">
 <meta name="twitter:data2" content="<?=reading_time();?>">
-<?php 
-echo allow_html_metadata(get_option('head_metadata')); // Post user metadata
-schemaJSONData(); // Post Schema JSON
+<?=allow_html_metadata(get_option('head_metadata'));// Post user metadata ?>
+<?=schemaJSONData();// Post Schema JSON ?>
+<?php
 });
 
 // Append to the top of the page body tag

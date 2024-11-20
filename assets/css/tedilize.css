@@ -62,7 +62,7 @@ p {
 }
 
 /* Clearfix */
-.clearfix,
+.clearfix::after,
 header::after,
 main::after,
 footer::after,

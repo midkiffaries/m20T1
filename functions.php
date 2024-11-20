@@ -2066,7 +2066,7 @@ class BuildMetaBox {
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'm20t1_meta_box',
-				__( 'Advanced Options', 'm20t1' ), // meta box title
+				__( 'Post Options', 'm20t1' ), // meta box title
 				[ $this, 'render_meta_box_content' ],
 				$post_type,
 				'advanced',
@@ -2139,7 +2139,7 @@ class BuildMetaBox {
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Custom CSS Styling', 'm20t1' ); ?>
 		</label></div>
-		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder="Enter raw CSS styling  .red {color: #f00;}" ><?=$pageCSS;?></textarea>
+		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder=".raw-css {color: #f00}" ><?=$pageCSS;?></textarea>
 
         <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Page Subtitle', 'm20t1' ); ?>

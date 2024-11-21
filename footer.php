@@ -1,6 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
-    <div class="body-bottom-background"><?php // Background embellishments ?></div>
+    <div class="body-bottom-background"><?php // Background embellishment ?></div>
 
     <footer class="page-footer">
         <div id="footer-widgets" class="footer-widgets">

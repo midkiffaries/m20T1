@@ -625,14 +625,20 @@ add_action( 'init', function(){
     //add_filter( 'wp_resource_hints', 'disable_emojis', 10, 2 );
 
     // Remove RSS feed links
-    //remove_action( 'wp_head', 'feed_links', 2 );
     remove_action( 'wp_head', 'feed_links_extra', 3 );
+    //remove_action( 'wp_head', 'feed_links', 2 );
 
     // Remove version number from the generator for security
     remove_action( 'wp_head', 'wp_generator' );
 
     // Remove canonical (use custom instead)
     remove_action( 'wp_head', 'rel_canonical' );
+
+    // Remove shortlink
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
+
+    // Remove default robots call
+    remove_filter('wp_robots', 'wp_robots_max_image_preview_large');
 
     // Enable the use of shortcodes in text widgets
     add_filter( 'widget_text', 'do_shortcode' );
@@ -721,6 +727,7 @@ function m20t1_head() {
 // Append HTML metadata to the BOTTOM of the page <head> tag
 add_action( 'wp_head', function(){
 ?>
+<meta name="robots" content="max-image-preview:large">
 <meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
 <meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <link rel="canonical" href="<?=esc_url((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>">

@@ -186,50 +186,16 @@ add_action( 'init', function(){
     register_block_style( 'core/button', [
         'name'  => 'button-3d',
         'label' => __( 'Raised', 'm20t1' ),
-        'inline_style' => '.is-style-button-3d a, .is-style-button-3d div {
-            box-shadow: 0 2px 4px #0007, 0 7px 13px -3px #0006, inset 0 -3px 0 #0004;
-            border-radius: 5px;
-            text-shadow: 1px 1px 2px #0007;
-        }
-        .is-style-button-3d a:hover {
-            text-decoration: none !important;
-        }
-        .is-style-button-3d a:active {
-            box-shadow: inset 2px 3px 7px -1px #0008;
-        }'
     ]);
     // Button: w/ Arrow Style
     register_block_style( 'core/button', [
         'name'  => 'button-arrow',
-        'label' => __( 'w/ Arrow', 'm20t1' ),
-        'inline_style' => '.is-style-button-arrow a::after {
-            font-family: "icomoon" !important;
-            content: "\e90e";
-            font-size: 1.7rem;
-            vertical-align: -4px;
-            padding-left: 1px;
-        }
-        .is-style-button-arrow div::after {
-            /* font-family: "dashicons" !important;
-            content: "\f345";
-            vertical-align: -4px; */
-            content: ">";
-            padding-left: 9px;
-        }'
+        'label' => __( 'w/ Arrow', 'm20t1' )
     ]);
     // Button: Hard Shadow Style
     register_block_style( 'core/button', [
         'name'  => 'button-border',
-        'label' => __( 'Hard Border', 'm20t1' ),
-        'inline_style' => '.is-style-button-border a, .is-style-button-border div {
-            border: 4px solid #000;
-            box-shadow: 0 4px 0 0 #000;
-            border-radius: 1.2rem;
-            transition: transform 0.6s cubic-bezier(.15,1.55,.74,.07);
-            & a:hover {
-                transform: scale(1.1);
-            }
-        }'
+        'label' => __( 'Hard Border', 'm20t1' )
     ]);
     // Image: Fancy style
     register_block_style( 'core/image', [

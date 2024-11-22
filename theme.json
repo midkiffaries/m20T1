@@ -141,12 +141,12 @@
 			],
 			"duotone": [
 				{
-					"colors": ["#111111", "#ffffff"],
+					"colors": ["#101112", "#F6F6F6"],
 					"name": "Monochrome",
 					"slug": "duotone-1"
 				},
 				{
-					"colors": ["#36200C", "#DCC0A6"],
+					"colors": ["#36200C", "#F3D9CB"],
 					"name": "Sepia",
 					"slug": "duotone-2"
 				},

@@ -811,7 +811,7 @@ add_filter( 'wp_check_filetype_and_ext', function($types, $file, $filename, $mim
 // Set a text fallback to the custom image logo hook
 add_filter( 'get_custom_logo', function(){
     if (has_custom_logo()) { // Use image logo
-        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, ['class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image', 'fetchpriority' => 'high', 'decoding' => 'async'] ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
+        return wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, ['class' => 'custom-logo', 'srcset' => '', 'itemprop' => 'image', 'fetchpriority' => 'high', 'alt' => 'Logo', 'decoding' => 'async'] ) . '<span class="visual-hidden" itemprop="name headline">' . get_bloginfo('name') . '</span>';
     } else { // No logo, use site title
         return '<span itemprop="name headline">' . get_bloginfo('name') . '</span>';
     }

@@ -11,6 +11,7 @@
 			"sidebarSize": "15em",
 			"headerHeight": "15em",
 			"headerMobileHeight": "14em",
+			"footerBackground": "linear-gradient(135deg,#eaeaea0f 0%,#eaeaea0f 50%,#a9a9a90f 50%,#a9a9a90f 100%),linear-gradient(90deg,#141414,#141414)",
 			"primaryFont": "'Montserrat'",
 			"secondaryFont": "'Permanent Marker'"
 		},
@@ -85,6 +86,11 @@
 					"color": "#111111",
 					"name": "Contrast",
 					"slug": "contrast"
+				},
+				{
+					"color": "#212121",
+					"name": "Page Footer",
+					"slug": "footer"
 				},
 				{
 					"color": "#37a1ffaa",

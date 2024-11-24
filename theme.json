@@ -530,7 +530,7 @@
 						"css": "list-style:square"
 					},
 					"list-ornate": {
-						"css": "&{list-style:none;counter-reset:m20c}& li{counter-increment:m20c &::before{content:counter(m20c);background-color:#111;color:#fff;width:1.8rem;height:1.8rem;line-height:1.8rem;border-radius:50%;display:inline-block;text-align:center;margin-right:.5rem}}& ol li::before{background-color:#222}"
+						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ol li::before{background-color:#222}"
 					}
 				}
 			},

@@ -2118,24 +2118,24 @@ class BuildMetaBox {
 		
         // Generate the meta box HTML
 		?>
-		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-1v57ksj">
+		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-m20t1">
 			<?php _e( 'Custom CSS Styling', 'm20t1' ); ?>
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder=".raw-css {color: #f00}" ><?=$pageCSS;?></textarea>
 
-        <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-1v57ksj">
+        <div class="components-base-control__field"><label for="m20t1_subtitle_field" class="components-base-control__label css-m20t1">
 			<?php _e( 'Page Subtitle', 'm20t1' ); ?>
 		</label></div>
-        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Subtitle (&lt;b&gt;, &lt;i&gt;, &lt;span&gt; allowed)" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
+        <input type="text" id="m20t1_subtitle_field" name="m20t1_subtitle_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="&lt;b&gt;, &lt;i&gt;, &lt;span&gt; allowed" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageSubtitle;?>">
 
-        <div class="components-base-control__field"><label for="m20t1_keyphrase_field" class="components-base-control__label css-1v57ksj">
+        <div class="components-base-control__field"><label for="m20t1_keyphrase_field" class="components-base-control__label css-m20t1">
 			<?php _e( 'SEO Keyphrase', 'm20t1' ); ?>
             (Count: <b id="m20t1_keyphrase_count" title="Count should be 1 for every 100 words on the page."><?=$pageKeyphraseCount;?> of <?=ceil(str_word_count(wp_strip_all_tags(get_the_content())) / 120);?></b>)
 		</label></div>
         <input type="text" id="m20t1_keyphrase_field" name="m20t1_keyphrase_field" spellcheck="true" autocomplete="off" autocorrect="on" placeholder="Short phrase that appears in the content" maxlength="255" style="width:100%;margin-bottom:8px" value="<?=$pageKeyphrase;?>">
 
         <div class="components-base-control__cols">        
-            <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-1v57ksj">
+            <div class="components-base-control__field"><label for="m20t1_schema_field" class="components-base-control__label css-m20t1">
                 <?php _e( 'Page Type (Schema.org)', 'm20t1' ); ?>
             </label>
             <select id="m20t1_schema_field" name="m20t1_schema_field" style="margin-bottom:8px;display:block">
@@ -2147,7 +2147,7 @@ class BuildMetaBox {
             </select></div>
             <script>document.getElementById('m20t1_schema_field').selectedIndex = <?=array_search($pageScheme, $schemaArr);?>;</script>
         
-            <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-1v57ksj">
+            <div class="components-base-control__field"><label for="m20t1_article_field" class="components-base-control__label css-m20t1">
                 <?php _e( 'Article Type (Schema.org)', 'm20t1' ); ?>
             </label>
             <select id="m20t1_article_field" name="m20t1_article_field" style="margin-bottom:8px;display:block">
@@ -2160,13 +2160,13 @@ class BuildMetaBox {
             <script>document.getElementById('m20t1_article_field').selectedIndex = <?=array_search($pageArticle, $articleArr);?>;</script>
         </div>
         
-        <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-1v57ksj">
+        <div class="components-base-control__field"><label for="m20t1_video_field" class="components-base-control__label css-m20t1">
 			<?php _e( 'Featured Video Link', 'm20t1' ); ?>
 		</label></div>
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Post Views:', 'm20t1' ); ?> <b><?=$pageViews;?></b> | 
+			<?php _e( 'Post Views:', 'm20t1' ); ?> <b><?=$pageViews;?></b><br> 
             <?php _e( 'Excerpt Length:', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b>
 		</label></div>
         <style>
@@ -2174,6 +2174,15 @@ class BuildMetaBox {
             display:grid;
             grid-template-columns:auto auto;
             gap:10px;
+        }
+        .css-m20t1 {
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+            padding-top: 0;
         }
         .metabox-location-side .components-base-control__cols {
             display:block;

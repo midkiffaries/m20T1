@@ -60,12 +60,8 @@ Main Site Layout
 ************************/
 
 body {
-	text-rendering: auto;
-	font-weight: 400;
-	font-display: swap;
 	color: var(--wp--preset--color--contrast);
 	background-color: var(--wp--preset--color--base);
-	font-optical-sizing: auto;
 }
 
 /* Page main body layout */
@@ -1039,7 +1035,7 @@ img.wp-smiley, img.emoji {
 }
 
 /* WordPress Editor Classes */
-.the-content h2:not(.subtitle):not(.has-text-align-center):not(.has-text-align-right) {
+.the-content h2:not(.is-style-text-subtitle):not(.has-text-align-center):not(.has-text-align-right) {
 	margin-top: 0.8em;
 }
 

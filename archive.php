@@ -20,7 +20,7 @@
                 <?php /* Author */ if (is_author()) printf($curauth->display_name); ?>
                 <?php /* Paged */ if (isset($_GET['paged']) && !empty($_GET['paged'])) printf("Blog Archives"); ?>
             </h1>
-            <p class="subtitle" itemprop="about">
+            <p class="is-style-text-subtitle is-style-text-subtitle--1" itemprop="about">
                 <?php /* Category */ if (is_category()) printf(strip_tags(category_description())) || printf("All the posts under this category"); ?>
                 <?php /* Tags */ if (is_tag()) printf(strip_tags(tag_description())) || printf("All the posts that have this tag"); ?>
                 <?php /* Daily */ if (is_day()) printf("Posts from this date"); ?>

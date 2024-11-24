@@ -82,6 +82,11 @@ add_action( 'init', function(){
         'name'  => 'list-squares',
         'label' => __( 'Squares', 'm20t1' )
     ]);
+    // List: Ornate
+    register_block_style( 'core/list', [
+        'name'  => 'list-ornate',
+        'label' => __( 'Ornate', 'm20t1' )
+    ]);
     // List: No bullets
     register_block_style( 'core/list', [
         'name'  => 'list-plain',

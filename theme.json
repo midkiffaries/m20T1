@@ -528,6 +528,9 @@
 					},
 					"list-squares": {
 						"css": "list-style:square"
+					},
+					"list-ornate": {
+						"css": "&{list-style:none;counter-reset:m20c}& li{counter-increment:m20c &::before{content:counter(m20c);background-color:#111;color:#fff;width:1.8rem;height:1.8rem;line-height:1.8rem;border-radius:50%;display:inline-block;text-align:center;margin-right:.5rem}}& ol li::before{background-color:#222}"
 					}
 				}
 			},

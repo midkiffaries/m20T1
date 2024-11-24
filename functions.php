@@ -2190,6 +2190,9 @@ class BuildMetaBox {
         .metabox-location-side .components-base-control__cols select {
             width:calc(100% - 40px);
         }
+        .postbox-container .inside, .postbox-container h2 {
+            padding:5px 15px 10px !important;
+        }
         .mceEditor {
             tab-size:4;
         }

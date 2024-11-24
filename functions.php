@@ -2170,19 +2170,19 @@ class BuildMetaBox {
             <?php _e( 'Excerpt Length:', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b>
 		</label></div>
         <style>
+        .css-m20t1 {
+            font-size:11px;
+            font-weight:500;
+            line-height:1.4;
+            text-transform:uppercase;
+            display:block;
+            margin-bottom:8px;
+            padding-top:0;
+        }
         .components-base-control__cols {
             display:grid;
             grid-template-columns:auto auto;
             gap:10px;
-        }
-        .css-m20t1 {
-            font-size: 11px;
-            font-weight: 500;
-            line-height: 1.4;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 8px;
-            padding-top: 0;
         }
         .metabox-location-side .components-base-control__cols {
             display:block;

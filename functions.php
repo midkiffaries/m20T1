@@ -695,11 +695,11 @@ function m20t1_head() {
 // Append HTML metadata to the BOTTOM of the page <head> tag
 add_action( 'wp_head', function(){
 ?>
-<meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <link rel="canonical" href="<?=esc_url((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://" . ltrim("$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", "www."));?>">
 <link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url()));?>">
 <link rel="pingback" href="<?=bloginfo('pingback_url');?>">
 <link rel="Siteuri" href="<?=home_url();?>/" id="SiteURI">
+<meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <meta name="application-name" content="<?=bloginfo('name');?>">
 <meta name="apple-mobile-web-app-title" content="<?=bloginfo('name');?>">
 <meta name="mobile-web-app-capable" content="yes">

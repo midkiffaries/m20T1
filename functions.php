@@ -687,14 +687,14 @@ function m20t1_head() {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <meta name="title" content="<?=bloginfo('name');?>">
+<meta name="robots" content="max-image-preview:large">
+<meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
 <?php
 }
 
 // Append HTML metadata to the BOTTOM of the page <head> tag
 add_action( 'wp_head', function(){
 ?>
-<meta name="robots" content="max-image-preview:large">
-<meta name="generator" content="m20T1 WordPress Theme by Ted Balmer">
 <meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <link rel="canonical" href="<?=esc_url((empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://" . ltrim("$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", "www."));?>">
 <link rel="dns-prefetch" href="<?=esc_url(preg_replace("(^https?:)", '', home_url()));?>">

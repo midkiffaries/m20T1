@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.7 Live (January 20, 2025)
+
+* 
+
 ### 1.8.6 Live (November 25, 2024)
 
 * Added a Site Notes textarea to the bottom of the Theme settings. I find this sort of thing pretty useful.

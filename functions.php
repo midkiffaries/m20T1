@@ -1387,6 +1387,18 @@ function get_page_class() {
     return 'page-' . preg_replace('/\s+/', '-', get_post_field( 'post_name', get_post() ));
 }
 
+// Abbreviate long numbers for the page counts
+function abbreviateNum($number) {
+    $abb = [9 => 'B', 6 => 'M', 3 => 'K', 0 => ''];
+    foreach ($abb as $exponent => $abb) {
+        if ($number >= pow(10, $exponent)) {
+            $dispnum = $number / pow(10, $exponent);
+            $dec = ($exponent >= 3 && round($dispnum) < 100) ? 1 : 0;
+            return number_format($dispnum, $dec) . $abb;
+        }
+    }
+}
+
 // List social sharing links on each blog post
 function blog_post_share() {
     $social_links = [ // Social media links
@@ -1574,7 +1586,7 @@ add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
 // Get the number of page views
 function get_page_views() {
     $count = get_post_meta( get_the_ID(), 'post_views_count', true );
-    return ($count < 1) ? 0 : $count;
+    return ($count < 1) ? 0 : abbreviateNum($count);
 }
 
 // Set the page view counter

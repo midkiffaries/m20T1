@@ -373,7 +373,8 @@ add_action( 'init', function(){
             background: none !important;
             color: #666 !important;
             font-weight: 600;
-            margin-bottom: -2rem !important;
+            font-size: 0.8rem !important;
+            margin-bottom: -1.2rem !important;
         }'
     ]);
     // Gallery: No border style

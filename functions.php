@@ -349,7 +349,7 @@ add_action( 'init', function(){
             color: #666 !important;
             font-weight: 600;
             font-size: 0.8rem !important;
-            margin-bottom: -1.7rem !important;
+            margin-bottom: -1.2rem !important;
         }'
     ]);
     // Gallery: Drop Shadow style
@@ -390,7 +390,7 @@ add_action( 'init', function(){
             color: #666 !important;
             font-weight: 600;
             font-size: 0.8rem !important;
-            margin-bottom: -1.7rem !important;
+            margin-bottom: -1.2rem !important;
         }'
     ]);
     // Latest Posts: Theme style

@@ -348,6 +348,7 @@ add_action( 'init', function(){
             background: none !important;
             color: #666 !important;
             font-weight: 600;
+            font-size: 0.8rem !important;
             margin-bottom: -1.7rem !important;
         }'
     ]);
@@ -388,6 +389,7 @@ add_action( 'init', function(){
             background: none !important;
             color: #666 !important;
             font-weight: 600;
+            font-size: 0.8rem !important;
             margin-bottom: -1.7rem !important;
         }'
     ]);

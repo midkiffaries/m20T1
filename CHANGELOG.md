@@ -2,7 +2,7 @@
 
 ### 1.8.7 Live (January 20, 2025)
 
-* 
+* Bug fixes.
 
 ### 1.8.6 Live (November 25, 2024)
 

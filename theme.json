@@ -549,7 +549,7 @@
 						}
 					},
 					"img-polaroid": {
-						"css": "& img {filter:sepia(40%) blur(0.01em) saturate(0.8) contrast(1.3) brightness(1.02) !important}"
+						"css": "& img {filter:sepia(33%) blur(0.01em) saturate(0.8) contrast(1.2) brightness(1.02) !important}"
 					},
 					"img-filter-shadow": {
 						"css": "& img {filter:drop-shadow(1px 1px 3px #000a)}"

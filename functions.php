@@ -167,6 +167,16 @@ add_action( 'init', function(){
         'name'  => 'header-text-fill',
         'label' => __( 'Text-Fill', 'm20t1' )
     ]);
+    // Code: Light Background
+    register_block_style( 'core/code', [
+        'name'  => 'code-basic',
+        'label' => __( 'Basic', 'm20t1' )
+    ]);
+    // Code: Dark Background
+    register_block_style( 'core/code', [
+        'name'  => 'code-apple',
+        'label' => __( 'Apple IIe', 'm20t1' )
+    ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',

@@ -213,9 +213,10 @@ pre {
 
 kbd {
 	background-color: #ddd;
-	padding: 0.1rem 0.4rem;
-	border-radius: 0.2rem;
-	border-bottom: 1px solid #aaa;
+	padding: 0.05rem 0.3rem;
+	border-radius: 0.3rem;
+	border: 1px solid #aaa;
+	border-bottom-width: 2px;
 	white-space: nowrap;
 }
 

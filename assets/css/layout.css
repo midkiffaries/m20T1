@@ -1608,8 +1608,7 @@ body.dark-mode,
 .dark-mode header a[href] {
 	color: #fff !important;
 }
-
-.dark-mode code, 
+ 
 .dark-mode kbd {
 	background-color: #444;
 }

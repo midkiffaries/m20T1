@@ -167,15 +167,10 @@ add_action( 'init', function(){
         'name'  => 'header-text-fill',
         'label' => __( 'Text-Fill', 'm20t1' )
     ]);
-    // Code: Light Background
+    // Code: Terminal style
     register_block_style( 'core/code', [
-        'name'  => 'code-basic',
-        'label' => __( 'Basic', 'm20t1' )
-    ]);
-    // Code: Dark Background
-    register_block_style( 'core/code', [
-        'name'  => 'code-apple',
-        'label' => __( 'Apple IIe', 'm20t1' )
+        'name'  => 'code-terminal',
+        'label' => __( 'Terminal', 'm20t1' )
     ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [
@@ -187,12 +182,12 @@ add_action( 'init', function(){
         'name'  => 'embed-thumbnail',
         'label' => __( 'Thumbnail', 'm20t1' )
     ]);
-    // Video Embed: Shadow style
+    // Video: Shadow style
     register_block_style( 'core/video', [
         'name'  => 'video-shadow',
         'label' => __( 'Shadow', 'm20t1' )
     ]);
-    // Video Embed: Glow style
+    // Video: Glow style
     register_block_style( 'core/video', [
         'name'  => 'video-glow',
         'label' => __( 'White Glow', 'm20t1' )

@@ -1,7 +1,8 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.7 Live (January 20, 2025)
+### 1.8.7 Live (December 28, 2024)
 
+* More alternate block styles.
 * Bug fixes.
 
 ### 1.8.6 Live (November 25, 2024)

@@ -167,7 +167,7 @@ add_action( 'init', function(){
     register_block_style( 'core/code', [
         'name'  => 'code-terminal',
         'label' => __( 'Terminal', 'm20t1' ),
-        'inline_style' => '@keyframes m20Ter{0%{background-color:#000}100%{background-color:#444}'
+        'inline_style' => '@keyframes m20Ter{0%{background-color:#000}100%{background-color:#444}}'
     ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [

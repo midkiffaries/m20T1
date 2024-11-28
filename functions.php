@@ -151,11 +151,7 @@ add_action( 'init', function(){
     register_block_style( 'core/heading', [
         'name'  => 'header-stripes',
         'label' => __( 'Stripes', 'm20t1' ),
-        'inline_style' => '.is-style-header-stripes::after, .is-style-header-stripes::before {
-            background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");
-            height:1em;
-            margin:0 6px;
-        }'
+        'inline_style' => '.is-style-header-stripes::after,.is-style-header-stripes::before{background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");height:1em;margin:0 6px}'
     ]);
     // Heading: Page Title
     register_block_style( 'core/heading', [
@@ -170,7 +166,8 @@ add_action( 'init', function(){
     // Code: Terminal style
     register_block_style( 'core/code', [
         'name'  => 'code-terminal',
-        'label' => __( 'Terminal', 'm20t1' )
+        'label' => __( 'Terminal', 'm20t1' ),
+        'inline_style' => '@keyframes m20Ter{0%{background-color:#000}100%{background-color:#444}'
     ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [

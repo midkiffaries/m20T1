@@ -213,10 +213,10 @@ pre {
 
 kbd {
 	background-color: #ddd;
-	padding: 0.05rem 0.3rem;
-	border-radius: 0.3rem;
+	padding: 1px 4px;
+	border-radius: 5px;
 	border: 1px solid #aaa;
-	border-bottom-width: 2px;
+	border-bottom-width: 3px;
 	white-space: nowrap;
 }
 
@@ -237,6 +237,12 @@ pre code {
 
 a > code {
 	color: inherit;
+}
+
+p code {
+	background-color: #aaa6;
+	padding: 0 2px;
+	border-radius: 2px;
 }
 
 

@@ -487,13 +487,16 @@ add_action( 'init', function(){
     ]);
 });
 
-// Add additional features to block editor elements
+// Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    // Media & Text block
-	if ( 'core/media-text' === $block_type ) {
+	if ( 'core/media-text' === $block_type ) {  // Media & Text block
 		$args['supports']['filter']['duotone'] = true; // Add duotone filter
-        $args['supports']['shadow'] = true; // Add box shadow
-	}
+        $args['supports']['shadow'] = true; // Add box shadow option
+    }
+    if ( 'core/table' === $block_type || 'core/quote' === $block_type || 'core/code' === $block_type || 'core/embed' === $block_type || 'core/video' === $block_type ) {
+        $args['supports']['shadow'] = true; // Add box shadow option
+    }
+    //if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option
 	return $args;
 }, 10, 2 );
 

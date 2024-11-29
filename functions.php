@@ -45,7 +45,8 @@ add_action( 'init', function(){
     register_block_style( 'core/separator', [
         'name'  => 'hr-double',
         'label' => __( 'Double Line', 'm20t1' ),
-        'is_default' => false
+        //'is_default' => true,
+        //'inline_style' => '.is-style- {}'
     ]);
     // Separator: Gradient Fade
     register_block_style( 'core/separator', [

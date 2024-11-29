@@ -246,6 +246,7 @@ add_action( 'init', function(){
                 width: var(--book-width);
                 height: var(--book-height);
                 border-radius: 6px;
+                background-color: #aaa;
                 box-shadow: 3px 0 3px 0 #0008;
                 transition: all 0.5s ease;
                 object-fit: cover;
@@ -299,6 +300,7 @@ add_action( 'init', function(){
                 width: var(--book-width);
                 height: var(--book-height);
                 border-radius: 6px;
+                background-color: #aaa;
                 box-shadow: 3px 0 3px 0 #0007;
                 transition: all 0.5s ease;
                 object-fit: cover;

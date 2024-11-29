@@ -477,7 +477,7 @@ Global Page Styling
 
 /* Page Footer */
 .page-footer {
-	background-color: var(--wp--preset--color--footer);
+	background-color: var(--wp--custom--footer-color);
 	background-image: var(--wp--custom--footer-background); 
 	background-size: 72px 72px;
 	position: relative;
@@ -485,7 +485,7 @@ Global Page Styling
 
 /* Add saw effect to top of footer */
 .page-footer::before {
-    background: linear-gradient(-45deg, var(--wp--preset--color--footer) 16px, transparent 0), linear-gradient(45deg, var(--wp--preset--color--footer) 16px, transparent 0);
+    background: linear-gradient(-45deg, var(--wp--custom--footer-color) 16px, transparent 0), linear-gradient(45deg, var(--wp--custom--footer-color) 16px, transparent 0);
     background-position: left-bottom;
     background-repeat: repeat-x;
     background-size: 32px 32px;

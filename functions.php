@@ -489,12 +489,15 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-	if ( 'core/media-text' === $block_type ) {  // Media & Text block
+    if ( 'core/media-text' === $block_type ) {
 		$args['supports']['filter']['duotone'] = true; // Add duotone filter
         $args['supports']['shadow'] = true; // Add box shadow option
+        $args['supports']['color'] = ['link' => true]; // Add link color option
     }
-    if ( 'core/table' === $block_type || 'core/quote' === $block_type || 'core/code' === $block_type || 'core/embed' === $block_type || 'core/video' === $block_type ) {
+
+    if ( in_array( $block_type, ['core/list-item', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video'], true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option
+        $args['supports']['color'] = ['link' => true]; // Add link color option
     }
     //if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option
 	return $args;

@@ -522,7 +522,7 @@
 						}
 					},
 					"list-checkmarks": {
-						"css": "& {list-style-type:'\\2713'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\2713'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
 					"list-color": {
 						"css": "& li::marker {color:var(--wp--preset--color--secondary)}"
@@ -613,7 +613,7 @@
 						"css": "-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)"
 					},
 					"button-3d": {
-						"css": "& {box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px} &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"
+						"css": "&{box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px} &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"
 					},
 					"button-arrow": {
 						"css": "&::after{font-family:'icomoon'!important;content:'\\e90e';font-size:1.7rem;vertical-align:-4px;padding-left:1px} &:is(div)::after{content:'>';vertical-align:0;padding-left:9px}"
@@ -656,20 +656,20 @@
 			"core/embed": {
 				"variations": {
 					"embed-youtube": {
-						"css": "& iframe, video, img { border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002 }"
+						"css": "& iframe, video, img {border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002}"
 					},
 					"embed-thumbnail": {
-						"css": "& { min-height:170px; min-width:450px; margin:0 5px 10px 5px } iframe, video { border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 12px 8px #0002 }"
+						"css": "&{min-height:170px; min-width:450px; margin:0 5px 10px 5px} iframe, video{border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 12px 8px #0002}"
 					}
 				}
 			},
 			"core/video": {
 				"variations": {
 					"video-shadow": {
-						"css": "& video, img { box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002; border-radius:8px }"
+						"css": "& video, img {box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002; border-radius:8px}"
 					},
 					"video-glow": {
-						"css": "& video, img { box-shadow:0 0 8px 1px #fff6; border-radius:3px }"
+						"css": "& video, img {box-shadow:0 0 8px 1px #fff6; border-radius:3px}"
 					}
 				}
 			},

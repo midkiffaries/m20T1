@@ -2,7 +2,8 @@
 
 ### 1.8.7 Live (December 28, 2024)
 
-* More alternate block styles.
+* Moved more css from the stylesheets to theme.json.
+* Added more alternate block styles.
 * Bug fixes.
 
 ### 1.8.6 Live (November 25, 2024)

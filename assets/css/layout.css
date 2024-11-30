@@ -657,6 +657,7 @@ Blog Post Styling - index/archives/search
 
 .content-excerpt p {
 	font-size: 1.25rem;
+	line-height: 1.5;
 }
 
 .the-content {
@@ -1067,18 +1068,6 @@ img.wp-smiley, img.emoji {
 .visual-hidden {
 	clip: rect(0,0,0,0);
 	position: absolute;
-}
-
-/* Footnotes */
-.wp-block-footnotes li {
-	font-size: 1em !important;
-	margin-left: 1em !important;
-	line-height: 1.1 !important;
-}
-
-.wp-block-footnotes li::marker {
-	font-size: initial !important;
-	color: initial !important;
 }
 
 /* Drop caps */

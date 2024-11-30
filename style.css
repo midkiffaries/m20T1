@@ -194,23 +194,8 @@ Sticky/Featured article highlight
 WordPress Gutenburg Content Styling
 ************************************/
 
-.the-content p {
-	font-size: var(--wp--preset--font-size--medium);
-	line-height: 1.7;
-}
-
 .content-excerpt p {
-	line-height: 1.6;
-}
-
-.the-content li:not(.wp-social-link) {
-	font-size: var(--wp--preset--font-size--medium);
 	line-height: 1.5;
-}
-
-.the-content li::marker {
-	font-size: 1.5rem;
-	line-height: 1;
 }
 
 /* Images, Figures and Galleries */

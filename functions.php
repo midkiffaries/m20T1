@@ -164,7 +164,12 @@ add_action( 'init', function(){
         'name'  => 'header-text-fill',
         'label' => __( 'Text-Fill', 'm20t1' )
     ]);
-    // Code: Terminal style
+    // Quote: Basic style
+    register_block_style( 'core/quote', [
+        'name'  => 'plain',
+        'label' => __( 'Plain', 'm20t1' )
+    ]);
+    // Code: Terminal style from css-trick.com
     register_block_style( 'core/code', [
         'name'  => 'code-terminal',
         'label' => __( 'Terminal', 'm20t1' ),
@@ -489,15 +494,10 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( 'core/media-text' === $block_type ) {
-		$args['supports']['filter']['duotone'] = true; // Add duotone filter
+    if ( in_array( $block_type, ['core/list-item', 'core/media-text', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video'], true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option
         $args['supports']['color'] = ['link' => true]; // Add link color option
-    }
-
-    if ( in_array( $block_type, ['core/list-item', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video'], true ) ) {
-        $args['supports']['shadow'] = true; // Add box shadow option
-        $args['supports']['color'] = ['link' => true]; // Add link color option
+        $args['supports']['filter']['duotone'] = true; // Add duotone filter
     }
     //if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option
 	return $args;

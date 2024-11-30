@@ -978,11 +978,6 @@ Portfolio Page Styling
 WordPress Generated Components
 *****************************/
 
-:where(.wp-site-blocks *:focus) {
-	outline-width: 2px;
-	outline-style: solid;
-}
-
 .more-link {
 	display: block;
 }
@@ -1101,9 +1096,7 @@ Figures and Galleries
 ************************/
 
 .wp-block-gallery figure > a[href] img,
-.wp-block-image > a[href$=".jpg"] img,
-.wp-block-image > a[href$=".png"] img,
-.wp-block-image > a[href$=".heif"] img {
+.wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".heif"]) img {
 	cursor: zoom-in;
 }
 

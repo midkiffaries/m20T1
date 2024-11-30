@@ -657,10 +657,6 @@ Social Links
 ************************************/
 
 /* Add additional brand icons for social links */
-.the-content .wp-block-social-link a {
-	line-height: 1.8;
-}
-
 .wp-social-link [href^="https://unsplash.com"] svg, 
 .wp-social-link [href^="https://www.thingiverse.com"] svg {
 	display: none;

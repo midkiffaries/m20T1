@@ -537,6 +537,11 @@
 					}
 				}
 			},
+			"core/social-link": {
+				"typography": {
+					"lineHeight": "1.8"
+				}
+			},
 			"core/image": {
 				"css": "display:inline-block",
 				"variations": {

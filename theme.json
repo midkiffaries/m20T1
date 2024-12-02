@@ -369,7 +369,7 @@
 				}
 			},
 			"button": {
-				"css": "transition: all 0.25s ease-in-out",
+				"css": "transition:all 0.25s ease-in-out",
 				"border": {
 					"radius": "0"
 				},

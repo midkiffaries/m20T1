@@ -360,6 +360,7 @@ add_action( 'init', function(){
             font-weight: 600;
             font-size: 0.8rem !important;
             margin-bottom: -1.2rem !important;
+            pointer-events: none;
         }'
     ]);
     // Gallery: Drop Shadow style
@@ -386,6 +387,7 @@ add_action( 'init', function(){
             font-weight: 600;
             font-size: 0.8rem !important;
             margin-bottom: -1.2rem !important;
+            pointer-events: none;
         }'
     ]);
     // Gallery: No border style
@@ -401,6 +403,7 @@ add_action( 'init', function(){
             font-weight: 600;
             font-size: 0.8rem !important;
             margin-bottom: -1.2rem !important;
+            pointer-events: none;
         }'
     ]);
     // Latest Posts: Theme style

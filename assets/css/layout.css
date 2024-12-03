@@ -1001,21 +1001,10 @@ img.wp-smiley, img.emoji {
 	outline-style: solid;
 }
 
-.wp-block-gallery.is-style-default figure.wp-block-image figcaption {
-	padding: 0;
+.wp-block-gallery figure.wp-block-image figcaption {
 	font-weight: 700;
-}
-
-.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before {
-	backdrop-filter: none;
-	-webkit-mask-image: none;
-	mask-image: none;
-}
-
-.wp-block-gallery:not(.is-style-default) figure.wp-block-image figcaption {
-	font-size: initial;
-	text-shadow: none;
-	overflow: visible;
+	height: 2rem;
+	pointer-events: none;
 }
 
 .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {

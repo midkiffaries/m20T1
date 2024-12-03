@@ -4,6 +4,7 @@
 
 * Moved more css from the stylesheets to theme.json.
 * Added more alternate block styles.
+* Fixed the image gallery blocks... again.
 * Bug fixes.
 
 ### 1.8.6 Live (November 25, 2024)

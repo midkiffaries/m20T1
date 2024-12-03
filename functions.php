@@ -342,7 +342,7 @@ add_action( 'init', function(){
         'name'  => 'gallery-1',
         'label' => __( 'Heavy Border', 'm20t1' ),
         'inline_style' => '.is-style-gallery-1 .wp-block-image {
-            margin-bottom: 1.2em !important;
+            margin-bottom: 1em !important;
         }
         .is-style-gallery-1 .wp-block-image img {
             border: 4px solid var(--wp--preset--color--primary-dark);
@@ -354,13 +354,16 @@ add_action( 'init', function(){
         .is-style-gallery-1 .wp-block-image a[href] img:active {
             box-shadow: none;
         }
-        .is-style-gallery-1 figcaption {
-            background: none !important;
+        .is-style-gallery-1 figure.wp-block-image:has(figcaption)::before {
+            height: 0 !important;
+        }
+        .is-style-gallery-1 figure figcaption {
             color: #666 !important;
-            font-weight: 600;
             font-size: 0.8rem !important;
-            margin-bottom: -1.2rem !important;
-            pointer-events: none;
+            font-weight: 500 !important;
+            margin-bottom: -1.5rem !important;
+            background: none !important;
+            text-shadow: none !important;
         }'
     ]);
     // Gallery: Drop Shadow style
@@ -381,13 +384,16 @@ add_action( 'init', function(){
         .is-style-gallery-2 .wp-block-image a[href] img:active {
             box-shadow: 0 3px 6px -2px #0007;
         }
-        .is-style-gallery-2 figcaption {
-            background: none !important;
+        .is-style-gallery-2 figure.wp-block-image:has(figcaption)::before {
+            height: 0 !important;
+        }
+        .is-style-gallery-2 figure figcaption {
             color: #666 !important;
-            font-weight: 600;
             font-size: 0.8rem !important;
-            margin-bottom: -1.2rem !important;
-            pointer-events: none;
+            font-weight: 500 !important;
+            margin-bottom: -1.6rem !important;
+            background: none !important;
+            text-shadow: none !important;
         }'
     ]);
     // Gallery: No border style
@@ -397,13 +403,16 @@ add_action( 'init', function(){
         'inline_style' => '.is-style-gallery-3 .wp-block-image {
             margin-bottom: 1.2em !important;
         }
-        .is-style-gallery-3 figcaption {
-            background: none !important;
+        .is-style-gallery-3 figure.wp-block-image:has(figcaption)::before {
+            height: 0 !important;
+        }
+        .is-style-gallery-3 figure figcaption {
             color: #666 !important;
-            font-weight: 600;
             font-size: 0.8rem !important;
-            margin-bottom: -1.2rem !important;
-            pointer-events: none;
+            font-weight: 500 !important;
+            margin-bottom: -1.5rem !important;
+            background: none !important;
+            text-shadow: none !important;
         }'
     ]);
     // Latest Posts: Theme style

@@ -1133,10 +1133,10 @@ Specific Page Styling
 	margin: 3em auto 2em;
 }
 
-/* Base page content */
+/* Base post container */
 .page-content .post {
-	margin: 0.5em auto 3em;
-	padding-bottom: 2em;
+	margin: 0.5em auto 0.5em;
+	padding-bottom: 0.5em;
 	clear: both;
 }
 
@@ -1546,6 +1546,15 @@ Page Pagination Section
 	float: right;
 	text-align: right;
 	margin: 0 0.8em;
+}
+
+@media (max-width: 849px) {
+	.blog-pagination {
+		height: 100px;
+	}
+	.single-blog-post-nav div {
+		margin: 0;
+	}
 }
 
 

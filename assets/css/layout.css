@@ -1485,9 +1485,15 @@ Comments Section
 
 .comment-submit {
 	padding: 0.5em 2em;
+	margin-bottom: 2em;
 	border-color: transparent;
 	font-size: 1.1em;
 	text-transform: uppercase;
+	background-color: var(--wp--preset--color--primary);
+}
+
+.comment-submit:hover {
+	filter: brightness(1.2);
 }
 
 .required::after {

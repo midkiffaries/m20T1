@@ -554,6 +554,13 @@ Single Blog Post Styling (single)
 	font-size: 1.1rem;
 }
 
+@media (max-width: 849px) {
+	.author-bio-about {
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+}
+
 
 /*********************************** 
 Blog Post Styling - index/archives/search
@@ -1005,6 +1012,15 @@ img.wp-smiley, img.emoji {
 	font-weight: 700;
 	height: 2rem;
 	pointer-events: none;
+}
+
+@media (max-width: 849px) {
+	.wp-block-gallery figure.wp-block-image {
+		margin-bottom: 1.5rem !important;
+	}
+	.wp-block-gallery figure.wp-block-image figcaption {
+		overflow: visible !important;
+	}
 }
 
 .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
@@ -1555,8 +1571,9 @@ Page Pagination Section
 }
 
 @media (max-width: 849px) {
-	.blog-pagination {
-		height: 100px;
+	.blog-pagination nav div {
+		float: none !important;
+		margin-bottom: 10px !important;
 	}
 	.single-blog-post-nav div {
 		margin: 0;

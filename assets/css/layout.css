@@ -1013,14 +1013,12 @@ img.wp-smiley, img.emoji {
 	font-weight: 700;
 	height: 2rem;
 	pointer-events: none;
+	overflow: visible !important;
 }
 
 @media (max-width: 849px) {
 	.wp-block-gallery figure.wp-block-image {
-		margin-bottom: 1.5rem !important;
-	}
-	.wp-block-gallery figure.wp-block-image figcaption {
-		overflow: visible !important;
+		margin-bottom: 1.8rem !important;
 	}
 }
 

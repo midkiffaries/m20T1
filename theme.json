@@ -49,7 +49,7 @@
 			"defaultGradients": true,
 			"palette": [
 				{
-					"color": "#40A5FF",
+					"color": "#40a5ff",
 					"name": "Brand Primary",
 					"slug": "primary"
 				},
@@ -59,7 +59,7 @@
 					"slug": "primaryDark"
 				},
 				{
-					"color": "#66B7FF",
+					"color": "#66b7ff",
 					"name": "Brand Pale",
 					"slug": "primaryPale"
 				},

@@ -213,7 +213,8 @@ add_action( 'init', function(){
     // Details: Border style
     register_block_style( 'core/details', [
         'name'  => 'details-theme',
-        'label' => __( 'Theme', 'm20t1' )
+        'label' => __( 'Theme', 'm20t1' ),
+        'inline_style' => '.dark-mode .is-style-details-theme summary::before{filter:invert()}'
     ]);
     // Image: Fancy style
     register_block_style( 'core/image', [

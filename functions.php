@@ -210,6 +210,11 @@ add_action( 'init', function(){
         'name'  => 'button-border',
         'label' => __( 'Hard Border', 'm20t1' )
     ]);
+    // Details: Border style
+    register_block_style( 'core/details', [
+        'name'  => 'details-theme',
+        'label' => __( 'Theme', 'm20t1' )
+    ]);
     // Image: Fancy style
     register_block_style( 'core/image', [
         'name'  => 'img-fancy',

@@ -681,6 +681,14 @@
 					}
 				}
 			},
+			"core/details": {
+				"css": "& summary:marker, summary::-webkit-details-marker{color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px} & p{margin:0.3rem 1.4rem} ",
+				"variations": {
+					"details-theme": {
+						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>\");margin-right:8px;display:inline-block} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & summary:marker, summary::-webkit-details-marker{display:none}"
+					}
+				}
+			},
 			"core/navigation": {
 				"elements": {
 					"link": {

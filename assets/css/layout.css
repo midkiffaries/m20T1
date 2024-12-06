@@ -464,6 +464,7 @@ Site Footer
 @media (max-width: 800px) {
 	.footer-widgets {
 		text-align: center;
+		justify-content: center;
 	}
 	.footer-copyright,
 	.footer-footnote {

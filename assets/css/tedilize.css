@@ -44,12 +44,6 @@ body {
 	font-optical-sizing: auto;
 }
 
-blockquote {
-	hyphens: auto;
-	margin: 0 0 1rem;
-	text-wrap: pretty;
-}
-
 address {
 	font-style: normal;
 	line-height: inherit;
@@ -112,14 +106,6 @@ li:empty {
 	display: none;
 }
 
-dt {
-	font-weight: bolder;
-}
-
-dd {
-	margin-left: 2rem;
-}
-
 nav ul,
 menu {
 	list-style: none;
@@ -158,29 +144,14 @@ kbd {
 	white-space: nowrap;
 }
 
-pre {
-	display: block;
-	word-break: break-all;
-	line-height: 1.4;
-	overflow-x: auto;
-	white-space: pre-wrap !important;
-}
-
-pre code {
-	font-size: inherit;
-	color: inherit;
-	word-break: normal;
-	display: inline-block;
-}
-
-a > code {
-	color: inherit;
-}
-
 p code {
 	background-color: #aaa6;
 	padding: 0 2px;
 	border-radius: 2px;
+}
+
+a > code {
+	color: inherit;
 }
 
 

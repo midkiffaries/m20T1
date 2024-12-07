@@ -298,7 +298,7 @@
 		}
 	},
 	"styles": {
-		"css": "td,th{line-height:1.15;text-align:inherit}p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:450%}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}p code{background-color:#aaa6;padding:0 2px;border-radius:2px}table{border-collapse:collapse;text-indent:0}.has-text-align-center{text-wrap:balance}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default) figure.wp-block-image figcaption{font-size:initial;text-shadow:none;overflow:visible}blockquote,h1,h2,h3,h4,h5,h6,p{text-wrap:pretty}",
+		"css": "p.has-drop-cap:not(:focus):first-letter{font-weight:700;font-size:450%}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}p code{background-color:#aaa6;padding:0 2px;border-radius:2px}.has-text-align-center{text-wrap:balance}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default) figure.wp-block-image figcaption{font-size:initial;text-shadow:none;overflow:visible}",
 		"color": {
 			"background": "var:preset|color|base",
 			"text": "var:preset|color|contrast"
@@ -727,6 +727,7 @@
 				}
 			},
 			"core/quote": {
+				"css": "text-wrap:pretty",
 				"variations": {
 					"plain": {
 						"border": {
@@ -756,7 +757,7 @@
 				}
 			},
 			"core/pullquote": {
-				"css": "width:100%",
+				"css": "width:100%;text-wrap:pretty",
 				"border": {
 					"style": "solid",
 					"width": "1px 0"

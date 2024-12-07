@@ -42,47 +42,6 @@ Theme Variables
 	100% {background-position: 0% 50%;}
 }
 
-/************************************
-Global Font Declarations
-************************************/
-
-/* .the-content [href$=".pdf"]::before, */
-.icon-document::before {
-	font-family: 'icomoon' !important;
-	content: "\e907"; /* document */
-	padding-right: 2px;
-	font-size: 1rem;
-}
-
-/* .the-content [href^="mailto:"]::before, */
-.icon-mail::before {
-	font-family: 'icomoon' !important;
-	content: "\e903"; /* envelope */
-    padding-right: 1px;
-}
-
-/* .the-content [href^="tel:"]::before, */
-.icon-phone::before {
-    font-family: 'icomoon' !important;
-	content: "\e942"; /* phone */
-    padding-right: 1px;
-    font-size: 0.9rem;
-}
-
-.icon-arrow-right::before {
-    font-family: 'icomoon' !important;
-	content: "\e90e"; /* arrow */
-    font-size: 1.6rem;
-	vertical-align: -4px;
-}
-
-.icon-arrow-left::before {
-    font-family: 'icomoon' !important;
-	content: "\e90d"; /* arrow */
-    font-size: 1.6rem;
-	vertical-align: -4px;
-}
-
 
 /*****************************************
 Typography for the page title and subtitle

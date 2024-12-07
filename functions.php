@@ -41,12 +41,16 @@ define( 'ADDITIONAL_POST_TYPE', [
 // Register custom block styles for the Editor that correlate to block variations in theme.json
 // https://developer.wordpress.org/news/2024/06/21/styling-sections-nested-elements-and-more-with-block-style-variations-in-wordpress-6-6/
 add_action( 'init', function(){
+    // Deactive block styles
+    //unregister_block_style( 'core/image', 'rounded' );
+
     // Separator: Double Lines
     register_block_style( 'core/separator', [
         'name'  => 'hr-double',
         'label' => __( 'Double Line', 'm20t1' ),
         //'is_default' => true,
-        //'inline_style' => '.is-style- {}'
+        //'inline_style' => '.is-style-name {}',
+        //'style_handle' => 'name'
     ]);
     // Separator: Gradient Fade
     register_block_style( 'core/separator', [

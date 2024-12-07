@@ -44,10 +44,6 @@ body {
 	font-optical-sizing: auto;
 }
 
-hr {
-	clear: both;
-}
-
 blockquote {
 	hyphens: auto;
 	margin: 0 0 1rem;
@@ -57,13 +53,6 @@ blockquote {
 address {
 	font-style: normal;
 	line-height: inherit;
-}
-
-p, 
-li {
-	text-wrap: pretty;
-	orphans: 3;
-	widows: 3;
 }
 
 /* Clearfix */
@@ -116,59 +105,8 @@ abbr[title] {
 
 
 /*********************
-Headings
-*********************/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1;
-	margin: 1.2rem auto 0.5rem;
-	text-wrap: pretty;
-}
-
-/*********************
-Tables
-*********************/
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	text-indent: 0;
-	max-width: 100%;
-}
-
-thead {
-	display: table-header-group;
-}
-
-td,
-th {
-	padding: 0.15em 0.5em;
-	line-height: 1.15;
-	text-align: inherit;
-	text-align: -webkit-match-parent;
-	text-overflow: ellipsis;
-	vertical-align: text-top;
-	font-variant-numeric: tabular-nums;
-}
-
-caption {
-	padding: 0.5rem;
-}
-
-
-/*********************
 List elements
 *********************/
-
-ul,
-ol {
-	padding-left: 2rem;
-}
 
 li:empty {
 	display: none;
@@ -266,18 +204,6 @@ a img {
 	object-fit: contain;
 }
 
-figure {
-	margin: 0 0 0.1rem;
-	display: inline-block;
-}
-
-figcaption {
-	text-align: center;
-	text-wrap: pretty;
-	padding: 0.6em 0.2em;
-	line-height: 1.2;
-}
-
 svg:not(:root) {
 	height: auto;
 	max-width: 100%;
@@ -314,17 +240,6 @@ a::after {
 a:not([href]) {
 	pointer-events: none;
 	text-decoration: none;
-}
-
-/* Details/Summary Element */
-
-details summary { 
-	display: list-item;
-	cursor: pointer;
-}
-
-details summary > * {
-	display: inline;
 }
 
 /* Dialog Element */

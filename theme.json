@@ -428,6 +428,7 @@
 		},
 		"blocks": {
 			"core/paragraph": {
+				"css": "text-wrap:pretty;orphans:3;widows:3",
 				"typography": {
 					"fontSize": "var:preset|font-size|medium",
 					"lineHeight": "1.7"
@@ -475,6 +476,10 @@
 				}
 			},
 			"core/heading": {
+				"css": "margin:1.2rem auto 0.5rem;text-wrap:pretty",
+				"typography": {
+					"lineHeight": "1"
+				},
 				"variations": {
 					"header-shadow-soft": {
 						"css": "text-shadow:1px 1px 4px #0004"
@@ -506,6 +511,7 @@
 				}
 			},
 			"core/table": {
+				"css": "border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%; & thead {display:table-header-group} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
 				"variations": {
 					"table-theme": {
 						"css": "& thead,tfoot {background-color:var(--wp--preset--color--primary)} & td {background-color:#fff1} & tbody tr:nth-child(even) {background-color:#ccc5}"
@@ -513,7 +519,7 @@
 				}
 			},
 			"core/list": {
-				"css": "& li::marker{font-size:1.5rem;line-height:1}",
+				"css": "padding-left:2rem; & li::marker{font-size:1.5rem;line-height:1} & li{text-wrap:pretty;orphans:3;widows:3}",
 				"variations": {
 					"list-plain": {
 						"css": "list-style:none",
@@ -543,7 +549,7 @@
 				}
 			},
 			"core/image": {
-				"css": "display:inline-block",
+				"css": "display:inline-block;margin:0 0 0.1rem; & figcaption{text-align:center;text-wrap:pretty;padding:0.6em 0.2em;line-height:1.2}",
 				"variations": {
 					"img-fancy": {
 						"css": "& img {box-shadow:7px 7px 0 0 #888f,-8px -8px 0 0 var(--wp--preset--color--primary); border:1px solid #fff; border-radius:1px; & a[href] img:hover {box-shadow:12px 12px 0 0 #888c,-12px -12px 0 0 var(--wp--preset--color--primary) !important}}",
@@ -568,6 +574,7 @@
 				}
 			},
 			"core/separator": {
+				"css": "clear:both",
 				"variations": {
 					"hr-double": {
 						"css": "width:100% !important; border:0; border-top:5px double var(--wp--preset--color--primary-dark)"
@@ -682,12 +689,15 @@
 				}
 			},
 			"core/details": {
-				"css": "& summary:marker, summary::-webkit-details-marker{color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px} & p{margin:0.3rem 1.4rem} ",
+				"css": "& summary:marker, summary::-webkit-details-marker{color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & p{margin:0.3rem 1.4rem} ",
 				"variations": {
 					"details-theme": {
 						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z' fill='black'/></svg>\");margin-right:8px;display:inline-block;transition:transform 0.4s ease-in-out} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & summary:marker, summary::-webkit-details-marker{display:none}"
 					}
 				}
+			},
+			"core/verse": {
+				"css": "& {font-family:var(--wp--preset--font-family--system-serif)}"
 			},
 			"core/navigation": {
 				"elements": {

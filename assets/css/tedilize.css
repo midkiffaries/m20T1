@@ -144,12 +144,6 @@ kbd {
 	white-space: nowrap;
 }
 
-p code {
-	background-color: #aaa6;
-	padding: 0 2px;
-	border-radius: 2px;
-}
-
 a > code {
 	color: inherit;
 }

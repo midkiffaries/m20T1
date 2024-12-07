@@ -1107,18 +1107,6 @@ img.wp-smiley, img.emoji {
 	position: absolute;
 }
 
-/* Drop caps */
-.has-drop-cap:not(:focus):first-letter {
-	font-weight: 700;
-	font-size: 450%;
-}
-
-/* Seperator */
-hr.wp-block-separator.is-style-default {
-	width: 7rem;
-	margin: auto;
-}
-
 /* Sidebar Widgets */
 .widget_recent_entries a {
 	font-weight: bold;

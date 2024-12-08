@@ -695,19 +695,25 @@ Blog Post Styling - index/archives/search
 	width: 0.9rem;
 }
 
+.entry-date,
+.entry-metadata {
+	font-weight: 500;
+}
+
 .entry-last-updated {
 	opacity: 0.8;
 	font-size: 0.9rem !important;
 	font-style: italic;
 }
 
-.content-excerpt p {
-	font-size: 1.25rem;
-	line-height: 1.5;
+.content-excerpt {
+	margin: -10px 0 30px 0;
+	min-height: 10em;
 }
 
-.the-content {
-	min-height: 10em;
+.content-excerpt p {
+	font-size: 1.2rem;
+	line-height: 1.5;
 }
 
 /* Entry Tags */
@@ -1128,11 +1134,6 @@ Figures and Galleries
 .wp-block-gallery figure > a[href] img,
 .wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".heif"]) img {
 	cursor: zoom-in;
-}
-
-.wp-block-image figcaption {
-	padding: 0;
-	font-size: 0.9rem;
 }
 
 .wp-block-embed iframe {

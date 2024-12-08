@@ -156,6 +156,13 @@ iframe {
 	margin: 0;
 }
 
+figcaption {
+	padding: 0;
+	font-size: 0.9rem;
+	text-align: center;
+	text-wrap: pretty;
+}
+
 a img {
 	object-fit: contain;
 }

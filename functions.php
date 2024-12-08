@@ -46,6 +46,7 @@ add_action( 'init', function(){
         'name'  => 'hr-double',
         'label' => __( 'Double Line', 'm20t1' ),
         //'is_default' => true,
+        //'style_handle' => 'hr-double',
         //'inline_style' => '.is-style-name {}'
     ]);
     // Separator: Gradient Fade

@@ -1163,6 +1163,7 @@ function clean_html( $html ) {
 //////////////////////////////////
 
 // Add additional metadata to the attachment details
+// https://www.kevinleary.net/blog/add-custom-meta-fields-media-attachments-wordpress/
 add_filter("attachment_fields_to_edit", function( $form_fields, $post ) {
     $form_fields["credit_text"] = [ // Add image credit field
         "label" => __("Credits"),

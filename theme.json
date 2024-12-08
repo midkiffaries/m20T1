@@ -511,7 +511,7 @@
 				}
 			},
 			"core/table": {
-				"css": "border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%; & thead {display:table-header-group} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
+				"css": "border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%;font-size:1rem; & thead {display:table-header-group} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
 				"variations": {
 					"table-theme": {
 						"css": "& thead,tfoot {background-color:var(--wp--preset--color--primary)} & td {background-color:#fff1} & tbody tr:nth-child(even) {background-color:#ccc5}"
@@ -539,7 +539,7 @@
 						"css": "list-style:square"
 					},
 					"list-ornate": {
-						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ol li::before{background-color:#222}& div{display:inline}"
+						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ol li::before{background-color:#222}& div{display:inline}"
 					}
 				}
 			},
@@ -638,7 +638,7 @@
 						"css": "&{box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px} &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"
 					},
 					"button-arrow": {
-						"css": "&::after{font-family:'icomoon'!important;content:'\\e90e';font-size:1.7rem;vertical-align:-4px;padding-left:1px} &:is(div)::after{content:'>';vertical-align:0;padding-left:9px}"
+						"css": "&::after{font-family:'icomoon' !important;content:'\\e90e';font-size:1.7rem;vertical-align:-4px;padding-left:1px} &:is(div)::after{content:'>';vertical-align:0;padding-left:9px}"
 					},
 					"button-border": {
 						"css": "& {border:4px solid #000;box-shadow:0 4px 0 0 #000;border-radius:1.2rem;transition:transform .6s cubic-bezier(.15,1.55,.74,.07)}"
@@ -696,7 +696,7 @@
 				}
 			},
 			"core/details": {
-				"css": "& summary:marker, summary::-webkit-details-marker{color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & p{margin:0.3rem 1.4rem} ",
+				"css": "& summary:marker, summary::-webkit-details-marker{color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & p{margin:0.3rem 1.4rem}",
 				"variations": {
 					"details-theme": {
 						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z' fill='black'/></svg>\");margin-right:8px;display:inline-block;transition:transform 0.4s ease-in-out} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & summary:marker, summary::-webkit-details-marker{display:none}"

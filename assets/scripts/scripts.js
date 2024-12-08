@@ -400,10 +400,10 @@ document.addEventListener("scroll", function() {
 		opacity: 1;
 	}
     @media (max-width: 812px) {
-		.scroll-to-top-float {display: none}
+		.scroll-to-top-float {display:none}
     }
 	@media only print {
-		.scroll-to-top-float {display: none}
+		.scroll-to-top-float {display:none}
 	}
 	`);
 	document.body.appendChild(st);
@@ -411,10 +411,7 @@ document.addEventListener("scroll", function() {
 
 // Smooth scrolling back to the top of the page
 function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 /**************************
@@ -452,9 +449,9 @@ function scrollToTop() {
 				// Dialog body
 				innerDiv.setAttribute('class', 'lightbox-content');
 				innerDiv.innerHTML = (`
-				<div class="lightbox-body-image"><img src="${this.href}" alt="${imgName}" itemprop="image" decoding="async" loading="auto" fetchpriority="high"></div>
-				<h2 class="lightbox-body-header" itemprop="name">${imgName}</h2>
-				<p class="lightbox-body-info" itemprop="description">${imgAlt}</p>
+				<div class="lightbox-body-image" role="figure"><img src="${this.href}" alt="${imgName}" itemprop="image" decoding="async" loading="auto" fetchpriority="high"></div>
+				<p class="lightbox-body-header" itemprop="name" role="name">${imgName}</p>
+				<p class="lightbox-body-info" itemprop="description" role="caption">${imgAlt}</p>
 				<p class="lightbox-body-download"><a href="${this.href}">Download this image</a></p>
 				`);
 				
@@ -482,10 +479,10 @@ function scrollToTop() {
 					margin: 0 auto;
 				}
 				.lightbox-content {
-					max-width: 55vw;
+					max-width: 54vw;
 					min-height: 16em;
 					max-height: calc(85vh - 15vh);
-					margin: 1vh auto 0 auto;
+					margin: -20px auto 0 auto;
 					padding: 0;
                     text-align: center;
 					background-color: transparent;
@@ -504,11 +501,12 @@ function scrollToTop() {
                 .lightbox-body-header {
                     text-transform: uppercase;
                     letter-spacing: .08em;
+                    font-weight: 600;
                 }
-                .lightbox-body-header,
-                .lightbox-content p  {
+                .lightbox-content p {
                     color: #fff;
-                    margin: 12px 0;
+                    margin: 0;
+                    font-size: 1rem;
                 }
                 .lightbox-body-download {
                     padding-bottom: 35px;

@@ -1033,7 +1033,7 @@ add_action( 'wp_nav_menu_item_custom_fields', function( $item_id, $item ) {
     </p>
     <script>(parseInt(<?=$menu_img;?>)) ? document.getElementById('menu_img_yes-<?=$item_id;?>').checked = true : document.getElementById('menu_img_no-<?=$item_id;?>').checked = true;</script>
     <p class="description" style="margin-bottom:10px">
-        <label for="menu_img_url-<?=$item_id;?>"><?php _e( "Alt Image URL", 'menu_img_url' ); ?></label>
+        <label for="menu_img_url-<?=$item_id;?>"><?php _e( "Thumbnail Image URL", 'menu_img_url' ); ?></label>
         <input type="url" id="menu_img_url-<?=$item_id;?>" name="menu_img_url[<?=$item_id;?>]" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" maxlength="128" inputmode="url" value="" style="width:100%">
     </p>
     <script>document.getElementById('menu_img_url-<?=$item_id;?>').value = '<?=$menu_img_url;?>';</script>

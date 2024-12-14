@@ -374,27 +374,6 @@ legend + * {
 	appearance: none;
 }
 
-/* Input Search */
-
-[type='search'] {
-	appearance: textfield;
-}
-
-::-webkit-search-decoration {
-	appearance: none;
-}
-
-/* Input File Upload */
-
-::file-selector-button {
-	font: inherit;
-}
-
-::-webkit-file-upload-button {
-	appearance: button;
-	font: inherit;
-}
-
 /* Input Range */
 
 [type='range'] {

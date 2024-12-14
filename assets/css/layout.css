@@ -1277,7 +1277,13 @@ Specific Page Styling
 /* Search input field */
 .search-input {
 	width: calc(100% - 5em);
+	appearance: textfield;
 }
+
+::-webkit-search-decoration {
+	appearance: none;
+}
+
 
 /* Search sort field */
 .search-sorting {

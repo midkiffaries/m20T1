@@ -820,6 +820,9 @@
 			},
 			"core/social-links": {
 				"css": ""
+			},
+			"core/navigation-link": {
+				"css": ""
 			}
 		}
 	},

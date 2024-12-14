@@ -216,39 +216,16 @@ Custom Gutenburg Styling
 Sidebar and Widgets Styling
 ***********************************/
 
-.widget_block h4 {
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	font-weight: 700;
-}
-
-.singlepost-widgets {
+.singlepost-widgets,
+.blogroll-widgets, 
+.frontpage-widgets, 
+.archive-widgets,
+.attachment-widgets {
 	font-size: inherit;
 }
 
 .singlepost-widgets section {
 	margin-top: 3em;
-}
-
-.blogroll-widgets {
-	font-size: inherit;
-}
-
-.frontpage-widgets {
-	font-size: inherit;
-}
-
-.archive-widgets {
-	font-size: inherit;
-}
-
-.attachment-widgets {
-	font-size: inherit;
-}
-
-.page-sidebar .widget_recent_entries ul li {
-	margin-bottom: 10px;
-	line-height: 1.15;
 }
 
 /* Sidebar links */
@@ -267,10 +244,6 @@ Sidebar and Widgets Styling
 	color: var(--wp--preset--color--primary-dark);
 }
 
-/* Hide extra label for side bar widgets */
-.widget_archive label {
-	display: none;
-}
 
 /************************************
 Form Element Styling

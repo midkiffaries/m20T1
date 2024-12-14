@@ -808,7 +808,7 @@
 				"css": ""
 			},
 			"core/latest-posts": {
-				"css": ""
+				"css": "& li {margin-bottom:10px;line-height:1.15}"
 			},
 			"core/social-links": {
 				"css": ""

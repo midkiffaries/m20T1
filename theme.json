@@ -797,6 +797,24 @@
 						}
 					}
 				}
+			},
+			"core/tag-cloud": {
+				"css": ""
+			},
+			"core/categories": {
+				"css": ""
+			},
+			"core/archives": {
+				"css": ""
+			},
+			"core/latest-posts": {
+				"css": ""
+			},
+			"core/social-links": {
+				"css": ""
+			},
+			"core/legacy-widget": {
+				"css": ""
 			}
 		}
 	},

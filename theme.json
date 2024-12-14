@@ -799,16 +799,24 @@
 				}
 			},
 			"core/tag-cloud": {
-				"css": ""
+				"css": "&{line-height:1.1 !important}"
 			},
 			"core/categories": {
-				"css": ""
+				"css": "",
+				"spacing": {
+					"padding": {
+						"left": "1.5rem"
+					}
+				}
 			},
 			"core/archives": {
-				"css": ""
+				"css": "",
+				"typography": {
+					"fontSize": "1rem"
+				}
 			},
 			"core/latest-posts": {
-				"css": "& li {margin-bottom:10px;line-height:1.15}"
+				"css": "& li{margin-bottom:10px;line-height:1.15}"
 			},
 			"core/social-links": {
 				"css": ""

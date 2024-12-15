@@ -74,6 +74,16 @@ add_action( 'init', function(){
         'name'  => 'table-theme',
         'label' => __( 'Theme', 'm20t1' )
     ]);
+    // List: Squares
+    register_block_style( 'core/list', [
+        'name'  => 'list-square',
+        'label' => __( 'Squares', 'm20t1' )
+    ]);
+    // List: Circles
+    register_block_style( 'core/list', [
+        'name'  => 'list-circle',
+        'label' => __( 'Circles', 'm20t1' )
+    ]);
     // List: Color Bullets
     register_block_style( 'core/list', [
         'name'  => 'list-color',
@@ -84,15 +94,20 @@ add_action( 'init', function(){
         'name'  => 'list-checkmarks',
         'label' => __( 'Checkmarks', 'm20t1' )
     ]);
-    // List: Squares
+    // List: Arrows
     register_block_style( 'core/list', [
-        'name'  => 'list-squares',
-        'label' => __( 'Squares', 'm20t1' )
+        'name'  => 'list-arrows',
+        'label' => __( 'Arrows', 'm20t1' )
+    ]);
+    // List: Dashes
+    register_block_style( 'core/list', [
+        'name'  => 'list-dash',
+        'label' => __( 'Dashes', 'm20t1' )
     ]);
     // List: Ornate number
     register_block_style( 'core/list', [
         'name'  => 'list-ornate',
-        'label' => __( 'Ornate Num', 'm20t1' )
+        'label' => __( 'Ornate Number', 'm20t1' )
     ]);
     // List: No bullets/numbers
     register_block_style( 'core/list', [

@@ -296,8 +296,6 @@
 			]
 		}
 	},
-	"slug": "m20t1",
-	"blockTypes": [],
 	"styles": {
 		"css": "code,kbd,samp,pre{font-family:var(--wp--preset--font-family--system-mono);unicode-bidi:bidi-override;white-space:pre-wrap;font-size:inherit}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}.has-text-align-center{text-wrap:balance}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default)",
 		"color": {
@@ -540,11 +538,20 @@
 					"list-checkmarks": {
 						"css": "&{list-style-type:'\\2713'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
-					"list-color": {
-						"css": "& li::marker {color:var(--wp--preset--color--secondary)}"
+					"list-arrows": {
+						"css": "&{list-style-type:'→'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
-					"list-squares": {
-						"css": "list-style:square"
+					"list-dash": {
+						"css": "&{list-style-type:'\\2013'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+					},
+					"list-color": {
+						"css": "& li::marker{color:var(--wp--preset--color--secondary)}"
+					},
+					"list-square": {
+						"css": "list-style-type:square"
+					},
+					"list-circle": {
+						"css": "&{list-style-type:circle} & ul li{list-style-type:disc}"
 					},
 					"list-ornate": {
 						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ol li::before{background-color:#222}& div{display:inline}"

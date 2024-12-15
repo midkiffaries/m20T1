@@ -53,6 +53,7 @@ Typography for the page title and subtitle
 .blog-page-title h1,
 .porfolio-page-title h1,
 .single-entry-title {
+	/*
 	font-weight: 700;
 	font-size: 3.6rem;
 	letter-spacing: -0.1rem;
@@ -62,16 +63,17 @@ Typography for the page title and subtitle
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	filter: drop-shadow(1px 1px 0 #444) drop-shadow(1px 1px 0px #777);
+	*/
 	padding-bottom: 4px;
 }
-
+/*
 .page-title a:hover,
 .is-style-header-title a:hover {
 	background-color: var(--wp--preset--color--secondary);
 	-webkit-background-clip: text;
 	background-clip: text;
 }
-
+*/
 /* Blog post title */
 .single-entry-title {
 	font-size: 3.4rem;

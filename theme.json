@@ -306,9 +306,16 @@
 		},
 		"elements": {
 			"h1": {
+				"css": "background-color:var(--wp--preset--color--secondary);background-image:linear-gradient(0deg,#e65100 0%,#f4971c 54%,#ffe700 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(1px 1px 0 #444) drop-shadow(1px 1px 0px #777)",
 				"typography": {
-					"fontSize": "2.625rem",
-					"fontWeight": "700"
+					"fontSize": "3.6rem",
+					"fontWeight": "700",
+					"letterSpacing": "-0.1rem"
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "4px"
+					}
 				}
 			},
 			"h2": {

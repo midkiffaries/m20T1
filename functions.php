@@ -538,7 +538,7 @@ add_filter( 'register_block_type_args', function( $args, $block_type ) {
         $args['supports']['color'] = ['link' => true]; // Add link color option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
     }
-    if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option
+    //if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option
 	return $args;
 }, 10, 2 );
 

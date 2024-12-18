@@ -64,6 +64,11 @@ add_action( 'init', function(){
         'name'  => 'hr-stripes',
         'label' => __( 'Stripes', 'm20t1' )
     ]);
+    // Separator: Line/Pencil
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-pencil',
+        'label' => __( 'Pencil Line', 'm20t1' )
+    ]);
     // Separator: Jagged
     register_block_style( 'core/separator', [
         'name'  => 'hr-jagged',

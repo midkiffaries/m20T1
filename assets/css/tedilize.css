@@ -146,8 +146,7 @@ Images and figures
 
 img,
 video,
-audio,
-iframe {
+audio {
 	height: auto;
 	max-width: 100%;
 	vertical-align: middle;
@@ -203,6 +202,11 @@ a::after {
 a:not([href]) {
 	pointer-events: none;
 	text-decoration: none;
+}
+
+iframe {
+	border: none;
+	max-width: 100%;
 }
 
 /* Dialog Element */

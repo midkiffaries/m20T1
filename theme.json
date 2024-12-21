@@ -297,7 +297,7 @@
 		}
 	},
 	"styles": {
-		"css": "code,kbd,samp,pre{font-family:var(--wp--preset--font-family--system-mono);unicode-bidi:bidi-override;white-space:pre-wrap;font-size:inherit}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}.has-text-align-center{text-wrap:balance}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default)",
+		"css": "code,kbd,samp,pre{font-family:var(--wp--preset--font-family--system-mono);unicode-bidi:bidi-override;white-space:pre-wrap;font-size:inherit}iframe{border:0}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}.has-text-align-center{text-wrap:balance}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default)",
 		"color": {
 			"background": "var:preset|color|base",
 			"text": "var:preset|color|contrast"
@@ -700,16 +700,18 @@
 				}
 			},
 			"core/embed": {
+				"css": "",
 				"variations": {
 					"embed-youtube": {
-						"css": "& iframe, video, img {border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002}"
+						"css": "& iframe, video, img {border:3px solid #f00 !important; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002}"
 					},
 					"embed-thumbnail": {
-						"css": "&{min-height:170px; min-width:450px; margin:0 5px 10px 5px} iframe, video{border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 12px 8px #0002}"
+						"css": "&{min-width:450px; margin:0 5px 10px 5px} iframe, video{border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 12px 8px #0002}"
 					}
 				}
 			},
 			"core/video": {
+				"css": "",
 				"variations": {
 					"video-shadow": {
 						"css": "& video, img {box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002; border-radius:8px}"

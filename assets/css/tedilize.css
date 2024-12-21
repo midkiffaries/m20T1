@@ -207,6 +207,7 @@ a:not([href]) {
 iframe {
 	border: none;
 	max-width: 100%;
+	height: auto;
 }
 
 /* Dialog Element */

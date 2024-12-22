@@ -538,7 +538,7 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/list-item', 'core/media-text', 'core/details', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse'], true ) ) {
+    if ( in_array( $block_type, ['core/list-item', 'core/media-text', 'core/details', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option
         $args['supports']['color'] = ['link' => true]; // Add link color option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter

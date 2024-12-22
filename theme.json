@@ -650,6 +650,9 @@
 					}
 				}
 			},
+			"core/search": {
+				"css": ""
+			},
 			"core/file": {
 				"css": "& .wp-element-button{border:3px solid #000;border-radius:1.2rem;padding:7px 11px;font-weight:600}"
 			},

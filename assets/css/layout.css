@@ -566,6 +566,7 @@ Single Blog Post Styling (single)
 /* Post author info */
 .single-author-bio {
 	padding: 1rem 1.2rem;
+	margin-top: 3em;
 }
 
 .author-bio-container {
@@ -1114,11 +1115,20 @@ img.wp-smiley, img.emoji {
 }
 
 /* Sidebar Widgets */
+.singlepost-widgets,
+.blogroll-widgets, 
+.frontpage-widgets, 
+.archive-widgets,
+.attachment-widgets {
+	font-size: inherit;
+}
+
+/*
 .widget_recent_entries a {
 	font-weight: bold;
 	font-size: 1.1rem;
 }
-
+*/
 /* Current selected nav item */
 .current_page_item a,
 body:not(.post-type-archive-portfolio):not(.search-results):not(.error404) .current_page_parent a,

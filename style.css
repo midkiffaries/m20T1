@@ -218,23 +218,9 @@ Custom Gutenburg Styling
 Sidebar and Widgets Styling
 ***********************************/
 
-.singlepost-widgets,
-.blogroll-widgets, 
-.frontpage-widgets, 
-.archive-widgets,
-.attachment-widgets {
-	font-size: inherit;
-}
-
-.singlepost-widgets section {
-	margin-top: 3em;
-}
-
-/* Sidebar links */
 .page-sidebar a[href] {
 	text-decoration: none;
 	transition: color 0.25s;
-	line-height: 1.2;
 }
 
 .page-sidebar a[href]:hover {

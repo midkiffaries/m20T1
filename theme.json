@@ -838,7 +838,7 @@
 				}
 			},
 			"core/latest-posts": {
-				"css": "& li{margin-bottom:10px;line-height:1.15}"
+				"css": "& li{margin-bottom:10px;line-height:1.15} & a[href]{font-weight:600}"
 			},
 			"core/social-links": {
 				"css": ""

@@ -73,10 +73,12 @@ Typography for the page title and subtitle
 }
 */
 /* Blog post title */
+/*
 .single-entry-title {
 	font-size: 3.4rem;
 }
-
+*/
+/*
 @media (max-width: 849px) {
 	.page-title,
 	.is-style-header-title,
@@ -88,7 +90,7 @@ Typography for the page title and subtitle
 		text-wrap: balance;
 	}
 }
-
+*/
 /* Subtitle Workarounds */
 .blog-page-title .is-style-text-subtitle,
 .porfolio-page-title .is-style-text-subtitle {

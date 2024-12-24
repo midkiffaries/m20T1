@@ -232,6 +232,7 @@
 			"textDecoration": true,
 			"textTransform": true,
 			"writingMode": true,
+			"defaultFontSizes": false,
 			"fontFamilies": [
 				{
 					"fontFamily": "var(--wp--custom--secondary-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
@@ -288,10 +289,22 @@
 					"slug": "large"
 				},
 				{
-					"fluid": false,
-					"size": "2rem",
+					"fluid": {
+						"min": "2rem",
+						"max": "2.6rem"
+					},
+					"size": "2.3rem",
 					"name": "Extra Large",
 					"slug": "x-large"
+				},
+				{
+					"fluid": {
+						"min": "2.5rem",
+						"max": "3.6rem"
+					},
+					"size": "3.6rem",
+					"name": "X-Extra Large",
+					"slug": "xx-large"
 				}
 			]
 		}
@@ -306,7 +319,7 @@
 			"h1": {
 				"css": "background-color:var(--wp--preset--color--secondary);background-image:linear-gradient(0deg,#e65100 0%,#f4971c 54%,#ffe700 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(1px 1px 0 #444) drop-shadow(1px 1px 0px #777)",
 				"typography": {
-					"fontSize": "3.6rem",
+					"fontSize": "var:preset|font-size|xx-large",
 					"fontWeight": "700",
 					"letterSpacing": "-0.1rem"
 				},

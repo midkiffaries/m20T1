@@ -26,11 +26,11 @@
                     <br>
                     <span class="image-category">Category: <b><?php the_category(' '); ?></b></span>
                     <br>
+                    <span class="image-links">Related Post: <a href="<?=get_permalink( get_post_parent(get_the_ID()) );?>"><?=has_post_parent(get_the_ID()) ? get_the_title( get_post_parent(get_the_ID()) ) : "Not attached to any posts";?></a></span>
+                    <br>
                     <span class="image-filesize" itemprop="size"><?=image_metadata(wp_get_attachment_url(get_the_ID()));?></span>
                 </p>
-
                 <div class="image-share"><?=blog_post_share(); ?></div>
-                <div class="image-links"><i>Related Post</i><br> <a href="<?=get_permalink( get_post_parent(get_the_ID()) );?>"><?=has_post_parent(get_the_ID()) ? get_the_title( get_post_parent(get_the_ID()) ) : "Not attached to any posts";?></a></div>
             </div>
         </article>
 

@@ -1380,8 +1380,8 @@ Specific Page Styling
 
 .page-image .image-caption {
 	margin-top: 0.4em;
-	font-size: 0.8em;
-	opacity: 0.8;
+	font-size: 0.9rem;
+	color: #666;
 }
 
 .page-image .image-description {
@@ -1389,10 +1389,11 @@ Specific Page Styling
 	min-height: auto !important;
 }
 
-.page-image .image-copyright {
+.page-image .image-copyright p {
 	text-align: center;
-	opacity: 0.9;
+	color: #666;
 	font-style: italic;
+	font-size: 0.9rem;
 }
 
 .page-image .image-share ul {

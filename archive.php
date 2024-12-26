@@ -2,6 +2,10 @@
 <?php get_header(); ?>
 <?php $curauth = $wp_query->get_queried_object(); // Get Author Info ?>
 
+<?php // Word-around for the lack of inline-css ?>
+<?php $pageKind = esc_attr("about"); ?>
+<?php GetPageTitle(get_page_by_path($pageKind)); ?>
+
 <main class="page-main page-archive width-side" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     
     <div class="page-content">

@@ -2467,19 +2467,11 @@ Custom Theme CSS
 	100% {background-position: 0% 50%;}
 }
 
-/* Subtitle adjustments */
+/* Subtitle adjustments for certain pages */
+.archive-header .is-style-text-subtitle,
 .blog-page-title .is-style-text-subtitle,
 .porfolio-page-title .is-style-text-subtitle {
 	margin-top: -0.3em !important;
-}
-
-.archive-header .is-style-text-subtitle {
-	font-family: var(--wp--preset--font-family--secondary-font);
-	color: #444;
-	font-size: 1.5rem;
-	margin: -0.3em 0.1em 0.6em;
-	line-height: 1;
-	letter-spacing: -1px;
 }
 
 /* Portfolio pages */

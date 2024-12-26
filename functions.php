@@ -606,15 +606,14 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
 
     // Add stylesheets to the HEAD metadata
-    //wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", [], '2.1', 'all' );
-    //wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", [], THEME_VERSION, 'all' );
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
 
     // Remove post comments reply
     wp_dequeue_script( 'comment-reply' );
 
     // Remove WordPress block library CSS
-    wp_dequeue_style( 'wc-block-style' ); // WooCommerce block
+    wp_dequeue_style( 'wc-block-style' ); // WooCommerce
+    wp_dequeue_style( 'storefront-gutenberg-blocks' ); // Storefront
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_deregister_style( 'wp-block-library-theme' );
     //wp_dequeue_style( 'wp-block-library' );

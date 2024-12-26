@@ -606,8 +606,8 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
 
     // Add stylesheets to the HEAD metadata
-    wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", [], '2.1', 'all' );
-    wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", [], THEME_VERSION, 'all' );
+    //wp_enqueue_style( 'tedilize-style', get_template_directory_uri() . "/assets/css/tedilize.css", [], '2.1', 'all' );
+    //wp_enqueue_style( 'layout-style', get_template_directory_uri() . "/assets/css/layout.css", [], THEME_VERSION, 'all' );
     wp_enqueue_style( 'base-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
 
     // Remove post comments reply

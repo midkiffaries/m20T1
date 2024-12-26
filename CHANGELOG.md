@@ -3,6 +3,7 @@
 ### 1.8.7 Live (December 28, 2024) 🎄 Happy Holidays!
 
 * Moved more css from the stylesheets to theme.json.
+* Combined the three stylesheets into style.css.
 * Added more alternate block styles.
 * Fixed the image gallery blocks... again.
 * Bug fixes and styling adjustments.

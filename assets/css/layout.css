@@ -566,7 +566,7 @@ Single Blog Post Styling (single)
 /* Post author info */
 .single-author-bio {
 	padding: 1rem 1.2rem;
-	margin-top: 3em;
+	margin: 3em auto 4rem;
 }
 
 .author-bio-container {

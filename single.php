@@ -66,7 +66,7 @@
                     <h2 class="wp-block-heading has-primary-dark-color has-text-color">Posts in <a href="<?=esc_url(home_url() . "/category/" . $category->slug);?>"><?=$category->name;?></a></h2>
                 </div>
                 <div id="block-22B" class="widget widget_block widget_recent_entries">
-                    <?=do_blocks('<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":true,"excerptLength":35,"displayPostDate":true,"postLayout":"grid","displayFeaturedImage":true,"featuredImageSizeSlug":"thumbnail","featuredImageSizeWidth":64,"featuredImageAlign":"left","categories":"'.$category->term_id.'","className":"wp-block-latest-posts__list is-grid columns-3 has-dates is-style-posts-theme wp-block-latest-posts"} /-->');?>
+                    <?=do_blocks('<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":true,"excerptLength":35,"displayPostDate":true,"postLayout":"grid","displayFeaturedImage":true,"addLinkToFeaturedImage":true,"featuredImageSizeSlug":"thumbnail","featuredImageSizeWidth":64,"featuredImageAlign":"left","categories":"'.$category->term_id.'","className":"wp-block-latest-posts__list is-grid columns-3 has-dates is-style-posts-theme wp-block-latest-posts"} /-->');?>
                 </div>
             <?php endforeach; ?>
 

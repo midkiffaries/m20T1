@@ -602,11 +602,11 @@ add_action( 'after_setup_theme', function(){
 
 // Enable styles and scripts
 add_action( 'wp_enqueue_scripts', function(){    
-    // Add Javascript to the bottom of the page body
-    wp_enqueue_script( 'js-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
+    // Add Javascripts to the bottom of the page body
+    wp_enqueue_script( 'm20-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
 
     // Add stylesheets to the HEAD metadata
-    wp_enqueue_style( 'base-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
+    wp_enqueue_style( 'm20-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
 
     // Remove post comments reply
     wp_dequeue_script( 'comment-reply' );

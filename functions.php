@@ -1576,7 +1576,7 @@ add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
         ?>
-        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=") . get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/functions.php'));?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a></p>
+        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=") . get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/functions.php'));?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
         <h3>List Posts/Pages Shortcode Sample:</h3>
         <p><code style="display:block">[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
         <?php

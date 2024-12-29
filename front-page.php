@@ -1,5 +1,5 @@
 <?php /* Template Name: Landing Page */ ?>
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
 <main class="page-main-wide width-max page-landing-page <?=get_page_class(); ?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">

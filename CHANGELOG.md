@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.8 Live (January 1, 2025 🥳 Happy New Year)
+
+* Bug fixes and improvements.
+
 ### 1.8.7 Live (December 28, 2024) 🎄 Happy Holidays!
 
 * Moved more css from the stylesheets to theme.json.

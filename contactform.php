@@ -1,5 +1,5 @@
 <?php // Global Contact Form ?>
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
 <div class="email-block" aria-label="Contact Form">
 	
 	<?php if (get_option('contact_shortcode')) : ?>
@@ -26,7 +26,7 @@
 			}
 		</style>
 		<?php else : ?>
-			<p>Discussion <i>closed</i> on the Front Page.</p>
+			<p>The contact form is <b>closed</b> on this page.</p>
 		<?php endif; ?>
 	<?php endif; ?>
 	

@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 <?php $curauth = $wp_query->get_queried_object(); // Get Author Info ?>
 <?php GetPageTitle(get_page_by_path('blog')); // Work-around to add theme inline CSS ?>
@@ -108,19 +108,19 @@
                     <h1 class="page-title" itemprop="name">
                     <?php 
                     if ( is_category() ) { // By category
-                        printf("%s Category Not Found", single_cat_title('', false));
+                        printf("%s - Not Assigned", single_cat_title('', false));
                     } else if ( is_tag() ) { // By tag
-                        printf("<b>#</b>%s Tag Not Found", single_tag_title());
+                        printf("<b>#</b>%s - Not Used", single_tag_title());
                     } else if ( is_author() ) { // By author
-                        printf("Posts by %s Not Found", $curauth->display_name);
+                        printf("No posts written by %s", $curauth->display_name);
                     } else { // No posts found
                         printf("No posts found");
                     }
                     ?>
                     </h1>
-                    <p class="subtitle" itemprop="about">Posts with this topic do not seem to exist...</p>
+                    <p class="is-style-text-subtitle is-style-text-subtitle--1 is-style-text-subtitle--2" itemprop="about">Posts with this topic do not seem to exist</p>
                     <div class="the-content">
-                        <p itemprop="text">Would you like to try a search to find what you are looking for?</p>
+                        <p itemprop="text">Would you like to try a search of this site to find what you are looking for?</p>
                         <?php get_search_form('archive'); // Search Form ?>
                     </div>
                 </div>

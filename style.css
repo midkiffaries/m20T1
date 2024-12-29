@@ -1762,19 +1762,22 @@ Specific Page Styling
 }
 
 /* Search Page */
-.page-search .page-title {
-	margin-top: 0.8em;
+.page-search {
+	margin-top: 2.5rem;
 }
 
-.page-search .search-container {
+.page-search .search-container,
+.archive-page .search-container {
 	margin: 1.6em 1em 1.4em 0.4em;
 }
 
-.page-search .search-container input {
+.page-search .search-container input,
+.archive-page .search-container input {
 	font-size: 1.3em;
 }
 
-.page-search .search-submit {
+.page-search .search-submit,
+.archive-page .search-submit {
 	background-color: var(--wp--preset--color--primary);
 	border: 2px solid var(--wp--preset--color--primary);
 }
@@ -2448,6 +2451,7 @@ Search Modal Styling
 		width: 99%;
 	}
 }
+
 
 
 /********************************************************************************

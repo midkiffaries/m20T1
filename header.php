@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?=language_attributes();?> id="top-of-site">
 <head>

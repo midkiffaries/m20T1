@@ -1,5 +1,5 @@
 <?php // Global Search Form ?>
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
 
 <search class="search-block" id="search-form" aria-label="Search Form">
     <form method="get" class="search-form" role="search" action="<?=esc_url( home_url( '/' ) );?>" itemscope itemtype="https://schema.org/SearchAction" itemprop="potentialAction">

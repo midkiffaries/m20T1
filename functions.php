@@ -1,7 +1,7 @@
 <?php // m20T1 functions and settings for WordPress
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+defined( 'ABSPATH' ) || exit;
 
 // Visual error reporting
 error_reporting(0);
@@ -603,10 +603,10 @@ add_action( 'after_setup_theme', function(){
 // Enable styles and scripts
 add_action( 'wp_enqueue_scripts', function(){    
     // Add Javascripts to the bottom of the page body
-    wp_enqueue_script( 'm20-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
+    wp_enqueue_script( 'm20t1-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
 
     // Add stylesheets to the HEAD metadata
-    wp_enqueue_style( 'm20-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
+    wp_enqueue_style( 'm20t1-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
 
     // Remove post comments reply
     wp_dequeue_script( 'comment-reply' );

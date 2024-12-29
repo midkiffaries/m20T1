@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+<?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
 <main class="page-main page-blog-posts width-side" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">

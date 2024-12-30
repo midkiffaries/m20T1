@@ -580,7 +580,7 @@
 				"css": "display:inline-block;margin:0 0 0.1rem; & figcaption{text-align:center;text-wrap:pretty;padding:0.6em 0.2em;line-height:1.2;overflow:visible}",
 				"variations": {
 					"img-fancy": {
-						"css": "& img {box-shadow:7px 7px 0 0 #888f,-8px -8px 0 0 var(--wp--preset--color--primary); border:1px solid #fff; border-radius:1px; & a[href] img:hover {box-shadow:12px 12px 0 0 #888c,-12px -12px 0 0 var(--wp--preset--color--primary) !important}}",
+						"css": "& img {box-shadow:7px 7px 0 0 #888f,-8px -8px 0 0 var(--wp--preset--color--primary); border:1px solid #fff; border-radius:1px} & a[href] img:hover {box-shadow:12px 12px 0 0 #888c,-12px -12px 0 0 var(--wp--preset--color--primary) !important}",
 						"spacing": {
 							"margin": {
 								"top": "5px",

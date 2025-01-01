@@ -130,6 +130,11 @@
 					"slug": "lightgradient"
 				},
 				{
+					"gradient": "linear-gradient(0deg, #ffa205, #ff4b55, #e60096, #ac19c3, #8133e3, #0049ff)",
+					"name": "Sunrise gradient",
+					"slug": "sunrisegradient"
+				},
+				{
 					"gradient": "linear-gradient(0deg, #f9f9f9 0%, #0066ff 30%, #000f26 50%, #ffffff 50%, #ff7400 80%, #662e00 100%)",
 					"name": "Sunset gradient",
 					"slug": "sunsetgradient"

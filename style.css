@@ -1995,11 +1995,11 @@ Comments Section
 }
 
 .list-comments .comment {
-	background-color: #0000000a;
+	background-color: #000a;
 	padding: 0.8em 1.1em;
 	border-radius: 2px 0.6em 0.6em;
 	margin-bottom: 0.4em;
-	background: #0001;
+
 }
 
 .list-comments p {

@@ -790,6 +790,17 @@ Site Header
 .header-logo {
 	margin: 0.5em 0.7em 0;
 	display: inline-block;
+	filter: drop-shadow(1px 1px 0 #fff3);
+	transition: opacity 0.2s ease-in-out;
+	opacity: 1;
+}
+
+.dark-mode .header-logo {
+	filter: drop-shadow(1px 1px 0 #111);
+}
+
+.header-logo:hover {
+	opacity: 0.8;
 }
 
 .header-logo a {
@@ -812,6 +823,7 @@ Site Header
 .header-widgets {
 	display: inline-block;
 	vertical-align: middle;
+	vertical-align: 3px;
 }
 
 .header-navigation,
@@ -945,6 +957,10 @@ Site Footer
 .page-footer {
 	color: #fff;
 	background-color: #222;
+	background-color: var(--wp--custom--footer-color);
+	background-image: var(--wp--custom--footer-background); 
+	background-size: 72px 72px;
+	position: relative;
 }
 
 .footer-widgets {
@@ -1047,6 +1063,8 @@ Single Blog Post Styling (single)
 	text-transform: uppercase;
 	letter-spacing: 0.07em;
 	padding: 3px;
+	color: #444;
+	line-height: 1;
 }
 
 .single-entry-metadata {
@@ -1981,6 +1999,7 @@ Comments Section
 	padding: 0.8em 1.1em;
 	border-radius: 2px 0.6em 0.6em;
 	margin-bottom: 0.4em;
+	background: #0001;
 }
 
 .list-comments p {
@@ -2693,29 +2712,10 @@ Blog Post Styling
 Global Page Styling
 ************************************/
 
-/* Site header text highlights */
-.header-logo {
-	filter: drop-shadow(1px 1px 0 #fff3);
-	transition: opacity 0.2s ease-in-out;
-	opacity: 1;
-}
-
-.dark-mode .header-logo {
-	filter: drop-shadow(1px 1px 0 #111);
-}
-
-.header-logo:hover {
-	opacity: 0.8;
-}
-
 .nav-primary-navigation,
 .header-widgets {
 	text-transform: uppercase;
 	filter: drop-shadow(1px 1px 0 #fff9);
-}
-
-.header-widgets {
-	vertical-align: 3px;
 }
 
 .dark-mode .nav-primary-navigation,
@@ -2725,14 +2725,6 @@ Global Page Styling
 
 .page-header .menu-item-sub {
 	display: none;
-}
-
-/* Page Footer */
-.page-footer {
-	background-color: var(--wp--custom--footer-color);
-	background-image: var(--wp--custom--footer-background); 
-	background-size: 72px 72px;
-	position: relative;
 }
 
 /* Add saw effect to top of footer */
@@ -2809,11 +2801,6 @@ Global Page Styling
 	background-image: var(--icon-search);
 }
 
-/* Comments section */
-.list-comments .comment {
-	background: #0001;
-}
-
 /* Blog Post Metadata links */
 .entry-header a[href],
 .single-entry-header a[href] {
@@ -2852,11 +2839,6 @@ Global Page Styling
 	font-family: var(--wp--preset--font-family--secondary-font);
 	font-size: 1.4rem;
 	color: #666;
-}
-
-.single-entry-category a {
-	color: #444;
-	line-height: 1;
 }
 
 .single-entry-category a:hover {

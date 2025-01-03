@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.9 Live (January 20, 2025)
+
+* More bug fixes and improvements.
+
 ### 1.8.8 Live (January 1, 2025 🥳 Happy New Year)
 
 * Bug fixes and improvements.

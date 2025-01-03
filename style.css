@@ -237,8 +237,6 @@ a:not([href]) {
 
 iframe {
 	border: none;
-	max-width: 100%;
-	height: auto;
 }
 
 dialog {
@@ -1673,19 +1671,8 @@ Figures and Galleries
 ************************/
 
 .wp-block-gallery figure > a[href] img,
-.wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".heif"]) img {
+.wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".heif"], a[href$=".heic"]) img {
 	cursor: zoom-in;
-}
-
-.wp-block-embed iframe {
-	min-height: 280px;
-	width: 100%;
-	aspect-ratio: 16 / 9;
-}
-
-.wp-block-video,
-.wp-block-embed {
-	width: 100%;
 }
 
 .blocks-gallery-item__caption {

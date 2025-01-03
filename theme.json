@@ -721,10 +721,10 @@
 				}
 			},
 			"core/embed": {
-				"css": "",
+				"css": "& iframe{max-width:100%}",
 				"variations": {
 					"embed-youtube": {
-						"css": "& iframe, video, img {border:3px solid #f00 !important; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002}"
+						"css": "& iframe, video, img {min-height:280px; aspect-ratio:16 / 9; border:3px solid #f00 !important; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 16px 8px #0002}"
 					},
 					"embed-thumbnail": {
 						"css": "&{min-width:450px; margin:0 5px 10px 5px} iframe, video{border:3px solid #f00; box-shadow:0 2px 1px #0002,0 4px 2px #0002,0 8px 4px #0002,0 12px 8px #0002}"

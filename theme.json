@@ -842,6 +842,11 @@
 							"fontStyle": "normal"
 						}
 					}
+				},
+				"variations": {
+					"pquote-embelish": {
+						"css": ""
+					}
 				}
 			},
 			"core/tag-cloud": {

@@ -112,7 +112,7 @@ add_action( 'init', function(){
     // List: Ornate number
     register_block_style( 'core/list', [
         'name'  => 'list-ornate',
-        'label' => __( 'Ornate Number', 'm20t1' )
+        'label' => __( 'Ornate Num', 'm20t1' )
     ]);
     // List: No bullets/numbers
     register_block_style( 'core/list', [
@@ -194,6 +194,11 @@ add_action( 'init', function(){
     register_block_style( 'core/quote', [
         'name'  => 'plain',
         'label' => __( 'Plain', 'm20t1' )
+    ]);
+    // PullQuote: Embelishment style
+    register_block_style( 'core/pullquote', [
+        'name'  => 'pquote-embelish',
+        'label' => __( 'Embelishment', 'm20t1' )
     ]);
     // Code: Terminal style from css-trick.com
     register_block_style( 'core/code', [

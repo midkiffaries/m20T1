@@ -241,11 +241,17 @@ add_action( 'init', function(){
         'name'  => 'button-border',
         'label' => __( 'Hard Border', 'm20t1' )
     ]);
-    // Details: Border style
+    // Details: Left Cross style
     register_block_style( 'core/details', [
-        'name'  => 'details-theme',
-        'label' => __( 'Theme', 'm20t1' ),
-        'inline_style' => '.dark-mode .is-style-details-theme summary::before{filter:invert()}'
+        'name'  => 'details-cross',
+        'label' => __( 'Cross', 'm20t1' ),
+        'inline_style' => '.dark-mode .is-style-details-cross summary::before{filter:invert()}'
+    ]);
+    // Details: Right Arrow style
+    register_block_style( 'core/details', [
+        'name'  => 'details-arrow',
+        'label' => __( 'Arrow', 'm20t1' ),
+        'inline_style' => '.dark-mode .is-style-details-arrow summary::after{filter:invert()}'
     ]);
     // Image: Fancy style
     register_block_style( 'core/image', [
@@ -1011,7 +1017,7 @@ function menu_nav_list( $menu, $id ) {
         'after'                => '',
         'link_before'          => '',
         'link_after'           => '',
-        'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        'items_wrap'           => '<ul id="%1$s" class="%2$s" role="menu">%3$s</ul>',
         'item_spacing'         => 'preserve',
         'depth'                => 0,
         'walker'               => new Menu_With_Description,

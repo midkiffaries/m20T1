@@ -603,6 +603,12 @@
 					},
 					"img-hand-drawn": {
 						"css": "& img {border:2px solid currentColor; overflow:hidden; box-shadow:0 4px 10px 0 #0004; border-radius:255px 15px 225px 15px/15px 225px 15px 255px !important}"
+					},
+					"img-book": {
+						"css": ""
+					},
+					"img-book-portrait": {
+						"css": ""
 					}
 				}
 			},

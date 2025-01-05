@@ -688,7 +688,7 @@ add_action( 'wp_head', function(){
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="description" content="<?=SEO_Excerpt(get_the_id());?>">
 <meta name="format-detection" content="telephone=no">
-<link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico");?>" sizes="any">
+<link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico");?>" type="image/x-icon" sizes="any">
 <link rel="icon" href="<?=esc_url(home_url() . "/favicon.svg");?>" type="image/svg+xml">
 <link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/apple-touch-icon.png");?>">
 <link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest");?>">

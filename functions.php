@@ -277,136 +277,41 @@ add_action( 'init', function(){
     register_block_style( 'core/image', [
         'name'  => 'img-book',
         'label' => __( 'Book Lndscpe', 'm20t1' ),
-        'inline_style' => '.is-style-img-book {
-            --book-width: 250px;
-            --book-height: 200px;
-            position: relative;
-            transform: perspective(75em) rotateY(-30deg);
-            height: var(--book-height);
-            width: var(--book-width);
-            transition: all 0.5s ease-in-out;
-            margin: 1em 0.5em;
-            &:hover {
-                transform: perspective(75em) rotateY(0deg);
-                filter: brightness(1.08);
-                box-shadow: 0 6px 10px -1px #0002;
-            }
-            & img {
-                width: var(--book-width);
-                height: var(--book-height);
-                border-radius: 6px;
-                background-color: #aaa;
-                box-shadow: 3px 0 3px 0 #0008;
-                transition: all 0.5s ease;
-                object-fit: cover;
-            }
-            &:hover img {
-                border-radius: 4px;
-            }
-            &::after {
-                content: " ";
-                display: block;
-                position: absolute;
-                top: 12px;
-                left: 1px;
-                width: calc(var(--book-width) + 12px);
-                height: calc(var(--book-height) - 26px);
-                background-color: #eee;
-                z-index: -1;
-                border-radius: 1px;
-                box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
-                transform: perspective(100em) rotateY(-25deg);
-                transition: all 0.5s ease;
-            }
-            &:hover::after {
-                transform: perspective(75em) rotateY(0deg);
-                width: calc(var(--book-width) - 10%);
-                box-shadow: none;
-                left: 8px;
-            }
-        }'
+        'inline_style' => '.is-style-img-book img{width:var(--book-width);height:var(--book-height)}'
     ]);
     // Image: Book portrait
     register_block_style( 'core/image', [
         'name'  => 'img-book-portrait',
         'label' => __( 'Book Portrait', 'm20t1' ),
-        'inline_style' => '.is-style-img-book-portrait {
-            --book-width: 200px;
-            --book-height: 250px;
-            position: relative;
-            transform: perspective(75em) rotateY(-30deg);
-            height: var(--book-height);
-            width: var(--book-width);
-            filter: brightness(0.95);
-            transition: all 0.5s ease-in-out;
-            margin: 1em 0.5em;
-            &:hover {
-                transform: perspective(75em) rotateY(0deg);
-                filter: brightness(1.09);
-                box-shadow: 0 6px 10px -1px #0005;
-            }
-            & img {
-                width: var(--book-width);
-                height: var(--book-height);
-                border-radius: 6px;
-                background-color: #aaa;
-                box-shadow: 3px 0 3px 0 #0007;
-                transition: all 0.5s ease;
-                object-fit: cover;
-            }
-            &:hover img {
-                border-radius: 4px;
-            }
-            &::after {
-                content: " ";
-                display: block;
-                position: absolute;
-                top: 12px;
-                left: 1px;
-                width: calc(var(--book-width) + 12px);
-                height: calc(var(--book-height) - 26px);
-                background-color: #eee;
-                z-index: -1;
-                border-radius: 1px;
-                box-shadow: 1px 0 1px 1px #ccc, 1px 0 1px 2px #fff, 1px 0 1px 3px #bbb, 1px 0 1px 4px #fff, 1px 0 1px 5px #aaa, 1px 1px 0 8px #555, 1px 5px 5px 9px #0001;
-                transform: perspective(100em) rotateY(-25deg);
-                transition: all 0.5s ease;
-            }
-            &:hover::after {
-                transform: perspective(75em) rotateY(0deg);
-                width: calc(var(--book-width) - 10%);
-                box-shadow: none;
-                left: 8px;
-            }
-        }'
+        'inline_style' => '.is-style-img-book-portrait img{width:var(--book-width);height:var(--book-height)}'
     ]);
     // Gallery: Theme style
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-1',
         'label' => __( 'Heavy Border', 'm20t1' ),
         'inline_style' => '.is-style-gallery-1 .wp-block-image {
-            margin-bottom: 1em !important;
+            margin-bottom:1em !important;
         }
         .is-style-gallery-1 .wp-block-image img {
-            border: 4px solid var(--wp--preset--color--primary-dark);
+            border:4px solid var(--wp--preset--color--primary-dark);
         }
         .is-style-gallery-1 .wp-block-image a[href] img:hover {
-            border: 4px solid var(--wp--preset--color--primary);
-            box-shadow: 5px 5px 0 0 #888;
+            border:4px solid var(--wp--preset--color--primary);
+            box-shadow:5px 5px 0 0 #888;
         }
         .is-style-gallery-1 .wp-block-image a[href] img:active {
-            box-shadow: none;
+            box-shadow:none;
         }
         .is-style-gallery-1 figure.wp-block-image:has(figcaption)::before {
-            height: 0 !important;
+            height:0 !important;
         }
         .is-style-gallery-1 figure figcaption {
-            color: #666 !important;
-            font-size: 0.8rem !important;
-            font-weight: 500 !important;
-            margin-bottom: -1.5rem !important;
-            background: none !important;
-            text-shadow: none !important;
+            color:#666 !important;
+            font-size:0.8rem !important;
+            font-weight:500 !important;
+            margin-bottom:-1.5rem !important;
+            background:none !important;
+            text-shadow:none !important;
         }'
     ]);
     // Gallery: Drop Shadow style
@@ -414,29 +319,29 @@ add_action( 'init', function(){
         'name'  => 'gallery-2',
         'label' => __( 'Drop Shadow', 'm20t1' ),
         'inline_style' => '.is-style-gallery-2 .wp-block-image {
-            margin-bottom: 1em !important;
+            margin-bottom:1em !important;
         }
         .is-style-gallery-2 .wp-block-image img {
-            box-shadow: 0 3px 8px -2px #000c;
-            border-radius: 3px;
+            box-shadow:0 3px 8px -2px #000c;
+            border-radius:3px;
         }
         .is-style-gallery-2 .wp-block-image a[href] img:hover {
-            box-shadow: 0 8px 20px -1px #0008;
-            transform: scale(1.05, 1.05) !important;
+            box-shadow:0 8px 20px -1px #0008;
+            transform:scale(1.05, 1.05) !important;
         }
         .is-style-gallery-2 .wp-block-image a[href] img:active {
-            box-shadow: 0 3px 6px -2px #0007;
+            box-shadow:0 3px 6px -2px #0007;
         }
         .is-style-gallery-2 figure.wp-block-image:has(figcaption)::before {
-            height: 0 !important;
+            height:0 !important;
         }
         .is-style-gallery-2 figure figcaption {
-            color: #666 !important;
-            font-size: 0.8rem !important;
-            font-weight: 500 !important;
-            margin-bottom: -1.6rem !important;
-            background: none !important;
-            text-shadow: none !important;
+            color:#666 !important;
+            font-size:0.8rem !important;
+            font-weight:500 !important;
+            margin-bottom: 1.6rem !important;
+            background:none !important;
+            text-shadow:none !important;
         }'
     ]);
     // Gallery: No border style
@@ -444,18 +349,18 @@ add_action( 'init', function(){
         'name'  => 'gallery-3',
         'label' => __( 'No Border', 'm20t1' ),
         'inline_style' => '.is-style-gallery-3 .wp-block-image {
-            margin-bottom: 1.2em !important;
+            margin-bottom:1.2em !important;
         }
         .is-style-gallery-3 figure.wp-block-image:has(figcaption)::before {
-            height: 0 !important;
+            height:0 !important;
         }
         .is-style-gallery-3 figure figcaption {
-            color: #666 !important;
-            font-size: 0.8rem !important;
-            font-weight: 500 !important;
-            margin-bottom: -1.5rem !important;
-            background: none !important;
-            text-shadow: none !important;
+            color:#666 !important;
+            font-size:0.8rem !important;
+            font-weight:500 !important;
+            margin-bottom:-1.5rem !important;
+            background:none !important;
+            text-shadow:none !important;
         }'
     ]);
     // Latest Posts: Theme style
@@ -463,37 +368,41 @@ add_action( 'init', function(){
         'name'  => 'posts-theme',
         'label' => __( 'Theme', 'm20t1' ),
         'inline_style' => '.is-style-posts-theme {
-            max-width: var(--wp--style--global--wide-size);
-            margin: 0 auto;
-            padding: 0 !important;
+            max-width:var(--wp--style--global--wide-size);
+            margin:0 auto;
+            padding:0 !important;
         }
-        .is-style-posts-theme .wp-block-latest-posts__featured-image a:empty {
-            display: none;
+        & .wp-block-latest-posts__featured-image a:empty {
+            display:none;
         }
-        .is-style-posts-theme img {
+        & img {
             border-radius:8px;
         }
-        .is-style-posts-theme img:hover {
-            outline: 1px solid var(--wp--preset--color--primary);
+        & a img {
+            cursor:pointer;
+            border:2px solid #0000;
         }
-        .is-style-posts-theme time {
-            color: #666;
+        & a img:hover {
+            border-color:var(--wp--preset--color--primary);
         }
-        .is-style-posts-theme .wp-block-latest-posts__post-title {
+        & time {
+            color:#666;
+        }
+        & .wp-block-latest-posts__post-title {
             display:block;
             line-height:1.2;
-            height: 2.5em;
-            font-weight: 600;
-            overflow-y: hidden;
-            text-decoration: none !important;
+            height:2.5em;
+            font-weight:600;
+            overflow-y:hidden;
+            text-decoration:none !important;
         }
-        .is-style-posts-theme .wp-block-latest-posts__post-title:hover {
-            text-decoration: underline !important;
-            text-decoration-color: var(--wp--preset--color--primary) !important;
-            color: var(--wp--preset--color--primary) !important;
+        & .wp-block-latest-posts__post-title:hover {
+            text-decoration:underline !important;
+            text-decoration-color:var(--wp--preset--color--primary) !important;
+            color:var(--wp--preset--color--primary) !important;
         }
-        .is-style-posts-theme .wp-block-latest-posts__post-excerpt {
-            font-size: 1rem;
+        & .wp-block-latest-posts__post-excerpt {
+            font-size:1rem;
         }'
     ]);
     // Media & Text Block: Image full width style
@@ -501,22 +410,22 @@ add_action( 'init', function(){
         'name'  => 'media-text-full',
         'label' => __( 'Full Image', 'm20t1' ),
         'inline_style' => '.is-style-media-text-full {
-            position: relative;
-            max-height: 24em;
-            overflow: hidden;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
+            position:relative;
+            max-height:24em;
+            overflow:hidden;
+            display:flex !important;
+            align-items:center;
+            justify-content:center;
         }
         .is-style-media-text-full figure {
-            width: 100%;
+            width:100%;
         }
         .is-style-media-text-full div {
-            position: absolute;
-            text-align: center;
+            position:absolute;
+            text-align:center;
         }
         .is-style-media-text-full p {
-            border-radius: 12px;
+            border-radius:12px;
         }'
     ]);
     // Media & Text Block: Text overlap style
@@ -524,25 +433,25 @@ add_action( 'init', function(){
         'name'  => 'media-text-overlap',
         'label' => __( 'Overlap', 'm20t1' ),
         'inline_style' => '.is-style-media-text-overlap {
-            transform: translateX(-20px);
+            transform:translateX(-20px);
         }
         .is-style-media-text-overlap figure {
-            margin-right: 130px;
+            margin-right:130px;
         }
         .is-style-media-text-overlap figure img {
-            border-radius: 14px;
+            border-radius:14px;
         }
         .is-style-media-text-overlap div {
-            background-color: #eee3;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            border: 1px solid #ddd7;
-            border-radius: 14px;
-            height: 92%;
-            transform: translateX(-40px);
+            background-color:#eee3;
+            -webkit-backdrop-filter:blur(5px);
+            backdrop-filter:blur(5px);
+            border:1px solid #ddd7;
+            border-radius:14px;
+            height:92%;
+            transform:translateX(-40px);
         }
         .is-style-media-text-overlap.has-media-on-the-right div {
-            transform: translateX(40px);
+            transform:translateX(40px);
         }'
     ]);
 });

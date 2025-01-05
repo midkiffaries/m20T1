@@ -221,7 +221,12 @@
 				{
 					"name": "Steps",
 					"slug": "steps",
-					"shadow": "rgba(0,0,0,0.35) 3px 3px, rgba(0,0,0,0.3) 6px 6px, rgba(0,0,0,0.2) 9px 9px, rgba(0,0,0,0.1) 12px 12px, rgba(0,0,0,0.05) 16px 16px"
+					"shadow": "#00000059 3px 3px, #0000004d 6px 6px, #00000033 9px 9px, #0000001a 12px 12px, #0000000d 16px 16px"
+				},
+				{
+					"name": "Inset",
+					"slug": "inset",
+					"shadow": "inset 6px 6px 11px -1px #00000033, inset 3px 3px 3px -1px #00000066"
 				}
 			]
 		},

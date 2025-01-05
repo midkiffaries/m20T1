@@ -371,7 +371,7 @@ add_action( 'init', function(){
             max-width:var(--wp--style--global--wide-size);
             margin:0 auto;
             padding:0 !important;
-        }
+
         & .wp-block-latest-posts__featured-image a:empty {
             display:none;
         }
@@ -381,6 +381,7 @@ add_action( 'init', function(){
         & a img {
             cursor:pointer;
             border:2px solid #0000;
+            transition:border 0.3s;
         }
         & a img:hover {
             border-color:var(--wp--preset--color--primary);
@@ -403,6 +404,7 @@ add_action( 'init', function(){
         }
         & .wp-block-latest-posts__post-excerpt {
             font-size:1rem;
+        }
         }'
     ]);
     // Media & Text Block: Image full width style

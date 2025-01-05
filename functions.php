@@ -180,11 +180,6 @@ add_action( 'init', function(){
         'label' => __( 'Stripes', 'm20t1' ),
         'inline_style' => '.is-style-header-stripes::after,.is-style-header-stripes::before{background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");height:1em;margin:0 6px}'
     ]);
-    // Heading: Page Title
-    register_block_style( 'core/heading', [
-        'name'  => 'header-title',
-        'label' => __( 'Page Title', 'm20t1' )
-    ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [
         'name'  => 'header-text-fill',
@@ -460,7 +455,7 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/list-item', 'core/media-text', 'core/details', 'core/column', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
+    if ( in_array( $block_type, ['core/list-item', 'core/media-text', 'core/details', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option
         $args['supports']['typography'] = true; // Add typography option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter

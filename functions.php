@@ -1265,7 +1265,7 @@ function Header_Hero( $id ) {
         $featuredImage = FeaturedImageURL($id, 'full', 1);
         $featuredCap = wp_get_attachment_caption(get_post_thumbnail_id($id)) ? wp_get_attachment_caption(get_post_thumbnail_id($id)) : "View this image";
         $featuredCred = get_credit_text(get_post_thumbnail_id($id)) ? " – " . get_credit_text(get_post_thumbnail_id($id)) : "";
-        $attachmentTitle = '<a href="' . home_url() . '/?p=' . get_post_thumbnail_id($id) . '" itemprop="url">' . $featuredCap . $featuredCred . '</a>';
+        $attachmentTitle = '<a href="' . home_url() . '/?p=' . get_post_thumbnail_id($id) . '" itemprop="url">' . $featuredCap . '<small>' . $featuredCred . '</small></a>';
     } else {
         $attachmentTitle = '';
     }

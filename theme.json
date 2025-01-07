@@ -754,13 +754,13 @@
 				}
 			},
 			"core/details": {
-				"css": "& summary:marker, summary::-webkit-details-marker{color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}",
+				"css": "& summary::-webkit-details-marker, summary::marker {color:var(--wp--preset--color--primary)} & summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}",
 				"variations": {
 					"details-cross": {
-						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.4s ease-in-out} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & summary:marker, summary::-webkit-details-marker{display:none} & > *:not(summary){margin:0.3rem 2.4rem}"
+						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.4s ease-in-out} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & > *:not(summary){margin:0.3rem 2.4rem}"
 					},
 					"details-arrow": {
-						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998;position:relative} & summary::after{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 768 768'><path d='m237 275 147 147 147-147 45 45-192 192-192-192z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.2s ease-in-out;position:absolute;right:0px;top:2px} &[open] summary::after{transform:scaleY(-1)} & summary:marker, summary::-webkit-details-marker{display:none} & summary{padding-left:1.1rem} & > *:not(summary){margin:0.3rem 1.2rem}"
+						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998;position:relative} & summary::after{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 768 768'><path d='m237 275 147 147 147-147 45 45-192 192-192-192z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.2s ease-in-out;position:absolute;right:0px;top:2px} &[open] summary::after{transform:scaleY(-1)} & summary{padding-left:1.1rem} & > *:not(summary){margin:0.3rem 1.2rem}"
 					}
 				}
 			},

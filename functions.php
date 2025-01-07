@@ -240,13 +240,13 @@ add_action( 'init', function(){
     register_block_style( 'core/details', [
         'name'  => 'details-cross',
         'label' => __( 'Cross', 'm20t1' ),
-        'inline_style' => '.dark-mode .is-style-details-cross summary::before{filter:invert()}'
+        'inline_style' => '.dark-mode .is-style-details-cross summary::before{filter:invert()} .is-style-details-cross summary::-webkit-details-marker, .is-style-details-cross summary::marker {display:none;content:""}'
     ]);
     // Details: Right Arrow style
     register_block_style( 'core/details', [
         'name'  => 'details-arrow',
         'label' => __( 'Arrow', 'm20t1' ),
-        'inline_style' => '.dark-mode .is-style-details-arrow summary::after{filter:invert()}'
+        'inline_style' => '.dark-mode .is-style-details-arrow summary::after{filter:invert()} .is-style-details-arrow summary::-webkit-details-marker, .is-style-details-arrow summary::marker {display:none;content:""}'
     ]);
     // Image: Fancy style
     register_block_style( 'core/image', [

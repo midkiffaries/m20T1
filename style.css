@@ -838,13 +838,13 @@ Site Header
 	vertical-align: middle;
 }
 
-.header-navigation ul li,
-.header-secondary-navigation ul li {
+.header-navigation menu li,
+.header-secondary-navigation menu li {
 	display: inline-block;
 }
 
-.header-navigation ul li a,
-.header-secondary-navigation ul li a {
+.header-navigation menu li a,
+.header-secondary-navigation menu li a {
 	font-size: 1.7rem;
 	font-weight: 700;
 	text-decoration: none;
@@ -854,13 +854,13 @@ Site Header
 	border-bottom: 0 solid transparent;
 }
 
-.header-navigation ul li a:hover,
-.header-secondary-navigation ul li a:hover {
+.header-navigation menu li a:hover,
+.header-secondary-navigation menu li a:hover {
 	border-bottom: 4px solid currentColor;
 }
 
-.header-navigation ul li a:active,
-.header-secondary-navigation ul li a:active {
+.header-navigation menu li a:active,
+.header-secondary-navigation menu li a:active {
 	opacity: 0.6;
 }
 
@@ -918,13 +918,13 @@ Site Header
 	.header-secondary-navigation {
 		display: block;
 	}
-	.header-navigation ul li,
-	.header-secondary-navigation ul li {
+	.header-navigation menu li,
+	.header-secondary-navigation menu li {
 		display: block;
 		line-height: 1.9;
 	}
-	.header-navigation ul li a,
-	.header-secondary-navigation ul li a {
+	.header-navigation menu li a,
+	.header-secondary-navigation menu li a {
 		font-size: 1.55em;
 		padding: 6px 2px 3px;
 	}

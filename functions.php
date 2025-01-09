@@ -908,7 +908,7 @@ function selectSidebarCustomField( $id, $default ) {
 // Navigation
 /////////////////////////////
 
-// Display the menu/navigation links as a <ul> list
+// Display the menu/navigation links as a list
 function menu_nav_list( $menu, $id ) {
     wp_nav_menu([
         'menu'                 => $menu,
@@ -924,7 +924,7 @@ function menu_nav_list( $menu, $id ) {
         'after'                => '',
         'link_before'          => '',
         'link_after'           => '',
-        'items_wrap'           => '<ul id="%1$s" class="%2$s" role="menu">%3$s</ul>',
+        'items_wrap'           => '<menu id="%1$s" class="%2$s">%3$s</menu>',
         'item_spacing'         => 'preserve',
         'depth'                => 0,
         'walker'               => new Menu_With_Description,
@@ -938,7 +938,7 @@ class Menu_With_Description extends Walker_Nav_Menu {
         global $wp_query;
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
         $class_names = $value = '';
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes = empty( $item->classes ) ? [] : (array) $item->classes;
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
         $class_names = ' class="' . esc_attr( $class_names ) . '"';
         $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';

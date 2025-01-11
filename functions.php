@@ -455,10 +455,10 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    $args['supports']['shadow'] = true; // Add box shadow option
-    if ( in_array( $block_type, ['core/list-item', 'core/media-text', 'core/details', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
+    if ( in_array( $block_type, ['core/list-item', 'core/text', 'core/media-text', 'core/details', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['typography'] = true; // Add typography option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
+        $args['supports']['shadow'] = true; // Add box shadow option
         //$args['supports']['color'] = ['text' => true, 'background' => true, 'link' => true, 'gradients' => true]; // Add color options
     }
     //if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option

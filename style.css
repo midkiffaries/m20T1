@@ -1651,6 +1651,14 @@ img.wp-smiley, img.emoji {
 	position: absolute;
 }
 
+span[style*="underline"], u {
+	text-decoration: none !important;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-size: 100% .2em;
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 224 12'><path d='m107 0 68 1 45 2c9 3-2 9-9 6l-50-1H78c-21 0-41 0-61 2-5 3-20 3-16-5 7-4 16-2 24-3l52-2h30z' fill='%23e65100'/></svg>")
+}
+
 /* Sidebar Widgets */
 .singlepost-widgets,
 .blogroll-widgets, 

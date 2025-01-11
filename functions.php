@@ -1649,6 +1649,25 @@ add_filter( 'post_mime_types', function($post_mime_types){
 	return $post_mime_types;
 });
 
+// Add Underline to Classic editor
+add_filter( 'mce_buttons_2', function($buttons_array){
+	if ( ! in_array( 'underline', $buttons_array ) ) {
+		$inserted = ['underline'];
+		array_splice( $buttons_array, 0, 0, $inserted );
+	}
+	return $buttons_array;
+},5);
+
+// Add Justify to Classic editor
+add_filter( 'mce_buttons', function($buttons_array){
+	if ( ! in_array( 'alignjustify', $buttons_array ) && in_array( 'alignright', $buttons_array ) ) {
+		$key = array_search( 'alignright', $buttons_array );
+		$inserted = ['alignjustify'];
+		array_splice( $buttons_array, $key + 1, 0, $inserted );
+	}
+	return $buttons_array;
+},5);
+
 
 /////////////////////////////////////////////////
 // Admin: Add Additional values to user profiles

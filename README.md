@@ -29,7 +29,7 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Widget support on on all pages including the site header and footer
 - Unique <i>front-page.php</i>, <i>404.php</i> and <i>attachment.php (image)</i> pages
 - Featured image support for use as the hero/header image on posts and pages with a fallback image
-- Support for custom WordPress editor styling via <b>theme.json</b> or <b>editor-style.css</b>
+- Support for custom WordPress editor styling via <b>theme.json</b>
 - Support for <b>dark mode</b> page styling via a built in switch
 - Additional filtering options in the Media Library: category, author, SVG, GLB and fonts
 - Basic filtering on the search results page

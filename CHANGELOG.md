@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.9 Live (January 10, 2025)
+### 1.8.9 Live (January 11, 2025)
 
 * Added justify and underline to the classic editor. The guetenburg editor will come next I hope.
 * More bug fixes and improvements.

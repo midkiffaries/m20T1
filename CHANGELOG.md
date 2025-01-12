@@ -2,6 +2,7 @@
 
 ### 1.8.9 Live (January 10, 2025)
 
+* Added justify and underline to the classic editor. The guetenburg editor will come next I hope.
 * More bug fixes and improvements.
 
 ### 1.8.8 Live (January 1, 2025 🥳 Happy New Year)

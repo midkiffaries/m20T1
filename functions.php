@@ -1495,6 +1495,7 @@ add_action('wp_dashboard_setup', function(){
     function custom_dashboard_text() {
         ?>
         <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=") . get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/functions.php'));?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
+        <p>Underline: <kbd>CTRL+U</kbd> / <kbd>CMD+U</kbd></p>
         <h3>List Posts/Pages Shortcode Sample:</h3>
         <p><code style="display:block">[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
         <?php

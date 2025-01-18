@@ -144,11 +144,6 @@ add_action( 'init', function(){
         'name'  => 'text-outline',
         'label' => __( 'Outline', 'm20t1' )
     ]);
-    // Heading: Underline
-    register_block_style( 'core/heading', [
-        'name'  => 'header-underline',
-        'label' => __( 'Underline', 'm20t1' )
-    ]);
     // Heading: Soft text shadow
     register_block_style( 'core/heading', [
         'name'  => 'header-shadow-soft',

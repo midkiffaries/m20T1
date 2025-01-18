@@ -180,6 +180,11 @@ add_action( 'init', function(){
         'label' => __( 'Stripes', 'm20t1' ),
         'inline_style' => '.is-style-header-stripes::after,.is-style-header-stripes::before{background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");height:1em;margin:0 6px}'
     ]);
+    // Heading: Inset Shadow
+    register_block_style( 'core/heading', [
+        'name'  => 'header-shadow-inset',
+        'label' => __( 'Inset Shadow', 'm20t1' )
+    ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [
         'name'  => 'header-text-fill',
@@ -334,7 +339,7 @@ add_action( 'init', function(){
             color:#666 !important;
             font-size:0.8rem !important;
             font-weight:500 !important;
-            margin-bottom: 1.6rem !important;
+            margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
         }'

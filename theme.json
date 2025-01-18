@@ -522,6 +522,9 @@
 					"header-shadow-3d": {
 						"css": "text-shadow:-1px 1px 0 #666,-2px 2px 0 #555,-3px 3px 0 #444,-4px 4px 0 #333,-5px 5px 4px #0008"
 					},
+					"header-shadow-inset": {
+						"css": "text-shadow:1px 1px 1px #fff8,0 0 2px #fff7"
+					},
 					"header-text-fill": {
 						"css": "padding:0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;line-height:1.1"
 					},

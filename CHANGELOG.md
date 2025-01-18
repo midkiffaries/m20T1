@@ -2,7 +2,7 @@
 
 ### 1.8.10 Live (January 30, 2025)
 
-* More adjustments
+* More adjustments and bug fixes.
 
 ### 1.8.9 Live (January 11, 2025)
 

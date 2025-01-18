@@ -472,10 +472,10 @@
 				},
 				"variations": {
 					"text-shadow-soft": {
-						"css": "text-shadow:1px 1px 3px #0003"
+						"css": "text-shadow:1px 1px 1px #0009,2px 2px 4px #0003"
 					},
 					"text-shadow-hard": {
-						"css": "text-shadow:1px 1px 1px #0008"
+						"css": "text-shadow:1px 1px 0 #0009"
 					},
 					"text-outline": {
 						"css": "text-shadow:1px 0 #000,1px 1px #000,-1px -1px #000,1px -1px #000,-1px 1px #000,1px 1px #000"
@@ -514,10 +514,13 @@
 				},
 				"variations": {
 					"header-shadow-soft": {
-						"css": "text-shadow:1px 1px 4px #0004"
+						"css": "text-shadow:1px 1px 2px #000a,2px 2px 7px #0004"
 					},
 					"header-shadow-hard": {
-						"css": "text-shadow:2px 2px #0008"
+						"css": "text-shadow:2px 2px 1px #0009"
+					},
+					"header-shadow-3d": {
+						"css": "text-shadow:-1px 1px 0 #666,-2px 2px 0 #555,-3px 3px 0 #444,-4px 4px 0 #333,-5px 5px 4px #0008"
 					},
 					"header-underline": {
 						"css": "border-bottom:2px solid #ddd;padding-bottom:3px"

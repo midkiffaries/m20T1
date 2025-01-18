@@ -159,6 +159,11 @@ add_action( 'init', function(){
         'name'  => 'header-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' )
     ]);
+    // Heading: 3D shadow
+    register_block_style( 'core/heading', [
+        'name'  => 'header-shadow-3d',
+        'label' => __( '3D Shadow', 'm20t1' )
+    ]);
     // Heading: Embelishment
     register_block_style( 'core/heading', [
         'name'  => 'header-embelish',

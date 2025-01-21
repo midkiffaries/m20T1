@@ -1288,7 +1288,7 @@ function Header_Hero( $id ) {
     ?>
         <div class="header-hero-container header-<?=$className;?>">
             <?=$videoTag;?>
-            <div class="header-hero-image hero-parallax" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
+            <div class="header-hero-image hero-parallax" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption"></div>
             <div class="header-hero-gradient"></div>
             <div class="header-hero-overlay"></div>
             <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle;?></div>

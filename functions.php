@@ -460,7 +460,7 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/list-item', 'core/text', 'core/media-text', 'core/details', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
+    if ( in_array( $block_type, ['core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['typography'] = true; // Add typography option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
         $args['supports']['shadow'] = true; // Add box shadow option
@@ -1288,10 +1288,11 @@ function Header_Hero( $id ) {
     ?>
         <div class="header-hero-container header-<?=$className;?>">
             <?=$videoTag;?>
-            <div class="header-hero-image hero-parallax" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption"></div>
-            <div class="header-hero-gradient"></div>
-            <div class="header-hero-overlay"></div>
-            <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle;?></div>
+            <div class="header-hero-image hero-parallax" style="<?=$featuredImage;?>" role="img" aria-labelledby="header-hero-caption">
+                <div class="header-hero-gradient"></div>
+                <div class="header-hero-overlay"></div>
+                <div class="header-hero-caption" id="header-hero-caption"><?=$attachmentTitle;?></div>
+            </div>
         </div>
     <?php
 }
@@ -2011,7 +2012,7 @@ function custom_page_css( $id ) {
     $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
     $css = preg_replace('/;}/', '}', $css); // Remove new lines
 
-    return empty($css) ? NULL : '<style type="text/css" id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
+    return empty($css) ? NULL : '<style id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
 }
 
 // Get 'Page_Scheme' Custom Field for the page schema.org in the body tag

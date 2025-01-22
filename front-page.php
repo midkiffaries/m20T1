@@ -14,7 +14,6 @@
                 <div class="the-content" itemprop="text articleBody description" id="TheContent">
                     <?php the_content("<p>Read the rest of this page &raquo;</p>"); ?>
 
-                    <?=custom_page_css(get_the_ID()); ?>
                 </div>
             </div>
         </article>

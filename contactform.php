@@ -8,7 +8,7 @@
 		<?php if (comments_open(get_option('page_on_front'))) : ?>
 		<?=comment_form([
 			'label_submit' => __( 'Send Message', 'm20t1' ),
-			'title_reply' => __( '<h3>Send me a message</h3>', 'm20t1' ),
+			'title_reply' => __( 'Send me a message', 'm20t1' ),
 			'comment_notes_before' => '',
 			'comment_notes_after' => '',
 			'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '<span class="required">*</span></label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..." required></textarea></p>',

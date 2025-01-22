@@ -886,6 +886,9 @@
 			"core/social-links": {
 				"css": ""
 			},
+			"core/buttons": {
+				"css": ""
+			},
 			"core/navigation-link": {
 				"css": ""
 			}

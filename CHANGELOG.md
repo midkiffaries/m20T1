@@ -2,7 +2,7 @@
 
 ### 1.8.10 Live (January 30, 2025)
 
-* Fixes to some of the HTML errors that the validator picked up.
+* Fixes to some of the HTML errors that the validator picked up. WordPress itself seems to generate many of them.
 * More adjustments and bug fixes.
 
 ### 1.8.9 Live (January 11, 2025)

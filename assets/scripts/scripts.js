@@ -136,6 +136,7 @@ document.addEventListener("keyup", (e) => {
             font-size: 1.25em;
             line-height: 1;
             padding: .55em;
+            white-space: nowrap;
         }
         .accordion > button:hover {
             font-weight: bold;

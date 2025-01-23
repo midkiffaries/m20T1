@@ -94,7 +94,7 @@
 
     <aside id="sidebar-search" class="page-sidebar sidebar-search">
         <div class="accordion" role="tablist" aria-label="Accordion">
-            <button role="tab">Additional Information</button>
+            <button role="tab">More Information</button>
             <section role="tabpanel">
                 <?php dynamic_sidebar( 'tertiary' ); // Tertiary sidebar ?>
             </section>

@@ -567,6 +567,9 @@
 					"list-arrows": {
 						"css": "&{list-style-type:'→'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
+					"list-dbl-arrows": {
+						"css": "&{list-style-type:'≫'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+					},
 					"list-dash": {
 						"css": "&{list-style-type:'\\2013'} & li {padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},

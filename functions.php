@@ -94,15 +94,20 @@ add_action( 'init', function(){
         'name'  => 'list-color',
         'label' => __( 'Color Bullets', 'm20t1' )
     ]);
-    // List: Checkmarks
-    register_block_style( 'core/list', [
-        'name'  => 'list-checkmarks',
-        'label' => __( 'Checkmarks', 'm20t1' )
-    ]);
     // List: Arrows
     register_block_style( 'core/list', [
         'name'  => 'list-arrows',
         'label' => __( 'Arrows', 'm20t1' )
+    ]);
+    // List: Double Arrows
+    register_block_style( 'core/list', [
+        'name'  => 'list-dbl-arrows',
+        'label' => __( 'Dbl. Arrows', 'm20t1' )
+    ]);
+    // List: Checkmarks
+    register_block_style( 'core/list', [
+        'name'  => 'list-checkmarks',
+        'label' => __( 'Checkmarks', 'm20t1' )
     ]);
     // List: Dashes
     register_block_style( 'core/list', [

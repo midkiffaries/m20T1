@@ -2013,11 +2013,11 @@ function m20T1_settings_page() {
 // Get 'Page_CSS' Custom Field which adds custom page styling
 function custom_page_css( $id ) {
     $css = get_post_meta( $id, 'Page_CSS', true );
-    $css = str_replace(['<','>'], ['%3C','%3E'], $css); // make HTML safe
-    $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove Spaces
+    $css = str_replace(['<','>'], ['%3C','%3E'], $css); // Encode HTML
+    $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css); // Remove extra spaces
     $css = preg_replace('/;}/', '}', $css); // Remove new lines
 
-    return empty($css) ? NULL : '<style id="Page-CSS" hidden>'.wp_strip_all_tags($css).'</style>';
+    return empty($css) ? NULL : '<style id="Page-CSS">'.wp_strip_all_tags($css).'</style>';
 }
 
 // Get 'Page_Scheme' Custom Field for the page schema.org in the body tag

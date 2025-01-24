@@ -267,6 +267,12 @@ document.addEventListener("keyup", (e) => {
         let posy = (-window.scrollY / 25) + 50;
         par[0].style.backgroundPosition = `50% ${posy.toFixed(1)}%`;
     },true);
+
+    const parR = document.getElementsByClassName("hero-reflection");
+    document.addEventListener("scroll", function() {
+        let posy = (-window.scrollY / 25) - 50;
+        parR[0].style.backgroundPosition = `50% ${posy.toFixed(1)}%`;
+    },true);
 })();
 
 // Improve WordPress parallaxing backgrounds, any element with class="has-parallax"

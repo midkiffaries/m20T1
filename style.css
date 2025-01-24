@@ -40,7 +40,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--featured-img-bg-color: linear-gradient(135deg, #205380 0%,#40a5ff 82%,#205380 100%);
 	--featured-img-bg: linear-gradient(135deg, #06060603 0%, #06060603 1%,#83838303 1%, #83838303 14%,#fafafa03 14%, #fafafa03 26%,#1e1e1e03 26%, #1e1e1e03 62%,#75757503 62%, #75757503 66%,#f8f8f803 66%, #f8f8f803 76%,#27272703 76%, #27272703 100%),linear-gradient(135deg, #3939390f 0%, #3939390f 4%,#e3e3e30f 4%, #e3e3e30f 26%,#4343430f 26%, #4343430f 27%,#7e7e7e0f 27%, #7e7e7e0f 39%,#6767670f 39%, #6767670f 72%,#1010100f 72%, #1010100f 76%,#1515150f 76%, #1515150f 88%,#4545450f 88%, #4545450f 100%),linear-gradient(135deg, #9c9c9c0d 0%, #9c9c9c0d 12%,#3636360d 12%, #3636360d 48%,#a9a9a90d 48%, #a9a9a90d 59%,#6868680d 59%, #6868680d 62%,#a5a5a50d 62%, #a5a5a50d 68%,#7c7c7c0d 68%, #7c7c7c0d 77%,#bdbdbd0d 77%, #bdbdbd0d 85%,#adadad0d 85%, #adadad0d 100%),linear-gradient(135deg, #b6b6b612 0%, #b6b6b612 22%,#7a7a7a12 22%, #7a7a7a12 28%,#3e3e3e12 28%, #3e3e3e12 44%,#59595912 44%, #59595912 61%,#6e6e6e12 61%, #6e6e6e12 83%,#b9b9b912 83%, #b9b9b912 86%,#c0c0c012 86%, #c0c0c012 100%),linear-gradient(135deg, #0808080f 0%, #0808080f 54%,#3030300f 54%, #3030300f 57%,#f5f5f50f 57%, #f5f5f50f 86%,#0c0c0c0f 86%, #0c0c0c0f 94%,#e1e1e10f 94%, #e1e1e10f 100%), var(--featured-img-bg-color);
 	--featured-img-bg-over: #fff1 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='78mm' height='78mm' viewBox='0 0 78 78'><g fill-opacity='.04'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>") repeat 0 0;
-	--body-top-background: linear-gradient(0deg, #fefefe 8%, #fefefe4d 66%), 
+	--body-top-background: linear-gradient(0deg, #fefefe 32%, #fefefe4d 66%), 
 						linear-gradient(45deg, #fefefe 25%, #fefefe00 80%),
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10mm' height='10mm' viewBox='0 0 78 78'><g fill-opacity='.1'><circle cx='38.6' r='9.5'/><circle cx='78' cy='39.5' r='9.5'/><g transform='scale(-1)'><circle cx='-38.6' cy='-78.2' r='9.5'/><circle cy='-39.5' r='9.5'/></g></g></svg>");
 	--body-bottom-background: linear-gradient(0deg, #fefefe99 5%, #fefefe 100%), 
@@ -2865,6 +2865,26 @@ Page Background embellishments
 	width: 100%;
 	height: 15em;
 	background-image: var(--body-top-background);
+}
+
+/* Hero Reflection */
+.hero-reflection {
+	position: absolute;
+	left: 0;
+	top: calc(var(--wp--custom--header-height) + 2px);
+	z-index: -1;
+	width: 100%;
+	height: 6em;
+    background-position: 50% -50%;
+    background-size: cover;
+    transform: scaleY(-1);
+    filter: blur(1px) grayscale(0.2) opacity(0.35);
+}
+
+@media (max-width: 850px) {
+	.hero-reflection {
+		top: calc(var(--wp--custom--header-mobile-height) + 1px);
+	}
 }
 
 /* All pages/posts content bottom background */

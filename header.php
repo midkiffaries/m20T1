@@ -41,3 +41,6 @@
     </header>
 
     <div class="body-top-background"><?php // Background embellishments ?></div>
+    <?php if (is_page() || is_single()) : ?>
+    <div class="hero-reflection" style="<?=FeaturedImageURL(get_the_ID(), 'full', 1);?>"></div>
+    <?php endif; ?>

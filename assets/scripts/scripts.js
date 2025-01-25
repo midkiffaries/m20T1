@@ -270,7 +270,7 @@ document.addEventListener("keyup", (e) => {
 
     const parR = document.getElementsByClassName("hero-reflection");
     document.addEventListener("scroll", function() {
-        let posy = (-window.scrollY / 25) - 50;
+        let posy = (-window.scrollY / 25) - 52;
         parR[0].style.backgroundPosition = `50% ${posy.toFixed(1)}%`;
     },true);
 })();

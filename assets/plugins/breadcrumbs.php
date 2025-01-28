@@ -192,6 +192,8 @@ class Breadcrumb_Trail {
 			// Add the number of items and item list order schema.
 			//$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d">', absint( $item_count ) );
 			//$breadcrumb .= '<meta name="itemListOrder" content="Ascending">';
+			$breadcrumb .= sprintf( '<input type="hidden" name="numberOfItems" value="%d">', absint( $item_count ) );
+			$breadcrumb .= '<input type="hidden" name="itemListOrder" value="Ascending">';
 
 			// Loop through the items and add them to the list.
 			foreach ( $this->items as $item ) {
@@ -224,6 +226,7 @@ class Breadcrumb_Trail {
 
 				// Build the meta position HTML.
 				//$meta = sprintf( '<meta itemprop="position" content="%s">', absint( $item_position ) );
+				$meta = sprintf( '<input type="hidden" itemprop="position" value="%s">', absint( $item_position ) );
 
 				// Build the list item.
 				$breadcrumb .= sprintf( '<%1$s %2$s>%3$s%4$s</%1$s>', tag_escape( $this->args['item_tag'] ),$attributes, $item, $meta );

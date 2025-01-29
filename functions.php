@@ -25,7 +25,7 @@ define( 'POST_SEPARATOR', '–' );
 // Default: Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
 // Default: SEO text excerpt length default
-define( 'SEO_TEXT_LENGTH', 165 ); // Number of characters
+define( 'SEO_TEXT_LENGTH', 156 ); // Number of characters
 // Default: Maximum excerpt length default
 define( 'EXCERPT_LENGTH', 90 ); // Number of words
 // Default: Shorten length of the content for the blog posts listings

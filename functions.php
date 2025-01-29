@@ -25,7 +25,7 @@ define( 'POST_SEPARATOR', '–' );
 // Default: Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
 // Default: SEO text excerpt length default
-define( 'SEO_TEXT_LENGTH', 156 ); // Number of characters
+define( 'SEO_TEXT_LENGTH', 170 ); // Number of characters
 // Default: Maximum excerpt length default
 define( 'EXCERPT_LENGTH', 90 ); // Number of words
 // Default: Shorten length of the content for the blog posts listings
@@ -2191,7 +2191,7 @@ class BuildMetaBox {
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
 			<?php _e( 'Post Views:', 'm20t1' ); ?> <b><?=$pageViews;?></b><br> 
-            <?php _e( 'Excerpt Length:', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b>
+            <?php _e( 'Excerpt Length:', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b>/156
 		</label></div>
         <style>
         .css-m20t1 {

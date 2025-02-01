@@ -1,8 +1,8 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.10 Live (January 30, 2025)
+### 1.8.10 Live (February 1, 2025)
 
-* Added a parallaxing reflection below the hero image (Demo).
+* Added a parallaxing reflection below the hero image (Dev).
 * Fixes to some of the HTML errors that the validator picked up. WordPress itself seems to generate many of them.
 * More adjustments and bug fixes.
 

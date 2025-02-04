@@ -1090,12 +1090,16 @@ Single Blog Post Styling (single)
 
 .single-entry-content {
 	min-height: 12em;
+	padding: 0 1.5em;
 }
 
 @media (max-width: 849px) {
 	.single-entry-metadata,
 	.single-entry-sticky {
 		font-size: 0.9em;
+	}
+	.single-entry-content {
+		padding: 0;
 	}
 }
 
@@ -1251,9 +1255,10 @@ Blog Post Styling - index/archives/search
 }
 
 .entry-last-updated {
-	opacity: 0.8;
+	opacity: 0.6;
 	font-size: 0.9rem !important;
 	font-style: italic;
+	padding-left: 1.6em;
 }
 
 .content-excerpt {

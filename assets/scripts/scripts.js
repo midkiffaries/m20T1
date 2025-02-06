@@ -194,7 +194,7 @@ document.addEventListener("keyup", (e) => {
             iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
             iframe.setAttribute("loading", "lazy");
             iframe.setAttribute("role", "presentation");
-            iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?feature=oembed`);
+            iframe.setAttribute("src", `https://www.youtube.com/embed/${this.dataset.embed}?&autoplay=1&feature=oembed`);
             this.innerHTML = "";
             this.appendChild(iframe);
         });

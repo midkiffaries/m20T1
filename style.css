@@ -2888,7 +2888,7 @@ Page Background embellishments
 
 @media (max-width: 850px) {
 	.hero-reflection {
-		top: calc(var(--wp--custom--header-mobile-height) + 1px);
+		top: calc(var(--wp--custom--header-mobile-height) + 2px);
 	}
 }
 

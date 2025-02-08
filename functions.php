@@ -1383,7 +1383,7 @@ function blog_post_pagination_numbers() {
     $post_pages = $post_count > get_option('posts_per_page') ? ceil($post_count / get_option('posts_per_page')) : 1;
     ?>
     <?php if ($post_pages > 1) : ?>
-        <ul class="pagination-numbers">
+        <ul class="pagination-numbers" aria-label="Select a page">
             <?php foreach (range(1, $post_pages) as $page) : ?>
             <?php $current_page = ($page == get_query_var('paged')) ? "current_page" : ""; ?>
             <li><a href="<?=get_pagenum_link($page);?>" class="<?=$current_page;?>"><?=$page;?></a></li>

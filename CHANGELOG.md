@@ -2,6 +2,7 @@
 
 ### 1.8.11 Live (March 1, 2025)
 
+* Added page numbers to the blog post pagination.
 * Adjustments and improvements.
 
 ### 1.8.10 Live (February 1, 2025)

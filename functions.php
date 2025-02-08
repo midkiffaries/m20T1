@@ -1360,8 +1360,35 @@ function attachment_page_image( $id ) {
 
 // Pagination on the index/archive/search pages
 function blog_post_pagination( $type ) {
-    previous_posts_link("<span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}", 0); // << Left Side
-    next_posts_link("Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span>", 0); // Right Side >>
+    if (get_previous_posts_link()) { // << Left Side
+        previous_posts_link("<span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}", 0);
+    } else {
+        echo "<span style='opacity:0.3;margin-right:10px'><span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}</span>";
+    }
+
+    if (!is_archive()) if (!is_search()) blog_post_pagination_numbers();
+    
+    if (get_next_posts_link()) {  // Right Side >>
+        next_posts_link("Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span>", 0);
+    } else {
+        echo "<span style='opacity:0.3;margin-left:10px'>Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span></span>";
+    }
+}
+
+// Pagination numbers on the index/archive/search pages
+function blog_post_pagination_numbers() {
+    $post_count = wp_count_posts()->publish;
+    $post_pages = $post_count > get_option('posts_per_page') ? ceil($post_count / get_option('posts_per_page')) : 1;
+    ?>
+    <?php if ($post_pages > 1) : ?>
+        <ul class="pagination-numbers">
+            <?php foreach (range(1, $post_pages) as $page) : ?>
+            <?php $current_page = ($page == get_query_var('paged')) ? "current_page" : ""; ?>
+            <li><a href="<?=get_pagenum_link($page);?>" class="<?=$current_page;?>"><?=$page;?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+    <?php
 }
 
 // Show the blog post tags as a list

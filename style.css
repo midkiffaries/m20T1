@@ -2149,6 +2149,24 @@ Page Pagination Section
 	margin: auto 12px;
 }
 
+.blog-pagination .pagination-numbers {
+	display: inline-block;
+}
+
+.blog-pagination .pagination-numbers li {
+	display: inline;
+}
+
+.blog-pagination .pagination-numbers a {
+	margin: 0;
+	padding: 0 0.2em;
+	min-width: 2.1ch;
+}
+
+.blog-pagination .pagination-numbers a.current_page {
+	font-weight: 800;
+}
+
 .single-blog-post-nav div a {
 	font-size: 0.9rem;
 }
@@ -2180,6 +2198,9 @@ Page Pagination Section
 	}
 	.single-blog-post-nav div {
 		margin: 0;
+	}
+	.blog-pagination .pagination-numbers {
+		display: none;
 	}
 }
 

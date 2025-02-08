@@ -1360,18 +1360,20 @@ function attachment_page_image( $id ) {
 
 // Pagination on the index/archive/search pages
 function blog_post_pagination( $type ) {
+    $previous_link = "<span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}";
     if (get_previous_posts_link()) { // << Left Side
-        previous_posts_link("<span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}", 0);
+        previous_posts_link($previous_link, 0);
     } else {
-        echo "<span style='opacity:0.3;margin-right:10px'><span class='icon-arrow-left'></span> Next " . get_option('posts_per_page') . " {$type}</span>";
+        echo "<span style='opacity:0.3;margin-right:10px'>{$previous_link}</span>";
     }
 
     if (!is_archive()) if (!is_search()) blog_post_pagination_numbers();
     
+    $next_link = "Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span>";
     if (get_next_posts_link()) {  // Right Side >>
-        next_posts_link("Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span>", 0);
+        next_posts_link($next_link, 0);
     } else {
-        echo "<span style='opacity:0.3;margin-left:10px'>Previous " . get_option('posts_per_page') . " {$type} <span class='icon-arrow-right'></span></span>";
+        echo "<span style='opacity:0.3;margin-left:10px'>{$next_link}</span>";
     }
 }
 

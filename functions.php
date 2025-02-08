@@ -1154,9 +1154,9 @@ function image_metadata( $filename ) {
     $filesize = file_units(wp_filesize(get_filepath($filename)));
     if (@is_array(getimagesize($filename))) {
         list($width, $height, $type, $attr) = getimagesize($filename);
-        return "File: " . image_type_to_mime_type($type) . " – Dimensions: {$width}x{$height}px – Size: {$filesize}";
+        return "Kind: " . image_type_to_mime_type($type) . " – Dimensions: {$width}×{$height} – Size: {$filesize}";
     } else {
-        return "File: " . mime_content_type(get_filepath($filename)) . " – Size: {$filesize}";
+        return "Kind: " . mime_content_type(get_filepath($filename)) . " – Size: {$filesize}";
     }
 }
 

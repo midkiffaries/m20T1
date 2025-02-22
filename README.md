@@ -43,12 +43,14 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 <img src="https://github.com/midkiffaries/m20T1/assets/19917696/012a850d-dce2-46ab-adb8-c7aff033fe13" alt="Screenshot" width="300" align="right" />
 
 - Seperating my personallized styling from style.css
+- Fix page layout to allow for full width elements
+- Improve the pagination
 - Create a seperate panel in the editor for SEO and post statistics
 
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section. 
 
-FYI, this theme is configured for my personal website. I did however keep the personalized features and styles limited to the <code>theme.json</code> and the <code>style.css</code> files. You will need to go into those files to make necessary adjustments to the visuals and other configuration changes.
+FYI, this theme is configured for my personal website. I did however keep the personalized features and styles limited to <code>theme.json</code> and <code>style.css</code> files. You will need to go into those files to make necessary adjustments to the visuals and other configuration changes.
 
 ## Disclaimer
 This WordPress theme is just a personal pet project of mine, and I am happy to share the code, however, there really is no support for it other than any issues that I come across while working on it for my personal website.

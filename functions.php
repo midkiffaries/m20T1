@@ -109,6 +109,11 @@ add_action( 'init', function(){
         'name'  => 'list-checkmarks',
         'label' => __( 'Checkmarks', 'm20t1' )
     ]);
+    // List: Checks
+    register_block_style( 'core/list', [
+        'name'  => 'list-checks',
+        'label' => __( 'Boxed Checks', 'm20t1' )
+    ]);
     // List: Dashes
     register_block_style( 'core/list', [
         'name'  => 'list-dash',

@@ -565,7 +565,7 @@
 						"css": "&{list-style-type:'\\2713'} & li{padding-inline:0.5ch;margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
 					"list-checks": {
-						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem} & li::before{content:'\\2713';font-weight:bold;background-color:green;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline}"
+						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem} & li::before{content:'\\2713';font-weight:bold;background-color:#0e0;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline}"
 					},
 					"list-arrows": {
 						"css": "&{list-style-type:'→'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"

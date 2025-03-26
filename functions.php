@@ -598,6 +598,9 @@ add_action( 'init', function(){
     // Remove shortlink
     remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
 
+    // Remove comments from embeds
+    remove_action( 'embed_content_meta', 'print_embed_comments_button' );
+
     // Remove default robots call
     remove_filter('wp_robots', 'wp_robots_max_image_preview_large');
 

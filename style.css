@@ -1689,6 +1689,25 @@ body:not(.post-type-archive-portfolio):not(.search-results):not(.error404) .curr
 	font-weight: 800 !important;
 }
 
+/* Embedded Elements */
+.wp-embed-featured-image.rectangular {
+	margin: -25px -25px 25px;
+}
+
+p.wp-embed-heading {
+	margin-bottom: 10px;
+}
+
+.wp-embed-footer {
+	margin: 25px -25px -25px;
+	padding: 25px;
+	background: #fafafa;
+}
+
+p.wp-embed-posted-on {
+	margin-top: 10px;
+}
+
 
 /************************ 
 Figures and Galleries

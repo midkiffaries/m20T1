@@ -2,6 +2,7 @@
 
 ### 1.8.11 Live (March 1, 2025)
 
+* Supports WordPress 6.8.0.
 * Added page numbers to the blog post pagination.
 * Adjustments and improvements.
 

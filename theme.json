@@ -870,7 +870,7 @@
 				"css": ""
 			},
 			"core/tag-cloud": {
-				"css": "&{line-height:1.1 !important}"
+				"css": "&{line-height:1.1 !important;letter-spacing:-1px}"
 			},
 			"core/categories": {
 				"css": "",

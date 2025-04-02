@@ -1714,7 +1714,7 @@ Figures and Galleries
 ************************/
 
 .wp-block-gallery figure > a[href] img,
-.wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".heif"], a[href$=".heic"]) img {
+.wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".avif"], a[href$=".heif"]) img {
 	cursor: zoom-in;
 	/* cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1560" viewBox="0 0 560 560"><circle cx="208.4" cy="208.4" r="165.3" fill="red"/><path d="M288 224h-64v64h-32v-64h-64v-32h64v-64h32v64h64Zm-79 129c40 0 74-14 102-42s42-62 42-102-14-74-42-102-62-42-102-42-74 14-102 42-42 62-42 102 14 74 42 102 62 42 102 42zm192 0 159 159-48 48-159-159-9-35c-38 33-83 50-135 50-58 0-108-20-148-60-41-40-61-89-61-147S20 101 61 61c40-41 90-61 148-61s107 20 147 61a202 202 0 0 1 45 219c-10 26-22 48-35 64z"/></svg>'), zoom-in; */
 }

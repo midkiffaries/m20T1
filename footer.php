@@ -10,7 +10,6 @@
         </div>
 
         <div class="footer-notice">
-            <hr class="footer-rule">
             <div class="footer-copyright" itemprop="copyrightNotice">&copy; <time datetime="<?=date('Y');?>" itemprop="copyrightYear"><?=date('Y'); ?></time> <?=bloginfo('name');?>. All rights reserved.</div>
             <div class="footer-footnote">
                 <a href="https://github.com/midkiffaries/m20T1" class="wp-theme-title">m20T1 Theme</a> | 

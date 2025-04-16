@@ -641,6 +641,9 @@
 					"hr-double": {
 						"css": "width:100% !important; border:0; border-top:5px double var(--wp--preset--color--primary-dark)"
 					},
+					"hr-skinny": {
+						"css": "width:100%;border-top-width:1px;height:1px !important"
+					},
 					"hr-gradient": {
 						"css": "width:100% !important; border:0; height:2px; background-image:linear-gradient(to right,#0000,#444c,#0000)"
 					},

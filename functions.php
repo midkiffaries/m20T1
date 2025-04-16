@@ -54,6 +54,11 @@ add_action( 'init', function(){
         'name'  => 'hr-double',
         'label' => __( 'Double Line', 'm20t1' )
     ]);
+    // Separator: Skinny Line
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-skinny',
+        'label' => __( 'Skinny', 'm20t1' )
+    ]);
     // Separator: Gradient Fade
     register_block_style( 'core/separator', [
         'name'  => 'hr-gradient',

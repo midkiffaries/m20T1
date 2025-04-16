@@ -992,12 +992,6 @@ Site Footer
 	width: var(--wp--style--global--wide-size);
 }
 
-.footer-rule {
-	opacity: 0.1;
-	padding: 1px;
-	margin-top: 0;
-}
-
 .footer-copyright {
 	width: 50%;
 	float: left;

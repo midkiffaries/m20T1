@@ -74,6 +74,11 @@ add_action( 'init', function(){
         'name'  => 'hr-pencil',
         'label' => __( 'Pencil Line', 'm20t1' )
     ]);
+    // Separator: Hashmarks
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-hash',
+        'label' => __( 'Hashmarks', 'm20t1' )
+    ]);
     // Separator: Jagged
     register_block_style( 'core/separator', [
         'name'  => 'hr-jagged',

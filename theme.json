@@ -653,6 +653,9 @@
 					"hr-pencil": {
 						"css": "width:100% !important;border:0;background-position-y:100%;background-size:100% .8em;height:1em;background-repeat:no-repeat;background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 254 20\" preserveAspectRatio=\"none\"><path stroke=\"%23333\" stroke-linecap=\"round\" stroke-width=\"4\" d=\"M2 13c37-4 163-6 212-5l38 1\"/></svg>');&.aligncenter{background-position:50% 50%}"
 					},
+					"hr-hash": {
+						"css": "width:100% !important;border:0;background-size:1em;height:1em;background-repeat:repeat-x;background-image:linear-gradient(-45deg,#0000 22.5%,#555 22.5%,#555 27.5%,#0000 27.5%,#0000 47.5%,#555 47.5%,#555 52.5%,#0000 52.5%,#0000 72.5%,#555 72.5%,#555 77.5%, #0000 77.5%, #0000);"
+					},
 					"hr-jagged": {
 						"css": "width:100% !important;border:0;background-size:3em;height:2em;background-repeat:repeat-x;background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 26.3 14.9\"><path d=\"M0 0v5.3l13.2 9.6 13.1-9.6V0l-13 9.4z\" fill=\"black\"/><path fill=\"%2340A5FF\" d=\"M0 .3v3.4l13.2 9.6 13.1-9.6V.3l-13 9.4z\"/></svg>')"
 					}

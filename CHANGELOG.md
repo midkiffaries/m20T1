@@ -1,9 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.11 Live (April 16, 2025)
+### 1.8.11 Live (April 26, 2025)
 
 * Supports WordPress 6.8.0.
-* Added page numbers to the blog post pagination.
+* Testing: Added page numbers to the blog post pagination - needs refinement.
 * Adjustments and improvements.
 
 ### 1.8.10 Live (February 1, 2025)

@@ -2,8 +2,9 @@
 
 ### 1.8.11 Live (April 26, 2025)
 
-* Supports WordPress 6.8.0.
+* Supports WordPress 6.8.1.
 * Testing: Added page numbers to the blog post pagination - needs refinement.
+* Switched all the CSS colors from rgba() to #rrggbbaa.
 * Adjustments and improvements.
 
 ### 1.8.10 Live (February 1, 2025)

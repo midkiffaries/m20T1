@@ -7,7 +7,7 @@ Description: m20T1 is a light-weight WordPress theme that I created from scratch
 Requires at least: 6.6
 Tested up to: 6.8.1
 Requires PHP: 8.0
-Version: 1.8.11
+Version: 1.8.12
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: m20t1
@@ -20,8 +20,6 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--icon-search: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='416' height='488'><path d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/></svg>");
 	--icon-mail: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='512'><path d='M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z'/></svg>");
 	--icon-avatar: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-7 -10 80 80'><path d='M54.2 0c-3-.2-7.3 2-8 4A34 34 0 0 1 64 19.5c2.1-2.4 2.3-5.8 2-8.9A12.1 12.1 0 0 0 54.2 0zm-42 0c2.9-.2 7.3 2 8 4A34.2 34.2 0 0 0 2.4 19.5c-2-2.4-2.2-5.8-2-8.9C1.2 5 6.2 0 12.2 0Zm21 3a32 32 0 0 0-21.4 7.8C3.8 17.4-1.7 28 .5 38.6a31.5 31.5 0 0 0 25 24.1c13.3 3 28.3-2.2 35.8-13.8a26.6 26.6 0 0 0 3.4-23.6A33 33 0 0 0 33.2 3.1zM24 21.3c3.3-.1 5.1 4.4 2.8 6.7s-6.8.4-6.8-3c0-2.1 1.7-3.9 3.9-3.9zm18.4 0c3.3-.1 5.2 4.4 2.8 6.7-2.3 2.3-6.8.5-6.7-2.8a4 4 0 0 1 3.9-3.9zM33 33c3 0 7.7 1.2 7.6 5-1 3.5-5.5 4.1-8.8 4-2.9 0-8-2.6-5.8-6.2 1.6-2.1 4.5-2.8 7-2.8z' fill='grey'/></svg>");
-
-	--darkmode-bg-color: #161616;
 
 	--twitter-color: #14171a;
 	--facebook-color: #3b5998;
@@ -2227,7 +2225,7 @@ body.dark-mode,
 /* .dark-mode .body-container, */
 .dark-mode dialog > div {
 	color: #eee;
-	background-color: var(--darkmode-bg-color);
+	background-color: #161616;
 }
 
 .dark-mode dialog {

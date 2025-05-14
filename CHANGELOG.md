@@ -2,7 +2,7 @@
 
 ### 1.8.12 Live (June X, 20XX)
 
-* Accessability improvemnts.
+* Accessability improvements.
 
 ### 1.8.11 Live (May 4, 2025 🖖 be with you)
 

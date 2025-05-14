@@ -574,7 +574,7 @@ Icon Font Styling
 /* .the-content p [href$=".pdf"]::before, */
 .icon-document::before {
 	font-family: 'icomoon' !important;
-	content: "\e907"; /* document */
+	content: "\e907" / "Document icon";
 	padding-right: 2px;
 	font-size: 1rem;
 }
@@ -582,28 +582,28 @@ Icon Font Styling
 /* .the-content p [href^="mailto:"]::before, */
 .icon-mail::before {
 	font-family: 'icomoon' !important;
-	content: "\e903"; /* envelope */
+	content: "\e903" / "Mail icon";
     padding-right: 1px;
 }
 
 /* .the-content p [href^="tel:"]::before, */
 .icon-phone::before {
     font-family: 'icomoon' !important;
-	content: "\e942"; /* phone */
+	content: "\e942" / "Phone icon";
     padding-right: 1px;
     font-size: 0.9rem;
 }
 
 .icon-arrow-right::before {
     font-family: 'icomoon' !important;
-	content: "\e90e"; /* R arrow */
+	content: "\e90e" / "Right arrow";
     font-size: 1.6rem;
 	vertical-align: -4px;
 }
 
 .icon-arrow-left::before {
     font-family: 'icomoon' !important;
-	content: "\e90d"; /* L arrow */
+	content: "\e90d" / "Left arrow";
     font-size: 1.6rem;
 	vertical-align: -4px;
 }
@@ -1003,7 +1003,7 @@ Site Footer
 
 .footer-footnote .wp-theme-title::before {
 	font-family: 'icomoon' !important;
-	content: "\e902";
+	content: "\e902" / "Theme Logo";
 	padding-right: 2px;
 	vertical-align: -2px;
 }
@@ -1404,7 +1404,7 @@ Entry Social Sharing Styling
 }
 
 .post-social-share .facebook-share::before {
-	content: "\e90b";
+	content: "\e90b" / "Facebook icon";
 	font-size: 1.6rem;
 	vertical-align: -3px;
 }
@@ -1418,7 +1418,7 @@ Entry Social Sharing Styling
 }
 
 .post-social-share .twitter-share::before {
-	content: "\e906";
+	content: "\e906" / "X icon";
 }
 
 .post-social-share .linkedin-share {
@@ -1430,7 +1430,7 @@ Entry Social Sharing Styling
 }
 
 .post-social-share .linkedin-share::before {
-	content: "\e905";
+	content: "\e905" / "LinkedIn icon";
 }
 
 .post-social-share .pinterest-share {
@@ -1442,7 +1442,7 @@ Entry Social Sharing Styling
 }
 
 .post-social-share .pinterest-share::before {
-	content: "\e900";
+	content: "\e900" / "Pinterest icon";
 }
 
 .post-social-share .reddit-share {
@@ -1454,7 +1454,7 @@ Entry Social Sharing Styling
 }
 
 .post-social-share .reddit-share::before {
-	content: "\e901";
+	content: "\e901" / "Reddit icon";
 }
 
 
@@ -2066,7 +2066,7 @@ Comments Section
 }
 
 .comment-edit-link::before {
-	content: "✎ ";
+	content: "✎ " / "Pencil icon";
 }
 
 /* Comment Form */
@@ -2114,7 +2114,7 @@ Comments Section
 }
 
 .required::after {
-	content: "★";
+	content: "★" / "Required field";
 	font-size: 0.8em;
 	color: goldenrod;
 	vertical-align: 2px;
@@ -2388,7 +2388,7 @@ Breadcrumbs Plugin Style
 
 .breadcrumbs .trail-items li:first-of-type::before {
 	font-family: 'icomoon' !important;
-	content: "\e904";
+	content: "\e904" / "Home icon";
 	padding-right: 3px;
 }
 
@@ -2579,7 +2579,7 @@ Custom Theme CSS
 
 .portfolio-name a::before {
 	font-family: 'icomoon';
-	content: "\e90d";
+	content: "\e90d" / "Portfolio icon";
 	vertical-align: -3px;
 	margin-left: -14px;
 }
@@ -2872,7 +2872,7 @@ Global Page Styling
 /* Add embellishment to last <p> in article */
 .single-entry-content p:last-of-type::after {
 	font-family: 'icomoon' !important;
-	content: "\e902";
+	content: "\e902" / "Star icon";
 	margin-left: 0.5em;
 	line-height: 1;
 	opacity: 0.5;

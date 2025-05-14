@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.12 Live (June X, 20XX)
+
+* Accessability improvemnts.
+
 ### 1.8.11 Live (May 4, 2025 🖖 be with you)
 
 * Supports WordPress 6.8.1.

@@ -2,6 +2,8 @@
 
 ### 1.8.12 Live (June X, 20XX)
 
+* Additional element styles.
+* Added a fancy strike-through.
 * Accessability improvements.
 
 ### 1.8.11 Live (May 4, 2025 🖖 be with you)

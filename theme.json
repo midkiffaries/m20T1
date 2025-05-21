@@ -460,7 +460,7 @@
 		},
 		"blocks": {
 			"core/paragraph": {
-				"css": "text-wrap:pretty;orphans:3;widows:3; &.has-drop-cap:not(:focus)::first-letter{font-weight:700 !important;font-size:450% !important} & code{background-color:#aaa6;padding:0 2px;border-radius:2px}",
+				"css": "text-wrap:pretty;orphans:3;widows:3; &.has-drop-cap:not(:focus)::first-letter{font-weight:700 !important;font-size:450% !important} & code{background-color:#aaa6;padding:0 2px;border-radius:2px} & s{-webkit-text-decoration:wavy line-through red;text-decoration:wavy line-through red;text-decoration-thickness:10%;}",
 				"typography": {
 					"fontSize": "var:preset|font-size|medium",
 					"lineHeight": "1.7"

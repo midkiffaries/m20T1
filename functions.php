@@ -79,6 +79,11 @@ add_action( 'init', function(){
         'name'  => 'hr-hash',
         'label' => __( 'Hashmarks', 'm20t1' )
     ]);
+    // Separator: Tiny Dots
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-tinydots',
+        'label' => __( 'Tiny Dots', 'm20t1' )
+    ]);
     // Separator: Jagged
     register_block_style( 'core/separator', [
         'name'  => 'hr-jagged',

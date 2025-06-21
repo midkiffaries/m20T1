@@ -1201,7 +1201,7 @@ Blog Post Styling - index/archives/search
 	display: block;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-    background-size: 160%;
+    background-size: auto 160%;
     margin: 0;
     background-color: var(--brand-color-dark);
     background-image: var(--featured-img-bg);

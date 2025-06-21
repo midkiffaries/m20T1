@@ -1210,7 +1210,7 @@ Blog Post Styling - index/archives/search
 }
 
 .entry-thumbnail:hover {
-	background-size: 185%;
+	background-size: auto 185%;
 }
 
 .entry-thumbnail:active {

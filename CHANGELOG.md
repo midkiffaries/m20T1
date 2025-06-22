@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.12 Live (June X, 20XX)
+### 1.8.12 Live (June XX, 20XX)
 
 * Additional WordPress element styles.
 * Added a fancy strike-through style.

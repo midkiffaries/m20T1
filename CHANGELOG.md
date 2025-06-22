@@ -2,9 +2,10 @@
 
 ### 1.8.12 Live (June X, 20XX)
 
-* Additional element styles.
-* Added a fancy strike-through.
+* Additional WordPress element styles.
+* Added a fancy strike-through style.
 * Accessability improvements.
+* Styling fixes.
 
 ### 1.8.11 Live (May 4, 2025 🖖 be with you)
 

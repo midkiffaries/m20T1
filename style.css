@@ -2138,7 +2138,9 @@ Page Pagination Section
 	margin: 1em 0 3em;
 }
 
-.blog-pagination nav a {
+.blog-pagination nav a,
+.blog-pagination .pagination-select {
+	background-color: transparent;
 	text-decoration: none;
 	padding: 4px 10px;
 	display: inline-block;
@@ -2158,7 +2160,7 @@ Page Pagination Section
 .blog-pagination nav a:active {
 	filter: brightness(75%);
 }
-
+/*
 .blog-pagination .blog-post-nav a {
 	margin: auto 12px;
 }
@@ -2179,6 +2181,16 @@ Page Pagination Section
 
 .blog-pagination .pagination-numbers a.current_page {
 	font-weight: 800;
+}
+*/
+.blog-pagination .pagination-select {
+	border-width: 0 0 2px 0;
+	margin: 0 0.6em;
+	&:hover {
+		color: #fff;
+		background-color: var(--wp--preset--color--secondary);
+		border-bottom-color: #0006;
+	}
 }
 
 .single-blog-post-nav div a {

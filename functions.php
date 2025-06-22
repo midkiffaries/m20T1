@@ -1406,12 +1406,23 @@ function blog_post_pagination_numbers() {
     $post_pages = $post_count > get_option('posts_per_page') ? ceil($post_count / get_option('posts_per_page')) : 1;
     ?>
     <?php if ($post_pages > 1) : ?>
+        <?php 
+        /*
         <ul class="pagination-numbers" aria-label="Jump to page">
             <?php foreach (range(1, $post_pages) as $page) : ?>
             <?php $current_page = ($page == get_query_var('paged')) ? "current_page" : ""; ?>
             <li><a href="<?=get_pagenum_link($page);?>" class="<?=$current_page;?>"><?=$page;?></a></li>
             <?php endforeach; ?>
         </ul>
+        */
+        ?>
+        <select class="pagination-select" aria-label="Jump to page" onchange="if(this.value)window.location.href=this.value">
+            <option value="" disabled selected>Jump to</option>
+            <?php foreach (range(1, $post_pages) as $page) : ?>
+                <?php $current_page = ($page == get_query_var('paged')) ? "current_page" : ""; ?>
+                <option value="<?=get_pagenum_link($page);?>" class="<?=$current_page;?>">Page <?=$page;?></option>
+            <?php endforeach; ?>
+        </select>
     <?php endif; ?>
     <?php
 }

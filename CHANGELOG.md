@@ -2,8 +2,9 @@
 
 ### 1.8.12 Live (June XX, 20XX)
 
+* Simplification of the pagination mechanism.
 * Additional WordPress element styles.
-* Added a fancy strike-through style.
+* Added a fancy strike-through base style.
 * Accessability improvements.
 * Styling fixes.
 

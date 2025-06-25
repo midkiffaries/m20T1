@@ -2157,44 +2157,20 @@ Page Pagination Section
 	border-bottom-color: #0006;
 }
 
+.blog-pagination .pagination-select {
+	border-width: 0 0 2px 0;
+	margin: 0 0.6em;
+}
+
 .blog-pagination .pagination-select:hover {
+	color: #fff;
+	background-color: var(--wp--preset--color--secondary);
+	border-bottom-color: #0006;
 	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='white'/></svg>");
 }
 
 .blog-pagination nav a:active {
 	filter: brightness(75%);
-}
-/*
-.blog-pagination .blog-post-nav a {
-	margin: auto 12px;
-}
-
-.blog-pagination .pagination-numbers {
-	display: inline-block;
-}
-
-.blog-pagination .pagination-numbers li {
-	display: inline;
-}
-
-.blog-pagination .pagination-numbers a {
-	margin: 0;
-	padding: 0 0.2em;
-	min-width: 2.1ch;
-}
-
-.blog-pagination .pagination-numbers a.current_page {
-	font-weight: 800;
-}
-*/
-.blog-pagination .pagination-select {
-	border-width: 0 0 2px 0;
-	margin: 0 0.6em;
-	&:hover {
-		color: #fff;
-		background-color: var(--wp--preset--color--secondary);
-		border-bottom-color: #0006;
-	}
 }
 
 .single-blog-post-nav div a {

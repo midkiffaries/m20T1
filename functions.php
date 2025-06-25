@@ -1404,7 +1404,6 @@ function blog_post_pagination( $type ) {
 function blog_post_pagination_numbers() {
     $post_count = wp_count_posts()->publish;
     $post_pages = $post_count > get_option('posts_per_page') ? ceil($post_count / get_option('posts_per_page')) : 1;
-    get_query_var('paged')
     ?>
     <?php if ($post_pages > 1) : ?>
         <select class="pagination-select" aria-label="Jump to page" onchange="if(this.value)window.location.href=this.value">

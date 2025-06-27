@@ -2162,7 +2162,8 @@ Page Pagination Section
 	margin: 0 0.6em;
 }
 
-.blog-pagination .pagination-select:hover {
+.blog-pagination .pagination-select:hover,
+.blog-pagination .pagination-select:focus {
 	color: #fff;
 	background-color: var(--wp--preset--color--secondary);
 	border-bottom-color: #0006;

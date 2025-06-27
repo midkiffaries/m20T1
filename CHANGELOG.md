@@ -1,8 +1,8 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.12 Live (June XX, 20XX)
+### 1.8.12 Live (June 26, 2025)
 
-* Simplification of the pagination mechanism.
+* Simplification of the blog pagination mechanism.
 * Additional WordPress element styles.
 * Added a fancy strike-through base style.
 * Accessability improvements.

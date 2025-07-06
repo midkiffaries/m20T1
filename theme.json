@@ -145,6 +145,11 @@
 					"slug": "chromegradient"
 				},
 				{
+					"gradient": "linear-gradient(0deg, #F6AF09 25%, #F37C17 25%, #F37C17 50%, #DD3F21 50%, #DD3F21 75%, #4D261A 75%, #4D261A 100%)",
+					"name": "Seventies gradient",
+					"slug": "seventiesgradient"
+				},
+				{
 					"gradient": "repeating-linear-gradient(135deg, #00000008 0, #00000008 2px, transparent 2px, transparent 4px), linear-gradient(45deg, #83bbf7, #4a95fc, #3b68f7)",
 					"name": "Custom gradient with the brand colors and stripes",
 					"slug": "customgradient"

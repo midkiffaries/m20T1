@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+### 1.8.13 Live (XXXXX XX, 202X)
+
+* New Javacript function.
+
 ### 1.8.12 Live (June 26, 2025)
 
 * Simplification of the blog pagination mechanism.

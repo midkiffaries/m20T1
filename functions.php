@@ -89,6 +89,11 @@ add_action( 'init', function(){
         'name'  => 'hr-jagged',
         'label' => __( 'Jagged', 'm20t1' )
     ]);
+    // Separator: Heavy
+    register_block_style( 'core/separator', [
+        'name'  => 'hr-heavy',
+        'label' => __( 'Heavy', 'm20t1' )
+    ]);
     // Table: Theme
     register_block_style( 'core/table', [
         'name'  => 'table-theme',

@@ -437,6 +437,11 @@ add_action( 'init', function(){
         }
         }'
     ]);
+     // Cover Block: Stripe Fade background
+    register_block_style( 'core/cover', [
+        'name'  => 'cover-stripe-fade',
+        'label' => __( 'Stripe Fade', 'm20t1' )
+    ]);
     // Media & Text Block: Image full width style
     register_block_style( 'core/media-text', [
         'name'  => 'media-text-full',

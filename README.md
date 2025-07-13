@@ -44,8 +44,8 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 
 - Seperating my personallized styling from style.css
 - Fix page layout to allow for full width elements
-- Improve the pagination
 - Create a seperate panel in the editor for SEO and post statistics
+- Update the look of the main navigation
 
 ## How to use this theme
 This theme is not available on the official WordPress theme library. In order to use it on your own WordPress site, you first need to upload/FTP the folder <code>/m20T1-1.x.x-Live/</code> into <code>/wp-content/themes/</code>. From there the <b>m20T1</b> should automatically appear under "Appearance -> Themes" in your WordPress admin section. 

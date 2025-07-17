@@ -146,12 +146,12 @@
 				},
 				{
 					"gradient": "linear-gradient(0deg,#ffd000 0%,#ffd000 20%,#f6af09 20%,#f6af09 40%,#f37c17 40%,#f37718 60%,#dd3f21 60%,#db3922 80%,#4d261a 80%,#402419 100%)",
-					"name": "Seventies gradient",
+					"name": "Seventies stripes",
 					"slug": "seventiesgradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg,#00cc69 0%,#00cc69 17%,#fcc245 17%,#fcc245 34%,#ff7700 34%,#ff7700 50%,#ff2a00 50%,#ff2a00 66%,#a11fff 66%,#a11fff 83%,#14a9ff 83%,#14a9ff 100%)",
-					"name": "Eighties gradient",
+					"name": "Eighties stripes",
 					"slug": "eightiesgradient"
 				},
 				{

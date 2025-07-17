@@ -135,9 +135,9 @@
 					"slug": "sunrisegradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #f9f9f9 0%, #0066ff 30%, #000f26 50%, #ffffff 50%, #ff7400 80%, #662e00 100%)",
-					"name": "Sunset gradient",
-					"slug": "sunsetgradient"
+					"gradient": "linear-gradient(0deg,#ffeed1 0%,#d18556 30%,#783610 50%,#ffffff 50%,#569de8 75%,#002e5e 100%)",
+					"name": "Horizon gradient",
+					"slug": "horizongradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg, #ffffff 2%, #efccfc 7%, #de00ff 20%, #5400c1 50%, #e8f9ff 51%, #00d4ff 66%, #0086d6 80%, #0065a2 93%)",
@@ -145,9 +145,14 @@
 					"slug": "chromegradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #F6AF09 25%, #F37C17 25%, #F37C17 50%, #DD3F21 50%, #DD3F21 75%, #4D261A 75%, #4D261A 100%)",
+					"gradient": "linear-gradient(0deg,#ffd000 0%,#ffd000 20%,#f6af09 20%,#f6af09 40%,#f37c17 40%,#f37718 60%,#dd3f21 60%,#db3922 80%,#4d261a 80%,#402419 100%)",
 					"name": "Seventies gradient",
 					"slug": "seventiesgradient"
+				},
+				{
+					"gradient": "linear-gradient(0deg,#00cc69 0%,#00cc69 17%,#fcc245 17%,#fcc245 34%,#ff7700 34%,#ff7700 50%,#ff2a00 50%,#ff2a00 66%,#a11fff 66%,#a11fff 83%,#14a9ff 83%,#14a9ff 100%)",
+					"name": "Eighties gradient",
+					"slug": "eightiesgradient"
 				},
 				{
 					"gradient": "repeating-linear-gradient(135deg, #00000008 0, #00000008 2px, transparent 2px, transparent 4px), linear-gradient(45deg, #83bbf7, #4a95fc, #3b68f7)",

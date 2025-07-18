@@ -315,6 +315,11 @@ add_action( 'init', function(){
         'label' => __( 'Book Portrait', 'm20t1' ),
         'inline_style' => '.is-style-img-book-portrait img{width:var(--book-width);height:var(--book-height)}'
     ]);
+    // Image: Conform Text Style
+    register_block_style( 'core/image', [
+        'name'  => 'img-conform',
+        'label' => __( 'Conform Text', 'm20t1' )
+    ]);
     // Gallery: Theme style
     register_block_style( 'core/gallery', [
         'name'  => 'gallery-1',

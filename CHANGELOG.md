@@ -2,7 +2,8 @@
 
 ### 1.8.13 Live (XXXXX XX, 202X)
 
-* New Javacript function.
+* Rounded image option.
+* New roman numberals coverter Javacript function.
 
 ### 1.8.12 Live (June 26, 2025)
 

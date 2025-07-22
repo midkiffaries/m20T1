@@ -110,11 +110,6 @@
 					"slug": "brandblackgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg, #205380, #202a44, #03000f)",
-					"name": "Dark brand color gradient",
-					"slug": "branddarkgradient"
-				},
-				{
 					"gradient": "linear-gradient(0deg, #e65100 0%, #f4971c 54%, #ffe700 100%)",
 					"name": "Secondary color gradient",
 					"slug": "secondarygradient"
@@ -133,6 +128,11 @@
 					"gradient": "linear-gradient(0deg, #ffa205, #ff4b55, #e60096, #ac19c3, #8133e3, #0049ff)",
 					"name": "Sunrise gradient",
 					"slug": "sunrisegradient"
+				},
+				{
+					"gradient": "linear-gradient(0deg, #dc14ff, #a80bfc, #760fea, #4613cd, #141e9e, #01254d)",
+					"name": "Neon Sky gradient",
+					"slug": "neonskygradient"
 				},
 				{
 					"gradient": "linear-gradient(0deg,#ffeed1 0%,#d18556 30%,#783610 50%,#ffffff 50%,#569de8 75%,#002e5e 100%)",

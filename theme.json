@@ -492,6 +492,9 @@
 					"text-shadow-hard": {
 						"css": "text-shadow:1px 1px 0 #0009"
 					},
+					"text-shadow-glow": {
+						"css": "text-shadow:0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF2D95, 0 0 30px #FF2D95, 0 0 40px #FF2D95, 0 0 50px #FF2D95, 0 0 75px #FF2D95, 2px 2px 2px #0000"
+					},
 					"text-outline": {
 						"css": "stroke:#222;stroke-width:2px;-webkit-text-stroke-color:#222;-webkit-text-stroke-width:2px;paint-order:stroke fill"
 					},

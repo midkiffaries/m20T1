@@ -164,6 +164,11 @@ add_action( 'init', function(){
         'name'  => 'text-shadow-hard',
         'label' => __( 'Hard Shadow', 'm20t1' )
     ]);
+    // Paragraph: Purple glow shadow
+    register_block_style( 'core/paragraph', [
+        'name'  => 'text-shadow-glow',
+        'label' => __( 'Purple Glow', 'm20t1' )
+    ]);
     // Paragraph: Subtitle
     register_block_style( 'core/paragraph', [
         'name'  => 'text-subtitle',

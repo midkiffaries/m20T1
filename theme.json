@@ -487,13 +487,13 @@
 				},
 				"variations": {
 					"text-shadow-soft": {
-						"css": "text-shadow:1px 1px 1px #0009,2px 2px 4px #0003"
+						"css": "text-shadow:.1rem .1rem .1rem #0009,.2rem .2rem .3rem #0003"
 					},
 					"text-shadow-hard": {
-						"css": "text-shadow:1px 1px 0 #0009"
+						"css": "text-shadow:.08rem .08rem 0 #000a"
 					},
 					"text-shadow-glow": {
-						"css": "text-shadow:0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF2D95, 0 0 30px #FF2D95, 0 0 40px #FF2D95, 0 0 50px #FF2D95, 0 0 75px #FF2D95, 2px 2px 2px #0000"
+						"css": "text-shadow:0 0 0.3125rem #fff,0 0 0.625rem #fff,0 0 0.9375rem #fff,0 0 1.25rem #FF2D95,0 0 1.875rem #FF2D95,0 0 2.5rem #FF2D95,0 0 3.125rem #FF2D95,0 0 4.6875rem #FF2D95,0.125rem 0.125rem 0.125rem #0000;"
 					},
 					"text-outline": {
 						"css": "stroke:#222;stroke-width:2px;-webkit-text-stroke-color:#222;-webkit-text-stroke-width:2px;paint-order:stroke fill"
@@ -532,10 +532,10 @@
 				},
 				"variations": {
 					"header-shadow-soft": {
-						"css": "text-shadow:1px 1px 2px #000a,2px 2px 7px #0004"
+						"css": "text-shadow:.1rem .1rem 2px #000a,.2rem .2rem 7px #0004"
 					},
 					"header-shadow-hard": {
-						"css": "text-shadow:2px 2px 1px #0009"
+						"css": "text-shadow:.1rem .1rem 1px #000a"
 					},
 					"header-shadow-3d": {
 						"css": "text-shadow:-1px 1px 0 #666,-2px 2px 0 #555,-3px 3px 0 #444,-4px 4px 0 #333,-5px 5px 4px #0008"

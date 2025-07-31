@@ -760,6 +760,9 @@
 					},
 					"button-border": {
 						"css": "&{border:4px solid #000;box-shadow:0 4px 0 0 #000;border-radius:1.2rem;transition:transform .6s cubic-bezier(.15,1.55,.74,.07)}"
+					},
+					"button-glass": {
+						"css": "&{text-shadow:0 0.1rem 0.2rem #0005;background:linear-gradient(-75deg,#fff1,#fff3,#fff1);box-shadow:inset 0 0.125em 0.125em #0006,inset 0 -0.125em 0.125em #fff8,0 0.25em 0.125em -0.125em #0003,0 0 0.1em 0.25em inset #fff3,0 0 0 0 #fff;-webkit-backdrop-filter:blur(clamp(1px,0.125em,4px));backdrop-filter:blur(clamp(1px,0.125em,4px))} &:active{background:linear-gradient(-75deg,#fff3,#fff9,#fff3);box-shadow:inset 0 0.125em 0.125em #0003,inset 0 -0.125em 0.125em #fff8,0 0.2em 0.1em -0.1em #0002,0 0 0.1em 0.25em inset #fff3,0 0 0 0 #fff}"
 					}
 				}
 			},

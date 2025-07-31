@@ -276,6 +276,11 @@ add_action( 'init', function(){
         'name'  => 'button-border',
         'label' => __( 'Hard Border', 'm20t1' )
     ]);
+    // Button: Glass Style
+    register_block_style( 'core/button', [
+        'name'  => 'button-glass',
+        'label' => __( 'Glass', 'm20t1' )
+    ]);
     // Details: Left Cross style
     register_block_style( 'core/details', [
         'name'  => 'details-cross',

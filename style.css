@@ -2230,7 +2230,7 @@ body.dark-mode,
 	background-color: #333e;
 }
 
-.dark-mode main img:is([src$='.jpg'],[src$='.webp']) {
+.dark-mode main img:is([src$='.jpg'],[src$='.webp'],[src$='.avif']) {
 	filter: brightness(0.9) contrast(1.2);
 }
 
@@ -2720,19 +2720,19 @@ button,
 	border-color: transparent;
 }
 
-.wp-block-button:hover,
+.wp-block-button:hover a[href],
 .dialog-content [type="submit"]:hover,
 .dialog-content button:hover {
 	filter: brightness(1.15);
 }
 
-.wp-block-button:active,
+.wp-block-button:active a[href],
 .dialog-content [type="submit"]:active,
 .dialog-content button:active {
 	filter: brightness(0.96);
 }
 
-.wp-block-button:focus,
+.wp-block-button:focus a[href],
 .dialog-content [type="submit"]:focus,
 .dialog-content button:focus {
 	outline: none;

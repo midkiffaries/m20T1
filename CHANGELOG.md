@@ -4,7 +4,7 @@
 
 * Rounded image option.
 * Glass button option.
-* New roman numberals coverter Javacript function.
+* Roman numberals coverter Javacript function: toRoman(INT)
 
 ### 1.8.12 Live (June 26, 2025)
 

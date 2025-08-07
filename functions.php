@@ -1569,7 +1569,7 @@ add_action( 'admin_head', function(){
 <style type="text/css">
 .wp-admin .column-post_views {width:3em}
 .wp-admin .column-thumbnail {width:7em}
-.wp-admin .media-icon .attachment-60x60 {min-width:60px}
+.wp-admin .media-icon .attachment-60x60 {min-width:60px;max-height:60px}
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
 .wp-admin .user-url-wrap input.code {font-family:inherit}
 .wp-admin .type-model img, .wp-admin .thumbnail-model img, .wp-admin .required-field-message, .wp-admin #alt-text-description {display:none !important}

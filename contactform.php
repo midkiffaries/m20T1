@@ -26,7 +26,7 @@
 			}
 		</style>
 		<?php else : ?>
-			<p>The contact form is <b>closed</b> on this page.</p>
+			<p>🚫 <i>The contact form is closed on this page.</i></p>
 		<?php endif; ?>
 	<?php endif; ?>
 	

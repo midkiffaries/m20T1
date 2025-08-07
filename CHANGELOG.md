@@ -5,6 +5,7 @@
 * Rounded image option.
 * Glass button option.
 * Roman numberals coverter Javacript function: toRoman(INT)
+* Bug Fixes.
 
 ### 1.8.12 Live (June 26, 2025)
 

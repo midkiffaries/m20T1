@@ -231,12 +231,12 @@
 				{
 					"name": "Steps",
 					"slug": "steps",
-					"shadow": "#00000059 3px 3px,#0000004d 6px 6px,#00000033 9px 9px,#0000001a 12px 12px,#0000000d 16px 16px"
+					"shadow": "3px 3px 0 0 #00000059,6px 6px 0 0 #0000004d, 9px 9px 0 0#00000033, 12px 12px 0 0 #0000001a, 16px 16px 0 0 #0000000d"
 				},
 				{
 					"name": "Seventies",
 					"slug": "seventies",
-					"shadow": "1px 1px #F6AF09,2px 2px #F37718,3px 3px #DB3922,4px 4px #402419"
+					"shadow": "2px 2px 0 0 #F6AF09,4px 4px 0 0 #F37718,6px 6px 0 0 #DB3922,8px 8px 0 0 #402419"
 				},				
 				{
 					"name": "Inset",

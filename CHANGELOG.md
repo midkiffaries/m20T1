@@ -2,8 +2,8 @@
 
 ### 1.8.13 Live (XXXXX XX, 202X)
 
-* Rounded image option.
-* Glass button option.
+* Rounded image option style.
+* Glass button option style.
 * Roman numberals converter Javacript function: toRoman(INT)
 * Bug Fixes.
 

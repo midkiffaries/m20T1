@@ -1568,7 +1568,7 @@ add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
 .wp-admin .column-post_views {width:3em}
-.wp-admin .column-thumbnail {width:7em}
+.wp-admin .column-thumbnail {width:6em}
 .wp-admin .media-icon .attachment-60x60 {min-width:60px;max-height:60px}
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
 .wp-admin .user-url-wrap input.code {font-family:inherit}
@@ -1608,7 +1608,7 @@ function AddImageValue( $column_name, $post_id ) {
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 		if ( $post_thumbnail_id ) {
 			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );
-            echo '<img src="' . $post_thumbnail_img[0] . '" width="90" height="90" loading="lazy" decoding="async" itemprop="image" alt="" fetchpriority="auto">';
+            echo '<img src="' . $post_thumbnail_img[0] . '" width="75" height="75" loading="lazy" decoding="async" itemprop="image" alt="" fetchpriority="auto">';
 		} else {
             echo __('—');
         }

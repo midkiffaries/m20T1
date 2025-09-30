@@ -30,9 +30,16 @@
 		},
 		"border": {
 			"color": true,
-			"radius": true,
 			"style": true,
-			"width": true
+			"width": true,
+			"radius": true,
+			"radiusSizes": [
+				{
+					"name": "Hand Drawn",
+					"slug": "hand-drawn",
+					"size": "255px 15px 225px 15px/15px 225px 15px 255px"
+				}
+			]
 		},
 		"color": {
 			"link": true,

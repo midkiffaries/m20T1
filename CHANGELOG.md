@@ -1,7 +1,8 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.8.13 Live (XXXXX XX, 202X)
+### 1.9 Live (XXXXX XX, 202X)
 
+* Supports WordPress 6.9.
 * Rounded image option style.
 * Glass button option style.
 * Roman numberals converter Javacript function: toRoman(INT)

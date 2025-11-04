@@ -241,6 +241,11 @@ add_action( 'init', function(){
         'label' => __( 'Terminal', 'm20t1' ),
         'inline_style' => '@keyframes m20Ter{0%{background-color:#000}100%{background-color:#444}}'
     ]);
+    // Code: DOS style
+    register_block_style( 'core/code', [
+        'name'  => 'code-msdos',
+        'label' => __( 'MS-DOS', 'm20t1' )
+    ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',

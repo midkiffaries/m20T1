@@ -3,7 +3,9 @@
 ### 1.9 Live (XXXXX XX, 202X)
 
 * Supports WordPress 6.9.
+* Added border raduis presets.
 * Rounded image option style.
+* WP accordion support.
 * Glass button option style.
 * Roman numberals converter Javacript function: toRoman(INT)
 * Bug Fixes.

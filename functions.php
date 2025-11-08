@@ -104,10 +104,10 @@ add_action( 'init', function(){
         'name'  => 'list-square',
         'label' => __( 'Squares', 'm20t1' )
     ]);
-    // List: Circles
+    // List: Triangles
     register_block_style( 'core/list', [
-        'name'  => 'list-circle',
-        'label' => __( 'Circles', 'm20t1' )
+        'name'  => 'list-triangle',
+        'label' => __( 'Triangles', 'm20t1' )
     ]);
     // List: Color Bullets
     register_block_style( 'core/list', [

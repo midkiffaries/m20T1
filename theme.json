@@ -478,7 +478,9 @@
 						"background": "var:preset|color|black",
 						"text": "var:preset|color|white"
 					}
-				}
+				},
+				"select": {},
+				"textInput": {}
 			},
 			"link": {
 				":link": {
@@ -606,7 +608,7 @@
 				}
 			},
 			"core/list": {
-				"css": "padding-left:2rem; & li::marker{font-size:1.5rem;line-height:1} & li{text-wrap:pretty;orphans:3;widows:3}",
+				"css": "padding-left:2rem; & li::marker{font-size:135%;line-height:1} & li{text-wrap:pretty;orphans:3;widows:3}",
 				"variations": {
 					"list-plain": {
 						"css": "list-style:none",
@@ -623,10 +625,10 @@
 						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem} & li::before{content:'\\2713';font-weight:bold;background-color:#0e0;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline}"
 					},
 					"list-arrows": {
-						"css": "&{list-style-type:'→'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\2192'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
 					"list-dbl-arrows": {
-						"css": "&{list-style-type:'≫'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\BB'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
 					"list-dash": {
 						"css": "&{list-style-type:'\\2013'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
@@ -638,7 +640,7 @@
 						"css": "list-style-type:square"
 					},
 					"list-triangle": {
-						"css": "&{list-style-type:'‣'} & li{padding-inline:0.5ch; margin-inline-end:1ch}"
+						"css": "&{list-style-type:'\\25B8'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
 					},
 					"list-ornate": {
 						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ol li::before{background-color:#222}& div{display:inline}"
@@ -858,6 +860,10 @@
 					}
 				}
 			},
+			"core/accordion-heading":{
+				"css":"& summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}"
+			},
+			"core/accordion":{},
 			"core/accordion-item": {
 				"css": "& summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}",
 				"variations": {

@@ -478,10 +478,10 @@
 						"background": "var:preset|color|black",
 						"text": "var:preset|color|white"
 					}
-				},
-				"select": {},
-				"textInput": {}
+				}
 			},
+			"select": {},
+			"textInput": {},
 			"link": {
 				":link": {
 					"color": {

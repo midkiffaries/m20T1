@@ -480,8 +480,16 @@
 					}
 				}
 			},
-			"select": {},
-			"textInput": {},
+			"select": {
+				"css": "",
+				"shadow": "",
+				"border": {}
+			},
+			"textInput": {
+				"css": "",
+				"shadow": "",
+				"border": {}
+			},
 			"link": {
 				":link": {
 					"color": {

@@ -374,6 +374,7 @@ add_action( 'init', function(){
             margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
+            text-wrap:pretty;
         }'
     ]);
     // Gallery: Drop Shadow style
@@ -404,6 +405,7 @@ add_action( 'init', function(){
             margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
+            text-wrap:pretty;
         }'
     ]);
     // Gallery: No border style
@@ -423,6 +425,7 @@ add_action( 'init', function(){
             margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
+            text-wrap:pretty;
         }'
     ]);
     // Latest Posts: Theme style
@@ -466,6 +469,7 @@ add_action( 'init', function(){
         }
         & .wp-block-latest-posts__post-excerpt {
             font-size:1rem;
+            text-wrap:pretty;
         }
         }'
     ]);
@@ -495,6 +499,7 @@ add_action( 'init', function(){
         }
         .is-style-media-text-full p {
             border-radius:12px;
+            text-wrap:pretty;
         }'
     ]);
     // Media & Text Block: Text overlap style
@@ -1585,7 +1590,7 @@ add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
 .wp-admin .column-post_views {width:3em}
-.wp-admin td.column-seo_excerpt {line-height:1.1;font-size:95%}
+.wp-admin td.column-seo_excerpt {line-height:1.1;font-size:90%;text-wrap:pretty}
 .wp-admin .column-thumbnail {width:6em}
 .wp-admin .media-icon .attachment-60x60 {min-width:60px;max-height:60px}
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}

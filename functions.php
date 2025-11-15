@@ -99,6 +99,11 @@ add_action( 'init', function(){
         'name'  => 'table-theme',
         'label' => __( 'Theme', 'm20t1' )
     ]);
+    // List: Color Bullets
+    register_block_style( 'core/list', [
+        'name'  => 'list-color',
+        'label' => __( 'Color Bullets', 'm20t1' )
+    ]);
     // List: Squares
     register_block_style( 'core/list', [
         'name'  => 'list-square',
@@ -108,11 +113,6 @@ add_action( 'init', function(){
     register_block_style( 'core/list', [
         'name'  => 'list-triangle',
         'label' => __( 'Triangles', 'm20t1' )
-    ]);
-    // List: Color Bullets
-    register_block_style( 'core/list', [
-        'name'  => 'list-color',
-        'label' => __( 'Color Bullets', 'm20t1' )
     ]);
     // List: Arrows
     register_block_style( 'core/list', [

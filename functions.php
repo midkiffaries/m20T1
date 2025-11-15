@@ -290,13 +290,13 @@ add_action( 'init', function(){
     register_block_style( 'core/accordion-item', [
         'name'  => 'accordion-cross',
         'label' => __( 'Cross', 'm20t1' ),
-        'inline_style' => '.dark-mode .is-style-accordion-cross summary::before{filter:invert()} .is-style-accordion-cross summary::-webkit-accordion-marker, .is-style-accordion-cross summary::marker {display:none;content:""}'
+        'inline_style' => '.dark-mode .is-style-accordion-cross .wp-block-accordion-heading::before{filter:invert()} .is-style-accordion-cross .wp-block-accordion-heading::-webkit-accordion-marker, .is-style-accordion-cross .wp-block-accordion-heading::marker {display:none;content:""}'
     ]);
     // Accordion: Right Arrow style
     register_block_style( 'core/accordion-item', [
         'name'  => 'accordion-arrow',
         'label' => __( 'Arrow', 'm20t1' ),
-        'inline_style' => '.dark-mode .is-style-accordion-arrow summary::after{filter:invert()} .is-style-accordion-arrow summary::-webkit-accordion-marker, .is-style-accordion-arrow summary::marker {display:none;content:""}'
+        'inline_style' => '.dark-mode .is-style-accordion-arrow .wp-block-accordion-heading::after{filter:invert()} .is-style-accordion-arrow .wp-block-accordion-heading::-webkit-accordion-marker, .is-style-accordion-arrow .wp-block-accordion-heading::marker {display:none;content:""}'
     ]);
     // Details: Left Cross style
     register_block_style( 'core/details', [

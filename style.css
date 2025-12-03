@@ -32,7 +32,6 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--browser-color: #59626a;
 
 	accent-color: var(--wp--preset--color--primary);
-	caret-color: var(--wp--preset--color--primary);
 
 	/* Custom Theme Variables */
 	--underline-bg: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 224 12'><path d='m107 0 68 1 45 2c9 3-2 9-9 6l-50-1H78c-21 0-41 0-61 2-5 3-20 3-16-5 7-4 16-2 24-3l52-2h30z' fill='%23e65100'/></svg>");
@@ -315,21 +314,6 @@ textarea {
 	padding: 0.25em 0.375em;
 	max-width: 100%;
 	text-transform: none;
-}
-
-select {
-	appearance: none;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	cursor: pointer;
-}
-
-select:not([multiple]):not([size]) {
-	padding-right: 1.4em;
-	background-position: 100% 50%;
-	background-size: 1em;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='dimgray'/></svg>");
 }
 
 .wp-block-button,

@@ -483,7 +483,7 @@
 			"select": {
 				"css": "appearance:none;text-overflow:ellipsis;overflow:hidden;cursor:pointer",
 				"shadow": "",
-				"color": "",
+				"color": {},
 				"border": {},
 				"spacing": {
 					"padding": {

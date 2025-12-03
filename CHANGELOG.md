@@ -7,6 +7,7 @@
 * Rounded image option style.
 * WP accordion support.
 * Glass button option style.
+* Moved more CSS from style.css to theme.json.
 * Roman numberals converter Javacript function: toRoman(INT)
 * Bug Fixes.
 

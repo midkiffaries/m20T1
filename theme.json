@@ -641,19 +641,19 @@
 						}
 					},
 					"list-checkmarks": {
-						"css": "&{list-style-type:'\\2713'} & li{padding-inline:0.5ch;margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\2713'} & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
 					},
 					"list-checks": {
-						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem} & li::before{content:'\\2713';font-weight:bold;background-color:#0e0;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline}"
+						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem} & li::before{content:'\\2713';font-weight:bold;background-color:#0e0;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline} & li ul li {padding-inline:0}"
 					},
 					"list-arrows": {
-						"css": "&{list-style-type:'\\2192'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\2192'} & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
 					},
 					"list-dbl-arrows": {
-						"css": "&{list-style-type:'\\BB'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\BB'} & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
 					},
 					"list-dash": {
-						"css": "&{list-style-type:'\\2013'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\2013'} & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)}  & li ul li {padding-inline:0}"
 					},
 					"list-color": {
 						"css": "& li::marker{color:var(--wp--preset--color--secondary)}"
@@ -662,10 +662,10 @@
 						"css": "list-style-type:square"
 					},
 					"list-triangle": {
-						"css": "&{list-style-type:'\\25B8'} & li{padding-inline:0.5ch; margin-inline-end:1ch} & li::marker {color:var(--wp--preset--color--secondary)}"
+						"css": "&{list-style-type:'\\25B8'} & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
 					},
 					"list-ornate": {
-						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ol li::before{background-color:#222}& div{display:inline}"
+						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ul li::before{background-color:#222}& div{display:inline} & li ul li {list-style:none}"
 					}
 				}
 			},
@@ -883,11 +883,18 @@
 				}
 			},
 			"core/accordion-heading":{
-				"css":"& summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}"
+				"css": "& button:hover span{text-decoration:none !important}",
+				"spacing": {
+					"padding": {
+						"left": ".5rem"
+					}
+				}
 			},
-			"core/accordion":{},
+			"core/accordion":{
+				"css": "padding: 0;"
+			},
 			"core/accordion-item": {
-				"css": "& summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}",
+				"css": "& div {padding:.5rem}",
 				"variations": {
 					"accordion-cross": {
 						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.4s ease-in-out} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & > *:not(summary){margin:0.3rem 2.4rem} & summary{list-style:none}"

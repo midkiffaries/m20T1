@@ -9,7 +9,7 @@
 * Glass button option style.
 * Moved more CSS from style.css to theme.json.
 * Roman numberals converter Javacript function: toRoman(INT)
-* Bug Fixes.
+* Bug fixes and refinements.
 
 ### 1.8.12 Live (June 26, 2025)
 

@@ -891,7 +891,7 @@
 				}
 			},
 			"core/accordion":{
-				"css": "padding: 0;"
+				"css": ""
 			},
 			"core/accordion-item": {
 				"css": "& div {padding:.5rem}",

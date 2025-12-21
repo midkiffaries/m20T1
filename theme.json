@@ -630,7 +630,7 @@
 				}
 			},
 			"core/list": {
-				"css": "padding-left:2rem; & li::marker{font-size:135%;line-height:1} & li{text-wrap:pretty;orphans:3;widows:3}",
+				"css": "padding-left:2rem; & li::marker{font-size:110%;line-height:1} & li{text-wrap:pretty;orphans:3;widows:3}",
 				"variations": {
 					"list-plain": {
 						"css": "list-style:none",

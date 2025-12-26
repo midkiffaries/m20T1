@@ -734,6 +734,7 @@ function HtmlModal(c, v) {
 
 	// Dialog body
 	innerDiv.setAttribute('class', 'dialog-content');
+    innerDiv.setAttribute('role', 'document');
     innerDiv.appendChild(tempClone);
 
 	// Dialog style

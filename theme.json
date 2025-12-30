@@ -882,22 +882,38 @@
 					}
 				}
 			},
+			"core/accordion":{
+				"css": ""
+			},
+			"core/accordion-item": {
+				"css": "",
+				"spacing": {
+					"margin": {
+						"top": "0",
+						"bottom": "0",
+						"left": "0",
+						"right": "0"
+					}
+				},
+				"variations": {
+					"accordion-arrow": {
+						"css": "& {position:relative} & .wp-block-accordion-heading__toggle-icon {display:none} & button::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 768 768'><path d='m237 275 147 147 147-147 45 45-192 192-192-192z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.2s ease-in-out;position:absolute;right:-8px;top:2px} &.is-open button::before {transform: rotateX(180deg)}}"
+					}
+				}
+			},
 			"core/accordion-heading":{
-				"css": "& button:hover span{text-decoration:none !important} & ::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 768 768'><path d='m237 275 147 147 147-147 45 45-192 192-192-192z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.2s ease-in-out;position:absolute;right:0px;top:2px}",
+				"css": "& button:hover span{text-decoration:none !important}",
 				"spacing": {
 					"padding": {
 						"left": ".5rem"
 					}
 				}
 			},
-			"core/accordion":{
-				"css": ""
-			},
-			"core/accordion-item": {
-				"css": "& div {padding:.5rem}",
-				"variations": {
-					"accordion-arrow": {
-						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998;position:relative}"
+			"core/accordion-panel": {
+				"css": "",
+				"spacing": {
+					"padding": {
+						"left": ".5rem"
 					}
 				}
 			},

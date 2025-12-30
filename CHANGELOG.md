@@ -1,14 +1,14 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.9 Live (XXXXX XX, 202X)
+### 1.9 Live (December 31, 2025 🎉)
 
 * Supports WordPress 6.9.
-* Added border raduis presets.
+* Added border radius presets.
 * Rounded image option style.
-* WP accordion support.
+* WP accordion element support and adjustment to the details element.
 * Glass button option style.
 * Moved more CSS from style.css to theme.json.
-* Roman numberals converter Javacript function: toRoman(INT)
+* Roman numerals converter Javacript function: toRoman(INT)
 * Bug fixes and refinements.
 
 ### 1.8.12 Live (June 26, 2025)

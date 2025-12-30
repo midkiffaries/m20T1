@@ -289,8 +289,7 @@ add_action( 'init', function(){
     // Accordion: Right Arrow style
     register_block_style( 'core/accordion-item', [
         'name'  => 'accordion-arrow',
-        'label' => __( 'Arrow', 'm20t1' ),
-        'inline_style' => '.dark-mode .is-style-accordion-arrow .wp-block-accordion-heading::after{filter:invert()} .is-style-accordion-arrow .wp-block-accordion-heading::-webkit-accordion-marker, .is-style-accordion-arrow .wp-block-accordion-heading::marker {display:none;content:""}'
+        'label' => __( 'Arrow', 'm20t1' )
     ]);
     // Details: Left Cross style
     register_block_style( 'core/details', [
@@ -526,7 +525,7 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/group', 'core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
+    if ( in_array( $block_type, ['core/group', 'core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['typography'] = true; // Add typography option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
         $args['supports']['shadow'] = true; // Add box shadow option

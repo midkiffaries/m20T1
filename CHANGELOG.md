@@ -8,7 +8,7 @@
 * WP accordion element support and adjustment to the details element.
 * Glass button option style.
 * Moved more CSS from style.css to theme.json.
-* Roman numerals converter Javacript function: toRoman(INT)
+* Roman numerals converter Javascript function: toRoman(INT)
 * Bug fixes and refinements.
 
 ### 1.8.12 Live (June 26, 2025)

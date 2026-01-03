@@ -760,6 +760,9 @@
 					}
 				}
 			},
+			"core/preformatted": {
+				"css": "font-family:var(--wp--preset--font-family--system-mono);white-space:pre-wrap;word-break:break-word;background-color:#222;color:#eee;padding:1em;border-radius:4px;overflow-x:auto; & code{background-color:transparent;padding:0;border-radius:0;box-shadow:none}"
+			},
 			"core/media-text": {
 				"variations": {
 					"media-text-full": {

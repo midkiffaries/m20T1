@@ -1,9 +1,5 @@
 # Changes to m20T1 WordPress Theme
 
-### 1.9.1 Live (XX XX, 2026)
-
-* Preformatted block styling.
-
 ### 1.9 Live (December 31, 2025 🎉)
 
 * Supports WordPress 6.9.

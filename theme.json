@@ -454,6 +454,14 @@
 			},
 			"button": {
 				"css": "transition:all 0.25s ease-in-out",
+				"spacing": {
+					"padding": {
+						"right": "0.375em",
+						"left": "0.375em",
+						"top": "0.25em",
+						"bottom": "0.25em"
+					}
+				},
 				"border": {
 					"radius": "0"
 				},
@@ -482,12 +490,18 @@
 			},
 			"select": {
 				"css": "appearance:none;text-overflow:ellipsis;overflow:hidden;cursor:pointer",
-				"shadow": "",
-				"color": {},
-				"border": {},
+				"color": {
+					"background": "#fff"
+				},
+				"border": {
+					"radius": "0"
+				},
 				"spacing": {
 					"padding": {
-						"right": "1.4em"
+						"right": "1.4em",
+						"left": "0.375em",
+						"top": "0.25em",
+						"bottom": "0.25em"
 					}
 				},
 				"background": {
@@ -500,9 +514,23 @@
 			"textInput": {
 				"css": "caret-color:var(--wp--preset--color--primary);",
 				"shadow": "",
-				"color": {},
-				"border": {},
-				"spacing": {}
+				"color": {
+					"background": "#fff"
+				},
+				"border": {
+					"color": "#999",
+					"width": "1px",
+					"style": "solid",
+					"radius": "0"
+				},
+				"spacing": {
+					"padding": {
+						"right": "0.375em",
+						"left": "0.375em",
+						"top": "0.25em",
+						"bottom": "0.25em"
+					}
+				}
 			},
 			"link": {
 				":link": {

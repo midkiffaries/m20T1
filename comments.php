@@ -69,8 +69,8 @@
     <form action="<?=get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="CommentForm" name="commentform" autocomplete="on" role="form">
 
     <?php if (is_user_logged_in()) : // If user is logged in ?>
-		<p>You are logged in as <a href="<?=get_option('siteurl');?>/wp-admin/profile.php"><?=$user_identity; ?></a> | <a href="<?=wp_logout_url(get_permalink()); ?>" class="logout-link">Log out</a></p>
-		<input type="hidden" name="author" id="author" value="<?=$user_identity; ?>">
+		<p>You are logged in as <a href="<?=get_option('siteurl');?>/wp-admin/profile.php"><b><?=$user_identity; ?></b></a> | <a href="<?=wp_logout_url(get_permalink()); ?>" class="logout-link">Log out</a></p>
+        <input type="hidden" name="author" id="author" value="<?=$user_identity; ?>">
         <input type="hidden" name="email" id="email" value="<?php printf("%s@%s", $user_identity, $_SERVER['HTTP_HOST']); ?>">   
     <?php else : // If user is not logged in ?>
 		<p><label for="author" <?php if ($req) echo "class=\"required\""; ?>>Name</label><input type="text" name="author" id="author" class="comment-name" maxlength="70" value="<?=esc_attr($comment_author); ?>" placeholder="Your Name" <?php if ($req) echo "aria-required=\"true\""; ?> autocorrect="off" autocomplete="name" required></p>
@@ -78,7 +78,7 @@
 		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?=esc_attr($comment_author_url);?>" placeholder="https://www.example.com" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
     <?php endif; ?>
 		<p><label for="comment" <?php if ($req) echo "class=\"required\""; ?>>Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="What do you have to say..." <?php if ($req) echo "aria-required=\"true\""; ?> required></textarea></p>
-		<p><input type="submit" id="submit-comment" class="comment-submit" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
+		<p><input type="submit" id="submit-comment" class="comment-submit wp-element-button" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
 
         <?php do_action('comment_form', $post->ID); ?>
 

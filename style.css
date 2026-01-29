@@ -1227,8 +1227,8 @@ Blog Post Styling - index/archives/search
 }
 
 .content-excerpt {
-	margin: -10px 0 30px;
-	min-height: 10em;
+	margin: -10px 0 20px;
+	min-height: 8em;
 }
 
 .content-excerpt p {

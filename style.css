@@ -77,6 +77,8 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	touch-action: manipulation;
 	tab-size: 4;
+	scrollbar-color: var(--wp--preset--color--primary) #0000;
+	scrollbar-width: auto;
 }
 
 html:focus-within {
@@ -440,13 +442,13 @@ legend + * {
 }
 
 /* Remove animation for people that prefer not to see them */
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
 	*::after {
 		cursor: auto;
-		animation-duration: 0s !important;
-		transition-duration: 0s !important;
+		animation-duration: 0ms !important;
+		transition-duration: 0ms !important;
 		scroll-behavior: auto !important;
 	}
 	

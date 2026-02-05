@@ -77,7 +77,7 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	touch-action: manipulation;
 	tab-size: 4;
-	scrollbar-color: var(--wp--preset--color--primary) var(--wp--preset--color--primary-pale);
+	scrollbar-color: var(--wp--preset--color--primary) #eee;
 	scrollbar-width: auto;
 }
 

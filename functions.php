@@ -1797,7 +1797,8 @@ add_filter( 'user_contactmethods', function(){
         'facebook'  => 'Facebook URL',
         'twitter'   => 'X/Twitter URL',
         'pinterest' => 'Pinterest URL',
-        'city'      => 'City/State/Co',
+        'youtube'   => 'YouTube URL',
+        'city'      => 'City/State/Country',
     ];
 });
 
@@ -1815,7 +1816,7 @@ function show_extra_profile_fields( $user ) { ?>
                     <option value="happy" <?php selected( 'happy', get_the_author_meta( 'mental', $user->ID ) ); ?>>😄 Happy</option>
                     <option value="okay" <?php selected( 'okay', get_the_author_meta( 'mental', $user->ID ) ); ?>>🫤 Okay</option>
                     <option value="sad" <?php selected( 'sad', get_the_author_meta( 'mental', $user->ID ) ); ?>>🙁 Sad</option>
-                    <option value="pizza" <?php selected( 'pizza', get_the_author_meta( 'mental', $user->ID ) ); ?>>🍕 Pizza</option>
+                    <option value="pizza" <?php selected( 'pizza', get_the_author_meta( 'mental', $user->ID ) ); ?>>🍕 Pizza!</option>
                 </select>
             </td>
         </tr>

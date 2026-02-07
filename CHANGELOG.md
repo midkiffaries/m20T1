@@ -2,6 +2,8 @@
 
 ## 1.9.1 Live (XXXX XX, 2026)
 
+* Added YouTube URL to user profiles.
+* Stylized scrollbars with both light and dark modes.
 * Bug fixes.
 
 ### 1.9 Live (December 31, 2025 🎉)

@@ -16,6 +16,9 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 :root {
     /* color-scheme: light dark; */
+	/* Scrollbar Colors */
+	--scrollbar-light: var(--wp--preset--color--primary) #eee;
+	--scrollbar-dark: var(--wp--preset--color--primary) #444;
 
 	/* Icon Embeds */
 	--icon-search: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='416' height='488'><path d='M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z'/></svg>");
@@ -31,6 +34,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--email-color: #fba805;
 	--browser-color: #59626a;
 
+	/* Form Elements */
 	accent-color: var(--wp--preset--color--primary);
 
 	/* Custom Theme Variables */
@@ -77,13 +81,16 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	touch-action: manipulation;
 	tab-size: 4;
-	scrollbar-color: var(--wp--preset--color--primary) #eee;
+	scrollbar-color: var(--scrollbar-light);
 	scrollbar-width: auto;
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
-		scrollbar-color: var(--wp--preset--color--primary) #444;
+		scrollbar-color: var(--scrollbar-dark);
+	}
+	dialog > div  {
+		scrollbar-color: var(--scrollbar-light);
 	}
 }
 
@@ -2196,10 +2203,10 @@ Dark Mode Styling
 *************************/
 
 body.dark-mode,
-/* .dark-mode .body-container, */
 .dark-mode dialog > div {
 	color: #eee;
 	background-color: #161616;
+	scrollbar-color: var(--scrollbar-dark);
 }
 
 .dark-mode dialog {

@@ -81,6 +81,12 @@ html {
 	scrollbar-width: auto;
 }
 
+@media (prefers-color-scheme: dark) {
+	html {
+		scrollbar-color: var(--wp--preset--color--primary) #444;
+	}
+}
+
 html:focus-within {
 	scroll-behavior: smooth;
 }

@@ -10,9 +10,6 @@ error_reporting(0);
 // Includes and Plugins
 /////////////////////////////
 
-// Define the start time for the page loading timer
-define( 'PAGE_LOAD_START', microtime(TRUE) );
-
 // Breadcrumb trail plugin
 include_once 'assets/plugins/breadcrumbs.php';
 
@@ -811,8 +808,6 @@ add_action( 'wp_footer', function(){
 <template id="Contact-Modal">
     <?=get_template_part('contactform'); // Load contactform.php ?>
 </template>
-
-<script>document.getElementById('PageLoadTime').textContent=<?=round(((microtime(TRUE) - PAGE_LOAD_START) * 10), 3); // Generate the page load time ?>;</script>
 
 <?php
     echo allow_html_tags(get_option('body_bottom_html')); // Insert custom HTML from meta box

@@ -6,7 +6,6 @@
         <div id="footer-widgets" class="footer-widgets">
             <?php dynamic_sidebar( 'footer' ); // Footer Widgets ?>
 
-            <div class="footer-load-time">Page loaded in <span id="PageLoadTime"></span>s</div>
         </div>
 
         <div class="footer-notice">

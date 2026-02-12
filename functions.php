@@ -243,6 +243,11 @@ add_action( 'init', function(){
         'name'  => 'code-msdos',
         'label' => __( 'MS-DOS', 'm20t1' )
     ]);
+    // Code: MacOS style
+    register_block_style( 'core/code', [
+        'name'  => 'code-macos',
+        'label' => __( 'MacOS', 'm20t1' )
+    ]);
     // Embed: Youtube Frame style
     register_block_style( 'core/embed', [
         'name'  => 'embed-youtube',

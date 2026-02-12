@@ -789,6 +789,9 @@
 					},
 					"code-msdos": {
 						"css": "& {caret-shape:block;caret-color:#fff;background-color:teal;color:#fff;padding: 0.5rem;position:relative;} & code {margin:0;padding:14px 8px;border:6px double #fff;} &::before {content:'Code';color:#000;background-color:#fff;text-align:center;margin:0 auto;padding:1px 10px;left:calc(50% - 2em);margin-top:-8px;position:absolute;}"
+					},
+					"code-macos": {
+						"css": "& {caret-shape:block;caret-color:#eee;color:#ddd;padding:1em .7em;background-color:#292c35;border-radius:12px} & code {margin: 16px 17px 6px} &::before {content: '';width:16px;height:16px;margin-left:34px;border-radius:50%;display:block;background:#ffbc2d;box-shadow:-28px 0 0 #fe5f58,28px 0 0 #16d13e}"
 					}
 				}
 			},

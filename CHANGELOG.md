@@ -4,7 +4,7 @@
 
 * Added YouTube URL to user profiles.
 * Stylized scrollbars with both light and dark modes.
-* Updated the Code block styles.
+* Added new Code block styles.
 * Removed the page load time - wasn't all the useful.
 * Bug fixes.
 

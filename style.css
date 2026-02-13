@@ -1806,15 +1806,12 @@ Specific Page Styling
 	margin: 1.6em 1em 1.4em 0.4em;
 }
 
-.page-search .search-container input,
-.archive-page .search-container input {
-	font-size: 1.3em;
-}
-
 .page-search .search-submit,
 .archive-page .search-submit {
 	background-color: var(--wp--preset--color--primary);
 	border: 2px solid var(--wp--preset--color--primary);
+	font-size: 1em;
+	padding: 5px;
 }
 
 /* Search Submit button */

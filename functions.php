@@ -527,7 +527,7 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/group', 'core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/latest-posts', 'core/social-links', 'core/preformatted', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
+    if ( in_array( $block_type, ['core/group', 'core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/code', 'core/embed', 'core/video', 'core/math', 'core/separator', 'core/latest-posts', 'core/social-links', 'core/preformatted', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['typography'] = true; // Add typography option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
         $args['supports']['shadow'] = true; // Add box shadow option

@@ -654,7 +654,7 @@
 				}
 			},
 			"core/table": {
-				"css": "border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%;font-size:1rem; & thead {display:table-header-group} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
+				"css": "overflow-x:initial;border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%;font-size:1rem; & thead {display:table-header-group} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
 				"variations": {
 					"table-theme": {
 						"css": "& thead,tfoot {background-color:var(--wp--preset--color--primary)} & td {background-color:#fff1} & tbody tr:nth-child(even) {background-color:#ccc5}"
@@ -700,6 +700,9 @@
 						"css": "&{list-style:none;counter-reset:m20c;padding-left:.5rem}& li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ul li::before{background-color:#222}& div{display:inline} & li ul li {list-style:none}"
 					}
 				}
+			},
+			"core/math": {
+				"css": ""
 			},
 			"core/social-link": {
 				"typography": {

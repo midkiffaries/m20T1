@@ -5,7 +5,7 @@ Author: Ted Balmer
 Author URI: https://www.marchtwenty.com
 Description: m20T1 is a light-weight WordPress theme that I created from scratch that I use on my own website. The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. 
 Requires at least: 6.7
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 8.0
 Version: 1.9.1
 License: GNU General Public License v3 or later
@@ -1602,6 +1602,11 @@ img.wp-smiley, img.emoji {
 	outline-offset: 0;
 }
 
+/* Striped Table Style */
+.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
+	background-color: #eeea;
+}
+
 /* WordPress Editor Classes */
 .the-content h2:not(.is-style-text-subtitle):not(.has-text-align-center):not(.has-text-align-right) {
 	margin-top: 0.8em;
@@ -2990,5 +2995,61 @@ Social Links
 	}
 	.page-footer::before {
 		background: none;
+	}
+}
+
+
+/* Glass style select boxes for Chromium Browsers */
+@supports (appearance: base-select) {
+	select:not([multiple]):not([size]), ::picker(select) {
+		appearance: base-select;
+	}
+	select:not([multiple]):not([size])::picker-icon {
+		content:"";
+	}
+	::picker(select) {
+		transition: opacity 0.2s ease-in-out;
+		transition-behavior: allow-discrete;
+		cursor: default;
+		opacity: 0;
+		height: 0;
+		font-size: 0.95rem;
+		border-radius: 0.7em;
+		padding: 0.4rem 0;
+		scrollbar-color: #888e #0000;
+		margin-top: -5px;
+		border: 1px solid #fff3;
+		border-top: 1px solid #fff4;
+		border-bottom: 1px solid #eee8;
+		background: linear-gradient(-75deg,#fffb,#fffe,#fffb);
+		box-shadow: inset 0 0.12em 0.12em #0003, inset 0 -0.12em 0.12em #fff8, inset 0 0 0.1em 0.25em #fff3, 0 0.3em 0.12em -0.12em #0004, 0 2px 11px -2px #0009;
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+	}
+	:open::picker(select) {
+		height: auto;
+		max-height: 100vh;
+		opacity: 1;
+		@starting-style {
+			opacity: 0;
+			height: 0;
+		}
+	}
+	select:not([multiple]):not([size]) option {
+		padding: 3px 12px 3px 7px;
+		margin: 0 3px;
+	}
+	select:not([multiple]):not([size]) option::checkmark {
+		order: 0;
+		width: 10px;
+		content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>');
+	}
+	select:not([multiple]):not([size]) option:hover {
+		background-color: var(--wp--preset--color--primary);
+		border-radius: 0.5rem;
+		color: #fff;
+	}
+	select:not([multiple]):not([size]) option:hover::checkmark {
+		filter: invert(1);
 	}
 }

@@ -490,7 +490,7 @@
 				}
 			},
 			"select": {
-				"css": "appearance:none;text-overflow:ellipsis;overflow:hidden;cursor:pointer",
+				"css": "appearance:none;text-overflow:ellipsis;overflow:hidden;cursor:pointer;transition:background 0.2s ease",
 				"color": {
 					"background": "#fff"
 				},
@@ -1081,6 +1081,12 @@
 				"typography": {
 					"fontSize": "1rem"
 				}
+			},
+			"core/breadcrumbs": {
+				"css": ""
+			},
+			"core/icon": {
+				"css": ""
 			},
 			"core/latest-posts": {
 				"css": "& li{margin-bottom:10px;line-height:1.15} & a[href]{font-weight:600}"

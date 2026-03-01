@@ -3017,7 +3017,6 @@ Social Links
 		border-radius: 0.7em;
 		padding: 0.4rem 0;
 		scrollbar-color: #888e #0000;
-		margin-top: -5px;
 		border: 1px solid #fff3;
 		border-top: 1px solid #fff4;
 		border-bottom: 1px solid #eee8;
@@ -3028,11 +3027,12 @@ Social Links
 	}
 	:open::picker(select) {
 		height: auto;
-		max-height: 100vh;
+		max-height: 95vh;
+		margin: -5px auto 1em;
 		opacity: 1;
 		@starting-style {
 			opacity: 0;
-			height: 0;
+			height: 0vh;
 		}
 	}
 	select:not([multiple]):not([size]) option {

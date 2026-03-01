@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-## 1.9.1 Live (XXXX XX, 2026)
+## 1.10 Live (XXXX XX, 2026)
 
 * Support for WordPress 7.0.
 * Added YouTube URL to user profiles.

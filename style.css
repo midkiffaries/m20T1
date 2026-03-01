@@ -2130,13 +2130,17 @@ Page Pagination Section
 .blog-pagination .pagination-select {
 	background-color: transparent;
 	text-decoration: none;
-	padding: 4px 10px;
+	
 	display: inline-block;
 	font-size: 1.2rem;
 	border-radius: 0.3em;
 	border-bottom: 2px solid transparent;
 	font-weight: 500;
 	transition: all 0.4s;
+}
+
+.blog-pagination nav a {
+	padding: 4px 10px;
 }
 
 .blog-pagination nav a:hover {
@@ -3001,6 +3005,9 @@ Social Links
 
 /* Glass style select boxes for Chromium Browsers */
 @supports (appearance: base-select) {
+	select option[disabled] {
+		opacity: 0.8;
+	}
 	select:not([multiple]):not([size]), ::picker(select) {
 		appearance: base-select;
 	}

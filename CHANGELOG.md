@@ -4,6 +4,7 @@
 
 * Added YouTube URL to user profiles.
 * Stylized scrollbars with both light and dark modes.
+* stylized select tag pulldown options for Chromium browsers.
 * Added new Code block styles.
 * Removed the page load time - wasn't all the useful.
 * Bug fixes.

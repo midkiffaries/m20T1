@@ -2,6 +2,7 @@
 
 ## 1.9.1 Live (XXXX XX, 2026)
 
+* Support for WordPress 7.0.
 * Added YouTube URL to user profiles.
 * Stylized scrollbars with both light and dark modes.
 * stylized select tag pulldown options for Chromium browsers.

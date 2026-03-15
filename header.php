@@ -8,6 +8,8 @@
 
 <body <?=body_class(); // Add classes to the body tag ?> itemscope itemtype="https://schema.org/<?=custom_page_scheme(get_the_ID());?>">
 
+<!-- <div class="apple-header-bg" style="background-color:var(--wp--preset--color--primary-dark);width:100%;height:6px;position:fixed;"></div> -->
+
 <?=wp_body_open(); // WordPress body includes ?>
 
 <div class="body-container">
@@ -18,8 +20,7 @@
                 <p class="header-logo" itemprop="name headline">
                     <a href="<?=home_url();?>" rel="home" itemprop="url"><?=get_custom_logo();?></a>
                 </p>
-                <div class="header-breadcrumbs"><?php if ( !is_front_page() ) breadcrumb_trail(); // Show breadcrumb trail ?></div>
-                <div class="header-breadcrumbs"><?php //echo do_blocks( '<!-- wp:breadcrumbs {"separator":"/", "showCurrentItem":true} /-->' );?></div>
+                <div class="header-breadcrumbs"><?php echo do_blocks( '<!-- wp:breadcrumbs {"separator": "' . BREADCRUMB_SEPARATOR . '", "showCurrentItem":true} /-->' );?></div>
             </div>
             <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
             <div class="header-content">

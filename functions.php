@@ -7,18 +7,13 @@ defined( 'ABSPATH' ) || exit;
 error_reporting(0);
 
 /////////////////////////////
-// Includes and Plugins
-/////////////////////////////
-
-// Breadcrumb trail plugin
-include_once 'assets/plugins/breadcrumbs.php';
-
-/////////////////////////////
 // Initial Settings
 /////////////////////////////
 
 // Inline separator that appears in the post/page metadata
 define( 'POST_SEPARATOR', '–' );
+// Inline separator for the header breadcrumb trail
+define( 'BREADCRUMB_SEPARATOR', '/' );
 // Default: Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
 // Default: SEO text excerpt length default
@@ -226,6 +221,11 @@ add_action( 'init', function(){
     register_block_style( 'core/quote', [
         'name'  => 'plain',
         'label' => __( 'Plain', 'm20t1' )
+    ]);
+    // Quote: Fancy style
+    register_block_style( 'core/quote', [
+        'name'  => 'fancy',
+        'label' => __( 'Fancy', 'm20t1' )
     ]);
     // PullQuote: Embelishment style
     register_block_style( 'core/pullquote', [
@@ -527,7 +527,7 @@ add_action( 'init', function(){
 
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/group', 'core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/icon', 'core/code', 'core/embed', 'core/video', 'core/math', 'core/separator', 'core/latest-posts', 'core/social-links', 'core/preformatted', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
+    if ( in_array( $block_type, ['core/group', 'core/file', 'core/list-item', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/flipbox', 'core/table-of-contents', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/icon', 'core/code', 'core/embed', 'core/video', 'core/math', 'core/separator', 'core/latest-posts', 'core/social-links', 'core/preformatted', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
         $args['supports']['typography'] = true; // Add typography option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
         $args['supports']['shadow'] = true; // Add box shadow option
@@ -1415,7 +1415,7 @@ function attachment_page_image( $id ) {
     if ($fileExt == 'svg' || $fileExt == 'svgz') { // SVG Images
         return '<img src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" loading="lazy" decoding="async" class="attachment-svg" itemprop="image" fetchpriority="high">';
     } else if ($fileExt == 'glb') { // GLB Web3D model - https://modelviewer.dev
-        return '<script defer type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script><model-viewer id="Model3D" class="aligncenter" itemprop="image" style="height:380px;min-width:400px" src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" ar poster="" shadow-intensity="0" exposure="1.1" shadow-softness="0" tone-mapping="commerce" camera-controls touch-action="pan-y"></model-viewer>';
+        return '<script defer type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script><model-viewer id="Model3D" class="aligncenter" itemprop="image" style="height:380px;min-width:400px" src="' . wp_get_attachment_url($id) . '" alt="' . wp_get_attachment_caption($id) . '" ar poster="" shadow-intensity="0" exposure="1.1" shadow-softness="0" tone-mapping="commerce" camera-controls touch-action="pan-y"></model-viewer>';
     } else { // All other documents types
         return '<a href="' . wp_get_attachment_url(get_the_ID()) . '" title="Download document" aria-title="Download document" itemprop="url"><svg xmlns="http://www.w3.org/2000/svg" width="246" height="282"><g><path fill="#1e90ff" d="M234.4 63c-6-8.2-14.6-18-24-27.4-9.3-9.3-19-17.9-27.3-24C169 1.2 162.1 0 158.1 0H22C9.9 0 0 10 0 22v238a22 22 0 0 0 22 22h202a22 22 0 0 0 22-22V88.1c0-4-1.2-10.8-11.6-25zm-36.3-15A239.6 240.4 0 0 1 218 70.6h-42.3V28.1a239.4 240.2 0 0 1 22.4 20zm30.3 212c0 2.4-2 4.4-4.4 4.4H22c-2.4 0-4.4-2-4.4-4.4V22c0-2.3 2-4.4 4.4-4.4h136v61.7a8.8 8.8 0 0 0 8.8 8.8h61.5z"/><path fill="#add8e6" d="M184.5 229.2h-123a8.8 8.8 0 0 1 0-17.7h123a8.8 8.8 0 1 1 0 17.7zm0-35.3h-123a8.8 8.8 0 0 1 0-17.6h123a8.8 8.8 0 1 1 0 17.6zm0-35.3h-123a8.8 8.8 0 0 1 0-17.6h123a8.8 8.8 0 1 1 0 17.6z"/></g></svg></a>';
     }

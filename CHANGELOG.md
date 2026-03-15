@@ -1,12 +1,14 @@
 # Changes to m20T1 WordPress Theme
 
-## 1.10 Live (XXXX XX, 2026)
+## 1.10 Live (April 30, 2026)
 
 * Support for WordPress 7.0.
 * Added YouTube URL to user profiles.
 * Stylized scrollbars with both light and dark modes.
 * stylized select tag pulldown options for Chromium browsers.
 * Added new Code block styles.
+* Switched the header breadcrumb trail to the internal WordPress block
+* Dropped breadcrumbs.php
 * Removed the page load time - wasn't all the useful.
 * Bug fixes.
 

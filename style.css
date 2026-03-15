@@ -4,7 +4,7 @@ Theme URI: https://github.com/midkiffaries/m20T1
 Author: Ted Balmer
 Author URI: https://www.marchtwenty.com
 Description: m20T1 is a light-weight WordPress theme that I created from scratch that I use on my own website. The intention is for this theme is to be minimally reliant on 3rd party plugins, and to do what it needs to do relying on the built in WordPress automation and features. 
-Requires at least: 6.7
+Requires at least: 6.8
 Tested up to: 7.0
 Requires PHP: 8.0
 Version: 1.10
@@ -806,11 +806,17 @@ Site Header
 	right: 1em;
 }
 
-.header-breadcrumbs {
-	margin-left: 4.5em;
-	font-size: 0.9rem;
-	font-weight: 500;
-	text-transform: uppercase;
+.header-breadcrumbs nav {
+	margin: 4px 3.2em 0;
+}
+
+.header-breadcrumbs nav li:first-of-type {
+	padding-left: 8px;
+	border-top-left-radius: 8px;
+}
+
+.header-breadcrumbs nav li:last-of-type {
+	display: none;
 }
 
 .header-widgets {
@@ -2338,61 +2344,6 @@ Child Page Section
 	}
 }
 
-
-/************************ 
-Breadcrumbs Plugin Style
-*************************/
-
-.breadcrumbs .trail-browse {
-	display: none;
-}
-
-.breadcrumbs .trail-items {
-	list-style: none;
-	display: inline-block;
-	-webkit-backdrop-filter: blur(5px) brightness(150%);
-	backdrop-filter: blur(5px) brightness(150%);
-	background-color: #fff4;
-	opacity: 0.8;
-	margin: 0;
-	padding: 2px 5px 0;
-	border-radius: 6px;
-	text-shadow: 0 1px 7px #fffc;
-	white-space: nowrap;
-}
-
-.breadcrumbs .trail-end {
-	opacity: 0.7;
-}
-
-.breadcrumbs .trail-items li {
-	display: inline-block;
-}
-
-.breadcrumbs .trail-items li a:hover {
-	text-decoration: none;
-}
-
-.breadcrumbs .trail-items li:first-of-type::before {
-	font-family: 'icomoon' !important;
-	content: "\e904" / "Home icon";
-	padding-right: 3px;
-}
-
-.breadcrumbs .trail-items li::after {
-	content: "\002F";
-	padding: 0 0.4em;
-}
-
-.breadcrumbs .trail-items li:last-of-type::after {
-	display: none;
-}
-
-.breadcrumbs .trail-end span span {
-	display: none;
-}
-
-
 /************************
 Contact Modal Styling
 *************************/
@@ -2856,8 +2807,9 @@ Global Page Styling
 	color: var(--wp--preset--color--primary-pale) !important;
 }
 */
+
 /* Add embellishment to last <p> in article */
-.single-entry-content p:last-of-type::after {
+.single-entry-content > p:last-of-type::after {
 	font-family: 'icomoon' !important;
 	content: "\e902" / "Star icon";
 	margin-left: 0.5em;
@@ -2951,8 +2903,12 @@ Page Background embellishments
 	opacity: 0.9;
 }
 
-.dark-mode .breadcrumbs .trail-items {
+.dark-mode .header-breadcrumbs nav li {
 	background-color: #0008;
+}
+
+.dark-mode .header-breadcrumbs nav li::after {
+	color: #fff6
 }
 
 

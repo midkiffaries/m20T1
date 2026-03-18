@@ -1,5 +1,17 @@
 <?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
+<?php http_response_code(404); // Set 404 status code ?>
 <?php get_header(); ?>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>404 Page Not Found - <?=get_option('site_title') ?></title>
+</head>
+
+<body> -->
 
 <main class="page-main page-error width-full" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
     <div class="page-content">
@@ -22,4 +34,6 @@
     </div>
 </main>
 
+<!-- </body>
+</html> -->
 <?php get_footer(); ?>

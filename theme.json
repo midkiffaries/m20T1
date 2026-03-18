@@ -313,18 +313,23 @@
 				},
 				{
 					"fontFamily": "Georgia, 'Droid Serif', Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-					"name": "System Serif",
-					"slug": "system-serif"
-				},
-				{
-					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, 'Roboto Mono', 'Liberation Mono', monospace",
-					"name": "System Mono",
-					"slug": "system-mono"
+					"name": "Georgia",
+					"slug": "georgia-font"
 				},
 				{
 					"fontFamily": "'Brush Script MT', cursive",
-					"name": "System Cursive",
-					"slug": "system-cursive"
+					"name": "Brush Script",
+					"slug": "brush-script-font"
+				},
+				{
+					"fontFamily": "'Courier New', Courier, monospace",
+					"name": "Courier New",
+					"slug": "courier-new-font"
+				},
+				{
+					"fontFamily": "SFMono-Regular, Consolas, 'Roboto Mono', monospace",
+					"name": "Consolas",
+					"slug": "system-mono"
 				}
 			],
 			"fontSizes": [

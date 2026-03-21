@@ -307,17 +307,17 @@
 					"slug": "secondary-font"
 				},
 				{
-					"fontFamily": "var(--wp--custom--primary-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
-					"name": "Sans-Serif",
+					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+					"name": "System Sans Serif",
 					"slug": "system-font"
 				},
 				{
-					"fontFamily": "Georgia, 'Droid Serif', Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+					"fontFamily": "Georgia, 'Droid Serif', serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
 					"name": "Georgia",
 					"slug": "georgia-font"
 				},
 				{
-					"fontFamily": "'Brush Script MT', 'Apple Chancery', cursive",
+					"fontFamily": "'Brush Script MT', 'Apple Chancery', 'Dancing Script', cursive",
 					"name": "Brush Script",
 					"slug": "brush-script-font"
 				},
@@ -329,7 +329,7 @@
 				{
 					"fontFamily": "SFMono-Regular, Consolas, 'Roboto Mono', monospace",
 					"name": "Consolas",
-					"slug": "consolas-font"
+					"slug": "system-mono"
 				}
 			],
 			"fontSizes": [

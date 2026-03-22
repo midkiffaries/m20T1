@@ -283,7 +283,7 @@
 				{
 					"name": "Inset",
 					"slug": "inset",
-					"shadow": "inset 6px 6px 11px -1px #00000033,inset 3px 3px 3px -1px #00000066"
+					"shadow": "inset 6px 6px 11px -1px #0003,inset 3px 3px 3px -1px #0006"
 				}
 			]
 		},
@@ -579,7 +579,7 @@
 		},
 		"blocks": {
 			"core/paragraph": {
-				"css": "text-wrap:pretty;orphans:3;widows:3; &.has-drop-cap:not(:focus)::first-letter{font-weight:700 !important;font-size:450% !important} & code{background-color:#aaa6;padding:0 2px;border-radius:2px} & s{-webkit-text-decoration:wavy line-through red;text-decoration:wavy line-through red;text-decoration-thickness:10%;}",
+				"css": "text-wrap:pretty;orphans:3;widows:3; &.has-drop-cap:not(:focus)::first-letter{font-weight:700 !important;font-size:450% !important} & code{padding:0 2px;border-radius:2px} & s{-webkit-text-decoration:wavy line-through red;text-decoration:wavy line-through red;text-decoration-thickness:10%;}",
 				"typography": {
 					"fontSize": "var:preset|font-size|medium",
 					"lineHeight": "1.7"
@@ -646,6 +646,9 @@
 					},
 					"header-shadow-inset": {
 						"css": "text-shadow:1px 1px 1px #fff8,0 0 2px #fff7"
+					},
+					"header-coloroffset": {
+						"css": "text-shadow:-4px 2px 2px #e9145277,4px -1px 2px #61e3e999"
 					},
 					"header-text-fill": {
 						"css": "padding:0 !important;-webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent;line-height:1.1"

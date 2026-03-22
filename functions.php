@@ -212,6 +212,11 @@ add_action( 'init', function(){
         'name'  => 'header-shadow-inset',
         'label' => __( 'Inset Shadow', 'm20t1' )
     ]);
+    // Heading: Text Shadow Color Offset
+    register_block_style( 'core/heading', [
+        'name'  => 'header-coloroffset',
+        'label' => __( 'Color Offset', 'm20t1' )
+    ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [
         'name'  => 'header-text-fill',

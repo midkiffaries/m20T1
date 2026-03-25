@@ -2973,6 +2973,7 @@ Social Links
 		border-radius: 0.7em;
 		padding: 0.4rem 0;
 		scrollbar-color: #888e #0000;
+		overscroll-behavior-y: contain;
 		border: 1px solid #fff3;
 		border-top: 1px solid #fff4;
 		border-bottom: 1px solid #eee8;

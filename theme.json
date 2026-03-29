@@ -11,9 +11,7 @@
 			"headerHeight": "15em",
 			"headerMobileHeight": "14em",
 			"footerColor": "#212121",
-			"footerBackground": "linear-gradient(135deg,#eaeaea0f 0%,#eaeaea0f 50%,#a9a9a90f 50%,#a9a9a90f 100%),linear-gradient(90deg,#141414,#141414)",
-			"primaryFont": "'Montserrat'",
-			"secondaryFont": "'Permanent Marker'"
+			"footerBackground": "linear-gradient(135deg,#eaeaea0f 0%,#eaeaea0f 50%,#a9a9a90f 50%,#a9a9a90f 100%),linear-gradient(90deg,#141414,#141414)"
 		},
 		"layout": {
 			"contentSize": "1060px",
@@ -302,17 +300,12 @@
 			"defaultFontSizes": false,
 			"fontFamilies": [
 				{
-					"fontFamily": "var(--wp--custom--secondary-font), system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif",
-					"name": "Secondary Font",
-					"slug": "secondary-font"
+					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+					"name": "Sans Serif",
+					"slug": "sans-serif"
 				},
 				{
-					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-					"name": "System Sans Serif",
-					"slug": "system-font"
-				},
-				{
-					"fontFamily": "Georgia, 'Droid Serif', serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+					"fontFamily": "Georgia, 'Droid Serif', serif",
 					"name": "Georgia",
 					"slug": "georgia-font"
 				},
@@ -573,7 +566,7 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var:preset|font-family|system-font",
+			"fontFamily": "var:preset|font-family|sans-serif",
 			"lineHeight": "1.7",
 			"fontSize": "var:preset|font-size|medium"
 		},
@@ -616,7 +609,7 @@
 							"fontWeight": "600",
 							"lineHeight": "1.1 !important",
 							"letterSpacing": "-1px",
-							"fontFamily": "var:preset|font-family|secondary-font"
+							"fontFamily": "var(--wp--preset--font-family--permanent-marker)"
 						},
 						"spacing": {
 							"margin": {
@@ -639,13 +632,10 @@
 						"css": "text-shadow:.1rem .1rem 2px #000a,.2rem .2rem 7px #0004"
 					},
 					"header-shadow-hard": {
-						"css": "text-shadow:.1rem .1rem 1px #000a"
+						"css": "text-shadow:.12rem .12rem 0px #0008"
 					},
 					"header-shadow-3d": {
 						"css": "text-shadow:-1px 1px 0 #666,-2px 2px 0 #555,-3px 3px 0 #444,-4px 4px 0 #333,-5px 5px 4px #0008"
-					},
-					"header-shadow-inset": {
-						"css": "text-shadow:1px 1px 1px #fff8,0 0 2px #fff7"
 					},
 					"header-coloroffset": {
 						"css": "text-shadow:-4px 2px 2px #e9145277,4px -1px 2px #61e3e999"
@@ -984,7 +974,7 @@
 				}
 			},
 			"core/verse": {
-				"css": "& {font-family:var(--wp--preset--font-family--system-serif)}"
+				"css": "& {font-family:var(--wp--preset--font-family--georgia-font)}"
 			},
 			"core/navigation": {
 				"elements": {

@@ -101,6 +101,7 @@ html:focus-within {
 body {
 	color: var(--wp--preset--color--contrast);
 	background-color: var(--wp--preset--color--base);
+	font-family: var(--wp--preset--font-family--montserrat);
 	margin: 0;
 	min-height: 100%;
 	text-rendering: auto;
@@ -128,6 +129,10 @@ figure::after {
 b,
 strong {
 	font-weight: bolder;
+}
+
+mark {
+	border-radius: .2em;
 }
 
 sub,
@@ -186,6 +191,10 @@ kbd {
 
 a > code {
 	color: inherit;
+}
+
+:where(pre) {
+	overflow-x: auto;
 }
 
 img,
@@ -2812,7 +2821,7 @@ Global Page Styling
 
 /* Single Blog Post */
 .single-entry-category {
-	font-family: var(--wp--preset--font-family--secondary-font);
+	font-family: var(--wp--preset--font-family--permanent-marker);
 	font-size: 1.4rem;
 	color: #666;
 }

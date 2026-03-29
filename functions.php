@@ -207,11 +207,6 @@ add_action( 'init', function(){
         'label' => __( 'Stripes', 'm20t1' ),
         'inline_style' => '.is-style-header-stripes::after,.is-style-header-stripes::before{background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");height:1em;margin:0 6px}'
     ]);
-    // Heading: Inset Shadow
-    register_block_style( 'core/heading', [
-        'name'  => 'header-shadow-inset',
-        'label' => __( 'Inset Shadow', 'm20t1' )
-    ]);
     // Heading: Text Shadow Color Offset
     register_block_style( 'core/heading', [
         'name'  => 'header-coloroffset',
@@ -1557,7 +1552,7 @@ function schemaNavigation( $menu_name ) {
 // Add custom message to login screen
 add_filter( 'login_message', function(){
 ?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'width:70%']);?></div>
+<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'max-width:210px;height:auto;']);?></div>
 <?php
 });
 

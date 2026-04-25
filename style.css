@@ -494,7 +494,8 @@ legend + * {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		text-wrap: balance;
+		text-wrap: balance; /* Temporary workaround */
+		text-wrap: pretty;
 	}
 
 	header,
@@ -1230,6 +1231,8 @@ Blog Post Styling - index/archives/search
 	margin: 0.1em 0 0.15em;
 	font-weight: 600;
 	letter-spacing: -1px;
+	text-wrap: balance; /* Temporary workaround */
+	text-wrap: pretty;
 }
 
 .entry-separator {

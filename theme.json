@@ -300,6 +300,21 @@
 			"defaultFontSizes": false,
 			"fontFamilies": [
 				{
+					"name": "Montserrat",
+					"slug": "Montserrat",
+					"fontFamily": "Montserrat, sans-serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.woff"
+							],
+							"fontWeight": "200 300 400 500 600 700 800 900",
+							"fontStyle": "normal",
+							"fontFamily": "Montserrat"
+						}
+					]
+				},
+				{
 					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
 					"name": "Sans Serif",
 					"slug": "sans-serif"

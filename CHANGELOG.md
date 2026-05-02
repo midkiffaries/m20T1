@@ -1,15 +1,15 @@
 # Changes to m20T1 WordPress Theme
 
-## 2.0 Live (April 30, 2026)
+## 2.0 Live (May 31, 2026)
 
 * Support for WordPress 7.0.
 * Added YouTube URL to user profiles.
-* Stylized scrollbars with both light and dark modes.
-* stylized select tag pulldown options for Chromium browsers.
+* Stylized scrollbars with both light and dark modes with brand color.
+* stylized Select tag pulldown options for Chromium browsers.
 * Added new Code block styles.
 * Switched the header breadcrumb trail to the internal WordPress block.
-* Purged my personal font choices and rely on the WP fonts feature.
 * Dropped breadcrumbs.php.
+* Purged my personal font choices to rely on the WP custom Fonts feature.
 * Removed the page load time - wasn't all the useful.
 * Bug fixes.
 

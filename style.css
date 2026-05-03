@@ -2140,13 +2140,13 @@ Page Pagination Section
 .blog-pagination .pagination-select {
 	background-color: transparent;
 	text-decoration: none;
-	
 	display: inline-block;
 	font-size: 1.2rem;
 	border-radius: 0.3em;
 	border-bottom: 2px solid transparent;
 	font-weight: 500;
 	transition: all 0.4s;
+	box-shadow: none;
 }
 
 .blog-pagination nav a {

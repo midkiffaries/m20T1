@@ -315,7 +315,7 @@
 					]
 				},
 				{
-					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+					"fontFamily": "apple-system, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
 					"name": "Sans Serif",
 					"slug": "sans-serif"
 				},
@@ -323,6 +323,11 @@
 					"fontFamily": "Georgia, 'Droid Serif', serif",
 					"name": "Georgia",
 					"slug": "georgia-font"
+				},
+				{
+					"fontFamily": "Verdana, Helvetica, sans-serif",
+					"name": "Verdana",
+					"slug": "verdana-font"
 				},
 				{
 					"fontFamily": "'Brush Script MT', 'Apple Chancery', 'Dancing Script', cursive",
@@ -335,7 +340,7 @@
 					"slug": "courier-new-font"
 				},
 				{
-					"fontFamily": "SFMono-Regular, Consolas, 'Roboto Mono', monospace",
+					"fontFamily": "SFMono-Regular, Menlo, Consolas, 'Roboto Mono', monospace",
 					"name": "Consolas",
 					"slug": "system-mono"
 				}

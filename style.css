@@ -818,7 +818,11 @@ Site Header
 }
 
 .header-breadcrumbs nav li:last-of-type {
-	display: none;
+	max-width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-right: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .header-widgets {

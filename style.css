@@ -815,6 +815,12 @@ Site Header
 .header-breadcrumbs nav li:first-of-type {
 	padding-left: 8px;
 	border-top-left-radius: 8px;
+
+	a::before {
+		padding-right: 6px;
+		content: "\e904";
+		font-family: 'icomoon' !important;
+	}
 }
 
 .header-breadcrumbs nav li:last-of-type {

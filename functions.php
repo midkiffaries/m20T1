@@ -12,7 +12,7 @@ error_reporting(0);
 
 // Inline separator that appears in the post/page metadata
 define( 'POST_SEPARATOR', '–' );
-// Inline separator for the header breadcrumb trail
+// Inline separator for the header breadcrumb trail - default: '/'
 define( 'BREADCRUMB_SEPARATOR', '/' );
 // Default: Read more excerpt at the text ending
 define( 'MORE_TEXT', '[...]' );
@@ -1587,8 +1587,9 @@ add_action( 'admin_head', function(){
 .wp-admin .column-post_views {width:3em}
 .wp-admin td.column-seo_excerpt {line-height:1.1;font-size:90%;text-wrap:balance}
 .wp-admin .column-thumbnail {width:6em}
-.wp-admin .media-icon .attachment-60x60 {min-width:60px;max-height:60px}
+.wp-admin .column-thumbnail img {border-radius:4px}
 .wp-admin .thumbnail .details-image:is([src$='.svg'],[src$='.svgz']) {min-width:95%}
+.wp-admin .media-icon .attachment-60x60 {min-width:60px;max-height:60px}
 .wp-admin .user-url-wrap input.code {font-family:inherit}
 .wp-admin .type-model img, .wp-admin .thumbnail-model img, .wp-admin .required-field-message, .wp-admin #alt-text-description {display:none !important}
 .wp-admin .type-model, .wp-admin .thumbnail-model {background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><path fill="gray" d="M494 96 67 280l428 183 432-183zm18 390v442l416-198V310zM64 730l417 198V486L64 310z"/></svg>') no-repeat 50% 40%;background-size:50%}

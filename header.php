@@ -20,7 +20,7 @@
                 <p class="header-logo" itemprop="name headline">
                     <a href="<?=home_url();?>" rel="home" itemprop="url"><?=get_custom_logo();?></a>
                 </p>
-                <div class="header-breadcrumbs"><?php echo do_blocks( '<!-- wp:breadcrumbs {"separator": "' . BREADCRUMB_SEPARATOR . '", "showCurrentItem":true} /-->' );?></div>
+                <div class="header-breadcrumbs"><?=do_blocks( '<!-- wp:breadcrumbs {"separator": "' . BREADCRUMB_SEPARATOR . '", "showCurrentItem":true} /-->' );?></div>
             </div>
             <button class="menu-button" id="btnMenu" aria-label="Open Menu" data-menu-id="MainMenu"></button>
             <div class="header-content">

@@ -301,7 +301,7 @@
 			"fontFamilies": [
 				{
 					"name": "Montserrat",
-					"slug": "Montserrat",
+					"slug": "Montserrat-Embedded",
 					"fontFamily": "Montserrat, sans-serif",
 					"fontFace": [
 						{

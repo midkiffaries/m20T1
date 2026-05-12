@@ -1186,7 +1186,8 @@ Blog Post Styling - index/archives/search
 .blog .post-container,
 .archive .post-container {
 	display: grid;
-	column-gap: 15px;
+	gap: 18px;
+	margin-bottom: 1em;
 	grid-template-columns: 250px auto;
 }
 
@@ -3006,7 +3007,7 @@ Social Links
 	:open::picker(select) {
 		height: auto;
 		max-height: 95vh;
-		margin: -5px auto 1em;
+		margin: -5px auto .8em;
 		opacity: 1;
 		@starting-style {
 			opacity: 0;

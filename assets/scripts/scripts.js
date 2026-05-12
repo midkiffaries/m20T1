@@ -751,8 +751,8 @@ function HtmlModal(c, v) {
 		border: none;
 		opacity: 0;
 		transition: opacity .2s ease-in-out 0s;
-        -webkit-backdrop-filter: blur(2px);
-        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
 	}
 	.dialog-header {
 		max-width: 70vw;

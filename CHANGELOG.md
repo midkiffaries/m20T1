@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 2.0 Live (XXX XX, 2026)
+### 2.0 Live (XXXX XX, 2026)
 
 * Support for WordPress 7.0.
 * Added YouTube URL to user profiles.
@@ -9,7 +9,8 @@
 * Added new Code block styles.
 * Switched the header breadcrumb trail to the internal WordPress block.
 * Dropped breadcrumbs.php.
-* Purged my personal font choices to rely on the WP custom Fonts feature.
+* Purged my personal font choices to rely on the WP Fonts feature.
+* Includes Montserrat as the default embedded font.
 * Removed the page load time - wasn't all the useful.
 * Bug fixes.
 

@@ -8,6 +8,12 @@
 const siteUri = Object.freeze(document.getElementById('SiteURI').getAttribute('href')),
     themeUri = `${siteUri}wp-content/themes/m20T1/`;
 
+// Create a translusent color variable based on the primary color in theme.json
+(() => {
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--wp--preset--color--primary').trim();
+    document.documentElement.style.setProperty('--primary-color-translucent', primaryColor + 'aa');
+})();
+
 // Improve the behavior of input types
 (() => {
     const inputNum = document.getElementsByTagName("input"), l = inputNum.length;

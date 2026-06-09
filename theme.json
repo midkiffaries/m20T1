@@ -7,6 +7,7 @@
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
 		"custom": {
+			"secondaryFont": "var(--wp--preset--font-family--permanent-marker)",
 			"sidebarSize": "15em",
 			"headerHeight": "15em",
 			"headerMobileHeight": "14em",
@@ -126,11 +127,6 @@
 					"color": "#cec7c7",
 					"name": "Warm",
 					"slug": "warm"
-				},
-				{
-					"color": "#37a1ffaa",
-					"name": "Highlight",
-					"slug": "highlight"
 				}
 			],
 			"gradients": [
@@ -185,7 +181,7 @@
 					"slug": "seventiesgradient"
 				},
 				{
-					"gradient": "linear-gradient(0deg,#00cc69 0%,#00cc69 17%,#fcc245 17%,#fcc245 34%,#ff7700 34%,#ff7700 50%,#ff2a00 50%,#ff2a00 66%,#a11fff 66%,#a11fff 83%,#14a9ff 83%,#14a9ff 100%)",
+					"gradient": "linear-gradient(0deg,#3b6566 0%,#3b6566 25%,#6b7736 25%,#6b7736 50%,#c8750b 50%,#c8750b 75%,#a72b07 75%,#a72b07 100%)",
 					"name": "Eighties stripes",
 					"slug": "eightiesgradient"
 				},
@@ -306,48 +302,43 @@
 					"fontFace": [
 						{
 							"src": [
-								"file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.woff"
+								"file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.woff2"
 							],
-							"fontWeight": "200 300 400 500 600 700 800 900",
+							"fontWeight": "100 200 300 400 500 600 700 800 900",
 							"fontStyle": "normal",
 							"fontFamily": "Montserrat"
 						}
 					]
 				},
 				{
-					"fontFamily": "apple-system, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+					"name": "Lora",
+					"slug": "lora",
+					"fontFamily": "Lora, serif",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/montserrat/Lora-VariableFont_wght.woff2"
+							],
+							"fontWeight": "400 500 600 700",
+							"fontStyle": "normal",
+							"fontFamily": "Lora"
+						}
+					]
+				},
+				{
 					"name": "System Sans Serif",
-					"slug": "sans-serif"
+					"slug": "sans-serif",
+					"fontFamily": "system-ui, 'Segoe UI', Roboto, sans-serif"
 				},
 				{
-					"fontFamily": "Georgia, 'Droid Serif', serif",
-					"name": "Georgia",
-					"slug": "georgia-font"
+					"name": "Courier",
+					"slug": "courier-new-font",
+					"fontFamily": "'Nimbus Mono PS', 'Courier New', Courier, monospace"
 				},
 				{
-					"fontFamily": "Arial, Helvetica, sans-serif",
-					"name": "Arial",
-					"slug": "arial-font"
-				},
-				{
-					"fontFamily": "Verdana, Helvetica, sans-serif",
-					"name": "Verdana",
-					"slug": "verdana-font"
-				},
-				{
-					"fontFamily": "'Brush Script MT', 'Apple Chancery', 'Dancing Script', cursive",
-					"name": "Brush Script",
-					"slug": "brush-script-font"
-				},
-				{
-					"fontFamily": "'Courier New', Courier, monospace",
-					"name": "Courier New",
-					"slug": "courier-new-font"
-				},
-				{
-					"fontFamily": "SFMono-Regular, Menlo, Consolas, 'Roboto Mono', monospace",
 					"name": "Consolas",
-					"slug": "system-mono"
+					"slug": "system-mono",
+					"fontFamily": "ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace"
 				}
 			],
 			"fontSizes": [
@@ -622,11 +613,6 @@
 					"text-outline": {
 						"css": "stroke:#222;stroke-width:2px;-webkit-text-stroke-color:#222;-webkit-text-stroke-width:2px;paint-order:stroke fill"
 					},
-					"text-justify": {
-						"typography": {
-							"textAlign": "justify"
-						}
-					},
 					"text-subtitle": {
 						"color": {
 							"text": "#555"
@@ -635,8 +621,7 @@
 							"fontSize": "1.5rem",
 							"fontWeight": "600",
 							"lineHeight": "1.1 !important",
-							"letterSpacing": "-1px",
-							"fontFamily": "var(--wp--preset--font-family--permanent-marker)"
+							"letterSpacing": "-1px"
 						},
 						"spacing": {
 							"margin": {

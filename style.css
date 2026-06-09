@@ -52,7 +52,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 /* Text Selection */
 ::selection {
-    background-color: var(--wp--preset--color--highlight);
+	background-color: var(--primary-color-translucent);
     text-shadow: none;
 }
 
@@ -101,7 +101,6 @@ html:focus-within {
 body {
 	color: var(--wp--preset--color--contrast);
 	background-color: var(--wp--preset--color--base);
-	/* font-family: var(--wp--preset--font-family--montserrat); */
 	margin: 0;
 	min-height: 100%;
 	text-rendering: auto;
@@ -2834,7 +2833,7 @@ Global Page Styling
 
 /* Single Blog Post */
 .single-entry-category {
-	font-family: var(--wp--preset--font-family--permanent-marker);
+	font-family: var(--wp--custom--secondary-font);
 	font-size: 1.4rem;
 	color: #666;
 }

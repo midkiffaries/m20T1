@@ -141,10 +141,10 @@ add_action( 'init', function(){
         'name'  => 'list-plain',
         'label' => __( 'No Bullets', 'm20t1' )
     ]);
-    // Paragraph: Justify text
+    // Paragraph: Subtitle
     register_block_style( 'core/paragraph', [
-        'name'  => 'text-justify',
-        'label' => __( 'Justify', 'm20t1' )
+        'name'  => 'text-subtitle',
+        'label' => __( 'Subtitle', 'm20t1' )
     ]);
     // Paragraph: Light text shadow
     register_block_style( 'core/paragraph', [
@@ -160,11 +160,6 @@ add_action( 'init', function(){
     register_block_style( 'core/paragraph', [
         'name'  => 'text-shadow-glow',
         'label' => __( 'Purple Glow', 'm20t1' )
-    ]);
-    // Paragraph: Subtitle
-    register_block_style( 'core/paragraph', [
-        'name'  => 'text-subtitle',
-        'label' => __( 'Subtitle', 'm20t1' )
     ]);
     // Paragraph: Outline text
     register_block_style( 'core/paragraph', [
@@ -593,7 +588,7 @@ add_action( 'after_setup_theme', function(){
 // Enable styles and scripts
 add_action( 'wp_enqueue_scripts', function(){    
     // Add Javascripts to the bottom of the page body
-    wp_enqueue_script( 'm20t1-scripts', get_template_directory_uri() . "/assets/scripts/scripts.js", [], THEME_VERSION, true );
+    wp_enqueue_script( 'm20t1-scripts', get_template_directory_uri() . "/assets/js/scripts.js", [], THEME_VERSION, true );
 
     // Add stylesheets to the HEAD metadata
     wp_enqueue_style( 'm20t1-style', get_stylesheet_uri(), [], THEME_VERSION, 'all' );
@@ -1396,7 +1391,7 @@ function get_file_extension( $path ) {
 function attachment_page_image( $id ) {
     $image_ext = ['jpg', 'jpeg', 'jp2', 'png', 'gif', 'webp', 'ico', 'heif', 'heic', 'avif'];
     $video_ext = ['mp3', 'ogg', 'mp4', 'm4v', 'm4a', 'mov', 'wmv', 'avi', 'webm', 'mpg', 'mpeg', 'ogv', '3gp', '3g2'];
-    $model_url = "https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js";
+    $model_url = "https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js";
     
     $fileExt = get_file_extension(wp_get_attachment_url($id));
 
@@ -1603,12 +1598,31 @@ add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
         ?>
-        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=") . get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/functions.php'));?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
-        <p>To Underline Text: <kbd>CTRL+U</kbd> / <kbd>CMD+U</kbd></p>
+        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=") . get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/functions.php?page=m20Settings'));?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
         <h3>List Posts/Pages Shortcode Sample:</h3>
         <p><code style="display:block">[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
         <?php
     }
+});
+
+// Add underline text to the Gutenberg editor
+add_action( 'enqueue_block_editor_assets', function(){
+    wp_enqueue_script(
+        'mytheme-gutenberg-underline',
+        get_template_directory_uri() . '/assets/js/gutenberg-underline.js',
+        array(
+            'wp-rich-text',
+            'wp-element',
+            'wp-components',
+            'wp-compose',
+            'wp-block-editor',
+            'wp-editor',
+            'wp-plugins',
+            'wp-i18n'
+        ),
+        filemtime( get_template_directory() . '/assets/js/gutenberg-underline.js' ), 
+        true
+    );
 });
 
 
@@ -1885,7 +1899,7 @@ function users_last_login() {
 
 // Create new menu under the Appearance section
 add_action('admin_menu', function(){
-	add_submenu_page('themes.php', 'm20T1 Additional Settings', 'Theme Settings', 'administrator', __FILE__, 'm20T1_settings_page' , 'dashicons-admin-generic', null );
+	add_submenu_page('themes.php', 'm20T1 Additional Settings', 'Theme Settings', 'administrator', 'm20Settings', 'm20T1_settings_page' , 'dashicons-admin-generic', null );
 
     // Register settings
 	add_action( 'admin_init', function(){

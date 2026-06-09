@@ -4,13 +4,14 @@
 
 * Support for WordPress 7.0.
 * Added YouTube URL to user profiles.
-* Added an underline inline text option to gutenburg.
+* Added an underline inline text option to Gutenburg with a fancy underline.
 * Stylized scrollbars with both light and dark modes with brand color.
 * stylized Select tag pulldown options for Chromium browsers.
 * Added new Code block styles.
 * Switched the header breadcrumb trail to the internal WordPress block.
 * Dropped breadcrumbs.php.
-* Purged my personal font choices to rely on the WP Fonts feature.
+* Created a unique 404 page.
+* Completely redid the fonts and purged my personal font choices to rely on the WP Fonts feature.
 * Includes Montserrat and Lora as the default embedded fonts - seems to be the trend now.
 * Removed the page load time - wasn't all the useful.
 * Bug fixes.

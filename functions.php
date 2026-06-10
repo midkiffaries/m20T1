@@ -523,7 +523,8 @@ add_action( 'init', function(){
 // Add additional options to block editor elements
 add_filter( 'register_block_type_args', function( $args, $block_type ) {
     if ( in_array( $block_type, ['core/group', 'core/file', 'core/list-item', 'core/tabs', 'core/tab', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/flipbox', 'core/table-of-contents', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/icon', 'core/code', 'core/embed', 'core/video', 'core/math', 'core/separator', 'core/latest-posts', 'core/social-links', 'core/preformatted', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
-        $args['supports']['typography'] = true; // Add typography option
+        //$args['supports']['typography'] = ['fontStyle' => true, 'fontWeight' => true, 'fontVariant' => true, 'fontSize' => true, 'lineHeight' => true, 'fontFamily' => true, 'letterSpacing' => true, 'textTransform' => true,'textDecoration' => true,'writingMode' => true]; // Add typography options
+        $args['supports']['spacing'] = true; // Add spacing option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter
         $args['supports']['shadow'] = true; // Add box shadow option
         //$args['supports']['color'] = ['text' => true, 'background' => true, 'link' => true, 'gradients' => true]; // Add color options
@@ -1598,7 +1599,7 @@ add_action('wp_dashboard_setup', function(){
     wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
     function custom_dashboard_text() {
         ?>
-        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=") . get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/functions.php?page=m20Settings'));?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
+        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=m20Settings");?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
         <h3>List Posts/Pages Shortcode Sample:</h3>
         <p><code style="display:block">[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
         <?php

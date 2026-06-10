@@ -83,6 +83,11 @@ html {
 	tab-size: 4;
 	scrollbar-color: var(--scrollbar-light);
 	scrollbar-width: auto;
+	scroll-behavior: smooth;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -94,8 +99,9 @@ html {
 	}
 }
 
-html:focus-within {
-	scroll-behavior: smooth;
+:target { /* Anchor */
+	scroll-margin-top: 1rem;
+	outline: 1px dotted var(--wp--preset--color--secondary);
 }
 
 body {

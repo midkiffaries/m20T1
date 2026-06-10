@@ -10,7 +10,7 @@
 * Added new Code block styles.
 * Switched the header breadcrumb trail to the internal WordPress block.
 * Dropped breadcrumbs.php.
-* Created a unique 404 page.
+* Created a new unique 404 page - seems to be the trend.
 * Completely redid the fonts and purged my personal font choices to rely on the WP Fonts feature.
 * Includes Montserrat and Lora as the default embedded fonts - seems to be the trend now.
 * Removed the page load time - wasn't all the useful.

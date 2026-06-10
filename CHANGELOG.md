@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 2.0 Live (XXXX XX, 2026)
+### 2.0 Live (June XX, 2026)
 
 * Support for WordPress 7.0.
 * Added YouTube URL to user profiles.
@@ -14,6 +14,7 @@
 * Completely redid the fonts and purged my personal font choices to rely on the WP Fonts feature.
 * Includes Montserrat and Lora as the default embedded fonts - seems to be the trend now.
 * Removed the page load time - wasn't all the useful.
+* Removed page view counter - wasn't all that accurate.
 * Bug fixes.
 
 ### 1.9 Live (December 31, 2025 🎉)

@@ -792,7 +792,6 @@ add_action( 'wp_head', function(){
 // Append to the top of the page body tag
 add_action( 'wp_body_open', function(){
     echo allow_html_tags(get_option('body_top_html')); // Post user HTML
-    set_page_views(); // Page view counter
 });
 
 // Append to the bottom of the page body tag
@@ -1581,7 +1580,6 @@ add_action( 'dashboard_glance_items', function(){
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
-.wp-admin .column-post_views {width:3em}
 .wp-admin td.column-seo_excerpt {line-height:1.1;font-size:90%;text-wrap:balance}
 .wp-admin .column-thumbnail {width:6em}
 .wp-admin .column-thumbnail img {border-radius:4px}
@@ -1682,43 +1680,6 @@ add_action( 'manage_posts_custom_column', 'AddExcerptValue', 10, 2 );
 // Add SEO Excerpt Column to Pages
 add_filter( 'manage_pages_columns', 'AddExcerptColumn' );
 add_action( 'manage_pages_custom_column', 'AddExcerptValue', 10, 2 );
-
-// Add a page view count column to the posts and pages sections
-// Get the number of page views
-function get_page_views() {
-    $count = get_post_meta( get_the_ID(), 'post_views_count', true );
-    return ($count < 1) ? 0 : abbreviateNum($count);
-}
-
-// Set the page view counter
-function set_page_views() {
-    $key = 'post_views_count';
-    $post_id = get_the_ID();
-    $count = (int) get_post_meta( $post_id, $key, true );
-    $count++;
-    update_post_meta( $post_id, $key, $count );
-}
-
-// Add the page views column header
-function add_column_header_views( $column ) {
-    $column['post_views'] = 'Views';
-    return $column;
-}
-
-// Add the page views column content
-function add_column_views( $column ) {
-    if ( $column === 'post_views') {
-        echo get_page_views();
-    }
-}
-
-// Add Views Column to Posts
-add_filter( 'manage_posts_columns', 'add_column_header_views' );
-add_action( 'manage_posts_custom_column', 'add_column_views' );
-
-// Add Views Column to Pages
-add_filter( 'manage_pages_columns', 'add_column_header_views' );
-add_action( 'manage_pages_custom_column', 'add_column_views' );
 
 
 /////////////////////////////////////////////////
@@ -2243,7 +2204,6 @@ class BuildMetaBox {
 		wp_nonce_field( 'm20t1_meta_box', 'm20t1_meta_box_nonce' );
 
 		// Use get_post_meta to retrieve an existing value from the database
-        $pageViews = get_post_meta( $post->ID, 'post_views_count', true );
 		$pageCSS = get_post_meta( $post->ID, 'Page_CSS', true );
         $pageScheme = get_post_meta( $post->ID, 'Page_Scheme', true );
         $pageArticle = get_post_meta( $post->ID, 'Page_Article', true );
@@ -2304,7 +2264,6 @@ class BuildMetaBox {
         <input type="url" id="m20t1_video_field" name="m20t1_video_field" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" placeholder="<?=esc_url(home_url() . "/wp-content/uploads/FILENAME");?>" maxlength="128" inputmode="url" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="width:100%;margin-bottom:8px" value="<?=$pageVideo;?>">
         
         <div class="components-base-control__field"><label class="components-base-control__label css-1v57ksj">
-			<?php _e( 'Post Views:', 'm20t1' ); ?> <b><?=$pageViews;?></b><br> 
             <?php _e( 'Excerpt Length:', 'm20t1' ); ?> <b><?=strlen(get_the_excerpt());?></b>/156
 		</label></div>
         <style>

@@ -2036,7 +2036,8 @@ Comments Section
 	padding: 0.8em 1.1em;
 	border-radius: 2px 0.6em 0.6em;
 	margin-bottom: 0.4em;
-
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
 }
 
 .list-comments p {
@@ -2138,6 +2139,7 @@ Comments Section
 }
 
 .comments-closed p {
+	margin: 2em 1em;
 	font-size: 1.4rem;
 	text-align: center;
 }

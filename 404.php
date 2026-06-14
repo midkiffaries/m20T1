@@ -182,7 +182,7 @@ body::after{
 
                 <?=get_search_form('error'); // Search Form ?>
 
-                <p class="status-404">SYSTEM STATUS: PAGE_NOT_FOUND.EXE</p>
+                <p class="status-404">SYSTEM STATUS: C:\PAGE_NOT_FOUND.EXE</p>
 
                 <p><a class="home-btn-404" href="<?=esc_url(home_url('/'));?>">Return Home</a></p>
             </article>

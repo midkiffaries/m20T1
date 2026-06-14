@@ -689,7 +689,7 @@ Site Header
 	height: 0;
 }
 
-/* No header - blog, attachment, search and 404 pages */
+/* No header - blog, attachment, and search pages */
 .header-noimage {
 	height: 2.5em;
 }
@@ -1976,27 +1976,6 @@ Specific Page Styling
 .page-image .image-share ul li {
 	display: inline-block;
 	margin: 1em 0.1em;
-}
-
-/* 404 Error Page */
-.page-404 {
-	text-align: center;
-	margin-top: 3em;
-	min-height: 40rem;
-}
-
-.page-404 p {
-	font-size: 1.5rem;
-	font-weight: 500;
-}
-
-.page-404 .search-input {
-	width: calc(100% - 10em);
-}
-
-.page-404 .search-submit {
-	background-color: var(--wp--preset--color--primary);
-	border: 2px solid var(--wp--preset--color--primary);
 }
 
 /* Page last updated section */

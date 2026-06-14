@@ -318,7 +318,7 @@
 					"fontFace": [
 						{
 							"src": [
-								"file:./assets/fonts/montserrat/Lora-VariableFont_wght.woff2"
+								"file:./assets/fonts/lora/Lora-VariableFont_wght.woff2"
 							],
 							"fontWeight": "400 500 600 700",
 							"fontStyle": "normal",

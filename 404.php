@@ -29,7 +29,7 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
-    background:repeating-linear-gradient(0deg, #FFFFFF08 0, #FFFFFF08 1px, #0000 1px, #0000 3px), radial-gradient(circle at 50% 0,#0f32 0,#0000 70%);
+    background:repeating-linear-gradient(0deg, #FFFFFF08 0, #FFFFFF08 1px, #0000 1px, #0000 3px), radial-gradient(circle at 50% 0,#0f62 0,#0000 70%);
     pointer-events:none;
     z-index:2;
 }
@@ -53,7 +53,7 @@ body::after{
     line-height:1;
     text-transform:uppercase;
     color:#fff;
-    text-shadow: 0 0 10px #fff1, 0 0 20px #fff1;
+    text-shadow: 0 0 10px #fff1, 0 0 20px #fff1, 0 0 9px #fff4;
 }
 
 .glitch-404::before,
@@ -84,6 +84,8 @@ body::after{
     font-size:2.3rem;
     text-transform:uppercase;
     letter-spacing:.15em;
+    text-shadow:0 0 4px #fff1;
+    filter:drop-shadow(0 0 6px #fff6);
 }
 
 .message-404{
@@ -91,6 +93,7 @@ body::after{
     margin-bottom:35px;
     font-size:1.25rem !important;
 	text-wrap: balance;
+    text-shadow:0 0 5px #fff6;
 }
 
 .search-form input[type="search"]{
@@ -117,6 +120,7 @@ body::after{
     margin-top:30px;
     font-size:1rem !important;
     letter-spacing:.15em;
+    text-shadow:0 0 6px #fff6;
 }
 
 .home-btn-404{

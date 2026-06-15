@@ -19,9 +19,9 @@ body{
     align-items:center;
     justify-content:center;
     background:#050505;
-    color:#fff;
     font-family: ui-monospace, 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     overflow:hidden;
+    text-align:center;
 }
 
 /* Animated scanlines */
@@ -29,7 +29,7 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
-    background:repeating-linear-gradient(0deg, #FFFFFF08 0px, #FFFFFF08 1px, #0000 1px, #0000 3px);
+    background:repeating-linear-gradient(0deg, #FFFFFF08 0, #FFFFFF08 1px, #0000 1px, #0000 3px), radial-gradient(circle at 50% 0,#0f32 0,#0000 70%);
     pointer-events:none;
     z-index:2;
 }
@@ -39,7 +39,7 @@ body::after{
     content:"";
     position:fixed;
     inset:0;
-    background:#FFFFFF08;
+    background:#fff1;
     animation:flicker .15s infinite;
     pointer-events:none;
     z-index:3;
@@ -53,7 +53,7 @@ body::after{
     line-height:1;
     text-transform:uppercase;
     color:#fff;
-    text-shadow: 0 0 10px #FFFFFF08, 0 0 20px #FFFFFF08;
+    text-shadow: 0 0 10px #fff1, 0 0 20px #fff1;
 }
 
 .glitch-404::before,

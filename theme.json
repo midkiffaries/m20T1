@@ -340,7 +340,7 @@
 				{
 					"name": "Consolas",
 					"slug": "system-mono",
-					"fontFamily": "ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+					"fontFamily": "ui-monospace, 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace"
 				}
 			],
 			"fontSizes": [

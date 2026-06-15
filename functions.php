@@ -1561,6 +1561,18 @@ add_filter( 'admin_footer_text', function(){
 <?php
 });
 
+// Add a panel to the dashboard with additional theme info
+add_action('wp_dashboard_setup', function(){
+    wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
+    function custom_dashboard_text() {
+        ?>
+        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=m20Settings");?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
+        <h3>List Posts/Pages Shortcode Sample:</h3>
+        <p><code style="display:block">[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
+        <?php
+    }
+});
+
 // Add custom post type to the dashboard "At a Glance" card
 add_action( 'dashboard_glance_items', function(){
     $post_types = get_post_types( [ '_builtin' => false ], 'objects' );
@@ -1590,38 +1602,6 @@ add_action( 'admin_head', function(){
 .wp-admin .type-model, .wp-admin .thumbnail-model {background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><path fill="gray" d="M494 96 67 280l428 183 432-183zm18 390v442l416-198V310zM64 730l417 198V486L64 310z"/></svg>') no-repeat 50% 40%;background-size:50%}
 </style>
 <?php
-});
-
-// Add a panel to the dashboard with additional theme info
-add_action('wp_dashboard_setup', function(){
-    wp_add_dashboard_widget('custom_dashboard_text', 'm20T1 Theme Guide', 'custom_dashboard_text');
-    function custom_dashboard_text() {
-        ?>
-        <p><a href="<?=esc_url(home_url() . "/wp-admin/themes.php?page=m20Settings");?>">Additional Theme Settings</a> | <a href="<?=get_filepath(esc_url(home_url() . '/wp-content/themes/m20T1/CHANGELOG.md'));?>">Theme Changelog</a> | <a href="https://unsplash.com/@midkiffaries" target="_blank">Stock Photos</a></p>
-        <h3>List Posts/Pages Shortcode Sample:</h3>
-        <p><code style="display:block">[list-posts posts="5" post_type="portfolio" order="asc" orderby="title" thumbnail="1" excerpt="1" post_status="publish" category="" id="" class=""]</code></p>
-        <?php
-    }
-});
-
-// Add underline text to the Gutenberg editor
-add_action( 'enqueue_block_editor_assets', function(){
-    wp_enqueue_script(
-        'mytheme-gutenberg-underline',
-        get_template_directory_uri() . '/assets/js/gutenberg-underline.js',
-        array(
-            'wp-rich-text',
-            'wp-element',
-            'wp-components',
-            'wp-compose',
-            'wp-block-editor',
-            'wp-editor',
-            'wp-plugins',
-            'wp-i18n'
-        ),
-        filemtime( get_template_directory() . '/assets/js/gutenberg-underline.js' ), 
-        true
-    );
 });
 
 
@@ -1733,6 +1713,31 @@ add_filter( 'post_mime_types', function($post_mime_types){
     $post_mime_types['image/svg+xml'] = [ __( 'SVG Images' ), __( 'Manage SVG Images' ), _n_noop( 'SVG <span class="count">(%s)</span>', 'SVGs <span class="count">(%s)</span>' ) ];
     $post_mime_types['model/gltf-binary'] = [ __( '3D Models' ), __( 'Manage 3D Models' ), _n_noop( 'GLB <span class="count">(%s)</span>', 'GLBs <span class="count">(%s)</span>' ) ];
 	return $post_mime_types;
+});
+
+
+/////////////////////////////////////////////////
+// Admin: General Editor additions
+/////////////////////////////////////////////////
+
+// Add underline text to the Gutenberg editor
+add_action( 'enqueue_block_editor_assets', function(){
+    wp_enqueue_script(
+        'mytheme-gutenberg-underline',
+        get_template_directory_uri() . '/assets/js/gutenberg-underline.js',
+        array(
+            'wp-rich-text',
+            'wp-element',
+            'wp-components',
+            'wp-compose',
+            'wp-block-editor',
+            'wp-editor',
+            'wp-plugins',
+            'wp-i18n'
+        ),
+        filemtime( get_template_directory() . '/assets/js/gutenberg-underline.js' ), 
+        true
+    );
 });
 
 // Add Underline to Classic editor

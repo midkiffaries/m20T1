@@ -1,3 +1,4 @@
+// Registers the 'Underline' tag in the Gutenberg editor
 (function(wp) {
     const { registerFormatType, toggleFormat } = wp.richText;
     const { RichTextToolbarButton } = wp.blockEditor || wp.editor;

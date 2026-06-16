@@ -1302,21 +1302,21 @@ Blog Post Styling - index/archives/search
 	padding: 3px;
 	text-decoration: underline;
 	text-decoration-color: #bbb;
-}
 
-.entry-tags ul li a:hover {
-	text-decoration: underline;
-	text-decoration-color: #222;
-}
+	&:hover {
+		text-decoration: underline;
+		text-decoration-color: #222;
+	}
 
-.entry-tags ul li a:active {
-	opacity: 0.6;
-}
+	&:active {
+		opacity: 0.6;
+	}
 
-.entry-tags ul li a::before {
-	content: "#";
-	color: #bbb;
-	font-style: italic;
+	&:before {
+		content: "#";
+		color: #bbb;
+		font-style: italic;
+	}
 }
 
 
@@ -1406,73 +1406,73 @@ Entry Social Sharing Styling
 .post-social-share .browser-share {
     background-color: var(--browser-color);
 	cursor: pointer;
-}
 
-.post-social-share .browser-share:hover {
-    outline-color: var(--browser-color);
+	&:hover {
+		outline-color: var(--browser-color);
+	}
+	&:hover {
+		outline-color: var(--browser-color);
+	}
 }
 
 .post-social-share .facebook-share {
     background-color: var(--facebook-color);
-}
 
-.post-social-share .facebook-share:hover {
-    outline-color: var(--facebook-color);
-}
-
-.post-social-share .facebook-share::before {
-	content: "\e90b" / "Facebook icon";
-	font-size: 1.6rem;
-	vertical-align: -3px;
+	&:hover {
+		outline-color: var(--facebook-color);
+	}
+	&::before {
+		content: "\e90b" / "Facebook icon";
+		font-size: 1.6rem;
+		vertical-align: -3px;
+	}
 }
 
 .post-social-share .twitter-share {
     background-color: var(--twitter-color);
-}
 
-.post-social-share .twitter-share:hover {
-    outline-color: #333;
-}
-
-.post-social-share .twitter-share::before {
-	content: "\e906" / "X icon";
+	&:hover {
+		outline-color: #333;
+	}
+	&::before {
+		content: "\e906" / "X icon";
+	}
 }
 
 .post-social-share .linkedin-share {
     background-color: var(--linkedin-color);
-}
 
-.post-social-share .linkedin-share:hover {
-    outline-color: var(--linkedin-color);
-}
-
-.post-social-share .linkedin-share::before {
-	content: "\e905" / "LinkedIn icon";
+	&:hover {
+		outline-color: var(--linkedin-color);
+	}
+	&::before {
+		content: "\e905" / "LinkedIn icon";
+	}
 }
 
 .post-social-share .pinterest-share {
     background-color: var(--pinterest-color);
-}
 
-.post-social-share .pinterest-share:hover {
-    outline-color: var(--pinterest-color);
-}
-
-.post-social-share .pinterest-share::before {
-	content: "\e900" / "Pinterest icon";
+	&:hover {
+		outline-color: var(--pinterest-color);
+	}
+	&::before {
+		content: "\e900" / "Pinterest icon";
+	}
 }
 
 .post-social-share .reddit-share {
     background-color: var(--reddit-color);
+
+	&:hover {
+		outline-color: var(--reddit-color);
+	}
+	&::before {
+		content: "\e901" / "Reddit icon";
+	}
 }
 
-.post-social-share .reddit-share:hover {
-    outline-color: var(--reddit-color);
-}
 
-.post-social-share .reddit-share::before {
-	content: "\e901" / "Reddit icon";
-}
 
 
 /*********************************** 
@@ -2055,18 +2055,18 @@ Comments Section
 	font-weight: bold;
 	font-size: 1.25em;
 	padding: 0 4px;
-}
 
-.comment-metadata a:hover {
-	color: #000;
+	&:hover {
+		color: #000;
+	}
 }
 
 .comment-edit-link {
 	color: #a00;
-}
 
-.comment-edit-link::before {
-	content: "✎ " / "Pencil icon";
+	&::before {
+		content: "✎ " / "Pencil icon";
+	}
 }
 
 /* Comment Form */
@@ -2518,18 +2518,17 @@ Custom Theme CSS
 .portfolio-name a {
 	text-decoration: none;
 	transition: color 0.2s;
-}
 
-.portfolio-name a::before {
-	font-family: 'icomoon';
-	content: "\e90d" / "Portfolio icon";
-	vertical-align: -3px;
-	margin-left: -14px;
-}
-
-.portfolio-name a:hover {
-	color: var(--wp--preset--color--primary);
-	text-decoration: underline;
+	&::before {
+		font-family: 'icomoon';
+		content: "\e90d" / "Portfolio icon";
+		vertical-align: -3px;
+		margin-left: -14px;
+	}
+	&:hover {
+		color: var(--wp--preset--color--primary);
+		text-decoration: underline;
+	}
 }
 
 /************************************
@@ -2538,17 +2537,16 @@ WordPress Gutenburg Content Styling
 
 /* Images, Figures and Galleries */
 .the-content .wp-block-image a img {
-	transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-}
+	transition: filter 0.5s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 
-.the-content .wp-block-image a img:hover {
-	filter: brightness(1.08);
-	transform: scale(1.01);
-}
-
-.the-content .wp-block-image a img:active {
-	filter: brightness(0.95);
-	transform: scale(0.99);
+	&:hover {
+		filter: brightness(1.05);
+		transform: scale(1.01);
+	}
+	&:active {
+		filter: brightness(0.95);
+		transform: scale(0.99);
+	}
 }
 
 .the-content .wp-block-image figcaption {

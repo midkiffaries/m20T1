@@ -50,14 +50,13 @@
 
     <?php else : // If no results ?>
 
-    <article class="<?=$pageKind;?>-page">
-        <div <?php post_class();?>>
-            <h1 class="page-title"><?=esc_html($postType->labels->singular_name);?> is empty</h1>
-            <p class="subtitle">This doesn't seem to exist...</p>
-            <div class="the-content">
-                <p>Would you like to try a search to find what you are looking for?</p>
-                <?php get_search_form('archive'); // Search Form ?>
-            </div>
+    <section class="porfolio-page-title" itemprop="name headline">
+        <?=GetPageTitle(get_page_by_path(rawurlencode(strtolower($pageKind)))); // Get page title and content ?>
+    </section>
+
+    <article <?php post_class();?> id="post-<?=the_ID(); ?>">
+        <div class="the-content" style="min-height: 400px;">
+            <p><i>It's a little empty in here...</i></p>
         </div>
     </article>
 

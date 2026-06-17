@@ -684,7 +684,7 @@ add_action( 'init', function(){
                 'set_featured_image'     => _x( "Set cover image", 'm20t1' ),
                 'remove_featured_image'  => _x( "Remove cover image", 'm20t1' ),
                 'use_featured_image'     => _x( "Use as cover image", 'm20t1' ),
-                'archives'               => _x( "{$type} archives", 'm20t1' ),
+                'archives'               => _x( "{$type_plural}", 'm20t1' ),
                 'attributes'             => _x( "{$type} attributes", 'm20t1' ),
                 'insert_into_item'       => _x( "Insert into {$type}",'m20t1' ),
                 'uploaded_to_this_item'  => _x( "Uploaded to this {$type}", 'm20t1' ),

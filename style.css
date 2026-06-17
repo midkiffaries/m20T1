@@ -831,8 +831,11 @@ Site Header
 .header-breadcrumbs nav li:last-of-type {
 	padding-right: 8px;
 	border-bottom-right-radius: 8px;
-	max-width: 220px;
-    white-space: nowrap;
+	white-space: nowrap;
+}
+
+.single-post .header-breadcrumbs nav li:last-of-type {
+	max-width: 16ch;
     overflow: hidden;
     text-overflow: ellipsis;
 	display: -webkit-box;

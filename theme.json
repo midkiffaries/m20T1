@@ -637,7 +637,7 @@
 					},
 					"text-subtitle": {
 						"color": {
-							"text": "#555"
+							"text": "var:preset|color|gray"
 						},
 						"typography": {
 							"fontSize": "1.5rem",

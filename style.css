@@ -354,7 +354,7 @@ textarea {
 	resize: vertical;
 	vertical-align: middle;
 	overscroll-behavior-y: contain;
-	min-block-size: 2.5em;
+	min-height: 2.5em;
 }
 
 label {
@@ -2030,7 +2030,7 @@ Comments Section
 .list-comments p {
 	margin: 0.1em 1em 0.5em 3em;
 	line-height: 1.5;
-	font-size: 0.95rem;
+	font-size: 1rem;
 }
 
 .comment-author {
@@ -2051,18 +2051,11 @@ Comments Section
 
 .comment-metadata {
 	color: #666;
-}
-
-.comment-metadata a {
-	text-decoration: none;
-	color: #999;
-	font-weight: bold;
-	font-size: 1.25em;
-	padding: 0 4px;
-
-	&:hover {
-		color: #000;
-	}
+	display: block;
+	text-align: right;
+	position: absolute;
+	top: 0.8em;
+	right: 1.1em;
 }
 
 .comment-edit-link {

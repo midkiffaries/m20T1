@@ -97,13 +97,13 @@ function custom_comment_style( $comment, $args, $depth ) {
 			<header class="comment-header">
                 <span class="comment-avatar">
                     <figure class="alignleft" aria-label="Authors Avatar" itemprop="image">
-                        <?=get_avatar( get_the_author_meta( 'ID' ), 48 );?>
+                        <a href="<?=esc_url(get_comment_link($comment->comment_ID));?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment"><?=get_avatar( get_the_author_meta( 'ID' ), 48 );?></a> 
+                        
                     </figure>
                 </span>
                 <span class="comment-author" rel="author" itemprop="author"><?php printf(__('%s'), get_comment_author()); ?></span>
                 <span class="comment-metadata">
-                    <a href="<?=esc_url(get_comment_link($comment->comment_ID));?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment">#</a> 
-                    <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y ~ h:ma')); ?></time>
+                    <time class="comment-date" itemprop="datePublished"><?php printf(__('%1$s'), get_comment_date('F j, Y @ h:ma')); ?></time>
                 </span>
                 <span class="comment-reply"><?=get_comment_reply_link( __( 'Reply', 'm20t1' ), '', '' );?></span> 
 			</header>

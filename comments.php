@@ -97,8 +97,7 @@ function custom_comment_style( $comment, $args, $depth ) {
 			<header class="comment-header">
                 <span class="comment-avatar">
                     <figure class="alignleft" aria-label="Authors Avatar" itemprop="image">
-                        <a href="<?=esc_url(get_comment_link($comment->comment_ID));?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment"><?=get_avatar( get_the_author_meta( 'ID' ), 48 );?></a> 
-                        
+                        <a href="<?=esc_url(get_comment_link($comment->comment_ID));?>" rel="bookmark" itemprop="url" aria-label="Get the link to this comment"><?=get_avatar( get_comment_meta( 'ID' ), 64 );?></a> 
                     </figure>
                 </span>
                 <span class="comment-author" rel="author" itemprop="author"><?php printf(__('%s'), get_comment_author()); ?></span>

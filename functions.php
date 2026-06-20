@@ -46,11 +46,6 @@ add_action( 'init', function(){
         'name'  => 'hr-double',
         'label' => __( 'Double Line', 'm20t1' )
     ]);
-    // Separator: Skinny Line
-    register_block_style( 'core/separator', [
-        'name'  => 'hr-skinny',
-        'label' => __( 'Skinny', 'm20t1' )
-    ]);
     // Separator: Gradient Fade
     register_block_style( 'core/separator', [
         'name'  => 'hr-gradient',
@@ -236,7 +231,7 @@ add_action( 'init', function(){
     // Code: DOS style
     register_block_style( 'core/code', [
         'name'  => 'code-msdos',
-        'label' => __( 'MS-DOS', 'm20t1' )
+        'label' => __( 'Edit.exe', 'm20t1' )
     ]);
     // Code: MacOS style
     register_block_style( 'core/code', [

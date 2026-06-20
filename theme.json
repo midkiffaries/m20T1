@@ -223,12 +223,12 @@
 					"slug": "duotone-3"
 				},
 				{
-					"colors": ["#205380", "#8CC9FF"],
-					"name": "Brand Light",
+					"colors": ["#e65100", "#40a5ff"],
+					"name": "Brand",
 					"slug": "duotone-4"
 				},
 				{
-					"colors": ["#000000", "#40A5FF"],
+					"colors": ["#0e111a", "#40a5ff"],
 					"name": "Brand Dark",
 					"slug": "duotone-5"
 				}
@@ -413,7 +413,7 @@
 		}
 	},
 	"styles": {
-		"css": "mark{border-radius:.2em}u{text-decoration-thickness:3px;text-decoration-color:var(--wp--preset--color--secondary);}code,kbd,samp,pre{font-family:var(--wp--preset--font-family--system-mono);unicode-bidi:bidi-override;white-space:pre-wrap;font-size:inherit}iframe{border:0}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}.has-text-align-center{text-wrap:pretty}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default)",
+		"css": "mark{border-radius:.2em}u{text-decoration-thickness:3px;text-decoration-color:var(--wp--preset--color--secondary)}code,kbd,samp,pre{font-family:var(--wp--preset--font-family--system-mono);unicode-bidi:bidi-override;white-space:pre-wrap;font-size:inherit}iframe{border:0}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative}kbd{background-color:#ddd;padding:1px 4px;border-radius:5px;border:1px solid #aaa;border-bottom-width:3px;white-space:nowrap}.has-text-align-center{text-wrap:pretty}a{text-decoration-thickness:1px!important;text-underline-offset:.1em}.is-root-container{max-width:var(--wp--style--global--content-size);margin:1em auto}.wp-block-gallery:not(.is-style-default) figure.wp-block-image:has(figcaption):before{backdrop-filter:none;-webkit-mask-image:none;mask-image:none}.wp-block-gallery:not(.is-style-default)",
 		"color": {
 			"background": "var:preset|color|base",
 			"text": "var:preset|color|contrast"
@@ -829,7 +829,7 @@
 						"css": "& {caret-color:#fff;animation:m20Ter 5s ease 1s infinite alternate;background:#000 radial-gradient(#090b,#111 120%);padding:2rem;color:#fff;font-size:1.2rem;text-shadow:0 0 4px #ccc;position:relative;border-radius:1em;&::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1em;background:repeating-linear-gradient(0deg,#0002,#0002 1px,transparent 1px,transparent 2px)}}}"
 					},
 					"code-msdos": {
-						"css": "& {caret-shape:block;caret-color:#fff;background-color:teal;color:#fff;padding: 0.5rem;position:relative;} & code {margin:0;padding:14px 8px;border:6px double #fff;} &::before {content:'CODE';color:#000;background-color:#fff;text-align:center;margin:0 auto;padding:1px 10px;left:calc(50% - 2em);margin-top:-8px;position:absolute;}"
+						"css": "& {caret-shape:block;caret-color:#a50;background-color:#00a;color:#b5b5b5;padding: 0.5rem;position:relative;} & code {margin:0;padding:14px 8px;border:6px double #b5b5b5;} &::before {content:'CODE.TXT';color:#00a;background-color:#b5b5b5;text-align:center;margin:0 auto;padding:3px 10px;left:calc(50% - 3em);margin-top:-8px;position:absolute;}"
 					},
 					"code-macos": {
 						"css": "& {caret-shape:block;caret-color:#eee;color:#ddd;padding:1em .7em;background-color:#292c35;border-radius:12px} & code {margin: 16px 17px 6px} &::before {content: '';width:16px;height:16px;margin-left:34px;border-radius:50%;display:block;background:#ffbc2d;box-shadow:-28px 0 0 #fe5f58,28px 0 0 #16d13e}"

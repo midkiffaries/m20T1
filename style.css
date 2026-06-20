@@ -1414,9 +1414,6 @@ Entry Social Sharing Styling
 	&:hover {
 		outline-color: var(--browser-color);
 	}
-	&:hover {
-		outline-color: var(--browser-color);
-	}
 }
 
 .post-social-share .facebook-share {

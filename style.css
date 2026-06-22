@@ -7,7 +7,7 @@ Description: m20T1 is a light-weight WordPress theme that I created from scratch
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 8.0
-Version: 2.0
+Version: 2.1
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: m20t1
@@ -187,7 +187,7 @@ pre {
 
 kbd {
 	background-color: #ddd;
-	padding: 1px 4px;
+	padding: 1px 5px;
 	border-radius: 5px;
 	border: 1px solid #aaa;
 	border-bottom-width: 3px;

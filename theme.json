@@ -829,7 +829,7 @@
 						"css": "& {caret-shape:block;caret-color:#a50;background-color:#00a;color:#b5b5b5;padding: 0.5rem;position:relative;} & code {margin:0;padding:14px 8px;border:6px double #b5b5b5;} &::before {content:'CODE.TXT';color:#00a;background-color:#b5b5b5;text-align:center;margin:0 auto;padding:3px 10px;left:calc(50% - 3em);margin-top:-8px;position:absolute;}"
 					},
 					"code-macos": {
-						"css": "& {caret-shape:block;caret-color:#eee;color:#ddd;padding:1em .7em;background-color:#292c35;border-radius:12px} & code {margin: 16px 17px 6px} &::before {content: '';width:16px;height:16px;margin-left:34px;border-radius:50%;display:block;background:#ffbc2d;box-shadow:-28px 0 0 #fe5f58,28px 0 0 #16d13e}"
+						"css": "& {caret-shape:block;caret-color:#eee;color:#ddd;padding:1em .7em;background-color:#292c35;border-radius:12px} & code {margin: 16px 17px 6px} &::before {content:'';width:16px;height:16px;margin-left:34px;border-radius:50%;display:block;background:#ffbc2d;box-shadow:-28px 0 0 #fe5f58,28px 0 0 #16d13e}"
 					}
 				}
 			},

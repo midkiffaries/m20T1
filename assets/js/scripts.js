@@ -160,6 +160,7 @@ document.addEventListener("keyup", (e) => {
         .accordion > section {
             overflow: hidden;
             transition: max-height .25s ease-out;
+            padding-bottom: 1em;
         }
         @media (max-width: 849px) {
             .accordion > button {

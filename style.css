@@ -65,6 +65,7 @@ Normalization and Base Styling
 *::after {
 	box-sizing: border-box;
 	vertical-align: inherit;
+	transition-behavior: allow-discrete;
 }
 
 *::before,
@@ -2992,7 +2993,7 @@ Social Links
 	:open::picker(select) {
 		height: auto;
 		max-height: 95vh;
-		margin: -5px auto .8em;
+		margin: -5px auto .2em;
 		opacity: 1;
 		@starting-style {
 			opacity: 0;

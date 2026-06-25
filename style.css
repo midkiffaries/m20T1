@@ -1675,6 +1675,10 @@ img.wp-smiley, img.emoji {
 	position: absolute;
 }
 
+pre code {
+	padding: 0.6em 0.8em;
+}
+
 u { /* Underline style for links */
 	text-decoration: none !important;
     background-repeat: no-repeat;

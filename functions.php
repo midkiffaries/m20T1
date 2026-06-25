@@ -222,6 +222,11 @@ add_action( 'init', function(){
         'name'  => 'pquote-embelish',
         'label' => __( 'Embelishment', 'm20t1' )
     ]);
+    // Code: Modern style
+    register_block_style( 'core/code', [
+        'name'  => 'code-modern',
+        'label' => __( 'Modern', 'm20t1' )
+    ]);
     // Code: Terminal style from css-trick.com
     register_block_style( 'core/code', [
         'name'  => 'code-terminal',

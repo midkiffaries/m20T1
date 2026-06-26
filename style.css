@@ -1855,17 +1855,6 @@ Specific Page Styling
 	padding: 5px;
 }
 
-/* Search Submit button */
-.search-submit {
-	display: none;
-	/* 	padding: auto 1.2em;
-	width: 3em;
-	background-position: 50% 50%;
-	background-size: 1.3em;
-	background-repeat: no-repeat;
-	background-image: var(--icon-search); */
-}
-
 /* Search input field */
 .search-input {
 	width: 100%;
@@ -1877,6 +1866,11 @@ Specific Page Styling
 	background-repeat: no-repeat;
 	background-image: var(--icon-search);
 	background-color: #fff9;
+}
+
+/* Search Submit button */
+.search-submit {
+	display: none;
 }
 
 ::-webkit-search-decoration {

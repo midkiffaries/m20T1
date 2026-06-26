@@ -89,7 +89,7 @@ body::after{
 }
 
 .message-404{
-    color:#aaa;
+    color: var(--green);
     margin-bottom:35px;
     font-size:1.25rem !important;
 	text-wrap: balance;
@@ -97,10 +97,9 @@ body::after{
 }
 
 .search-form input[type="search"]{
-    background:#111;
-    border:1px solid #333;
+    background-color:#111d;
+    border:1px solid #333d;
     color:#fff;
-    padding:12px 15px;
     min-width:280px;
     max-width:50vw;
 }
@@ -146,6 +145,25 @@ body::after{
     box-shadow:0 0 8px var(--green);
 }
 
+.terminal-output {
+    color: var(--green);
+    text-shadow:0 0 6px #fff6;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+.terminal-output::after {
+    content: "_";
+    margin-left: 2px;
+    font-weight: bold;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {opacity: 0}
+}
+
 @keyframes glitch1{
     0%{transform:translate(0);}
     20%{transform:translate(-3px,2px);}
@@ -174,10 +192,15 @@ body::after{
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/<?=custom_page_scheme(get_the_ID());?>">
 
+    <div class="terminal-output">C:\&gt;404</div>
+
 <main class="page-main page-error width-full" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
+
     <div class="page-content">
+
         <div class="page-404-container">
             <article class="page-404 page type-page not-found status-publish" id="page-404" itemscope itemtype="https://schema.org/NewsArticle">
+
                 <div class="glitch-404" data-text="404">404</div>
 
                 <h1 class="subtitle-404"><?=get_option('404_image') ? '<img src="'.esc_url(get_option('404_image')).'" loading="lazy" decoding="async" itemprop="image" alt="404 Error" fetchpriority="auto" style="max-width:500px">' : "Signal Lost";?></h1>

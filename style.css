@@ -1857,18 +1857,26 @@ Specific Page Styling
 
 /* Search Submit button */
 .search-submit {
-	padding: auto 1.2em;
+	display: none;
+	/* 	padding: auto 1.2em;
 	width: 3em;
 	background-position: 50% 50%;
 	background-size: 1.3em;
 	background-repeat: no-repeat;
-	background-image: var(--icon-search);
+	background-image: var(--icon-search); */
 }
 
 /* Search input field */
 .search-input {
-	width: calc(100% - 5em);
+	width: 100%;
 	appearance: textfield;
+	padding: 0.4em 0.4em 0.4em 2.4em;
+	border-radius: 0.3em;
+	background-position: 10px 50%;
+	background-size: 1.3em;
+	background-repeat: no-repeat;
+	background-image: var(--icon-search);
+	background-color: #fff9;
 }
 
 ::-webkit-search-decoration {
@@ -2439,12 +2447,11 @@ Search Modal Styling
 }
 
 .dialog-search .search-input {
-	width: calc(100% - 3em);
+	width: calc(100% - 1em);
 	height: 50px;
 	font-size: 1.4em;
 	border-color: transparent !important;
 	margin-left: 3px;
-	border-radius: 6px 0 0 6px;
 }
 
 .dialog-search .search-submit {

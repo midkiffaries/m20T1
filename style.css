@@ -1634,11 +1634,6 @@ img.wp-smiley, img.emoji {
 	outline-offset: 0;
 }
 
-/* Striped Table Style */
-.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
-	background-color: #eeea;
-}
-
 /* WordPress Editor Classes */
 .the-content h2:not(.is-style-text-subtitle):not(.has-text-align-center):not(.has-text-align-right) {
 	margin-top: 0.8em;

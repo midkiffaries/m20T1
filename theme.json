@@ -692,10 +692,13 @@
 				}
 			},
 			"core/table": {
-				"css": "overflow-x:initial;border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%;font-size:1rem; & thead {display:table-header-group} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
+				"css": "overflow-x:initial;border-collapse:collapse;border-spacing:0;text-indent:0;max-width:100%;font-size:1rem;color:currentcolor; & thead {font-size:90%;display:table-header-group} & tfoot {font-size:90%;display:table-footer-group;font-weight:bold} & td,th{padding:0.15em 0.5em;line-height:1.15;text-align:inherit;text-overflow:ellipsis;vertical-align:text-top;font-variant-numeric:tabular-nums}",
 				"variations": {
+					"stripes": {
+						"css": "& tbody tr{background-color:#0000 !important;} & tbody tr:nth-child(even) {background-color:#ccc3 !important;}"
+					},
 					"table-theme": {
-						"css": "& thead,tfoot {background-color:var(--wp--preset--color--primary)} & td {background-color:#fff1} & tbody tr:nth-child(even) {background-color:#ccc5}"
+						"css": "& table {-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);} & thead,tfoot {background-color:#64748b44;} & td,th { border:none !important;} & tbody tr{background-color:#0000 !important;} & tbody tr:nth-child(even) {background-color:#64748b19 !important;}"
 					}
 				}
 			},

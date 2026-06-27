@@ -826,7 +826,7 @@
 				"css": "& {border:none;caret-shape:underscore;display:block;word-break:break-all;line-height:1.4;overflow-x:auto;white-space:pre-wrap !important} & code{font-size:inherit;color:inherit;word-break:normal;display:inline-block}",
 				"variations": {
 					"code-modern": {
-						"css": "& {caret-shape:bar;width:100%;color:var(--wp--preset--color--contrast);background:linear-gradient(0deg,#fffe 9%,#eeec 96%);box-shadow:1px 2px 4px 0 #0005,1px 3px 8px 4px #0003;position:relative;border-bottom:2px solid #fffd;border-left:6px solid var(--wp--preset--color--primary);border-radius:10px;position:relative;padding:1em; &::before{content:'CODE';font-family:var(--wp--preset--font-family--courier-new-font);font-weight:bold;color:var(--wp--preset--color--primary);top:10px;right:18px;position:absolute;}}"
+						"css": "& {caret-shape:bar;width:100%;color:var(--wp--preset--color--contrast);background:linear-gradient(0deg,#fffd 9%,#defb 96%);box-shadow:1px 2px 4px 0 #0004,1px 3px 8px 4px #0003;position:relative;border:2px solid var(--wp--preset--color--primary);border-left-width:10px;border-radius:10px;position:relative;padding:1em; &::before{content:'CODE';font-family:var(--wp--preset--font-family--courier-new-font);font-weight:bold;color:var(--wp--preset--color--primary);top:10px;right:18px;position:absolute}}"
 					},
 					"code-terminal": {
 						"css": "& {caret-color:#fff;animation:m20Ter 5s ease 1s infinite alternate;background:#000 radial-gradient(#090b,#111 120%);padding:2rem;color:#fff;font-size:1.2rem;text-shadow:0 0 4px #ccc;position:relative;border-radius:1em;&::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1em;background:repeating-linear-gradient(0deg,#0002,#0002 1px,transparent 1px,transparent 2px)}}"
@@ -1040,57 +1040,22 @@
 					"fontSize": "var:preset|font-size|small"
 				}
 			},
-			"core/quote": {
-				"css": "width:100%;text-wrap:pretty;hyphens:auto;margin:0 0 2rem",
+			"core/pullquote": {
+				"css": "text-wrap:pretty",
 				"border": {
-					"left": {
-						"width": "0"
-					}
-				},
-				"variations": {
-					"plain": {
-						"border": {
-							"left": {
-								"color": "var:preset|color|secondary",
-								"width": "8px",
-								"style": "solid"
-							}
-						}
-					},
-					"fancy": {
-						"css": "& {position:relative;padding-left:2rem} &::before {content:'“';font-size:3.2rem;height:0.6em;width:0.5em;position:absolute;left:0;top:0;background-color:#222;color:#fff;} &::after {content:'”';padding-left:5px;font-size:3.2rem;height:0.6em;width:0.5em;position:absolute;right:0;bottom:0;background-color:#222;color:#fff;}",
-						"border": {
-							"color": "#222",
-							"width": "8px",
-							"style": "solid"
-						}
-					}
-				},
-				"elements": {
-					"cite": {
-						"typography": {
-							"fontSize": "var:preset|font-size|small",
-							"fontStyle": "normal",
-							"textTransform": "uppercase"
-						}
-					}
+					"style": "solid",
+					"width": "3px 0"
 				},
 				"spacing": {
 					"padding": {
-						"top": "var:preset|spacing|10",
+						"top": "var:preset|spacing|40",
 						"left": "var:preset|spacing|40",
 						"right": "var:preset|spacing|40",
-						"bottom": "var:preset|spacing|20"
+						"bottom": "var:preset|spacing|40"
 					}
-				}
-			},
-			"core/pullquote": {
-				"css": "width:100%;text-wrap:pretty;hyphens:auto;margin:0 0 1rem",
-				"border": {
-					"style": "solid",
-					"width": "1px 0"
 				},
 				"typography": {
+					"fontFamily": "var:preset|font-family|lora",
 					"fontSize": "var:preset|font-size|medium",
 					"lineHeight": "1.2",
 					"fontStyle": "italic"
@@ -1099,13 +1064,15 @@
 					"cite": {
 						"typography": {
 							"textTransform": "uppercase",
-							"fontStyle": "normal"
+							"fontStyle": "normal",
+							"fontSize": ".9rem",
+							"fontWeight": "600"
 						}
 					}
 				},
 				"variations": {
-					"pquote-embelish": {
-						"css": ""
+					"pquote-theme": {
+						"css": "border:none; & blockquote {-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);position:relative;margin:3rem 0;padding:2rem 2rem 2rem 3rem;background:#cadcff1a;border-left:6px solid #40A5FF;border-radius:12px;box-shadow:0 6px 30px #0002;font-style:italic} & blockquote p {font-size:1.3rem} & blockquote::before {content:'❝';position:absolute;top:10px;left:12px;font-size:4rem;color:var(--wp--preset--color--primary-pale)} & blockquote cite {margin-top:1rem;color:var(--wp--preset--color--secondary)}"
 					}
 				}
 			},

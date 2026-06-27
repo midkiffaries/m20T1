@@ -217,10 +217,10 @@ add_action( 'init', function(){
         'name'  => 'fancy',
         'label' => __( 'Fancy', 'm20t1' )
     ]);
-    // PullQuote: Embelishment style
+    // PullQuote: Theme style
     register_block_style( 'core/pullquote', [
-        'name'  => 'pquote-embelish',
-        'label' => __( 'Embelishment', 'm20t1' )
+        'name'  => 'pquote-theme',
+        'label' => __( 'Theme', 'm20t1' )
     ]);
     // Code: Modern style
     register_block_style( 'core/code', [

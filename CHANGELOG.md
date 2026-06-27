@@ -3,7 +3,7 @@
 ### 2.1 Live (XXXX XX, 2026)
 
 * Adjustments and inclusions to the custom blocks.
-* Bug fixes and improvements.
+* Bug fixes.
 
 ### 2.0 Live (June 21, 2026)
 

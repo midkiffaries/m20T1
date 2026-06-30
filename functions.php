@@ -763,6 +763,7 @@ add_action( 'wp_head', function(){
 <meta name="author" content="<?=get_the_author_meta('display_name', get_post_field ('post_author', get_the_ID()));?>">
 <meta name="application-name" content="<?=bloginfo('name');?>">
 <meta name="apple-mobile-web-app-title" content="<?=bloginfo('name');?>">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="description" content="<?=SEO_Excerpt(get_the_id());?>">
@@ -784,6 +785,8 @@ add_action( 'wp_head', function(){
 <meta property="article:publisher" content="<?=get_the_author_meta('facebook', get_post_field ('post_author', get_the_ID()));?>">
 <meta property="article:published_time" content="<?=get_the_date('c');?>">
 <meta property="article:modified_time" content="<?=get_the_modified_date('c');?>">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@<?=trim(parse_url(get_the_author_meta('twitter', get_post_field ('post_author', get_the_ID())), PHP_URL_PATH), '/');?>">
 <meta name="twitter:url" content="<?=the_permalink();?>">
@@ -1605,6 +1608,7 @@ add_action( 'dashboard_glance_items', function(){
 add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
+.wp-admin input[type='password'] {-webkit-text-security:disc}
 .wp-admin td.column-seo_excerpt {line-height:1.1;font-size:90%;text-wrap:balance}
 .wp-admin .column-thumbnail {width:6em}
 .wp-admin .column-thumbnail img {border-radius:4px}

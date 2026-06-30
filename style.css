@@ -390,10 +390,6 @@ legend + * {
 	clear: left;
 }
 
-[type='password'] {
-	-webkit-text-security: disc;
-}
-
 [type='number'] {
 	appearance: textfield;
 }

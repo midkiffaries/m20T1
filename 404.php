@@ -192,7 +192,8 @@ body::after{
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/<?=custom_page_scheme(get_the_ID());?>">
 
-    <div class="terminal-output">C:\&gt;404</div>
+<?php $uri = explode('/', esc_attr($_SERVER['REQUEST_URI'])); ?>
+    <div class="terminal-output">C:\&gt;<?=substr(end($uri), 0, 32);?></div>
 
 <main class="page-main page-error width-full" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
 

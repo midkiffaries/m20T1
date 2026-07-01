@@ -193,7 +193,7 @@ body::after{
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/<?=custom_page_scheme(get_the_ID());?>">
 
 <?php $uri = explode('/', esc_attr($_SERVER['REQUEST_URI'])); ?>
-    <div class="terminal-output">C:\&gt;<?=substr(end($uri), 0, 32);?></div>
+    <div class="terminal-output">C:\&gt;<?=strip_tags(substr(end($uri), 0, 32));?></div>
 
 <main class="page-main page-error width-full" id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">
 

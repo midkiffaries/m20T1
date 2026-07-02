@@ -521,17 +521,45 @@ add_action( 'init', function(){
 });
 
 // Add additional options to block editor elements
-add_filter( 'register_block_type_args', function( $args, $block_type ) {
-    if ( in_array( $block_type, ['core/group', 'core/file', 'core/list-item', 'core/tabs', 'core/tab', 'core/buttons', 'core/text', 'core/media-text', 'core/details', 'core/accordion', 'core/accordion-item', 'core/flipbox', 'core/table-of-contents', 'core/column', 'core/legacy-widget', 'core/cover', 'core/table', 'core/pullquote', 'core/icon', 'core/code', 'core/embed', 'core/video', 'core/math', 'core/separator', 'core/latest-posts', 'core/social-links', 'core/preformatted', 'core/legacy-widget', 'core/verse', 'core/calendar', 'core/search'], true ) ) {
-        //$args['supports']['typography'] = ['fontStyle' => true, 'fontWeight' => true, 'fontVariant' => true, 'fontSize' => true, 'lineHeight' => true, 'fontFamily' => true, 'letterSpacing' => true, 'textTransform' => true,'textDecoration' => true,'writingMode' => true]; // Add typography options
-        $args['supports']['spacing'] = true; // Add spacing option
-        $args['supports']['filter']['duotone'] = true; // Add duotone filter
+add_filter( 'register_block_type_args', function( $args ) {
+    $blocks = [
+        'core/paragraph',
+        'core/heading',
+        'core/list',
+        'core/list-item', 
+        'core/quote',
+        'core/pullquote',
+        'core/verse', 
+        'core/buttons',
+        'core/button',
+        'core/group',
+        'core/figure',
+        'core/media-text', 
+        'core/text', 
+        'core/details', 
+        'core/accordion', 
+        'core/accordion-item', 
+        'core/flipbox', 
+        'core/column', 
+        'core/legacy-widget', 
+        'core/cover', 
+        'core/table', 
+        'core/icon', 
+        'core/code', 
+        'core/preformatted', 
+        'core/embed', 
+        'core/video', 
+        'core/separator', 
+        'core/calendar', 
+        'core/search',
+    ];
+    if ( in_array( $args['name'], $blocks, true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option
-        //$args['supports']['color'] = ['text' => true, 'background' => true, 'link' => true, 'gradients' => true]; // Add color options
-    }
-    // if ( 'core/heading' === $block_type ) $args['attributes']['levelOptions']['default'] = [ 2, 3, 4, 5, 6 ]; // Remove H1 option
-	return $args;
-}, 10, 2 );
+        $args['supports']['filter']['duotone'] = true; // Add duotone filter options
+        //$args['supports']['spacing'] = ['margin' => true, 'padding' => true, 'blockGap' => false]; // Add padding/margin options
+    }    
+    return $args;
+}, 10, 1 );
 
 
 /////////////////////////////

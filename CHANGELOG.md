@@ -2,7 +2,8 @@
 
 ### 2.1 Live (XXXX XX, 2026)
 
-* Adjustments and inclusions to the custom blocks.
+* Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.
+* Adjustments and inclusions to some custom blocks.
 * Bug fixes.
 
 ### 2.0 Live (June 21, 2026)

@@ -698,8 +698,11 @@
 					"stripes": {
 						"css": "& tbody tr{background-color:#0000 !important;} & tbody tr:nth-child(even) {background-color:#ccc3 !important;}"
 					},
-					"table-theme": {
+					"table-monotone": {
 						"css": "& table {-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);} & thead,tfoot {background-color:#64748b44;} & td,th { border:none !important;} & tbody tr{background-color:#0000 !important;} & tbody tr:nth-child(even) {background-color:#64748b19 !important;}"
+					},
+					"table-brand": {
+						"css": "& table {-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);} & thead,tfoot {background-color:var(--wp--preset--color--primary-dark);color:#fff;} & td,th { border:none !important;} & tbody tr{background-color:#0000 !important;border-bottom:1px solid #ccc;} & tbody tr:nth-child(even) {background-color:#64748b19 !important;}"
 					}
 				}
 			},

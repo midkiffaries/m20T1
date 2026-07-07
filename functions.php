@@ -81,10 +81,15 @@ add_action( 'init', function(){
         'name'  => 'hr-jagged',
         'label' => __( 'Jagged', 'm20t1' )
     ]);
-    // Table: Theme
+    // Table: Monotone
     register_block_style( 'core/table', [
-        'name'  => 'table-theme',
-        'label' => __( 'Theme', 'm20t1' )
+        'name'  => 'table-monotone',
+        'label' => __( 'Monotone', 'm20t1' )
+    ]);
+    // Table: Brand
+    register_block_style( 'core/table', [
+        'name'  => 'table-brand',
+        'label' => __( 'Brand', 'm20t1' )
     ]);
     // List: Color Bullets
     register_block_style( 'core/list', [
@@ -2261,7 +2266,7 @@ class BuildMetaBox {
         // Generate the meta box HTML
 		?>
 		<div class="components-base-control__field"><label for="m20t1_css_field" class="components-base-control__label css-m20t1">
-			<?php _e( 'Custom CSS Styling', 'm20t1' ); ?>
+			<?php _e( 'Page Unique CSS', 'm20t1' ); ?>
 		</label></div>
 		<textarea id="m20t1_css_field" name="m20t1_css_field" class="mceEditor code" spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" style="height:12em;width:100%;margin-bottom:8px" placeholder=".raw-css {color: #f00}" ><?=$pageCSS;?></textarea>
 

@@ -91,6 +91,11 @@ add_action( 'init', function(){
         'name'  => 'table-brand',
         'label' => __( 'Brand', 'm20t1' )
     ]);
+    // Table: Win95
+    register_block_style( 'core/table', [
+        'name'  => 'table-vintage',
+        'label' => __( 'Vintage', 'm20t1' )
+    ]);
     // List: Color Bullets
     register_block_style( 'core/list', [
         'name'  => 'list-color',

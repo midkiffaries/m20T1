@@ -704,7 +704,7 @@
 					"table-brand": {
 						"css": "-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px); & thead,tfoot {background-color:var(--wp--preset--color--primary-dark);color:#fff;} & td,th { border:none !important;} & tbody tr{background-color:#0000 !important;border-bottom:1px solid #ccc;} & tbody tr:nth-child(even) {background-color:#64748b19 !important;}"
 					},
-					"table-vintage": {
+					"table-classic": {
 						"css": "border:3px outset #bcbcbc !important; border-collapse:separate !important; border-spacing:3px !important; & td,th {border:1px solid #a0a0a0 !important;} & thead,tfoot {border:none !important}"
 					}
 				}

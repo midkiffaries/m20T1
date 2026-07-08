@@ -93,8 +93,8 @@ add_action( 'init', function(){
     ]);
     // Table: Win95
     register_block_style( 'core/table', [
-        'name'  => 'table-vintage',
-        'label' => __( 'Vintage', 'm20t1' )
+        'name'  => 'table-html3',
+        'label' => __( 'HTML3', 'm20t1' )
     ]);
     // List: Color Bullets
     register_block_style( 'core/list', [

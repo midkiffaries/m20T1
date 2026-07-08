@@ -91,7 +91,7 @@ add_action( 'init', function(){
         'name'  => 'table-brand',
         'label' => __( 'Brand', 'm20t1' )
     ]);
-    // Table: Win95
+    // Table: HTML3
     register_block_style( 'core/table', [
         'name'  => 'table-html3',
         'label' => __( 'HTML3', 'm20t1' )

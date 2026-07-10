@@ -4,6 +4,7 @@
 
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.
 * Adjustments and inclusions to some custom blocks.
+* Added a custom zoom-in mouse cursor - I hate how the original looks pixelated on Windows.
 * Bug fixes.
 
 ### 2.0 Live (June 21, 2026)

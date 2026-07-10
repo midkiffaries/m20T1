@@ -1596,11 +1596,14 @@ function schemaNavigation( $menu_name ) {
 // Admin: Dashboard and global admin settings
 /////////////////////////////////////////////////
 
-// Add custom message to login screen
+// Replace the WordPress login logo with a custom logo
 add_filter( 'login_message', function(){
+    if (get_theme_mod('custom_logo')) :
 ?>
-<div style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'max-width:210px;height:auto;']);?></div>
+<style>.wp-login-logo{display:none !important}</style>
+<h1 style="text-align:center"><?=wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['srcset' => '', 'style' => 'max-width:75%;height:auto;']);?></h1>
 <?php
+    endif;
 });
 
 // Change the WordPress editor's footer text

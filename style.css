@@ -1730,7 +1730,7 @@ Figures and Galleries
 
 .wp-block-gallery figure > a[href] img,
 .wp-block-image:has(a[href$=".jpg"], a[href$=".png"], a[href$=".webp"], a[href$=".avif"], a[href$=".heif"]) img {
-	cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' filter='drop-shadow(0 1px 4px %230009)'><circle cx='12' cy='12' r='8' stroke='black' stroke-width='3' fill='white'/><line x1='12' y1='8' x2='12' y2='16' stroke='black' stroke-width='2'/><line x1='8' y1='12' x2='16' y2='12' stroke='black' stroke-width='2'/><line x1='18' y1='18' x2='24' y2='24' stroke='black' stroke-width='4'/></svg>") 12 12, zoom-in;
+	cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' filter='drop-shadow(0 1px 2px %23000e)'><circle cx='12' cy='12' r='8' stroke='black' stroke-width='3' fill='white'/><line x1='12' y1='8' x2='12' y2='16' stroke='black' stroke-width='2'/><line x1='8' y1='12' x2='16' y2='12' stroke='black' stroke-width='2'/><line x1='18' y1='18' x2='24' y2='24' stroke='black' stroke-width='4'/></svg>") 12 12, zoom-in;
 }
 
 .blocks-gallery-item__caption {

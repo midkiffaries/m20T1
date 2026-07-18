@@ -2,6 +2,8 @@
 
 ### 2.1 Live (XXXX XX, 2026)
 
+* Supports Wordpress 7.1.
+* Initial tabs block support.
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.
 * Adjustments and inclusions to some custom blocks.
 * Added a custom zoom-in mouse cursor - I hate how the original looks pixelated on Windows.

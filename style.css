@@ -1760,10 +1760,18 @@ Figures and Galleries
 	transform: scale(1.2);
 	background-color: #fff !important;
 	border-radius: 50%;
+	border: 1px solid #0008 !important;
 }
 
 .wp-lightbox-overlay img {
 	box-shadow: none !important;
+}
+
+.wp-lightbox-overlay .lightbox-image-container,
+.wp-lightbox-overlay .lightbox-image-container img {
+	overflow: visible !important;
+	height: calc(var(--wp--lightbox-image-height) - 6em) !important;
+	min-height: calc(var(--wp--lightbox-image-height) - 8em) !important;
 }
 
 @media (max-width: 650px) {

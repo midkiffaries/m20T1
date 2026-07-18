@@ -1222,7 +1222,7 @@ Blog Post Styling - index/archives/search
 	background-position: 50% 50%;
     background-size: auto 160%;
     margin: 0;
-    background-color: var(--brand-color-dark);
+    background-color: var(--wp--preset--color--primary-dark);
     background-image: var(--featured-img-bg);
 	transition: all 0.4s ease-in-out;
 	text-decoration: none;
@@ -1497,7 +1497,7 @@ Portfolio Page Styling
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
     background-size: 150%;
-    background-color: var(--brand-color-dark);
+    background-color: var(--wp--preset--color--primary-dark);
     background-image: var(--featured-img-bg);
 	text-decoration: none;
 	transition: all 0.4s ease-in-out;

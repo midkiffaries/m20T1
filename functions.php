@@ -186,10 +186,10 @@ add_action( 'init', function(){
         'name'  => 'header-shadow-3d',
         'label' => __( '3D Shadow', 'm20t1' )
     ]);
-    // Heading: Embelishment
+    // Heading: Ribbon
     register_block_style( 'core/heading', [
-        'name'  => 'header-embelish',
-        'label' => __( 'Embelishment', 'm20t1' )
+        'name'  => 'header-ribbon',
+        'label' => __( 'Ribbon', 'm20t1' )
     ]);
     // Heading: Brushstroke
     register_block_style( 'core/heading', [

@@ -1615,6 +1615,8 @@ img.wp-smiley, img.emoji {
 	height: 2rem;
 	pointer-events: none;
 	overflow: visible !important;
+	pointer-events: none;
+	text-wrap: pretty;
 }
 
 @media (max-width: 849px) {
@@ -1758,6 +1760,10 @@ Figures and Galleries
 	transform: scale(1.2);
 	background-color: #fff !important;
 	border-radius: 50%;
+}
+
+.wp-lightbox-overlay img {
+	box-shadow: none !important;
 }
 
 @media (max-width: 650px) {

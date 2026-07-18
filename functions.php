@@ -374,7 +374,6 @@ add_action( 'init', function(){
             margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
-            text-wrap:pretty;
         }'
     ]);
     // Gallery: Drop Shadow style
@@ -405,7 +404,6 @@ add_action( 'init', function(){
             margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
-            text-wrap:pretty;
         }'
     ]);
     // Gallery: No border style
@@ -425,7 +423,6 @@ add_action( 'init', function(){
             margin-bottom:-1.5rem !important;
             background:none !important;
             text-shadow:none !important;
-            text-wrap:pretty;
         }'
     ]);
     // Latest Posts: Theme style

@@ -610,7 +610,7 @@ add_action( 'after_setup_theme', function(){
     add_theme_support( 'custom-background', [ 'default-image' => '', 'default-preset' => 'default', 'default-size' => 'cover', 'default-repeat' => 'repeat', 'default-attachment' => 'scroll' ] );
 
     // Custom logo support
-    add_theme_support( 'custom-logo', [ 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
+    add_theme_support( 'custom-logo', [ 'unlink-homepage-logo' => true, 'height' => 200, 'width' => 300, 'flex-height' => true, 'flex-width' => true, 'header-text' => [ 'site-title', 'site-description' ], ] );
     
     // Add HTML5 Support
     add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ] );

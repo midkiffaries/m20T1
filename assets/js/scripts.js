@@ -433,6 +433,7 @@ function scrollToTop() {
 **************************/
 
 // Lightbox Modal images with a nested <figure> <a> <img> tag inside
+/*
 (() => {
     const fig = document.getElementsByTagName("figure"), 
         l = fig.length;
@@ -579,6 +580,7 @@ function scrollToTop() {
         }
     }
 })();
+*/
 
 // Display Alert Modal Box -- text: displayed text | bgColor: background-color
 function AlertModal(text, bgColor) {

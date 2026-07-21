@@ -29,7 +29,7 @@
 * Removed page view counter - wasn't all that accurate.
 * Bug fixes.
 
-### 1.9 Live (December 31, 2025 🎉)
+### 1.9 Live (December 31, 2025)
 
 * Supports WordPress 6.9.
 * Added border radius presets.
@@ -48,7 +48,7 @@
 * Accessability improvements.
 * Styling fixes.
 
-### 1.8.11 Live (May 4, 2025 🖖 be with you)
+### 1.8.11 Live (May 4, 2025 be with you)
 
 * Supports WordPress 6.8.1.
 * Testing: Added page numbers to the blog post pagination - needs presentation refinement.
@@ -66,11 +66,11 @@
 * Added justify and underline to the Classic editor. The guetenburg editor will come next I hope.
 * More bug fixes and improvements.
 
-### 1.8.8 Live (January 1, 2025 🥳 Happy New Year)
+### 1.8.8 Live (January 1, 2025 Happy New Year)
 
 * Bug fixes and improvements.
 
-### 1.8.7 Live (December 28, 2024) 🎄 Happy Holidays!
+### 1.8.7 Live (December 28, 2024) Happy Holidays!
 
 * Moved more css from the stylesheets to theme.json.
 * Combined the three stylesheets into style.css.
@@ -85,7 +85,7 @@
 * Improved media credit handling.
 * Code cleanup and bug fixes.
 
-### 1.8.5 Live (October 31, 2024) 🎃 Happy Halloween!
+### 1.8.5 Live (October 31, 2024) Happy Halloween!
 
 * Supports WordPress 6.7.0.
 * Added plural title option to portfolio to help with clarity.

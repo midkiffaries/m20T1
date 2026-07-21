@@ -1769,6 +1769,7 @@ Figures and Galleries
 
 .wp-lightbox-overlay img {
 	box-shadow: none !important;
+	border: 1px solid #fff !important;
 }
 
 .wp-lightbox-overlay .lightbox-image-container,

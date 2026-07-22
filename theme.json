@@ -348,14 +348,9 @@
 					]
 				},
 				{
-					"name": "System Sans Serif",
-					"slug": "sans-serif",
-					"fontFamily": "system-ui, sans-serif"
-				},
-				{
 					"name": "Courier Prime",
 					"slug": "CourierPrime",
-					"fontFamily": "CourierPrime, 'Nimbus Mono PS', 'Courier New', Courier, monospace",
+					"fontFamily": "CourierPrime, 'Courier New', Courier, monospace",
 					"fontFace": [
 						{
 							"src": [
@@ -367,6 +362,11 @@
 							"fontFamily": "CourierPrime"
 						}
 					]
+				},
+				{
+					"name": "System Sans Serif",
+					"slug": "sans-serif",
+					"fontFamily": "system-ui, sans-serif"
 				},
 				{
 					"name": "Consolas",

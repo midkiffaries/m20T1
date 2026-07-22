@@ -2,8 +2,8 @@
 
 ### 2.1 Live (XXXX XX, 2026)
 
-* Supports Wordpress 7.1.
-* Retired my custom lightbox mechanism in favor of a modified vanilla WP lightbox. 
+* Support for Wordpress 7.1.
+* Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox. 
 * Initial tabs block support.
 * Added Courier Prime font in place of courier new.
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.

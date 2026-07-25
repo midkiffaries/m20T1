@@ -5,7 +5,7 @@
 * Support for Wordpress 7.1.
 * Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox. 
 * Initial tabs block support.
-* Added Courier Prime font in place of courier new.
+* Added Courier Prime font in place of Courier New.
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.
 * Adjustments and inclusions to some custom blocks.
 * Added a custom zoom-in mouse cursor - I hate how the original looks pixelated on Windows.

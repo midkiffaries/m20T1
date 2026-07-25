@@ -26,11 +26,11 @@ Link: <a href="https://www.marchtwenty.com/2023/08/how-this-website-was-made/">m
 - Custom JavaScript modals for <i>alerts/confirmation</i> and <i>custom HTML content</i>
 - Custom admin settings page to allow for the inclusion of additional metadata in the header, as well as content settings to the 404, search error page and post excerpt length: <b>Appearance -> Theme Settings</b>
 - Widget support on on all pages including the site header and footer
-- Unique <i>front-page.php</i>, <i>404.php</i> and <i>attachment.php (image)</i> pages
+- Unique <i>front-page.php</i>, <i>404.php</i> and <i>attachment.php</i> (image) pages
 - Featured image support for use as the hero/header image on posts and pages with a fallback image
 - Support for custom WordPress editor styling via <b>theme.json</b>
 - Support for <b>dark mode</b> page styling via a built in switch
-- Basic search results filtering: type and order
+- Basic search results filtering: post type and order
 - Built in support for <b>additional post types</b>, default set as "Portfolio" (hardcoded in <i>functions.php</i>)
 - Built in blog post read time in minutes.
 - Enabled <b>SVG</b> support, <b>GLB</b> 3D models and iCal/vCard file upload to the media library

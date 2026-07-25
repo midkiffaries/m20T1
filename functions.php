@@ -560,6 +560,8 @@ add_filter( 'register_block_type_args', function( $args ) {
         'core/calendar', 
         'core/search',
         'core/tabs',
+        'core/tab-list',
+        'core/tab-panels',
         'core/playlist',
     ];
     if ( in_array( $args['name'], $blocks, true ) ) {

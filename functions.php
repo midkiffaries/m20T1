@@ -151,6 +151,11 @@ add_action( 'init', function(){
         'name'  => 'tabs-underline',
         'label' => __( 'Brand', 'm20t1' )
     ]);
+    // Tabs: Brand Outline
+    register_block_style( 'core/tabs', [
+        'name'  => 'tabs-outline',
+        'label' => __( 'Outline', 'm20t1' )
+    ]);
     // Tabs: Shaded background
     register_block_style( 'core/tabs', [
         'name'  => 'tabs-shaded',

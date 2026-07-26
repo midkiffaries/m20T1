@@ -764,13 +764,16 @@
 				"css": ""
 			},
 			"core/tabs": {
-				"css": "",
+				"css": "& .wp-block-tab-list-is-layout-flex{gap:3px;}",
 				"variations": {
 					"tabs-underline": {
 						"css": "& .wp-block-tab-list button[aria-selected='true']{color: var(--wp--preset--color--primary);font-weight:bold;}& .wp-block-tab-list button:hover{background-color:var(--wp--preset--color--primary-pale);color:var(--wp--preset--color--primary-dark)}"
 					},
 					"tabs-shaded": {
-						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#0001;border-top:3px solid var(--wp--preset--color--primary);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#0002;} & .wp-block-tab-panels{background-color:#0001;margin-top:0;padding:0.5em 1em;}"
+						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff22;border-top:3px solid var(--wp--preset--color--primary);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#cadcff55;} & .wp-block-tab-panels{background-color:#cadcff22;margin-top:0;padding:0.5em 1em;}"
+					},
+					"tabs-outline": {
+						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff;border:2px solid var(--wp--preset--color--primary);border-bottom:none;transform:translateY(2px);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#a7bde8;} & .wp-block-tab-panels{border:2px solid var(--wp--preset--color--primary);background-color:#cadcff;margin-top:0;padding:0.5em 1em;}"
 					}
 				}
 			},

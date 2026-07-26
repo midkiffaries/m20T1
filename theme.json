@@ -764,7 +764,15 @@
 				"css": ""
 			},
 			"core/tabs": {
-				"css": ""
+				"css": "",
+				"variations": {
+					"tabs-underline": {
+						"css": "& .wp-block-tab-list button[aria-selected='true']{color: var(--wp--preset--color--primary);font-weight:bold;}& .wp-block-tab-list button:hover{background-color:var(--wp--preset--color--primary-pale);color:var(--wp--preset--color--primary-dark)}"
+					},
+					"tabs-shaded": {
+						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#0001;border-top:3px solid var(--wp--preset--color--primary);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#0002;} & .wp-block-tab-panels{background-color:#0001;margin-top:0;padding:0.5em 1em;}"
+					}
+				}
 			},
 			"core/playlist": {
 				"css": ""

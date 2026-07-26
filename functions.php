@@ -146,6 +146,16 @@ add_action( 'init', function(){
         'name'  => 'list-plain',
         'label' => __( 'No Bullets', 'm20t1' )
     ]);
+    // Tabs: Brand Underline
+    register_block_style( 'core/tabs', [
+        'name'  => 'tabs-underline',
+        'label' => __( 'Brand', 'm20t1' )
+    ]);
+    // Tabs: Shaded background
+    register_block_style( 'core/tabs', [
+        'name'  => 'tabs-shaded',
+        'label' => __( 'Shaded', 'm20t1' )
+    ]);
     // Paragraph: Subtitle
     register_block_style( 'core/paragraph', [
         'name'  => 'text-subtitle',

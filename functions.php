@@ -161,6 +161,11 @@ add_action( 'init', function(){
         'name'  => 'tabs-shaded',
         'label' => __( 'Shaded', 'm20t1' )
     ]);
+    // Tabs: Pill
+    register_block_style( 'core/tabs', [
+        'name'  => 'tabs-pill',
+        'label' => __( 'Pill', 'm20t1' )
+    ]);
     // Paragraph: Subtitle
     register_block_style( 'core/paragraph', [
         'name'  => 'text-subtitle',

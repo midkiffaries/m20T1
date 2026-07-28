@@ -764,7 +764,7 @@
 				"css": ""
 			},
 			"core/tabs": {
-				"css": "& .wp-block-tab-list-is-layout-flex{gap:3px;}",
+				"css": "",
 				"variations": {
 					"tabs-underline": {
 						"css": "& .wp-block-tab-list button[aria-selected='true']{color: var(--wp--preset--color--primary);font-weight:bold;}& .wp-block-tab-list button:hover{background-color:var(--wp--preset--color--primary-pale);color:var(--wp--preset--color--primary-dark)}"
@@ -773,7 +773,10 @@
 						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff22;border-top:3px solid var(--wp--preset--color--primary);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#cadcff55;} & .wp-block-tab-panels{background-color:#cadcff22;margin-top:0;padding:0.5em 1em;}"
 					},
 					"tabs-outline": {
-						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff;border:2px solid var(--wp--preset--color--primary);border-bottom:none;transform:translateY(2px);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#a7bde8;} & .wp-block-tab-panels{border:2px solid var(--wp--preset--color--primary);background-color:#cadcff;margin-top:0;padding:0.5em 1em;}"
+						"css": "& .wp-block-tab-list-is-layout-flex{gap:3px;} & .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff99;border:2px solid var(--wp--preset--color--primary);border-bottom-color:#dee9ff;transform:translateY(2px);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#a7bde8;} & .wp-block-tab-panels{border:2px solid var(--wp--preset--color--primary);background-color:#cadcff99;margin-top:0;padding:0.5em 1em;}"
+					},
+					"tabs-pill": {
+						"css": "& .wp-block-tab-list-is-layout-flex{gap:1em;height:3em;} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button{background-color:#cadcff55;border-radius:2em;border:1px solid #0005;padding:0.25em 1em;} & .wp-block-tab-list button[aria-selected='true']{background-color:var(--wp--preset--color--primary);color:#fff;font-weight:bold;} & .wp-block-tab-list button:hover{background-color:var(--wp--preset--color--primary-dark);color:#fff;}"
 					}
 				}
 			},

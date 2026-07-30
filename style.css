@@ -3016,6 +3016,7 @@ Social Links
 	}
 	select:not([multiple]):not([size]), ::picker(select) {
 		appearance: base-select;
+		vertical-align: middle;
 	}
 	select:not([multiple]):not([size])::picker-icon {
 		content:"";
@@ -3041,7 +3042,7 @@ Social Links
 	}
 	:open::picker(select) {
 		height: auto;
-		max-height: 95vh;
+		max-height: 80vh;
 		margin: -5px auto .2em;
 		opacity: 1;
 		@starting-style {

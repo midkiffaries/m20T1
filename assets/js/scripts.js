@@ -718,3 +718,18 @@ function toRoman(num) {
     }
     return result;
 }
+
+// Detect the client time of day
+const timeOfDayGreeting = function() {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) {
+        return "morning";
+    } else if (hour >= 12 && hour < 17) {
+        return "afternoon";
+    } else if (hour >= 17 && hour < 21) {
+        return "evening";
+    } else {
+        return "night";
+    }
+}
+document.body.classList.add(`time-${timeOfDayGreeting()}`); // Add a class to the body element based on the time of day

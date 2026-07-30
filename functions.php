@@ -1514,7 +1514,7 @@ function blog_post_pagination_numbers() {
     $post_pages = $post_count > get_option('posts_per_page') ? ceil($post_count / get_option('posts_per_page')) : 1;
     ?>
     <?php if ($post_pages > 1) : ?>
-        <select class="pagination-select" aria-label="Jump to page" onchange="if(this.value)window.location.href=this.value">
+        <select id="pagination-select" class="pagination-select" aria-label="Jump to page" onchange="if(this.value)window.location.href=this.value">
             <option value="" disabled>Jump to</option>
             <?php foreach (range(1, $post_pages) as $page) : ?>
                 <?php $current_page = ($page == get_query_var('paged')) ? "selected" : ""; ?>

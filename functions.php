@@ -191,6 +191,11 @@ add_action( 'init', function(){
         'name'  => 'text-outline',
         'label' => __( 'Outline', 'm20t1' )
     ]);
+    // Paragraph: Dash before text
+    register_block_style( 'core/paragraph', [
+        'name'  => 'text-dash',
+        'label' => __( 'Start Dash', 'm20t1' )
+    ]);
     // Heading: Soft text shadow
     register_block_style( 'core/heading', [
         'name'  => 'header-shadow-soft',

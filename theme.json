@@ -767,7 +767,7 @@
 				"css": ""
 			},
 			"core/tabs": {
-				"css": "& .wp-block-tab-list button{font-size:1.1rem} & .wp-block-tab-list button[aria-selected='true']{font-weight:600}",
+				"css": "& .wp-block-tab-list button{font-size:1.1rem;transition:all 0.3s ease-in-out !important;} & .wp-block-tab-list button[aria-selected='true']{font-weight:600}",
 				"variations": {
 					"tabs-underline": {
 						"css": "& .wp-block-tab-list{border-bottom:1px solid #bbbc;} & .wp-block-tab-list button[aria-selected='true']::before{border-bottom-width:4px} & .wp-block-tab-list button[aria-selected='true']{color: var(--wp--preset--color--primary)}& .wp-block-tab-list button:hover{background-color:#9991;color:var(--wp--preset--color--primary-dark)}"

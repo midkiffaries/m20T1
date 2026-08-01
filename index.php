@@ -17,8 +17,9 @@
         <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
                 <div class="post-container-image">
-                    <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true);?>">
-                        <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured</div><?php endif; ?>
+                    <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured</div><?php endif; ?>
+                    <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail">
+                        <img src="<?=esc_url(FeaturedImageURL(get_the_ID(), 'large', false));?>" alt="<?=esc_attr(get_the_title());?>" class="entry-thumbnail-image" loading="lazy" decoding="async" itemprop="image" fetchpriority="auto">
                     </a>
                 </div>
                 <div class="post-container-content">

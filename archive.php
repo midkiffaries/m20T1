@@ -66,8 +66,9 @@
         <article <?php post_class(); ?> id="post-<?=the_ID();?>" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="post-container">
                 <div class="post-container-image">
-                    <a href="<?=esc_url(the_permalink());?>" rel="bookmark" itemprop="url" class="entry-thumbnail" style="<?=FeaturedImageURL(get_the_ID(), 'large', true);?>">
-                        <!--div class="entry-sticky" style="transform:rotate(-9deg) translateY(30px)"><?php if (is_sticky( get_the_ID() )) : // If sticky post ?>Featured Article<?php endif; ?>&nbsp;</div-->
+                    <?php if (is_sticky( get_the_ID() )) : // If sticky/featured post ?><div class="entry-sticky">Featured</div><?php endif; ?>
+                    <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url" class="entry-thumbnail">
+                        <img src="<?=esc_url(FeaturedImageURL(get_the_ID(), 'large', false));?>" alt="<?=esc_attr(get_the_title());?>" class="entry-thumbnail-image" loading="lazy" decoding="async" itemprop="image" fetchpriority="auto">
                     </a>
                 </div>
                 <div class="post-container-content">

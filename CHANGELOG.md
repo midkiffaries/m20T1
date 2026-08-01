@@ -5,12 +5,13 @@
 * Support for Wordpress 7.1.
 * Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox. 
 * Tabs block support with preset styles.
+* On index.php and archive.php the featured image has been changed to an img tag.
 * Added Courier Prime font in place of Courier New.
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.
 * Adjustments and inclusions to some custom blocks.
 * Added a custom zoom-in mouse cursor - I hate how the original looks pixelated on Windows.
 * Switched header style Embelishment to a Ribbon style.
-* Bug fixes.
+* Bug fixes and code clean-up.
 
 ### 2.0 Live (June 21, 2026)
 

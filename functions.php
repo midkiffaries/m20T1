@@ -1607,7 +1607,7 @@ function schemaJSONData() {
 
 // Schema.org JSON site navigation elements loop
 function schemaNavigation( $menu_name ) {
-	if (($menu_name) && ($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+	if (($menu_name) && ($locations == get_nav_menu_locations()) && isset($locations[$menu_name])) {
 		$menu = get_term($locations[$menu_name], 'nav_menu');
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
 		

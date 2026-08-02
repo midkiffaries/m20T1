@@ -1,11 +1,11 @@
 # Changes to m20T1 WordPress Theme
 
-### 2.1 Live (XXXX XX, 2026)
+### 2.1 Live (August XX, 2026)
 
 * Support for Wordpress 7.1.
 * Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox. 
 * Tabs block support with preset styles.
-* On index.php and archive.php the featured image has been changed to an img tag.
+* On index.php and archive.php the featured image has been changed to an <img> instead of background-image.
 * Added Courier Prime font in place of Courier New.
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.
 * Adjustments and inclusions to some custom blocks.

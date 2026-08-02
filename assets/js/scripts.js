@@ -143,16 +143,20 @@ document.addEventListener("keyup", (e) => {
             line-height: 1;
             padding: .55em;
             white-space: nowrap;
-        }
-        .accordion > button:hover {
-            font-weight: bold;
-        }
-        .accordion > button::before {
-            content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
-            margin: 0 .5em 0 0;
-            display: inline-block;
-            transition: transform .4s ease-in-out 0s;
-            transform-origin: 8px 8px;
+            &:hover {
+                font-weight: bold;
+            }
+            &::before {
+                content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
+                margin: 0 .5em 0 0;
+                display: inline-block;
+                transition: transform .4s ease-in-out 0s;
+                transform-origin: 8px 8px;
+            }
+            @media (max-width: 849px) {
+                display: block;
+                margin-bottom: 1em;
+            }
         }
         .accordion > button.active::before {
             transform: rotate(135deg);
@@ -161,13 +165,8 @@ document.addEventListener("keyup", (e) => {
             overflow: hidden;
             transition: max-height .25s ease-out;
             padding-bottom: 1em;
-        }
-        @media (max-width: 849px) {
+            @media (max-width: 849px) {
             .accordion > button {
-                display: block;
-                margin-bottom: 1em;
-            }
-            .accordion > section {
                 max-height: 0;
                 margin-bottom: 2em;
             }
@@ -220,9 +219,9 @@ document.addEventListener("keyup", (e) => {
             overflow: hidden;
             transition: outline .5s;
             cursor: pointer;
-        }
-        .embed-youtube:hover {
-            outline: 4px solid #f00;
+            &:hover {
+                outline: 4px solid #f00;
+            }
         }
         .embed-youtube img {
             width: 100%;
@@ -240,12 +239,12 @@ document.addEventListener("keyup", (e) => {
         .embed-youtube:hover .play-button {
             opacity: 1;   
             background: #f00c;
-        }
-        .embed-youtube .play-button::before {
-            content: "";
-            border-style: solid;
-            border-width: 15px 0 15px 26px;
-            border-color: transparent transparent transparent #fff;
+            &::before {
+                content: "";
+                border-style: solid;
+                border-width: 15px 0 15px 26px;
+                border-color: transparent transparent transparent #fff;
+            }
         }
         .embed-youtube img, .embed-youtube iframe, .embed-youtube .play-button, .embed-youtube .play-button::before {
             position: absolute;
@@ -401,23 +400,23 @@ document.addEventListener("scroll", function() {
 		background-color: #0005;
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
-	}
-	.scroll-to-top-float:hover {
-		background-color: #0008; 
-		transform: scale(1.1);
-	}
-	.scroll-to-top-float:active {
-		background-color: #0009;
+        &:hover {
+            background-color: #0008; 
+            transform: scale(1.1);
+        }
+        &:active {
+            background-color: #0009;
+        }
+        @media (max-width: 812px) {
+            display: none;
+        }
+        @media only print {
+            display: none;
+        }
 	}
 	.scroll-to-top-float.scActive {
 		visibility: visible;
 		opacity: 1;
-	}
-    @media (max-width: 812px) {
-		.scroll-to-top-float {display:none}
-    }
-	@media only print {
-		.scroll-to-top-float {display:none}
 	}
 	`);
 	document.body.appendChild(st);
@@ -532,17 +531,20 @@ function ConfirmModal(text, action) {
         border: 1px solid #eee;
         text-align: right;
         overscroll-behavior-y: contain;
+        @media (max-width:812px) {
+            max-width: 99%;
+        }
     }
     .dialog-confirm p {
         margin-top: 2px;
         font-size: 1.2em;
         text-align: left;
-    }
-    .dialog-confirm p::before {
-        content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><path d='M20.9 14.8q1.5-1.5 1.5-3.6 0-2.6-1.9-4.5T16 4.8q-2.6 0-4.5 1.9t-1.9 4.5h3.2q0-1.3 1-2.3 1-1 2.2-1 1.3 0 2.3 1 1 1 1 2.3 0 1.3-1 2.2l-2 2q-1.9 2.1-1.9 4.6v.8h3.2q0-2.5 1.9-4.5zm-3.3 12.4V24h-3.2v3.2zM16 0q6.6 0 11.3 4.7Q32 9.4 32 16q0 6.6-4.7 11.3Q22.6 32 16 32q-6.6 0-11.3-4.7Q0 22.6 0 16 0 9.4 4.7 4.7 9.4 0 16 0z'/></svg>") / "Close Icon";
-        padding: 0 .6em 1em 0;
-        display: block;
-        float: left;
+        &::before {
+            content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><path d='M20.9 14.8q1.5-1.5 1.5-3.6 0-2.6-1.9-4.5T16 4.8q-2.6 0-4.5 1.9t-1.9 4.5h3.2q0-1.3 1-2.3 1-1 2.2-1 1.3 0 2.3 1 1 1 1 2.3 0 1.3-1 2.2l-2 2q-1.9 2.1-1.9 4.6v.8h3.2q0-2.5 1.9-4.5zm-3.3 12.4V24h-3.2v3.2zM16 0q6.6 0 11.3 4.7Q32 9.4 32 16q0 6.6-4.7 11.3Q22.6 32 16 32q-6.6 0-11.3-4.7Q0 22.6 0 16 0 9.4 4.7 4.7 9.4 0 16 0z'/></svg>") / "Close Icon";
+            padding: 0 .6em 1em 0;
+            display: block;
+            float: left;
+        }
     }
     .dialog-confirm button {
         margin-right: .9em;
@@ -557,11 +559,6 @@ function ConfirmModal(text, action) {
     .dialog-close {
         transition: opacity .15s ease-out 0s;
         opacity: 0;
-    }
-    @media (max-width:812px) {
-        .dialog-confirm div {
-            max-width: 99%;
-        }
     }
     `);
     dialog.appendChild(style); 
@@ -618,6 +615,10 @@ function HtmlModal(c, v) {
 		padding: 1.1em;
 		margin: 0 auto 0 auto;
         position: relative;
+        @media (max-width:812px) {
+            max-width: 99%;
+            margin: 0 auto;
+        }
 	}
 	.dialog-content {
 		max-width: 70vw;
@@ -630,6 +631,11 @@ function HtmlModal(c, v) {
 		transform: scale(.8) translateY(-100px);
 		transition: transform .25s ease-in-out 0s;
         overflow-y: auto;
+        @media (max-width:812px) {
+            max-width: 99%;
+            margin: 1vh auto;
+            max-height: 85vh
+        }
 	}
 	.dialog-close-button {
 		position: absolute;
@@ -642,16 +648,16 @@ function HtmlModal(c, v) {
 		filter: drop-shadow(1px 1px 2px #0004);
 		background: transparent no-repeat center center / 1.5em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/></svg>");
-	}
-    .dialog-close-button:hover {
-        background-color: transparent;
-        filter: invert() drop-shadow(0 0 10px #0004);
-    }
-    .dialog-close-button:focus:hover {
-        filter: none;
-    }
-    .dialog-close-button:active {
-        opacity: .5;
+        &:hover {
+            background-color: transparent;
+            filter: invert() drop-shadow(0 0 10px #0004);
+        }
+        &:focus:hover {
+            filter: none;
+        }
+        &:active {
+            opacity: .5;
+        }
     }
 	.dialog-open {
 		opacity: 1;
@@ -663,17 +669,6 @@ function HtmlModal(c, v) {
         transition: opacity .15s ease-out 0s;
         opacity: 0;
 	}
-    @media (max-width:812px) {
-        .dialog-content {
-            max-width: 99%;
-            margin: 1vh auto;
-            max-height: 85vh
-        }
-        .dialog-header {
-            max-width: 99%;
-            margin: 0 auto;
-        }
-    }
 	`);
 
     // Append Elements

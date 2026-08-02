@@ -235,16 +235,16 @@ document.addEventListener("keyup", (e) => {
             z-index: 1;
             border-radius: .8em;
             transition: background .5s;
-        }
-        .embed-youtube:hover .play-button {
-            opacity: 1;   
-            background: #f00c;
             &::before {
                 content: "";
                 border-style: solid;
                 border-width: 15px 0 15px 26px;
                 border-color: transparent transparent transparent #fff;
             }
+        }
+        .embed-youtube:hover .play-button {
+            opacity: 1;   
+            background: #f00c;
         }
         .embed-youtube img, .embed-youtube iframe, .embed-youtube .play-button, .embed-youtube .play-button::before {
             position: absolute;

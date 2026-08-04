@@ -522,7 +522,7 @@
 				}
 			},
 			"button": {
-				"css": "transition:all 0.8s cubic-bezier(.22,1,.36,1);transition-behavior:allow-discrete",
+				"css": "transition:all 0.8s cubic-bezier(.22,1,.36,1);transition-behavior:allow-discrete;text-wrap:balanced",
 				"color": {
 					"background": "var:preset|color|primary",
 					"text": "#fff"
@@ -924,7 +924,7 @@
 						"css": "border-radius:8px;&:hover{box-shadow:1px 0 10px 2px var(--wp--preset--color--primary);transform:scale(1.05);filter:brightness(1.15)} &:active{background-color:var(--wp--preset--color--primary-dark);box-shadow:none !important;transform:scale(1)}"
 					},
 					"outline": {
-						"css": "-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)"
+						"css": "-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)&:hover{color:#000;background-color:#fffe}"
 					},
 					"button-3d": {
 						"css": "&{box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px} &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"

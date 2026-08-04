@@ -78,8 +78,7 @@
 		<p><label for="url">Website</label><input type="url" name="url" id="url" class="comment-url" maxlength="50" value="<?=esc_attr($comment_author_url);?>" placeholder="https://www.example.com" autocapitalize="none" autocorrect="off" autocomplete="url"></p>
     <?php endif; ?>
 		<p><label for="comment" <?php if ($req) echo "class=\"required\""; ?>>Comment</label><textarea name="comment" id="comment" class="comment-textarea" placeholder="What do you have to say..." <?php if ($req) echo "aria-required=\"true\""; ?> required></textarea></p>
-		<p><input type="submit" id="submit-comment" class="comment-submit wp-element-button" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></p>
-
+		<div class="wp-block-button is-style-fill"><input type="submit" id="submit-comment" class="submit-button wp-block-button__link wp-element-button" value="Post Comment"> <?php cancel_comment_reply_link('Cancel Reply'); ?><?php comment_id_fields(); ?></div>
         <?php do_action('comment_form', $post->ID); ?>
 
     </form>

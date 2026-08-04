@@ -8,6 +8,7 @@
 		<?php if (comments_open(get_option('page_on_front'))) : ?>
 		<?=comment_form([
 			'label_submit' => __( 'Send Message', 'm20t1' ),
+			'class_submit' => 'submit-button wp-block-button__link wp-element-button',
 			'title_reply' => __( 'Send me a message', 'm20t1' ),
 			'comment_notes_before' => '',
 			'comment_notes_after' => '',

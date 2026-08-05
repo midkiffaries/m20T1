@@ -349,12 +349,12 @@ function getElOffsetY(el) {
         transition: transform .25s ease-in-out;
         width: 2.5em;
         margin: -3px;
-    }
-    #btnMenu.active span:first-of-type {
-        transform: rotate(45deg);
-    }
-    #btnMenu.active span:last-of-type {
-        transform: rotate(-45deg);
+        &:first-of-type {
+            transform: rotate(45deg);
+        }
+        &:last-of-type {
+            transform: rotate(-45deg);
+        }
     }
     `);
     document.body.appendChild(st);
@@ -606,7 +606,7 @@ function HtmlModal(c, v) {
 		background-color: #eeee;
 		border: none;
 		opacity: 0;
-		transition: opacity .2s ease-in-out 0s;
+		transition: opacity .2s ease-in-out;
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
 	}
@@ -626,10 +626,11 @@ function HtmlModal(c, v) {
 		max-height: 85vh;
 		margin: 1vh auto 0 auto;
 		padding: 1em;
+        border-radius: 8px;
 		background-color: #fdfdfd;
 		box-shadow: 0 10px 14px -7px #000b, 5px 5px 16px 5px #0000;
-		transform: scale(.8) translateY(-100px);
-		transition: transform .25s ease-in-out 0s;
+		transform: scale(.7) translateY(-100px);
+		transition: transform .25s ease-in-out;
         overflow-y: auto;
         @media (max-width:812px) {
             max-width: 99%;
@@ -661,9 +662,9 @@ function HtmlModal(c, v) {
     }
 	.dialog-open {
 		opacity: 1;
-	}
-	.dialog-open > div {
-		transform: scale(1);
+        & > div {
+            transform: scale(1);
+        }
 	}
 	.dialog-close {
         transition: opacity .15s ease-out 0s;
@@ -678,7 +679,7 @@ function HtmlModal(c, v) {
 	document.body.appendChild(dialog);
 
 	// Display dialog with transition
-	setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
+	setTimeout(() => { dialog.classList.add("dialog-open") }, 150);
 }
 
 // Close all open dialog nodes specific "c = ClassName"
@@ -693,11 +694,6 @@ function closeModals(c) {
             dialog[i].addEventListener('transitionend', () => dialog[i].style.display = 'none');
         }
     }
-}
-
-// Check if href link is of a specific image type
-function isLinkAnImage(v) {
-    return ['jpg','jpeg','jp2','png','webp','gif','heif','avif'].includes(v.split('.').pop()) ? true : false;
 }
 
 // Converts an integer to roman numerals
@@ -727,4 +723,5 @@ const timeOfDayGreeting = function() {
         return "night";
     }
 }
-document.body.classList.add(`time-${timeOfDayGreeting()}`); // Add a class to the body element based on the time of day
+// Add a class to the body element based on the time of day
+document.body.classList.add(`time-${timeOfDayGreeting()}`);

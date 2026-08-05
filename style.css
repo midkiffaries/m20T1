@@ -16,6 +16,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 :root {
     /* color-scheme: light dark; */
+	
 	/* Scrollbar Colors */
 	--scrollbar-light: var(--wp--preset--color--primary) #eee;
 	--scrollbar-dark: var(--wp--preset--color--primary) #444;
@@ -646,10 +647,10 @@ Site Header
 	position: absolute;
 	top: 0;
 	pointer-events: none;
-	animation: VidFadeIn 1s;
+	animation: M20VidFadeIn 1s;
 }
 
-@keyframes VidFadeIn {
+@keyframes M20VidFadeIn {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
 }
@@ -1499,7 +1500,6 @@ Portfolio Page Styling
 WordPress Block Components
 *****************************/
 
-details[open] summary ~ *,
 .wp-block-accordion-panel {
 	animation: M20Open 0.4s ease-out 0s forwards;
 }
@@ -1640,7 +1640,6 @@ Figures, Lightbox, and Images
 .wp-block-gallery figure > a[href] img {
 	cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' filter='drop-shadow(0 1px 2px %23000a)'><circle cx='12' cy='12' r='8' stroke='black' stroke-width='3' fill='white'/><line x1='12' y1='8' x2='12' y2='16' stroke='black' stroke-width='2'/><line x1='8' y1='12' x2='16' y2='12' stroke='black' stroke-width='2'/><line x1='18' y1='18' x2='24' y2='24' stroke='black' stroke-width='4'/></svg>") 12 12, zoom-in;
 	transition: all 0.3s ease-in-out;
-
 	&:hover{
 		filter: brightness(1.1);
 	}
@@ -2415,10 +2414,10 @@ Custom Theme CSS
 .header-single-page:has(.header-hero-image:not([style^="background"])),
 .header-single-post:has(.header-hero-image:not([style^="background"])) {
 	background-size: 104% 104%, 101% 101%, 108% 108%, 100% 100%, 100% 100%, 150% 150%;
-	animation: head-grad 20s ease infinite !important;
+	animation: M20HeadGrad 20s ease infinite !important;
 }
 
-@keyframes head-grad {
+@keyframes M20HeadGrad {
 	0% {background-position: 0% 50%;}
 	50% {background-position: 100% 50%;}
 	100% {background-position: 0% 50%;}

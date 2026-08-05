@@ -924,7 +924,7 @@
 						"css": "border-radius:8px;&:hover{box-shadow:1px 0 10px 2px var(--wp--preset--color--primary);transform:scale(1.05);filter:brightness(1.15)} &:active{background-color:var(--wp--preset--color--primary-dark);box-shadow:none !important;transform:scale(1)}"
 					},
 					"outline": {
-						"css": "-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)&:hover{color:#000;background-color:#fffe}"
+						"css": "font-weight:500;border-width:3px;background-color:#fff1;-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px); &:hover{background-color:var(--wp--preset--color--secondary);border-color:var(--wp--preset--color--secondary);color:#fff !important;} &:active{transform:scale(0.95)}"
 					},
 					"button-3d": {
 						"css": "&{box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px} &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"
@@ -1028,15 +1028,7 @@
 				}
 			},
 			"core/details": {
-				"css": "& summary{font-weight:bolder;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}",
-				"variations": {
-					"details-cross": {
-						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.4s ease-in-out;transition-behavior:allow-discrete} &[open] summary::before{transform:rotate(135deg) translateY(2px)} & > *:not(summary){margin:0.3rem 2.4rem} & summary{list-style:none}"
-					},
-					"details-arrow": {
-						"css": "& {border-top:1px solid #9998;border-bottom:1px solid #9998;position:relative} & summary::before{content:url(\"data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 768 768'><path d='m237 275 147 147 147-147 45 45-192 192-192-192z' fill='black'/></svg>\");margin:auto 8px;display:inline-block;transition:transform 0.2s ease-in-out;position:absolute;right:0px;top:2px} &[open] summary::before{transform:scaleY(-1)} & summary{padding-left:1.1rem} & > *:not(summary){margin:0.3rem 1.2rem} & summary{list-style:none}"
-					}
-				}
+				"css": "& summary{font-weight:600;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}"
 			},
 			"core/verse": {
 				"css": "& {font-family:var(--wp--preset--font-family--georgia-font)}"

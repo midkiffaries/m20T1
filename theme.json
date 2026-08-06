@@ -919,6 +919,7 @@
 				"css": "& .wp-element-button{border:2px solid #000;border-radius:1.2rem;padding:7px 11px;font-weight:600}"
 			},
 			"core/button": {
+				"css": "& img {max-height:100px;width:auto !important;margin:4px 9px;}",
 				"variations": {
 					"fill": {
 						"css": "border-radius:8px;&:hover{box-shadow:1px 0 10px 2px var(--wp--preset--color--primary);transform:scale(1.05);filter:brightness(1.15)} &:active{background-color:var(--wp--preset--color--primary-dark);box-shadow:none !important;transform:scale(1)}"

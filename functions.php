@@ -298,6 +298,11 @@ add_action( 'init', function(){
         'name'  => 'video-glow',
         'label' => __( 'White Glow', 'm20t1' )
     ]);
+    // Button: Plain Style
+    register_block_style( 'core/button', [
+        'name'  => 'button-plain',
+        'label' => __( 'Plain', 'm20t1' ),
+    ]);
     // Button: 3D Raised Style
     register_block_style( 'core/button', [
         'name'  => 'button-3d',

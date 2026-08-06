@@ -926,6 +926,9 @@
 					"outline": {
 						"css": "font-weight:500;border-width:3px;background-color:#fff1;-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px); &:hover{background-color:var(--wp--preset--color--secondary);border-color:var(--wp--preset--color--secondary);color:#fff !important;} &:active{transform:scale(0.95)}"
 					},
+					"button-plain": {
+						"css": "background-color:#0000;color:#000; &:hover{background-color:#0001;transform:scale(1.1);filter:brightness(1.15)} &:active{transform:scale(0.98)}"
+					},
 					"button-3d": {
 						"css": "&{box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px} &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"
 					},

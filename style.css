@@ -2569,8 +2569,6 @@ select {
 }
 
 
-
-
 /************************************
 Blog Post Styling
 ************************************/
@@ -2627,47 +2625,8 @@ Global Page Styling
 	}
 }
 
-.footer-widgets .redbubble-logo,
-.footer-widgets .spring-logo {
-	margin: 12px 16px;
-	transition: transform 0.2s ease;
-	font-weight: 600;
-	&:hover {
-		transform: scale(1.1);
-	}
-}
-
-.footer-widgets .spring-logo img {
-	filter: invert(90%)
-}
-
 .footer-notice a {
 	color: #eee;
-}
-
-/* Buttons with Icons */
-.square-button {
-	padding: 1.2em;
-	margin: 0 2px;
-	border: 0;
-	background-color: transparent !important;
-	background-position: 50% 50%;
-	background-size: 1.9em;
-	background-repeat: no-repeat;
-	transition: transform 0.2s ease-in-out;
-	transform-origin: 50%;
-	&:hover {
-		transform: scale(1.25);
-	}
-}
-
-.menu-email {
-	background-image: var(--icon-mail);
-}
-
-.menu-search {
-	background-size: 1.6em;
-	background-image: var(--icon-search);
 }
 
 /* Blog Post Metadata links */
@@ -2683,14 +2642,10 @@ Global Page Styling
 	&:active {
 		color: var(--wp--preset--color--primary-dark);
 	}
+	/* &:visited {
+		color: var(--wp--preset--color--primary-pale) !important;
+	} */
 }
-
-/*
-.entry-header .entry-title a[href]:visited,
-.single-entry-header .entry-title a[href]:visited {
-	color: var(--wp--preset--color--primary-pale) !important;
-}
-*/
 
 /* Add embellishment to last <p> in article */
 .single-entry-content > p:last-of-type::after {
@@ -2815,6 +2770,45 @@ Social Links
 	margin-right: 0.2em;
 }
 
+.footer-widgets .redbubble-logo,
+.footer-widgets .spring-logo {
+	margin: 12px 16px;
+	transition: transform 0.2s ease;
+	font-weight: 600;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.footer-widgets .spring-logo img {
+	filter: invert(90%)
+}
+
+/* Buttons with Icons */
+.square-button {
+	padding: 1.2em;
+	margin: 0 2px;
+	border: 0;
+	background-color: transparent !important;
+	background-position: 50% 50%;
+	background-size: 1.9em;
+	background-repeat: no-repeat;
+	transition: transform 0.2s ease-in-out;
+	transform-origin: 50%;
+	&:hover {
+		transform: scale(1.25);
+	}
+}
+
+.menu-email {
+	background-image: var(--icon-mail);
+}
+
+.menu-search {
+	background-size: 1.6em;
+	background-image: var(--icon-search);
+}
+
 /* Print friendly styling */
 @media print {
 	.page-title,
@@ -2836,9 +2830,6 @@ Social Links
 
 /* Glass style select boxes for Chromium Browsers */
 @supports (appearance: base-select) {
-	select option[disabled] {
-		opacity: 0.8;
-	}
 	select:not([multiple]):not([size]), ::picker(select) {
 		appearance: base-select;
 		vertical-align: middle;
@@ -2847,7 +2838,7 @@ Social Links
 		content:"";
 	}
 	::picker(select) {
-		transition: opacity 0.2s ease-in-out;
+		transition: all 0.25s ease-in-out;
 		transition-behavior: allow-discrete;
 		cursor: default;
 		opacity: 0;
@@ -2872,24 +2863,24 @@ Social Links
 		opacity: 1;
 		@starting-style {
 			opacity: 0;
-			height: 0vh;
+			height: 0;
 		}
 	}
 	select:not([multiple]):not([size]) option {
 		padding: 3px 12px 3px 7px;
 		margin: 0 3px;
-	}
-	select:not([multiple]):not([size]) option::checkmark {
-		order: 0;
-		width: 10px;
-		content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>');
-	}
-	select:not([multiple]):not([size]) option:hover {
-		background-color: var(--wp--preset--color--primary);
-		border-radius: 0.5rem;
-		color: #fff;
-	}
-	select:not([multiple]):not([size]) option:hover::checkmark {
-		filter: invert(1);
+		&::checkmark {
+			order: 0;
+			width: 10px;
+			content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>');
+		}
+		&:hover {
+			background-color: var(--wp--preset--color--primary);
+			border-radius: 0.5rem;
+			color: #fff;
+		}
+		&:hover::checkmark {
+			filter: invert(1);
+		}
 	}
 }

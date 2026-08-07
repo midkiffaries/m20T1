@@ -1664,7 +1664,7 @@ add_action( 'admin_head', function(){
 ?>
 <style type="text/css">
 .wp-admin input[type='password'] {-webkit-text-security:disc}
-.wp-admin .comment.column-comment {max-height:14em;height:220px;overflow:hidden;display:block}
+.wp-admin .comment.column-comment {max-height:14em;height:220px;overflow-y:auto;display:block}
 .wp-admin td.column-seo_excerpt {line-height:1.1;font-size:90%;text-wrap:balance}
 .wp-admin .column-thumbnail {width:6em}
 .wp-admin .column-thumbnail img {border-radius:4px}

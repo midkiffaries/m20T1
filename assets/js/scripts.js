@@ -728,3 +728,22 @@ const timeOfDayGreeting = function() {
 }
 // Add a class to the body element based on the time of day
 document.body.classList.add(`time-${timeOfDayGreeting()}`);
+
+// Fade-in effect for elements when they enter the viewport on scrolling
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in");
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.15
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+        }
+        });
+    }, observerOptions);
+    fadeElements.forEach(element => observer.observe(element));
+});

@@ -11,7 +11,7 @@
 * Adjustments and inclusions to some custom blocks.
 * Added a custom zoom-in mouse cursor - I hate how the original looks pixelated on Windows.
 * Switched header style Embelishment to a Ribbon style.
-* Removed more personallized styling from style.css.
+* Removed more of my personallized styling from style.css.
 * Bug fixes and code clean-up.
 
 ### 2.0 Live (June 21, 2026)

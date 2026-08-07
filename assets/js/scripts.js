@@ -620,6 +620,9 @@ function HtmlModal(c, v) {
             margin: 0 auto;
         }
 	}
+    .dialog-html h3 {
+        margin: 0;
+    }
 	.dialog-content {
 		max-width: 70vw;
 		min-height: 9em;

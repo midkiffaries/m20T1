@@ -15,6 +15,9 @@
 			'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '<span class="required">*</span></label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..." required></textarea></p>',
 		], get_option('page_on_front') ); // ID of the site's homepage ?>
 		<style>
+			.email-block h3 {
+				margin: 0;
+			}
 			.email-block .comment-form {
 				background: none;
 				padding: 0;
@@ -24,6 +27,20 @@
 			}
 			.email-block .required {
 				color: #0000;
+			}
+			.email-block [type="text"],
+			.email-block [type="email"],
+			.email-block textarea {
+				width: 100%;
+				font-size: 1.2rem;
+			}
+			.email-block textarea {
+				height: 10em;
+				max-height: 20em;
+			}
+			.email-block .comment-form-cookies-consent label {
+				display: inline-block;
+				text-transform: none;
 			}
 		</style>
 		<?php else : ?>

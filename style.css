@@ -547,6 +547,22 @@ Icon Font Styling
 	vertical-align: -4px;
 }
 
+/* Buttons with Icons */
+.square-button {
+	padding: 1.2em;
+	margin: 0 2px;
+	border: 0;
+	background-color: transparent !important;
+	background-position: 50% 50%;
+	background-size: 1.9em;
+	background-repeat: no-repeat;
+	transition: transform 0.2s ease-in-out;
+	transform-origin: 50%;
+	&:hover {
+		transform: scale(1.25);
+	}
+}
+
 
 /*************************** 
 Main Site Structural Layout
@@ -2281,74 +2297,6 @@ Child Page Section
 	display: none;
 }
 
-/************************
-Contact Modal Styling
-*************************/
-
-.dialog-email h3 {
-    margin: 0;
-}
-
-.dialog-email fieldset {
-	border: none;
-	padding: 0;
-	margin: 0;
-}
-
-.dialog-email label {
-	display: block;
-	font-size: 1.1rem;
-}
-
-.dialog-email [type="text"],
-.dialog-email [type="email"],
-.dialog-email textarea {
-	width: 100%;
-	font-size: 1.2rem;
-}
-
-.dialog-email textarea {
-	height: 10em;
-	max-height: 20em;
-}
-
-.dialog-email [type="submit"] {
-	font-size: 1.2em;
-	padding: 0.5em 1em;
-	border-color: transparent;
-	color: #fff;
-}
-
-.dialog-email .contact_error::after {
-	opacity: 0;
-	display: inline-block;
-	margin-left: 0.3rem;
-	vertical-align: middle;
-    content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M13.2 13.2V6h-2.4v7.2zm0 4.8v-2.4h-2.4V18zM12 0q5 0 8.5 3.5T24 12q0 5-3.5 8.5T12 24q-5 0-8.5-3.5T0 12q0-5 3.5-8.5T12 0z' fill='red'/></svg>");
-	transition: opacity 0.3s ease-in-out 0s;
-}
-
-.dialog-email .contact_server {
-	position: absolute;
-	padding: 0;
-	transform: translate(10em, -4em);
-	width: calc(100% - 11em);
-	color: #d00;
-	@media (max-width: 812px) {
-		transform: translate(10em, -5em);
-	}
-}
-
-.dialog-email .contact_success {
-	transform: translate(1em,-18em);
-	width: 92%;
-	color: #090;
-	text-align: center;
-	border: 2px solid #090;
-	background: #fff;
-	font-size: 1.2em;
-}
-
 
 /************************ 
 Search Modal Styling
@@ -2745,73 +2693,6 @@ Page Background embellishments
 	}
 }
 
-
-/************************************
-Social Links
-************************************/
-
-/* Add additional brand icons for social links */
-.wp-social-link [href^="https://unsplash.com"] svg, 
-.wp-social-link [href^="https://www.thingiverse.com"] svg {
-	display: none;
-}
-
-.wp-social-link [href^="https://unsplash.com"]::before {
-	content: "";
-	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='1024'><path d='M320 288V0h384v288zm384 160h320v576H0V448h320v288h384z' fill='white'/></svg>");
-	width: 1em;
-	height: 1em;
-	background-size: 1em;
-	margin-right: 0.2em;
-}
-
-.wp-social-link [href^="https://www.thingiverse.com"]::before {
-	content: "";
-	background-image: url("data:image/svg+xml,<svg height='2500' width='2500' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><g fill='none' fill-rule='evenodd'><circle cx='256.962' cy='256.962' fill='dodgerblue' r='237.714'/><path d='M256 512C114.615 512 0 397.385 0 256S114.615 0 256 0s256 114.615 256 256-114.615 256-256 256zm0-36.571c121.187 0 219.429-98.242 219.429-219.429S377.187 36.571 256 36.571 36.571 134.813 36.571 256 134.813 475.429 256 475.429zm32.722-269.474v219.428h-65.444V205.955h-92.39V140.51h250.225v65.444z' fill='white'/></g></svg>");
-	width: 1em;
-	height: 1em;
-	background-size: 1em;
-	margin-right: 0.2em;
-}
-
-.footer-widgets .redbubble-logo,
-.footer-widgets .spring-logo {
-	margin: 12px 16px;
-	transition: transform 0.2s ease;
-	font-weight: 600;
-	&:hover {
-		transform: scale(1.1);
-	}
-}
-
-.footer-widgets .spring-logo img {
-	filter: invert(90%)
-}
-
-/* Buttons with Icons */
-.square-button {
-	padding: 1.2em;
-	margin: 0 2px;
-	border: 0;
-	background-color: transparent !important;
-	background-position: 50% 50%;
-	background-size: 1.9em;
-	background-repeat: no-repeat;
-	transition: transform 0.2s ease-in-out;
-	transform-origin: 50%;
-	&:hover {
-		transform: scale(1.25);
-	}
-}
-
-.menu-email {
-	background-image: var(--icon-mail);
-}
-
-.menu-search {
-	background-size: 1.6em;
-	background-image: var(--icon-search);
-}
 
 /* Print friendly styling */
 @media print {

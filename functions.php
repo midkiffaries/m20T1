@@ -461,10 +461,11 @@ add_action( 'init', function(){
         & a img {
             cursor:pointer;
             border:2px solid #0000;
-            transition:border 0.3s;
+            transition:all 0.3s ease;
         }
         & a img:hover {
             border-color:var(--wp--preset--color--primary);
+            transform:scale(1.05); 
         }
         & time {
             color:#666;

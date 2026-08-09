@@ -729,7 +729,7 @@ const timeOfDayGreeting = function() {
 // Add a class to the body element based on the time of day
 document.body.classList.add(`time-${timeOfDayGreeting()}`);
 
-// Fade-in effect for elements when they enter the viewport on scrolling
+// Fade-in and shifting effect for elements when they enter the viewport on scrolling
 document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll(".fade-in");
     const observerOptions = {

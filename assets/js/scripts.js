@@ -610,6 +610,9 @@ function HtmlModal(c, v) {
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
 	}
+    .dialog-html h3 {
+        margin: 0;
+    }
 	.dialog-header {
 		max-width: 70vw;
 		padding: 1.1em;
@@ -620,9 +623,6 @@ function HtmlModal(c, v) {
             margin: 0 auto;
         }
 	}
-    .dialog-html h3 {
-        margin: 0;
-    }
 	.dialog-content {
 		max-width: 70vw;
 		min-height: 9em;

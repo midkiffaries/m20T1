@@ -494,57 +494,11 @@ Icon Font Styling
 
 @font-face {
 	font-family: 'icomoon';
-	src: url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2');
+	src: url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
 	font-display: block;
-}
-
-.icomoon::before,
-.icomoon::after {
-	font-family: 'icomoon' !important;
-	padding: auto 1px;
-	vertical-align: -2px;
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* .the-content p [href$=".pdf"]::before, */
-.icon-document::before {
-	font-family: 'icomoon' !important;
-	content: "\e907" / "Document icon";
-	padding-right: 2px;
-	font-size: 1rem;
-}
-
-/* .the-content p [href^="mailto:"]::before, */
-.icon-mail::before {
-	font-family: 'icomoon' !important;
-	content: "\e903" / "Mail icon";
-    padding-right: 1px;
-}
-
-/* .the-content p [href^="tel:"]::before, */
-.icon-phone::before {
-    font-family: 'icomoon' !important;
-	content: "\e942" / "Phone icon";
-    padding-right: 1px;
-    font-size: 0.9rem;
-}
-
-.icon-arrow-right::before {
-    font-family: 'icomoon' !important;
-	content: "\e90e" / "Right arrow";
-    font-size: 1.6rem;
-	vertical-align: -4px;
-}
-
-.icon-arrow-left::before {
-    font-family: 'icomoon' !important;
-	content: "\e90d" / "Left arrow";
-    font-size: 1.6rem;
-	vertical-align: -4px;
 }
 
 /* Buttons with Icons */
@@ -774,7 +728,7 @@ Site Header
 
 	&::before {
 		padding-right: 6px;
-		content: "\e904";
+		content: "\e904" / "Home";
 		font-family: 'icomoon' !important;
 	}
 }
@@ -1357,7 +1311,7 @@ Entry Social Sharing Styling
 		outline-color: var(--facebook-color);
 	}
 	&::before {
-		content: "\e90b" / "Facebook icon";
+		content: "\e90b" / "Facebook logo";
 		font-size: 1.6rem;
 		vertical-align: -3px;
 	}
@@ -1370,7 +1324,7 @@ Entry Social Sharing Styling
 		outline-color: #333;
 	}
 	&::before {
-		content: "\e906" / "X icon";
+		content: "\e906" / "X logo";
 	}
 }
 
@@ -1381,7 +1335,7 @@ Entry Social Sharing Styling
 		outline-color: var(--linkedin-color);
 	}
 	&::before {
-		content: "\e905" / "LinkedIn icon";
+		content: "\e905" / "LinkedIn logo";
 	}
 }
 
@@ -1392,7 +1346,7 @@ Entry Social Sharing Styling
 		outline-color: var(--pinterest-color);
 	}
 	&::before {
-		content: "\e900" / "Pinterest icon";
+		content: "\e900" / "Pinterest logo";
 	}
 }
 
@@ -1403,7 +1357,7 @@ Entry Social Sharing Styling
 		outline-color: var(--reddit-color);
 	}
 	&::before {
-		content: "\e901" / "Reddit icon";
+		content: "\e901" / "Reddit logo";
 	}
 }
 
@@ -2031,7 +1985,7 @@ Comments Section
 	color: #a00;
 
 	&::before {
-		content: "✎ " / "Pencil icon";
+		content: "✎ " / "Pencil";
 	}
 }
 
@@ -2096,6 +2050,20 @@ Comments Section
 /************************ 
 Page Pagination Section
 ************************/
+
+.icon-arrow-right::before {
+    font-family: 'icomoon' !important;
+	content: "\e90e" / "Right arrow";
+    font-size: 1.6rem;
+	vertical-align: -4px;
+}
+
+.icon-arrow-left::before {
+    font-family: 'icomoon' !important;
+	content: "\e90d" / "Left arrow";
+    font-size: 1.6rem;
+	vertical-align: -4px;
+}
 
 .blog-pagination {
 	text-align: center;
@@ -2414,7 +2382,7 @@ Custom Theme CSS
 
 	&::before {
 		font-family: 'icomoon';
-		content: "\e90d" / "Portfolio icon";
+		content: "\e90d" / "Left Arrow";
 		vertical-align: -3px;
 		margin-left: -14px;
 	}
@@ -2619,7 +2587,7 @@ Global Page Styling
 /* Add embellishment to last <p> in article */
 .single-entry-content > p:last-of-type::after {
 	font-family: 'icomoon' !important;
-	content: "\e902" / "Star icon";
+	content: "\e902" / "Theme Logo";
 	margin-left: 0.5em;
 	line-height: 1;
 	opacity: 0.5;
@@ -2774,7 +2742,7 @@ Page Background embellishments
 		&::checkmark {
 			order: 0;
 			width: 10px;
-			content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>');
+			content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>') / "Checkmark";
 		}
 		&:hover {
 			background-color: var(--wp--preset--color--primary);

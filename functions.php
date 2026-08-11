@@ -96,15 +96,15 @@ add_action( 'init', function(){
         'name'  => 'table-html3',
         'label' => __( 'HTML3', 'm20t1' )
     ]);
-    // List: Color Bullets
-    register_block_style( 'core/list', [
-        'name'  => 'list-color',
-        'label' => __( 'Color Bullets', 'm20t1' )
-    ]);
     // List: Squares
     register_block_style( 'core/list', [
         'name'  => 'list-square',
         'label' => __( 'Squares', 'm20t1' )
+    ]);
+    // List: Diamonds
+    register_block_style( 'core/list', [
+        'name'  => 'list-diamond',
+        'label' => __( 'Diamonds', 'm20t1' )
     ]);
     // List: Triangles
     register_block_style( 'core/list', [

@@ -32,10 +32,12 @@
                         <?php menu_nav_list('Secondary Navigation', 'secondary-navigation'); // Secondary Navigation ?>
                     </div>
                     <div class="header-widgets">
-                        <?php //dynamic_sidebar( 'header' ); // Header Widgets ?>
                         <button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', 'Contact-Modal')" accesskey="c" style="background-image:var(--icon-mail)"></button> 
                         <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', 'Search-Modal');document.getElementById('search-modal').focus();" accesskey="s" style="background-size:1.6em;background-image:var(--icon-search)"></button> 
                         <button class="light-switch square-button" aria-label="Dark mode switch" accesskey="d"></button>
+                    </div>
+                    <div class="header-widgets2">
+                        <?php //dynamic_sidebar( 'header' ); // Header Widgets ?>
                     </div>
                 </div>
             </div>

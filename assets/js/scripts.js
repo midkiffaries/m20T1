@@ -333,17 +333,17 @@ function getElOffsetY(el) {
         background: #000;
         margin: .5em 0;
         border-radius: .8em;
-        will-change: auto;
         transition: margin .2s ease-in-out;
     }
-    #btnMenu:hover span, #btnMenu:focus span {
+    #btnMenu:hover span, 
+    #btnMenu:focus span {
         margin: .7em 0 .4em 0;
-    }
-    #btnMenu:hover span:first-of-type, #btnMenu:focus span:first-of-type {
-        margin-top: .3em; 
-    }
-    #btnMenu:hover span:last-of-type, #btnMenu:focus span:last-of-type {
-        margin-bottom: .3em; 
+        &:first-of-type {
+            margin-top: .3em;
+        }
+        &:last-of-type {
+            margin-bottom: .3em;
+        }
     }
     #btnMenu.active span {
         transition: transform .25s ease-in-out;
@@ -381,7 +381,7 @@ document.addEventListener("scroll", function() {
 	// Button styling
 	st.textContent = (`
 	.scroll-to-top-float {
-        z-index: 200;
+        z-index: 201;
 		position: fixed;
 		visibility: hidden;
 		opacity: 0;
@@ -394,7 +394,6 @@ document.addEventListener("scroll", function() {
 		font-size: 1.5em;
 		cursor: pointer;
 		transition: all .25s ease-in-out 0s;
-		will-change: transform;
 		background: no-repeat center center / 1em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>");
 		background-color: #0005;
@@ -413,10 +412,10 @@ document.addEventListener("scroll", function() {
         @media only print {
             display: none;
         }
-	}
-	.scroll-to-top-float.scActive {
-		visibility: visible;
-		opacity: 1;
+        &.scActive {
+            visibility: visible;
+            opacity: 1;
+        }
 	}
 	`);
 	document.body.appendChild(st);

@@ -629,7 +629,7 @@
 						"css": "-webkit-text-stroke:1px #111;paint-order:stroke fill"
 					},
 					"text-dash": {
-						"css": "text-transform:uppercase;font-size:var(--wp--preset--font-size--small);&::before{content:'―';}"
+						"css": "font-size:var(--wp--preset--font-size--small);&::before{content:'―'}"
 					},
 					"text-subtitle": {
 						"color": {

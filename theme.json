@@ -719,7 +719,7 @@
 						"css": "list-style-type:'\\2713'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
 					},
 					"list-checks": {
-						"css": "list-style:none;counter-reset:m20c;padding-left:.2rem; & li::before{content:'\\2713';font-weight:bold;background-color:var(--wp--preset--color--primary);color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline} & li ul li {padding-inline:0}"
+						"css": "list-style:none;counter-reset:m20c;padding-left:.2rem; & li::before{content:'\\2713';font-weight:bold;background-color:var(--wp--preset--color--primary);color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline} & li ul li {padding-inline:0;list-style:none}"
 					},
 					"list-arrows": {
 						"css": "list-style-type:'\\2192'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary);font-size:125%} & li ul li {padding-inline:0}"

@@ -131,6 +131,11 @@ add_action( 'init', function(){
         'name'  => 'list-checks',
         'label' => __( 'Boxed Checks', 'm20t1' )
     ]);
+    // List: Checkbox
+    register_block_style( 'core/list', [
+        'name'  => 'list-checkbox',
+        'label' => __( 'Checkboxes', 'm20t1' )
+    ]);
     // List: Dashes
     register_block_style( 'core/list', [
         'name'  => 'list-dash',

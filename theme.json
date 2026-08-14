@@ -722,7 +722,7 @@
 						"css": "list-style:none;counter-reset:m20c;padding-left:.2rem; & li::before{content:'\\2713';font-weight:bold;background-color:var(--wp--preset--color--primary);color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:4px;display:inline-block;text-align:center;margin:0 .5rem 1px 0} & div{display:inline} & li ul li {padding-inline:0}"
 					},
 					"list-arrows": {
-						"css": "list-style-type:'\\2192'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
+						"css": "list-style-type:'\\2192'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary);font-size:125%} & li ul li {padding-inline:0}"
 					},
 					"list-dbl-arrows": {
 						"css": "list-style-type:'\\2A20'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary)} & li ul li {padding-inline:0}"
@@ -738,6 +738,9 @@
 					},
 					"list-triangle": {
 						"css": "list-style-type:'\\25B8'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--secondary);font-size:125%} & li ul li {padding-inline:0}"
+					},
+					"list-checkbox": {
+						"css": "list-style-type:'\\2611'; & li{padding-inline:1ch; margin-inline-end:1ch; margin-left:-1ch} & li::marker {color:var(--wp--preset--color--primary);font-size:125%} & li ul li {padding-inline:0}"
 					},
 					"list-ornate": {
 						"css": "list-style:none;counter-reset:m20c;padding-left:.2rem; & li{counter-increment:m20c}& li::before{content:counter(m20c);background-color:var(--wp--preset--color--primary-dark);font-size:1rem;color:#fff;width:1.6rem;height:1.6rem;line-height:1.6rem;border-radius:50%;display:inline-block;text-align:center;margin:0 .5rem 1px 0}& ul li::before{background-color:#222}& div{display:inline} & li ul li {list-style:none}"

@@ -223,13 +223,13 @@
 					"slug": "duotone-3"
 				},
 				{
-					"colors": ["#e65100", "#40a5ff"],
+					"colors": ["#0e111a", "#40a5ff"],
 					"name": "Brand",
 					"slug": "duotone-4"
 				},
 				{
-					"colors": ["#0e111a", "#40a5ff"],
-					"name": "Brand Dark",
+					"colors": ["#0e111a", "#e65100"],
+					"name": "Brand Secondary",
 					"slug": "duotone-5"
 				}
 			]

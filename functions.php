@@ -833,9 +833,9 @@ add_action( 'wp_head', function(){
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="<?=esc_url(home_url() . "/favicon.ico");?>" type="image/x-icon" sizes="any">
-<link rel="icon" href="<?=esc_url(home_url() . "/favicon.svg");?>" type="image/svg+xml">
-<link rel="apple-touch-icon" href="<?=esc_url(home_url() . "/apple-touch-icon.png");?>">
+<link rel="icon" type="image/svg+xml" href="<?=esc_url(home_url() . "/favicon.svg");?>">
+<link rel="shortcut icon" type="image/x-icon" href="<?=esc_url(home_url() . "/favicon.ico");?>">
+<link rel="apple-touch-icon" sizes="180x180" href="<?=esc_url(home_url() . "/apple-touch-icon.png");?>">
 <link rel="manifest" href="<?=esc_url(home_url() . "/site.webmanifest");?>">
 <meta property="og:locale" content="<?=get_bloginfo('language');?>">
 <meta property="og:type" content="<?=(is_front_page()) ? "website" : "article";?>">

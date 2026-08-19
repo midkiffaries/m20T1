@@ -1802,7 +1802,7 @@ add_filter( 'post_mime_types', function($post_mime_types){
 add_action( 'enqueue_block_editor_assets', function(){
     wp_enqueue_script(
         'mytheme-gutenberg-underline',
-        get_template_directory_uri() . '/assets/js/gutenberg-underline.js',
+        get_template_directory_uri() . '/assets/js/gutenberg-additions.js',
         array(
             'wp-rich-text',
             'wp-element',
@@ -1813,10 +1813,27 @@ add_action( 'enqueue_block_editor_assets', function(){
             'wp-plugins',
             'wp-i18n'
         ),
-        filemtime( get_template_directory() . '/assets/js/gutenberg-underline.js' ), 
+        filemtime( get_template_directory() . '/assets/js/gutenberg-additions.js' ), 
         true
     );
 });
+
+// Add Abbreviation format to Gutenberg.
+add_action( 'enqueue_block_editor_assets', function(){
+	wp_enqueue_script(
+		'mytheme-abbreviation-format',
+		get_template_directory_uri() . '/assets/js/gutenberg-additions.js',
+		array(
+			'wp-rich-text',
+			'wp-element',
+			'wp-components',
+			'wp-block-editor',
+			'wp-i18n',
+		),
+		filemtime( get_template_directory() . '/assets/js/gutenberg-additions.js' ),
+		true
+	);
+} );
 
 // Add Underline to Classic editor
 add_filter( 'mce_buttons_2', function($buttons_array){

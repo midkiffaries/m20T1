@@ -5,6 +5,7 @@
 * Support for Wordpress 7.1.
 * Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox. 
 * Tabs block support with preset styles.
+* Added an abbreviation <abbr> inline text option to Gutenburg.
 * On index.php and archive.php the featured image has been changed to an <img> instead of background-image.
 * Added Courier Prime font in place of Courier New.
 * Removed uploading fonts to the media library - WordPress has a built in mechanism for fonts now.

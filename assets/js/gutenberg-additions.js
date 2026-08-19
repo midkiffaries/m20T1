@@ -60,9 +60,7 @@
 			};
 			const applyAbbreviation = function () {
 				if ( ! definition.trim() ) {
-					onChange(
-						toggleFormat( value, { type: 'mytheme/abbreviation' } )
-					);
+					onChange( toggleFormat( value, { type: 'mytheme/abbreviation' } ) );
 					setIsOpen( false );
 					return;
 				}
@@ -89,49 +87,43 @@
 						onClick: openPopover,
 					}
 				),
-				isOpen &&
-					wp.element.createElement(
-						Popover,
-						{
-							position: 'bottom center',
-							onClose: function () { setIsOpen( false ) },
-							animate: true,
-						},
-						wp.element.createElement(
-							'div', 
-                            { style: { padding: '16px', width: '280px' } },
-							wp.element.createElement(
-								TextControl,
-								{
-									label: __( 'Abbreviation definition', 'mytheme' ),
-									placeholder: __( 'Example: HyperText Markup Language', 'mytheme' ),
-									onChange: setDefinition,
-									onKeyDown: function ( event ) {
-										if (
-											event.key === 'Enter'
-										) {
-											event.preventDefault();
-											applyAbbreviation();
-										}
-									},
-								}
-							),
-							wp.element.createElement(
-								Button,
-								{
-									variant: 'primary',
-									onClick: applyAbbreviation,
-									style: {
-										marginTop: '8px',
-									},
-								},
-								__(
-									'Apply',
-									'mytheme'
-								)
-							)
-						)
-					)
+				isOpen && wp.element.createElement(
+                    Popover,
+                    {
+                        position: 'bottom center',
+                        onClose: function () { setIsOpen( false ) },
+                        animate: true,
+                    },
+                    wp.element.createElement(
+                        'div', 
+                        { style: { padding: '16px', width: '280px' } },
+                        wp.element.createElement(
+                            TextControl,
+                            {
+                                label: __( 'Abbreviation definition', 'mytheme' ),
+                                placeholder: __( 'Example: HyperText Markup Language', 'mytheme' ),
+                                onChange: setDefinition,
+                                onKeyDown: function ( event ) {
+                                    if (
+                                        event.key === 'Enter'
+                                    ) {
+                                        event.preventDefault();
+                                        applyAbbreviation();
+                                    }
+                                },
+                            }
+                        ),
+                        wp.element.createElement(
+                            Button,
+                            {
+                                variant: 'primary',
+                                onClick: applyAbbreviation,
+                                style: { marginTop: '8px' },
+                            },
+                            __( 'Apply', 'mytheme' )
+                        )
+                    )
+                )
 			);
 		},
 	});

@@ -951,6 +951,29 @@ add_filter( 'wp_calculate_image_sizes', function( string $sizes, array $size, $i
     }
 }, 10, 3 );
 
+// WordPress Icon Registration | to use: <!-- wp:icon {"icon":"m20t1/bearlogo"} /-->
+add_action('init', function(): void {
+	wp_register_icon_collection('m20t1', [
+		'label'       => __('m20T1 Theme', 'm20t1-icons'),
+		'description' => __('Icons provided by m20T1.', 'm20t1-icons')
+	]);
+    // Bear Logo
+	wp_register_icon('m20t1/bearlogo', [ 
+		'label'   => __('Bear Logo', 'm20t1-icons'),
+		'content' => '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M33.8 4.9c9.8 4 15.6 11.6 16.1 21.3 0 12.6-11.2 22.8-25 22.8C11.2 49 0 38.8 0 26.2.3 16.3 8.2 8 16.1 4.9c5.8-2.1 12.4-2 17.7 0m-8.8 21c-3.2 0-5.7 1.5-5.7 3.4s2.6 3.4 5.7 3.4c3.2 0 5.7-1.5 5.7-3.4s-2.6-3.4-5.7-3.4m7-8.8a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8m-13.9 0a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8M9 1.1c2.5-.1 4.6 1.2 6.3 2.9-6 2.1-10.7 6.4-13.7 11.8C.3 14.5.2 12.3 0 10.6c0-5.3 4-9.5 9-9.5m32.1 0C38.6 1 36.6 2.3 34.8 4c5.9 2 10.7 6.4 13.7 11.8 1.3-1.4 1.4-3.5 1.6-5.3 0-5.2-4-9.5-9-9.5z"/></svg>'
+	]);
+    // Mail Envelope
+	wp_register_icon('m20t1/mail', [ 
+		'label'   => __('Mail Envelope', 'm20t1-icons'),
+		'content' => '<svg xmlns="http://www.w3.org/2000/svg" width="560" height="512" viewBox="0 0 560 512"><path d="M560.036 436.276L370.134 280.504l-21.003 20.128 194.278 159.272H15.71L-.042 435.401V77.476l280.039 242.409 280.04-242.41v358.801zM188.983 280.503L-.043 435.4l15.752 24.503 194.278-159.272-21.003-20.128zm91.013 1.75L14.833 52.096h530.325L279.995 282.253z"/></svg>'
+	]);
+    // Search Magnifying Glass
+	wp_register_icon('m20t1/search', [ 
+		'label'   => __('Search', 'm20t1-icons'),
+		'content' => '<svg xmlns="http://www.w3.org/2000/svg" width="416" height="488"viewBox="0 0 416 488"><path d="M288 208c0-61.75-50.25-112-112-112S64 146.25 64 208s50.25 112 112 112 112-50.25 112-112zm128 208c0 17.5-14.5 32-32 32-8.5 0-16.75-3.5-22.5-9.5L275.75 353c-29.25 20.25-64.25 31-99.75 31C78.75 384 0 305.25 0 208S78.75 32 176 32s176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"/></svg>'
+	]);
+});
+
 
 /////////////////////////////
 // Sidebar and Widgets

@@ -3,7 +3,8 @@
 ### 2.1 Live (August XX, 2026)
 
 * Support for Wordpress 7.1.
-* Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox. 
+* Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox.
+* Initial support for my theme's custom icon set.
 * Tabs block support with preset styles.
 * Added an abbreviation <abbr> inline text option to Gutenburg.
 * On index.php and archive.php the featured image has been changed to an <img> instead of background-image.

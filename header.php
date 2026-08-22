@@ -34,7 +34,7 @@
                     <div class="header-buttons">
                         <button class="menu-email" aria-label="Contact me" onclick="HtmlModal('email','Contact-Modal')" accesskey="c"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/mail","style":{"dimensions":{"width":"38px"}}} /-->' );?></button> 
                         <button class="menu-search" aria-label="Search this site" onclick="HtmlModal('search','Search-Modal');document.getElementById('search-modal').focus();" accesskey="s"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/search","style":{"dimensions":{"width":"30px"}}} /-->' );?></button> 
-                        <button class="menu-light-switch" aria-label="Dark mode switch" id="btnLightSwitch" accesskey="d"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/moon","style":{"dimensions":{"width":"40px"}}} /-->' );?></button>
+                        <button class="menu-light-switch" id="btnLightSwitch" accesskey="d"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/moon","style":{"dimensions":{"width":"40px"}}} /-->' );?></button>
                     </div>
                 </div>
             </div>

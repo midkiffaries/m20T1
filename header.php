@@ -31,15 +31,15 @@
                     <div class="header-secondary-navigation">
                         <?php menu_nav_list('Secondary Navigation', 'secondary-navigation'); // Secondary Navigation ?>
                     </div>
-                    <div class="header-widgets">
-                        <button class="menu-email square-button" aria-label="Contact me" onclick="HtmlModal('email', 'Contact-Modal')" accesskey="c" style="background-image:var(--icon-mail)"></button> 
-                        <button class="menu-search square-button" aria-label="Search this site" onclick="HtmlModal('search', 'Search-Modal');document.getElementById('search-modal').focus();" accesskey="s" style="background-size:1.6em;background-image:var(--icon-search)"></button> 
-                        <button class="light-switch square-button" aria-label="Dark mode switch" accesskey="d"></button>
-                    </div>
-                    <div class="header-widgets2">
-                        <?php //dynamic_sidebar( 'header' ); // Header Widgets ?>
+                    <div class="header-buttons">
+                        <button class="menu-email" aria-label="Contact me" onclick="HtmlModal('email','Contact-Modal')" accesskey="c"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/mail","style":{"dimensions":{"width":"38px"}}} /-->' );?></button> 
+                        <button class="menu-search" aria-label="Search this site" onclick="HtmlModal('search','Search-Modal');document.getElementById('search-modal').focus();" accesskey="s"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/search","style":{"dimensions":{"width":"30px"}}} /-->' );?></button> 
+                        <button class="menu-light-switch" aria-label="Dark mode switch" id="btnLightSwitch" accesskey="d"><?=do_blocks( '<!-- wp:icon {"icon":"m20t1/moon","style":{"dimensions":{"width":"40px"}}} /-->' );?></button>
                     </div>
                 </div>
+            </div>
+            <div class="header-widgets">
+                <?php dynamic_sidebar( 'header' ); // Header Widgets ?>
             </div>
         </div>
 

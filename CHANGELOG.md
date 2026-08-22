@@ -3,6 +3,7 @@
 ### 2.1 Live (August XX, 2026)
 
 * Support for Wordpress 7.1.
+* Rebuilt the header icons and the dark/light mode switch.
 * Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox.
 * Initial support for my theme's custom icon set.
 * Tabs block support with preset styles.

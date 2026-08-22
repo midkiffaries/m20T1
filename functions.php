@@ -126,10 +126,10 @@ add_action( 'init', function(){
         'name'  => 'list-checkmarks',
         'label' => __( 'Checkmarks', 'm20t1' )
     ]);
-    // List: Checks
+    // List: Circle Checks
     register_block_style( 'core/list', [
         'name'  => 'list-checks',
-        'label' => __( 'Boxed Checks', 'm20t1' )
+        'label' => __( 'Circle Checks', 'm20t1' )
     ]);
     // List: Checkbox
     register_block_style( 'core/list', [
@@ -952,7 +952,7 @@ add_filter( 'wp_calculate_image_sizes', function( string $sizes, array $size, $i
     }
 }, 10, 3 );
 
-// WordPress Icon Registration | to use: <!-- wp:icon {"icon":"m20t1/bearlogo"} /-->
+// WordPress Icon Registration | to use: <!-- wp:icon {"icon":"m20t1/mail","style":{"dimensions":{"width":"48px"}},"ariaLabel":""} /-->
 add_action('init', function(): void {
 	wp_register_icon_collection('m20t1', [
 		'label'       => __('m20T1 Theme', 'm20t1-icons'),
@@ -992,6 +992,16 @@ add_action('init', function(): void {
 	wp_register_icon('m20t1/book', [ 
 		'label'   => __('Book', 'm20t1-icons'),
 		'content' => '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M448 64v416H112a48 48 0 1 1 0-96h304V0H96C60.8 0 32 28.8 32 64v384c0 35.2 28.8 64 64 64h384V64z"/><path d="M112 416a16 16 0 0 0 0 32h304v-32z"/></svg>'
+	]);
+    // Moon
+	wp_register_icon('m20t1/moon', [ 
+		'label'   => __('Moon', 'm20t1-icons'),
+		'content' => '<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><path d="M349 242c0 242 165 438 370 438 51 0 99-12 143-34a378 378 0 11-507-480c-4 25-6 50-6 76z"/></svg>'
+	]);
+    // Sun
+	wp_register_icon('m20t1/sun', [ 
+		'label'   => __('Sun', 'm20t1-icons'),
+		'content' => '<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><path d="M257 528a240 240 0 10480 0 240 240 0 00-480 0zm240-408l-67 135h135zm288 119l-143 47 96 96zm-433 47l-143-47 47 143zM223 459L88 527l135 67zm546 138l135-68-135-67zM497 936l67-135H429zm145-166l143 47-47-143zm-433 47l143-47-96-96z"/></svg>'
 	]);
     // RedBubble Logo
 	wp_register_icon('m20t1/redbubble', [ 

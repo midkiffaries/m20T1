@@ -54,7 +54,6 @@ document.addEventListener("keyup", (e) => {
 	e = e || window.event;
     if (e.keyCode === 27) { // Esc Key
         closeModals('dialog-html');
-        closeModals('lightbox-image');
     }
     if (e.keyCode === 13) { // Enter Key
         closeModals('dialog-alert');
@@ -64,9 +63,8 @@ document.addEventListener("keyup", (e) => {
 // Dark mode button switch
 (() => {
 	let buttonText, theme;
-	const modeButton = document.querySelector(".light-switch"),
-		currentTheme = localStorage.getItem("theme"),
-        st = document.createElement("style");
+	const currentTheme = localStorage.getItem("theme"),
+        btnSwitch = document.getElementById("btnLightSwitch");
 	
 	// Get locally saved moode
 	if (currentTheme == 'dark') document.body.classList.toggle('dark-mode');
@@ -74,22 +72,10 @@ document.addEventListener("keyup", (e) => {
 	
 	// Set initial button title
 	buttonText = (document.body.classList.contains('dark-mode')) ? 'light' : 'dark';
-	modeButton.setAttribute("title", `Switch to ${buttonText} mode`);
-	
-    // Append the light switch button style [class="light-switch"]
-    st.textContent = (`
-    .light-switch {
-        background: transparent no-repeat 50% 50% / 2.2em;
-        background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='1024'><path d='M349 242c0 242 165 438 370 438 51 0 99-12 143-34a378 378 0 11-507-480c-4 25-6 50-6 76z' fill='black'/></svg>");
-    }
-    body.dark-mode .light-switch {
-        background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='1024'><path d='M257 528a240 240 0 10480 0 240 240 0 00-480 0zm240-408l-67 135h135zm288 119l-143 47 96 96zm-433 47l-143-47 47 143zM223 459L88 527l135 67zm546 138l135-68-135-67zM497 936l67-135H429zm145-166l143 47-47-143zm-433 47l143-47-96-96z' fill='black'/></svg>");
-    }
-    `);
-    document.body.appendChild(st);
+	btnSwitch.setAttribute("title", `Switch to ${buttonText} mode`);
 
 	// Generate button switch logic
-	modeButton.onclick = () => {
+	btnSwitch.onclick = () => {
         // Check if user has browser pre-set to dark mode and set accordingly
         /*
         const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
@@ -102,10 +88,16 @@ document.addEventListener("keyup", (e) => {
 			document.body.classList.toggle('dark-mode');
 			theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
 		//}
-		
+
 		// Set button title
 		buttonText = (document.body.classList.contains('dark-mode')) ? 'light' : 'dark';
-		modeButton.setAttribute("title", `Switch to ${buttonText} mode`);
+		btnSwitch.setAttribute("title", `Switch to ${buttonText} mode`);
+
+        if (buttonText == 'dark') {
+            btnSwitch.innerHTML = "<div class='wp-block-icon'><svg style='width:40px;' aria-hidden='true' focusable='false'  xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'><path d='M349 242c0 242 165 438 370 438 51 0 99-12 143-34a378 378 0 11-507-480c-4 25-6 50-6 76z'/></svg></div>";
+        } else {
+            btnSwitch.innerHTML = "<div class='wp-block-icon'><svg style='width:40px;' aria-hidden='true' focusable='false'  xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'><path d='M257 528a240 240 0 10480 0 240 240 0 00-480 0zm240-408l-67 135h135zm288 119l-143 47 96 96zm-433 47l-143-47 47 143zM223 459L88 527l135 67zm546 138l135-68-135-67zM497 936l67-135H429zm145-166l143 47-47-143zm-433 47l143-47-96-96z'/></svg></div>";
+        }
 		
 		// Store last used state
         localStorage.setItem("theme", theme);

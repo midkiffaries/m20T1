@@ -389,7 +389,6 @@ document.addEventListener("scroll", function() {
 		background: no-repeat center center / 1em;
 		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>");
 		background-color: #0005;
-        -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
         &:hover {
             background-color: #0008; 
@@ -509,7 +508,6 @@ function ConfirmModal(text, action) {
         background-color: #fff9;
         opacity: 0;
         transition: opacity .16s ease-in-out 0s;
-        -webkit-backdrop-filter: grayscale(40%);
         backdrop-filter: grayscale(40%);
     }
     .dialog-confirm div {
@@ -598,7 +596,6 @@ function HtmlModal(c, v) {
 		border: none;
 		opacity: 0;
 		transition: opacity .2s ease-in-out;
-        -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
 	}
     .dialog-html h3 {

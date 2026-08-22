@@ -538,7 +538,6 @@ add_action( 'init', function(){
         }
         .is-style-media-text-overlap div {
             background-color:#eee3;
-            -webkit-backdrop-filter:blur(5px);
             backdrop-filter:blur(5px);
             border:1px solid #ddd7;
             border-radius:14px;

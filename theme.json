@@ -770,6 +770,7 @@
 				"css": ""
 			},
 			"core/social-link": {
+				"css": "",
 				"typography": {
 					"lineHeight": "1.8"
 				}

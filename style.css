@@ -34,6 +34,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	accent-color: var(--wp--preset--color--primary, #333);
 
 	/* Custom Theme Variables */
+	--smooth-transition: cubic-bezier(.22,1,.36,1);
 	--underline-bg: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 224 12'><path d='m107 0 68 1 45 2c9 3-2 9-9 6l-50-1H78c-21 0-41 0-61 2-5 3-20 3-16-5 7-4 16-2 24-3l52-2h30z' fill='%23e65100'/></svg>");
 	--sticky-blog-post-bg: radial-gradient(circle at 47% 98%, #ffffff05 0%, #ffffff05 3%,transparent 3%, transparent 100%),radial-gradient(circle at 53% 90%, #ffffff05 0%, #ffffff05 3%,transparent 3%, transparent 100%),radial-gradient(circle at 17% 34%, #ffffff08 0%, #ffffff08 3%,transparent 3%, transparent 100%),radial-gradient(circle at 85% 36%, #ffffff08 0%, #ffffff08 3%,transparent 3%, transparent 100%),radial-gradient(circle at 22% 21%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 99% 30%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 82% 84%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 62% 49%, #ffffff05 0%, #ffffff05 7%,transparent 7%, transparent 100%),radial-gradient(circle at 85% 14%, #ffffff05 0%, #ffffff05 7%,transparent 7%, transparent 100%),radial-gradient(circle at 89% 22%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 37% 65%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 57% 27%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 95% 91%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 85% 34%, #ffffff05 0%, #ffffff05 5%,transparent 5%, transparent 100%),radial-gradient(circle at 7% 65%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 69% 41%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 33% 2%, #ffffff03 0%, #ffffff03 5%,transparent 5%, transparent 100%),radial-gradient(circle at 57% 84%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 80% 86%, #ffffff03 0%, #ffffff03 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 45%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),linear-gradient(45deg, #40a5ff,#11436f);
 	--featured-img-bg-color: linear-gradient(135deg, #205380 0%,#40a5ff 82%,#205380 100%);
@@ -59,7 +60,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 /* Text Selection */
 ::selection {
-	background-color: var(--primary-color-translucent);
+	background-color: var(--primary-color-translucent, #8cf);
     text-shadow: none;
 }
 
@@ -152,7 +153,7 @@ u {
     background-repeat: no-repeat;
     background-position-y: 100%;
     background-size: 100% .2em;
-	background-image: var(--underline-bg);
+	background-image: var(--underline-bg, #f50);
 }
 
 sub,
@@ -624,7 +625,7 @@ Site Header
 	background-color: #aaa;
 	background-position: 50% 50%;
 	background-size: 100%;
-	background-image: var(--featured-img-bg);
+	background-image: var(--featured-img-bg, none);
 }
 
 .header-single-page .header-hero-overlay,
@@ -632,7 +633,7 @@ Site Header
 .header-blog .header-hero-overlay {
 	width: 100%;
 	height: var(--wp--custom--header-height);
-	background: var(--featured-img-bg-over);
+	background: var(--featured-img-bg-over, none);
 	background-size: 14px 14px;
 	backdrop-filter: saturate(120%);
 	filter: blur(1px);
@@ -874,9 +875,8 @@ Site Footer
 
 .page-footer {
 	color: #fff;
-	background-color: #222;
-	background-color: var(--wp--custom--footer-color);
-	background-image: var(--wp--custom--footer-background); 
+	background-color: var(--wp--custom--footer-color, #222);
+	background-image: var(--wp--custom--footer-background, none);
 	background-size: 72px 72px;
 	position: relative;
 }
@@ -960,7 +960,7 @@ Single Blog Post Styling (single)
 	margin: -0.6em 0.5em;
 	border-radius: 0.5em;
 	box-shadow: 4px 4px 0 0 #000b;
-	background-color: var(--wp--preset--color--tertiary);
+	background-color: var(--wp--preset--color--tertiary, none);
 	@media (max-width: 849px) {
 		font-size: 0.9em;
 	}
@@ -1008,7 +1008,7 @@ Single Blog Post Styling (single)
 .single-author-bio {
 	padding: 1rem 1.2rem;
 	margin: 3em auto 4rem;
-	outline: 3px dashed var(--wp--preset--color--primary-dark);
+	outline: 3px dashed var(--wp--preset--color--primary-dark, #333);
 	border: 1px solid #00000014;
 	background-image: repeating-linear-gradient(135deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(45deg, hsla(35,0%,71%,0.09) 0px, hsla(35,0%,71%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, hsla(0,0%,100%,0),hsla(0,0%,100%,0));
 }
@@ -1051,7 +1051,7 @@ Blog Post Styling - index/archives/search
 	background-color: #eee;
 	padding: 0.8em;
 	border-radius: 0.3em;
-	background-image: var(--sticky-blog-post-bg);
+	background-image: var(--sticky-blog-post-bg, none);
 	color: #fff;
 }
 
@@ -1075,7 +1075,7 @@ Blog Post Styling - index/archives/search
 	font-size: 2.2rem;
 	line-height: 1;
 	font-weight: 900;
-	color: var(--wp--preset--color--tertiary);
+	color: var(--wp--preset--color--tertiary, #666);
 	transform: rotate(-10deg) translate(-10px, 20px);
 	transform-origin: 0 0;
 	text-shadow: 2px 2px 0 #000;
@@ -1113,8 +1113,8 @@ Blog Post Styling - index/archives/search
 	background-position: 50% 50%;
     background-size: auto 160%;
     margin: 0;
-    background-color: var(--wp--preset--color--primary-dark);
-    background-image: var(--featured-img-bg);
+    background-color: var(--wp--preset--color--primary-dark, #222);
+    background-image: var(--featured-img-bg, none);
 	transition: all 0.4s ease-in-out;
 	text-decoration: none;
 	overflow: hidden;
@@ -1375,8 +1375,8 @@ Portfolio Page Styling
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
     background-size: 150%;
-    background-color: var(--wp--preset--color--primary-dark);
-    background-image: var(--featured-img-bg);
+    background-color: var(--wp--preset--color--primary-dark, #333);
+    background-image: var(--featured-img-bg, none);
 	text-decoration: none;
 	transition: all 0.4s ease-in-out;
 	&:hover {
@@ -1420,7 +1420,7 @@ Portfolio Page Styling
 .portfolio-view-all {
 	position: absolute;
 	right: 4em;
-	top: calc(var(--header-height) + 38px);
+	top: calc(var(--header-height, 120px) + 38px);
 	z-index: 10;
 	line-height: 1;
 	transform-origin: 50% 50%;
@@ -1588,6 +1588,10 @@ p.wp-embed-heading {
 
 p.wp-embed-posted-on {
 	margin-top: 10px;
+}
+
+.wp-block-social-links li {
+	transition: transform 0.2s ease-in-out;
 }
 
 
@@ -1765,8 +1769,8 @@ Specific Page Styling
 
 .page-search .search-submit,
 .archive-page .search-submit {
-	background-color: var(--wp--preset--color--primary);
-	border: 2px solid var(--wp--preset--color--primary);
+	background-color: var(--wp--preset--color--primary, #ddd);
+	border: 2px solid var(--wp--preset--color--primary, #666);
 	font-size: 1em;
 	padding: 5px;
 }

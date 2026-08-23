@@ -1,7 +1,11 @@
 <?php /* Template Name: Portfolio Page */ ?>
 <?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
-<?php $pageKind = "portfolio"; ?>
+<?php 
+$filename = pathinfo(basename(__FILE__), PATHINFO_FILENAME);
+$pageKind = explode('-', $filename, 2)[1] ?? $filename;
+?>
 <?php get_header(); ?>
+
 
 <main class="page-main width-full page-<?=$pageKind;?> <?=get_page_class();?>" id="main-content" itemscope itemtype="https://schema.org/<?=custom_page_article(get_the_ID());?>" itemprop="mainEntity">
     

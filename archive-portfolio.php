@@ -1,5 +1,8 @@
 <?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
-<?php $pageKind = esc_attr("portfolio"); ?>
+<?php 
+$filename = pathinfo(basename(__FILE__), PATHINFO_FILENAME);
+$pageKind = explode('-', $filename, 2)[1] ?? $filename;
+?>
 <?php get_header(); ?>
 
 <main class="page-main width-full archive-<?=$pageKind;?> " id="main-content" itemscope itemtype="https://schema.org/Article" itemprop="mainEntity">

@@ -757,6 +757,7 @@ Site Header
 }
 
 .header-buttons button {
+	color: var(--wp--preset--color--contrast);
 	margin: 0 2px;
 	padding: 2px 5px;
 	background: none;

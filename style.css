@@ -379,6 +379,74 @@ legend {
 	}
 }
 
+/* Glass style select boxes for Chromium Browsers */
+@supports (appearance: base-select) {
+	select:not([multiple]):not([size]), ::picker(select) {
+		appearance: base-select;
+		vertical-align: middle;
+	}
+	select:not([multiple]):not([size])::picker-icon {
+		content:"";
+	}
+	::picker(select) {
+		transition: all 0.25s ease-in-out;
+		transition-behavior: allow-discrete;
+		cursor: default;
+		opacity: 0;
+		height: 0;
+		font-size: 0.95rem;
+		border-radius: 0.7em;
+		padding: 0.4rem 0;
+		scrollbar-color: #888d #0000;
+		overscroll-behavior-y: contain;
+		border: 1px solid #fff3;
+		border-top: 1px solid #fff4;
+		border-bottom: 1px solid #eee8;
+		background: linear-gradient(-75deg,#fffb,#fffe,#fffb);
+		box-shadow: inset 0 0.12em 0.12em #0003, inset 0 -0.12em 0.12em #fff8, inset 0 0 0.1em 0.25em #fff3, 0 0.3em 0.12em -0.12em #0004, 0 2px 11px -2px #0009;
+		backdrop-filter: blur(4px);
+		min-block-size: calc-size(fit-content, min(size, 10em));
+		max-block-size: calc-size(stretch, min(size, 30em));
+		margin-block-end: 1em;
+		position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+		/* @media (prefers-color-scheme: dark) {
+			color: #fff;
+			background: linear-gradient(-75deg,#333a,#444c,#333a);
+			scrollbar-color: #ccc #0000;
+		} */
+	}
+	:open::picker(select) {
+		height: auto;
+		max-height: 100%;
+		margin: -5px auto .2em;
+		opacity: 1;
+		@starting-style {
+			opacity: 0;
+			height: 0;
+		}
+	}
+	select:not([multiple]):not([size]) option {
+		padding: 3px 12px 3px 7px;
+		margin: 0 3px;
+		&::checkmark {
+			order: 0;
+			width: 10px;
+			content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>') / "Checkmark";
+			/* @media (prefers-color-scheme: dark) {
+				filter: invert(1);
+			} */
+		}
+		&:hover {
+			background-color: var(--wp--preset--color--primary);
+			border-radius: 0.5rem;
+			color: #fff;
+		}
+		&:hover::checkmark {
+			filter: invert(1);
+		}
+	}
+}
+
 /* Firefox workaround */
 ::-moz-focus-inner {
 	border-style: none;
@@ -2692,71 +2760,22 @@ Page Background embellishments
 	}
 }
 
-
-/* Glass style select boxes for Chromium Browsers */
-@supports (appearance: base-select) {
-	select:not([multiple]):not([size]), ::picker(select) {
-		appearance: base-select;
-		vertical-align: middle;
-	}
-	select:not([multiple]):not([size])::picker-icon {
-		content:"";
-	}
-	::picker(select) {
-		transition: all 0.25s ease-in-out;
-		transition-behavior: allow-discrete;
-		cursor: default;
-		opacity: 0;
-		height: 0;
-		font-size: 0.95rem;
-		border-radius: 0.7em;
-		padding: 0.4rem 0;
-		scrollbar-color: #888d #0000;
-		overscroll-behavior-y: contain;
-		border: 1px solid #fff3;
-		border-top: 1px solid #fff4;
-		border-bottom: 1px solid #eee8;
-		background: linear-gradient(-75deg,#fffb,#fffe,#fffb);
-		box-shadow: inset 0 0.12em 0.12em #0003, inset 0 -0.12em 0.12em #fff8, inset 0 0 0.1em 0.25em #fff3, 0 0.3em 0.12em -0.12em #0004, 0 2px 11px -2px #0009;
-		backdrop-filter: blur(4px);
-		min-block-size: calc-size(fit-content, min(size, 10em));
-		max-block-size: calc-size(stretch, min(size, 30em));
-		margin-block-end: 1em;
-		position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
-		/* @media (prefers-color-scheme: dark) {
-			color: #fff;
-			background: linear-gradient(-75deg,#333a,#444c,#333a);
-			scrollbar-color: #ccc #0000;
-		} */
-	}
-	:open::picker(select) {
-		height: auto;
-		max-height: 100%;
-		margin: -5px auto .2em;
-		opacity: 1;
-		@starting-style {
-			opacity: 0;
-			height: 0;
-		}
-	}
-	select:not([multiple]):not([size]) option {
-		padding: 3px 12px 3px 7px;
-		margin: 0 3px;
-		&::checkmark {
-			order: 0;
-			width: 10px;
-			content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12"><path d="M15 2.2q0 .4-.3.7l-8.3 8.3a1 1 0 0 1-1.3 0L.3 6.4A1 1 0 0 1 .3 5l1.3-1.3a1 1 0 0 1 1.3 0l2.9 2.8L12 .3a1 1 0 0 1 1.3 0l1.3 1.3q.3.2.3.6"/></svg>') / "Checkmark";
-			/* @media (prefers-color-scheme: dark) {
-				filter: invert(1);
-			} */
-		}
-		&:hover {
-			background-color: var(--wp--preset--color--primary);
-			border-radius: 0.5rem;
-			color: #fff;
-		}
-		&:hover::checkmark {
-			filter: invert(1);
-		}
-	}
+/* Experimental */
+/* .safari-header {
+	background-color: var(--wp--preset--color--primary-dark);
+	width: 100vw;
+	height: 6px;
+	position: fixed;
 }
+
+.noise-overlay {
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	pointer-events: none;
+	z-index: 101;
+	opacity: 0.4;
+	background: transparent url('http://localhost/wordpress/wp-content/uploads/2026/08/noisy-texture.png') repeat 0 0;
+} */

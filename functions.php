@@ -411,7 +411,7 @@ add_action( 'init', function(){
             border-radius:3px;
             &:hover {
                 box-shadow:0 8px 20px -1px #0008;
-                transform:scale(1.05, 1.05) !important; 
+                scale:1.05 1.05 !important; 
             }
             &:active {
                 box-shadow:0 3px 6px -2px #0007;
@@ -470,7 +470,7 @@ add_action( 'init', function(){
         }
         & a img:hover {
             border-color:var(--wp--preset--color--primary);
-            transform:scale(1.05); 
+            scale:1.05; 
         }
         & time {
             color:#666;
@@ -528,7 +528,7 @@ add_action( 'init', function(){
         'name'  => 'media-text-overlap',
         'label' => __( 'Overlap', 'm20t1' ),
         'inline_style' => '.is-style-media-text-overlap {
-            transform:translateX(-20px);
+            translate:-20px 0;
         }
         .is-style-media-text-overlap figure {
             margin-right:130px;
@@ -542,10 +542,10 @@ add_action( 'init', function(){
             border:1px solid #ddd7;
             border-radius:14px;
             height:92%;
-            transform:translateX(-40px);
+            translate:-40px 0;
         }
         .is-style-media-text-overlap.has-media-on-the-right div {
-            transform:translateX(40px);
+            translate:40px 0;
         }'
     ]);
 });
@@ -880,7 +880,7 @@ add_action( 'wp_footer', function(){
         <h4>Post Categories</h4>
         <?=wp_list_categories(['orderby' => 'name', 'show_count' => false, 'title_li' => '']); ?>
     </div>
-    <style>.dialog-search .dialog-content{transform:none}</style>
+    <style>.dialog-search .dialog-content{translate:0}</style>
 </template>
 
 <template id="Contact-Modal">

@@ -553,10 +553,10 @@ Site Header
 	position: absolute;
 	left: 1rem;
 	z-index: 200;
-	transform: translateY(-120%);
-	transition: transform 0.3s ease-in;
+	translate: 0 -120%;
+	transition: translate 0.3s ease-in;
 	&:focus {
-		transform: translateY(0);
+		translate: 0;
 	}
 }
 
@@ -764,12 +764,12 @@ Site Header
 	border: none;
 	min-width: 48px;
 	filter: drop-shadow(1px 1px 0 #fffa);
-	transition: transform 0.2s ease-in-out;
+	transition: scale 0.2s ease-in-out;
 	&:hover {
-		transform: scale(1.25);
+		scale: 1.25;
 	}
 	&:active {
-		transform: scale(0.92);
+		scale: 0.92;
 	}
 }
 
@@ -1077,7 +1077,8 @@ Blog Post Styling - index/archives/search
 	line-height: 1;
 	font-weight: 900;
 	color: var(--wp--preset--color--tertiary, #666);
-	transform: rotate(-10deg) translate(-10px, 20px);
+	rotate: -10deg;
+	translate: -10px 20px;
 	transform-origin: 0 0;
 	text-shadow: 2px 2px 0 #000;
 	position: absolute;
@@ -1275,7 +1276,7 @@ Entry Social Sharing Styling
 		outline-offset: 2px;
 	}
 	&:active {
-		transform: scale(0.95);
+		scale: 0.95;
 	}
 	&::before {
 		font-family: 'icomoon' !important;
@@ -1592,7 +1593,7 @@ p.wp-embed-posted-on {
 }
 
 .wp-block-social-links li {
-	transition: transform 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 
@@ -1629,7 +1630,7 @@ Figures, Lightbox, and Images
 
 .wp-lightbox-close-button,
 .wp-lightbox-navigation-button {
-	transform: scale(1.2);
+	scale: 1.2;
 	background-color: #fff !important;
 	border-radius: 16px;
 	border: 1px solid #0008 !important;
@@ -1967,7 +1968,7 @@ Comments Section
 	border-radius: 7px;
 	/* background: #ccc var(--icon-avatar) no-repeat 50% 50%; */
 	margin: -1em 1em 0.5em -1em;
-	transform: rotate(-5deg);
+	rotate:-5deg;
 	box-shadow: 3px 3px 0 1px #0004;
 }
 
@@ -2233,7 +2234,7 @@ Child Page Section
 	box-shadow: 4px 4px 0 0 #777;
 	transition: all 0.2s ease;
 	&:hover {
-		transform: scale(1.02);
+		scale: 1.02;
 		box-shadow: 6px 6px 0 0 #666;
 	}
 }
@@ -2271,14 +2272,14 @@ Scroll Fade-in Styling
 
 .fade-in {
 	opacity: 0;
-	transform: translateY(25px);
-	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-	will-change: opacity, transform;
+	translate: 0 25px;
+	transition: opacity 0.8s ease-out, translate 0.8s ease-out;
+	will-change: opacity, translate;
 }
 
 .fade-in.is-visible {
 	opacity: 1;
-	transform: translateY(0);
+	translate: 0;
 }
 
 
@@ -2397,14 +2398,14 @@ WordPress Gutenburg Content Styling
 
 /* Images, Figures and Galleries */
 .the-content .wp-block-image a img {
-	transition: filter 0.5s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+	transition: filter 0.5s ease-in-out, scale 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 	&:hover {
 		filter: brightness(1.05);
-		transform: scale(1.01);
+		scale: 1.01;
 	}
 	&:active {
 		filter: brightness(0.95);
-		transform: scale(0.99);
+		scale: 0.99;
 	}
 }
 
@@ -2623,7 +2624,7 @@ Page Background embellishments
 	height: 6em;
     background-position: 50% -52%;
     background-size: cover;
-    transform: scaleY(-1);
+	scale: 1 -1;
     filter: blur(1px) grayscale(0.2) opacity(0.35);
 	@media (max-width: 850px) {
 		top: calc(var(--wp--custom--header-mobile-height) + 2px);

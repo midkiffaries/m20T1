@@ -22,30 +22,28 @@ body{
     font-family: ui-monospace, 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     overflow:hidden;
     text-align:center;
+    /* Animated scanlines */
+    &::before {
+        content:"";
+        position:fixed;
+        inset:0;
+        background:repeating-linear-gradient(0deg, #FFFFFF08 0, #FFFFFF08 1px, #0000 1px, #0000 3px), radial-gradient(circle at 50% 0,#0f62 0,#0000 70%);
+        pointer-events:none;
+        z-index:2;
+    }
+    /* CRT flicker */
+    &::after {
+        content:"";
+        position:fixed;
+        inset:0;
+        background:#fff1;
+        animation:flicker .15s infinite;
+        pointer-events:none;
+        z-index:3;
+    }
 }
 
-/* Animated scanlines */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:repeating-linear-gradient(0deg, #FFFFFF08 0, #FFFFFF08 1px, #0000 1px, #0000 3px), radial-gradient(circle at 50% 0,#0f62 0,#0000 70%);
-    pointer-events:none;
-    z-index:2;
-}
-
-/* CRT flicker */
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:#fff1;
-    animation:flicker .15s infinite;
-    pointer-events:none;
-    z-index:3;
-}
-
-.glitch-404{
+.glitch-404 {
     position:relative;
     display:inline-block;
     font-size:clamp(5rem,18vw,12rem);
@@ -54,32 +52,29 @@ body::after{
     text-transform:uppercase;
     color:#fff;
     text-shadow: 0 0 10px #fff1, 0 0 20px #fff1, 0 0 9px #fff4;
+    &::before, &::after {
+        content:attr(data-text);
+        position:absolute;
+        inset:0;
+        filter:blur(2px);
+    }
 }
 
-.glitch-404::before,
-.glitch-404::after{
-    content:attr(data-text);
-    position:absolute;
-    inset:0;
-}
-
-.glitch-404::before{
+.glitch-404::before {
     left:2px;
     color:var(--cyan);
     clip-path:polygon(0 0,100% 0,100% 45%,0 45%);
     animation:glitch1 .8s infinite linear alternate-reverse;
-    filter:blur(2px);
 }
 
-.glitch-404::after{
+.glitch-404::after {
     left:-2px;
     color:var(--magenta);
     clip-path:polygon(0 60%,100% 60%,100% 100%,0 100%);
     animation:glitch2 .6s infinite linear alternate-reverse;
-    filter:blur(2px);
 }
 
-.subtitle-404{
+.subtitle-404 {
     margin:20px 0 10px;
     font-size:2.3rem;
     text-transform:uppercase;
@@ -88,7 +83,7 @@ body::after{
     filter:drop-shadow(0 0 6px #fff6);
 }
 
-.message-404{
+.message-404 {
     color: var(--green);
     margin-bottom:35px;
     font-size:1.25rem !important;
@@ -96,25 +91,24 @@ body::after{
     text-shadow:0 0 5px #fff6;
 }
 
-.search-form input[type="search"]{
+.search-form input[type="search"] {
     background-color:#111d;
     border:1px solid #333d;
     color:#fff;
     min-width:280px;
     max-width:50vw;
+    &:focus {
+        border:1px solid var(--cyan);
+    }
 }
 
-.search-form input[type="search"]:focus{
-    border:1px solid var(--cyan);
-}
-
-.search-form input[type="submit"]{
+.search-form input[type="submit"] {
     background-color:var(--cyan);
     border:1px solid var(--cyan);
     padding:12px 20px;
 }
 
-.status-404{
+.status-404 {
     color:var(--green);
     margin-top:30px;
     font-size:1rem !important;
@@ -122,27 +116,25 @@ body::after{
     text-shadow:0 0 6px #fff6;
 }
 
-.home-btn-404{
+.home-btn-404 {
     display:inline-block;
     text-decoration:none;
     color:var(--green);
     border:1px solid var(--green);
     padding:12px 24px;
-    transition:.3s;
+    transition:all .3s ease-in-out;
     text-transform:uppercase;
     letter-spacing:.1em;
-}
-
-.home-btn-404:hover{
-    background:var(--green);
-    color:#000;
-    box-shadow:0 0 20px var(--green);
-}
-
-.home-btn-404:active{
-    background:var(--green);
-    color:#000;
-    box-shadow:0 0 8px var(--green);
+    &:hover {
+        background:var(--green);
+        color:#000;
+        box-shadow:0 0 20px var(--green);
+    }
+    &:active {
+        background:var(--green);
+        color:#000;
+        box-shadow:0 0 8px var(--green);
+    }
 }
 
 .terminal-output {
@@ -151,13 +143,12 @@ body::after{
     position: absolute;
     top: 1em;
     left: 1em;
-}
-
-.terminal-output::after {
-    content: "_";
-    margin-left: 2px;
-    font-weight: bold;
-    animation: blink 1s steps(1) infinite;
+    &::after {
+        content: "_";
+        margin-left: 2px;
+        font-weight: bold;
+        animation: blink 1s steps(1) infinite;
+    }
 }
 
 @keyframes blink {
@@ -165,21 +156,21 @@ body::after{
 }
 
 @keyframes glitch1{
-    0%{transform:translate(0);}
-    20%{transform:translate(-3px,2px);}
-    40%{transform:translate(3px,-2px);}
-    60%{transform:translate(-2px,1px);}
-    80%{transform:translate(2px,-1px);}
-    100%{transform:translate(0);}
+    0%{translate:0;}
+    20%{translate:-3px 2px;}
+    40%{translate:3px -2px;}
+    60%{translate:-2px 1px;}
+    80%{translate:2px -1px;}
+    100%{translate:0;}
 }
 
 @keyframes glitch2{
-    0%{transform:translate(0);}
-    20%{transform:translate(3px,-2px);}
-    40%{transform:translate(-3px,2px);}
-    60%{transform:translate(2px,1px);}
-    80%{transform:translate(-2px,-1px);}
-    100%{transform:translate(0);}
+    0%{translate:0;}
+    20%{translate:3px -2px;}
+    40%{translate:-3px 2px;}
+    60%{ttranslate:2px 1px;}
+    80%{translate:-2px -1px;}
+    100%{translate:0;}
 }
 
 @keyframes flicker{

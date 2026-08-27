@@ -142,7 +142,7 @@ document.addEventListener("keyup", (e) => {
                 content: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M16 9H9v7H7V9H0V7h7V0h2v7h7z'/></svg>");
                 margin: 0 .5em 0 0;
                 display: inline-block;
-                transition: transform .4s ease-in-out 0s;
+                transition: all .4s ease-in-out 0s;
                 transform-origin: 8px 8px;
             }
             @media (max-width: 849px) {
@@ -151,7 +151,7 @@ document.addEventListener("keyup", (e) => {
             }
         }
         .accordion > button.active::before {
-            transform: rotate(135deg);
+            rotate: 135deg;
         }
         .accordion > section {
             overflow: hidden;
@@ -244,7 +244,7 @@ document.addEventListener("keyup", (e) => {
         .embed-youtube .play-button, .embed-youtube .play-button::before {
             top: 50%;
             left: 50%;
-            transform: translate3d(-50%,-50%,0);
+            translate: -50% -50% 0;
         }
         .embed-youtube iframe {
             background-color: #222;
@@ -338,14 +338,14 @@ function getElOffsetY(el) {
         }
     }
     #btnMenu.active span {
-        transition: transform .25s ease-in-out;
+        transition: rotate .25s ease-in-out;
         width: 2.5em;
         margin: -3px;
         &:first-of-type {
-            transform: rotate(45deg);
+            rotate:45deg;
         }
         &:last-of-type {
-            transform: rotate(-45deg);
+            rotate:-45deg;
         }
     }
     `);
@@ -392,7 +392,7 @@ document.addEventListener("scroll", function() {
         backdrop-filter: blur(2px);
         &:hover {
             background-color: #0008; 
-            transform: scale(1.1);
+            scale: 1.1;
         }
         &:active {
             background-color: #0009;
@@ -514,7 +514,7 @@ function ConfirmModal(text, action) {
         max-width: 50vw;
         margin: 30vh auto 0 auto;
         padding: 1em;    
-        transform: translate(0, -100%);
+        translate: 0 -100%;
         background-color: #fff;
         box-shadow: 0 14px 14px -7px #000c, 5px 5px 18px 5px #0000;
         border: 1px solid #eee;
@@ -543,7 +543,7 @@ function ConfirmModal(text, action) {
         opacity: 1;
     }
     .dialog-open div {
-        transform: scale(1);
+        scale: 1;
     }
     .dialog-close {
         transition: opacity .15s ease-out 0s;
@@ -620,8 +620,9 @@ function HtmlModal(c, v) {
         border-radius: 8px;
 		background-color: #fdfdfd;
 		box-shadow: 0 10px 14px -7px #000b, 5px 5px 16px 5px #0000;
-		transform: scale(.7) translateY(-100px);
-		transition: transform .25s ease-in-out;
+        scale: 0.7;
+        translate: 0 -100px;
+		transition: translate .25s ease-in-out;
         overflow-y: auto;
         @media (max-width:812px) {
             max-width: 99%;
@@ -654,7 +655,8 @@ function HtmlModal(c, v) {
 	.dialog-open {
 		opacity: 1;
         & > div {
-            transform: scale(1);
+            scale: 1;
+            translate: 0;
         }
 	}
 	.dialog-close {

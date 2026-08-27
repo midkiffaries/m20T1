@@ -759,7 +759,7 @@
 						"css": "& .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff22;border-top:3px solid var(--wp--preset--color--primary);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#cadcff55;} & .wp-block-tab-panels{background-color:#cadcff22;margin-top:0;padding:0.5em 1em;}"
 					},
 					"tabs-outline": {
-						"css": "& .wp-block-tab-list-is-layout-flex{gap:3px;} & .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff99;border:2px solid var(--wp--preset--color--primary);border-bottom-color:#dee9ff;transform:translateY(2px);} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#a7bde8;} & .wp-block-tab-panels{border:2px solid var(--wp--preset--color--primary);background-color:#cadcff99;margin-top:0;padding:0.5em 1em;}"
+						"css": "& .wp-block-tab-list-is-layout-flex{gap:3px;} & .wp-block-tab-list button[aria-selected='true']{background-color:#cadcff99;border:2px solid var(--wp--preset--color--primary);border-bottom-color:#dee9ff;translate:0 2px;} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button:hover{background-color:#a7bde8;} & .wp-block-tab-panels{border:2px solid var(--wp--preset--color--primary);background-color:#cadcff99;margin-top:0;padding:0.5em 1em;}"
 					},
 					"tabs-pill": {
 						"css": "& .wp-block-tab-list-is-layout-flex{gap:1em;height:3em;} & .wp-block-tab-list button{background-color:#fff2;border-radius:2em;border:1px solid #0005;padding:0.25em 1em;} & .wp-block-tab-list button[aria-selected='true']::before{border:none;} & .wp-block-tab-list button[aria-selected='true']{background-color:var(--wp--preset--color--primary);color:#fff;box-shadow:0 3px 5px 0 var(--wp--preset--color--primary-pale);} & .wp-block-tab-list button:hover{background-color:var(--wp--preset--color--primary-pale);}"
@@ -925,13 +925,13 @@
 				"css": "& img {vertical-align:middle;height:85px;width:auto !important;margin:4px 9px;}",
 				"variations": {
 					"fill": {
-						"css": "border-radius:8px;&:hover{box-shadow:1px 0 10px 2px var(--wp--preset--color--primary);transform:scale(1.05);filter:brightness(1.15)} &:active{background-color:var(--wp--preset--color--primary-dark);box-shadow:none !important;transform:scale(1)}"
+						"css": "border-radius:8px;&:hover{box-shadow:1px 0 10px 2px var(--wp--preset--color--primary);scale:1.05;filter:brightness(1.15)} &:active{background-color:var(--wp--preset--color--primary-dark);box-shadow:none !important;scale:1}"
 					},
 					"outline": {
 						"css": "font-weight:500;border-width:3px;background-color:#fff1;backdrop-filter:blur(9px); &:hover{background-color:var(--wp--preset--color--secondary);border-color:var(--wp--preset--color--secondary);color:#fff !important;} &:active{transform:scale(0.95)}"
 					},
 					"button-plain": {
-						"css": "background-color:#0000;color:#000; &:hover{background-color:#0002;transform:scale(1.1);filter:brightness(1.15)} &:active{transform:scale(0.98)}"
+						"css": "background-color:#0000;color:#000; &:hover{background-color:#0002;scale:1.1;filter:brightness(1.15)} &:active{scale:0.98}"
 					},
 					"button-3d": {
 						"css": "box-shadow:0 2px 4px #0007,0 7px 13px -3px #0006,inset 0 -3px 0 #0004;border-radius:5px; &:hover{text-decoration:none!important} &:active{box-shadow:inset 2px 3px 7px -1px #0008}"

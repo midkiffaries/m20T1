@@ -8,9 +8,6 @@
 
 <body <?=body_class(); // Add classes to the body tag ?> itemscope itemtype="https://schema.org/<?=custom_page_scheme(get_the_ID());?>">
 
-<!-- <div class="safari-header"></div> -->
-<!-- <div class="noise-overlay"></div> -->
-
 <?=wp_body_open(); // WordPress body includes ?>
 
 <div class="body-container">

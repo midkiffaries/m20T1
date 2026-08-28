@@ -35,6 +35,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 
 	/* Custom Theme Variables */
 	--smooth-transition: cubic-bezier(.22,1,.36,1);
+	--overlay-grain: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'><defs><filter id='a' width='140%' height='140%' x='-20%' y='-20%' color-interpolation-filters='sRGB' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse'><feTurbulence width='100%' height='100%' x='0%' y='0%' baseFrequency='.5' numOctaves='2' result='turbulence' seed='2' stitchTiles='stitch' type='fractalNoise'/><feColorMatrix width='100%' height='100%' x='0%' y='0%' in='turbulence' result='colormatrix' type='saturate' values='0'/><feComponentTransfer width='100%' height='100%' x='0%' y='0%' in='colormatrix' result='componentTransfer'><feFuncR slope='3' type='linear'/><feFuncG slope='3' type='linear'/><feFuncB slope='3' type='linear'/></feComponentTransfer><feColorMatrix width='100%' height='100%' x='0%' y='0%' in='componentTransfer' result='colormatrix2' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 17 -9'/></filter></defs><rect width='100%' height='100%' fill='transparent' filter='url(%23a)' opacity='.06' style='mix-blend-mode:soft-light'/></svg>");
 	--underline-bg: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 224 12'><path d='m107 0 68 1 45 2c9 3-2 9-9 6l-50-1H78c-21 0-41 0-61 2-5 3-20 3-16-5 7-4 16-2 24-3l52-2h30z' fill='%23e65100'/></svg>");
 	--sticky-blog-post-bg: radial-gradient(circle at 47% 98%, #ffffff05 0%, #ffffff05 3%,transparent 3%, transparent 100%),radial-gradient(circle at 53% 90%, #ffffff05 0%, #ffffff05 3%,transparent 3%, transparent 100%),radial-gradient(circle at 17% 34%, #ffffff08 0%, #ffffff08 3%,transparent 3%, transparent 100%),radial-gradient(circle at 85% 36%, #ffffff08 0%, #ffffff08 3%,transparent 3%, transparent 100%),radial-gradient(circle at 22% 21%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 99% 30%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 82% 84%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 62% 49%, #ffffff05 0%, #ffffff05 7%,transparent 7%, transparent 100%),radial-gradient(circle at 85% 14%, #ffffff05 0%, #ffffff05 7%,transparent 7%, transparent 100%),radial-gradient(circle at 89% 22%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 37% 65%, #ffffff03 0%, #ffffff03 7%,transparent 7%, transparent 100%),radial-gradient(circle at 57% 27%, #ffffff08 0%, #ffffff08 7%,transparent 7%, transparent 100%),radial-gradient(circle at 95% 91%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 85% 34%, #ffffff05 0%, #ffffff05 5%,transparent 5%, transparent 100%),radial-gradient(circle at 7% 65%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 69% 41%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 33% 2%, #ffffff03 0%, #ffffff03 5%,transparent 5%, transparent 100%),radial-gradient(circle at 57% 84%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),radial-gradient(circle at 80% 86%, #ffffff03 0%, #ffffff03 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 45%, #ffffff08 0%, #ffffff08 5%,transparent 5%, transparent 100%),linear-gradient(45deg, #40a5ff,#11436f);
 	--featured-img-bg-color: linear-gradient(135deg, #205380 0%,#40a5ff 82%,#205380 100%);
@@ -2335,23 +2336,6 @@ Child Page Section
 
 
 /************************ 
-Scroll Fade-in Styling
-*************************/
-
-.fade-in {
-	opacity: 0;
-	translate: 0 25px;
-	transition: opacity 0.8s ease-out, translate 0.8s ease-out;
-	will-change: opacity, translate;
-}
-
-.fade-in.is-visible {
-	opacity: 1;
-	translate: 0;
-}
-
-
-/************************ 
 Search Modal Styling
 *************************/
 
@@ -2760,6 +2744,22 @@ Page Background embellishments
 	}
 }
 
+/************************ 
+Scroll Fade-in Styling
+*************************/
+
+.fade-in {
+	opacity: 0;
+	translate: 0 25px;
+	transition: opacity 0.8s ease-out, translate 0.8s ease-out;
+	will-change: opacity, translate;
+}
+
+.fade-in.is-visible {
+	opacity: 1;
+	translate: 0;
+}
+
 /* Experimental */
 /* .safari-header {
 	background-color: var(--wp--preset--color--primary-dark);
@@ -2767,15 +2767,14 @@ Page Background embellishments
 	height: 6px;
 	position: fixed;
 }
-
-.noise-overlay {
+*/
+/* .noise-overlay {
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
 	pointer-events: none;
-	z-index: 101;
-	opacity: 0.4;
-	background: transparent url('http://localhost/wordpress/wp-content/uploads/2026/08/noisy-texture.png') repeat 0 0;
+	z-index: 105;
+	background: transparent var(--overlay-grain) repeat 0 0;
 } */

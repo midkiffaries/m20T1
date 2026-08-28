@@ -620,9 +620,9 @@ function HtmlModal(c, v) {
         border-radius: 8px;
 		background-color: #fdfdfd;
 		box-shadow: 0 10px 14px -7px #000b, 5px 5px 16px 5px #0000;
-        scale: 0.7;
+        scale: 0.8;
         translate: 0 -100px;
-		transition: translate .25s ease-in-out;
+		transition: all .25s ease-in-out;
         overflow-y: auto;
         @media (max-width:812px) {
             max-width: 99%;

@@ -595,16 +595,11 @@ Main Site Structural Layout
 /* Sidebar Layout */
 .page-sidebar {
 	padding: 0.8em;
-	margin-top: 1em;
+	margin: 1em auto 2em;
 	@media (max-width: 849px) {
 		width: 100% !important;
 		padding: 0;
 	}
-}
-
-/* Sidebar Accordion */
-.accordion > button {
-	display: none;
 }
 
 

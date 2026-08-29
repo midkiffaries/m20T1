@@ -129,17 +129,6 @@ address {
 	line-height: inherit;
 }
 
-/* Clearfix */
-.clearfix::after,
-header::after,
-main::after,
-footer::after,
-figure::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-
 b,
 strong {
 	font-weight: bolder;
@@ -190,7 +179,6 @@ menu {
 
 code,
 kbd,
-samp,
 pre {
 	direction: ltr;
 	unicode-bidi: bidi-override;
@@ -350,29 +338,6 @@ label {
 	}
 }
 
-output {
-	font-weight: bold;
-	margin: auto 0.2em;
-}
-
-fieldset {
-	width: auto;
-	padding: 0 0.5em 0.5em;
-	border: 1px solid currentColor;
-}
-
-legend {
-	padding: 0 0.3rem;
-	max-width: 100%;
-	white-space: normal;
-	margin-bottom: 0.2rem;
-	line-height: inherit;
-	font-size: 1.1rem;
-	& + * {
-		clear: left;
-	}
-}
-
 [type='number'] {
 	appearance: textfield;
 	&::-webkit-inner-spin-button {
@@ -446,6 +411,17 @@ legend {
 			filter: invert(1);
 		}
 	}
+}
+
+/* Clearfix */
+.clearfix::after,
+header::after,
+main::after,
+footer::after,
+figure::after {
+	content: "";
+	clear: both;
+	display: table;
 }
 
 /* Firefox workaround */

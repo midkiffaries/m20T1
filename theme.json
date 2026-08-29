@@ -805,10 +805,10 @@
 						"css": "shape-outside:circle(50%);shape-margin:.6em;margin:0 !important; & figcaption{display:none !important}"
 					},
 					"img-book": {
-						"css": "& {--book-width:250px;--book-height:200px;position:relative;transform:perspective(75em) rotateY(-30deg);height:auto;width:var(--book-width);transition:all 0.5s ease-in-out;margin:1em 0.5em}&:hover{transform:perspective(75em) rotateY(0deg);filter:brightness(1.08);box-shadow:0 6px 10px -1px #0002}& img {width:var(--book-width);height:var(--book-height);border-radius:6px;background-color:#aaa;box-shadow:3px 0 3px 0 #0008;transition:all 0.5s ease;object-fit:cover;}&:hover img {border-radius:4px}&::after {content: ' ';display:block;position:absolute;top:12px;left:1px;width:calc(var(--book-width) + 8px);height:calc(var(--book-height) - 32px);background-color:#eee;z-index:-1;border-radius:1px;box-shadow:1px 0 1px 1px #ccc,1px 0 1px 2px #fff,1px 0 1px 3px #bbb, 1px 0 1px 4px #fff,1px 0 1px 5px #aaa,1px 1px 0 8px #555,1px 5px 5px 9px #0001;transform:perspective(100em) rotateY(-25deg);transition:all 0.5s ease}&:hover::after {transform:perspective(75em) rotateY(0deg);width:calc(var(--book-width) - 10%);box-shadow:none;left:8px}"
+						"css": "--book-width:250px;--book-height:200px;position:relative;transform:perspective(75em) rotateY(-30deg);height:auto;width:var(--book-width);transition:all .5s ease-in-out;margin:1em .5em; &:hover{transform:perspective(75em) rotateY(0deg);filter:brightness(1.08);box-shadow:0 6px 10px -1px #0002}& img {width:var(--book-width);height:var(--book-height);border-radius:6px;background-color:#aaa;box-shadow:3px 0 3px 0 #0008;transition:all 0.5s ease;object-fit:cover;}&:hover img {border-radius:4px}&::after {content: ' ';display:block;position:absolute;top:12px;left:1px;width:calc(var(--book-width) + 8px);height:calc(var(--book-height) - 28px);background-color:#eee;z-index:-1;border-radius:1px;box-shadow:1px 0 1px 1px #ccc,1px 0 1px 2px #fff,1px 0 1px 3px #bbb, 1px 0 1px 4px #fff,1px 0 1px 5px #aaa,1px 1px 0 8px #555,1px 5px 5px 9px #0001;transform:perspective(100em) rotateY(-25deg);transition:all 0.5s ease}&:hover::after {transform:perspective(75em) rotateY(0deg);width:calc(var(--book-width) - 10%);box-shadow:none;left:8px}"
 					},
 					"img-book-portrait": {
-						"css": "& {--book-width:200px;--book-height:250px;position:relative;transform:perspective(75em) rotateY(-30deg);height:var(--book-height);width:var(--book-width);filter:brightness(0.95);transition:all 0.5s ease-in-out;margin:1em 0.5em}&:hover{transform:perspective(75em) rotateY(0deg);filter:brightness(1.09);box-shadow:0 6px 10px -1px #0005}& img{width: var(--book-width);height:var(--book-height);border-radius:6px;background-color:#aaa;box-shadow:3px 0 3px 0 #0007;transition:all 0.5s ease;object-fit:cover}&:hover img{border-radius:4px}&::after{content:' ';display:block;position:absolute;top:12px;left:1px;width:calc(var(--book-width) + 12px);height:calc(var(--book-height) - 26px);background-color:#eee;z-index:-1;border-radius:1px;box-shadow:1px 0 1px 1px #ccc, 1px 0 1px 2px #fff,1px 0 1px 3px #bbb,1px 0 1px 4px #fff,1px 0 1px 5px #aaa,1px 1px 0 8px #555,1px 5px 5px 9px #0001;transform:perspective(100em) rotateY(-25deg);transition:all 0.5s ease}&:hover::after{transform:perspective(75em) rotateY(0deg);width:calc(var(--book-width) - 10%);box-shadow:none;left:8px}"
+						"css": "--book-width:200px;--book-height:250px;position:relative;transform:perspective(75em) rotateY(-30deg);height:var(--book-height);width:var(--book-width);filter:brightness(0.95);transition:all .5s ease-in-out;margin:1em 0.5em; &:hover{transform:perspective(75em) rotateY(0deg);filter:brightness(1.09);box-shadow:0 6px 10px -1px #0005}& img{width: var(--book-width);height:var(--book-height);border-radius:6px;background-color:#aaa;box-shadow:3px 0 3px 0 #0007;transition:all 0.5s ease;object-fit:cover}&:hover img{border-radius:4px}&::after{content:' ';display:block;position:absolute;top:12px;left:1px;width:calc(var(--book-width) + 12px);height:calc(var(--book-height) - 26px);background-color:#eee;z-index:-1;border-radius:1px;box-shadow:1px 0 1px 1px #ccc, 1px 0 1px 2px #fff,1px 0 1px 3px #bbb,1px 0 1px 4px #fff,1px 0 1px 5px #aaa,1px 1px 0 8px #555,1px 5px 5px 9px #0001;transform:perspective(100em) rotateY(-25deg);transition:all 0.5s ease}&:hover::after{transform:perspective(75em) rotateY(0deg);width:calc(var(--book-width) - 10%);box-shadow:none;left:8px}"
 					}
 				}
 			},
@@ -868,7 +868,11 @@
 				}
 			},
 			"core/preformatted": {
-				"css": "font-family:var(--wp--preset--font-family--courier-prime);white-space:pre-wrap;word-break:break-word;padding:1em;overflow-x:auto"
+				"css": "white-space:pre-wrap;word-break:break-word;padding:1em;overflow-x:auto",
+				"typography": {
+					"lineHeight": "1.25",
+					"fontFamily": "var:preset|font-family|courier-prime"
+				}
 			},
 			"core/media-text": {
 				"variations": {
@@ -881,7 +885,7 @@
 				}
 			},
 			"core/cover": {
-				"css": "& {position:relative;overflow:hidden;display:block;z-index:0}",
+				"css": "position:relative;overflow:hidden;display:block;z-index:0",
 				"typography": {
 					"fontSize": "1.2rem",
 					"lineHeight": "1.4"
@@ -893,12 +897,7 @@
 						"left": "2rem",
 						"right": "2rem"
 					}
-				},
-				"variations": {
-					"cover-stripe-fade": {
-						"css": "& {background-color:var(--wp--preset--color--primary-pale);background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"50\" fill=\"%23f00\"/></svg>');background-size:cover;background-position:center center;}"
-					}
-				}				
+				}		
 			},
 			"core/footnotes": {
 				"css": "& li::marker{color:var(--wp--preset--color--primary-dark)}",
@@ -1035,10 +1034,13 @@
 				}
 			},
 			"core/details": {
-				"css": "& summary{font-weight:600;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:0.3rem 1.7rem}"
+				"css": "& summary{font-weight:600;padding:5px;display:list-item} & summary > * {display:inline;cursor:pointer} & > *:not(summary){margin:.3rem 1.7rem}"
 			},
 			"core/verse": {
-				"css": "& {font-family:var(--wp--preset--font-family--georgia-font)}"
+				"typography": {
+					"fontFamily": "var:preset|font-family|lora",
+					"fontSize": "var:preset|font-size|medium"
+				}
 			},
 			"core/navigation": {
 				"elements": {
@@ -1107,7 +1109,10 @@
 				"css": ""
 			},
 			"core/tag-cloud": {
-				"css": "&{line-height:1.1 !important;letter-spacing:-1px}"
+				"typography": {
+					"lineHeight": "1.1",
+					"letterSpacing": "-1px"
+				}
 			},
 			"core/categories": {
 				"css": "",

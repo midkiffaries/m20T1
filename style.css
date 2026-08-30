@@ -2083,10 +2083,10 @@ Comments Section
 
 .required::after {
 	content: "★" / "Required field";
-	font-size: 0.8em;
-	color: goldenrod;
+	font-size: 1em;
+	color: var(--wp--preset--color--secondary, #daa520);
 	vertical-align: 2px;
-	margin-left: 3px;
+	margin-left: 2px;
 }
 
 .comments-closed p {

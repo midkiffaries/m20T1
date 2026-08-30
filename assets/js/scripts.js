@@ -333,15 +333,15 @@ document.addEventListener("scroll", function() {
         &:active {
             background-color: #0009;
         }
+        &.scActive {
+            visibility: visible;
+            opacity: 1;
+        }
         @media (max-width: 812px) {
             display: none;
         }
         @media only print {
             display: none;
-        }
-        &.scActive {
-            visibility: visible;
-            opacity: 1;
         }
 	}
 	`);
@@ -356,144 +356,6 @@ function scrollToTop() {
 /**************************
  * Modals and Dialogs Logic
 **************************/
-
-// Display Alert Modal Box -- text: displayed text | bgColor: background-color
-function AlertModal(text, bgColor) {
-    const dialog = document.createElement("dialog"), 
-        st = document.createElement("style");
-
-    // Main dialog box
-    dialog.setAttribute("open", "open");
-    dialog.setAttribute("class", "dialog-alert");
-    dialog.setAttribute("role", "alertdialog");
-    dialog.setAttribute("onclick", `closeModals('dialog-alert')`);
-    dialog.appendChild(document.createTextNode(text));
-
-    // Append style
-    st.textContent = (`
-    .dialog-alert {
-        border: none;
-        width: 100%;
-        height: 2.8em;
-        padding: .8em;
-        text-align: center;
-        font-size: 1.4em;
-        opacity: 0;
-        transition: opacity .15s ease-in-out 0s;
-        background-color: ${bgColor};
-    }
-    .dialog-open {
-        opacity: 1;
-    }   
-    .dialog-close {
-        transition: opacity .15s ease-out 0s;
-        opacity: 0;
-    }    
-    `);
-    dialog.appendChild(st);
-
-    // Append to page body
-    document.body.appendChild(dialog);
-
-    // Display dialog
-    setTimeout(() => { dialog.classList.toggle("dialog-open") }, 100);
-    setTimeout(() => { 
-        dialog.classList.toggle("dialog-open"); 
-        closeModals('dialog-alert') 
-    }, 6000);
-}
-
-// Display Confirmation Modal Box -- text: displayed text | action: Yes button's action/function
-function ConfirmModal(text, action) {
-    const style = document.createElement("style"),
-        dialog = document.createElement("dialog"),
-        div = document.createElement("div"),
-        p = document.createElement("p"),
-        buttonYes = document.createElement("button"),
-        buttonNo = document.createElement("button");
-
-    // Dialog attributes
-    dialog.setAttribute("open", "open");        
-    dialog.setAttribute("class", "dialog-confirm");
-    dialog.setAttribute("role", "alertdialog");
-    dialog.appendChild(div);
-
-    // Text
-    div.appendChild(p);
-    p.appendChild(document.createTextNode(text));
-
-    // Button Yes
-    div.appendChild(buttonYes);
-    buttonYes.appendChild(document.createTextNode("Yes"));
-    buttonYes.setAttribute("onclick", "closeModals('dialog-confirm');" + action);
-    buttonYes.setAttribute("type", "button");
-    buttonYes.setAttribute("autofocus", "autofocus");
-
-    // Button No
-    div.appendChild(buttonNo);
-    buttonNo.appendChild(document.createTextNode("No"));
-    buttonNo.setAttribute("onclick", "closeModals('dialog-confirm')");
-    buttonNo.setAttribute("type", "button");
-    
-    // Append style
-    style.textContent = (`
-    .dialog-confirm {
-        border: none;
-        width: 100vw;
-        height: 100%;
-        background-color: #fff9;
-        opacity: 0;
-        transition: opacity .16s ease-in-out 0s;
-        backdrop-filter: grayscale(40%);
-    }
-    .dialog-confirm div {
-        max-width: 50vw;
-        margin: 30vh auto 0 auto;
-        padding: 1em;    
-        translate: 0 -100%;
-        background-color: #fff;
-        box-shadow: 0 14px 14px -7px #000c, 5px 5px 18px 5px #0000;
-        border: 1px solid #eee;
-        text-align: right;
-        overscroll-behavior-y: contain;
-        @media (max-width:812px) {
-            max-width: 99%;
-        }
-    }
-    .dialog-confirm p {
-        margin-top: 2px;
-        font-size: 1.2em;
-        text-align: left;
-        &::before {
-            content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><path d='M20.9 14.8q1.5-1.5 1.5-3.6 0-2.6-1.9-4.5T16 4.8q-2.6 0-4.5 1.9t-1.9 4.5h3.2q0-1.3 1-2.3 1-1 2.2-1 1.3 0 2.3 1 1 1 1 2.3 0 1.3-1 2.2l-2 2q-1.9 2.1-1.9 4.6v.8h3.2q0-2.5 1.9-4.5zm-3.3 12.4V24h-3.2v3.2zM16 0q6.6 0 11.3 4.7Q32 9.4 32 16q0 6.6-4.7 11.3Q22.6 32 16 32q-6.6 0-11.3-4.7Q0 22.6 0 16 0 9.4 4.7 4.7 9.4 0 16 0z'/></svg>") / "Close Icon";
-            padding: 0 .6em 1em 0;
-            display: block;
-            float: left;
-        }
-    }
-    .dialog-confirm button {
-        margin-right: .9em;
-        min-width: 5em;
-    }   
-    .dialog-open {
-        opacity: 1;
-    }
-    .dialog-open div {
-        scale: 1;
-    }
-    .dialog-close {
-        transition: opacity .15s ease-out 0s;
-        opacity: 0;
-    }
-    `);
-    dialog.appendChild(style); 
-    
-    // Append to page body
-    document.body.appendChild(dialog);
-
-    // Display dialog with transition
-	setTimeout(() => { dialog.classList.add("dialog-open") }, 140);
-}
 
 // Load an external JS document and display it in a modal window
 function HtmlModal(c, v) {
@@ -613,9 +475,8 @@ function HtmlModal(c, v) {
 
 // Close all open dialog nodes specific "c = ClassName"
 function closeModals(c) {
-    const dialog = document.getElementsByClassName(c), 
+    const dialog = document.getElementsByClassName(c),
         l = dialog.length;
-    
     if (l) {
         for (let i = 0; i < l; i++) {
             document.body.classList.remove("disable-scroll");

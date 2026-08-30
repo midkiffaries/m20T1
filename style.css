@@ -320,8 +320,13 @@ button,
 	font-size: inherit;
 	margin: 0;
 	accent-color: var(--wp--preset--color--primary, #333);
-	width: 1.1rem;
-	height: 1rem;
+	width: 1.4rem;
+	height: 1.4rem;
+	vertical-align: -2px;
+	&:hover {
+		outline: 2px solid var(--wp--preset--color--primary-dark, #666);
+		outline-offset: 1px;
+	}
 }
 
 textarea {

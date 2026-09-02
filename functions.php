@@ -106,10 +106,10 @@ add_action( 'init', function(){
         'name'  => 'list-diamond',
         'label' => __( 'Diamonds', 'm20t1' )
     ]);
-    // List: Triangles
+    // List: Chevron
     register_block_style( 'core/list', [
-        'name'  => 'list-triangle',
-        'label' => __( 'Triangles', 'm20t1' )
+        'name'  => 'list-chevron',
+        'label' => __( 'Chevron', 'm20t1' )
     ]);
     // List: Arrows
     register_block_style( 'core/list', [
@@ -126,15 +126,15 @@ add_action( 'init', function(){
         'name'  => 'list-checkmarks',
         'label' => __( 'Checkmarks', 'm20t1' )
     ]);
-    // List: Circle Checks
+    // List: Round Checks
     register_block_style( 'core/list', [
-        'name'  => 'list-checks',
-        'label' => __( 'Circle Checks', 'm20t1' )
+        'name'  => 'list-checkround',
+        'label' => __( 'Round Checks', 'm20t1' )
     ]);
-    // List: Checkbox
+    // List: Circled Checks
     register_block_style( 'core/list', [
-        'name'  => 'list-checkbox',
-        'label' => __( 'Checkboxes', 'm20t1' )
+        'name'  => 'list-checkcircle',
+        'label' => __( 'Circled Checks', 'm20t1' )
     ]);
     // List: Dashes
     register_block_style( 'core/list', [

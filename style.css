@@ -356,6 +356,8 @@ label {
 	select:not([multiple]):not([size]), ::picker(select) {
 		appearance: base-select;
 		vertical-align: middle;
+		height: 2.5rem;
+		padding-top: 3px;
 	}
 	select:not([multiple]):not([size])::picker-icon {
 		content:"";
@@ -390,7 +392,7 @@ label {
 	:open::picker(select) {
 		height: auto;
 		max-height: 100%;
-		transition: all 0.25s ease-in-out;
+		transition: all .25s ease-in-out;
 		margin: -5px auto .2em;
 		opacity: 1;
 		@starting-style {

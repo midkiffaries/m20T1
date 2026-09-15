@@ -1,6 +1,6 @@
 # Changes to m20T1 WordPress Theme
 
-### 2.1 Live (August XX, 2026)
+### 2.1 Live (September 1, 2026)
 
 * Support for Wordpress 7.1.
 * Rebuilt the header icons and the dark/light mode switch.

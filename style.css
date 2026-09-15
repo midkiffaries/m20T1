@@ -7,7 +7,7 @@ Description: m20T1 is a light-weight WordPress theme that I created from scratch
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Version: 2.1
+Version: 2.2
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: m20t1
@@ -390,6 +390,7 @@ label {
 	:open::picker(select) {
 		height: auto;
 		max-height: 100%;
+		transition: all 0.25s ease-in-out;
 		margin: -5px auto .2em;
 		opacity: 1;
 		@starting-style {

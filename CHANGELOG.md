@@ -1,5 +1,9 @@
 # Changes to m20T1 WordPress Theme
 
+## 2.2 Live (XXXX XX, 20XX)
+
+* Bug fixes.
+
 ### 2.1 Live (September 1, 2026)
 
 * Support for Wordpress 7.1.

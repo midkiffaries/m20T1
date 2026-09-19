@@ -2122,8 +2122,7 @@ Page Pagination Section
 	margin: 1em 0 3em;
 }
 
-.blog-pagination nav a,
-.blog-pagination .pagination-select {
+.blog-pagination nav a {
 	background-color: transparent;
 	text-decoration: none;
 	display: inline-block;
@@ -2148,14 +2147,8 @@ Page Pagination Section
 }
 
 .blog-pagination .pagination-select {
-	border-width: 0 0 2px;
 	margin: 0 0.6em;
-	&:focus, &:hover {
-		color: #fff;
-		background-color: var(--wp--preset--color--secondary);
-		border-bottom-color: #0006;
-		background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M6.6 18l4.5-4.6 2 2L6.6 22 0 15.4l2-2zm0-14L2 8.6l-2-2L6.6 0 13 6.6l-2 2z' fill='white'/></svg>");
-	}
+	border: 2px solid #0003;
 }
 
 .single-blog-post-nav div a {

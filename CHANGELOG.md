@@ -2,6 +2,7 @@
 
 ## 2.2 Live (XXXX XX, 20XX)
 
+* Corner bracket button style.
 * Bug fixes.
 
 ### 2.1 Live (September 1, 2026)

@@ -328,6 +328,11 @@ add_action( 'init', function(){
         'name'  => 'button-glass',
         'label' => __( 'Glass', 'm20t1' )
     ]);
+    // Button: Bracket Style
+    register_block_style( 'core/button', [
+        'name'  => 'button-bracket',
+        'label' => __( 'Bracket', 'm20t1' )
+    ]);
     // Accordion: Right Arrow style
     register_block_style( 'core/accordion-item', [
         'name'  => 'accordion-arrow',

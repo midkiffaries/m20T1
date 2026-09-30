@@ -1,51 +1,20 @@
 <?php // Global Contact Form ?>
 <?php defined( 'ABSPATH' ) || exit; // Exit if accessed directly ?>
-<div class="email-block" aria-label="Contact Form">
-	
-	<?php if (get_option('contact_shortcode')) : ?>
-		<?=apply_shortcodes(wp_strip_all_tags(get_option('contact_shortcode')));?>
+
+<?php if (get_option('contact_shortcode')) : ?>
+	<?=apply_shortcodes(wp_strip_all_tags(get_option('contact_shortcode')));?>
+<?php else : ?>
+	<?php if (comments_open(get_option('page_on_front'))) : ?>
+	<?=comment_form([
+		'class_form'   => 'contact-form-modal',
+		'label_submit' => __( 'Send Message', 'm20t1' ),
+		'class_submit' => 'submit-button wp-block-button__link wp-element-button',
+		'title_reply'  => __( 'Send me a message', 'm20t1' ),
+		'comment_notes_before' => '',
+		'comment_notes_after' => '',
+		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '<span class="required">*</span></label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..." required></textarea></p>',
+	], get_option('page_on_front') ); // ID of the site's homepage ?>
 	<?php else : ?>
-		<?php if (comments_open(get_option('page_on_front'))) : ?>
-		<?=comment_form([
-			'label_submit' => __( 'Send Message', 'm20t1' ),
-			'class_submit' => 'submit-button wp-block-button__link wp-element-button',
-			'title_reply' => __( 'Send me a message', 'm20t1' ),
-			'comment_notes_before' => '',
-			'comment_notes_after' => '',
-			'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Message', 'noun' ) . '<span class="required">*</span></label><textarea id="comment" name="comment" aria-required="true" placeholder="What would you like to tell me..." required></textarea></p>',
-		], get_option('page_on_front') ); // ID of the site's homepage ?>
-		<style>
-			.email-block h3 {
-				margin: 0;
-			}
-			.email-block .comment-form {
-				background: none;
-				padding: 0;
-			}
-			.email-block .comment-form-url {
-				display: none;
-			}
-			.email-block .required {
-				color: #0000;
-			}
-			.email-block [type="text"],
-			.email-block [type="email"],
-			.email-block textarea {
-				width: 100%;
-				font-size: 1.2rem;
-			}
-			.email-block textarea {
-				height: 10em;
-				max-height: 20em;
-			}
-			.email-block .comment-form-cookies-consent label {
-				display: inline-block;
-				text-transform: none;
-			}
-		</style>
-		<?php else : ?>
-			<p>🚫 <i>The contact form is closed on this page.</i></p>
-		<?php endif; ?>
+		<p>🚫 <i>The contact form is closed on this page.</i></p>
 	<?php endif; ?>
-	
-</div>
+<?php endif; ?>

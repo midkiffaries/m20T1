@@ -2,7 +2,7 @@
 
 ## 2.2 Live (December XX, 2026)
 
-* Support for Wordpress 7.2.
+* Support for WordPress 7.2.
 * Corner bracket button style.
 * Added a Text Shadow typography option for most block elements.
 * Removal of the text shadow specific preset styles from paragraph and headings.
@@ -10,7 +10,7 @@
 
 ### 2.1 Live (September 1, 2026)
 
-* Support for Wordpress 7.1.
+* Support for WordPress 7.1.
 * Rebuilt the header icons and the dark/light mode switch.
 * Retired my custom lightbox mechanism in favor of a heavily modified vanilla WP lightbox.
 * Initial support for my theme's custom icon set.

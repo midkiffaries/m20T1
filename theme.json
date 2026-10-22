@@ -304,6 +304,7 @@
 		"typography": {
 			"fluid": true,
 			"customFontSize": true,
+			"defaultFontSizes": false,
 			"dropCap": true,
 			"fontStyle": true,
 			"fontWeight": true,
@@ -313,7 +314,7 @@
 			"textDecoration": true,
 			"textTransform": true,
 			"writingMode": true,
-			"defaultFontSizes": false,
+			"textShadow": true,
 			"fontFamilies": [
 				{
 					"name": "Montserrat",
@@ -419,6 +420,44 @@
 					"size": "3.6rem",
 					"name": "X-Extra Large",
 					"slug": "xx-large"
+				}
+			],
+			"defaultTextShadowPresets": false,
+			"textShadowPresets": [
+				{
+					"name": "Soft",
+					"slug": "soft",
+					"textShadow": ".1rem .1rem .1rem #0009,.2rem .2rem .3rem #0003"
+				},
+				{
+					"name": "Hard",
+					"slug": "hard",
+					"textShadow": ".08rem .08rem 0 #000a"
+				},
+				{
+					"name": "Glow",
+					"slug": "glow",
+					"textShadow": "0 0 0.3125rem #fff,0 0 0.625rem #fff,0 0 0.9375rem #fff,0 0 1.25rem #FF2D95,0 0 1.875rem #FF2D95,0 0 2.5rem #FF2D95,0 0 3.125rem #FF2D95,0 0 4.6875rem #FF2D95,.125rem .125rem .125rem #0000"
+				},
+				{
+					"name": "Raised",
+					"slug": "raised",
+					"textShadow": "-1px 1px 0 #666,-2px 2px 0 #555,-3px 3px 0 #444,-4px 4px 0 #333,-5px 5px 4px #0008"
+				},
+				{
+					"name": "3-D",
+					"slug": "three-d",
+					"textShadow": "-4px 2px 2px #e9145255,4px -1px 2px #61e3e999"
+				},
+				{
+					"name": "Thick",
+					"slug": "Thick",
+					"textShadow": "0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px #0001,0 0 5px #0001,0 1px 3px #0005,0 3px 5px #0003,0 5px 10px #0004,0 10px 10px #0003,0 20px 20px #0002"
+				},
+				{
+					"name": "Soft White",
+					"slug": "soft-white",
+					"textShadow": ".1rem .1rem .1rem #fff,.2rem .2rem .3rem #fffb"
 				}
 			]
 		}

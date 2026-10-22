@@ -1,8 +1,11 @@
 # Changes to m20T1 WordPress Theme
 
-## 2.2 Live (XXXX XX, 20XX)
+## 2.2 Live (December XX, 2026)
 
+* Support for Wordpress 7.2.
 * Corner bracket button style.
+* Added a Text Shadow typography option for most block elements.
+* Removal of the text shadow specific preset styles from paragraph and headings.
 * Bug fixes and more code clean-up.
 
 ### 2.1 Live (September 1, 2026)

@@ -591,6 +591,7 @@ add_filter( 'register_block_type_args', function( $args ) {
     if ( in_array( $args['name'], $blocks, true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter options
+        $args['supports']['typography']['textShadow'] = true; // Add text shadow option
         //$args['supports']['spacing'] = ['margin' => true, 'padding' => true, 'blockGap' => false]; // Add padding/margin options
     }    
     return $args;

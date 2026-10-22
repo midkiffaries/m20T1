@@ -25,7 +25,7 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 
 // Set the additional post types with a new line for each type
 define( 'ADDITIONAL_POST_TYPE', [ 
-    /* [ 'Title (singular)', Title (plural)', 'dashicons-portfolio (https://developer.wordpress.org/resource/dashicons/)', 'Subtitle' ], */
+    /* [ 'Title (singular)', Title (plural)', 'core-admin/sites (https://github.com/WordPress/wordpress-develop/pull/12270)', 'Subtitle' ], */
     [ 'Portfolio', 'Portfolios', 'dashicons-portfolio', 'My portfolio of work that I have done professionally' ],
     // Note: Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type slug
 ]);

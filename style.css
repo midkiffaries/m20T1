@@ -1569,6 +1569,11 @@ img.wp-smiley, img.emoji {
 	margin-top: 0.8em;
 }
 
+.alignfull {
+	width: 100vw;
+	max-width: 1250px;
+}
+
 .alignright {
 	float: right;
 	margin-left: 0.5rem;

@@ -26,7 +26,7 @@ define( 'SHORT_TEXT_LENGTH', 60 ); // Number of words
 // Set the additional post types with a new line for each type
 define( 'ADDITIONAL_POST_TYPE', [ 
     /* [ 'Title (singular)', Title (plural)', 'core-admin/sites (https://github.com/WordPress/wordpress-develop/pull/12270)', 'Subtitle' ], */
-    [ 'Portfolio', 'Portfolios', 'dashicons-portfolio', 'My portfolio of work that I have done professionally' ],
+    [ 'Portfolio', 'Portfolios', 'core/file', 'My portfolio of work that I have done professionally' ],
     // Note: Rename or create 'archive-portfolio.php' and 'single-portfolio.php' if changing the default post type slug
 ]);
 
@@ -671,7 +671,7 @@ add_action( 'wp_enqueue_scripts', function(){
     //wp_deregister_style( 'wp-block-library' );
 });
 
-// Dashicons - Dashicons [class="dashicons dashicons-google"] 
+// Deactivate Dashicons - Dashicons [class="dashicons dashicons-google"]
 add_action( 'wp_print_styles', function(){
     if (!is_admin_bar_showing() && !is_customize_preview()) {
         wp_dequeue_style( 'dashicons' );
@@ -1723,7 +1723,7 @@ add_action( 'dashboard_glance_items', function(){
         $text = _n( $post_type->labels->singular_name, $post_type->labels->singular_name, $num_posts->publish );
         foreach (ADDITIONAL_POST_TYPE as [$type]) {
             if ( current_user_can( 'edit_posts' ) && $text == $type ) {
-                echo '<li class="'.$post_type->capability_type.'-count-X"><a href="edit.php?post_type='.$post_type->name.'" class="cust-post"><span class="dashicons '.$post_type->menu_icon.'" style="padding-right:5px"></span>'.$num.' '.$text.'s</a><style>.cust-post:before{content:"" !important;margin-left:-5px}</style></li>';
+                echo '<li class="'.$post_type->capability_type.'-count-m20"><a href="edit.php?post_type='.$post_type->name.'" class="m20-cust-post"><span style="vertical-align:-5px">'.wp_get_icon( $post_type->menu_icon, array('size'=>20,'class' => 'm20-cust-post-icon')).'</span>'.$num.' '.$text.'s</a><style>.m20-cust-post::before{content:"" !important;margin-left:-5px}.m20-cust-post-icon{stroke:#646970}</style></li>';
             }
         }
     }

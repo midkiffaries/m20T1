@@ -563,7 +563,7 @@ add_filter( 'register_block_type_args', function( $args ) {
         'core/buttons',
         'core/button',
         'core/group',
-        'core/figure',
+        'core/image',
         'core/media-text', 
         'core/text', 
         'core/details', 
@@ -592,6 +592,8 @@ add_filter( 'register_block_type_args', function( $args ) {
         $args['supports']['shadow'] = true; // Add box shadow option
         $args['supports']['filter']['duotone'] = true; // Add duotone filter options
         $args['supports']['typography']['textShadow'] = true; // Add text shadow option
+        $args['supports']['typography']['textFill'] = true; // Add text fill option
+        $args['supports']['typography']['fontSize'] = true; // Add text font size option
         //$args['supports']['spacing'] = ['margin' => true, 'padding' => true, 'blockGap' => false]; // Add padding/margin options
     }    
     return $args;

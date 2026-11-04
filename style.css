@@ -1570,8 +1570,7 @@ img.wp-smiley, img.emoji {
 }
 
 .alignfull {
-	width: 100vw;
-	max-width: 1250px;
+	width: 100%;
 }
 
 .alignright {

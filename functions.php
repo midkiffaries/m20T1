@@ -176,21 +176,6 @@ add_action( 'init', function(){
         'name'  => 'text-subtitle',
         'label' => __( 'Subtitle', 'm20t1' )
     ]);
-    // Paragraph: Light text shadow
-    register_block_style( 'core/paragraph', [
-        'name'  => 'text-shadow-soft',
-        'label' => __( 'Soft Shadow', 'm20t1' )
-    ]);
-    // Paragraph: Hard text shadow
-    register_block_style( 'core/paragraph', [
-        'name'  => 'text-shadow-hard',
-        'label' => __( 'Hard Shadow', 'm20t1' )
-    ]);
-    // Paragraph: Purple glow shadow
-    register_block_style( 'core/paragraph', [
-        'name'  => 'text-shadow-glow',
-        'label' => __( 'Purple Glow', 'm20t1' )
-    ]);
     // Paragraph: Outline text
     register_block_style( 'core/paragraph', [
         'name'  => 'text-outline',
@@ -200,21 +185,6 @@ add_action( 'init', function(){
     register_block_style( 'core/paragraph', [
         'name'  => 'text-dash',
         'label' => __( 'Start Dash', 'm20t1' )
-    ]);
-    // Heading: Soft text shadow
-    register_block_style( 'core/heading', [
-        'name'  => 'header-shadow-soft',
-        'label' => __( 'Soft Shadow', 'm20t1' )
-    ]);
-    // Heading: Hard text shadow
-    register_block_style( 'core/heading', [
-        'name'  => 'header-shadow-hard',
-        'label' => __( 'Hard Shadow', 'm20t1' )
-    ]);
-    // Heading: 3D shadow
-    register_block_style( 'core/heading', [
-        'name'  => 'header-shadow-3d',
-        'label' => __( '3D Shadow', 'm20t1' )
     ]);
     // Heading: Ribbon
     register_block_style( 'core/heading', [
@@ -236,11 +206,6 @@ add_action( 'init', function(){
         'name'  => 'header-stripes',
         'label' => __( 'Stripes', 'm20t1' ),
         'inline_style' => '.is-style-header-stripes::after,.is-style-header-stripes::before{background-image:url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 33\"><path d=\"M8 0h10L9 33H0Z\" fill=\"%2366666655\"/></svg>");height:1em;margin:0 6px}'
-    ]);
-    // Heading: Text Shadow Color Offset
-    register_block_style( 'core/heading', [
-        'name'  => 'header-coloroffset',
-        'label' => __( 'Color Offset', 'm20t1' )
     ]);
     // Heading: Text Fill
     register_block_style( 'core/heading', [

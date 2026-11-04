@@ -4,8 +4,8 @@
 
 * Support for WordPress 7.2.
 * Corner bracket button style.
-* Added the new Text Shadow typography option for most block elements.
-* Removal of the text shadow specific preset styles from paragraph and headings as they are redundant.
+* Added the new Text Shadow typography option for most block elements with several presets.
+* Removal of the text shadow specific preset styles from paragraph and headings as they are now redundant.
 * Changed the additional post type icon to match the new dashicons-less paradigm in the admin panel.
 * Bug fixes and more code clean-up.
 

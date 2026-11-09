@@ -346,18 +346,25 @@ label {
 	}
 }
 
+/* Safari-specific alignment hack */
+@supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+	select:not([multiple]):not([size]) {
+		padding-top: 32px;
+	}
+}
+
 /* Glass style select boxes for Chromium Browsers */
 @supports (appearance: base-select) {
-	select:not([multiple]):not([size]), ::picker(select) {
+	select:not([multiple]):not([size]) {
 		appearance: base-select;
-		vertical-align: middle;
 		height: 2.5rem;
-		padding-top: 3px;
 	}
 	select:not([multiple]):not([size])::picker-icon {
-		content:"";
+		content: "";
 	}
 	::picker(select) {
+		appearance: base-select;
+		vertical-align: middle;
 		transition: all 0.25s ease-in-out;
 		transition-behavior: allow-discrete;
 		cursor: default;

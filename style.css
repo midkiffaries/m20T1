@@ -1586,7 +1586,7 @@ img.wp-smiley, img.emoji {
 }
 
 .alignfull {
-	width: 100%;
+	width: auto;
 }
 
 .alignright {

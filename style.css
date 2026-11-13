@@ -363,7 +363,7 @@ label {
 @supports (appearance: base-select) {
 	select:not([multiple]):not([size]) {
 		appearance: base-select;
-		height: 2.5rem;
+		/* height: 2.5rem; */
 		vertical-align: middle;
 		&:active {
 			background-size: 0.9rem !important;

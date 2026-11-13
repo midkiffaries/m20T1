@@ -551,7 +551,7 @@ add_filter( 'register_block_type_args', function( $args ) {
         'core/tabs',
         'core/tab-list',
         'core/tab-panels',
-        'core/playlist',
+        'core/playlist'
     ];
     if ( in_array( $args['name'], $blocks, true ) ) {
         $args['supports']['shadow'] = true; // Add box shadow option

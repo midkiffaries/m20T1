@@ -48,6 +48,11 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 						url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' clip-rule='evenodd' viewBox='0 0 571.3 1152.8'><clipPath id='a'><path d='M0 0h571.3v1152.8H0z'/></clipPath><g fill='none' stroke='lightgrey' stroke-linecap='butt' stroke-width='12' clip-path='url(%23a)'><path d='M285.6 0 0 576.4l285.6 576.4L569 576.4zM0 0h571.3M0 1152.8h571.3M0 576.4h571.3'/></g></svg>");
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
 
 /* Font icon styling */
 @font-face {
@@ -109,7 +114,7 @@ html {
 }
 
 :target { /* Anchor */
-	scroll-margin-top: 1rem;
+	scroll-margin-block-start: 2rem;
 	outline: 1px dotted var(--wp--preset--color--secondary, #666);
 }
 
@@ -264,12 +269,6 @@ input:not(:focus):invalid {
 	display: none !important;
 }
 
-[disabled],
-[disabled] + label[for] {
-	opacity: 0.4;
-	pointer-events: none;
-}
-
 button > *,
 [role='button'] > * {
 	pointer-events: none;
@@ -280,8 +279,7 @@ input,
 optgroup,
 select,
 label,
-textarea,
-[list] {
+textarea {
 	color: var(--wp--preset--color--contrast);
 	font-family: inherit;
 	font-size: inherit;
@@ -294,6 +292,15 @@ textarea,
 	&::placeholder {
 		color: #888;
 	}
+	&:disabled {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+}
+
+option:disabled {
+	opacity: 1;
+	pointer-events: none;
 }
 
 .wp-element-button,
@@ -358,11 +365,15 @@ label {
 	select:not([multiple]):not([size]) {
 		appearance: base-select;
 		height: 2.5rem;
+		vertical-align: middle;
+		&:active {
+			background-size: 0.9rem !important;
+		}
+		&::picker-icon {
+			content: "";
+		}
 	}
-	select:not([multiple]):not([size])::picker-icon {
-		content: "";
-	}
-	::picker(select) {
+	select::picker(select) {
 		appearance: base-select;
 		vertical-align: middle;
 		transition: all 0.25s ease-in-out;
@@ -372,26 +383,25 @@ label {
 		height: 0;
 		font-size: 0.95rem;
 		border-radius: 0.7em;
-		padding: 0.4rem 0;
+		padding: 0.2rem 0;
 		scrollbar-color: #888d #0000;
 		overscroll-behavior-y: contain;
-		border: 1px solid #fff3;
-		border-top: 1px solid #fff4;
-		border-bottom: 1px solid #eee8;
-		background: linear-gradient(-75deg,#fffb,#fffe,#fffb);
-		box-shadow: inset 0 0.12em 0.12em #0003, inset 0 -0.12em 0.12em #fff8, inset 0 0 0.1em 0.25em #fff3, 0 0.3em 0.12em -0.12em #0004, 0 2px 11px -2px #0009;
-		backdrop-filter: blur(4px);
+		border: 0.9px solid #fff7;
+		border-top: 1.5px solid #fffb;
+		background-color: #f9f9f9d0;
+		backdrop-filter: blur(clamp(3px,0.125em,5px)) saturate(80%);
+		box-shadow: 0 0 3px 0 #1113 inset, 0 2px 14px 0 #0005, 0 2px 4px -1px #000a, 0 0 0 1px #0004;
 		min-block-size: calc-size(fit-content, min(size, 10em));
 		max-block-size: calc-size(stretch, min(size, 30em));
 		margin-block-end: 1em;
 		position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
 		/* @media (prefers-color-scheme: dark) {
 			color: #fff;
-			background: linear-gradient(-75deg,#333a,#444c,#333a);
+			background-color: #333e;
 			scrollbar-color: #ccc #0000;
 		} */
 	}
-	:open::picker(select) {
+	select:open::picker(select) {
 		height: auto;
 		max-height: 100%;
 		transition: all .25s ease-in-out;

@@ -7,6 +7,8 @@
 * Added the new Text Shadow typography option for most block elements with several presets.
 * Removal of the text shadow specific preset styles from paragraph and headings as they are now redundant.
 * Changed the additional post type icon to match the new dashicons-less paradigm in the admin panel.
+* Added @view-transition by default.
+* Updated the select::picker styling.
 * Bug fixes and more code clean-up.
 
 ### 2.1 Live (September 1, 2026)

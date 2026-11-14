@@ -352,10 +352,11 @@ label {
 	}
 }
 
-/* Safari-specific alignment hack */
+/* Safari-specific hacks */
 @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
 	select:not([multiple]):not([size]) {
 		padding-top: 32px;
+		height: 2.5rem;
 	}
 }
 
@@ -363,7 +364,6 @@ label {
 @supports (appearance: base-select) {
 	select:not([multiple]):not([size]) {
 		appearance: base-select;
-		/* height: 2.5rem; */
 		vertical-align: middle;
 		&:active {
 			background-size: 0.9rem !important;
@@ -388,8 +388,8 @@ label {
 		border: 0.9px solid #fff7;
 		border-top: 1.5px solid #fffb;
 		background-color: #f9f9f9d0;
-		backdrop-filter: blur(clamp(3px,0.125em,5px)) saturate(80%);
-		box-shadow: 0 0 3px 0 #1113 inset, 0 2px 14px 0 #0005, 0 2px 4px -1px #000a, 0 0 0 1px #0004;
+		backdrop-filter: blur(clamp(4px,0.125em,6px)) saturate(80%);
+		box-shadow: 0 0 4px 0 #1115 inset, 0 2px 14px 0 #0005, 0 2px 4px -1px #000a, 0 0 0 1px #0004;
 		min-block-size: calc-size(fit-content, min(size, 10em));
 		max-block-size: calc-size(stretch, min(size, 30em));
 		margin-block-end: 1em;

@@ -372,6 +372,7 @@ label {
 			content: "";
 		}
 	}
+	
 	select::picker(select) {
 		appearance: base-select;
 		vertical-align: middle;
@@ -400,6 +401,7 @@ label {
 			scrollbar-color: #ccc #0000;
 		} */
 	}
+
 	select:open::picker(select) {
 		height: auto;
 		max-height: 100%;
@@ -411,6 +413,7 @@ label {
 			height: 0;
 		}
 	}
+
 	select:not([multiple]):not([size]) option {
 		padding: 3px 12px 3px 7px;
 		margin: 0 3px;

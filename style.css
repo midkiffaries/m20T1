@@ -390,7 +390,7 @@ label {
 		border-top: 1.5px solid #fffb;
 		background-color: #f9f9f9d0;
 		backdrop-filter: blur(clamp(4px,0.125em,6px)) saturate(80%);
-		box-shadow: 0 0 4px 0 #1115 inset, 0 2px 14px 0 #0005, 0 2px 4px -1px #000a, 0 0 0 1px #0004;
+		box-shadow: 0 0 4px 0 #1115 inset, 0 2px 16px 0 #0005, 0 2px 4px -1px #0009, 0 0 0 1px #0003;
 		min-block-size: calc-size(fit-content, min(size, 10em));
 		max-block-size: calc-size(stretch, min(size, 30em));
 		margin-block-end: 1em;

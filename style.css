@@ -21,7 +21,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--scrollbar-light: var(--wp--preset--color--primary, #333) #eee;
 	--scrollbar-dark: var(--wp--preset--color--primary, #eee) #444;
 
-	/* Social Links */
+	/* Social Brand Colors */
 	--twitter-color: #14171a;
 	--facebook-color: #3b5998;
 	--linkedin-color: #0077b5;
@@ -31,7 +31,7 @@ Tags: original, one-column, custom-colors, custom-menu, custom-logo, featured-im
 	--browser-color: #59626a;
 
 	/* Form Elements */
-	accent-color: var(--wp--preset--color--primary, #333);
+	accent-color: var(--wp--preset--color--primary, initial);
 
 	/* Custom Theme Variables */
 	--smooth-transition: cubic-bezier(.22,1,.36,1);
@@ -103,14 +103,8 @@ html {
 	&:focus-within {
 		scroll-behavior: smooth;
 	}
-}
-
-@media (prefers-color-scheme: dark) {
-	html {
+	@media (prefers-color-scheme: dark) {
 		scrollbar-color: var(--scrollbar-dark);
-	}
-	dialog > div  {
-		scrollbar-color: var(--scrollbar-light);
 	}
 }
 
@@ -149,7 +143,7 @@ u {
     background-repeat: no-repeat;
     background-position-y: 100%;
     background-size: 100% .2em;
-	background-image: var(--underline-bg, #f50);
+	background-image: var(--underline-bg);
 }
 
 sub,
@@ -2243,6 +2237,12 @@ Page Pagination Section
 /************************ 
 Dark Mode Styling
 *************************/
+
+@media (prefers-color-scheme: dark) {
+	dialog > div  {
+		scrollbar-color: var(--scrollbar-light);
+	}
+}
 
 body.dark-mode,
 .dark-mode dialog > div {

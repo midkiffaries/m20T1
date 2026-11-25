@@ -141,53 +141,53 @@ document.addEventListener("keyup", (e) => {
             width: 100%;
         }
         .embed-youtube {
-            width: 100%;
             position: relative;
-            padding-top: 56.25%;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
-            transition: outline .5s;
             cursor: pointer;
+            transition: outline 0.5s;
             &:hover {
                 outline: 4px solid #f00;
+                .play-button {
+                opacity: 1;
+                background: #f00c;
             }
         }
-        .embed-youtube img {
+        & :is(img, iframe) {
             position: absolute;
+            inset: 0;
             width: 100%;
-            top: -17%;
+            height: 100%;
         }
-        .embed-youtube .play-button {
+        img {
+            top: -17%;
+            height: auto;
+        }
+        iframe {
+            background-color: #222;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: 1;
+            display: grid;
+            place-items: center;
             width: 6em;
             height: 4em;
+            border-radius: 0.8em;
             background: #2228;
             box-shadow: 0 0 8px 0 #000c;
-            z-index: 1;
-            border-radius: .8em;
-            transition: background .5s;
+            transition: background 0.5s;
             &::before {
                 content: "";
                 border-style: solid;
                 border-width: 15px 0 15px 26px;
                 border-color: transparent transparent transparent #fff;
+                }
             }
-        }
-        .embed-youtube:hover .play-button {
-            opacity: 1;   
-            background: #f00c;
-        }
-        .embed-youtube .play-button, .embed-youtube .play-button::before {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            translate: -50% -50% 0;
-        }
-        .embed-youtube iframe {
-            position: absolute;
-            background-color: #222;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
         }
         `);
         document.body.appendChild(st);

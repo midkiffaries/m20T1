@@ -80,7 +80,7 @@
 			"customDuotone": true,
 			"customGradient": true,
 			"defaultPalette": true,
-			"defaultDuotone": false,
+			"defaultDuotone": true,
 			"defaultGradients": true,
 			"palette": [
 				{

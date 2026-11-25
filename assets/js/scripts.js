@@ -152,6 +152,7 @@ document.addEventListener("keyup", (e) => {
             }
         }
         .embed-youtube img {
+            position: absolute;
             width: 100%;
             top: -17%;
         }
@@ -174,15 +175,14 @@ document.addEventListener("keyup", (e) => {
             opacity: 1;   
             background: #f00c;
         }
-        .embed-youtube img, .embed-youtube iframe, .embed-youtube .play-button, .embed-youtube .play-button::before {
-            position: absolute;
-        }
         .embed-youtube .play-button, .embed-youtube .play-button::before {
+            position: absolute;
             top: 50%;
             left: 50%;
             translate: -50% -50% 0;
         }
         .embed-youtube iframe {
+            position: absolute;
             background-color: #222;
             width: 100%;
             height: 100%;
@@ -302,7 +302,6 @@ document.addEventListener("scroll", function() {
     sc.setAttribute("id", "ScrollToTop");
     sc.setAttribute("class", "scroll-to-top-float");
     sc.setAttribute("role", "button");
-    //sc.setAttribute("onclick", "smoothScroll(0,100)");
     sc.setAttribute("onclick", "scrollToTop()");
     document.body.appendChild(sc);
 	

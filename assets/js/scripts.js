@@ -113,18 +113,16 @@ document.addEventListener("keyup", (e) => {
     for (let i = 0; i < l; i++) {
         const image = new Image();
 
-        image.src = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`; // alt: sddefault, hqdefault, maxresdefault
+        image.src = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/sddefault.jpg`; // sddefault | hqdefault | maxresdefault
         image.alt = "Load YouTube video";
         image.decoding = "defer";
-        image.fetchpriority = "low";
         image.loading = "lazy";
         image.addEventListener("load", function(){youtube[i].appendChild(image)}(i));
 
         youtube[i].addEventListener("click", function() {
             const iframe = document.createElement("iframe");
             iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute("allow", "accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share");
-            iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("allow", "fullscreen;accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture");
             iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
             iframe.setAttribute("loading", "lazy");
             iframe.setAttribute("role", "presentation");
@@ -150,42 +148,42 @@ document.addEventListener("keyup", (e) => {
             &:hover {
                 outline: 4px solid #f00;
                 .play-button {
-                opacity: 1;
-                background: #f00c;
+                    opacity: 1;
+                    background: #f00c;
+                }
             }
-        }
-        & :is(img, iframe) {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-        }
-        img {
-            top: -17%;
-            height: auto;
-        }
-        iframe {
-            background-color: #222;
-        }
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            translate: -50% -50%;
-            z-index: 1;
-            display: grid;
-            place-items: center;
-            width: 6em;
-            height: 4em;
-            border-radius: 0.8em;
-            background: #2228;
-            box-shadow: 0 0 8px 0 #000c;
-            transition: background 0.5s;
-            &::before {
-                content: "";
-                border-style: solid;
-                border-width: 15px 0 15px 26px;
-                border-color: transparent transparent transparent #fff;
+            & :is(img, iframe) {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+            }
+            img {
+                top: -17%;
+                height: auto;
+            }
+            iframe {
+                background-color: #222;
+            }
+            .play-button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                z-index: 1;
+                display: grid;
+                place-items: center;
+                width: 6em;
+                height: 4em;
+                border-radius: 0.8em;
+                background: #2228;
+                box-shadow: 0 0 8px 0 #000c;
+                transition: background 0.5s;
+                &::before {
+                    content: "";
+                    border-style: solid;
+                    border-width: 15px 0 15px 26px;
+                    border-color: #0000 #0000 #0000 #fff;
                 }
             }
         }
@@ -249,39 +247,39 @@ function getElOffsetY(el) {
     #btnMenu {
         width: 2.6em;
         height: 2.6em;
-        padding: .2em;
+        padding: 0.2em;
         overflow: hidden;
         border: 0;
         background: none;
-    }
-    #btnMenu span {
-        display: block;
-        height: 4px;
-        width: 2.2em;
-        background: #000;
-        margin: .5em 0;
-        border-radius: .8em;
-        transition: margin .2s ease-in-out;
-    }
-    #btnMenu:hover span, 
-    #btnMenu:focus span {
-        margin: .7em 0 .4em 0;
-        &:first-of-type {
-            margin-top: .3em;
+        cursor: pointer;
+        span {
+            display: block;
+            width: 2.2em;
+            height: 4px;
+            margin-block: 0.5em;
+            border-radius: 0.8em;
+            background: #000;
+            transition: margin 0.2s ease-in-out;
         }
-        &:last-of-type {
-            margin-bottom: .3em;
+        &:is(:hover, :focus) span {
+            margin-block: 0.4em 0.7em;
+            &:first-of-type {
+                margin-top: 0.3em;
+            }
+            &:last-of-type {
+                margin-bottom: 0.3em;
+            }
         }
-    }
-    #btnMenu.active span {
-        transition: rotate .25s ease-in-out;
-        width: 2.5em;
-        margin: -3px;
-        &:first-of-type {
-            rotate:45deg;
-        }
-        &:last-of-type {
-            rotate:-45deg;
+        &.active span {
+            width: 2.5em;
+            margin: -3px;
+            transition: rotate 0.25s ease-in-out;
+            &:first-of-type {
+                rotate: 45deg;
+            }
+            &:last-of-type {
+                rotate: -45deg;
+            }
         }
     }
     `);
@@ -321,9 +319,7 @@ document.addEventListener("scroll", function() {
 		font-size: 1.5em;
 		cursor: pointer;
 		transition: all .25s ease-in-out 0s;
-		background: no-repeat center center / 1em;
-		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>");
-		background-color: #0005;
+        background: #0005 url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M6.461 29.71L2.242 25.49l18-18 18 18-4.218 4.219-13.782-13.781z' fill='white'/></svg>") no-repeat center / 1em;
         backdrop-filter: blur(2px);
         &:hover {
             background-color: #0008; 
@@ -336,10 +332,7 @@ document.addEventListener("scroll", function() {
             visibility: visible;
             opacity: 1;
         }
-        @media (max-width: 812px) {
-            display: none;
-        }
-        @media only print {
+        @media (max-width: 812px), print {
             display: none;
         }
 	}
@@ -394,9 +387,9 @@ function HtmlModal(c, v) {
 		opacity: 0;
 		transition: opacity .2s ease-in-out;
         backdrop-filter: blur(3px);
-	}
-    .dialog-html h3 {
-        margin: 0;
+        h3 {
+            margin: 0;
+        }
     }
 	.dialog-header {
 		max-width: 70vw;
@@ -436,10 +429,9 @@ function HtmlModal(c, v) {
 		top: 0;
 		border: none;
 		filter: drop-shadow(1px 1px 2px #0004);
-		background: transparent no-repeat center center / 1.5em;
-		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/></svg>");
+        background: #0000 url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 24l-9-9 9-9-6-6-9 9-9-9-6 6 9 9-9 9 6 6 9-9 9 9z'/></svg>") no-repeat center / 1.5em;
         &:hover {
-            background-color: transparent;
+            background-color: #0000;
             filter: invert() drop-shadow(0 0 10px #0004);
         }
         &:focus:hover {
